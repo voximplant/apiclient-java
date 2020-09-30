@@ -1,0 +1,282 @@
+package com.voximplant.apiclient.request;
+
+import java.util.Date;
+import java.util.Map;
+import java.math.BigDecimal;
+import com.voximplant.apiclient.util.MultiArgument;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.DateSerializer;
+import com.voximplant.apiclient.util.RequestField;
+import com.voximplant.apiclient.util.SerializeUsing;
+import com.voximplant.apiclient.util.TimestampSerializer;
+
+public class AddPushCredentialRequest {
+    private String pushProviderName;
+
+    @RequestField(name="push_provider_name")
+    /**
+    * The push provider name. The possible values are: APPLE, APPLE_VOIP,
+    * GOOGLE.
+    */
+    public String getPushProviderName() {
+        return this.pushProviderName;
+    }
+
+    public boolean hasPushProviderName() {
+        return this.pushProviderName != null;
+    }
+
+    /**
+    * The push provider name. The possible values are: APPLE, APPLE_VOIP,
+    * GOOGLE.
+    */
+    public AddPushCredentialRequest setPushProviderName(String d) {
+        this.pushProviderName = d;
+        return this;
+    }
+
+    private Long pushProviderId;
+
+    @RequestField(name="push_provider_id")
+    /**
+    * The push provider id.
+    */
+    public long getPushProviderId() {
+        return this.pushProviderId.longValue();
+    }
+
+    public boolean hasPushProviderId() {
+        return this.pushProviderId != null;
+    }
+
+    /**
+    * The push provider id.
+    */
+    public AddPushCredentialRequest setPushProviderId(long d) {
+        this.pushProviderId = Long.valueOf(d);
+        return this;
+    }
+
+    private Long applicationId;
+
+    @RequestField(name="application_id")
+    /**
+    * The application id.
+    */
+    public long getApplicationId() {
+        return this.applicationId.longValue();
+    }
+
+    public boolean hasApplicationId() {
+        return this.applicationId != null;
+    }
+
+    /**
+    * The application id.
+    */
+    public AddPushCredentialRequest setApplicationId(long d) {
+        this.applicationId = Long.valueOf(d);
+        return this;
+    }
+
+    private String applicationName;
+
+    @RequestField(name="application_name")
+    /**
+    * The application name that can be used instead of
+    * <b>application_id</b>.
+    */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
+    /**
+    * The application name that can be used instead of
+    * <b>application_id</b>.
+    */
+    public AddPushCredentialRequest setApplicationName(String d) {
+        this.applicationName = d;
+        return this;
+    }
+
+    private String credentialBundle;
+
+    @RequestField(name="credential_bundle")
+    /**
+    * The bundle of Android/iOS application.
+    */
+    public String getCredentialBundle() {
+        return this.credentialBundle;
+    }
+
+    public boolean hasCredentialBundle() {
+        return this.credentialBundle != null;
+    }
+
+    /**
+    * The bundle of Android/iOS application.
+    */
+    public AddPushCredentialRequest setCredentialBundle(String d) {
+        this.credentialBundle = d;
+        return this;
+    }
+
+    private String certContent;
+
+    @RequestField(name="cert_content")
+    /**
+    * Public and private keys in PKCS12 format.
+    */
+    public String getCertContent() {
+        return this.certContent;
+    }
+
+    public boolean hasCertContent() {
+        return this.certContent != null;
+    }
+
+    /**
+    * Public and private keys in PKCS12 format.
+    */
+    public AddPushCredentialRequest setCertContent(String d) {
+        this.certContent = d;
+        return this;
+    }
+
+    private String certFileName;
+
+    @RequestField(name="cert_file_name")
+    /**
+    * The parameter is required, when set 'cert_content' as POST body.
+    */
+    public String getCertFileName() {
+        return this.certFileName;
+    }
+
+    public boolean hasCertFileName() {
+        return this.certFileName != null;
+    }
+
+    /**
+    * The parameter is required, when set 'cert_content' as POST body.
+    */
+    public AddPushCredentialRequest setCertFileName(String d) {
+        this.certFileName = d;
+        return this;
+    }
+
+    private String certPassword;
+
+    @RequestField(name="cert_password")
+    /**
+    * The secret password for private key.
+    */
+    public String getCertPassword() {
+        return this.certPassword;
+    }
+
+    public boolean hasCertPassword() {
+        return this.certPassword != null;
+    }
+
+    /**
+    * The secret password for private key.
+    */
+    public AddPushCredentialRequest setCertPassword(String d) {
+        this.certPassword = d;
+        return this;
+    }
+
+    private Boolean isDevMode;
+
+    @RequestField(name="is_dev_mode")
+    /**
+    * Set true for use this certificate in apple's sandbox environment
+    */
+    public boolean getIsDevMode() {
+        return this.isDevMode.booleanValue();
+    }
+
+    public boolean hasIsDevMode() {
+        return this.isDevMode != null;
+    }
+
+    /**
+    * Set true for use this certificate in apple's sandbox environment
+    */
+    public AddPushCredentialRequest setIsDevMode(boolean d) {
+        this.isDevMode = Boolean.valueOf(d);
+        return this;
+    }
+
+    private String senderId;
+
+    @RequestField(name="sender_id")
+    /**
+    * The sender id, provided by Google.
+    */
+    public String getSenderId() {
+        return this.senderId;
+    }
+
+    public boolean hasSenderId() {
+        return this.senderId != null;
+    }
+
+    /**
+    * The sender id, provided by Google.
+    */
+    public AddPushCredentialRequest setSenderId(String d) {
+        this.senderId = d;
+        return this;
+    }
+
+    private String serverKey;
+
+    @RequestField(name="server_key")
+    /**
+    * The server key, provided by Google.
+    */
+    public String getServerKey() {
+        return this.serverKey;
+    }
+
+    public boolean hasServerKey() {
+        return this.serverKey != null;
+    }
+
+    /**
+    * The server key, provided by Google.
+    */
+    public AddPushCredentialRequest setServerKey(String d) {
+        this.serverKey = d;
+        return this;
+    }
+
+    private String serviceAccountFile;
+
+    @RequestField(name="service_account_file")
+    /**
+    * The service account key file, provided by Google.
+    */
+    public String getServiceAccountFile() {
+        return this.serviceAccountFile;
+    }
+
+    public boolean hasServiceAccountFile() {
+        return this.serviceAccountFile != null;
+    }
+
+    /**
+    * The service account key file, provided by Google.
+    */
+    public AddPushCredentialRequest setServiceAccountFile(String d) {
+        this.serviceAccountFile = d;
+        return this;
+    }
+
+}

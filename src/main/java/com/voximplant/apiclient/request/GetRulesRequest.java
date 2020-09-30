@@ -1,0 +1,214 @@
+package com.voximplant.apiclient.request;
+
+import java.util.Date;
+import java.util.Map;
+import java.math.BigDecimal;
+import com.voximplant.apiclient.util.MultiArgument;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.DateSerializer;
+import com.voximplant.apiclient.util.RequestField;
+import com.voximplant.apiclient.util.SerializeUsing;
+import com.voximplant.apiclient.util.TimestampSerializer;
+
+public class GetRulesRequest {
+    private Long applicationId;
+
+    @RequestField(name="application_id")
+    /**
+    * The application ID.
+    */
+    public long getApplicationId() {
+        return this.applicationId.longValue();
+    }
+
+    public boolean hasApplicationId() {
+        return this.applicationId != null;
+    }
+
+    /**
+    * The application ID.
+    */
+    public GetRulesRequest setApplicationId(long d) {
+        this.applicationId = Long.valueOf(d);
+        return this;
+    }
+
+    private String applicationName;
+
+    @RequestField(name="application_name")
+    /**
+    * The application name that can be used instead of
+    * <b>application_id</b>.
+    */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
+    /**
+    * The application name that can be used instead of
+    * <b>application_id</b>.
+    */
+    public GetRulesRequest setApplicationName(String d) {
+        this.applicationName = d;
+        return this;
+    }
+
+    private Long ruleId;
+
+    @RequestField(name="rule_id")
+    /**
+    * The rule ID to filter
+    */
+    public long getRuleId() {
+        return this.ruleId.longValue();
+    }
+
+    public boolean hasRuleId() {
+        return this.ruleId != null;
+    }
+
+    /**
+    * The rule ID to filter
+    */
+    public GetRulesRequest setRuleId(long d) {
+        this.ruleId = Long.valueOf(d);
+        return this;
+    }
+
+    private String ruleName;
+
+    @RequestField(name="rule_name")
+    /**
+    * The rule name part to filter.
+    */
+    public String getRuleName() {
+        return this.ruleName;
+    }
+
+    public boolean hasRuleName() {
+        return this.ruleName != null;
+    }
+
+    /**
+    * The rule name part to filter.
+    */
+    public GetRulesRequest setRuleName(String d) {
+        this.ruleName = d;
+        return this;
+    }
+
+    private Boolean videoConference;
+
+    @RequestField(name="video_conference")
+    /**
+    * The video conference flag to filter.
+    */
+    public boolean getVideoConference() {
+        return this.videoConference.booleanValue();
+    }
+
+    public boolean hasVideoConference() {
+        return this.videoConference != null;
+    }
+
+    /**
+    * The video conference flag to filter.
+    */
+    public GetRulesRequest setVideoConference(boolean d) {
+        this.videoConference = Boolean.valueOf(d);
+        return this;
+    }
+
+    private String template;
+
+    @RequestField(name="template")
+    /**
+    * Search for template matching
+    */
+    public String getTemplate() {
+        return this.template;
+    }
+
+    public boolean hasTemplate() {
+        return this.template != null;
+    }
+
+    /**
+    * Search for template matching
+    */
+    public GetRulesRequest setTemplate(String d) {
+        this.template = d;
+        return this;
+    }
+
+    private Boolean withScenarios;
+
+    @RequestField(name="with_scenarios")
+    /**
+    * Set true to get bound scenarios info.
+    */
+    public boolean getWithScenarios() {
+        return this.withScenarios.booleanValue();
+    }
+
+    public boolean hasWithScenarios() {
+        return this.withScenarios != null;
+    }
+
+    /**
+    * Set true to get bound scenarios info.
+    */
+    public GetRulesRequest setWithScenarios(boolean d) {
+        this.withScenarios = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Long count;
+
+    @RequestField(name="count")
+    /**
+    * The max returning record count.
+    */
+    public long getCount() {
+        return this.count.longValue();
+    }
+
+    public boolean hasCount() {
+        return this.count != null;
+    }
+
+    /**
+    * The max returning record count.
+    */
+    public GetRulesRequest setCount(long d) {
+        this.count = Long.valueOf(d);
+        return this;
+    }
+
+    private Long offset;
+
+    @RequestField(name="offset")
+    /**
+    * The first <b>N</b> records will be skipped in the output.
+    */
+    public long getOffset() {
+        return this.offset.longValue();
+    }
+
+    public boolean hasOffset() {
+        return this.offset != null;
+    }
+
+    /**
+    * The first <b>N</b> records will be skipped in the output.
+    */
+    public GetRulesRequest setOffset(long d) {
+        this.offset = Long.valueOf(d);
+        return this;
+    }
+
+}

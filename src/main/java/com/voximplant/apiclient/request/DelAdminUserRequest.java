@@ -1,0 +1,60 @@
+package com.voximplant.apiclient.request;
+
+import java.util.Date;
+import java.util.Map;
+import java.math.BigDecimal;
+import com.voximplant.apiclient.util.MultiArgument;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.DateSerializer;
+import com.voximplant.apiclient.util.RequestField;
+import com.voximplant.apiclient.util.SerializeUsing;
+import com.voximplant.apiclient.util.TimestampSerializer;
+
+public class DelAdminUserRequest {
+    private MultiArgument<Long> requiredAdminUserId;
+
+    @RequestField(name="required_admin_user_id")
+    /**
+    * The admin user ID list separated by the ';' symbol or the 'all' value.
+    */
+    public MultiArgument<Long> getRequiredAdminUserId() {
+        return this.requiredAdminUserId;
+    }
+
+    public boolean hasRequiredAdminUserId() {
+        return this.requiredAdminUserId != null;
+    }
+
+    /**
+    * The admin user ID list separated by the ';' symbol or the 'all' value.
+    */
+    public DelAdminUserRequest setRequiredAdminUserId(MultiArgument<Long> d) {
+        this.requiredAdminUserId = d;
+        return this;
+    }
+
+    private MultiArgument<String> requiredAdminUserName;
+
+    @RequestField(name="required_admin_user_name")
+    /**
+    * The admin user name to delete, can be used instead of
+    * <b>required_admin_user_id</b>.
+    */
+    public MultiArgument<String> getRequiredAdminUserName() {
+        return this.requiredAdminUserName;
+    }
+
+    public boolean hasRequiredAdminUserName() {
+        return this.requiredAdminUserName != null;
+    }
+
+    /**
+    * The admin user name to delete, can be used instead of
+    * <b>required_admin_user_id</b>.
+    */
+    public DelAdminUserRequest setRequiredAdminUserName(MultiArgument<String> d) {
+        this.requiredAdminUserName = d;
+        return this;
+    }
+
+}
