@@ -20,6 +20,15 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>Voximplant</name>
+            <email>support@voximplant.com</email>
+            <organization>Voximplant</organization>
+            <organizationUrl>https://voximplant.com</organizationUrl>
+        </developer>
+    </developers>
+
     <scm>
         <url>https://github.com/voximplant/apiclient-java</url>
     </scm>
