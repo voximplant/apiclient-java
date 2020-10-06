@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The record info.
 */
-public class RecordType {
+public class RecordType implements Alignable {
 
     private Long recordId;
 
     /**
     * The record ID.
     */
-    public long getRecordId() {
-        return this.recordId.longValue();
+    public Long getRecordId() {
+        return this.recordId;
     }
 
     public boolean hasRecordId() {
@@ -71,8 +74,8 @@ public class RecordType {
     /**
     * The call duration in seconds.
     */
-    public long getDuration() {
-        return this.duration.longValue();
+    public Long getDuration() {
+        return this.duration;
     }
 
     public boolean hasDuration() {
@@ -97,8 +100,8 @@ public class RecordType {
     /**
     * The transaction ID.
     */
-    public long getTransactionId() {
-        return this.transactionId.longValue();
+    public Long getTransactionId() {
+        return this.transactionId;
     }
 
     public boolean hasTransactionId() {
@@ -145,4 +148,99 @@ public class RecordType {
         return this.transcriptionStatus != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (recordId != null) {
+            sb.append(aligned)
+                .append("\"recordId\": \"")
+                .append(recordId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (recordName != null) {
+            sb.append(aligned)
+                .append("\"recordName\": \"")
+                .append(recordName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cost != null) {
+            sb.append(aligned)
+                .append("\"cost\": \"")
+                .append(cost)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (startTime != null) {
+            sb.append(aligned)
+                .append("\"startTime\": \"")
+                .append(startTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (duration != null) {
+            sb.append(aligned)
+                .append("\"duration\": \"")
+                .append(duration)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (recordUrl != null) {
+            sb.append(aligned)
+                .append("\"recordUrl\": \"")
+                .append(recordUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transactionId != null) {
+            sb.append(aligned)
+                .append("\"transactionId\": \"")
+                .append(transactionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fileSize != null) {
+            sb.append(aligned)
+                .append("\"fileSize\": \"")
+                .append(fileSize)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transcriptionUrl != null) {
+            sb.append(aligned)
+                .append("\"transcriptionUrl\": \"")
+                .append(transcriptionUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transcriptionStatus != null) {
+            sb.append(aligned)
+                .append("\"transcriptionStatus\": \"")
+                .append(transcriptionStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

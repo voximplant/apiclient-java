@@ -1,13 +1,16 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
-public class AddPushCredentialResponse {
+public class AddPushCredentialResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -20,8 +23,8 @@ public class AddPushCredentialResponse {
 
     private Long result;
 
-        public long getResult() {
-        return this.result.longValue();
+        public Long getResult() {
+        return this.result;
     }
 
     public boolean hasResult() {
@@ -30,12 +33,43 @@ public class AddPushCredentialResponse {
 
     private Long pushCredentialId;
 
-        public long getPushCredentialId() {
-        return this.pushCredentialId.longValue();
+        public Long getPushCredentialId() {
+        return this.pushCredentialId;
     }
 
     public boolean hasPushCredentialId() {
         return this.pushCredentialId != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (result != null) {
+            sb.append(aligned)
+                .append("\"result\": \"")
+                .append(result)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (pushCredentialId != null) {
+            sb.append(aligned)
+                .append("\"pushCredentialId\": \"")
+                .append(pushCredentialId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetMoneyAmountToCharge] function result.
 */
-public class GetMoneyAmountToChargeResult {
+public class GetMoneyAmountToChargeResult implements Alignable {
 
     private BigDecimal amount;
 
@@ -109,4 +112,73 @@ public class GetMoneyAmountToChargeResult {
         return this.subscriptions != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (amount != null) {
+            sb.append(aligned)
+                .append("\"amount\": \"")
+                .append(amount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minAmount != null) {
+            sb.append(aligned)
+                .append("\"minAmount\": \"")
+                .append(minAmount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (bankCardAmountUsd != null) {
+            sb.append(aligned)
+                .append("\"bankCardAmountUsd\": \"")
+                .append(bankCardAmountUsd)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minBankCardAmountUsd != null) {
+            sb.append(aligned)
+                .append("\"minBankCardAmountUsd\": \"")
+                .append(minBankCardAmountUsd)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (robokassaAmountRub != null) {
+            sb.append(aligned)
+                .append("\"robokassaAmountRub\": \"")
+                .append(robokassaAmountRub)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minRobokassaAmountRub != null) {
+            sb.append(aligned)
+                .append("\"minRobokassaAmountRub\": \"")
+                .append(minRobokassaAmountRub)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptions != null) {
+            sb.append(aligned)
+                .append("\"SubscriptionsToChargeType\": ")
+                .append(StringHelper.arrayToString(subscriptions, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

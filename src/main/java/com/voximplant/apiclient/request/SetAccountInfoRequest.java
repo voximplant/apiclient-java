@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SetAccountInfoRequest {
+public class SetAccountInfoRequest implements Alignable {
     private String newAccountEmail;
 
     @RequestField(name="new_account_email")
@@ -251,8 +254,8 @@ public class SetAccountInfoRequest {
     /**
     * Are the Voximplant notifications required?
     */
-    public boolean getAccountNotifications() {
-        return this.accountNotifications.booleanValue();
+    public Boolean getAccountNotifications() {
+        return this.accountNotifications;
     }
 
     public boolean hasAccountNotifications() {
@@ -273,8 +276,8 @@ public class SetAccountInfoRequest {
     /**
     * Set to true to receive the emails about the Voximplant plan changing.
     */
-    public boolean getTariffChangingNotifications() {
-        return this.tariffChangingNotifications.booleanValue();
+    public Boolean getTariffChangingNotifications() {
+        return this.tariffChangingNotifications;
     }
 
     public boolean hasTariffChangingNotifications() {
@@ -295,8 +298,8 @@ public class SetAccountInfoRequest {
     /**
     * Set to true to receive the emails about the Voximplant news.
     */
-    public boolean getNewsNotifications() {
-        return this.newsNotifications.booleanValue();
+    public Boolean getNewsNotifications() {
+        return this.newsNotifications;
     }
 
     public boolean hasNewsNotifications() {
@@ -317,8 +320,8 @@ public class SetAccountInfoRequest {
     /**
     * Set to true to receive the emails about a JS scenario error.
     */
-    public boolean getSendJsError() {
-        return this.sendJsError.booleanValue();
+    public Boolean getSendJsError() {
+        return this.sendJsError;
     }
 
     public boolean hasSendJsError() {
@@ -637,4 +640,179 @@ public class SetAccountInfoRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (newAccountEmail != null) {
+            sb.append(aligned)
+                .append("\"newAccountEmail\": \"")
+                .append(newAccountEmail)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newAccountPassword != null) {
+            sb.append(aligned)
+                .append("\"newAccountPassword\": \"")
+                .append(newAccountPassword)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (languageCode != null) {
+            sb.append(aligned)
+                .append("\"languageCode\": \"")
+                .append(languageCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (location != null) {
+            sb.append(aligned)
+                .append("\"location\": \"")
+                .append(location)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountFirstName != null) {
+            sb.append(aligned)
+                .append("\"accountFirstName\": \"")
+                .append(accountFirstName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountLastName != null) {
+            sb.append(aligned)
+                .append("\"accountLastName\": \"")
+                .append(accountLastName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mobilePhone != null) {
+            sb.append(aligned)
+                .append("\"mobilePhone\": \"")
+                .append(mobilePhone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minBalanceToNotify != null) {
+            sb.append(aligned)
+                .append("\"minBalanceToNotify\": \"")
+                .append(minBalanceToNotify)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountNotifications != null) {
+            sb.append(aligned)
+                .append("\"accountNotifications\": \"")
+                .append(accountNotifications)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (tariffChangingNotifications != null) {
+            sb.append(aligned)
+                .append("\"tariffChangingNotifications\": \"")
+                .append(tariffChangingNotifications)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newsNotifications != null) {
+            sb.append(aligned)
+                .append("\"newsNotifications\": \"")
+                .append(newsNotifications)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (sendJsError != null) {
+            sb.append(aligned)
+                .append("\"sendJsError\": \"")
+                .append(sendJsError)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (billingAddressName != null) {
+            sb.append(aligned)
+                .append("\"billingAddressName\": \"")
+                .append(billingAddressName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (billingAddressCountryCode != null) {
+            sb.append(aligned)
+                .append("\"billingAddressCountryCode\": \"")
+                .append(billingAddressCountryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (billingAddressAddress != null) {
+            sb.append(aligned)
+                .append("\"billingAddressAddress\": \"")
+                .append(billingAddressAddress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (billingAddressZip != null) {
+            sb.append(aligned)
+                .append("\"billingAddressZip\": \"")
+                .append(billingAddressZip)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (billingAddressPhone != null) {
+            sb.append(aligned)
+                .append("\"billingAddressPhone\": \"")
+                .append(billingAddressPhone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountCustomData != null) {
+            sb.append(aligned)
+                .append("\"accountCustomData\": \"")
+                .append(accountCustomData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callbackUrl != null) {
+            sb.append(aligned)
+                .append("\"callbackUrl\": \"")
+                .append(callbackUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callbackSalt != null) {
+            sb.append(aligned)
+                .append("\"callbackSalt\": \"")
+                .append(callbackSalt)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

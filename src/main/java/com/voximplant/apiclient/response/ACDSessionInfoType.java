@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetACDHistory] function result item.
 */
-public class ACDSessionInfoType {
+public class ACDSessionInfoType implements Alignable {
 
     private Long acdSessionHistoryId;
 
     /**
     * The ACD session history ID.
     */
-    public long getAcdSessionHistoryId() {
-        return this.acdSessionHistoryId.longValue();
+    public Long getAcdSessionHistoryId() {
+        return this.acdSessionHistoryId;
     }
 
     public boolean hasAcdSessionHistoryId() {
@@ -45,8 +48,8 @@ public class ACDSessionInfoType {
     /**
     * The account ID.
     */
-    public long getAccountId() {
-        return this.accountId.longValue();
+    public Long getAccountId() {
+        return this.accountId;
     }
 
     public boolean hasAccountId() {
@@ -72,8 +75,8 @@ public class ACDSessionInfoType {
     /**
     * The request priority.
     */
-    public long getPriority() {
-        return this.priority.longValue();
+    public Long getPriority() {
+        return this.priority;
     }
 
     public boolean hasPriority() {
@@ -85,8 +88,8 @@ public class ACDSessionInfoType {
     /**
     * The ACD queue ID.
     */
-    public long getAcdQueueId() {
-        return this.acdQueueId.longValue();
+    public Long getAcdQueueId() {
+        return this.acdQueueId;
     }
 
     public boolean hasAcdQueueId() {
@@ -98,8 +101,8 @@ public class ACDSessionInfoType {
     /**
     * The user ID.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -111,8 +114,8 @@ public class ACDSessionInfoType {
     /**
     * The waiting duration in seconds.
     */
-    public long getWaitingDuration() {
-        return this.waitingDuration.longValue();
+    public Long getWaitingDuration() {
+        return this.waitingDuration;
     }
 
     public boolean hasWaitingDuration() {
@@ -124,8 +127,8 @@ public class ACDSessionInfoType {
     /**
     * The conversation duration in seconds.
     */
-    public long getInServiceDuration() {
-        return this.inServiceDuration.longValue();
+    public Long getInServiceDuration() {
+        return this.inServiceDuration;
     }
 
     public boolean hasInServiceDuration() {
@@ -137,8 +140,8 @@ public class ACDSessionInfoType {
     /**
     * The after service duration in seconds.
     */
-    public long getAfterServiceDuration() {
-        return this.afterServiceDuration.longValue();
+    public Long getAfterServiceDuration() {
+        return this.afterServiceDuration;
     }
 
     public boolean hasAfterServiceDuration() {
@@ -158,4 +161,105 @@ public class ACDSessionInfoType {
         return this.events != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (acdSessionHistoryId != null) {
+            sb.append(aligned)
+                .append("\"acdSessionHistoryId\": \"")
+                .append(acdSessionHistoryId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdRequestId != null) {
+            sb.append(aligned)
+                .append("\"acdRequestId\": \"")
+                .append(acdRequestId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountId != null) {
+            sb.append(aligned)
+                .append("\"accountId\": \"")
+                .append(accountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (beginTime != null) {
+            sb.append(aligned)
+                .append("\"beginTime\": \"")
+                .append(beginTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (priority != null) {
+            sb.append(aligned)
+                .append("\"priority\": \"")
+                .append(priority)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueueId != null) {
+            sb.append(aligned)
+                .append("\"acdQueueId\": \"")
+                .append(acdQueueId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (waitingDuration != null) {
+            sb.append(aligned)
+                .append("\"waitingDuration\": \"")
+                .append(waitingDuration)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (inServiceDuration != null) {
+            sb.append(aligned)
+                .append("\"inServiceDuration\": \"")
+                .append(inServiceDuration)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (afterServiceDuration != null) {
+            sb.append(aligned)
+                .append("\"afterServiceDuration\": \"")
+                .append(afterServiceDuration)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (events != null) {
+            sb.append(aligned)
+                .append("\"ACDSessionEventInfoType\": ")
+                .append(StringHelper.arrayToString(events, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

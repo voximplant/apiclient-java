@@ -1,13 +1,16 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
-public class GetTransactionHistoryResponse {
+public class GetTransactionHistoryResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -33,8 +36,8 @@ public class GetTransactionHistoryResponse {
     /**
     * The total found transaction count.
     */
-    public long getTotalCount() {
-        return this.totalCount.longValue();
+    public Long getTotalCount() {
+        return this.totalCount;
     }
 
     public boolean hasTotalCount() {
@@ -59,8 +62,8 @@ public class GetTransactionHistoryResponse {
     /**
     * The returned transaction count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -72,12 +75,65 @@ public class GetTransactionHistoryResponse {
     /**
     * The history report ID (async mode).
     */
-    public long getHistoryReportId() {
-        return this.historyReportId.longValue();
+    public Long getHistoryReportId() {
+        return this.historyReportId;
     }
 
     public boolean hasHistoryReportId() {
         return this.historyReportId != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (result != null) {
+            sb.append(aligned)
+                .append("\"TransactionInfoType\": ")
+                .append(StringHelper.arrayToString(result, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (totalCount != null) {
+            sb.append(aligned)
+                .append("\"totalCount\": \"")
+                .append(totalCount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (timezone != null) {
+            sb.append(aligned)
+                .append("\"timezone\": \"")
+                .append(timezone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (historyReportId != null) {
+            sb.append(aligned)
+                .append("\"historyReportId\": \"")
+                .append(historyReportId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

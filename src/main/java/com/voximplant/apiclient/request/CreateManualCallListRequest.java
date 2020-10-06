@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class CreateManualCallListRequest {
+public class CreateManualCallListRequest implements Alignable {
     private Long ruleId;
 
     @RequestField(name="rule_id")
     /**
     * The rule ID.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -40,8 +43,8 @@ public class CreateManualCallListRequest {
     * Call list priority. The value is in the range of [0 ... 2^31] where
     * zero is the highest priority.
     */
-    public long getPriority() {
-        return this.priority.longValue();
+    public Long getPriority() {
+        return this.priority;
     }
 
     public boolean hasPriority() {
@@ -63,8 +66,8 @@ public class CreateManualCallListRequest {
     /**
     * Number simultaneously processed tasks.
     */
-    public long getMaxSimultaneous() {
-        return this.maxSimultaneous.longValue();
+    public Long getMaxSimultaneous() {
+        return this.maxSimultaneous;
     }
 
     public boolean hasMaxSimultaneous() {
@@ -85,8 +88,8 @@ public class CreateManualCallListRequest {
     /**
     * Number of attempts. Should be equal or greater than <b>1</b>
     */
-    public long getNumAttempts() {
-        return this.numAttempts.longValue();
+    public Long getNumAttempts() {
+        return this.numAttempts;
     }
 
     public boolean hasNumAttempts() {
@@ -155,8 +158,8 @@ public class CreateManualCallListRequest {
     /**
     * Interval between call attempts in seconds. The default is 0.
     */
-    public long getIntervalSeconds() {
-        return this.intervalSeconds.longValue();
+    public Long getIntervalSeconds() {
+        return this.intervalSeconds;
     }
 
     public boolean hasIntervalSeconds() {
@@ -261,4 +264,107 @@ public class CreateManualCallListRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (priority != null) {
+            sb.append(aligned)
+                .append("\"priority\": \"")
+                .append(priority)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (maxSimultaneous != null) {
+            sb.append(aligned)
+                .append("\"maxSimultaneous\": \"")
+                .append(maxSimultaneous)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (numAttempts != null) {
+            sb.append(aligned)
+                .append("\"numAttempts\": \"")
+                .append(numAttempts)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (name != null) {
+            sb.append(aligned)
+                .append("\"name\": \"")
+                .append(name)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fileContent != null) {
+            sb.append(aligned)
+                .append("\"fileContent\": \"")
+                .append(fileContent)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (intervalSeconds != null) {
+            sb.append(aligned)
+                .append("\"intervalSeconds\": \"")
+                .append(intervalSeconds)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (encoding != null) {
+            sb.append(aligned)
+                .append("\"encoding\": \"")
+                .append(encoding)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (delimiter != null) {
+            sb.append(aligned)
+                .append("\"delimiter\": \"")
+                .append(delimiter)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (escape != null) {
+            sb.append(aligned)
+                .append("\"escape\": \"")
+                .append(escape)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (referenceIp != null) {
+            sb.append(aligned)
+                .append("\"referenceIp\": \"")
+                .append(referenceIp)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

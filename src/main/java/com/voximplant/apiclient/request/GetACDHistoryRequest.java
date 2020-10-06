@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetACDHistoryRequest {
+public class GetACDHistoryRequest implements Alignable {
     @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
     private Date fromDate;
 
@@ -153,8 +156,8 @@ public class GetACDHistoryRequest {
     /**
     * Set true to get the calls terminated by the operator.
     */
-    public boolean getOperatorHangup() {
-        return this.operatorHangup.booleanValue();
+    public Boolean getOperatorHangup() {
+        return this.operatorHangup;
     }
 
     public boolean hasOperatorHangup() {
@@ -175,8 +178,8 @@ public class GetACDHistoryRequest {
     /**
     * The unserviced calls by the operator.
     */
-    public boolean getUnserviced() {
-        return this.unserviced.booleanValue();
+    public Boolean getUnserviced() {
+        return this.unserviced;
     }
 
     public boolean hasUnserviced() {
@@ -197,8 +200,8 @@ public class GetACDHistoryRequest {
     /**
     * The min waiting time filter.
     */
-    public long getMinWaitingTime() {
-        return this.minWaitingTime.longValue();
+    public Long getMinWaitingTime() {
+        return this.minWaitingTime;
     }
 
     public boolean hasMinWaitingTime() {
@@ -220,8 +223,8 @@ public class GetACDHistoryRequest {
     * The rejected calls by the 'max_queue_size', 'max_waiting_time'
     * threshold.
     */
-    public boolean getRejected() {
-        return this.rejected.booleanValue();
+    public Boolean getRejected() {
+        return this.rejected;
     }
 
     public boolean hasRejected() {
@@ -243,8 +246,8 @@ public class GetACDHistoryRequest {
     /**
     * Set true to get the bound events.
     */
-    public boolean getWithEvents() {
-        return this.withEvents.booleanValue();
+    public Boolean getWithEvents() {
+        return this.withEvents;
     }
 
     public boolean hasWithEvents() {
@@ -265,8 +268,8 @@ public class GetACDHistoryRequest {
     /**
     * Set false to get a CSV file without the column names if the output=csv
     */
-    public boolean getWithHeader() {
-        return this.withHeader.booleanValue();
+    public Boolean getWithHeader() {
+        return this.withHeader;
     }
 
     public boolean hasWithHeader() {
@@ -287,8 +290,8 @@ public class GetACDHistoryRequest {
     /**
     * Set true to get records in the descent order.
     */
-    public boolean getDescOrder() {
-        return this.descOrder.booleanValue();
+    public Boolean getDescOrder() {
+        return this.descOrder;
     }
 
     public boolean hasDescOrder() {
@@ -309,8 +312,8 @@ public class GetACDHistoryRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -331,8 +334,8 @@ public class GetACDHistoryRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -369,4 +372,147 @@ public class GetACDHistoryRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (fromDate != null) {
+            sb.append(aligned)
+                .append("\"fromDate\": \"")
+                .append(fromDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (toDate != null) {
+            sb.append(aligned)
+                .append("\"toDate\": \"")
+                .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdSessionHistoryId != null) {
+            sb.append(aligned)
+                .append("\"acdSessionHistoryId\": \"")
+                .append(acdSessionHistoryId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdRequestId != null) {
+            sb.append(aligned)
+                .append("\"acdRequestId\": \"")
+                .append(acdRequestId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueueId != null) {
+            sb.append(aligned)
+                .append("\"acdQueueId\": \"")
+                .append(acdQueueId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (operatorHangup != null) {
+            sb.append(aligned)
+                .append("\"operatorHangup\": \"")
+                .append(operatorHangup)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (unserviced != null) {
+            sb.append(aligned)
+                .append("\"unserviced\": \"")
+                .append(unserviced)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minWaitingTime != null) {
+            sb.append(aligned)
+                .append("\"minWaitingTime\": \"")
+                .append(minWaitingTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (rejected != null) {
+            sb.append(aligned)
+                .append("\"rejected\": \"")
+                .append(rejected)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withEvents != null) {
+            sb.append(aligned)
+                .append("\"withEvents\": \"")
+                .append(withEvents)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withHeader != null) {
+            sb.append(aligned)
+                .append("\"withHeader\": \"")
+                .append(withHeader)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (descOrder != null) {
+            sb.append(aligned)
+                .append("\"descOrder\": \"")
+                .append(descOrder)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (output != null) {
+            sb.append(aligned)
+                .append("\"output\": \"")
+                .append(output)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

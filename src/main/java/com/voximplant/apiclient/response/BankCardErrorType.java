@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The bank card error info.
 */
-public class BankCardErrorType {
+public class BankCardErrorType implements Alignable {
 
     @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
     private Date date;
@@ -65,4 +68,51 @@ public class BankCardErrorType {
         return this.currency != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (date != null) {
+            sb.append(aligned)
+                .append("\"date\": \"")
+                .append(date)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (msg != null) {
+            sb.append(aligned)
+                .append("\"msg\": \"")
+                .append(msg)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (amount != null) {
+            sb.append(aligned)
+                .append("\"amount\": \"")
+                .append(amount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (currency != null) {
+            sb.append(aligned)
+                .append("\"currency\": \"")
+                .append(currency)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

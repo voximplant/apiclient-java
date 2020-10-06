@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetTransactionHistoryRequest {
+public class GetTransactionHistoryRequest implements Alignable {
     @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
     private Date fromDate;
 
@@ -213,8 +216,8 @@ public class GetTransactionHistoryRequest {
     /**
     * Set true to get the children account transactions only.
     */
-    public boolean getChildrenTransactionsOnly() {
-        return this.childrenTransactionsOnly.booleanValue();
+    public Boolean getChildrenTransactionsOnly() {
+        return this.childrenTransactionsOnly;
     }
 
     public boolean hasChildrenTransactionsOnly() {
@@ -235,8 +238,8 @@ public class GetTransactionHistoryRequest {
     /**
     * Set true to get the users' transactions only.
     */
-    public boolean getUsersTransactionsOnly() {
-        return this.usersTransactionsOnly.booleanValue();
+    public Boolean getUsersTransactionsOnly() {
+        return this.usersTransactionsOnly;
     }
 
     public boolean hasUsersTransactionsOnly() {
@@ -257,8 +260,8 @@ public class GetTransactionHistoryRequest {
     /**
     * Set true to get records in the descent order.
     */
-    public boolean getDescOrder() {
-        return this.descOrder.booleanValue();
+    public Boolean getDescOrder() {
+        return this.descOrder;
     }
 
     public boolean hasDescOrder() {
@@ -279,8 +282,8 @@ public class GetTransactionHistoryRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -301,8 +304,8 @@ public class GetTransactionHistoryRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -347,8 +350,8 @@ public class GetTransactionHistoryRequest {
     * only). See the [GetHistoryReports], [DownloadHistoryReport]
     * functions.
     */
-    public boolean getIsAsync() {
-        return this.isAsync.booleanValue();
+    public Boolean getIsAsync() {
+        return this.isAsync;
     }
 
     public boolean hasIsAsync() {
@@ -365,4 +368,139 @@ public class GetTransactionHistoryRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (fromDate != null) {
+            sb.append(aligned)
+                .append("\"fromDate\": \"")
+                .append(fromDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (toDate != null) {
+            sb.append(aligned)
+                .append("\"toDate\": \"")
+                .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (timezone != null) {
+            sb.append(aligned)
+                .append("\"timezone\": \"")
+                .append(timezone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transactionId != null) {
+            sb.append(aligned)
+                .append("\"transactionId\": \"")
+                .append(transactionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (paymentReference != null) {
+            sb.append(aligned)
+                .append("\"paymentReference\": \"")
+                .append(paymentReference)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transactionType != null) {
+            sb.append(aligned)
+                .append("\"transactionType\": \"")
+                .append(transactionType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childAccountId != null) {
+            sb.append(aligned)
+                .append("\"childAccountId\": \"")
+                .append(childAccountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childrenTransactionsOnly != null) {
+            sb.append(aligned)
+                .append("\"childrenTransactionsOnly\": \"")
+                .append(childrenTransactionsOnly)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (usersTransactionsOnly != null) {
+            sb.append(aligned)
+                .append("\"usersTransactionsOnly\": \"")
+                .append(usersTransactionsOnly)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (descOrder != null) {
+            sb.append(aligned)
+                .append("\"descOrder\": \"")
+                .append(descOrder)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (output != null) {
+            sb.append(aligned)
+                .append("\"output\": \"")
+                .append(output)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isAsync != null) {
+            sb.append(aligned)
+                .append("\"isAsync\": \"")
+                .append(isAsync)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

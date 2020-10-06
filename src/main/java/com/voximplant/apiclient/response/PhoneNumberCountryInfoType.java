@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetPhoneNumberCategories] function result.
 */
-public class PhoneNumberCountryInfoType {
+public class PhoneNumberCountryInfoType implements Alignable {
 
     private String countryCode;
 
@@ -43,8 +46,8 @@ public class PhoneNumberCountryInfoType {
     /**
     * True if can list phone numbers.
     */
-    public boolean getCanListPhoneNumbers() {
-        return this.canListPhoneNumbers.booleanValue();
+    public Boolean getCanListPhoneNumbers() {
+        return this.canListPhoneNumbers;
     }
 
     public boolean hasCanListPhoneNumbers() {
@@ -64,4 +67,49 @@ public class PhoneNumberCountryInfoType {
         return this.phoneCategories != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (countryCode != null) {
+            sb.append(aligned)
+                .append("\"countryCode\": \"")
+                .append(countryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phonePrefix != null) {
+            sb.append(aligned)
+                .append("\"phonePrefix\": \"")
+                .append(phonePrefix)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (canListPhoneNumbers != null) {
+            sb.append(aligned)
+                .append("\"canListPhoneNumbers\": \"")
+                .append(canListPhoneNumbers)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCategories != null) {
+            sb.append(aligned)
+                .append("\"PhoneNumberCountryCategoryInfoType\": ")
+                .append(StringHelper.arrayToString(phoneCategories, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,25 +1,28 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [AddChildAccountSubscription] and [GetChildAccountSubscriptions]
 * function result.
 */
-public class ChildAccountSubscriptionType {
+public class ChildAccountSubscriptionType implements Alignable {
 
     private Long subscriptionId;
 
     /**
     * The subscription ID.
     */
-    public long getSubscriptionId() {
-        return this.subscriptionId.longValue();
+    public Long getSubscriptionId() {
+        return this.subscriptionId;
     }
 
     public boolean hasSubscriptionId() {
@@ -44,8 +47,8 @@ public class ChildAccountSubscriptionType {
     /**
     * The subscription template ID.
     */
-    public long getSubscriptionTemplateId() {
-        return this.subscriptionTemplateId.longValue();
+    public Long getSubscriptionTemplateId() {
+        return this.subscriptionTemplateId;
     }
 
     public boolean hasSubscriptionTemplateId() {
@@ -57,8 +60,8 @@ public class ChildAccountSubscriptionType {
     /**
     * Is the subscription prolonged automatically?
     */
-    public boolean getAutoCharge() {
-        return this.autoCharge.booleanValue();
+    public Boolean getAutoCharge() {
+        return this.autoCharge;
     }
 
     public boolean hasAutoCharge() {
@@ -97,12 +100,83 @@ public class ChildAccountSubscriptionType {
     /**
     * Is the subscription active?
     */
-    public boolean getActive() {
-        return this.active.booleanValue();
+    public Boolean getActive() {
+        return this.active;
     }
 
     public boolean hasActive() {
         return this.active != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (subscriptionId != null) {
+            sb.append(aligned)
+                .append("\"subscriptionId\": \"")
+                .append(subscriptionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionName != null) {
+            sb.append(aligned)
+                .append("\"subscriptionName\": \"")
+                .append(subscriptionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionTemplateId != null) {
+            sb.append(aligned)
+                .append("\"subscriptionTemplateId\": \"")
+                .append(subscriptionTemplateId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (autoCharge != null) {
+            sb.append(aligned)
+                .append("\"autoCharge\": \"")
+                .append(autoCharge)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (nextRenewal != null) {
+            sb.append(aligned)
+                .append("\"nextRenewal\": \"")
+                .append(nextRenewal)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (periodicPrice != null) {
+            sb.append(aligned)
+                .append("\"periodicPrice\": \"")
+                .append(periodicPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (active != null) {
+            sb.append(aligned)
+                .append("\"active\": \"")
+                .append(active)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

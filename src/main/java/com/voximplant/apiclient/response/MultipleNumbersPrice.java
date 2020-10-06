@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * Info about multiple numbers subscription for the child accounts.
 */
-public class MultipleNumbersPrice {
+public class MultipleNumbersPrice implements Alignable {
 
     private Long count;
 
@@ -18,8 +21,8 @@ public class MultipleNumbersPrice {
     * The number of subscriptions which must be purchased simultaneously to
     * enable a multiple numbers subscription.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -54,4 +57,43 @@ public class MultipleNumbersPrice {
         return this.installationPrice != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (price != null) {
+            sb.append(aligned)
+                .append("\"price\": \"")
+                .append(price)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (installationPrice != null) {
+            sb.append(aligned)
+                .append("\"installationPrice\": \"")
+                .append(installationPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

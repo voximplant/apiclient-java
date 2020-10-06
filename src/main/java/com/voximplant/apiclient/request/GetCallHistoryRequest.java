@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetCallHistoryRequest {
+public class GetCallHistoryRequest implements Alignable {
     @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
     private Date fromDate;
 
@@ -121,8 +124,8 @@ public class GetCallHistoryRequest {
     /**
     * The application ID.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -277,8 +280,8 @@ public class GetCallHistoryRequest {
     /**
     * Set true to get the bound calls.
     */
-    public boolean getWithCalls() {
-        return this.withCalls.booleanValue();
+    public Boolean getWithCalls() {
+        return this.withCalls;
     }
 
     public boolean hasWithCalls() {
@@ -299,8 +302,8 @@ public class GetCallHistoryRequest {
     /**
     * Set true to get the bound records.
     */
-    public boolean getWithRecords() {
-        return this.withRecords.booleanValue();
+    public Boolean getWithRecords() {
+        return this.withRecords;
     }
 
     public boolean hasWithRecords() {
@@ -321,8 +324,8 @@ public class GetCallHistoryRequest {
     /**
     * Set true to get other resources usage (see [ResourceUsageType]).
     */
-    public boolean getWithOtherResources() {
-        return this.withOtherResources.booleanValue();
+    public Boolean getWithOtherResources() {
+        return this.withOtherResources;
     }
 
     public boolean hasWithOtherResources() {
@@ -367,8 +370,8 @@ public class GetCallHistoryRequest {
     /**
     * Set true to get the children account calls only.
     */
-    public boolean getChildrenCallsOnly() {
-        return this.childrenCallsOnly.booleanValue();
+    public Boolean getChildrenCallsOnly() {
+        return this.childrenCallsOnly;
     }
 
     public boolean hasChildrenCallsOnly() {
@@ -389,8 +392,8 @@ public class GetCallHistoryRequest {
     /**
     * Set false to get a CSV file without the column names if the output=csv
     */
-    public boolean getWithHeader() {
-        return this.withHeader.booleanValue();
+    public Boolean getWithHeader() {
+        return this.withHeader;
     }
 
     public boolean hasWithHeader() {
@@ -411,8 +414,8 @@ public class GetCallHistoryRequest {
     /**
     * Set true to get records in the descent order.
     */
-    public boolean getDescOrder() {
-        return this.descOrder.booleanValue();
+    public Boolean getDescOrder() {
+        return this.descOrder;
     }
 
     public boolean hasDescOrder() {
@@ -433,8 +436,8 @@ public class GetCallHistoryRequest {
     /**
     * Set false to omit the 'total_count' and increase performance.
     */
-    public boolean getWithTotalCount() {
-        return this.withTotalCount.booleanValue();
+    public Boolean getWithTotalCount() {
+        return this.withTotalCount;
     }
 
     public boolean hasWithTotalCount() {
@@ -455,8 +458,8 @@ public class GetCallHistoryRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -477,8 +480,8 @@ public class GetCallHistoryRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -523,8 +526,8 @@ public class GetCallHistoryRequest {
     * only). If it's true, the request is available via [GetHistoryReports]
     * and [DownloadHistoryReport] methods.
     */
-    public boolean getIsAsync() {
-        return this.isAsync.booleanValue();
+    public Boolean getIsAsync() {
+        return this.isAsync;
     }
 
     public boolean hasIsAsync() {
@@ -541,4 +544,203 @@ public class GetCallHistoryRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (fromDate != null) {
+            sb.append(aligned)
+                .append("\"fromDate\": \"")
+                .append(fromDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (toDate != null) {
+            sb.append(aligned)
+                .append("\"toDate\": \"")
+                .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (timezone != null) {
+            sb.append(aligned)
+                .append("\"timezone\": \"")
+                .append(timezone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callSessionHistoryId != null) {
+            sb.append(aligned)
+                .append("\"callSessionHistoryId\": \"")
+                .append(callSessionHistoryId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (remoteNumber != null) {
+            sb.append(aligned)
+                .append("\"remoteNumber\": \"")
+                .append(remoteNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localNumber != null) {
+            sb.append(aligned)
+                .append("\"localNumber\": \"")
+                .append(localNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callSessionHistoryCustomData != null) {
+            sb.append(aligned)
+                .append("\"callSessionHistoryCustomData\": \"")
+                .append(callSessionHistoryCustomData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withCalls != null) {
+            sb.append(aligned)
+                .append("\"withCalls\": \"")
+                .append(withCalls)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withRecords != null) {
+            sb.append(aligned)
+                .append("\"withRecords\": \"")
+                .append(withRecords)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withOtherResources != null) {
+            sb.append(aligned)
+                .append("\"withOtherResources\": \"")
+                .append(withOtherResources)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childAccountId != null) {
+            sb.append(aligned)
+                .append("\"childAccountId\": \"")
+                .append(childAccountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childrenCallsOnly != null) {
+            sb.append(aligned)
+                .append("\"childrenCallsOnly\": \"")
+                .append(childrenCallsOnly)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withHeader != null) {
+            sb.append(aligned)
+                .append("\"withHeader\": \"")
+                .append(withHeader)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (descOrder != null) {
+            sb.append(aligned)
+                .append("\"descOrder\": \"")
+                .append(descOrder)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withTotalCount != null) {
+            sb.append(aligned)
+                .append("\"withTotalCount\": \"")
+                .append(withTotalCount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (output != null) {
+            sb.append(aligned)
+                .append("\"output\": \"")
+                .append(output)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isAsync != null) {
+            sb.append(aligned)
+                .append("\"isAsync\": \"")
+                .append(isAsync)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

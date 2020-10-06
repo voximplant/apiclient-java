@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The resource usage info.
 */
-public class ResourceUsageType {
+public class ResourceUsageType implements Alignable {
 
     private Long resourceUsageId;
 
     /**
     * The resource usage ID.
     */
-    public long getResourceUsageId() {
-        return this.resourceUsageId.longValue();
+    public Long getResourceUsageId() {
+        return this.resourceUsageId;
     }
 
     public boolean hasResourceUsageId() {
@@ -86,8 +89,8 @@ public class ResourceUsageType {
     /**
     * The transaction ID.
     */
-    public long getTransactionId() {
-        return this.transactionId.longValue();
+    public Long getTransactionId() {
+        return this.transactionId;
     }
 
     public boolean hasTransactionId() {
@@ -99,8 +102,8 @@ public class ResourceUsageType {
     /**
     * The resource quantity.
     */
-    public long getResourceQuantity() {
-        return this.resourceQuantity.longValue();
+    public Long getResourceQuantity() {
+        return this.resourceQuantity;
     }
 
     public boolean hasResourceQuantity() {
@@ -125,12 +128,99 @@ public class ResourceUsageType {
     /**
     * The reference to call.
     */
-    public long getRefCallId() {
-        return this.refCallId.longValue();
+    public Long getRefCallId() {
+        return this.refCallId;
     }
 
     public boolean hasRefCallId() {
         return this.refCallId != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (resourceUsageId != null) {
+            sb.append(aligned)
+                .append("\"resourceUsageId\": \"")
+                .append(resourceUsageId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (resourceType != null) {
+            sb.append(aligned)
+                .append("\"resourceType\": \"")
+                .append(resourceType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cost != null) {
+            sb.append(aligned)
+                .append("\"cost\": \"")
+                .append(cost)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (description != null) {
+            sb.append(aligned)
+                .append("\"description\": \"")
+                .append(description)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (usedAt != null) {
+            sb.append(aligned)
+                .append("\"usedAt\": \"")
+                .append(usedAt)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transactionId != null) {
+            sb.append(aligned)
+                .append("\"transactionId\": \"")
+                .append(transactionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (resourceQuantity != null) {
+            sb.append(aligned)
+                .append("\"resourceQuantity\": \"")
+                .append(resourceQuantity)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (unit != null) {
+            sb.append(aligned)
+                .append("\"unit\": \"")
+                .append(unit)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (refCallId != null) {
+            sb.append(aligned)
+                .append("\"refCallId\": \"")
+                .append(refCallId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

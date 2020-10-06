@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * Information about call list's configurations.
 */
-public class CallListType {
+public class CallListType implements Alignable {
 
     private Long listId;
 
     /**
     * The list ID.
     */
-    public long getListId() {
-        return this.listId.longValue();
+    public Long getListId() {
+        return this.listId;
     }
 
     public boolean hasListId() {
@@ -43,8 +46,8 @@ public class CallListType {
     /**
     * The priority of the call list.
     */
-    public long getPriority() {
-        return this.priority.longValue();
+    public Long getPriority() {
+        return this.priority;
     }
 
     public boolean hasPriority() {
@@ -56,8 +59,8 @@ public class CallListType {
     /**
     * The rule id.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -69,8 +72,8 @@ public class CallListType {
     /**
     * The maximum number of simultaneous tasks.
     */
-    public long getMaxSimultaneous() {
-        return this.maxSimultaneous.longValue();
+    public Long getMaxSimultaneous() {
+        return this.maxSimultaneous;
     }
 
     public boolean hasMaxSimultaneous() {
@@ -82,8 +85,8 @@ public class CallListType {
     /**
     * The number of task attempts run, which failed to call.
     */
-    public long getNumAttempts() {
-        return this.numAttempts.longValue();
+    public Long getNumAttempts() {
+        return this.numAttempts;
     }
 
     public boolean hasNumAttempts() {
@@ -123,8 +126,8 @@ public class CallListType {
     /**
     * The interval between attempts in seconds.
     */
-    public long getIntervalSeconds() {
-        return this.intervalSeconds.longValue();
+    public Long getIntervalSeconds() {
+        return this.intervalSeconds;
     }
 
     public boolean hasIntervalSeconds() {
@@ -145,4 +148,99 @@ public class CallListType {
         return this.status != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (listId != null) {
+            sb.append(aligned)
+                .append("\"listId\": \"")
+                .append(listId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (listName != null) {
+            sb.append(aligned)
+                .append("\"listName\": \"")
+                .append(listName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (priority != null) {
+            sb.append(aligned)
+                .append("\"priority\": \"")
+                .append(priority)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (maxSimultaneous != null) {
+            sb.append(aligned)
+                .append("\"maxSimultaneous\": \"")
+                .append(maxSimultaneous)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (numAttempts != null) {
+            sb.append(aligned)
+                .append("\"numAttempts\": \"")
+                .append(numAttempts)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (dtSubmit != null) {
+            sb.append(aligned)
+                .append("\"dtSubmit\": \"")
+                .append(dtSubmit)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (dtComplete != null) {
+            sb.append(aligned)
+                .append("\"dtComplete\": \"")
+                .append(dtComplete)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (intervalSeconds != null) {
+            sb.append(aligned)
+                .append("\"intervalSeconds\": \"")
+                .append(intervalSeconds)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (status != null) {
+            sb.append(aligned)
+                .append("\"status\": \"")
+                .append(status)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

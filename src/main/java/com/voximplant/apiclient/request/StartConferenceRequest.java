@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class StartConferenceRequest {
+public class StartConferenceRequest implements Alignable {
     private String conferenceName;
 
     @RequestField(name="conference_name")
@@ -39,8 +42,8 @@ public class StartConferenceRequest {
     /**
     * The rule ID.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -61,8 +64,8 @@ public class StartConferenceRequest {
     /**
     * The user ID. Run the scripts from the user if set.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -107,8 +110,8 @@ public class StartConferenceRequest {
     /**
     * The application ID.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -199,4 +202,83 @@ public class StartConferenceRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (conferenceName != null) {
+            sb.append(aligned)
+                .append("\"conferenceName\": \"")
+                .append(conferenceName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (scriptCustomData != null) {
+            sb.append(aligned)
+                .append("\"scriptCustomData\": \"")
+                .append(scriptCustomData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (referenceIp != null) {
+            sb.append(aligned)
+                .append("\"referenceIp\": \"")
+                .append(referenceIp)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

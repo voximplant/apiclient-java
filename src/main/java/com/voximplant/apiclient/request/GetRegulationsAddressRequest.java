@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetRegulationsAddressRequest {
+public class GetRegulationsAddressRequest implements Alignable {
     private String countryCode;
 
     @RequestField(name="country_code")
@@ -83,8 +86,8 @@ public class GetRegulationsAddressRequest {
     /**
     * The regulation address ID.
     */
-    public long getRegulationAddressId() {
-        return this.regulationAddressId.longValue();
+    public Long getRegulationAddressId() {
+        return this.regulationAddressId;
     }
 
     public boolean hasRegulationAddressId() {
@@ -105,8 +108,8 @@ public class GetRegulationsAddressRequest {
     /**
     * The regulation address type ID.
     */
-    public long getVerificationId() {
-        return this.verificationId.longValue();
+    public Long getVerificationId() {
+        return this.verificationId;
     }
 
     public boolean hasVerificationId() {
@@ -127,8 +130,8 @@ public class GetRegulationsAddressRequest {
     /**
     * Show only verified regulation address.
     */
-    public boolean getVerified() {
-        return this.verified.booleanValue();
+    public Boolean getVerified() {
+        return this.verified;
     }
 
     public boolean hasVerified() {
@@ -149,8 +152,8 @@ public class GetRegulationsAddressRequest {
     /**
     * Show only in progress regulation address.
     */
-    public boolean getInProgress() {
-        return this.inProgress.booleanValue();
+    public Boolean getInProgress() {
+        return this.inProgress;
     }
 
     public boolean hasInProgress() {
@@ -171,8 +174,8 @@ public class GetRegulationsAddressRequest {
     /**
     * Return with phone_region_code parameters
     */
-    public boolean getWithRegionCode() {
-        return this.withRegionCode.booleanValue();
+    public Boolean getWithRegionCode() {
+        return this.withRegionCode;
     }
 
     public boolean hasWithRegionCode() {
@@ -187,4 +190,83 @@ public class GetRegulationsAddressRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (countryCode != null) {
+            sb.append(aligned)
+                .append("\"countryCode\": \"")
+                .append(countryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCategoryName != null) {
+            sb.append(aligned)
+                .append("\"phoneCategoryName\": \"")
+                .append(phoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionCode != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionCode\": \"")
+                .append(phoneRegionCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (regulationAddressId != null) {
+            sb.append(aligned)
+                .append("\"regulationAddressId\": \"")
+                .append(regulationAddressId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verificationId != null) {
+            sb.append(aligned)
+                .append("\"verificationId\": \"")
+                .append(verificationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verified != null) {
+            sb.append(aligned)
+                .append("\"verified\": \"")
+                .append(verified)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (inProgress != null) {
+            sb.append(aligned)
+                .append("\"inProgress\": \"")
+                .append(inProgress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withRegionCode != null) {
+            sb.append(aligned)
+                .append("\"withRegionCode\": \"")
+                .append(withRegionCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

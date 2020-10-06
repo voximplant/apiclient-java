@@ -1,13 +1,16 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
-public class StartScenariosResponse {
+public class StartScenariosResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -23,8 +26,8 @@ public class StartScenariosResponse {
     /**
     * 1
     */
-    public long getResult() {
-        return this.result.longValue();
+    public Long getResult() {
+        return this.result;
     }
 
     public boolean hasResult() {
@@ -80,4 +83,51 @@ public class StartScenariosResponse {
         return this.mediaSessionCheckUrl != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (result != null) {
+            sb.append(aligned)
+                .append("\"result\": \"")
+                .append(result)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mediaSessionAccessUrl != null) {
+            sb.append(aligned)
+                .append("\"mediaSessionAccessUrl\": \"")
+                .append(mediaSessionAccessUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mediaSessionAccessSecureUrl != null) {
+            sb.append(aligned)
+                .append("\"mediaSessionAccessSecureUrl\": \"")
+                .append(mediaSessionAccessSecureUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mediaSessionCheckUrl != null) {
+            sb.append(aligned)
+                .append("\"mediaSessionCheckUrl\": \"")
+                .append(mediaSessionCheckUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

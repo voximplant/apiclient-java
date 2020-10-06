@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The bank card info.
 */
-public class BankCardType {
+public class BankCardType implements Alignable {
 
     private String bankCardProvider;
 
@@ -30,8 +33,8 @@ public class BankCardType {
     /**
     * The auto_charge flag.
     */
-    public boolean getAutoCharge() {
-        return this.autoCharge.booleanValue();
+    public Boolean getAutoCharge() {
+        return this.autoCharge;
     }
 
     public boolean hasAutoCharge() {
@@ -69,8 +72,8 @@ public class BankCardType {
     /**
     * The card expiration year.
     */
-    public long getExpirationYear() {
-        return this.expirationYear.longValue();
+    public Long getExpirationYear() {
+        return this.expirationYear;
     }
 
     public boolean hasExpirationYear() {
@@ -82,8 +85,8 @@ public class BankCardType {
     /**
     * The card expiration month.
     */
-    public long getExpirationMonth() {
-        return this.expirationMonth.longValue();
+    public Long getExpirationMonth() {
+        return this.expirationMonth;
     }
 
     public boolean hasExpirationMonth() {
@@ -95,8 +98,8 @@ public class BankCardType {
     /**
     * The last card number digits.
     */
-    public long getAcct() {
-        return this.acct.longValue();
+    public Long getAcct() {
+        return this.acct;
     }
 
     public boolean hasAcct() {
@@ -142,4 +145,99 @@ public class BankCardType {
         return this.cardType != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (bankCardProvider != null) {
+            sb.append(aligned)
+                .append("\"bankCardProvider\": \"")
+                .append(bankCardProvider)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (autoCharge != null) {
+            sb.append(aligned)
+                .append("\"autoCharge\": \"")
+                .append(autoCharge)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minBalance  != null) {
+            sb.append(aligned)
+                .append("\"minBalance \": \"")
+                .append(minBalance )
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cardOverrunValue != null) {
+            sb.append(aligned)
+                .append("\"cardOverrunValue\": \"")
+                .append(cardOverrunValue)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (expirationYear != null) {
+            sb.append(aligned)
+                .append("\"expirationYear\": \"")
+                .append(expirationYear)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (expirationMonth != null) {
+            sb.append(aligned)
+                .append("\"expirationMonth\": \"")
+                .append(expirationMonth)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acct != null) {
+            sb.append(aligned)
+                .append("\"acct\": \"")
+                .append(acct)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (lastError != null) {
+            sb.append(aligned)
+                .append("\"lastError\": \"")
+                .append(lastError)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cardHolder != null) {
+            sb.append(aligned)
+                .append("\"cardHolder\": \"")
+                .append(cardHolder)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cardType != null) {
+            sb.append(aligned)
+                .append("\"cardType\": \"")
+                .append(cardType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

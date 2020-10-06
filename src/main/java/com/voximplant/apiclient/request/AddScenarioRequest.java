@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class AddScenarioRequest {
+public class AddScenarioRequest implements Alignable {
     private String scenarioName;
 
     @RequestField(name="scenario_name")
@@ -61,8 +64,8 @@ public class AddScenarioRequest {
     /**
     * The rule ID.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -105,8 +108,8 @@ public class AddScenarioRequest {
     /**
     * Is the existing scenario rewrite?
     */
-    public boolean getRewrite() {
-        return this.rewrite.booleanValue();
+    public Boolean getRewrite() {
+        return this.rewrite;
     }
 
     public boolean hasRewrite() {
@@ -121,4 +124,59 @@ public class AddScenarioRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (scenarioName != null) {
+            sb.append(aligned)
+                .append("\"scenarioName\": \"")
+                .append(scenarioName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (scenarioScript != null) {
+            sb.append(aligned)
+                .append("\"scenarioScript\": \"")
+                .append(scenarioScript)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (rewrite != null) {
+            sb.append(aligned)
+                .append("\"rewrite\": \"")
+                .append(rewrite)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

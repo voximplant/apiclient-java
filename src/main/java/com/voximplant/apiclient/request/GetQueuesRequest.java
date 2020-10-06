@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetQueuesRequest {
+public class GetQueuesRequest implements Alignable {
     private Long acdQueueId;
 
     @RequestField(name="acd_queue_id")
     /**
     * The ACD queue ID to filter.
     */
-    public long getAcdQueueId() {
-        return this.acdQueueId.longValue();
+    public Long getAcdQueueId() {
+        return this.acdQueueId;
     }
 
     public boolean hasAcdQueueId() {
@@ -61,8 +64,8 @@ public class GetQueuesRequest {
     /**
     * The application ID to filter.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -83,8 +86,8 @@ public class GetQueuesRequest {
     /**
     * The skill ID to filter.
     */
-    public long getSkillId() {
-        return this.skillId.longValue();
+    public Long getSkillId() {
+        return this.skillId;
     }
 
     public boolean hasSkillId() {
@@ -105,8 +108,8 @@ public class GetQueuesRequest {
     /**
     * The excluded skill ID to filter.
     */
-    public long getExcludedSkillId() {
-        return this.excludedSkillId.longValue();
+    public Long getExcludedSkillId() {
+        return this.excludedSkillId;
     }
 
     public boolean hasExcludedSkillId() {
@@ -127,8 +130,8 @@ public class GetQueuesRequest {
     /**
     * Set true to get the bound skills.
     */
-    public boolean getWithSkills() {
-        return this.withSkills.booleanValue();
+    public Boolean getWithSkills() {
+        return this.withSkills;
     }
 
     public boolean hasWithSkills() {
@@ -149,8 +152,8 @@ public class GetQueuesRequest {
     /**
     * The skill to show in the 'skills' field output.
     */
-    public long getShowingSkillId() {
-        return this.showingSkillId.longValue();
+    public Long getShowingSkillId() {
+        return this.showingSkillId;
     }
 
     public boolean hasShowingSkillId() {
@@ -171,8 +174,8 @@ public class GetQueuesRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -193,8 +196,8 @@ public class GetQueuesRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -209,4 +212,91 @@ public class GetQueuesRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (acdQueueId != null) {
+            sb.append(aligned)
+                .append("\"acdQueueId\": \"")
+                .append(acdQueueId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueueName != null) {
+            sb.append(aligned)
+                .append("\"acdQueueName\": \"")
+                .append(acdQueueName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (skillId != null) {
+            sb.append(aligned)
+                .append("\"skillId\": \"")
+                .append(skillId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (excludedSkillId != null) {
+            sb.append(aligned)
+                .append("\"excludedSkillId\": \"")
+                .append(excludedSkillId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withSkills != null) {
+            sb.append(aligned)
+                .append("\"withSkills\": \"")
+                .append(withSkills)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (showingSkillId != null) {
+            sb.append(aligned)
+                .append("\"showingSkillId\": \"")
+                .append(showingSkillId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -6,7 +6,7 @@
 
     <groupId>com.voximplant</groupId>
     <artifactId>apiclient</artifactId>
-    <version>0.9.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>voximplant-apiclient</name>
@@ -98,6 +98,9 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                        <configuration>
+                            <failOnError>false</failOnError>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

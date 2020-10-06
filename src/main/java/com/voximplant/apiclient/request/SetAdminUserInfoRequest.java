@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SetAdminUserInfoRequest {
+public class SetAdminUserInfoRequest implements Alignable {
     private Long requiredAdminUserId;
 
     @RequestField(name="required_admin_user_id")
     /**
     * The admin user to edit.
     */
-    public long getRequiredAdminUserId() {
-        return this.requiredAdminUserId.longValue();
+    public Long getRequiredAdminUserId() {
+        return this.requiredAdminUserId;
     }
 
     public boolean hasRequiredAdminUserId() {
@@ -129,8 +132,8 @@ public class SetAdminUserInfoRequest {
     /**
     * The admin user enable flag.
     */
-    public boolean getAdminUserActive() {
-        return this.adminUserActive.booleanValue();
+    public Boolean getAdminUserActive() {
+        return this.adminUserActive;
     }
 
     public boolean hasAdminUserActive() {
@@ -145,4 +148,67 @@ public class SetAdminUserInfoRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (requiredAdminUserId != null) {
+            sb.append(aligned)
+                .append("\"requiredAdminUserId\": \"")
+                .append(requiredAdminUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (requiredAdminUserName != null) {
+            sb.append(aligned)
+                .append("\"requiredAdminUserName\": \"")
+                .append(requiredAdminUserName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newAdminUserName != null) {
+            sb.append(aligned)
+                .append("\"newAdminUserName\": \"")
+                .append(newAdminUserName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminUserDisplayName != null) {
+            sb.append(aligned)
+                .append("\"adminUserDisplayName\": \"")
+                .append(adminUserDisplayName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newAdminUserPassword != null) {
+            sb.append(aligned)
+                .append("\"newAdminUserPassword\": \"")
+                .append(newAdminUserPassword)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminUserActive != null) {
+            sb.append(aligned)
+                .append("\"adminUserActive\": \"")
+                .append(adminUserActive)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

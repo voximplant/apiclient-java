@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetRegulationsAddress] and [GetAvailableRegulations] result.
 */
-public class RegulationAddress {
+public class RegulationAddress implements Alignable {
 
     private Long regulationAddressId;
 
     /**
     * The regulation address ID.
     */
-    public long getRegulationAddressId() {
-        return this.regulationAddressId.longValue();
+    public Long getRegulationAddressId() {
+        return this.regulationAddressId;
     }
 
     public boolean hasRegulationAddressId() {
@@ -234,4 +237,155 @@ public class RegulationAddress {
         return this.phoneRegionCode != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (regulationAddressId != null) {
+            sb.append(aligned)
+                .append("\"regulationAddressId\": \"")
+                .append(regulationAddressId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (externalId != null) {
+            sb.append(aligned)
+                .append("\"externalId\": \"")
+                .append(externalId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (countryCode != null) {
+            sb.append(aligned)
+                .append("\"countryCode\": \"")
+                .append(countryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCategoryName != null) {
+            sb.append(aligned)
+                .append("\"phoneCategoryName\": \"")
+                .append(phoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (salutation != null) {
+            sb.append(aligned)
+                .append("\"salutation\": \"")
+                .append(salutation)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (company != null) {
+            sb.append(aligned)
+                .append("\"company\": \"")
+                .append(company)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (firstName != null) {
+            sb.append(aligned)
+                .append("\"firstName\": \"")
+                .append(firstName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (lastName != null) {
+            sb.append(aligned)
+                .append("\"lastName\": \"")
+                .append(lastName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ownerCountryCode != null) {
+            sb.append(aligned)
+                .append("\"ownerCountryCode\": \"")
+                .append(ownerCountryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (city != null) {
+            sb.append(aligned)
+                .append("\"city\": \"")
+                .append(city)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (zipCode != null) {
+            sb.append(aligned)
+                .append("\"zipCode\": \"")
+                .append(zipCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (street != null) {
+            sb.append(aligned)
+                .append("\"street\": \"")
+                .append(street)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (builderNumber != null) {
+            sb.append(aligned)
+                .append("\"builderNumber\": \"")
+                .append(builderNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (builderLatter != null) {
+            sb.append(aligned)
+                .append("\"builderLatter\": \"")
+                .append(builderLatter)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (status != null) {
+            sb.append(aligned)
+                .append("\"status\": \"")
+                .append(status)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (rejectMessage != null) {
+            sb.append(aligned)
+                .append("\"rejectMessage\": \"")
+                .append(rejectMessage)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionCode != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionCode\": \"")
+                .append(phoneRegionCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

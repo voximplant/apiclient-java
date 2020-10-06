@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetNewPhoneNumbers] function result item.
 */
-public class NewPhoneInfoType {
+public class NewPhoneInfoType implements Alignable {
 
     private Long phoneId;
 
     /**
     * The phone ID.
     */
-    public long getPhoneId() {
-        return this.phoneId.longValue();
+    public Long getPhoneId() {
+        return this.phoneId;
     }
 
     public boolean hasPhoneId() {
@@ -117,4 +120,83 @@ public class NewPhoneInfoType {
         return this.phoneRegionName != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (phoneId != null) {
+            sb.append(aligned)
+                .append("\"phoneId\": \"")
+                .append(phoneId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneNumber != null) {
+            sb.append(aligned)
+                .append("\"phoneNumber\": \"")
+                .append(phoneNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phonePrice != null) {
+            sb.append(aligned)
+                .append("\"phonePrice\": \"")
+                .append(phonePrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneInstallationPrice != null) {
+            sb.append(aligned)
+                .append("\"phoneInstallationPrice\": \"")
+                .append(phoneInstallationPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCountryCode != null) {
+            sb.append(aligned)
+                .append("\"phoneCountryCode\": \"")
+                .append(phoneCountryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phonePeriod != null) {
+            sb.append(aligned)
+                .append("\"phonePeriod\": \"")
+                .append(phonePeriod)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCategoryName != null) {
+            sb.append(aligned)
+                .append("\"phoneCategoryName\": \"")
+                .append(phoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionName != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionName\": \"")
+                .append(phoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

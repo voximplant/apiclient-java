@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetAuditLogRequest {
+public class GetAuditLogRequest implements Alignable {
     @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
     private Date fromDate;
 
@@ -199,8 +202,8 @@ public class GetAuditLogRequest {
     /**
     * Set false to get a CSV file without the column names if the output=csv
     */
-    public boolean getWithHeader() {
-        return this.withHeader.booleanValue();
+    public Boolean getWithHeader() {
+        return this.withHeader;
     }
 
     public boolean hasWithHeader() {
@@ -221,8 +224,8 @@ public class GetAuditLogRequest {
     /**
     * Set true to get records in the descent order.
     */
-    public boolean getDescOrder() {
-        return this.descOrder.booleanValue();
+    public Boolean getDescOrder() {
+        return this.descOrder;
     }
 
     public boolean hasDescOrder() {
@@ -243,8 +246,8 @@ public class GetAuditLogRequest {
     /**
     * Set false to omit the 'total_count' and increase performance.
     */
-    public boolean getWithTotalCount() {
-        return this.withTotalCount.booleanValue();
+    public Boolean getWithTotalCount() {
+        return this.withTotalCount;
     }
 
     public boolean hasWithTotalCount() {
@@ -265,8 +268,8 @@ public class GetAuditLogRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -287,8 +290,8 @@ public class GetAuditLogRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -333,8 +336,8 @@ public class GetAuditLogRequest {
     * only). If it's true, the request is available via [GetHistoryReports]
     * and [DownloadHistoryReport] methods.
     */
-    public boolean getIsAsync() {
-        return this.isAsync.booleanValue();
+    public Boolean getIsAsync() {
+        return this.isAsync;
     }
 
     public boolean hasIsAsync() {
@@ -351,4 +354,139 @@ public class GetAuditLogRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (fromDate != null) {
+            sb.append(aligned)
+                .append("\"fromDate\": \"")
+                .append(fromDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (toDate != null) {
+            sb.append(aligned)
+                .append("\"toDate\": \"")
+                .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (timezone != null) {
+            sb.append(aligned)
+                .append("\"timezone\": \"")
+                .append(timezone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (auditLogId != null) {
+            sb.append(aligned)
+                .append("\"auditLogId\": \"")
+                .append(auditLogId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (filteredAdminUserId != null) {
+            sb.append(aligned)
+                .append("\"filteredAdminUserId\": \"")
+                .append(filteredAdminUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (filteredIp != null) {
+            sb.append(aligned)
+                .append("\"filteredIp\": \"")
+                .append(filteredIp)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (filteredCmd != null) {
+            sb.append(aligned)
+                .append("\"filteredCmd\": \"")
+                .append(filteredCmd)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (advancedFilters != null) {
+            sb.append(aligned)
+                .append("\"advancedFilters\": \"")
+                .append(advancedFilters)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withHeader != null) {
+            sb.append(aligned)
+                .append("\"withHeader\": \"")
+                .append(withHeader)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (descOrder != null) {
+            sb.append(aligned)
+                .append("\"descOrder\": \"")
+                .append(descOrder)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withTotalCount != null) {
+            sb.append(aligned)
+                .append("\"withTotalCount\": \"")
+                .append(withTotalCount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (output != null) {
+            sb.append(aligned)
+                .append("\"output\": \"")
+                .append(output)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isAsync != null) {
+            sb.append(aligned)
+                .append("\"isAsync\": \"")
+                .append(isAsync)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

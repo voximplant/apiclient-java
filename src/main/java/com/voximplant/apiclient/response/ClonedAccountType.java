@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The cloned account info.
 */
-public class ClonedAccountType {
+public class ClonedAccountType implements Alignable {
 
     private Long accountId;
 
     /**
     * The account's ID.
     */
-    public long getAccountId() {
-        return this.accountId.longValue();
+    public Long getAccountId() {
+        return this.accountId;
     }
 
     public boolean hasAccountId() {
@@ -56,8 +59,8 @@ public class ClonedAccountType {
     /**
     * The account activation flag.
     */
-    public boolean getActive() {
-        return this.active.booleanValue();
+    public Boolean getActive() {
+        return this.active;
     }
 
     public boolean hasActive() {
@@ -168,4 +171,101 @@ public class ClonedAccountType {
         return this.adminUsers != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (accountId != null) {
+            sb.append(aligned)
+                .append("\"accountId\": \"")
+                .append(accountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountName != null) {
+            sb.append(aligned)
+                .append("\"accountName\": \"")
+                .append(accountName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountEmail != null) {
+            sb.append(aligned)
+                .append("\"accountEmail\": \"")
+                .append(accountEmail)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (active != null) {
+            sb.append(aligned)
+                .append("\"active\": \"")
+                .append(active)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (apiKey != null) {
+            sb.append(aligned)
+                .append("\"apiKey\": \"")
+                .append(apiKey)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (users != null) {
+            sb.append(aligned)
+                .append("\"ClonedUserType\": ")
+                .append(StringHelper.arrayToString(users, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (scenarios != null) {
+            sb.append(aligned)
+                .append("\"ClonedScenarioType\": ")
+                .append(StringHelper.arrayToString(scenarios, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (applications != null) {
+            sb.append(aligned)
+                .append("\"ClonedApplicationType\": ")
+                .append(StringHelper.arrayToString(applications, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (acdQueues != null) {
+            sb.append(aligned)
+                .append("\"ClonedACDQueueType\": ")
+                .append(StringHelper.arrayToString(acdQueues, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (acdSkills != null) {
+            sb.append(aligned)
+                .append("\"ClonedACDSkillType\": ")
+                .append(StringHelper.arrayToString(acdSkills, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (adminRoles != null) {
+            sb.append(aligned)
+                .append("\"ClonedAdminRoleType\": ")
+                .append(StringHelper.arrayToString(adminRoles, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (adminUsers != null) {
+            sb.append(aligned)
+                .append("\"ClonedAdminUserType\": ")
+                .append(StringHelper.arrayToString(adminUsers, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

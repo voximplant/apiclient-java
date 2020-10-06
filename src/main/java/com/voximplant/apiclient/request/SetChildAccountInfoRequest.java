@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SetChildAccountInfoRequest {
+public class SetChildAccountInfoRequest implements Alignable {
     private MultiArgument<Long> childAccountId;
 
     @RequestField(name="child_account_id")
@@ -133,8 +136,8 @@ public class SetChildAccountInfoRequest {
     /**
     * Are the Voximplant notifications required?
     */
-    public boolean getAccountNotifications() {
-        return this.accountNotifications.booleanValue();
+    public Boolean getAccountNotifications() {
+        return this.accountNotifications;
     }
 
     public boolean hasAccountNotifications() {
@@ -155,8 +158,8 @@ public class SetChildAccountInfoRequest {
     /**
     * Set to true to receive the emails about the Voximplant plan changing.
     */
-    public boolean getTariffChangingNotifications() {
-        return this.tariffChangingNotifications.booleanValue();
+    public Boolean getTariffChangingNotifications() {
+        return this.tariffChangingNotifications;
     }
 
     public boolean hasTariffChangingNotifications() {
@@ -177,8 +180,8 @@ public class SetChildAccountInfoRequest {
     /**
     * Set to true to receive the emails about the Voximplant news.
     */
-    public boolean getNewsNotifications() {
-        return this.newsNotifications.booleanValue();
+    public Boolean getNewsNotifications() {
+        return this.newsNotifications;
     }
 
     public boolean hasNewsNotifications() {
@@ -199,8 +202,8 @@ public class SetChildAccountInfoRequest {
     /**
     * Set false to disable the child account.
     */
-    public boolean getActive() {
-        return this.active.booleanValue();
+    public Boolean getActive() {
+        return this.active;
     }
 
     public boolean hasActive() {
@@ -351,8 +354,8 @@ public class SetChildAccountInfoRequest {
     /**
     * Set to true to allow the robokassa payments.
     */
-    public boolean getSupportRobokassa() {
-        return this.supportRobokassa.booleanValue();
+    public Boolean getSupportRobokassa() {
+        return this.supportRobokassa;
     }
 
     public boolean hasSupportRobokassa() {
@@ -373,8 +376,8 @@ public class SetChildAccountInfoRequest {
     /**
     * Set to true to allow the bank card payments.
     */
-    public boolean getSupportBankCard() {
-        return this.supportBankCard.booleanValue();
+    public Boolean getSupportBankCard() {
+        return this.supportBankCard;
     }
 
     public boolean hasSupportBankCard() {
@@ -395,8 +398,8 @@ public class SetChildAccountInfoRequest {
     /**
     * Set to true to allow the bank invoices.
     */
-    public boolean getSupportInvoice() {
-        return this.supportInvoice.booleanValue();
+    public Boolean getSupportInvoice() {
+        return this.supportInvoice;
     }
 
     public boolean hasSupportInvoice() {
@@ -417,8 +420,8 @@ public class SetChildAccountInfoRequest {
     /**
     * Set to true to allow use restricted directions.
     */
-    public boolean getCanUseRestricted() {
-        return this.canUseRestricted.booleanValue();
+    public Boolean getCanUseRestricted() {
+        return this.canUseRestricted;
     }
 
     public boolean hasCanUseRestricted() {
@@ -439,8 +442,8 @@ public class SetChildAccountInfoRequest {
     /**
     * The minimum payment amount.
     */
-    public long getMinPaymentAmount() {
-        return this.minPaymentAmount.longValue();
+    public Long getMinPaymentAmount() {
+        return this.minPaymentAmount;
     }
 
     public boolean hasMinPaymentAmount() {
@@ -455,4 +458,155 @@ public class SetChildAccountInfoRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (childAccountId != null) {
+            sb.append(aligned)
+                .append("\"childAccountId\": \"")
+                .append(childAccountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childAccountName != null) {
+            sb.append(aligned)
+                .append("\"childAccountName\": \"")
+                .append(childAccountName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childAccountEmail != null) {
+            sb.append(aligned)
+                .append("\"childAccountEmail\": \"")
+                .append(childAccountEmail)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newChildAccountEmail != null) {
+            sb.append(aligned)
+                .append("\"newChildAccountEmail\": \"")
+                .append(newChildAccountEmail)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newChildAccountPassword != null) {
+            sb.append(aligned)
+                .append("\"newChildAccountPassword\": \"")
+                .append(newChildAccountPassword)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountNotifications != null) {
+            sb.append(aligned)
+                .append("\"accountNotifications\": \"")
+                .append(accountNotifications)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (tariffChangingNotifications != null) {
+            sb.append(aligned)
+                .append("\"tariffChangingNotifications\": \"")
+                .append(tariffChangingNotifications)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newsNotifications != null) {
+            sb.append(aligned)
+                .append("\"newsNotifications\": \"")
+                .append(newsNotifications)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (active != null) {
+            sb.append(aligned)
+                .append("\"active\": \"")
+                .append(active)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (languageCode != null) {
+            sb.append(aligned)
+                .append("\"languageCode\": \"")
+                .append(languageCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (location != null) {
+            sb.append(aligned)
+                .append("\"location\": \"")
+                .append(location)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minBalanceToNotify != null) {
+            sb.append(aligned)
+                .append("\"minBalanceToNotify\": \"")
+                .append(minBalanceToNotify)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (supportRobokassa != null) {
+            sb.append(aligned)
+                .append("\"supportRobokassa\": \"")
+                .append(supportRobokassa)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (supportBankCard != null) {
+            sb.append(aligned)
+                .append("\"supportBankCard\": \"")
+                .append(supportBankCard)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (supportInvoice != null) {
+            sb.append(aligned)
+                .append("\"supportInvoice\": \"")
+                .append(supportInvoice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (canUseRestricted != null) {
+            sb.append(aligned)
+                .append("\"canUseRestricted\": \"")
+                .append(canUseRestricted)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minPaymentAmount != null) {
+            sb.append(aligned)
+                .append("\"minPaymentAmount\": \"")
+                .append(minPaymentAmount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The ACD operator call type.
 */
-public class ACDOperatorCall {
+public class ACDOperatorCall implements Alignable {
 
     private Long acdSessionHistoryId;
 
     /**
     * The ACD session history ID of the request.
     */
-    public long getAcdSessionHistoryId() {
-        return this.acdSessionHistoryId.longValue();
+    public Long getAcdSessionHistoryId() {
+        return this.acdSessionHistoryId;
     }
 
     public boolean hasAcdSessionHistoryId() {
@@ -43,8 +46,8 @@ public class ACDOperatorCall {
     /**
     * The ACD queue ID.
     */
-    public long getAcdQueueId() {
-        return this.acdQueueId.longValue();
+    public Long getAcdQueueId() {
+        return this.acdQueueId;
     }
 
     public boolean hasAcdQueueId() {
@@ -105,4 +108,75 @@ public class ACDOperatorCall {
         return this.submitted != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (acdSessionHistoryId != null) {
+            sb.append(aligned)
+                .append("\"acdSessionHistoryId\": \"")
+                .append(acdSessionHistoryId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdRequestId != null) {
+            sb.append(aligned)
+                .append("\"acdRequestId\": \"")
+                .append(acdRequestId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueueId != null) {
+            sb.append(aligned)
+                .append("\"acdQueueId\": \"")
+                .append(acdQueueId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueueName != null) {
+            sb.append(aligned)
+                .append("\"acdQueueName\": \"")
+                .append(acdQueueName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callerid != null) {
+            sb.append(aligned)
+                .append("\"callerid\": \"")
+                .append(callerid)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (beginTime != null) {
+            sb.append(aligned)
+                .append("\"beginTime\": \"")
+                .append(beginTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (submitted != null) {
+            sb.append(aligned)
+                .append("\"submitted\": \"")
+                .append(submitted)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

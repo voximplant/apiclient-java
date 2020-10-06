@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class AttachPhoneNumberRequest {
+public class AttachPhoneNumberRequest implements Alignable {
     private Long phoneCount;
 
     @RequestField(name="phone_count")
     /**
     * The phone count to attach.
     */
-    public long getPhoneCount() {
-        return this.phoneCount.longValue();
+    public Long getPhoneCount() {
+        return this.phoneCount;
     }
 
     public boolean hasPhoneCount() {
@@ -131,8 +134,8 @@ public class AttachPhoneNumberRequest {
     /**
     * The phone region ID. See the [GetPhoneNumberRegions] method.
     */
-    public long getPhoneRegionId() {
-        return this.phoneRegionId.longValue();
+    public Long getPhoneRegionId() {
+        return this.phoneRegionId;
     }
 
     public boolean hasPhoneRegionId() {
@@ -153,8 +156,8 @@ public class AttachPhoneNumberRequest {
     /**
     * The phone regulation address ID.
     */
-    public long getRegulationAddressId() {
-        return this.regulationAddressId.longValue();
+    public Long getRegulationAddressId() {
+        return this.regulationAddressId;
     }
 
     public boolean hasRegulationAddressId() {
@@ -175,8 +178,8 @@ public class AttachPhoneNumberRequest {
     /**
     * The force verification flag.
     */
-    public boolean getForceVerification() {
-        return this.forceVerification.booleanValue();
+    public Boolean getForceVerification() {
+        return this.forceVerification;
     }
 
     public boolean hasForceVerification() {
@@ -191,4 +194,83 @@ public class AttachPhoneNumberRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (phoneCount != null) {
+            sb.append(aligned)
+                .append("\"phoneCount\": \"")
+                .append(phoneCount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneNumber != null) {
+            sb.append(aligned)
+                .append("\"phoneNumber\": \"")
+                .append(phoneNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (countryCode != null) {
+            sb.append(aligned)
+                .append("\"countryCode\": \"")
+                .append(countryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCategoryName != null) {
+            sb.append(aligned)
+                .append("\"phoneCategoryName\": \"")
+                .append(phoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (countryState != null) {
+            sb.append(aligned)
+                .append("\"countryState\": \"")
+                .append(countryState)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionId != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionId\": \"")
+                .append(phoneRegionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (regulationAddressId != null) {
+            sb.append(aligned)
+                .append("\"regulationAddressId\": \"")
+                .append(regulationAddressId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (forceVerification != null) {
+            sb.append(aligned)
+                .append("\"forceVerification\": \"")
+                .append(forceVerification)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

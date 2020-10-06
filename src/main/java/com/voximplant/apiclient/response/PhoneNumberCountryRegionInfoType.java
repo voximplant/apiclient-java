@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetPhoneNumberRegions] function result.
 */
-public class PhoneNumberCountryRegionInfoType {
+public class PhoneNumberCountryRegionInfoType implements Alignable {
 
     private Long phoneRegionId;
 
     /**
     * The region ID.
     */
-    public long getPhoneRegionId() {
-        return this.phoneRegionId.longValue();
+    public Long getPhoneRegionId() {
+        return this.phoneRegionId;
     }
 
     public boolean hasPhoneRegionId() {
@@ -56,8 +59,8 @@ public class PhoneNumberCountryRegionInfoType {
     /**
     * The phone number count in stock for the region.
     */
-    public long getPhoneCount() {
-        return this.phoneCount.longValue();
+    public Long getPhoneCount() {
+        return this.phoneCount;
     }
 
     public boolean hasPhoneCount() {
@@ -136,8 +139,8 @@ public class PhoneNumberCountryRegionInfoType {
     /**
     * The flag of the need proof of address.
     */
-    public boolean getIsNeedRegulationAddress() {
-        return this.isNeedRegulationAddress.booleanValue();
+    public Boolean getIsNeedRegulationAddress() {
+        return this.isNeedRegulationAddress;
     }
 
     public boolean hasIsNeedRegulationAddress() {
@@ -170,8 +173,8 @@ public class PhoneNumberCountryRegionInfoType {
     * href='/docs/howtos/integration/httpapi/callbacks'>this article</a>
     * for HTTP callback details.
     */
-    public boolean getIsSmsSupported() {
-        return this.isSmsSupported.booleanValue();
+    public Boolean getIsSmsSupported() {
+        return this.isSmsSupported;
     }
 
     public boolean hasIsSmsSupported() {
@@ -231,4 +234,145 @@ public class PhoneNumberCountryRegionInfoType {
         return this.localizedPhoneRegionName != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (phoneRegionId != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionId\": \"")
+                .append(phoneRegionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionName != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionName\": \"")
+                .append(phoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionCode != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionCode\": \"")
+                .append(phoneRegionCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCount != null) {
+            sb.append(aligned)
+                .append("\"phoneCount\": \"")
+                .append(phoneCount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verificationStatus != null) {
+            sb.append(aligned)
+                .append("\"verificationStatus\": \"")
+                .append(verificationStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (requiredVerification != null) {
+            sb.append(aligned)
+                .append("\"requiredVerification\": \"")
+                .append(requiredVerification)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phonePrice != null) {
+            sb.append(aligned)
+                .append("\"phonePrice\": \"")
+                .append(phonePrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneInstallationPrice != null) {
+            sb.append(aligned)
+                .append("\"phoneInstallationPrice\": \"")
+                .append(phoneInstallationPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phonePeriod != null) {
+            sb.append(aligned)
+                .append("\"phonePeriod\": \"")
+                .append(phonePeriod)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isNeedRegulationAddress != null) {
+            sb.append(aligned)
+                .append("\"isNeedRegulationAddress\": \"")
+                .append(isNeedRegulationAddress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (regulationAddressType != null) {
+            sb.append(aligned)
+                .append("\"regulationAddressType\": \"")
+                .append(regulationAddressType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isSmsSupported != null) {
+            sb.append(aligned)
+                .append("\"isSmsSupported\": \"")
+                .append(isSmsSupported)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (multipleNumbersPrice != null) {
+            sb.append(aligned)
+                .append("\"MultipleNumbersPrice\": ")
+                .append(StringHelper.arrayToString(multipleNumbersPrice, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (localizedCountryName != null) {
+            sb.append(aligned)
+                .append("\"localizedCountryName\": \"")
+                .append(localizedCountryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localizedPhoneCategoryName != null) {
+            sb.append(aligned)
+                .append("\"localizedPhoneCategoryName\": \"")
+                .append(localizedPhoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localizedPhoneRegionName != null) {
+            sb.append(aligned)
+                .append("\"localizedPhoneRegionName\": \"")
+                .append(localizedPhoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

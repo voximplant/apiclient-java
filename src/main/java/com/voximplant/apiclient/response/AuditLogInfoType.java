@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetAuditLog] function result item.
 */
-public class AuditLogInfoType {
+public class AuditLogInfoType implements Alignable {
 
     private Long auditLogId;
 
     /**
     * The  ID.
     */
-    public long getAuditLogId() {
-        return this.auditLogId.longValue();
+    public Long getAuditLogId() {
+        return this.auditLogId;
     }
 
     public boolean hasAuditLogId() {
@@ -30,8 +33,8 @@ public class AuditLogInfoType {
     /**
     * The account ID.
     */
-    public long getAccountId() {
-        return this.accountId.longValue();
+    public Long getAccountId() {
+        return this.accountId;
     }
 
     public boolean hasAccountId() {
@@ -105,4 +108,75 @@ public class AuditLogInfoType {
         return this.cmdResult != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (auditLogId != null) {
+            sb.append(aligned)
+                .append("\"auditLogId\": \"")
+                .append(auditLogId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountId != null) {
+            sb.append(aligned)
+                .append("\"accountId\": \"")
+                .append(accountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (requested != null) {
+            sb.append(aligned)
+                .append("\"requested\": \"")
+                .append(requested)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ip != null) {
+            sb.append(aligned)
+                .append("\"ip\": \"")
+                .append(ip)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cmdName != null) {
+            sb.append(aligned)
+                .append("\"cmdName\": \"")
+                .append(cmdName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cmdArgs != null) {
+            sb.append(aligned)
+                .append("\"cmdArgs\": \"")
+                .append(cmdArgs)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cmdResult != null) {
+            sb.append(aligned)
+                .append("\"cmdResult\": \"")
+                .append(cmdResult)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

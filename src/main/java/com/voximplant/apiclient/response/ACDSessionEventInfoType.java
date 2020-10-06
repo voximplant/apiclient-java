@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The ACD session event info.
 */
-public class ACDSessionEventInfoType {
+public class ACDSessionEventInfoType implements Alignable {
 
     private Long acdSessionEventId;
 
     /**
     * The ACD session event ID.
     */
-    public long getAcdSessionEventId() {
-        return this.acdSessionEventId.longValue();
+    public Long getAcdSessionEventId() {
+        return this.acdSessionEventId;
     }
 
     public boolean hasAcdSessionEventId() {
@@ -57,8 +60,8 @@ public class ACDSessionEventInfoType {
     /**
     * The user ID.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -78,4 +81,59 @@ public class ACDSessionEventInfoType {
         return this.customData != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (acdSessionEventId != null) {
+            sb.append(aligned)
+                .append("\"acdSessionEventId\": \"")
+                .append(acdSessionEventId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (time != null) {
+            sb.append(aligned)
+                .append("\"time\": \"")
+                .append(time)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (type != null) {
+            sb.append(aligned)
+                .append("\"type\": \"")
+                .append(type)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (customData != null) {
+            sb.append(aligned)
+                .append("\"customData\": \"")
+                .append(customData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

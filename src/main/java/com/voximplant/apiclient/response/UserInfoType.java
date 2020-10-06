@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetUsers] function result.
 */
-public class UserInfoType {
+public class UserInfoType implements Alignable {
 
     private Long userId;
 
     /**
     * The user ID.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -56,8 +59,8 @@ public class UserInfoType {
     /**
     * The user active flag.
     */
-    public boolean getUserActive() {
-        return this.userActive.booleanValue();
+    public Boolean getUserActive() {
+        return this.userActive;
     }
 
     public boolean hasUserActive() {
@@ -70,8 +73,8 @@ public class UserInfoType {
     * 'True' if the user uses the parent account's money, 'false' if the
     * user has a separate balance.
     */
-    public boolean getParentAccounting() {
-        return this.parentAccounting.booleanValue();
+    public Boolean getParentAccounting() {
+        return this.parentAccounting;
     }
 
     public boolean hasParentAccounting() {
@@ -245,4 +248,149 @@ public class UserInfoType {
         return this.modified != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userDisplayName != null) {
+            sb.append(aligned)
+                .append("\"userDisplayName\": \"")
+                .append(userDisplayName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userActive != null) {
+            sb.append(aligned)
+                .append("\"userActive\": \"")
+                .append(userActive)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (parentAccounting != null) {
+            sb.append(aligned)
+                .append("\"parentAccounting\": \"")
+                .append(parentAccounting)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mobilePhone != null) {
+            sb.append(aligned)
+                .append("\"mobilePhone\": \"")
+                .append(mobilePhone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (liveBalance != null) {
+            sb.append(aligned)
+                .append("\"liveBalance\": \"")
+                .append(liveBalance)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (balance != null) {
+            sb.append(aligned)
+                .append("\"balance\": \"")
+                .append(balance)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fixedBalance != null) {
+            sb.append(aligned)
+                .append("\"fixedBalance\": \"")
+                .append(fixedBalance)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userCustomData != null) {
+            sb.append(aligned)
+                .append("\"userCustomData\": \"")
+                .append(userCustomData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applications != null) {
+            sb.append(aligned)
+                .append("\"ApplicationInfoType\": ")
+                .append(StringHelper.arrayToString(applications, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (skills != null) {
+            sb.append(aligned)
+                .append("\"SkillInfoType\": ")
+                .append(StringHelper.arrayToString(skills, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (acdQueues != null) {
+            sb.append(aligned)
+                .append("\"ACDQueueOperatorInfoType\": ")
+                .append(StringHelper.arrayToString(acdQueues, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (acdStatus != null) {
+            sb.append(aligned)
+                .append("\"acdStatus\": \"")
+                .append(acdStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdStatusChangeTime != null) {
+            sb.append(aligned)
+                .append("\"acdStatusChangeTime\": \"")
+                .append(acdStatusChangeTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (created != null) {
+            sb.append(aligned)
+                .append("\"created\": \"")
+                .append(created)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (modified != null) {
+            sb.append(aligned)
+                .append("\"modified\": \"")
+                .append(modified)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

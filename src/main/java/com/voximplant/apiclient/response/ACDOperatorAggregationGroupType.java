@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetACDOperatorStatistics] function result item.
 */
-public class ACDOperatorAggregationGroupType {
+public class ACDOperatorAggregationGroupType implements Alignable {
 
     private String userId;
 
@@ -46,8 +49,8 @@ public class ACDOperatorAggregationGroupType {
     * If aggregation was enabled, contains the 60-minute interval number
     * from 1 to 24
     */
-    public long getHour() {
-        return this.hour.longValue();
+    public Long getHour() {
+        return this.hour;
     }
 
     public boolean hasHour() {
@@ -68,4 +71,49 @@ public class ACDOperatorAggregationGroupType {
         return this.statistics != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (date != null) {
+            sb.append(aligned)
+                .append("\"date\": \"")
+                .append(date)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (hour != null) {
+            sb.append(aligned)
+                .append("\"hour\": \"")
+                .append(hour)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (statistics != null) {
+            sb.append(aligned)
+                .append("\"ACDOperatorStatisticsType\": ")
+                .append(StringHelper.arrayToString(statistics, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

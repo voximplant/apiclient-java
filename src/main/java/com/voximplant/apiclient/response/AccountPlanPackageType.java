@@ -1,23 +1,26 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The account plan package info.
 */
-public class AccountPlanPackageType {
+public class AccountPlanPackageType implements Alignable {
 
-    private long[] priceGroupId;
+    private Long[] priceGroupId;
 
     /**
     * The price group IDs.
     */
-    public long[] getPriceGroupId() {
+    public Long[] getPriceGroupId() {
         return this.priceGroupId;
     }
 
@@ -43,8 +46,8 @@ public class AccountPlanPackageType {
     /**
     * Is overrun enabled?
     */
-    public boolean getMayOverrun() {
-        return this.mayOverrun.booleanValue();
+    public Boolean getMayOverrun() {
+        return this.mayOverrun;
     }
 
     public boolean hasMayOverrun() {
@@ -69,8 +72,8 @@ public class AccountPlanPackageType {
     /**
     * The number of resources (e.g., messages) per overrun.
     */
-    public long getOverrunResources() {
-        return this.overrunResources.longValue();
+    public Long getOverrunResources() {
+        return this.overrunResources;
     }
 
     public boolean hasOverrunResources() {
@@ -82,8 +85,8 @@ public class AccountPlanPackageType {
     /**
     * The resource left in the package.
     */
-    public long getResourceLeft() {
-        return this.resourceLeft.longValue();
+    public Long getResourceLeft() {
+        return this.resourceLeft;
     }
 
     public boolean hasResourceLeft() {
@@ -95,8 +98,8 @@ public class AccountPlanPackageType {
     /**
     * The current package size (including overrun).
     */
-    public long getPackageSize() {
-        return this.packageSize.longValue();
+    public Long getPackageSize() {
+        return this.packageSize;
     }
 
     public boolean hasPackageSize() {
@@ -108,12 +111,89 @@ public class AccountPlanPackageType {
     /**
     * The original package size (excluding overrun).
     */
-    public long getOrigPackageSize() {
-        return this.origPackageSize.longValue();
+    public Long getOrigPackageSize() {
+        return this.origPackageSize;
     }
 
     public boolean hasOrigPackageSize() {
         return this.origPackageSize != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (priceGroupId != null) {
+            sb.append(aligned)
+                .append("\"number\": ")
+                .append(StringHelper.arrayToString(priceGroupId, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (packageName != null) {
+            sb.append(aligned)
+                .append("\"packageName\": \"")
+                .append(packageName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mayOverrun != null) {
+            sb.append(aligned)
+                .append("\"mayOverrun\": \"")
+                .append(mayOverrun)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (overrunPrice != null) {
+            sb.append(aligned)
+                .append("\"overrunPrice\": \"")
+                .append(overrunPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (overrunResources != null) {
+            sb.append(aligned)
+                .append("\"overrunResources\": \"")
+                .append(overrunResources)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (resourceLeft != null) {
+            sb.append(aligned)
+                .append("\"resourceLeft\": \"")
+                .append(resourceLeft)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (packageSize != null) {
+            sb.append(aligned)
+                .append("\"packageSize\": \"")
+                .append(packageSize)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (origPackageSize != null) {
+            sb.append(aligned)
+                .append("\"origPackageSize\": \"")
+                .append(origPackageSize)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

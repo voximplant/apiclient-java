@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class TransferMoneyToUserRequest {
+public class TransferMoneyToUserRequest implements Alignable {
     private MultiArgument<Long> userId;
 
     @RequestField(name="user_id")
@@ -88,8 +91,8 @@ public class TransferMoneyToUserRequest {
     * The application ID. It is required if the <b>user_name</b> is
     * specified.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -158,8 +161,8 @@ public class TransferMoneyToUserRequest {
     * Returns error if strict_mode is true and a user or the account hasn't
     * enough money.
     */
-    public boolean getStrictMode() {
-        return this.strictMode.booleanValue();
+    public Boolean getStrictMode() {
+        return this.strictMode;
     }
 
     public boolean hasStrictMode() {
@@ -221,4 +224,91 @@ public class TransferMoneyToUserRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (amount != null) {
+            sb.append(aligned)
+                .append("\"amount\": \"")
+                .append(amount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (currency != null) {
+            sb.append(aligned)
+                .append("\"currency\": \"")
+                .append(currency)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (strictMode != null) {
+            sb.append(aligned)
+                .append("\"strictMode\": \"")
+                .append(strictMode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userTransactionDescription != null) {
+            sb.append(aligned)
+                .append("\"userTransactionDescription\": \"")
+                .append(userTransactionDescription)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountTransactionDescription != null) {
+            sb.append(aligned)
+                .append("\"accountTransactionDescription\": \"")
+                .append(accountTransactionDescription)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

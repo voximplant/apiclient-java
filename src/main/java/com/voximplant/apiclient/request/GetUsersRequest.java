@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetUsersRequest {
+public class GetUsersRequest implements Alignable {
     private Long applicationId;
 
     @RequestField(name="application_id")
     /**
     * The application ID to filter.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -61,8 +64,8 @@ public class GetUsersRequest {
     /**
     * The skill ID to filter.
     */
-    public long getSkillId() {
-        return this.skillId.longValue();
+    public Long getSkillId() {
+        return this.skillId;
     }
 
     public boolean hasSkillId() {
@@ -83,8 +86,8 @@ public class GetUsersRequest {
     /**
     * The excluded skill ID to filter.
     */
-    public long getExcludedSkillId() {
-        return this.excludedSkillId.longValue();
+    public Long getExcludedSkillId() {
+        return this.excludedSkillId;
     }
 
     public boolean hasExcludedSkillId() {
@@ -105,8 +108,8 @@ public class GetUsersRequest {
     /**
     * The ACD queue ID to filter.
     */
-    public long getAcdQueueId() {
-        return this.acdQueueId.longValue();
+    public Long getAcdQueueId() {
+        return this.acdQueueId;
     }
 
     public boolean hasAcdQueueId() {
@@ -127,8 +130,8 @@ public class GetUsersRequest {
     /**
     * The excluded ACD queue ID to filter.
     */
-    public long getExcludedAcdQueueId() {
-        return this.excludedAcdQueueId.longValue();
+    public Long getExcludedAcdQueueId() {
+        return this.excludedAcdQueueId;
     }
 
     public boolean hasExcludedAcdQueueId() {
@@ -149,8 +152,8 @@ public class GetUsersRequest {
     /**
     * The user ID to filter.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -193,8 +196,8 @@ public class GetUsersRequest {
     /**
     * The user active flag to filter.
     */
-    public boolean getUserActive() {
-        return this.userActive.booleanValue();
+    public Boolean getUserActive() {
+        return this.userActive;
     }
 
     public boolean hasUserActive() {
@@ -237,8 +240,8 @@ public class GetUsersRequest {
     /**
     * Set true to get the bound skills.
     */
-    public boolean getWithSkills() {
-        return this.withSkills.booleanValue();
+    public Boolean getWithSkills() {
+        return this.withSkills;
     }
 
     public boolean hasWithSkills() {
@@ -259,8 +262,8 @@ public class GetUsersRequest {
     /**
     * Set true to get the bound queues.
     */
-    public boolean getWithQueues() {
-        return this.withQueues.booleanValue();
+    public Boolean getWithQueues() {
+        return this.withQueues;
     }
 
     public boolean hasWithQueues() {
@@ -307,8 +310,8 @@ public class GetUsersRequest {
     /**
     * The skill to show in the 'skills' field output.
     */
-    public long getShowingSkillId() {
-        return this.showingSkillId.longValue();
+    public Long getShowingSkillId() {
+        return this.showingSkillId;
     }
 
     public boolean hasShowingSkillId() {
@@ -329,8 +332,8 @@ public class GetUsersRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -351,8 +354,8 @@ public class GetUsersRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -397,8 +400,8 @@ public class GetUsersRequest {
     /**
     * Set true to get the user live balance.
     */
-    public boolean getReturnLiveBalance() {
-        return this.returnLiveBalance.booleanValue();
+    public Boolean getReturnLiveBalance() {
+        return this.returnLiveBalance;
     }
 
     public boolean hasReturnLiveBalance() {
@@ -413,4 +416,163 @@ public class GetUsersRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (skillId != null) {
+            sb.append(aligned)
+                .append("\"skillId\": \"")
+                .append(skillId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (excludedSkillId != null) {
+            sb.append(aligned)
+                .append("\"excludedSkillId\": \"")
+                .append(excludedSkillId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueueId != null) {
+            sb.append(aligned)
+                .append("\"acdQueueId\": \"")
+                .append(acdQueueId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (excludedAcdQueueId != null) {
+            sb.append(aligned)
+                .append("\"excludedAcdQueueId\": \"")
+                .append(excludedAcdQueueId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userActive != null) {
+            sb.append(aligned)
+                .append("\"userActive\": \"")
+                .append(userActive)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userDisplayName != null) {
+            sb.append(aligned)
+                .append("\"userDisplayName\": \"")
+                .append(userDisplayName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withSkills != null) {
+            sb.append(aligned)
+                .append("\"withSkills\": \"")
+                .append(withSkills)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withQueues != null) {
+            sb.append(aligned)
+                .append("\"withQueues\": \"")
+                .append(withQueues)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdStatus != null) {
+            sb.append(aligned)
+                .append("\"acdStatus\": \"")
+                .append(acdStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (showingSkillId != null) {
+            sb.append(aligned)
+                .append("\"showingSkillId\": \"")
+                .append(showingSkillId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (orderBy != null) {
+            sb.append(aligned)
+                .append("\"orderBy\": \"")
+                .append(orderBy)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (returnLiveBalance != null) {
+            sb.append(aligned)
+                .append("\"returnLiveBalance\": \"")
+                .append(returnLiveBalance)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

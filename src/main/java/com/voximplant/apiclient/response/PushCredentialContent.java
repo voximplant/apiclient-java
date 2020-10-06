@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The push credentials list item info.
 */
-public class PushCredentialContent {
+public class PushCredentialContent implements Alignable {
 
     private String certFileName;
 
@@ -56,8 +59,8 @@ public class PushCredentialContent {
     /**
     * The use in a Apple sandbox environment. Credentials for APPLE push.
     */
-    public boolean getIsDevMode() {
-        return this.isDevMode.booleanValue();
+    public Boolean getIsDevMode() {
+        return this.isDevMode;
     }
 
     public boolean hasIsDevMode() {
@@ -90,4 +93,67 @@ public class PushCredentialContent {
         return this.serverKey != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (certFileName != null) {
+            sb.append(aligned)
+                .append("\"certFileName\": \"")
+                .append(certFileName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (certPassword != null) {
+            sb.append(aligned)
+                .append("\"certPassword\": \"")
+                .append(certPassword)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (certContent != null) {
+            sb.append(aligned)
+                .append("\"certContent\": \"")
+                .append(certContent)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isDevMode != null) {
+            sb.append(aligned)
+                .append("\"isDevMode\": \"")
+                .append(isDevMode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (senderId != null) {
+            sb.append(aligned)
+                .append("\"senderId\": \"")
+                .append(senderId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (serverKey != null) {
+            sb.append(aligned)
+                .append("\"serverKey\": \"")
+                .append(serverKey)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

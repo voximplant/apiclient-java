@@ -1,13 +1,16 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
-public class SetApplicationInfoResponse {
+public class SetApplicationInfoResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -23,8 +26,8 @@ public class SetApplicationInfoResponse {
     /**
     * 1
     */
-    public long getResult() {
-        return this.result.longValue();
+    public Long getResult() {
+        return this.result;
     }
 
     public boolean hasResult() {
@@ -50,12 +53,51 @@ public class SetApplicationInfoResponse {
     * This flag indicates whether a secure storage for logs and records is
     * enabled or not.
     */
-    public boolean getSecureRecordStorage() {
-        return this.secureRecordStorage.booleanValue();
+    public Boolean getSecureRecordStorage() {
+        return this.secureRecordStorage;
     }
 
     public boolean hasSecureRecordStorage() {
         return this.secureRecordStorage != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (result != null) {
+            sb.append(aligned)
+                .append("\"result\": \"")
+                .append(result)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (secureRecordStorage != null) {
+            sb.append(aligned)
+                .append("\"secureRecordStorage\": \"")
+                .append(secureRecordStorage)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

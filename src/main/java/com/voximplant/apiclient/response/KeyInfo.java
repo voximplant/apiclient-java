@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [CreateKey] function result.
 */
-public class KeyInfo {
+public class KeyInfo implements Alignable {
 
     private String accountEmail;
 
@@ -30,8 +33,8 @@ public class KeyInfo {
     /**
     * The account ID.
     */
-    public long getAccountId() {
-        return this.accountId.longValue();
+    public Long getAccountId() {
+        return this.accountId;
     }
 
     public boolean hasAccountId() {
@@ -64,4 +67,51 @@ public class KeyInfo {
         return this.privateKey != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (accountEmail != null) {
+            sb.append(aligned)
+                .append("\"accountEmail\": \"")
+                .append(accountEmail)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountId != null) {
+            sb.append(aligned)
+                .append("\"accountId\": \"")
+                .append(accountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (keyId != null) {
+            sb.append(aligned)
+                .append("\"keyId\": \"")
+                .append(keyId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (privateKey != null) {
+            sb.append(aligned)
+                .append("\"privateKey\": \"")
+                .append(privateKey)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

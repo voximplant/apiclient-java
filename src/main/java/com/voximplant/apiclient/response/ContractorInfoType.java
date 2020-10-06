@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetContractorInfo] function result.
 */
-public class ContractorInfoType {
+public class ContractorInfoType implements Alignable {
 
     private String inn;
 
@@ -130,4 +133,91 @@ public class ContractorInfoType {
         return this.contract != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (inn != null) {
+            sb.append(aligned)
+                .append("\"inn\": \"")
+                .append(inn)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (kpp != null) {
+            sb.append(aligned)
+                .append("\"kpp\": \"")
+                .append(kpp)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (companyName != null) {
+            sb.append(aligned)
+                .append("\"companyName\": \"")
+                .append(companyName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (companyAddress != null) {
+            sb.append(aligned)
+                .append("\"companyAddress\": \"")
+                .append(companyAddress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (companyPhone != null) {
+            sb.append(aligned)
+                .append("\"companyPhone\": \"")
+                .append(companyPhone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (correspondenceAddress != null) {
+            sb.append(aligned)
+                .append("\"correspondenceAddress\": \"")
+                .append(correspondenceAddress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (correspondenceEmail != null) {
+            sb.append(aligned)
+                .append("\"correspondenceEmail\": \"")
+                .append(correspondenceEmail)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (correspondenceTo != null) {
+            sb.append(aligned)
+                .append("\"correspondenceTo\": \"")
+                .append(correspondenceTo)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (contract != null) {
+            sb.append(aligned)
+                .append("\"contract\": \"")
+                .append(contract)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

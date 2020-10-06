@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetScenarios] function result.
 */
-public class ScenarioInfoType {
+public class ScenarioInfoType implements Alignable {
 
     private Long scenarioId;
 
     /**
     * The scenario ID.
     */
-    public long getScenarioId() {
-        return this.scenarioId.longValue();
+    public Long getScenarioId() {
+        return this.scenarioId;
     }
 
     public boolean hasScenarioId() {
@@ -71,12 +74,67 @@ public class ScenarioInfoType {
     * 'True' if the scenario belongs to the parent account, 'false' if the
     * scenario belongs to the current account.
     */
-    public boolean getParent() {
-        return this.parent.booleanValue();
+    public Boolean getParent() {
+        return this.parent;
     }
 
     public boolean hasParent() {
         return this.parent != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (scenarioId != null) {
+            sb.append(aligned)
+                .append("\"scenarioId\": \"")
+                .append(scenarioId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (scenarioName != null) {
+            sb.append(aligned)
+                .append("\"scenarioName\": \"")
+                .append(scenarioName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (scenarioScript != null) {
+            sb.append(aligned)
+                .append("\"scenarioScript\": \"")
+                .append(scenarioScript)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (modified != null) {
+            sb.append(aligned)
+                .append("\"modified\": \"")
+                .append(modified)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (parent != null) {
+            sb.append(aligned)
+                .append("\"parent\": \"")
+                .append(parent)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,18 +1,21 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The HTTP account callbacks body. See <a
 * href='/docs/howtos/integration/httpapi/callbacks'>this article</a>
 * for details.
 */
-public class AccountCallbacks {
+public class AccountCallbacks implements Alignable {
 
     private AccountCallback[] callbacks;
 
@@ -27,4 +30,25 @@ public class AccountCallbacks {
         return this.callbacks != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (callbacks != null) {
+            sb.append(aligned)
+                .append("\"AccountCallback\": ")
+                .append(StringHelper.arrayToString(callbacks, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

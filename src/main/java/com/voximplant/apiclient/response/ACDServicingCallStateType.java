@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The servicing call state.
 */
-public class ACDServicingCallStateType {
+public class ACDServicingCallStateType implements Alignable {
 
     private Long userId;
 
     /**
     * The user ID of the operator.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -56,8 +59,8 @@ public class ACDServicingCallStateType {
     /**
     * The request priority.
     */
-    public long getPriority() {
-        return this.priority.longValue();
+    public Long getPriority() {
+        return this.priority;
     }
 
     public boolean hasPriority() {
@@ -96,8 +99,8 @@ public class ACDServicingCallStateType {
     /**
     * The waiting time before servicing in seconds.
     */
-    public long getWaitingTime() {
-        return this.waitingTime.longValue();
+    public Long getWaitingTime() {
+        return this.waitingTime;
     }
 
     public boolean hasWaitingTime() {
@@ -109,12 +112,91 @@ public class ACDServicingCallStateType {
     /**
     * The ACD session history ID of the request.
     */
-    public long getAcdSessionHistoryId() {
-        return this.acdSessionHistoryId.longValue();
+    public Long getAcdSessionHistoryId() {
+        return this.acdSessionHistoryId;
     }
 
     public boolean hasAcdSessionHistoryId() {
         return this.acdSessionHistoryId != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userDisplayName != null) {
+            sb.append(aligned)
+                .append("\"userDisplayName\": \"")
+                .append(userDisplayName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (priority != null) {
+            sb.append(aligned)
+                .append("\"priority\": \"")
+                .append(priority)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callerid != null) {
+            sb.append(aligned)
+                .append("\"callerid\": \"")
+                .append(callerid)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (beginTime != null) {
+            sb.append(aligned)
+                .append("\"beginTime\": \"")
+                .append(beginTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (waitingTime != null) {
+            sb.append(aligned)
+                .append("\"waitingTime\": \"")
+                .append(waitingTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdSessionHistoryId != null) {
+            sb.append(aligned)
+                .append("\"acdSessionHistoryId\": \"")
+                .append(acdSessionHistoryId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

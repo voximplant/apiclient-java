@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The notification contact info.
 */
-public class ContactInfoType {
+public class ContactInfoType implements Alignable {
 
     private Long contactId;
 
     /**
     * The contact ID.
     */
-    public long getContactId() {
-        return this.contactId.longValue();
+    public Long getContactId() {
+        return this.contactId;
     }
 
     public boolean hasContactId() {
@@ -56,8 +59,8 @@ public class ContactInfoType {
     /**
     * The persistent flag.
     */
-    public boolean getIsPersistent() {
-        return this.isPersistent.booleanValue();
+    public Boolean getIsPersistent() {
+        return this.isPersistent;
     }
 
     public boolean hasIsPersistent() {
@@ -82,8 +85,8 @@ public class ContactInfoType {
     /**
     * The verification code sending timeout is seconds.
     */
-    public long getNextVerificationAfterSec() {
-        return this.nextVerificationAfterSec.longValue();
+    public Long getNextVerificationAfterSec() {
+        return this.nextVerificationAfterSec;
     }
 
     public boolean hasNextVerificationAfterSec() {
@@ -148,4 +151,97 @@ public class ContactInfoType {
         return this.modified != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (contactId != null) {
+            sb.append(aligned)
+                .append("\"contactId\": \"")
+                .append(contactId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (contactType != null) {
+            sb.append(aligned)
+                .append("\"contactType\": \"")
+                .append(contactType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (contactData != null) {
+            sb.append(aligned)
+                .append("\"contactData\": \"")
+                .append(contactData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isPersistent != null) {
+            sb.append(aligned)
+                .append("\"isPersistent\": \"")
+                .append(isPersistent)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (description != null) {
+            sb.append(aligned)
+                .append("\"description\": \"")
+                .append(description)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (nextVerificationAfterSec != null) {
+            sb.append(aligned)
+                .append("\"nextVerificationAfterSec\": \"")
+                .append(nextVerificationAfterSec)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verified != null) {
+            sb.append(aligned)
+                .append("\"verified\": \"")
+                .append(verified)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (notificationGroup != null) {
+            sb.append(aligned)
+                .append("\"string\": ")
+                .append(StringHelper.arrayToString(notificationGroup, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (created != null) {
+            sb.append(aligned)
+                .append("\"created\": \"")
+                .append(created)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (modified != null) {
+            sb.append(aligned)
+                .append("\"modified\": \"")
+                .append(modified)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class StartScenariosRequest {
+public class StartScenariosRequest implements Alignable {
     private Long userId;
 
     @RequestField(name="user_id")
     /**
     * The user ID. Run the scripts from the user if set.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -63,8 +66,8 @@ public class StartScenariosRequest {
     /**
     * The application ID.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -109,8 +112,8 @@ public class StartScenariosRequest {
     /**
     * The rule ID.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -183,8 +186,8 @@ public class StartScenariosRequest {
     /**
     * Set true to get media server session lists url.
     */
-    public boolean getWithCheckUrl() {
-        return this.withCheckUrl.booleanValue();
+    public Boolean getWithCheckUrl() {
+        return this.withCheckUrl;
     }
 
     public boolean hasWithCheckUrl() {
@@ -199,4 +202,83 @@ public class StartScenariosRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (scriptCustomData != null) {
+            sb.append(aligned)
+                .append("\"scriptCustomData\": \"")
+                .append(scriptCustomData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (referenceIp != null) {
+            sb.append(aligned)
+                .append("\"referenceIp\": \"")
+                .append(referenceIp)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withCheckUrl != null) {
+            sb.append(aligned)
+                .append("\"withCheckUrl\": \"")
+                .append(withCheckUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

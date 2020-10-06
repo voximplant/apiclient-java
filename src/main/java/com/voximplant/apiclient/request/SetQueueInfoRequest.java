@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SetQueueInfoRequest {
+public class SetQueueInfoRequest implements Alignable {
     private Long acdQueueId;
 
     @RequestField(name="acd_queue_id")
     /**
     * The ACD queue ID.
     */
-    public long getAcdQueueId() {
-        return this.acdQueueId.longValue();
+    public Long getAcdQueueId() {
+        return this.acdQueueId;
     }
 
     public boolean hasAcdQueueId() {
@@ -83,8 +86,8 @@ public class SetQueueInfoRequest {
     /**
     * The integer queue priority. The highest priority is 0.
     */
-    public long getAcdQueuePriority() {
-        return this.acdQueuePriority.longValue();
+    public Long getAcdQueuePriority() {
+        return this.acdQueuePriority;
     }
 
     public boolean hasAcdQueuePriority() {
@@ -106,8 +109,8 @@ public class SetQueueInfoRequest {
     * Set false to disable the auto binding of operators to a queue by
     * skills comparing.
     */
-    public boolean getAutoBinding() {
-        return this.autoBinding.booleanValue();
+    public Boolean getAutoBinding() {
+        return this.autoBinding;
     }
 
     public boolean hasAutoBinding() {
@@ -130,8 +133,8 @@ public class SetQueueInfoRequest {
     * The value in the range of [0.5 ... 1.0]. The value 1.0 means the
     * service probability 100% in challenge with a lower priority queue.
     */
-    public long getServiceProbability() {
-        return this.serviceProbability.longValue();
+    public Long getServiceProbability() {
+        return this.serviceProbability;
     }
 
     public boolean hasServiceProbability() {
@@ -153,8 +156,8 @@ public class SetQueueInfoRequest {
     /**
     * The max queue size.
     */
-    public long getMaxQueueSize() {
-        return this.maxQueueSize.longValue();
+    public Long getMaxQueueSize() {
+        return this.maxQueueSize;
     }
 
     public boolean hasMaxQueueSize() {
@@ -177,8 +180,8 @@ public class SetQueueInfoRequest {
     * the predicted waiting time is greater than the max predicted waiting
     * time.
     */
-    public long getMaxWaitingTime() {
-        return this.maxWaitingTime.longValue();
+    public Long getMaxWaitingTime() {
+        return this.maxWaitingTime;
     }
 
     public boolean hasMaxWaitingTime() {
@@ -202,8 +205,8 @@ public class SetQueueInfoRequest {
     * The average service time in seconds. Specify the parameter to correct
     * or initialize the waiting time prediction.
     */
-    public long getAverageServiceTime() {
-        return this.averageServiceTime.longValue();
+    public Long getAverageServiceTime() {
+        return this.averageServiceTime;
     }
 
     public boolean hasAverageServiceTime() {
@@ -225,8 +228,8 @@ public class SetQueueInfoRequest {
     /**
     * The new application ID.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -241,4 +244,99 @@ public class SetQueueInfoRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (acdQueueId != null) {
+            sb.append(aligned)
+                .append("\"acdQueueId\": \"")
+                .append(acdQueueId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueueName != null) {
+            sb.append(aligned)
+                .append("\"acdQueueName\": \"")
+                .append(acdQueueName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newAcdQueueName != null) {
+            sb.append(aligned)
+                .append("\"newAcdQueueName\": \"")
+                .append(newAcdQueueName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueuePriority != null) {
+            sb.append(aligned)
+                .append("\"acdQueuePriority\": \"")
+                .append(acdQueuePriority)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (autoBinding != null) {
+            sb.append(aligned)
+                .append("\"autoBinding\": \"")
+                .append(autoBinding)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (serviceProbability != null) {
+            sb.append(aligned)
+                .append("\"serviceProbability\": \"")
+                .append(serviceProbability)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (maxQueueSize != null) {
+            sb.append(aligned)
+                .append("\"maxQueueSize\": \"")
+                .append(maxQueueSize)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (maxWaitingTime != null) {
+            sb.append(aligned)
+                .append("\"maxWaitingTime\": \"")
+                .append(maxWaitingTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (averageServiceTime != null) {
+            sb.append(aligned)
+                .append("\"averageServiceTime\": \"")
+                .append(averageServiceTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

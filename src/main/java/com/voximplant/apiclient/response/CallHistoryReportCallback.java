@@ -1,25 +1,28 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The specific account callback details. Received as part of the
 * [AccountCallback] structure.
 */
-public class CallHistoryReportCallback {
+public class CallHistoryReportCallback implements Alignable {
 
     private Long historyReportId;
 
     /**
     * The history report ID.
     */
-    public long getHistoryReportId() {
-        return this.historyReportId.longValue();
+    public Long getHistoryReportId() {
+        return this.historyReportId;
     }
 
     public boolean hasHistoryReportId() {
@@ -31,8 +34,8 @@ public class CallHistoryReportCallback {
     /**
     * Is success?
     */
-    public boolean getSuccess() {
-        return this.success.booleanValue();
+    public Boolean getSuccess() {
+        return this.success;
     }
 
     public boolean hasSuccess() {
@@ -53,4 +56,43 @@ public class CallHistoryReportCallback {
         return this.orderDate != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (historyReportId != null) {
+            sb.append(aligned)
+                .append("\"historyReportId\": \"")
+                .append(historyReportId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (success != null) {
+            sb.append(aligned)
+                .append("\"success\": \"")
+                .append(success)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (orderDate != null) {
+            sb.append(aligned)
+                .append("\"orderDate\": \"")
+                .append(orderDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

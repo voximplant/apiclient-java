@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetACDOperatorStatusStatisticsRequest {
+public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
     private Date fromDate;
 
@@ -173,4 +176,67 @@ public class GetACDOperatorStatusStatisticsRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (fromDate != null) {
+            sb.append(aligned)
+                .append("\"fromDate\": \"")
+                .append(fromDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (toDate != null) {
+            sb.append(aligned)
+                .append("\"toDate\": \"")
+                .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdStatus != null) {
+            sb.append(aligned)
+                .append("\"acdStatus\": \"")
+                .append(acdStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (aggregation != null) {
+            sb.append(aligned)
+                .append("\"aggregation\": \"")
+                .append(aggregation)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (group != null) {
+            sb.append(aligned)
+                .append("\"group\": \"")
+                .append(group)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

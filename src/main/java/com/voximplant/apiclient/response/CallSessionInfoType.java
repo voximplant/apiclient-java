@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetCallHistory] function result item.
 */
-public class CallSessionInfoType {
+public class CallSessionInfoType implements Alignable {
 
     private Long callSessionHistoryId;
 
     /**
     * The call session history ID.
     */
-    public long getCallSessionHistoryId() {
-        return this.callSessionHistoryId.longValue();
+    public Long getCallSessionHistoryId() {
+        return this.callSessionHistoryId;
     }
 
     public boolean hasCallSessionHistoryId() {
@@ -30,8 +33,8 @@ public class CallSessionInfoType {
     /**
     * The account ID.
     */
-    public long getAccountId() {
-        return this.accountId.longValue();
+    public Long getAccountId() {
+        return this.accountId;
     }
 
     public boolean hasAccountId() {
@@ -43,8 +46,8 @@ public class CallSessionInfoType {
     /**
     * The application ID.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -56,8 +59,8 @@ public class CallSessionInfoType {
     /**
     * The user ID.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -84,8 +87,8 @@ public class CallSessionInfoType {
     /**
     * The session duration in seconds.
     */
-    public long getDuration() {
-        return this.duration.longValue();
+    public Long getDuration() {
+        return this.duration;
     }
 
     public boolean hasDuration() {
@@ -198,4 +201,125 @@ public class CallSessionInfoType {
         return this.customData != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (callSessionHistoryId != null) {
+            sb.append(aligned)
+                .append("\"callSessionHistoryId\": \"")
+                .append(callSessionHistoryId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountId != null) {
+            sb.append(aligned)
+                .append("\"accountId\": \"")
+                .append(accountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (startDate != null) {
+            sb.append(aligned)
+                .append("\"startDate\": \"")
+                .append(startDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (duration != null) {
+            sb.append(aligned)
+                .append("\"duration\": \"")
+                .append(duration)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (initiatorAddress != null) {
+            sb.append(aligned)
+                .append("\"initiatorAddress\": \"")
+                .append(initiatorAddress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mediaServerAddress != null) {
+            sb.append(aligned)
+                .append("\"mediaServerAddress\": \"")
+                .append(mediaServerAddress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (logFileUrl != null) {
+            sb.append(aligned)
+                .append("\"logFileUrl\": \"")
+                .append(logFileUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (finishReason != null) {
+            sb.append(aligned)
+                .append("\"finishReason\": \"")
+                .append(finishReason)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (calls != null) {
+            sb.append(aligned)
+                .append("\"CallInfoType\": ")
+                .append(StringHelper.arrayToString(calls, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (otherResourceUsage != null) {
+            sb.append(aligned)
+                .append("\"ResourceUsageType\": ")
+                .append(StringHelper.arrayToString(otherResourceUsage, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (records != null) {
+            sb.append(aligned)
+                .append("\"RecordType\": ")
+                .append(StringHelper.arrayToString(records, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (customData != null) {
+            sb.append(aligned)
+                .append("\"customData\": \"")
+                .append(customData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

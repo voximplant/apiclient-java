@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class A2PGetSmsHistoryRequest {
+public class A2PGetSmsHistoryRequest implements Alignable {
     private String sourceNumber;
 
     @RequestField(name="source_number")
@@ -62,8 +65,8 @@ public class A2PGetSmsHistoryRequest {
     * Maximum number of resulting rows fetched. Must be not more than 1000.
     * If left blank, then the default value of 1000 will be used.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -85,8 +88,8 @@ public class A2PGetSmsHistoryRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -180,8 +183,8 @@ public class A2PGetSmsHistoryRequest {
     * The delivery status ID: QUEUED - 1, DISPATCHED - 2, ABORTED - 3,
     * REJECTED - 4, DELIVERED - 5, FAILED - 6, EXPIRED - 7, UNKNOWN - 8.
     */
-    public long getDeliveryStatus() {
-        return this.deliveryStatus.longValue();
+    public Long getDeliveryStatus() {
+        return this.deliveryStatus;
     }
 
     public boolean hasDeliveryStatus() {
@@ -197,4 +200,83 @@ public class A2PGetSmsHistoryRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (sourceNumber != null) {
+            sb.append(aligned)
+                .append("\"sourceNumber\": \"")
+                .append(sourceNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (destinationNumber != null) {
+            sb.append(aligned)
+                .append("\"destinationNumber\": \"")
+                .append(destinationNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fromDate != null) {
+            sb.append(aligned)
+                .append("\"fromDate\": \"")
+                .append(fromDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (toDate != null) {
+            sb.append(aligned)
+                .append("\"toDate\": \"")
+                .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (output != null) {
+            sb.append(aligned)
+                .append("\"output\": \"")
+                .append(output)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (deliveryStatus != null) {
+            sb.append(aligned)
+                .append("\"deliveryStatus\": \"")
+                .append(deliveryStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

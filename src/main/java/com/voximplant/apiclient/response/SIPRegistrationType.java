@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * Detailing SIP registration
 */
-public class SIPRegistrationType {
+public class SIPRegistrationType implements Alignable {
 
     private Long sipRegistrationId;
 
     /**
     * The SIP registration ID.
     */
-    public long getSipRegistrationId() {
-        return this.sipRegistrationId.longValue();
+    public Long getSipRegistrationId() {
+        return this.sipRegistrationId;
     }
 
     public boolean hasSipRegistrationId() {
@@ -56,8 +59,8 @@ public class SIPRegistrationType {
     /**
     * The last time updated.
     */
-    public long getLastUpdated() {
-        return this.lastUpdated.longValue();
+    public Long getLastUpdated() {
+        return this.lastUpdated;
     }
 
     public boolean hasLastUpdated() {
@@ -95,8 +98,8 @@ public class SIPRegistrationType {
     /**
     * The successful SIP registration.
     */
-    public boolean getSuccessful() {
-        return this.successful.booleanValue();
+    public Boolean getSuccessful() {
+        return this.successful;
     }
 
     public boolean hasSuccessful() {
@@ -108,8 +111,8 @@ public class SIPRegistrationType {
     /**
     * The status code from SIP registration.
     */
-    public long getStatusCode() {
-        return this.statusCode.longValue();
+    public Long getStatusCode() {
+        return this.statusCode;
     }
 
     public boolean hasStatusCode() {
@@ -135,8 +138,8 @@ public class SIPRegistrationType {
     * The subscription deactivation flag. The SIP registration is frozen if
     * true.
     */
-    public boolean getDeactivated() {
-        return this.deactivated.booleanValue();
+    public Boolean getDeactivated() {
+        return this.deactivated;
     }
 
     public boolean hasDeactivated() {
@@ -189,8 +192,8 @@ public class SIPRegistrationType {
     /**
     * Is SIP registration persistent or on the user logon?
     */
-    public boolean getIsPersistent() {
-        return this.isPersistent.booleanValue();
+    public Boolean getIsPersistent() {
+        return this.isPersistent;
     }
 
     public boolean hasIsPersistent() {
@@ -202,8 +205,8 @@ public class SIPRegistrationType {
     /**
     * The id of the bound user.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -228,8 +231,8 @@ public class SIPRegistrationType {
     /**
     * The id of the bound application.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -254,8 +257,8 @@ public class SIPRegistrationType {
     /**
     * The id of the bound rule.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -275,4 +278,179 @@ public class SIPRegistrationType {
         return this.ruleName != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (sipRegistrationId != null) {
+            sb.append(aligned)
+                .append("\"sipRegistrationId\": \"")
+                .append(sipRegistrationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (sipUsername != null) {
+            sb.append(aligned)
+                .append("\"sipUsername\": \"")
+                .append(sipUsername)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (proxy != null) {
+            sb.append(aligned)
+                .append("\"proxy\": \"")
+                .append(proxy)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (lastUpdated != null) {
+            sb.append(aligned)
+                .append("\"lastUpdated\": \"")
+                .append(lastUpdated)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (authUser != null) {
+            sb.append(aligned)
+                .append("\"authUser\": \"")
+                .append(authUser)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (outboundProxy != null) {
+            sb.append(aligned)
+                .append("\"outboundProxy\": \"")
+                .append(outboundProxy)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (successful != null) {
+            sb.append(aligned)
+                .append("\"successful\": \"")
+                .append(successful)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (statusCode != null) {
+            sb.append(aligned)
+                .append("\"statusCode\": \"")
+                .append(statusCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (errorMessage != null) {
+            sb.append(aligned)
+                .append("\"errorMessage\": \"")
+                .append(errorMessage)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (deactivated != null) {
+            sb.append(aligned)
+                .append("\"deactivated\": \"")
+                .append(deactivated)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (nextSubscriptionRenewal != null) {
+            sb.append(aligned)
+                .append("\"nextSubscriptionRenewal\": \"")
+                .append(nextSubscriptionRenewal)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (purchaseDate != null) {
+            sb.append(aligned)
+                .append("\"purchaseDate\": \"")
+                .append(purchaseDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionPrice != null) {
+            sb.append(aligned)
+                .append("\"subscriptionPrice\": \"")
+                .append(subscriptionPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isPersistent != null) {
+            sb.append(aligned)
+                .append("\"isPersistent\": \"")
+                .append(isPersistent)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

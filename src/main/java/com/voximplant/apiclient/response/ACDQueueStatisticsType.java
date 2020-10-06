@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * Individual record in the [ACDOperatorAggregationGroupType] group.
 */
-public class ACDQueueStatisticsType {
+public class ACDQueueStatisticsType implements Alignable {
 
     @JsonDeserialize(using=com.voximplant.apiclient.util.DateDeserializer.class)
     private Date date;
@@ -33,8 +36,8 @@ public class ACDQueueStatisticsType {
     * If aggregation was enabled, contains the 60-minute interval number
     * from 1 to 24
     */
-    public long getHour() {
-        return this.hour.longValue();
+    public Long getHour() {
+        return this.hour;
     }
 
     public boolean hasHour() {
@@ -149,8 +152,8 @@ public class ACDQueueStatisticsType {
     * Total number of calls. Name is 'TotalCalls' if 'abbreviation' is set
     * to 'false'
     */
-    public long getTC() {
-        return this.TC.longValue();
+    public Long getTC() {
+        return this.TC;
     }
 
     public boolean hasTC() {
@@ -221,8 +224,8 @@ public class ACDQueueStatisticsType {
     * Sum of 'WaitingTime', in seconds. Name is 'TotalWaitingTime' if
     * 'abbreviation' is set to 'false'
     */
-    public long getTWT() {
-        return this.TWT.longValue();
+    public Long getTWT() {
+        return this.TWT;
     }
 
     public boolean hasTWT() {
@@ -235,8 +238,8 @@ public class ACDQueueStatisticsType {
     * Sum of 'SpeedOfAnswer', in seconds. Name is 'TotalSubmissionTime' if
     * 'abbreviation' is set to 'false'
     */
-    public long getTST() {
-        return this.TST.longValue();
+    public Long getTST() {
+        return this.TST;
     }
 
     public boolean hasTST() {
@@ -250,8 +253,8 @@ public class ACDQueueStatisticsType {
     * disconnect not reaching the operator, in seconds. Name is
     * 'TotalAbandonmentTime' if 'abbreviation' is set to 'false'
     */
-    public long getTAT() {
-        return this.TAT.longValue();
+    public Long getTAT() {
+        return this.TAT;
     }
 
     public boolean hasTAT() {
@@ -264,8 +267,8 @@ public class ACDQueueStatisticsType {
     * Sum of 'HandlingTime', in seconds. Name is 'TotalHandlingTime' if
     * 'abbreviation' is set to 'false'
     */
-    public long getTHT() {
-        return this.THT.longValue();
+    public Long getTHT() {
+        return this.THT;
     }
 
     public boolean hasTHT() {
@@ -278,8 +281,8 @@ public class ACDQueueStatisticsType {
     * Sum of 'TalkTime', in seconds. Name is 'TotalTalkTime' if
     * 'abbreviation' is set to 'false'
     */
-    public long getTTT() {
-        return this.TTT.longValue();
+    public Long getTTT() {
+        return this.TTT;
     }
 
     public boolean hasTTT() {
@@ -292,12 +295,179 @@ public class ACDQueueStatisticsType {
     * Sum of 'AfterCallWork', in seconds. Name is 'TotalAfterCallWork' if
     * 'abbreviation' is set to 'false'
     */
-    public long getTACW() {
-        return this.TACW.longValue();
+    public Long getTACW() {
+        return this.TACW;
     }
 
     public boolean hasTACW() {
         return this.TACW != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (date != null) {
+            sb.append(aligned)
+                .append("\"date\": \"")
+                .append(date)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (hour != null) {
+            sb.append(aligned)
+                .append("\"hour\": \"")
+                .append(hour)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (WT != null) {
+            sb.append(aligned)
+                .append("\"WT\": \"")
+                .append(WT)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (SA != null) {
+            sb.append(aligned)
+                .append("\"SA\": \"")
+                .append(SA)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (AT != null) {
+            sb.append(aligned)
+                .append("\"AT\": \"")
+                .append(AT)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (HT != null) {
+            sb.append(aligned)
+                .append("\"HT\": \"")
+                .append(HT)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (TT != null) {
+            sb.append(aligned)
+                .append("\"TT\": \"")
+                .append(TT)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ACW != null) {
+            sb.append(aligned)
+                .append("\"ACW\": \"")
+                .append(ACW)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (QL != null) {
+            sb.append(aligned)
+                .append("\"QL\": \"")
+                .append(QL)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (TC != null) {
+            sb.append(aligned)
+                .append("\"TC\": \"")
+                .append(TC)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (AC != null) {
+            sb.append(aligned)
+                .append("\"ACDStatisticsCalls\": ")
+                .append(StringHelper.arrayToString(AC, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (UAC != null) {
+            sb.append(aligned)
+                .append("\"ACDStatisticsCalls\": ")
+                .append(StringHelper.arrayToString(UAC, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (RC != null) {
+            sb.append(aligned)
+                .append("\"ACDStatisticsCalls\": ")
+                .append(StringHelper.arrayToString(RC, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (SL != null) {
+            sb.append(aligned)
+                .append("\"ACDQueueStatisticsServiceLevelType\": ")
+                .append(StringHelper.arrayToString(SL, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (TWT != null) {
+            sb.append(aligned)
+                .append("\"TWT\": \"")
+                .append(TWT)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (TST != null) {
+            sb.append(aligned)
+                .append("\"TST\": \"")
+                .append(TST)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (TAT != null) {
+            sb.append(aligned)
+                .append("\"TAT\": \"")
+                .append(TAT)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (THT != null) {
+            sb.append(aligned)
+                .append("\"THT\": \"")
+                .append(THT)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (TTT != null) {
+            sb.append(aligned)
+                .append("\"TTT\": \"")
+                .append(TTT)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (TACW != null) {
+            sb.append(aligned)
+                .append("\"TACW\": \"")
+                .append(TACW)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

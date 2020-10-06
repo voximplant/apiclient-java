@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetApplicationsRequest {
+public class GetApplicationsRequest implements Alignable {
     private Long applicationId;
 
     @RequestField(name="application_id")
     /**
     * The application ID to filter.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -61,8 +64,8 @@ public class GetApplicationsRequest {
     /**
     * The user ID to filter.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -83,8 +86,8 @@ public class GetApplicationsRequest {
     /**
     * The excluded user ID to filter.
     */
-    public long getExcludedUserId() {
-        return this.excludedUserId.longValue();
+    public Long getExcludedUserId() {
+        return this.excludedUserId;
     }
 
     public boolean hasExcludedUserId() {
@@ -105,8 +108,8 @@ public class GetApplicationsRequest {
     /**
     * Specify the user ID value to show it in the 'users' array output.
     */
-    public long getShowingUserId() {
-        return this.showingUserId.longValue();
+    public Long getShowingUserId() {
+        return this.showingUserId;
     }
 
     public boolean hasShowingUserId() {
@@ -127,8 +130,8 @@ public class GetApplicationsRequest {
     /**
     * Set true to get bound rules info.
     */
-    public boolean getWithRules() {
-        return this.withRules.booleanValue();
+    public Boolean getWithRules() {
+        return this.withRules;
     }
 
     public boolean hasWithRules() {
@@ -149,8 +152,8 @@ public class GetApplicationsRequest {
     /**
     * Set true to get bound rules and scenarios info.
     */
-    public boolean getWithScenarios() {
-        return this.withScenarios.booleanValue();
+    public Boolean getWithScenarios() {
+        return this.withScenarios;
     }
 
     public boolean hasWithScenarios() {
@@ -171,8 +174,8 @@ public class GetApplicationsRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -193,8 +196,8 @@ public class GetApplicationsRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -209,4 +212,91 @@ public class GetApplicationsRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (excludedUserId != null) {
+            sb.append(aligned)
+                .append("\"excludedUserId\": \"")
+                .append(excludedUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (showingUserId != null) {
+            sb.append(aligned)
+                .append("\"showingUserId\": \"")
+                .append(showingUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withRules != null) {
+            sb.append(aligned)
+                .append("\"withRules\": \"")
+                .append(withRules)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withScenarios != null) {
+            sb.append(aligned)
+                .append("\"withScenarios\": \"")
+                .append(withScenarios)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

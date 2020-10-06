@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetSipRegistrationsRequest {
+public class GetSipRegistrationsRequest implements Alignable {
     private Long sipRegistrationId;
 
     @RequestField(name="sip_registration_id")
     /**
     * The SIP registration ID.
     */
-    public long getSipRegistrationId() {
-        return this.sipRegistrationId.longValue();
+    public Long getSipRegistrationId() {
+        return this.sipRegistrationId;
     }
 
     public boolean hasSipRegistrationId() {
@@ -61,8 +64,8 @@ public class GetSipRegistrationsRequest {
     /**
     * Set true to show the frozen SIP registrations only.
     */
-    public boolean getDeactivated() {
-        return this.deactivated.booleanValue();
+    public Boolean getDeactivated() {
+        return this.deactivated;
     }
 
     public boolean hasDeactivated() {
@@ -83,8 +86,8 @@ public class GetSipRegistrationsRequest {
     /**
     * Set false to show the unsuccessful SIP registrations only.
     */
-    public boolean getSuccessful() {
-        return this.successful.booleanValue();
+    public Boolean getSuccessful() {
+        return this.successful;
     }
 
     public boolean hasSuccessful() {
@@ -105,8 +108,8 @@ public class GetSipRegistrationsRequest {
     /**
     * The persistent flag to filter.
     */
-    public boolean getIsPersistent() {
-        return this.isPersistent.booleanValue();
+    public Boolean getIsPersistent() {
+        return this.isPersistent;
     }
 
     public boolean hasIsPersistent() {
@@ -175,8 +178,8 @@ public class GetSipRegistrationsRequest {
     /**
     * Is a SIP registration bound to an application.
     */
-    public boolean getIsBoundToApplication() {
-        return this.isBoundToApplication.booleanValue();
+    public Boolean getIsBoundToApplication() {
+        return this.isBoundToApplication;
     }
 
     public boolean hasIsBoundToApplication() {
@@ -315,8 +318,8 @@ public class GetSipRegistrationsRequest {
     /**
     * Is the SIP registration is still in progress or not?
     */
-    public boolean getInProgress() {
-        return this.inProgress.booleanValue();
+    public Boolean getInProgress() {
+        return this.inProgress;
     }
 
     public boolean hasInProgress() {
@@ -365,8 +368,8 @@ public class GetSipRegistrationsRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -387,8 +390,8 @@ public class GetSipRegistrationsRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -403,4 +406,155 @@ public class GetSipRegistrationsRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (sipRegistrationId != null) {
+            sb.append(aligned)
+                .append("\"sipRegistrationId\": \"")
+                .append(sipRegistrationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (sipUsername != null) {
+            sb.append(aligned)
+                .append("\"sipUsername\": \"")
+                .append(sipUsername)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (deactivated != null) {
+            sb.append(aligned)
+                .append("\"deactivated\": \"")
+                .append(deactivated)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (successful != null) {
+            sb.append(aligned)
+                .append("\"successful\": \"")
+                .append(successful)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isPersistent != null) {
+            sb.append(aligned)
+                .append("\"isPersistent\": \"")
+                .append(isPersistent)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isBoundToApplication != null) {
+            sb.append(aligned)
+                .append("\"isBoundToApplication\": \"")
+                .append(isBoundToApplication)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (proxy != null) {
+            sb.append(aligned)
+                .append("\"proxy\": \"")
+                .append(proxy)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (inProgress != null) {
+            sb.append(aligned)
+                .append("\"inProgress\": \"")
+                .append(inProgress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (statusCode != null) {
+            sb.append(aligned)
+                .append("\"statusCode\": \"")
+                .append(statusCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

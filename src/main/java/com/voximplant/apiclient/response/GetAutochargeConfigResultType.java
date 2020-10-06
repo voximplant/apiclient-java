@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetAutochargeConfig] function result.
 */
-public class GetAutochargeConfigResultType {
+public class GetAutochargeConfigResultType implements Alignable {
 
     private Boolean autoCharge;
 
     /**
     * Is auto charge enabled or not.
     */
-    public boolean getAutoCharge() {
-        return this.autoCharge.booleanValue();
+    public Boolean getAutoCharge() {
+        return this.autoCharge;
     }
 
     public boolean hasAutoCharge() {
@@ -30,8 +33,8 @@ public class GetAutochargeConfigResultType {
     /**
     * The auto charge threshold.
     */
-    public long getMinBalance() {
-        return this.minBalance.longValue();
+    public Long getMinBalance() {
+        return this.minBalance;
     }
 
     public boolean hasMinBalance() {
@@ -64,4 +67,51 @@ public class GetAutochargeConfigResultType {
         return this.receiptEmail != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (autoCharge != null) {
+            sb.append(aligned)
+                .append("\"autoCharge\": \"")
+                .append(autoCharge)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minBalance != null) {
+            sb.append(aligned)
+                .append("\"minBalance\": \"")
+                .append(minBalance)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cardOverrunValue != null) {
+            sb.append(aligned)
+                .append("\"cardOverrunValue\": \"")
+                .append(cardOverrunValue)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (receiptEmail != null) {
+            sb.append(aligned)
+                .append("\"receiptEmail\": \"")
+                .append(receiptEmail)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

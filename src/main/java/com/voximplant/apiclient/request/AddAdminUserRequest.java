@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class AddAdminUserRequest {
+public class AddAdminUserRequest implements Alignable {
     private String newAdminUserName;
 
     @RequestField(name="new_admin_user_name")
@@ -83,8 +86,8 @@ public class AddAdminUserRequest {
     /**
     * The admin user enable flag.
     */
-    public boolean getAdminUserActive() {
-        return this.adminUserActive.booleanValue();
+    public Boolean getAdminUserActive() {
+        return this.adminUserActive;
     }
 
     public boolean hasAdminUserActive() {
@@ -155,4 +158,67 @@ public class AddAdminUserRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (newAdminUserName != null) {
+            sb.append(aligned)
+                .append("\"newAdminUserName\": \"")
+                .append(newAdminUserName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminUserDisplayName != null) {
+            sb.append(aligned)
+                .append("\"adminUserDisplayName\": \"")
+                .append(adminUserDisplayName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newAdminUserPassword != null) {
+            sb.append(aligned)
+                .append("\"newAdminUserPassword\": \"")
+                .append(newAdminUserPassword)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminUserActive != null) {
+            sb.append(aligned)
+                .append("\"adminUserActive\": \"")
+                .append(adminUserActive)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminRoleId != null) {
+            sb.append(aligned)
+                .append("\"adminRoleId\": \"")
+                .append(adminRoleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminRoleName != null) {
+            sb.append(aligned)
+                .append("\"adminRoleName\": \"")
+                .append(adminRoleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,17 +1,20 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The payments limits applicable to each payment method. Payments that
 * are beyond limits are declined.
 */
-public class BillingLimitsType {
+public class BillingLimitsType implements Alignable {
 
     private BillingLimitInfoType robokassa;
 
@@ -52,4 +55,43 @@ public class BillingLimitsType {
         return this.invoice != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (robokassa != null) {
+            sb.append(aligned)
+                .append("\"robokassa\": \"")
+                .append(robokassa)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (bankCard != null) {
+            sb.append(aligned)
+                .append("\"bankCard\": \"")
+                .append(bankCard)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (invoice != null) {
+            sb.append(aligned)
+                .append("\"invoice\": \"")
+                .append(invoice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

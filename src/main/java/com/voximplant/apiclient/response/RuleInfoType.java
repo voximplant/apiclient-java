@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetRules] function result item.
 */
-public class RuleInfoType {
+public class RuleInfoType implements Alignable {
 
     private Long ruleId;
 
     /**
     * The rule ID.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -30,8 +33,8 @@ public class RuleInfoType {
     /**
     * The application ID.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -82,8 +85,8 @@ public class RuleInfoType {
     /**
     * Is video conference required?
     */
-    public boolean getVideoConference() {
-        return this.videoConference.booleanValue();
+    public Boolean getVideoConference() {
+        return this.videoConference;
     }
 
     public boolean hasVideoConference() {
@@ -117,4 +120,81 @@ public class RuleInfoType {
         return this.modified != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (rulePattern != null) {
+            sb.append(aligned)
+                .append("\"rulePattern\": \"")
+                .append(rulePattern)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (rulePatternExclude != null) {
+            sb.append(aligned)
+                .append("\"rulePatternExclude\": \"")
+                .append(rulePatternExclude)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (videoConference != null) {
+            sb.append(aligned)
+                .append("\"videoConference\": \"")
+                .append(videoConference)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (scenarios != null) {
+            sb.append(aligned)
+                .append("\"ScenarioInfoType\": ")
+                .append(StringHelper.arrayToString(scenarios, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (modified != null) {
+            sb.append(aligned)
+                .append("\"modified\": \"")
+                .append(modified)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

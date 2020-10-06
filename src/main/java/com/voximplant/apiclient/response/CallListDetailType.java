@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * Detailing job telephone calls
 */
-public class CallListDetailType {
+public class CallListDetailType implements Alignable {
 
     private Long listId;
 
     /**
     * The list ID.
     */
-    public long getListId() {
-        return this.listId.longValue();
+    public Long getListId() {
+        return this.listId;
     }
 
     public boolean hasListId() {
@@ -96,8 +99,8 @@ public class CallListDetailType {
     /**
     * Number of remaining attempts.
     */
-    public long getAttemptsLeft() {
-        return this.attemptsLeft.longValue();
+    public Long getAttemptsLeft() {
+        return this.attemptsLeft;
     }
 
     public boolean hasAttemptsLeft() {
@@ -111,8 +114,8 @@ public class CallListDetailType {
     * (status = In progress), __2__ (status = Processed), __3__ (status =
     * Error), __4__ (status = Cancelled).
     */
-    public long getStatusId() {
-        return this.statusId.longValue();
+    public Long getStatusId() {
+        return this.statusId;
     }
 
     public boolean hasStatusId() {
@@ -134,4 +137,91 @@ public class CallListDetailType {
         return this.status != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (listId != null) {
+            sb.append(aligned)
+                .append("\"listId\": \"")
+                .append(listId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (customData != null) {
+            sb.append(aligned)
+                .append("\"customData\": \"")
+                .append(customData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (startExecutionTime != null) {
+            sb.append(aligned)
+                .append("\"startExecutionTime\": \"")
+                .append(startExecutionTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (finishExecutionTime != null) {
+            sb.append(aligned)
+                .append("\"finishExecutionTime\": \"")
+                .append(finishExecutionTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (resultData != null) {
+            sb.append(aligned)
+                .append("\"resultData\": \"")
+                .append(resultData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (lastAttempt != null) {
+            sb.append(aligned)
+                .append("\"lastAttempt\": \"")
+                .append(lastAttempt)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (attemptsLeft != null) {
+            sb.append(aligned)
+                .append("\"attemptsLeft\": \"")
+                .append(attemptsLeft)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (statusId != null) {
+            sb.append(aligned)
+                .append("\"statusId\": \"")
+                .append(statusId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (status != null) {
+            sb.append(aligned)
+                .append("\"status\": \"")
+                .append(status)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

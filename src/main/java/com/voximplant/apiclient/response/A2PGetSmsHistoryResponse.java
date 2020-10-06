@@ -1,13 +1,16 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
-public class A2PGetSmsHistoryResponse {
+public class A2PGetSmsHistoryResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -33,12 +36,41 @@ public class A2PGetSmsHistoryResponse {
     /**
     * Total number of distinct messages fetched.
     */
-    public long getTotalCount() {
-        return this.totalCount.longValue();
+    public Long getTotalCount() {
+        return this.totalCount;
     }
 
     public boolean hasTotalCount() {
         return this.totalCount != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (result != null) {
+            sb.append(aligned)
+                .append("\"A2PSmsHistoryType\": ")
+                .append(StringHelper.arrayToString(result, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (totalCount != null) {
+            sb.append(aligned)
+                .append("\"totalCount\": \"")
+                .append(totalCount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The history report info.
 */
-public class HistoryReportType {
+public class HistoryReportType implements Alignable {
 
     private Long historyReportId;
 
     /**
     * The call history report ID.
     */
-    public long getHistoryReportId() {
-        return this.historyReportId.longValue();
+    public Long getHistoryReportId() {
+        return this.historyReportId;
     }
 
     public boolean hasHistoryReportId() {
@@ -126,8 +129,8 @@ public class HistoryReportType {
     /**
     * The download attempt count.
     */
-    public long getDownloadCount() {
-        return this.downloadCount.longValue();
+    public Long getDownloadCount() {
+        return this.downloadCount;
     }
 
     public boolean hasDownloadCount() {
@@ -206,4 +209,131 @@ public class HistoryReportType {
         return this.calculatedData != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (historyReportId != null) {
+            sb.append(aligned)
+                .append("\"historyReportId\": \"")
+                .append(historyReportId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (historyType != null) {
+            sb.append(aligned)
+                .append("\"historyType\": \"")
+                .append(historyType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (created != null) {
+            sb.append(aligned)
+                .append("\"created\": \"")
+                .append(created)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (format != null) {
+            sb.append(aligned)
+                .append("\"format\": \"")
+                .append(format)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (completed != null) {
+            sb.append(aligned)
+                .append("\"completed\": \"")
+                .append(completed)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fileName != null) {
+            sb.append(aligned)
+                .append("\"fileName\": \"")
+                .append(fileName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fileSize != null) {
+            sb.append(aligned)
+                .append("\"fileSize\": \"")
+                .append(fileSize)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (downloadSize != null) {
+            sb.append(aligned)
+                .append("\"downloadSize\": \"")
+                .append(downloadSize)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (downloadCount != null) {
+            sb.append(aligned)
+                .append("\"downloadCount\": \"")
+                .append(downloadCount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (lastDownloaded != null) {
+            sb.append(aligned)
+                .append("\"lastDownloaded\": \"")
+                .append(lastDownloaded)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (storeUntil != null) {
+            sb.append(aligned)
+                .append("\"storeUntil\": \"")
+                .append(storeUntil)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (error != null) {
+            sb.append(aligned)
+                .append("\"error\": \"")
+                .append(error)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (filters != null) {
+            sb.append(aligned)
+                .append("\"filters\": \"")
+                .append(filters)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (calculatedData != null) {
+            sb.append(aligned)
+                .append("\"calculatedData\": \"")
+                .append(calculatedData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

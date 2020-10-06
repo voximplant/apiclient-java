@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SendSmsMessageRequest {
+public class SendSmsMessageRequest implements Alignable {
     private String source;
 
     @RequestField(name="source")
@@ -81,4 +84,43 @@ public class SendSmsMessageRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (source != null) {
+            sb.append(aligned)
+                .append("\"source\": \"")
+                .append(source)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (destination != null) {
+            sb.append(aligned)
+                .append("\"destination\": \"")
+                .append(destination)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (smsBody != null) {
+            sb.append(aligned)
+                .append("\"smsBody\": \"")
+                .append(smsBody)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

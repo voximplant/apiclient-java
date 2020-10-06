@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class UpdateSipRegistrationRequest {
+public class UpdateSipRegistrationRequest implements Alignable {
     private Long sipRegistrationId;
 
     @RequestField(name="sip_registration_id")
     /**
     * The registration ID
     */
-    public long getSipRegistrationId() {
-        return this.sipRegistrationId.longValue();
+    public Long getSipRegistrationId() {
+        return this.sipRegistrationId;
     }
 
     public boolean hasSipRegistrationId() {
@@ -150,8 +153,8 @@ public class UpdateSipRegistrationRequest {
     * The application ID which the SIP registration will be bound to. Can
     * be used instead of the <b>application_name</b> parameter.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -198,8 +201,8 @@ public class UpdateSipRegistrationRequest {
     * The rule ID which the SIP registration will be bound to. Can be used
     * instead of the <b>rule_name</b> parameter.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -246,8 +249,8 @@ public class UpdateSipRegistrationRequest {
     * The user ID which the SIP registration will be bound to. Can be used
     * instead of the <b>user_name</b> parameter.
     */
-    public long getUserId() {
-        return this.userId.longValue();
+    public Long getUserId() {
+        return this.userId;
     }
 
     public boolean hasUserId() {
@@ -287,4 +290,115 @@ public class UpdateSipRegistrationRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (sipRegistrationId != null) {
+            sb.append(aligned)
+                .append("\"sipRegistrationId\": \"")
+                .append(sipRegistrationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (sipUsername != null) {
+            sb.append(aligned)
+                .append("\"sipUsername\": \"")
+                .append(sipUsername)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (proxy != null) {
+            sb.append(aligned)
+                .append("\"proxy\": \"")
+                .append(proxy)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (authUser != null) {
+            sb.append(aligned)
+                .append("\"authUser\": \"")
+                .append(authUser)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (outboundProxy != null) {
+            sb.append(aligned)
+                .append("\"outboundProxy\": \"")
+                .append(outboundProxy)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (password != null) {
+            sb.append(aligned)
+                .append("\"password\": \"")
+                .append(password)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

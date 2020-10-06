@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetPhoneNumbers] function result item.
 */
-public class AttachedPhoneInfoType {
+public class AttachedPhoneInfoType implements Alignable {
 
     private Long phoneId;
 
     /**
     * The phone ID.
     */
-    public long getPhoneId() {
-        return this.phoneId.longValue();
+    public Long getPhoneId() {
+        return this.phoneId;
     }
 
     public boolean hasPhoneId() {
@@ -97,8 +100,8 @@ public class AttachedPhoneInfoType {
     /**
     * The flag of the frozen subscription.
     */
-    public boolean getDeactivated() {
-        return this.deactivated.booleanValue();
+    public Boolean getDeactivated() {
+        return this.deactivated;
     }
 
     public boolean hasDeactivated() {
@@ -110,8 +113,8 @@ public class AttachedPhoneInfoType {
     /**
     * The flag of the deleted subscription.
     */
-    public boolean getCanceled() {
-        return this.canceled.booleanValue();
+    public Boolean getCanceled() {
+        return this.canceled;
     }
 
     public boolean hasCanceled() {
@@ -123,8 +126,8 @@ public class AttachedPhoneInfoType {
     /**
     * The auto_charge flag.
     */
-    public boolean getAutoCharge() {
-        return this.autoCharge.booleanValue();
+    public Boolean getAutoCharge() {
+        return this.autoCharge;
     }
 
     public boolean hasAutoCharge() {
@@ -136,8 +139,8 @@ public class AttachedPhoneInfoType {
     /**
     * The id of the bound application.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -162,8 +165,8 @@ public class AttachedPhoneInfoType {
     /**
     * The id of the bound rule.
     */
-    public long getRuleId() {
-        return this.ruleId.longValue();
+    public Long getRuleId() {
+        return this.ruleId;
     }
 
     public boolean hasRuleId() {
@@ -244,8 +247,8 @@ public class AttachedPhoneInfoType {
     /**
     * Can the unverified account use the phone?
     */
-    public boolean getCanBeUsed() {
-        return this.canBeUsed.booleanValue();
+    public Boolean getCanBeUsed() {
+        return this.canBeUsed;
     }
 
     public boolean hasCanBeUsed() {
@@ -263,8 +266,8 @@ public class AttachedPhoneInfoType {
     * href='/docs/howtos/integration/httpapi/callbacks'>this article</a>
     * for HTTP callback details.
     */
-    public boolean getIsSmsSupported() {
-        return this.isSmsSupported.booleanValue();
+    public Boolean getIsSmsSupported() {
+        return this.isSmsSupported;
     }
 
     public boolean hasIsSmsSupported() {
@@ -277,12 +280,187 @@ public class AttachedPhoneInfoType {
     * If <b>true</b>, SMS sending and receiving is enabled for this phone
     * number via the [ControlSms] HTTP API.
     */
-    public boolean getIsSmsEnabled() {
-        return this.isSmsEnabled.booleanValue();
+    public Boolean getIsSmsEnabled() {
+        return this.isSmsEnabled;
     }
 
     public boolean hasIsSmsEnabled() {
         return this.isSmsEnabled != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (phoneId != null) {
+            sb.append(aligned)
+                .append("\"phoneId\": \"")
+                .append(phoneId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneNumber != null) {
+            sb.append(aligned)
+                .append("\"phoneNumber\": \"")
+                .append(phoneNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phonePrice != null) {
+            sb.append(aligned)
+                .append("\"phonePrice\": \"")
+                .append(phonePrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCountryCode != null) {
+            sb.append(aligned)
+                .append("\"phoneCountryCode\": \"")
+                .append(phoneCountryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneNextRenewal != null) {
+            sb.append(aligned)
+                .append("\"phoneNextRenewal\": \"")
+                .append(phoneNextRenewal)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phonePurchaseDate != null) {
+            sb.append(aligned)
+                .append("\"phonePurchaseDate\": \"")
+                .append(phonePurchaseDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (deactivated != null) {
+            sb.append(aligned)
+                .append("\"deactivated\": \"")
+                .append(deactivated)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (canceled != null) {
+            sb.append(aligned)
+                .append("\"canceled\": \"")
+                .append(canceled)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (autoCharge != null) {
+            sb.append(aligned)
+                .append("\"autoCharge\": \"")
+                .append(autoCharge)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (categoryName != null) {
+            sb.append(aligned)
+                .append("\"categoryName\": \"")
+                .append(categoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (requiredVerification != null) {
+            sb.append(aligned)
+                .append("\"requiredVerification\": \"")
+                .append(requiredVerification)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verificationStatus != null) {
+            sb.append(aligned)
+                .append("\"verificationStatus\": \"")
+                .append(verificationStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (unverifiedHoldUntil != null) {
+            sb.append(aligned)
+                .append("\"unverifiedHoldUntil\": \"")
+                .append(unverifiedHoldUntil)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (canBeUsed != null) {
+            sb.append(aligned)
+                .append("\"canBeUsed\": \"")
+                .append(canBeUsed)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isSmsSupported != null) {
+            sb.append(aligned)
+                .append("\"isSmsSupported\": \"")
+                .append(isSmsSupported)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isSmsEnabled != null) {
+            sb.append(aligned)
+                .append("\"isSmsEnabled\": \"")
+                .append(isSmsEnabled)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetAdminRolesRequest {
+public class GetAdminRolesRequest implements Alignable {
     private Long adminRoleId;
 
     @RequestField(name="admin_role_id")
     /**
     * The admin role ID to filter.
     */
-    public long getAdminRoleId() {
-        return this.adminRoleId.longValue();
+    public Long getAdminRoleId() {
+        return this.adminRoleId;
     }
 
     public boolean hasAdminRoleId() {
@@ -61,8 +64,8 @@ public class GetAdminRolesRequest {
     /**
     * The admin role active flag to filter.
     */
-    public boolean getAdminRoleActive() {
-        return this.adminRoleActive.booleanValue();
+    public Boolean getAdminRoleActive() {
+        return this.adminRoleActive;
     }
 
     public boolean hasAdminRoleActive() {
@@ -83,8 +86,8 @@ public class GetAdminRolesRequest {
     /**
     * Set true to get the permissions.
     */
-    public boolean getWithEntries() {
-        return this.withEntries.booleanValue();
+    public Boolean getWithEntries() {
+        return this.withEntries;
     }
 
     public boolean hasWithEntries() {
@@ -105,8 +108,8 @@ public class GetAdminRolesRequest {
     /**
     * Set false to omit the account roles.
     */
-    public boolean getWithAccountRoles() {
-        return this.withAccountRoles.booleanValue();
+    public Boolean getWithAccountRoles() {
+        return this.withAccountRoles;
     }
 
     public boolean hasWithAccountRoles() {
@@ -127,8 +130,8 @@ public class GetAdminRolesRequest {
     /**
     * Set false to omit the parent roles.
     */
-    public boolean getWithParentRoles() {
-        return this.withParentRoles.booleanValue();
+    public Boolean getWithParentRoles() {
+        return this.withParentRoles;
     }
 
     public boolean hasWithParentRoles() {
@@ -149,8 +152,8 @@ public class GetAdminRolesRequest {
     /**
     * Set false to omit the system roles.
     */
-    public boolean getWithSystemRoles() {
-        return this.withSystemRoles.booleanValue();
+    public Boolean getWithSystemRoles() {
+        return this.withSystemRoles;
     }
 
     public boolean hasWithSystemRoles() {
@@ -241,8 +244,8 @@ public class GetAdminRolesRequest {
     /**
     * The admin user to show in the 'admin_users' field output.
     */
-    public long getShowingAdminUserId() {
-        return this.showingAdminUserId.longValue();
+    public Long getShowingAdminUserId() {
+        return this.showingAdminUserId;
     }
 
     public boolean hasShowingAdminUserId() {
@@ -263,8 +266,8 @@ public class GetAdminRolesRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -285,8 +288,8 @@ public class GetAdminRolesRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -301,4 +304,123 @@ public class GetAdminRolesRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (adminRoleId != null) {
+            sb.append(aligned)
+                .append("\"adminRoleId\": \"")
+                .append(adminRoleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminRoleName != null) {
+            sb.append(aligned)
+                .append("\"adminRoleName\": \"")
+                .append(adminRoleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminRoleActive != null) {
+            sb.append(aligned)
+                .append("\"adminRoleActive\": \"")
+                .append(adminRoleActive)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withEntries != null) {
+            sb.append(aligned)
+                .append("\"withEntries\": \"")
+                .append(withEntries)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withAccountRoles != null) {
+            sb.append(aligned)
+                .append("\"withAccountRoles\": \"")
+                .append(withAccountRoles)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withParentRoles != null) {
+            sb.append(aligned)
+                .append("\"withParentRoles\": \"")
+                .append(withParentRoles)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withSystemRoles != null) {
+            sb.append(aligned)
+                .append("\"withSystemRoles\": \"")
+                .append(withSystemRoles)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (includedAdminUserId != null) {
+            sb.append(aligned)
+                .append("\"includedAdminUserId\": \"")
+                .append(includedAdminUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (excludedAdminUserId != null) {
+            sb.append(aligned)
+                .append("\"excludedAdminUserId\": \"")
+                .append(excludedAdminUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fullAdminUsersMatching != null) {
+            sb.append(aligned)
+                .append("\"fullAdminUsersMatching\": \"")
+                .append(fullAdminUsersMatching)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (showingAdminUserId != null) {
+            sb.append(aligned)
+                .append("\"showingAdminUserId\": \"")
+                .append(showingAdminUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

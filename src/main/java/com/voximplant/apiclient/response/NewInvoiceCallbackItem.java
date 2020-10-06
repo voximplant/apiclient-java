@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The specific account callback details.
 */
-public class NewInvoiceCallbackItem {
+public class NewInvoiceCallbackItem implements Alignable {
 
     private String invoiceNumber;
 
@@ -43,8 +46,8 @@ public class NewInvoiceCallbackItem {
     /**
     * Is it a prepayment?
     */
-    public boolean getPrepayment() {
-        return this.prepayment.booleanValue();
+    public Boolean getPrepayment() {
+        return this.prepayment;
     }
 
     public boolean hasPrepayment() {
@@ -103,4 +106,73 @@ public class NewInvoiceCallbackItem {
         return this.units != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (invoiceNumber != null) {
+            sb.append(aligned)
+                .append("\"invoiceNumber\": \"")
+                .append(invoiceNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (invoiceDate != null) {
+            sb.append(aligned)
+                .append("\"invoiceDate\": \"")
+                .append(invoiceDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (prepayment != null) {
+            sb.append(aligned)
+                .append("\"prepayment\": \"")
+                .append(prepayment)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (currency != null) {
+            sb.append(aligned)
+                .append("\"currency\": \"")
+                .append(currency)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (totalAmount != null) {
+            sb.append(aligned)
+                .append("\"totalAmount\": \"")
+                .append(totalAmount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (totalTaxAmount != null) {
+            sb.append(aligned)
+                .append("\"totalTaxAmount\": \"")
+                .append(totalTaxAmount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (units != null) {
+            sb.append(aligned)
+                .append("\"InvoiceUnits\": ")
+                .append(StringHelper.arrayToString(units, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

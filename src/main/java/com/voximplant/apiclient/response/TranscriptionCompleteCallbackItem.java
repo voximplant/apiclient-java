@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The specific account callback details.
 */
-public class TranscriptionCompleteCallbackItem {
+public class TranscriptionCompleteCallbackItem implements Alignable {
 
     private String recordUrl;
 
@@ -43,8 +46,8 @@ public class TranscriptionCompleteCallbackItem {
     /**
     * The call session history id.
     */
-    public long getCallSessionHistoryId() {
-        return this.callSessionHistoryId.longValue();
+    public Long getCallSessionHistoryId() {
+        return this.callSessionHistoryId;
     }
 
     public boolean hasCallSessionHistoryId() {
@@ -64,4 +67,51 @@ public class TranscriptionCompleteCallbackItem {
         return this.transcriptionCost != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (recordUrl != null) {
+            sb.append(aligned)
+                .append("\"recordUrl\": \"")
+                .append(recordUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transcriptionUrl != null) {
+            sb.append(aligned)
+                .append("\"transcriptionUrl\": \"")
+                .append(transcriptionUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callSessionHistoryId != null) {
+            sb.append(aligned)
+                .append("\"callSessionHistoryId\": \"")
+                .append(callSessionHistoryId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transcriptionCost != null) {
+            sb.append(aligned)
+                .append("\"transcriptionCost\": \"")
+                .append(transcriptionCost)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

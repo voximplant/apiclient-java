@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetTransactionHistory] function result item.
 */
-public class TransactionInfoType {
+public class TransactionInfoType implements Alignable {
 
     private Long transactionId;
 
     /**
     * The transaction ID.
     */
-    public long getTransactionId() {
-        return this.transactionId.longValue();
+    public Long getTransactionId() {
+        return this.transactionId;
     }
 
     public boolean hasTransactionId() {
@@ -124,4 +127,83 @@ public class TransactionInfoType {
         return this.paymentReference != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (transactionId != null) {
+            sb.append(aligned)
+                .append("\"transactionId\": \"")
+                .append(transactionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountId != null) {
+            sb.append(aligned)
+                .append("\"accountId\": \"")
+                .append(accountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (performedAt != null) {
+            sb.append(aligned)
+                .append("\"performedAt\": \"")
+                .append(performedAt)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (amount != null) {
+            sb.append(aligned)
+                .append("\"amount\": \"")
+                .append(amount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (currency != null) {
+            sb.append(aligned)
+                .append("\"currency\": \"")
+                .append(currency)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transactionType != null) {
+            sb.append(aligned)
+                .append("\"transactionType\": \"")
+                .append(transactionType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (transactionDescription != null) {
+            sb.append(aligned)
+                .append("\"transactionDescription\": \"")
+                .append(transactionDescription)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (paymentReference != null) {
+            sb.append(aligned)
+                .append("\"paymentReference\": \"")
+                .append(paymentReference)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

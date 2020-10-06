@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetContractorInvoices] result.
 */
-public class ContractorInvoiceType {
+public class ContractorInvoiceType implements Alignable {
 
     private String invoiceNumber;
 
@@ -44,8 +47,8 @@ public class ContractorInvoiceType {
     /**
     * The post payment flag
     */
-    public boolean getIsPostPayment() {
-        return this.isPostPayment.booleanValue();
+    public Boolean getIsPostPayment() {
+        return this.isPostPayment;
     }
 
     public boolean hasIsPostPayment() {
@@ -119,4 +122,83 @@ public class ContractorInvoiceType {
         return this.services != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (invoiceNumber != null) {
+            sb.append(aligned)
+                .append("\"invoiceNumber\": \"")
+                .append(invoiceNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (invoiceDate != null) {
+            sb.append(aligned)
+                .append("\"invoiceDate\": \"")
+                .append(invoiceDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isPostPayment != null) {
+            sb.append(aligned)
+                .append("\"isPostPayment\": \"")
+                .append(isPostPayment)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fromDate != null) {
+            sb.append(aligned)
+                .append("\"fromDate\": \"")
+                .append(fromDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (toDate != null) {
+            sb.append(aligned)
+                .append("\"toDate\": \"")
+                .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (totalAmount != null) {
+            sb.append(aligned)
+                .append("\"totalAmount\": \"")
+                .append(totalAmount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (paidAmount != null) {
+            sb.append(aligned)
+                .append("\"paidAmount\": \"")
+                .append(paidAmount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (services != null) {
+            sb.append(aligned)
+                .append("\"services\": \"")
+                .append(services)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

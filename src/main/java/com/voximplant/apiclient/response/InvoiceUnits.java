@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * Info about services that were provided.
 */
-public class InvoiceUnits {
+public class InvoiceUnits implements Alignable {
 
     private String description;
 
@@ -64,4 +67,51 @@ public class InvoiceUnits {
         return this.taxAmount != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (description != null) {
+            sb.append(aligned)
+                .append("\"description\": \"")
+                .append(description)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (amount != null) {
+            sb.append(aligned)
+                .append("\"amount\": \"")
+                .append(amount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (vatRate != null) {
+            sb.append(aligned)
+                .append("\"vatRate\": \"")
+                .append(vatRate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (taxAmount != null) {
+            sb.append(aligned)
+                .append("\"taxAmount\": \"")
+                .append(taxAmount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

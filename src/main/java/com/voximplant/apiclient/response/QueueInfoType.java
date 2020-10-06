@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetQueues] function result item.
 */
-public class QueueInfoType {
+public class QueueInfoType implements Alignable {
 
     private Long acdQueueId;
 
     /**
     * The ACD queue ID.
     */
-    public long getAcdQueueId() {
-        return this.acdQueueId.longValue();
+    public Long getAcdQueueId() {
+        return this.acdQueueId;
     }
 
     public boolean hasAcdQueueId() {
@@ -43,8 +46,8 @@ public class QueueInfoType {
     /**
     * The application ID.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -56,8 +59,8 @@ public class QueueInfoType {
     /**
     * The integer queue priority. The highest priority is 0.
     */
-    public long getAcdQueuePriority() {
-        return this.acdQueuePriority.longValue();
+    public Long getAcdQueuePriority() {
+        return this.acdQueuePriority;
     }
 
     public boolean hasAcdQueuePriority() {
@@ -70,8 +73,8 @@ public class QueueInfoType {
     * The value in the range of [0.5 ... 1.0]. The value 1.0 means the
     * service probability 100% in challenge with a lower priority queue.
     */
-    public long getServiceProbability() {
-        return this.serviceProbability.longValue();
+    public Long getServiceProbability() {
+        return this.serviceProbability;
     }
 
     public boolean hasServiceProbability() {
@@ -84,8 +87,8 @@ public class QueueInfoType {
     * Set false to disable the auto binding of operators to a queue by
     * skills comparing.
     */
-    public boolean getAutoBinding() {
-        return this.autoBinding.booleanValue();
+    public Boolean getAutoBinding() {
+        return this.autoBinding;
     }
 
     public boolean hasAutoBinding() {
@@ -100,8 +103,8 @@ public class QueueInfoType {
     * less or equal to the maximum predicted waiting time; otherwise, a
     * call would be rejected.
     */
-    public long getMaxWaitingTime() {
-        return this.maxWaitingTime.longValue();
+    public Long getMaxWaitingTime() {
+        return this.maxWaitingTime;
     }
 
     public boolean hasMaxWaitingTime() {
@@ -113,8 +116,8 @@ public class QueueInfoType {
     /**
     * The maximum number of calls that can be enqueued into this queue.
     */
-    public long getMaxQueueSize() {
-        return this.maxQueueSize.longValue();
+    public Long getMaxQueueSize() {
+        return this.maxQueueSize;
     }
 
     public boolean hasMaxQueueSize() {
@@ -127,8 +130,8 @@ public class QueueInfoType {
     * The average service time in seconds. Specify the parameter to correct
     * or initialize the waiting time prediction.
     */
-    public long getAverageServiceTime() {
-        return this.averageServiceTime.longValue();
+    public Long getAverageServiceTime() {
+        return this.averageServiceTime;
     }
 
     public boolean hasAverageServiceTime() {
@@ -203,12 +206,12 @@ public class QueueInfoType {
         return this.skills != null;
     }
 
-    private long[] slThresholds;
+    private Long[] slThresholds;
 
     /**
     * The service level thresholds in seconds.
     */
-    public long[] getSlThresholds() {
+    public Long[] getSlThresholds() {
         return this.slThresholds;
     }
 
@@ -216,4 +219,133 @@ public class QueueInfoType {
         return this.slThresholds != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (acdQueueId != null) {
+            sb.append(aligned)
+                .append("\"acdQueueId\": \"")
+                .append(acdQueueId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueueName != null) {
+            sb.append(aligned)
+                .append("\"acdQueueName\": \"")
+                .append(acdQueueName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (acdQueuePriority != null) {
+            sb.append(aligned)
+                .append("\"acdQueuePriority\": \"")
+                .append(acdQueuePriority)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (serviceProbability != null) {
+            sb.append(aligned)
+                .append("\"serviceProbability\": \"")
+                .append(serviceProbability)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (autoBinding != null) {
+            sb.append(aligned)
+                .append("\"autoBinding\": \"")
+                .append(autoBinding)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (maxWaitingTime != null) {
+            sb.append(aligned)
+                .append("\"maxWaitingTime\": \"")
+                .append(maxWaitingTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (maxQueueSize != null) {
+            sb.append(aligned)
+                .append("\"maxQueueSize\": \"")
+                .append(maxQueueSize)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (averageServiceTime != null) {
+            sb.append(aligned)
+                .append("\"averageServiceTime\": \"")
+                .append(averageServiceTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (created != null) {
+            sb.append(aligned)
+                .append("\"created\": \"")
+                .append(created)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (modified != null) {
+            sb.append(aligned)
+                .append("\"modified\": \"")
+                .append(modified)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (deleted != null) {
+            sb.append(aligned)
+                .append("\"deleted\": \"")
+                .append(deleted)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (users != null) {
+            sb.append(aligned)
+                .append("\"QueueUsers\": ")
+                .append(StringHelper.arrayToString(users, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (skills != null) {
+            sb.append(aligned)
+                .append("\"QueueSkills\": ")
+                .append(StringHelper.arrayToString(skills, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (slThresholds != null) {
+            sb.append(aligned)
+                .append("\"number\": ")
+                .append(StringHelper.arrayToString(slThresholds, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SetPushCredentialRequest {
+public class SetPushCredentialRequest implements Alignable {
     private Long pushCredentialId;
 
     @RequestField(name="push_credential_id")
     /**
     * The push credentials id.
     */
-    public long getPushCredentialId() {
-        return this.pushCredentialId.longValue();
+    public Long getPushCredentialId() {
+        return this.pushCredentialId;
     }
 
     public boolean hasPushCredentialId() {
@@ -83,8 +86,8 @@ public class SetPushCredentialRequest {
     /**
     * Set true for use this certificate in apple's sandbox environment
     */
-    public boolean getIsDevMode() {
-        return this.isDevMode.booleanValue();
+    public Boolean getIsDevMode() {
+        return this.isDevMode;
     }
 
     public boolean hasIsDevMode() {
@@ -143,4 +146,67 @@ public class SetPushCredentialRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (pushCredentialId != null) {
+            sb.append(aligned)
+                .append("\"pushCredentialId\": \"")
+                .append(pushCredentialId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (certContent != null) {
+            sb.append(aligned)
+                .append("\"certContent\": \"")
+                .append(certContent)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (certPassword != null) {
+            sb.append(aligned)
+                .append("\"certPassword\": \"")
+                .append(certPassword)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isDevMode != null) {
+            sb.append(aligned)
+                .append("\"isDevMode\": \"")
+                .append(isDevMode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (senderId != null) {
+            sb.append(aligned)
+                .append("\"senderId\": \"")
+                .append(senderId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (serverKey != null) {
+            sb.append(aligned)
+                .append("\"serverKey\": \"")
+                .append(serverKey)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

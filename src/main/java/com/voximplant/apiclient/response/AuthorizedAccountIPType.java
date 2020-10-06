@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetAuthorizedAccountIPs] function result.
 */
-public class AuthorizedAccountIPType {
+public class AuthorizedAccountIPType implements Alignable {
 
     private String authorizedIp;
 
@@ -30,8 +33,8 @@ public class AuthorizedAccountIPType {
     /**
     * The allowed flag (true - whitelist, false - blacklist).
     */
-    public boolean getAllowed() {
-        return this.allowed.booleanValue();
+    public Boolean getAllowed() {
+        return this.allowed;
     }
 
     public boolean hasAllowed() {
@@ -52,4 +55,43 @@ public class AuthorizedAccountIPType {
         return this.created != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (authorizedIp != null) {
+            sb.append(aligned)
+                .append("\"authorizedIp\": \"")
+                .append(authorizedIp)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (allowed != null) {
+            sb.append(aligned)
+                .append("\"allowed\": \"")
+                .append(allowed)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (created != null) {
+            sb.append(aligned)
+                .append("\"created\": \"")
+                .append(created)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetHistoryReportsRequest {
+public class GetHistoryReportsRequest implements Alignable {
     private Long historyReportId;
 
     @RequestField(name="history_report_id")
     /**
     * The history report ID to filter
     */
-    public long getHistoryReportId() {
-        return this.historyReportId.longValue();
+    public Long getHistoryReportId() {
+        return this.historyReportId;
     }
 
     public boolean hasHistoryReportId() {
@@ -113,8 +116,8 @@ public class GetHistoryReportsRequest {
     /**
     * Is report completed?
     */
-    public boolean getIsCompleted() {
-        return this.isCompleted.booleanValue();
+    public Boolean getIsCompleted() {
+        return this.isCompleted;
     }
 
     public boolean hasIsCompleted() {
@@ -135,8 +138,8 @@ public class GetHistoryReportsRequest {
     /**
     * Set true to get records in the descent order.
     */
-    public boolean getDescOrder() {
-        return this.descOrder.booleanValue();
+    public Boolean getDescOrder() {
+        return this.descOrder;
     }
 
     public boolean hasDescOrder() {
@@ -157,8 +160,8 @@ public class GetHistoryReportsRequest {
     /**
     * The max returning record count.
     */
-    public long getCount() {
-        return this.count.longValue();
+    public Long getCount() {
+        return this.count;
     }
 
     public boolean hasCount() {
@@ -179,8 +182,8 @@ public class GetHistoryReportsRequest {
     /**
     * The first <b>N</b> records will be skipped in the output.
     */
-    public long getOffset() {
-        return this.offset.longValue();
+    public Long getOffset() {
+        return this.offset;
     }
 
     public boolean hasOffset() {
@@ -219,4 +222,91 @@ public class GetHistoryReportsRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (historyReportId != null) {
+            sb.append(aligned)
+                .append("\"historyReportId\": \"")
+                .append(historyReportId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (historyType != null) {
+            sb.append(aligned)
+                .append("\"historyType\": \"")
+                .append(historyType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (createdFrom != null) {
+            sb.append(aligned)
+                .append("\"createdFrom\": \"")
+                .append(createdFrom)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (createdTo != null) {
+            sb.append(aligned)
+                .append("\"createdTo\": \"")
+                .append(createdTo)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isCompleted != null) {
+            sb.append(aligned)
+                .append("\"isCompleted\": \"")
+                .append(isCompleted)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (descOrder != null) {
+            sb.append(aligned)
+                .append("\"descOrder\": \"")
+                .append(descOrder)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

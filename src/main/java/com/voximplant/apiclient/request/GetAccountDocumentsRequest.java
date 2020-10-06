@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetAccountDocumentsRequest {
+public class GetAccountDocumentsRequest implements Alignable {
     private Boolean withDetails;
 
     @RequestField(name="with_details")
@@ -18,8 +21,8 @@ public class GetAccountDocumentsRequest {
     * Set true to view the uploaded document statuses. (The flag is ignored
     * with the child_account_id=all)
     */
-    public boolean getWithDetails() {
-        return this.withDetails.booleanValue();
+    public Boolean getWithDetails() {
+        return this.withDetails;
     }
 
     public boolean hasWithDetails() {
@@ -163,8 +166,8 @@ public class GetAccountDocumentsRequest {
     /**
     * Set true to get the children account verifications only.
     */
-    public boolean getChildrenVerificationsOnly() {
-        return this.childrenVerificationsOnly.booleanValue();
+    public Boolean getChildrenVerificationsOnly() {
+        return this.childrenVerificationsOnly;
     }
 
     public boolean hasChildrenVerificationsOnly() {
@@ -179,4 +182,75 @@ public class GetAccountDocumentsRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (withDetails != null) {
+            sb.append(aligned)
+                .append("\"withDetails\": \"")
+                .append(withDetails)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verificationName != null) {
+            sb.append(aligned)
+                .append("\"verificationName\": \"")
+                .append(verificationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verificationStatus != null) {
+            sb.append(aligned)
+                .append("\"verificationStatus\": \"")
+                .append(verificationStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (fromUnverifiedHoldUntil != null) {
+            sb.append(aligned)
+                .append("\"fromUnverifiedHoldUntil\": \"")
+                .append(fromUnverifiedHoldUntil)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (toUnverifiedHoldUntil != null) {
+            sb.append(aligned)
+                .append("\"toUnverifiedHoldUntil\": \"")
+                .append(toUnverifiedHoldUntil)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childAccountId != null) {
+            sb.append(aligned)
+                .append("\"childAccountId\": \"")
+                .append(childAccountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childrenVerificationsOnly != null) {
+            sb.append(aligned)
+                .append("\"childrenVerificationsOnly\": \"")
+                .append(childrenVerificationsOnly)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

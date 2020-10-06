@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetMoneyAmountToCharge] function result field.
 */
-public class SubscriptionsToChargeType {
+public class SubscriptionsToChargeType implements Alignable {
 
     private BigDecimal subscriptionAmount;
 
@@ -57,8 +60,8 @@ public class SubscriptionsToChargeType {
     /**
     * The auto charge flag.
     */
-    public boolean getSubscriptionAutoCharge() {
-        return this.subscriptionAutoCharge.booleanValue();
+    public Boolean getSubscriptionAutoCharge() {
+        return this.subscriptionAutoCharge;
     }
 
     public boolean hasSubscriptionAutoCharge() {
@@ -80,4 +83,59 @@ public class SubscriptionsToChargeType {
         return this.subscriptionNextRenewal != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (subscriptionAmount != null) {
+            sb.append(aligned)
+                .append("\"subscriptionAmount\": \"")
+                .append(subscriptionAmount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionType != null) {
+            sb.append(aligned)
+                .append("\"subscriptionType\": \"")
+                .append(subscriptionType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionDescription != null) {
+            sb.append(aligned)
+                .append("\"subscriptionDescription\": \"")
+                .append(subscriptionDescription)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionAutoCharge != null) {
+            sb.append(aligned)
+                .append("\"subscriptionAutoCharge\": \"")
+                .append(subscriptionAutoCharge)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionNextRenewal != null) {
+            sb.append(aligned)
+                .append("\"subscriptionNextRenewal\": \"")
+                .append(subscriptionNextRenewal)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

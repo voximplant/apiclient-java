@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetCurrencyRate] function result.
 */
-public class ExchangeRates {
+public class ExchangeRates implements Alignable {
 
     private BigDecimal RUR;
 
@@ -51,4 +54,43 @@ public class ExchangeRates {
         return this.USD != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (RUR != null) {
+            sb.append(aligned)
+                .append("\"RUR\": \"")
+                .append(RUR)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (EUR != null) {
+            sb.append(aligned)
+                .append("\"EUR\": \"")
+                .append(EUR)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (USD != null) {
+            sb.append(aligned)
+                .append("\"USD\": \"")
+                .append(USD)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

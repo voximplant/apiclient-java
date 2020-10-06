@@ -1,13 +1,16 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
-public class GetAvailableRegulationsResponse {
+public class GetAvailableRegulationsResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -26,8 +29,8 @@ public class GetAvailableRegulationsResponse {
     * required. If result equals 0, the regulations address needs to be
     * created.
     */
-    public boolean getResult() {
-        return this.result.booleanValue();
+    public Boolean getResult() {
+        return this.result;
     }
 
     public boolean hasResult() {
@@ -52,12 +55,49 @@ public class GetAvailableRegulationsResponse {
     /**
     * The count of RegulationAddress in progress status.
     */
-    public long getCountInProgress() {
-        return this.countInProgress.longValue();
+    public Long getCountInProgress() {
+        return this.countInProgress;
     }
 
     public boolean hasCountInProgress() {
         return this.countInProgress != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (result != null) {
+            sb.append(aligned)
+                .append("\"result\": \"")
+                .append(result)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (availableAddress != null) {
+            sb.append(aligned)
+                .append("\"RegulationAddress\": ")
+                .append(StringHelper.arrayToString(availableAddress, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (countInProgress != null) {
+            sb.append(aligned)
+                .append("\"countInProgress\": \"")
+                .append(countInProgress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

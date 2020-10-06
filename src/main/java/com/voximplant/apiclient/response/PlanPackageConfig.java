@@ -1,23 +1,26 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The specific account callback details.
 */
-public class PlanPackageConfig {
+public class PlanPackageConfig implements Alignable {
 
-    private long[] priceGroupId;
+    private Long[] priceGroupId;
 
     /**
     * The price group IDs.
     */
-    public long[] getPriceGroupId() {
+    public Long[] getPriceGroupId() {
         return this.priceGroupId;
     }
 
@@ -56,8 +59,8 @@ public class PlanPackageConfig {
     /**
     * Is overrun enabled?
     */
-    public boolean getMayOverrun() {
-        return this.mayOverrun.booleanValue();
+    public Boolean getMayOverrun() {
+        return this.mayOverrun;
     }
 
     public boolean hasMayOverrun() {
@@ -69,12 +72,65 @@ public class PlanPackageConfig {
     /**
     * The current package size (including overrun).
     */
-    public long getPackageSize() {
-        return this.packageSize.longValue();
+    public Long getPackageSize() {
+        return this.packageSize;
     }
 
     public boolean hasPackageSize() {
         return this.packageSize != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (priceGroupId != null) {
+            sb.append(aligned)
+                .append("\"number\": ")
+                .append(StringHelper.arrayToString(priceGroupId, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (packageName != null) {
+            sb.append(aligned)
+                .append("\"packageName\": \"")
+                .append(packageName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (packageUuid != null) {
+            sb.append(aligned)
+                .append("\"packageUuid\": \"")
+                .append(packageUuid)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mayOverrun != null) {
+            sb.append(aligned)
+                .append("\"mayOverrun\": \"")
+                .append(mayOverrun)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (packageSize != null) {
+            sb.append(aligned)
+                .append("\"packageSize\": \"")
+                .append(packageSize)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,17 +1,20 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The specific account callback details. Received as part of the
 * [AccountCallback] structure.
 */
-public class PlanConfigCallback {
+public class PlanConfigCallback implements Alignable {
 
     private String planType;
 
@@ -52,4 +55,41 @@ public class PlanConfigCallback {
         return this.packages != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (planType != null) {
+            sb.append(aligned)
+                .append("\"planType\": \"")
+                .append(planType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (planName != null) {
+            sb.append(aligned)
+                .append("\"planName\": \"")
+                .append(planName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (packages != null) {
+            sb.append(aligned)
+                .append("\"PlanPackageConfig\": ")
+                .append(StringHelper.arrayToString(packages, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

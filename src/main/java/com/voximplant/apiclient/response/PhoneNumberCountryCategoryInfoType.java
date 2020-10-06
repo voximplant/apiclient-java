@@ -1,17 +1,20 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The 'phone_categories' element of the [GetPhoneNumberCategories]
 * function result.
 */
-public class PhoneNumberCountryCategoryInfoType {
+public class PhoneNumberCountryCategoryInfoType implements Alignable {
 
     private String phoneCategoryName;
 
@@ -31,8 +34,8 @@ public class PhoneNumberCountryCategoryInfoType {
     /**
     * True if a country state is used to choose the phone with the category.
     */
-    public boolean getCountryHasStates() {
-        return this.countryHasStates.booleanValue();
+    public Boolean getCountryHasStates() {
+        return this.countryHasStates;
     }
 
     public boolean hasCountryHasStates() {
@@ -78,4 +81,59 @@ public class PhoneNumberCountryCategoryInfoType {
         return this.localizedPhoneRegionName != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (phoneCategoryName != null) {
+            sb.append(aligned)
+                .append("\"phoneCategoryName\": \"")
+                .append(phoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (countryHasStates != null) {
+            sb.append(aligned)
+                .append("\"countryHasStates\": \"")
+                .append(countryHasStates)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localizedCountryName != null) {
+            sb.append(aligned)
+                .append("\"localizedCountryName\": \"")
+                .append(localizedCountryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localizedPhoneCategoryName != null) {
+            sb.append(aligned)
+                .append("\"localizedPhoneCategoryName\": \"")
+                .append(localizedPhoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localizedPhoneRegionName != null) {
+            sb.append(aligned)
+                .append("\"localizedPhoneRegionName\": \"")
+                .append(localizedPhoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

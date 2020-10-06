@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SetAdminRoleInfoRequest {
+public class SetAdminRoleInfoRequest implements Alignable {
     private Long adminRoleId;
 
     @RequestField(name="admin_role_id")
     /**
     * The admin role to edit.
     */
-    public long getAdminRoleId() {
-        return this.adminRoleId.longValue();
+    public Long getAdminRoleId() {
+        return this.adminRoleId;
     }
 
     public boolean hasAdminRoleId() {
@@ -84,8 +87,8 @@ public class SetAdminRoleInfoRequest {
     * The admin role enable flag. If false the allowed and denied entries
     * have no affect.
     */
-    public boolean getAdminRoleActive() {
-        return this.adminRoleActive.booleanValue();
+    public Boolean getAdminRoleActive() {
+        return this.adminRoleActive;
     }
 
     public boolean hasAdminRoleActive() {
@@ -225,4 +228,91 @@ public class SetAdminRoleInfoRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (adminRoleId != null) {
+            sb.append(aligned)
+                .append("\"adminRoleId\": \"")
+                .append(adminRoleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminRoleName != null) {
+            sb.append(aligned)
+                .append("\"adminRoleName\": \"")
+                .append(adminRoleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newAdminRoleName != null) {
+            sb.append(aligned)
+                .append("\"newAdminRoleName\": \"")
+                .append(newAdminRoleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (adminRoleActive != null) {
+            sb.append(aligned)
+                .append("\"adminRoleActive\": \"")
+                .append(adminRoleActive)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (entryModificationMode != null) {
+            sb.append(aligned)
+                .append("\"entryModificationMode\": \"")
+                .append(entryModificationMode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (allowedEntries != null) {
+            sb.append(aligned)
+                .append("\"allowedEntries\": \"")
+                .append(allowedEntries)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (deniedEntries != null) {
+            sb.append(aligned)
+                .append("\"deniedEntries\": \"")
+                .append(deniedEntries)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (likeAdminRoleId != null) {
+            sb.append(aligned)
+                .append("\"likeAdminRoleId\": \"")
+                .append(likeAdminRoleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (likeAdminRoleName != null) {
+            sb.append(aligned)
+                .append("\"likeAdminRoleName\": \"")
+                .append(likeAdminRoleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The role view.
 */
-public class RoleView {
+public class RoleView implements Alignable {
 
     private String roleName;
 
@@ -30,8 +33,8 @@ public class RoleView {
     /**
     * The role ID.
     */
-    public long getRoleId() {
-        return this.roleId.longValue();
+    public Long getRoleId() {
+        return this.roleId;
     }
 
     public boolean hasRoleId() {
@@ -43,20 +46,20 @@ public class RoleView {
     /**
     * Shows that the role is inherited.
     */
-    public boolean getInherited() {
-        return this.inherited.booleanValue();
+    public Boolean getInherited() {
+        return this.inherited;
     }
 
     public boolean hasInherited() {
         return this.inherited != null;
     }
 
-    private long[] childIds;
+    private Long[] childIds;
 
     /**
     * Child roles IDs array.
     */
-    public long[] getChildIds() {
+    public Long[] getChildIds() {
         return this.childIds;
     }
 
@@ -64,12 +67,12 @@ public class RoleView {
         return this.childIds != null;
     }
 
-    private long[] parentRoleId;
+    private Long[] parentRoleId;
 
     /**
     * Parent roles IDs array.
     */
-    public long[] getParentRoleId() {
+    public Long[] getParentRoleId() {
         return this.parentRoleId;
     }
 
@@ -82,12 +85,71 @@ public class RoleView {
     /**
     * Shows that the role is gui only.
     */
-    public boolean getGuiOnly() {
-        return this.guiOnly.booleanValue();
+    public Boolean getGuiOnly() {
+        return this.guiOnly;
     }
 
     public boolean hasGuiOnly() {
         return this.guiOnly != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (roleName != null) {
+            sb.append(aligned)
+                .append("\"roleName\": \"")
+                .append(roleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (roleId != null) {
+            sb.append(aligned)
+                .append("\"roleId\": \"")
+                .append(roleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (inherited != null) {
+            sb.append(aligned)
+                .append("\"inherited\": \"")
+                .append(inherited)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (childIds != null) {
+            sb.append(aligned)
+                .append("\"number\": ")
+                .append(StringHelper.arrayToString(childIds, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (parentRoleId != null) {
+            sb.append(aligned)
+                .append("\"number\": ")
+                .append(StringHelper.arrayToString(parentRoleId, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (guiOnly != null) {
+            sb.append(aligned)
+                .append("\"guiOnly\": \"")
+                .append(guiOnly)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

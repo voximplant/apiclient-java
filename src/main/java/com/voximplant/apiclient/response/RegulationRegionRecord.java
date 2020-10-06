@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetRegions] function result.
 */
-public class RegulationRegionRecord {
+public class RegulationRegionRecord implements Alignable {
 
     private Long phoneRegionId;
 
     /**
     * The regulation address ID.
     */
-    public long getPhoneRegionId() {
-        return this.phoneRegionId.longValue();
+    public Long getPhoneRegionId() {
+        return this.phoneRegionId;
     }
 
     public boolean hasPhoneRegionId() {
@@ -56,8 +59,8 @@ public class RegulationRegionRecord {
     /**
     * The need to confirm the address
     */
-    public boolean getIsNeedRegulationAddress() {
-        return this.isNeedRegulationAddress.booleanValue();
+    public Boolean getIsNeedRegulationAddress() {
+        return this.isNeedRegulationAddress;
     }
 
     public boolean hasIsNeedRegulationAddress() {
@@ -77,4 +80,59 @@ public class RegulationRegionRecord {
         return this.regulationAddressType != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (phoneRegionId != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionId\": \"")
+                .append(phoneRegionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionName != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionName\": \"")
+                .append(phoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionCode != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionCode\": \"")
+                .append(phoneRegionCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isNeedRegulationAddress != null) {
+            sb.append(aligned)
+                .append("\"isNeedRegulationAddress\": \"")
+                .append(isNeedRegulationAddress)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (regulationAddressType != null) {
+            sb.append(aligned)
+                .append("\"regulationAddressType\": \"")
+                .append(regulationAddressType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

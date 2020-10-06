@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class GetPhoneNumberRegionsRequest {
+public class GetPhoneNumberRegionsRequest implements Alignable {
     private String countryCode;
 
     @RequestField(name="country_code")
@@ -84,8 +87,8 @@ public class GetPhoneNumberRegionsRequest {
     * Set to 'false' to show all the regions (with and without phone
     * numbers in stock).
     */
-    public boolean getOmitEmpty() {
-        return this.omitEmpty.booleanValue();
+    public Boolean getOmitEmpty() {
+        return this.omitEmpty;
     }
 
     public boolean hasOmitEmpty() {
@@ -107,8 +110,8 @@ public class GetPhoneNumberRegionsRequest {
     /**
     * The phone region ID to filter.
     */
-    public long getPhoneRegionId() {
-        return this.phoneRegionId.longValue();
+    public Long getPhoneRegionId() {
+        return this.phoneRegionId;
     }
 
     public boolean hasPhoneRegionId() {
@@ -189,4 +192,83 @@ public class GetPhoneNumberRegionsRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (countryCode != null) {
+            sb.append(aligned)
+                .append("\"countryCode\": \"")
+                .append(countryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneCategoryName != null) {
+            sb.append(aligned)
+                .append("\"phoneCategoryName\": \"")
+                .append(phoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (countryState != null) {
+            sb.append(aligned)
+                .append("\"countryState\": \"")
+                .append(countryState)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (omitEmpty != null) {
+            sb.append(aligned)
+                .append("\"omitEmpty\": \"")
+                .append(omitEmpty)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionId != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionId\": \"")
+                .append(phoneRegionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionName != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionName\": \"")
+                .append(phoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionCode != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionCode\": \"")
+                .append(phoneRegionCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (locale != null) {
+            sb.append(aligned)
+                .append("\"locale\": \"")
+                .append(locale)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

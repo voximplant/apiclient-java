@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [GetCallerIDs] function result.
 */
-public class CallerIDInfoType {
+public class CallerIDInfoType implements Alignable {
 
     private Long calleridId;
 
     /**
     * The callerID id.
     */
-    public long getCalleridId() {
-        return this.calleridId.longValue();
+    public Long getCalleridId() {
+        return this.calleridId;
     }
 
     public boolean hasCalleridId() {
@@ -43,8 +46,8 @@ public class CallerIDInfoType {
     /**
     * The active flag.
     */
-    public boolean getActive() {
-        return this.active.booleanValue();
+    public Boolean getActive() {
+        return this.active;
     }
 
     public boolean hasActive() {
@@ -56,8 +59,8 @@ public class CallerIDInfoType {
     /**
     * The code entering attempts left for the unverified callerID.
     */
-    public long getCodeEnteringAttemptsLeft() {
-        return this.codeEnteringAttemptsLeft.longValue();
+    public Long getCodeEnteringAttemptsLeft() {
+        return this.codeEnteringAttemptsLeft;
     }
 
     public boolean hasCodeEnteringAttemptsLeft() {
@@ -69,8 +72,8 @@ public class CallerIDInfoType {
     /**
     * The verification call attempts left for the unverified callerID.
     */
-    public long getVerificationCallAttemptsLeft() {
-        return this.verificationCallAttemptsLeft.longValue();
+    public Long getVerificationCallAttemptsLeft() {
+        return this.verificationCallAttemptsLeft;
     }
 
     public boolean hasVerificationCallAttemptsLeft() {
@@ -92,4 +95,67 @@ public class CallerIDInfoType {
         return this.verifiedUntil != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (calleridId != null) {
+            sb.append(aligned)
+                .append("\"calleridId\": \"")
+                .append(calleridId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (calleridNumber != null) {
+            sb.append(aligned)
+                .append("\"calleridNumber\": \"")
+                .append(calleridNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (active != null) {
+            sb.append(aligned)
+                .append("\"active\": \"")
+                .append(active)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (codeEnteringAttemptsLeft != null) {
+            sb.append(aligned)
+                .append("\"codeEnteringAttemptsLeft\": \"")
+                .append(codeEnteringAttemptsLeft)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verificationCallAttemptsLeft != null) {
+            sb.append(aligned)
+                .append("\"verificationCallAttemptsLeft\": \"")
+                .append(verificationCallAttemptsLeft)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verifiedUntil != null) {
+            sb.append(aligned)
+                .append("\"verifiedUntil\": \"")
+                .append(verifiedUntil)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

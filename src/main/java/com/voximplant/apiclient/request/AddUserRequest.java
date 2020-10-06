@@ -1,16 +1,19 @@
 package com.voximplant.apiclient.request;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 import com.voximplant.apiclient.util.DateSerializer;
 import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class AddUserRequest {
+public class AddUserRequest implements Alignable {
     private String userName;
 
     @RequestField(name="user_name")
@@ -84,8 +87,8 @@ public class AddUserRequest {
     * The application ID which a new user will be bound to. Can be used
     * instead of the <b>application_name</b> parameter.
     */
-    public long getApplicationId() {
-        return this.applicationId.longValue();
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
     public boolean hasApplicationId() {
@@ -132,8 +135,8 @@ public class AddUserRequest {
     * 'True' if the user will use the parent account's money, 'false' if
     * the user will have a separate balance.
     */
-    public boolean getParentAccounting() {
-        return this.parentAccounting.booleanValue();
+    public Boolean getParentAccounting() {
+        return this.parentAccounting;
     }
 
     public boolean hasParentAccounting() {
@@ -177,8 +180,8 @@ public class AddUserRequest {
     /**
     * The user enable flag
     */
-    public boolean getUserActive() {
-        return this.userActive.booleanValue();
+    public Boolean getUserActive() {
+        return this.userActive;
     }
 
     public boolean hasUserActive() {
@@ -215,4 +218,91 @@ public class AddUserRequest {
         return this;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (userName != null) {
+            sb.append(aligned)
+                .append("\"userName\": \"")
+                .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userDisplayName != null) {
+            sb.append(aligned)
+                .append("\"userDisplayName\": \"")
+                .append(userDisplayName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userPassword != null) {
+            sb.append(aligned)
+                .append("\"userPassword\": \"")
+                .append(userPassword)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (parentAccounting != null) {
+            sb.append(aligned)
+                .append("\"parentAccounting\": \"")
+                .append(parentAccounting)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (mobilePhone != null) {
+            sb.append(aligned)
+                .append("\"mobilePhone\": \"")
+                .append(mobilePhone)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userActive != null) {
+            sb.append(aligned)
+                .append("\"userActive\": \"")
+                .append(userActive)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userCustomData != null) {
+            sb.append(aligned)
+                .append("\"userCustomData\": \"")
+                .append(userCustomData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}

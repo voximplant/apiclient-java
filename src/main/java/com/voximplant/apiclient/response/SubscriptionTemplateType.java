@@ -1,24 +1,27 @@
 package com.voximplant.apiclient.response;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.voximplant.apiclient.util.StringHelper;
+import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The subscription template info.
 */
-public class SubscriptionTemplateType {
+public class SubscriptionTemplateType implements Alignable {
 
     private Long subscriptionTemplateId;
 
     /**
     * The subscription template ID.
     */
-    public long getSubscriptionTemplateId() {
-        return this.subscriptionTemplateId.longValue();
+    public Long getSubscriptionTemplateId() {
+        return this.subscriptionTemplateId;
     }
 
     public boolean hasSubscriptionTemplateId() {
@@ -120,4 +123,83 @@ public class SubscriptionTemplateType {
         return this.verificationStatus != null;
     }
 
-}
+    public String toString(int alignment) {
+        char[] preAligned = new char[alignment - 1];
+        char[] aligned = new char[alignment];
+        Arrays.fill(preAligned, '\t');
+        Arrays.fill(aligned, '\t');
+        StringBuilder sb = new StringBuilder()
+            .append(preAligned)
+            .append('{')
+            .append(System.lineSeparator());
+        if (subscriptionTemplateId != null) {
+            sb.append(aligned)
+                .append("\"subscriptionTemplateId\": \"")
+                .append(subscriptionTemplateId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (installationPrice != null) {
+            sb.append(aligned)
+                .append("\"installationPrice\": \"")
+                .append(installationPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (price != null) {
+            sb.append(aligned)
+                .append("\"price\": \"")
+                .append(price)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (period != null) {
+            sb.append(aligned)
+                .append("\"period\": \"")
+                .append(period)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionTemplateType != null) {
+            sb.append(aligned)
+                .append("\"subscriptionTemplateType\": \"")
+                .append(subscriptionTemplateType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionTemplateName != null) {
+            sb.append(aligned)
+                .append("\"subscriptionTemplateName\": \"")
+                .append(subscriptionTemplateName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (requiredVerification != null) {
+            sb.append(aligned)
+                .append("\"requiredVerification\": \"")
+                .append(requiredVerification)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verificationStatus != null) {
+            sb.append(aligned)
+                .append("\"verificationStatus\": \"")
+                .append(verificationStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        return sb.append(preAligned).append('}').append(',').toString();
+    }
+
+    @Override
+    public String toString() {
+        return toString(1);
+    }}
