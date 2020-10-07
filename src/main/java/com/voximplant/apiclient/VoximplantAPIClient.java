@@ -981,34 +981,6 @@ public class VoximplantAPIClient {
         return mapper.readValue(impl.performRequest("GetRoleGroups", RequestSerializer.serialize(req)), GetRoleGroupsResponse.class);
     }
 
-    public AddChildAccountSubscriptionResponse addChildAccountSubscription(AddChildAccountSubscriptionRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue(impl.performRequest("AddChildAccountSubscription", RequestSerializer.serialize(req)), AddChildAccountSubscriptionResponse.class);
-    }
-
-    public GetChildAccountSubscriptionsResponse getChildAccountSubscriptions(GetChildAccountSubscriptionsRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue(impl.performRequest("GetChildAccountSubscriptions", RequestSerializer.serialize(req)), GetChildAccountSubscriptionsResponse.class);
-    }
-
-    public GetChildAccountSubscriptionTemplatesResponse getChildAccountSubscriptionTemplates(GetChildAccountSubscriptionTemplatesRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue(impl.performRequest("GetChildAccountSubscriptionTemplates", RequestSerializer.serialize(req)), GetChildAccountSubscriptionTemplatesResponse.class);
-    }
-
-    public DeactivateChildAccountSubscriptionResponse deactivateChildAccountSubscription(DeactivateChildAccountSubscriptionRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue(impl.performRequest("DeactivateChildAccountSubscription", RequestSerializer.serialize(req)), DeactivateChildAccountSubscriptionResponse.class);
-    }
-
     public GetSmsHistoryResponse getSmsHistory(GetSmsHistoryRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
