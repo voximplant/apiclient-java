@@ -18,7 +18,7 @@ public class ClonedACDQueueType implements Alignable {
     private Long acdQueueId;
 
     /**
-    * The ACD queue ID.
+    * The ACD queue ID
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -31,7 +31,7 @@ public class ClonedACDQueueType implements Alignable {
     private String acdQueueName;
 
     /**
-    * The ACD queue name.
+    * The ACD queue name
     */
     public String getAcdQueueName() {
         return this.acdQueueName;

@@ -18,7 +18,7 @@ public class RoleView implements Alignable {
     private String roleName;
 
     /**
-    * The role name.
+    * The role name
     */
     public String getRoleName() {
         return this.roleName;
@@ -31,7 +31,7 @@ public class RoleView implements Alignable {
     private Long roleId;
 
     /**
-    * The role ID.
+    * The role ID
     */
     public Long getRoleId() {
         return this.roleId;
@@ -44,7 +44,7 @@ public class RoleView implements Alignable {
     private Boolean inherited;
 
     /**
-    * Shows that the role is inherited.
+    * Shows that the role is inherited
     */
     public Boolean getInherited() {
         return this.inherited;
@@ -57,7 +57,7 @@ public class RoleView implements Alignable {
     private Long[] childIds;
 
     /**
-    * Child roles IDs array.
+    * Child roles IDs array
     */
     public Long[] getChildIds() {
         return this.childIds;
@@ -70,7 +70,7 @@ public class RoleView implements Alignable {
     private Long[] parentRoleId;
 
     /**
-    * Parent roles IDs array.
+    * Parent roles IDs array
     */
     public Long[] getParentRoleId() {
         return this.parentRoleId;
@@ -83,7 +83,7 @@ public class RoleView implements Alignable {
     private Boolean guiOnly;
 
     /**
-    * Shows that the role is gui only.
+    * Shows that the role is gui only
     */
     public Boolean getGuiOnly() {
         return this.guiOnly;

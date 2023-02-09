@@ -18,7 +18,7 @@ public class SmartQueueMetricsGroups implements Alignable {
     private Long sqQueueId;
 
     /**
-    * The smart queue ID.
+    * The smart queue ID
     */
     public Long getSqQueueId() {
         return this.sqQueueId;
@@ -31,7 +31,7 @@ public class SmartQueueMetricsGroups implements Alignable {
     private String sqQueueName;
 
     /**
-    * The smart queue name.
+    * The smart queue name
     */
     public String getSqQueueName() {
         return this.sqQueueName;
@@ -44,7 +44,7 @@ public class SmartQueueMetricsGroups implements Alignable {
     private Long userId;
 
     /**
-    * The user ID.
+    * The user ID
     */
     public Long getUserId() {
         return this.userId;
@@ -57,7 +57,7 @@ public class SmartQueueMetricsGroups implements Alignable {
     private String userName;
 
     /**
-    * The user name.
+    * The user name
     */
     public String getUserName() {
         return this.userName;
@@ -70,7 +70,7 @@ public class SmartQueueMetricsGroups implements Alignable {
     private String userDisplayName;
 
     /**
-    * The user display name.
+    * The user display name
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -83,7 +83,7 @@ public class SmartQueueMetricsGroups implements Alignable {
     private SmartQueueMetricsGroupsValues[] values;
 
     /**
-    * The group values.
+    * The group values
     */
     public SmartQueueMetricsGroupsValues[] getValues() {
         return this.values;

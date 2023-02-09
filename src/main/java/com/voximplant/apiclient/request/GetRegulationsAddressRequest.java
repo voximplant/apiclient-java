@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code according to the <b>ISO 3166-1 alpha-2</b>.
+    * The country code according to the <b>ISO 3166-1 alpha-2</b>
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -29,7 +30,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * The country code according to the <b>ISO 3166-1 alpha-2</b>.
+    * The country code according to the <b>ISO 3166-1 alpha-2</b>
     */
     public GetRegulationsAddressRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -40,7 +41,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -51,7 +52,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public GetRegulationsAddressRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
@@ -62,7 +63,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="phone_region_code")
     /**
-    * The phone region code. See the [GetRegions] method.
+    * The phone region code. See the [GetRegions] method
     */
     public String getPhoneRegionCode() {
         return this.phoneRegionCode;
@@ -73,7 +74,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * The phone region code. See the [GetRegions] method.
+    * The phone region code. See the [GetRegions] method
     */
     public GetRegulationsAddressRequest setPhoneRegionCode(String d) {
         this.phoneRegionCode = d;
@@ -84,7 +85,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="regulation_address_id")
     /**
-    * The regulation address ID.
+    * The regulation address ID
     */
     public Long getRegulationAddressId() {
         return this.regulationAddressId;
@@ -95,7 +96,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * The regulation address ID.
+    * The regulation address ID
     */
     public GetRegulationsAddressRequest setRegulationAddressId(long d) {
         this.regulationAddressId = Long.valueOf(d);
@@ -106,7 +107,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="verification_id")
     /**
-    * The regulation address type ID.
+    * The regulation address type ID
     */
     public Long getVerificationId() {
         return this.verificationId;
@@ -117,7 +118,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * The regulation address type ID.
+    * The regulation address type ID
     */
     public GetRegulationsAddressRequest setVerificationId(long d) {
         this.verificationId = Long.valueOf(d);
@@ -128,7 +129,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="verified")
     /**
-    * Show only verified regulation address.
+    * Show only verified regulation address
     */
     public Boolean getVerified() {
         return this.verified;
@@ -139,7 +140,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * Show only verified regulation address.
+    * Show only verified regulation address
     */
     public GetRegulationsAddressRequest setVerified(boolean d) {
         this.verified = Boolean.valueOf(d);
@@ -150,7 +151,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="in_progress")
     /**
-    * Show only in progress regulation address.
+    * Show only in progress regulation address
     */
     public Boolean getInProgress() {
         return this.inProgress;
@@ -161,7 +162,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * Show only in progress regulation address.
+    * Show only in progress regulation address
     */
     public GetRegulationsAddressRequest setInProgress(boolean d) {
         this.inProgress = Boolean.valueOf(d);

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,8 +19,8 @@ public class GetResourcePriceRequest implements Alignable {
 
     @RequestField(name="resource_type")
     /**
-    * The resource type list separated by the ';' symbol. The possible
-    * values are: AUDIOHDCONFERENCE, AUDIOHDRECORD, AUDIORECORD, CALLLIST,
+    * The resource type list separated by semicolon (;). The possible
+    * values are AUDIOHDCONFERENCE, AUDIOHDRECORD, AUDIORECORD, CALLLIST,
     * CALLSESSION, DIALOGFLOW, IM, PSTN_IN_ALASKA, PSTN_IN_GB,
     * PSTN_IN_GEOGRAPHIC, PSTN_IN_GEO_PH, PSTN_IN_RU, PSTN_IN_RU_TOLLFREE,
     * PSTN_INTERNATIONAL, PSTNINTEST, PSTN_IN_TF_AR, PSTN_IN_TF_AT,
@@ -43,8 +44,8 @@ public class GetResourcePriceRequest implements Alignable {
     }
 
     /**
-    * The resource type list separated by the ';' symbol. The possible
-    * values are: AUDIOHDCONFERENCE, AUDIOHDRECORD, AUDIORECORD, CALLLIST,
+    * The resource type list separated by semicolon (;). The possible
+    * values are AUDIOHDCONFERENCE, AUDIOHDRECORD, AUDIORECORD, CALLLIST,
     * CALLSESSION, DIALOGFLOW, IM, PSTN_IN_ALASKA, PSTN_IN_GB,
     * PSTN_IN_GEOGRAPHIC, PSTN_IN_GEO_PH, PSTN_IN_RU, PSTN_IN_RU_TOLLFREE,
     * PSTN_INTERNATIONAL, PSTNINTEST, PSTN_IN_TF_AR, PSTN_IN_TF_AT,
@@ -68,7 +69,7 @@ public class GetResourcePriceRequest implements Alignable {
 
     @RequestField(name="price_group_id")
     /**
-    * The price group ID list separated by the ';' symbol.
+    * The price group ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getPriceGroupId() {
         return this.priceGroupId;
@@ -79,7 +80,7 @@ public class GetResourcePriceRequest implements Alignable {
     }
 
     /**
-    * The price group ID list separated by the ';' symbol.
+    * The price group ID list separated by semicolon (;)
     */
     public GetResourcePriceRequest setPriceGroupId(MultiArgument<Long> d) {
         this.priceGroupId = d;
@@ -90,7 +91,7 @@ public class GetResourcePriceRequest implements Alignable {
 
     @RequestField(name="price_group_name")
     /**
-    * The price group name template to filter.
+    * The price group name template to filter
     */
     public String getPriceGroupName() {
         return this.priceGroupName;
@@ -101,7 +102,7 @@ public class GetResourcePriceRequest implements Alignable {
     }
 
     /**
-    * The price group name template to filter.
+    * The price group name template to filter
     */
     public GetResourcePriceRequest setPriceGroupName(String d) {
         this.priceGroupName = d;
@@ -112,8 +113,8 @@ public class GetResourcePriceRequest implements Alignable {
 
     @RequestField(name="resource_param")
     /**
-    * The resource parameter list separated by the ';' symbol. Example: a
-    * phone number list.
+    * The resource parameter list separated by semicolon (;). Example: a
+    * phone number list
     */
     public MultiArgument<String> getResourceParam() {
         return this.resourceParam;
@@ -124,8 +125,8 @@ public class GetResourcePriceRequest implements Alignable {
     }
 
     /**
-    * The resource parameter list separated by the ';' symbol. Example: a
-    * phone number list.
+    * The resource parameter list separated by semicolon (;). Example: a
+    * phone number list
     */
     public GetResourcePriceRequest setResourceParam(MultiArgument<String> d) {
         this.resourceParam = d;

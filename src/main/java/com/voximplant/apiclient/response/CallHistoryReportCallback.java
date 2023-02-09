@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when a call history report is ready. Received as part of the
 * [AccountCallback] structure.
 */
 public class CallHistoryReportCallback implements Alignable {
@@ -19,7 +19,7 @@ public class CallHistoryReportCallback implements Alignable {
     private Long historyReportId;
 
     /**
-    * The history report ID.
+    * The history report ID
     */
     public Long getHistoryReportId() {
         return this.historyReportId;
@@ -32,7 +32,7 @@ public class CallHistoryReportCallback implements Alignable {
     private Boolean success;
 
     /**
-    * Is success?
+    * Success flag
     */
     public Boolean getSuccess() {
         return this.success;

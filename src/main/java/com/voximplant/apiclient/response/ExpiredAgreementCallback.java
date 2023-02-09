@@ -11,15 +11,16 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
+* Received for the accounts for which the confirmation documents
+* waiting period has already expired or expires today. Received as part
+* of the [AccountCallback] structure.
 */
 public class ExpiredAgreementCallback implements Alignable {
 
     private Long[] documentIds;
 
     /**
-    * The list of the expired agreements IDs.
+    * The list of the expired agreements IDs
     */
     public Long[] getDocumentIds() {
         return this.documentIds;

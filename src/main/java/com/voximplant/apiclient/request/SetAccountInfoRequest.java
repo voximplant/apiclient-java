@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -17,7 +18,10 @@ public class SetAccountInfoRequest implements Alignable {
     private String newAccountEmail;
 
     @RequestField(name="new_account_email")
-        public String getNewAccountEmail() {
+    /**
+    * The new account email
+    */
+    public String getNewAccountEmail() {
         return this.newAccountEmail;
     }
 
@@ -25,6 +29,9 @@ public class SetAccountInfoRequest implements Alignable {
         return this.newAccountEmail != null;
     }
 
+    /**
+    * The new account email
+    */
     public SetAccountInfoRequest setNewAccountEmail(String d) {
         this.newAccountEmail = d;
         return this;
@@ -34,7 +41,9 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="new_account_password")
     /**
-    * The password length must be at least 6 symbols.
+    * The new account password. Must be at least 8 characters long and
+    * contain at least one uppercase and lowercase letter, one number, and
+    * one special character
     */
     public String getNewAccountPassword() {
         return this.newAccountPassword;
@@ -45,7 +54,9 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The password length must be at least 6 symbols.
+    * The new account password. Must be at least 8 characters long and
+    * contain at least one uppercase and lowercase letter, one number, and
+    * one special character
     */
     public SetAccountInfoRequest setNewAccountPassword(String d) {
         this.newAccountPassword = d;
@@ -164,7 +175,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="account_first_name")
     /**
-    * The first name.
+    * The first name
     */
     public String getAccountFirstName() {
         return this.accountFirstName;
@@ -175,7 +186,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The first name.
+    * The first name
     */
     public SetAccountInfoRequest setAccountFirstName(String d) {
         this.accountFirstName = d;
@@ -186,7 +197,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="account_last_name")
     /**
-    * The last name.
+    * The last name
     */
     public String getAccountLastName() {
         return this.accountLastName;
@@ -197,7 +208,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The last name.
+    * The last name
     */
     public SetAccountInfoRequest setAccountLastName(String d) {
         this.accountLastName = d;
@@ -208,7 +219,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="mobile_phone")
     /**
-    * The mobile phone linked to the account.
+    * The mobile phone linked to the account
     */
     public String getMobilePhone() {
         return this.mobilePhone;
@@ -219,7 +230,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The mobile phone linked to the account.
+    * The mobile phone linked to the account
     */
     public SetAccountInfoRequest setMobilePhone(String d) {
         this.mobilePhone = d;
@@ -230,7 +241,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="min_balance_to_notify")
     /**
-    * The min balance value to notify by email or SMS.
+    * The min balance value to notify by email or SMS
     */
     public BigDecimal getMinBalanceToNotify() {
         return this.minBalanceToNotify;
@@ -241,7 +252,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The min balance value to notify by email or SMS.
+    * The min balance value to notify by email or SMS
     */
     public SetAccountInfoRequest setMinBalanceToNotify(BigDecimal d) {
         this.minBalanceToNotify = d;
@@ -252,7 +263,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="account_notifications")
     /**
-    * Are the Voximplant notifications required?
+    * Voximplant notifications are required
     */
     public Boolean getAccountNotifications() {
         return this.accountNotifications;
@@ -263,7 +274,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Are the Voximplant notifications required?
+    * Voximplant notifications are required
     */
     public SetAccountInfoRequest setAccountNotifications(boolean d) {
         this.accountNotifications = Boolean.valueOf(d);
@@ -274,7 +285,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="tariff_changing_notifications")
     /**
-    * Set to true to receive the emails about the Voximplant plan changing.
+    * Set to true to receive the emails about the Voximplant plan changing
     */
     public Boolean getTariffChangingNotifications() {
         return this.tariffChangingNotifications;
@@ -285,7 +296,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about the Voximplant plan changing.
+    * Set to true to receive the emails about the Voximplant plan changing
     */
     public SetAccountInfoRequest setTariffChangingNotifications(boolean d) {
         this.tariffChangingNotifications = Boolean.valueOf(d);
@@ -296,7 +307,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="news_notifications")
     /**
-    * Set to true to receive the emails about the Voximplant news.
+    * Set to true to receive the emails about the Voximplant news
     */
     public Boolean getNewsNotifications() {
         return this.newsNotifications;
@@ -307,7 +318,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about the Voximplant news.
+    * Set to true to receive the emails about the Voximplant news
     */
     public SetAccountInfoRequest setNewsNotifications(boolean d) {
         this.newsNotifications = Boolean.valueOf(d);
@@ -318,7 +329,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="send_js_error")
     /**
-    * Set to true to receive the emails about a JS scenario error.
+    * Set to true to receive the emails about a JS scenario error
     */
     public Boolean getSendJsError() {
         return this.sendJsError;
@@ -329,7 +340,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about a JS scenario error.
+    * Set to true to receive the emails about a JS scenario error
     */
     public SetAccountInfoRequest setSendJsError(boolean d) {
         this.sendJsError = Boolean.valueOf(d);
@@ -340,7 +351,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="billing_address_name")
     /**
-    * The company or businessman name.
+    * The company or businessman name
     */
     public String getBillingAddressName() {
         return this.billingAddressName;
@@ -351,7 +362,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The company or businessman name.
+    * The company or businessman name
     */
     public SetAccountInfoRequest setBillingAddressName(String d) {
         this.billingAddressName = d;
@@ -496,7 +507,8 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="billing_address_address")
     /**
-    * The office address.
+    * The valid address that needs to be specified to pay for any services.
+    * It can't be deleted later, only changed
     */
     public String getBillingAddressAddress() {
         return this.billingAddressAddress;
@@ -507,7 +519,8 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The office address.
+    * The valid address that needs to be specified to pay for any services.
+    * It can't be deleted later, only changed
     */
     public SetAccountInfoRequest setBillingAddressAddress(String d) {
         this.billingAddressAddress = d;
@@ -518,7 +531,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="billing_address_zip")
     /**
-    * The office ZIP.
+    * The office ZIP
     */
     public String getBillingAddressZip() {
         return this.billingAddressZip;
@@ -529,7 +542,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The office ZIP.
+    * The office ZIP
     */
     public SetAccountInfoRequest setBillingAddressZip(String d) {
         this.billingAddressZip = d;
@@ -540,7 +553,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="billing_address_phone")
     /**
-    * The office phone number.
+    * The office phone number
     */
     public String getBillingAddressPhone() {
         return this.billingAddressPhone;
@@ -551,7 +564,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The office phone number.
+    * The office phone number
     */
     public SetAccountInfoRequest setBillingAddressPhone(String d) {
         this.billingAddressPhone = d;
@@ -562,7 +575,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="account_custom_data")
     /**
-    * The custom data.
+    * The custom data
     */
     public String getAccountCustomData() {
         return this.accountCustomData;
@@ -573,7 +586,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The custom data.
+    * The custom data
     */
     public SetAccountInfoRequest setAccountCustomData(String d) {
         this.accountCustomData = d;
@@ -637,6 +650,50 @@ public class SetAccountInfoRequest implements Alignable {
     */
     public SetAccountInfoRequest setCallbackSalt(String d) {
         this.callbackSalt = d;
+        return this;
+    }
+
+    private Boolean storeOutboundSms;
+
+    @RequestField(name="store_outbound_sms")
+    /**
+    * Set to true to store outbound message texts. Default value is false
+    */
+    public Boolean getStoreOutboundSms() {
+        return this.storeOutboundSms;
+    }
+
+    public boolean hasStoreOutboundSms() {
+        return this.storeOutboundSms != null;
+    }
+
+    /**
+    * Set to true to store outbound message texts. Default value is false
+    */
+    public SetAccountInfoRequest setStoreOutboundSms(boolean d) {
+        this.storeOutboundSms = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Boolean storeInboundSms;
+
+    @RequestField(name="store_inbound_sms")
+    /**
+    * Set to true to store inbound message texts. Default value is false
+    */
+    public Boolean getStoreInboundSms() {
+        return this.storeInboundSms;
+    }
+
+    public boolean hasStoreInboundSms() {
+        return this.storeInboundSms != null;
+    }
+
+    /**
+    * Set to true to store inbound message texts. Default value is false
+    */
+    public SetAccountInfoRequest setStoreInboundSms(boolean d) {
+        this.storeInboundSms = Boolean.valueOf(d);
         return this;
     }
 
@@ -805,6 +862,22 @@ public class SetAccountInfoRequest implements Alignable {
             sb.append(aligned)
                 .append("\"callbackSalt\": \"")
                 .append(callbackSalt)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (storeOutboundSms != null) {
+            sb.append(aligned)
+                .append("\"storeOutboundSms\": \"")
+                .append(storeOutboundSms)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (storeInboundSms != null) {
+            sb.append(aligned)
+                .append("\"storeInboundSms\": \"")
+                .append(storeInboundSms)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

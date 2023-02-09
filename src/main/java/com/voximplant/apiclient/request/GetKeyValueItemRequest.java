@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -13,70 +14,70 @@ import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class LinkregulationAddressRequest implements Alignable {
-    private Long regulationAddressId;
+public class GetKeyValueItemRequest implements Alignable {
+    private String key;
 
-    @RequestField(name="regulation_address_id")
+    @RequestField(name="key")
     /**
-    * The regulation address ID
+    * Key, up to 200 characters
     */
-    public Long getRegulationAddressId() {
-        return this.regulationAddressId;
+    public String getKey() {
+        return this.key;
     }
 
-    public boolean hasRegulationAddressId() {
-        return this.regulationAddressId != null;
+    public boolean hasKey() {
+        return this.key != null;
     }
 
     /**
-    * The regulation address ID
+    * Key, up to 200 characters
     */
-    public LinkregulationAddressRequest setRegulationAddressId(long d) {
-        this.regulationAddressId = Long.valueOf(d);
+    public GetKeyValueItemRequest setKey(String d) {
+        this.key = d;
         return this;
     }
 
-    private Long phoneId;
+    private Long applicationId;
 
-    @RequestField(name="phone_id")
+    @RequestField(name="application_id")
     /**
-    * The phone ID for link
+    * The application ID
     */
-    public Long getPhoneId() {
-        return this.phoneId;
+    public Long getApplicationId() {
+        return this.applicationId;
     }
 
-    public boolean hasPhoneId() {
-        return this.phoneId != null;
+    public boolean hasApplicationId() {
+        return this.applicationId != null;
     }
 
     /**
-    * The phone ID for link
+    * The application ID
     */
-    public LinkregulationAddressRequest setPhoneId(long d) {
-        this.phoneId = Long.valueOf(d);
+    public GetKeyValueItemRequest setApplicationId(long d) {
+        this.applicationId = Long.valueOf(d);
         return this;
     }
 
-    private String phoneNumber;
+    private String applicationName;
 
-    @RequestField(name="phone_number")
+    @RequestField(name="application_name")
     /**
-    * The phone number for link
+    * The application name
     */
-    public String getPhoneNumber() {
-        return this.phoneNumber;
+    public String getApplicationName() {
+        return this.applicationName;
     }
 
-    public boolean hasPhoneNumber() {
-        return this.phoneNumber != null;
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
     }
 
     /**
-    * The phone number for link
+    * The application name
     */
-    public LinkregulationAddressRequest setPhoneNumber(String d) {
-        this.phoneNumber = d;
+    public GetKeyValueItemRequest setApplicationName(String d) {
+        this.applicationName = d;
         return this;
     }
 
@@ -89,26 +90,26 @@ public class LinkregulationAddressRequest implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (regulationAddressId != null) {
+        if (key != null) {
             sb.append(aligned)
-                .append("\"regulationAddressId\": \"")
-                .append(regulationAddressId)
+                .append("\"key\": \"")
+                .append(key)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (phoneId != null) {
+        if (applicationId != null) {
             sb.append(aligned)
-                .append("\"phoneId\": \"")
-                .append(phoneId)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (phoneNumber != null) {
+        if (applicationName != null) {
             sb.append(aligned)
-                .append("\"phoneNumber\": \"")
-                .append(phoneNumber)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -18,7 +18,7 @@ public class PhoneNumberCountryStateInfoType implements Alignable {
     private String countryState;
 
     /**
-    * The country state code.
+    * The country state code
     */
     public String getCountryState() {
         return this.countryState;
@@ -31,7 +31,7 @@ public class PhoneNumberCountryStateInfoType implements Alignable {
     private String countryStateName;
 
     /**
-    * The full country state name.
+    * The full country state name
     */
     public String getCountryStateName() {
         return this.countryStateName;

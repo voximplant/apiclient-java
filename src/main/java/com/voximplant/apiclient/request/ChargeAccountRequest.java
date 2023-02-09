@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,8 +19,9 @@ public class ChargeAccountRequest implements Alignable {
 
     @RequestField(name="phone_id")
     /**
-    * The phone ID list separated by the ';' symbol or the 'all' value. You
-    * should specify the phones having the auto_charge=false.
+    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * select all phone ids. You should specify the phones having the
+    * auto_charge=false
     */
     public MultiArgument<Long> getPhoneId() {
         return this.phoneId;
@@ -30,8 +32,9 @@ public class ChargeAccountRequest implements Alignable {
     }
 
     /**
-    * The phone ID list separated by the ';' symbol or the 'all' value. You
-    * should specify the phones having the auto_charge=false.
+    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * select all phone ids. You should specify the phones having the
+    * auto_charge=false
     */
     public ChargeAccountRequest setPhoneId(MultiArgument<Long> d) {
         this.phoneId = d;
@@ -42,9 +45,9 @@ public class ChargeAccountRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number list separated by the ';' symbol or the 'all' value.
-    * Can be used instead of <b>phone_id</b>. You should specify the phones
-    * having the auto_charge=false.
+    * The phone number list separated by semicolon (;). Use the 'all' value
+    * to select all phone numbers. Can be used instead of <b>phone_id</b>.
+    * You should specify the phones having the auto_charge=false
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -55,9 +58,9 @@ public class ChargeAccountRequest implements Alignable {
     }
 
     /**
-    * The phone number list separated by the ';' symbol or the 'all' value.
-    * Can be used instead of <b>phone_id</b>. You should specify the phones
-    * having the auto_charge=false.
+    * The phone number list separated by semicolon (;). Use the 'all' value
+    * to select all phone numbers. Can be used instead of <b>phone_id</b>.
+    * You should specify the phones having the auto_charge=false
     */
     public ChargeAccountRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;

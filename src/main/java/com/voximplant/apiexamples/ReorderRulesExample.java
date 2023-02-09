@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Set the rule selection order: 1, 7, 3
+* Set the rule selection order: 1, 7, 3.
 */
 public class ReorderRulesExample {
     public static void main(String [] args) {

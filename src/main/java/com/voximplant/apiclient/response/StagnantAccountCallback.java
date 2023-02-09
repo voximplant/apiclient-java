@@ -11,8 +11,8 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
+* Received when there are no actions in accounts after their creation.
+* Received as part of the [AccountCallback] structure.
 */
 public class StagnantAccountCallback implements Alignable {
 

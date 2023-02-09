@@ -18,7 +18,7 @@ public class ShortAccountInfoType implements Alignable {
     private Long accountId;
 
     /**
-    * The account's ID.
+    * The account's ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -31,7 +31,7 @@ public class ShortAccountInfoType implements Alignable {
     private Boolean frozen;
 
     /**
-    * Is account blocked by Voximplant admins or not.
+    * Is account blocked by Voximplant admins or not
     */
     public Boolean getFrozen() {
         return this.frozen;
@@ -44,7 +44,7 @@ public class ShortAccountInfoType implements Alignable {
     private BigDecimal balance;
 
     /**
-    * The account's money.
+    * The account's money
     */
     public BigDecimal getBalance() {
         return this.balance;
@@ -57,7 +57,7 @@ public class ShortAccountInfoType implements Alignable {
     private String currency;
 
     /**
-    * The currency code (USD, RUR, EUR, ...).
+    * The currency code (USD, RUR, EUR, ...)
     */
     public String getCurrency() {
         return this.currency;

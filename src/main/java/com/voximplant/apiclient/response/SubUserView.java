@@ -18,7 +18,7 @@ public class SubUserView implements Alignable {
     private Long subuserId;
 
     /**
-    * The subuser ID.
+    * The subuser ID
     */
     public Long getSubuserId() {
         return this.subuserId;
@@ -32,7 +32,7 @@ public class SubUserView implements Alignable {
 
     /**
     * The subuser name, can be used as __subuser_login__ to <a
-    * href="#how-auth-works">authenticate</a>.
+    * href='/docs/guides/managementapi/authorization'>authenticate</a>
     */
     public String getSubuserName() {
         return this.subuserName;
@@ -45,7 +45,7 @@ public class SubUserView implements Alignable {
     private String description;
 
     /**
-    * The subuser description.
+    * The subuser description
     */
     public String getDescription() {
         return this.description;
@@ -58,7 +58,7 @@ public class SubUserView implements Alignable {
     private RoleView[] roles;
 
     /**
-    * The subuser roles.
+    * The subuser roles
     */
     public RoleView[] getRoles() {
         return this.roles;

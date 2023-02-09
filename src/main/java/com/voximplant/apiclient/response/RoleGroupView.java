@@ -18,7 +18,7 @@ public class RoleGroupView implements Alignable {
     private Long id;
 
     /**
-    * The role group ID.
+    * The role group ID
     */
     public Long getId() {
         return this.id;
@@ -31,7 +31,7 @@ public class RoleGroupView implements Alignable {
     private String name;
 
     /**
-    * The role group name.
+    * The role group name
     */
     public String getName() {
         return this.name;

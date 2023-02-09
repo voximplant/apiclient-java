@@ -44,7 +44,7 @@ public class A2PSendSmsResponse implements Alignable {
     private Long fragmentsCount;
 
     /**
-    * The number of fragments the message is divided into.
+    * The number of fragments the message is divided into
     */
     public Long getFragmentsCount() {
         return this.fragmentsCount;

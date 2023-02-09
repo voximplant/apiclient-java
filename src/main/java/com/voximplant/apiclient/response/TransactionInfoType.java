@@ -18,7 +18,7 @@ public class TransactionInfoType implements Alignable {
     private Long transactionId;
 
     /**
-    * The transaction ID.
+    * The transaction ID
     */
     public Long getTransactionId() {
         return this.transactionId;
@@ -31,7 +31,7 @@ public class TransactionInfoType implements Alignable {
     private String accountId;
 
     /**
-    * The account ID.
+    * The account ID
     */
     public String getAccountId() {
         return this.accountId;
@@ -59,7 +59,7 @@ public class TransactionInfoType implements Alignable {
     private BigDecimal amount;
 
     /**
-    * The transaction amount, $.
+    * The transaction amount, $
     */
     public BigDecimal getAmount() {
         return this.amount;
@@ -86,11 +86,21 @@ public class TransactionInfoType implements Alignable {
 
     /**
     * The transaction type. The following values are possible:
-    * periodic_charge, resource_charge, money_distribution,
-    * subscription_charge, subscription_installation_charge,
-    * card_periodic_payment, card_overrun_payment, card_payment,
-    * robokassa_payment, gift, add_money, subscription_cancel, adjustment,
-    * wire_transfer, refund.
+    * resource_charge, money_distribution, subscription_charge,
+    * subscription_installation_charge, card_periodic_payment,
+    * card_overrun_payment, card_payment, rub_card_periodic_payment,
+    * rub_card_overrun_payment, rub_card_payment, robokassa_payment, gift,
+    * promo, adjustment, wire_transfer, us_wire_transfer, refund, discount,
+    * mgp_charge, mgp_startup, mgp_business, mgp_big_business,
+    * mgp_enterprise, mgp_large_enterprise, techsupport_charge, tax_charge,
+    * monthly_fee_charge, grace_credit_payment, grace_credit_provision,
+    * mau_charge, mau_overrun, im_charge, im_overrun, fmc_charge,
+    * sip_registration_charge, development_fee, money_transfer_to_child,
+    * money_transfer_to_parent, money_acceptance_from_child,
+    * money_acceptance_from_parent, phone_number_installation,
+    * phone_number_charge, toll_free_phone_number_installation,
+    * toll_free_phone_number_charge, services, user_money_transfer,
+    * paypal_payment, paypal_overrun_payment, paypal_periodic_payment
     */
     public String getTransactionType() {
         return this.transactionType;
@@ -103,7 +113,7 @@ public class TransactionInfoType implements Alignable {
     private String transactionDescription;
 
     /**
-    * The transaction description.
+    * The transaction description
     */
     public String getTransactionDescription() {
         return this.transactionDescription;
@@ -117,7 +127,7 @@ public class TransactionInfoType implements Alignable {
 
     /**
     * The external payment reference. See the [TransferMoneyToChildAccount]
-    * function.
+    * function
     */
     public String getPaymentReference() {
         return this.paymentReference;

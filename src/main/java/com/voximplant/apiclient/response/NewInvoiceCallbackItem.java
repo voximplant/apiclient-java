@@ -18,7 +18,7 @@ public class NewInvoiceCallbackItem implements Alignable {
     private String invoiceNumber;
 
     /**
-    * The invoice unique number.
+    * The invoice unique number
     */
     public String getInvoiceNumber() {
         return this.invoiceNumber;
@@ -31,7 +31,7 @@ public class NewInvoiceCallbackItem implements Alignable {
     private String invoiceDate;
 
     /**
-    * The invoice date.
+    * The invoice date
     */
     public String getInvoiceDate() {
         return this.invoiceDate;
@@ -44,7 +44,7 @@ public class NewInvoiceCallbackItem implements Alignable {
     private Boolean prepayment;
 
     /**
-    * Is it a prepayment?
+    * It's a prepayment
     */
     public Boolean getPrepayment() {
         return this.prepayment;
@@ -57,7 +57,7 @@ public class NewInvoiceCallbackItem implements Alignable {
     private String currency;
 
     /**
-    * The invoice currency.
+    * The invoice currency
     */
     public String getCurrency() {
         return this.currency;
@@ -70,7 +70,7 @@ public class NewInvoiceCallbackItem implements Alignable {
     private BigDecimal totalAmount;
 
     /**
-    * The invoice's total amount including taxes.
+    * The invoice's total amount including taxes
     */
     public BigDecimal getTotalAmount() {
         return this.totalAmount;
@@ -83,7 +83,7 @@ public class NewInvoiceCallbackItem implements Alignable {
     private BigDecimal totalTaxAmount;
 
     /**
-    * The total amount of taxes.
+    * The total amount of taxes
     */
     public BigDecimal getTotalTaxAmount() {
         return this.totalTaxAmount;
@@ -96,7 +96,7 @@ public class NewInvoiceCallbackItem implements Alignable {
     private InvoiceUnits[] units;
 
     /**
-    * Array with the services that were provided.
+    * Array with the services that were provided
     */
     public InvoiceUnits[] getUnits() {
         return this.units;

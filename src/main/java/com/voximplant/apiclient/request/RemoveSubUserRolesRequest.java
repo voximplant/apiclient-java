@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
 
     @RequestField(name="subuser_id")
     /**
-    * The subuser's ID.
+    * The subuser's ID
     */
     public Long getSubuserId() {
         return this.subuserId;
@@ -29,7 +30,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
     }
 
     /**
-    * The subuser's ID.
+    * The subuser's ID
     */
     public RemoveSubUserRolesRequest setSubuserId(long d) {
         this.subuserId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
 
     @RequestField(name="role_id")
     /**
-    * The role id list separated by the ';' symbol.
+    * The role id list separated by semicolon (;)
     */
     public MultiArgument<Long> getRoleId() {
         return this.roleId;
@@ -51,7 +52,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
     }
 
     /**
-    * The role id list separated by the ';' symbol.
+    * The role id list separated by semicolon (;)
     */
     public RemoveSubUserRolesRequest setRoleId(MultiArgument<Long> d) {
         this.roleId = d;
@@ -62,7 +63,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
 
     @RequestField(name="role_name")
     /**
-    * The role name list separated by the ';' symbol.
+    * The role name list separated by semicolon (;)
     */
     public MultiArgument<String> getRoleName() {
         return this.roleName;
@@ -73,7 +74,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
     }
 
     /**
-    * The role name list separated by the ';' symbol.
+    * The role name list separated by semicolon (;)
     */
     public RemoveSubUserRolesRequest setRoleName(MultiArgument<String> d) {
         this.roleName = d;
@@ -84,7 +85,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
 
     @RequestField(name="force")
     /**
-    * Remove roles from all subuser keys.
+    * Remove roles from all subuser keys
     */
     public Boolean getForce() {
         return this.force;
@@ -95,7 +96,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
     }
 
     /**
-    * Remove roles from all subuser keys.
+    * Remove roles from all subuser keys
     */
     public RemoveSubUserRolesRequest setForce(boolean d) {
         this.force = Boolean.valueOf(d);

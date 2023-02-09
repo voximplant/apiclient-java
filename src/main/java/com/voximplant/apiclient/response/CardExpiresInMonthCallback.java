@@ -11,8 +11,8 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
+* Received when one month is left for a card to be expired. Received as
+* part of the [AccountCallback] structure.
 */
 public class CardExpiresInMonthCallback implements Alignable {
 

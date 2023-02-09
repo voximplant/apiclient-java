@@ -18,7 +18,7 @@ public class KeyView implements Alignable {
     private String keyId;
 
     /**
-    * The key ID.
+    * The key ID
     */
     public String getKeyId() {
         return this.keyId;
@@ -31,7 +31,7 @@ public class KeyView implements Alignable {
     private RoleView[] roles;
 
     /**
-    * The key roles.
+    * The key roles
     */
     public RoleView[] getRoles() {
         return this.roles;
@@ -44,7 +44,7 @@ public class KeyView implements Alignable {
     private String description;
 
     /**
-    * The key description.
+    * The key description
     */
     public String getDescription() {
         return this.description;
@@ -57,7 +57,7 @@ public class KeyView implements Alignable {
     private SubUserView[] subuser;
 
     /**
-    * The key subuser.
+    * The key subuser
     */
     public SubUserView[] getSubuser() {
         return this.subuser;

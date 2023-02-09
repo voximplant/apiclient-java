@@ -18,7 +18,7 @@ public class AccountVerifications implements Alignable {
     private Long accountId;
 
     /**
-    * The account ID.
+    * The account ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -31,7 +31,7 @@ public class AccountVerifications implements Alignable {
     private AccountVerificationType[] verifications;
 
     /**
-    * The account verifications.
+    * The account verifications
     */
     public AccountVerificationType[] getVerifications() {
         return this.verifications;

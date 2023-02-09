@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_count")
     /**
-    * The phone count to attach.
+    * The phone count to attach
     */
     public Long getPhoneCount() {
         return this.phoneCount;
@@ -29,7 +30,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone count to attach.
+    * The phone count to attach
     */
     public AttachPhoneNumberRequest setPhoneCount(long d) {
         this.phoneCount = Long.valueOf(d);
@@ -41,7 +42,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     @RequestField(name="phone_number")
     /**
     * The phone number that can be used instead of <b>phone_count</b>. See
-    * the [GetNewPhoneNumbers] method.
+    * the [GetNewPhoneNumbers] method
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -53,7 +54,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     /**
     * The phone number that can be used instead of <b>phone_count</b>. See
-    * the [GetNewPhoneNumbers] method.
+    * the [GetNewPhoneNumbers] method
     */
     public AttachPhoneNumberRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;
@@ -64,7 +65,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code.
+    * The country code
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -75,7 +76,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The country code.
+    * The country code
     */
     public AttachPhoneNumberRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -86,7 +87,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -97,7 +98,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public AttachPhoneNumberRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
@@ -109,7 +110,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     @RequestField(name="country_state")
     /**
     * The country state. See the [GetPhoneNumberCategories] and
-    * [GetPhoneNumberCountryStates] methods.
+    * [GetPhoneNumberCountryStates] methods
     */
     public String getCountryState() {
         return this.countryState;
@@ -121,7 +122,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     /**
     * The country state. See the [GetPhoneNumberCategories] and
-    * [GetPhoneNumberCountryStates] methods.
+    * [GetPhoneNumberCountryStates] methods
     */
     public AttachPhoneNumberRequest setCountryState(String d) {
         this.countryState = d;
@@ -132,7 +133,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_region_id")
     /**
-    * The phone region ID. See the [GetPhoneNumberRegions] method.
+    * The phone region ID. See the [GetPhoneNumberRegions] method
     */
     public Long getPhoneRegionId() {
         return this.phoneRegionId;
@@ -143,7 +144,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone region ID. See the [GetPhoneNumberRegions] method.
+    * The phone region ID. See the [GetPhoneNumberRegions] method
     */
     public AttachPhoneNumberRequest setPhoneRegionId(long d) {
         this.phoneRegionId = Long.valueOf(d);
@@ -154,7 +155,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="regulation_address_id")
     /**
-    * The phone regulation address ID.
+    * The phone regulation address ID
     */
     public Long getRegulationAddressId() {
         return this.regulationAddressId;
@@ -165,7 +166,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone regulation address ID.
+    * The phone regulation address ID
     */
     public AttachPhoneNumberRequest setRegulationAddressId(long d) {
         this.regulationAddressId = Long.valueOf(d);
@@ -176,7 +177,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="force_verification")
     /**
-    * The force verification flag.
+    * The force verification flag
     */
     public Boolean getForceVerification() {
         return this.forceVerification;
@@ -187,7 +188,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The force verification flag.
+    * The force verification flag
     */
     public AttachPhoneNumberRequest setForceVerification(boolean d) {
         this.forceVerification = Boolean.valueOf(d);

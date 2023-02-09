@@ -18,7 +18,7 @@ public class ClonedUserType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID.
+    * The user ID
     */
     public Long getUserId() {
         return this.userId;
@@ -31,7 +31,7 @@ public class ClonedUserType implements Alignable {
     private String userName;
 
     /**
-    * The user name.
+    * The user name
     */
     public String getUserName() {
         return this.userName;

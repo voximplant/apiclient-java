@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get all active sip registrations
+* Get all active sip registrations.
 */
 public class GetSipRegistrationsExample {
     public static void main(String [] args) {

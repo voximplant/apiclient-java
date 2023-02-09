@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="sip_registration_id")
     /**
-    * The SIP registration ID.
+    * The SIP registration ID
     */
     public Long getSipRegistrationId() {
         return this.sipRegistrationId;
@@ -29,7 +30,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The SIP registration ID.
+    * The SIP registration ID
     */
     public GetSipRegistrationsRequest setSipRegistrationId(long d) {
         this.sipRegistrationId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="sip_username")
     /**
-    * The SIP user name to filter.
+    * The SIP user name to filter
     */
     public String getSipUsername() {
         return this.sipUsername;
@@ -51,7 +52,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The SIP user name to filter.
+    * The SIP user name to filter
     */
     public GetSipRegistrationsRequest setSipUsername(String d) {
         this.sipUsername = d;
@@ -62,7 +63,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="deactivated")
     /**
-    * Set true to show the frozen SIP registrations only.
+    * Set true to show the frozen SIP registrations only
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -73,7 +74,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * Set true to show the frozen SIP registrations only.
+    * Set true to show the frozen SIP registrations only
     */
     public GetSipRegistrationsRequest setDeactivated(boolean d) {
         this.deactivated = Boolean.valueOf(d);
@@ -84,7 +85,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="successful")
     /**
-    * Set false to show the unsuccessful SIP registrations only.
+    * Set false to show the unsuccessful SIP registrations only
     */
     public Boolean getSuccessful() {
         return this.successful;
@@ -95,7 +96,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * Set false to show the unsuccessful SIP registrations only.
+    * Set false to show the unsuccessful SIP registrations only
     */
     public GetSipRegistrationsRequest setSuccessful(boolean d) {
         this.successful = Boolean.valueOf(d);
@@ -106,7 +107,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="is_persistent")
     /**
-    * The persistent flag to filter.
+    * The persistent flag to filter
     */
     public Boolean getIsPersistent() {
         return this.isPersistent;
@@ -117,7 +118,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The persistent flag to filter.
+    * The persistent flag to filter
     */
     public GetSipRegistrationsRequest setIsPersistent(boolean d) {
         this.isPersistent = Boolean.valueOf(d);
@@ -128,8 +129,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by the ';' symbol to filter. Can be
-    * used instead of <b>appliction_name</b>.
+    * The application ID list separated by semicolon (;) to filter. Can be
+    * used instead of <b>application_name</b>
     */
     public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
@@ -140,8 +141,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by the ';' symbol to filter. Can be
-    * used instead of <b>appliction_name</b>.
+    * The application ID list separated by semicolon (;) to filter. Can be
+    * used instead of <b>application_name</b>
     */
     public GetSipRegistrationsRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;
@@ -152,8 +153,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name list separated by the ';' symbol to filter. Can
-    * be used instead of <b>appliction_id</b>.
+    * The application name list separated by semicolon (;) to filter. Can
+    * be used instead of <b>application_id</b>
     */
     public MultiArgument<String> getApplicationName() {
         return this.applicationName;
@@ -164,8 +165,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The application name list separated by the ';' symbol to filter. Can
-    * be used instead of <b>appliction_id</b>.
+    * The application name list separated by semicolon (;) to filter. Can
+    * be used instead of <b>application_id</b>
     */
     public GetSipRegistrationsRequest setApplicationName(MultiArgument<String> d) {
         this.applicationName = d;
@@ -176,7 +177,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="is_bound_to_application")
     /**
-    * Is a SIP registration bound to an application.
+    * Is a SIP registration bound to an application
     */
     public Boolean getIsBoundToApplication() {
         return this.isBoundToApplication;
@@ -187,7 +188,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * Is a SIP registration bound to an application.
+    * Is a SIP registration bound to an application
     */
     public GetSipRegistrationsRequest setIsBoundToApplication(boolean d) {
         this.isBoundToApplication = Boolean.valueOf(d);
@@ -198,8 +199,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID list separated by the ';' symbol to filter. Can be used
-    * instead of <b>rule_name</b>.
+    * The rule ID list separated by semicolon (;) to filter. Can be used
+    * instead of <b>rule_name</b>
     */
     public MultiArgument<Long> getRuleId() {
         return this.ruleId;
@@ -210,8 +211,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The rule ID list separated by the ';' symbol to filter. Can be used
-    * instead of <b>rule_name</b>.
+    * The rule ID list separated by semicolon (;) to filter. Can be used
+    * instead of <b>rule_name</b>
     */
     public GetSipRegistrationsRequest setRuleId(MultiArgument<Long> d) {
         this.ruleId = d;
@@ -222,8 +223,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name list separated by the ';' symbol to filter. Can be used
-    * instead of <b>rule_id</b>.
+    * The rule name list separated by semicolon (;) to filter. Can be used
+    * instead of <b>rule_id</b>
     */
     public MultiArgument<String> getRuleName() {
         return this.ruleName;
@@ -234,8 +235,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The rule name list separated by the ';' symbol to filter. Can be used
-    * instead of <b>rule_id</b>.
+    * The rule name list separated by semicolon (;) to filter. Can be used
+    * instead of <b>rule_id</b>
     */
     public GetSipRegistrationsRequest setRuleName(MultiArgument<String> d) {
         this.ruleName = d;
@@ -246,8 +247,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by the ';' symbol to filter. Can be used
-    * instead of <b>user_name</b>.
+    * The user ID list separated by semicolon (;) to filter. Can be used
+    * instead of <b>user_name</b>
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -258,8 +259,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by the ';' symbol to filter. Can be used
-    * instead of <b>user_name</b>.
+    * The user ID list separated by semicolon (;) to filter. Can be used
+    * instead of <b>user_name</b>
     */
     public GetSipRegistrationsRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -270,8 +271,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by the ';' symbol to filter. Can be used
-    * instead of <b>user_id</b>.
+    * The user name list separated by semicolon (;) to filter. Can be used
+    * instead of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -282,8 +283,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by the ';' symbol to filter. Can be used
-    * instead of <b>user_id</b>.
+    * The user name list separated by semicolon (;) to filter. Can be used
+    * instead of <b>user_id</b>
     */
     public GetSipRegistrationsRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -294,7 +295,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="proxy")
     /**
-    * The list of proxy servers to use, divided by the ';' symbol.
+    * The list of proxy servers to use, divided by semicolon (;)
     */
     public MultiArgument<String> getProxy() {
         return this.proxy;
@@ -305,7 +306,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The list of proxy servers to use, divided by the ';' symbol.
+    * The list of proxy servers to use, divided by semicolon (;)
     */
     public GetSipRegistrationsRequest setProxy(MultiArgument<String> d) {
         this.proxy = d;
@@ -316,7 +317,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="in_progress")
     /**
-    * Is the SIP registration is still in progress or not?
+    * SIP registration is still in progress
     */
     public Boolean getInProgress() {
         return this.inProgress;
@@ -327,7 +328,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * Is the SIP registration is still in progress or not?
+    * SIP registration is still in progress
     */
     public GetSipRegistrationsRequest setInProgress(boolean d) {
         this.inProgress = Boolean.valueOf(d);
@@ -341,7 +342,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     * The list of SIP response codes. The __code1:code2__ means a range
     * from __code1__ to __code2__ including; the __code1;code2__ meanse
     * either __code1__ or __code2__. You can combine ranges, e.g.,
-    * __code1;code2:code3__.
+    * __code1;code2:code3__
     */
     public String getStatusCode() {
         return this.statusCode;
@@ -355,7 +356,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     * The list of SIP response codes. The __code1:code2__ means a range
     * from __code1__ to __code2__ including; the __code1;code2__ meanse
     * either __code1__ or __code2__. You can combine ranges, e.g.,
-    * __code1;code2:code3__.
+    * __code1;code2:code3__
     */
     public GetSipRegistrationsRequest setStatusCode(String d) {
         this.statusCode = d;
@@ -366,7 +367,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -377,7 +378,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetSipRegistrationsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -388,7 +389,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -399,7 +400,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetSipRegistrationsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

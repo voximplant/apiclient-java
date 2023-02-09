@@ -24,7 +24,7 @@ public class GetZIPCodesResponse implements Alignable {
     private ZipCode[] result;
 
     /**
-    * The ZipCode records.
+    * The ZipCode records
     */
     public ZipCode[] getResult() {
         return this.result;
@@ -37,7 +37,7 @@ public class GetZIPCodesResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned zip codes count.
+    * The returned zip codes count
     */
     public Long getCount() {
         return this.count;

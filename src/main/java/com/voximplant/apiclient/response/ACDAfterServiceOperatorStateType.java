@@ -18,7 +18,7 @@ public class ACDAfterServiceOperatorStateType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID of the operator.
+    * The user ID of the operator
     */
     public Long getUserId() {
         return this.userId;
@@ -31,7 +31,7 @@ public class ACDAfterServiceOperatorStateType implements Alignable {
     private String userName;
 
     /**
-    * The user name of the operator.
+    * The user name of the operator
     */
     public String getUserName() {
         return this.userName;
@@ -44,7 +44,7 @@ public class ACDAfterServiceOperatorStateType implements Alignable {
     private String userDisplayName;
 
     /**
-    * The display user name of the operator.
+    * The display user name of the operator
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -58,8 +58,8 @@ public class ACDAfterServiceOperatorStateType implements Alignable {
 
     /**
     * The operator <a
-    * href='//voximplant.com/docs/references/websdk/voximplant/operatoracdstatuses'>status
-    * string</a>.
+    * href='/docs/references/websdk/voximplant/operatoracdstatuses'>status
+    * string</a>
     */
     public String getStatus() {
         return this.status;

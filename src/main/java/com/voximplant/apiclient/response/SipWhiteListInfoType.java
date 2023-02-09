@@ -18,7 +18,7 @@ public class SipWhiteListInfoType implements Alignable {
     private Long sipWhitelistId;
 
     /**
-    * The SIP white list item ID.
+    * The SIP white list item ID
     */
     public Long getSipWhitelistId() {
         return this.sipWhitelistId;
@@ -39,6 +39,19 @@ public class SipWhiteListInfoType implements Alignable {
 
     public boolean hasSipWhitelistNetwork() {
         return this.sipWhitelistNetwork != null;
+    }
+
+    private String description;
+
+    /**
+    * The network address description
+    */
+    public String getDescription() {
+        return this.description;
+    }
+
+    public boolean hasDescription() {
+        return this.description != null;
     }
 
     public String toString(int alignment) {
@@ -62,6 +75,14 @@ public class SipWhiteListInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"sipWhitelistNetwork\": \"")
                 .append(sipWhitelistNetwork)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (description != null) {
+            sb.append(aligned)
+                .append("\"description\": \"")
+                .append(description)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -24,7 +24,7 @@ public class GetAvailableAdminRoleEntriesResponse implements Alignable {
     private String[] result;
 
     /**
-    * Array of the admin role entries.
+    * Array of the admin role entries
     */
     public String[] getResult() {
         return this.result;

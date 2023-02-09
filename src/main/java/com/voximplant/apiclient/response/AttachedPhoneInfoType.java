@@ -11,14 +11,14 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The [GetPhoneNumbers] function result item.
+* The [GetPhoneNumbers] function result.
 */
 public class AttachedPhoneInfoType implements Alignable {
 
     private Long phoneId;
 
     /**
-    * The phone ID.
+    * The phone ID
     */
     public Long getPhoneId() {
         return this.phoneId;
@@ -31,7 +31,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private String phoneNumber;
 
     /**
-    * The phone number.
+    * The phone number
     */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -44,7 +44,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private BigDecimal phonePrice;
 
     /**
-    * The phone monthly charge.
+    * The phone monthly charge
     */
     public BigDecimal getPhonePrice() {
         return this.phonePrice;
@@ -57,7 +57,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private String phoneCountryCode;
 
     /**
-    * The phone country code (2 symbols).
+    * The phone country code (2 symbols)
     */
     public String getPhoneCountryCode() {
         return this.phoneCountryCode;
@@ -98,7 +98,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean deactivated;
 
     /**
-    * The flag of the frozen subscription.
+    * The flag of the frozen subscription
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -111,7 +111,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean canceled;
 
     /**
-    * The flag of the deleted subscription.
+    * The flag of the deleted subscription
     */
     public Boolean getCanceled() {
         return this.canceled;
@@ -124,7 +124,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean autoCharge;
 
     /**
-    * The auto_charge flag.
+    * The auto_charge flag
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -137,7 +137,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Long applicationId;
 
     /**
-    * The id of the bound application.
+    * The id of the bound application
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -150,7 +150,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private String applicationName;
 
     /**
-    * The name of the bound application.
+    * The name of the bound application
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -163,7 +163,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Long ruleId;
 
     /**
-    * The id of the bound rule.
+    * The id of the bound rule
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -176,7 +176,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private String ruleName;
 
     /**
-    * The name of the bound rule.
+    * The name of the bound rule
     */
     public String getRuleName() {
         return this.ruleName;
@@ -199,12 +199,12 @@ public class AttachedPhoneInfoType implements Alignable {
         return this.categoryName != null;
     }
 
-    private String requiredVerification;
+    private Boolean requiredVerification;
 
     /**
-    * The required account verification name.
+    * Verification is required for the account
     */
-    public String getRequiredVerification() {
+    public Boolean getRequiredVerification() {
         return this.requiredVerification;
     }
 
@@ -245,7 +245,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean canBeUsed;
 
     /**
-    * Can the unverified account use the phone?
+    * Unverified account can use the phone
     */
     public Boolean getCanBeUsed() {
         return this.canBeUsed;
@@ -259,12 +259,12 @@ public class AttachedPhoneInfoType implements Alignable {
 
     /**
     * If <b>true</b>, SMS is supported for this phone number. SMS needs to
-    * be explicitly enabled via the [ControlSms] HTTP API before sending or
-    * receiving SMS. If SMS is supported and enabled, SMS can be sent from
-    * this phone number using the [SendSmsMessage] HTTP API and received
-    * using the [InboundSmsCallback] property of the HTTP callback. See <a
-    * href='/docs/howtos/integration/httpapi/callbacks'>this article</a>
-    * for HTTP callback details.
+    * be explicitly enabled via the [ControlSms] Management API before
+    * sending or receiving SMS. If SMS is supported and enabled, SMS can be
+    * sent from this phone number using the [SendSmsMessage] Management API
+    * and received using the [InboundSmsCallback] property of the HTTP
+    * callback. See <a href='/docs/guides/managementapi/callbacks'>this
+    * article</a> for HTTP callback details
     */
     public Boolean getIsSmsSupported() {
         return this.isSmsSupported;
@@ -278,7 +278,7 @@ public class AttachedPhoneInfoType implements Alignable {
 
     /**
     * If <b>true</b>, SMS sending and receiving is enabled for this phone
-    * number via the [ControlSms] HTTP API.
+    * number via the [ControlSms] Management API
     */
     public Boolean getIsSmsEnabled() {
         return this.isSmsEnabled;
@@ -286,6 +286,101 @@ public class AttachedPhoneInfoType implements Alignable {
 
     public boolean hasIsSmsEnabled() {
         return this.isSmsEnabled != null;
+    }
+
+    private String incomingSmsCallbackUrl;
+
+    /**
+    * If set, the callback of an inbound SMS will be sent to this url,
+    * otherwise, it will be sent to the general account URL
+    */
+    public String getIncomingSmsCallbackUrl() {
+        return this.incomingSmsCallbackUrl;
+    }
+
+    public boolean hasIncomingSmsCallbackUrl() {
+        return this.incomingSmsCallbackUrl != null;
+    }
+
+    private Boolean emergencyCallsToBeEnabled;
+
+    /**
+    * If <b>true</b>, you need to make a request to enable calls to
+    * emergency numbers
+    */
+    public Boolean getEmergencyCallsToBeEnabled() {
+        return this.emergencyCallsToBeEnabled;
+    }
+
+    public boolean hasEmergencyCallsToBeEnabled() {
+        return this.emergencyCallsToBeEnabled != null;
+    }
+
+    private Boolean emergencyCallsEnabled;
+
+    /**
+    * If <b>true</b>, calls to emergency numbers are enabled
+    */
+    public Boolean getEmergencyCallsEnabled() {
+        return this.emergencyCallsEnabled;
+    }
+
+    public boolean hasEmergencyCallsEnabled() {
+        return this.emergencyCallsEnabled != null;
+    }
+
+    private Long subscriptionId;
+
+    /**
+    * Phone number subscription ID
+    */
+    public Long getSubscriptionId() {
+        return this.subscriptionId;
+    }
+
+    public boolean hasSubscriptionId() {
+        return this.subscriptionId != null;
+    }
+
+    private String extendedApplicationName;
+
+    /**
+    * Full application name, e.g. myapp.myaccount.n1.voximplant.com
+    */
+    public String getExtendedApplicationName() {
+        return this.extendedApplicationName;
+    }
+
+    public boolean hasExtendedApplicationName() {
+        return this.extendedApplicationName != null;
+    }
+
+    private String phoneRegionName;
+
+    /**
+    * Phone region name
+    */
+    public String getPhoneRegionName() {
+        return this.phoneRegionName;
+    }
+
+    public boolean hasPhoneRegionName() {
+        return this.phoneRegionName != null;
+    }
+
+    @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
+    private Date modified;
+
+    /**
+    * UTC date of an event associated with the number in 24-h format:
+    * YYYY-MM-DD HH:mm:ss
+    */
+    public Date getModified() {
+        return this.modified;
+    }
+
+    public boolean hasModified() {
+        return this.modified != null;
     }
 
     public String toString(int alignment) {
@@ -453,6 +548,62 @@ public class AttachedPhoneInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"isSmsEnabled\": \"")
                 .append(isSmsEnabled)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (incomingSmsCallbackUrl != null) {
+            sb.append(aligned)
+                .append("\"incomingSmsCallbackUrl\": \"")
+                .append(incomingSmsCallbackUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (emergencyCallsToBeEnabled != null) {
+            sb.append(aligned)
+                .append("\"emergencyCallsToBeEnabled\": \"")
+                .append(emergencyCallsToBeEnabled)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (emergencyCallsEnabled != null) {
+            sb.append(aligned)
+                .append("\"emergencyCallsEnabled\": \"")
+                .append(emergencyCallsEnabled)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionId != null) {
+            sb.append(aligned)
+                .append("\"subscriptionId\": \"")
+                .append(subscriptionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (extendedApplicationName != null) {
+            sb.append(aligned)
+                .append("\"extendedApplicationName\": \"")
+                .append(extendedApplicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneRegionName != null) {
+            sb.append(aligned)
+                .append("\"phoneRegionName\": \"")
+                .append(phoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (modified != null) {
+            sb.append(aligned)
+                .append("\"modified\": \"")
+                .append(modified)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

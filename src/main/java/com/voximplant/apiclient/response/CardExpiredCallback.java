@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when a card is expired. Received as part of the
 * [AccountCallback] structure.
 */
 public class CardExpiredCallback implements Alignable {

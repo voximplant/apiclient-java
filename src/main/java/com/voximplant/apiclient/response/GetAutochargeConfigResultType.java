@@ -18,7 +18,7 @@ public class GetAutochargeConfigResultType implements Alignable {
     private Boolean autoCharge;
 
     /**
-    * Is auto charge enabled or not.
+    * Is auto charge enabled or not
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -31,7 +31,7 @@ public class GetAutochargeConfigResultType implements Alignable {
     private Long minBalance;
 
     /**
-    * The auto charge threshold.
+    * The auto charge threshold
     */
     public Long getMinBalance() {
         return this.minBalance;
@@ -44,7 +44,7 @@ public class GetAutochargeConfigResultType implements Alignable {
     private String cardOverrunValue;
 
     /**
-    * The auto top-up amount in the account's currency.
+    * The auto top-up amount in the account's currency
     */
     public String getCardOverrunValue() {
         return this.cardOverrunValue;
@@ -57,7 +57,7 @@ public class GetAutochargeConfigResultType implements Alignable {
     private String receiptEmail;
 
     /**
-    * The email for receiving payment receipts.
+    * The email for receiving payment receipts
     */
     public String getReceiptEmail() {
         return this.receiptEmail;

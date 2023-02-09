@@ -19,7 +19,7 @@ public class ACDLock implements Alignable {
     private String id;
 
     /**
-    * The ACD lock ID.
+    * The ACD lock ID
     */
     public String getId() {
         return this.id;

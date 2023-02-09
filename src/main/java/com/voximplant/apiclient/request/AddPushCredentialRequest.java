@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,8 +19,8 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_provider_name")
     /**
-    * The push provider name. The possible values are: APPLE, APPLE_VOIP,
-    * GOOGLE.
+    * The push provider name. The possible values are APPLE, APPLE_VOIP,
+    * GOOGLE, HUAWEI
     */
     public String getPushProviderName() {
         return this.pushProviderName;
@@ -30,8 +31,8 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push provider name. The possible values are: APPLE, APPLE_VOIP,
-    * GOOGLE.
+    * The push provider name. The possible values are APPLE, APPLE_VOIP,
+    * GOOGLE, HUAWEI
     */
     public AddPushCredentialRequest setPushProviderName(String d) {
         this.pushProviderName = d;
@@ -42,7 +43,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_provider_id")
     /**
-    * The push provider id.
+    * The push provider id. Can be used instead of <b>push_provider_name</b>
     */
     public Long getPushProviderId() {
         return this.pushProviderId;
@@ -53,7 +54,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push provider id.
+    * The push provider id. Can be used instead of <b>push_provider_name</b>
     */
     public AddPushCredentialRequest setPushProviderId(long d) {
         this.pushProviderId = Long.valueOf(d);
@@ -64,7 +65,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application id.
+    * The application id
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -75,7 +76,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The application id.
+    * The application id
     */
     public AddPushCredentialRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -86,8 +87,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -98,8 +98,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public AddPushCredentialRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -110,7 +109,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="credential_bundle")
     /**
-    * The bundle of Android/iOS application.
+    * The bundle of Android/iOS/Huawei application
     */
     public String getCredentialBundle() {
         return this.credentialBundle;
@@ -121,7 +120,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The bundle of Android/iOS application.
+    * The bundle of Android/iOS/Huawei application
     */
     public AddPushCredentialRequest setCredentialBundle(String d) {
         this.credentialBundle = d;
@@ -132,7 +131,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="cert_content")
     /**
-    * Public and private keys in PKCS12 format.
+    * Public and private keys in PKCS12 format. Credentials for APPLE push
     */
     public String getCertContent() {
         return this.certContent;
@@ -143,7 +142,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Public and private keys in PKCS12 format.
+    * Public and private keys in PKCS12 format. Credentials for APPLE push
     */
     public AddPushCredentialRequest setCertContent(String d) {
         this.certContent = d;
@@ -155,6 +154,7 @@ public class AddPushCredentialRequest implements Alignable {
     @RequestField(name="cert_file_name")
     /**
     * The parameter is required, when set 'cert_content' as POST body.
+    * Credentials for APPLE push
     */
     public String getCertFileName() {
         return this.certFileName;
@@ -166,6 +166,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     /**
     * The parameter is required, when set 'cert_content' as POST body.
+    * Credentials for APPLE push
     */
     public AddPushCredentialRequest setCertFileName(String d) {
         this.certFileName = d;
@@ -176,7 +177,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="cert_password")
     /**
-    * The secret password for private key.
+    * The secret password for private key. Credentials for APPLE push
     */
     public String getCertPassword() {
         return this.certPassword;
@@ -187,7 +188,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The secret password for private key.
+    * The secret password for private key. Credentials for APPLE push
     */
     public AddPushCredentialRequest setCertPassword(String d) {
         this.certPassword = d;
@@ -198,7 +199,8 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="is_dev_mode")
     /**
-    * Set true for use this certificate in apple's sandbox environment
+    * Set true to use this certificate in apple's sandbox environment.
+    * Credentials for APPLE push
     */
     public Boolean getIsDevMode() {
         return this.isDevMode;
@@ -209,7 +211,8 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set true for use this certificate in apple's sandbox environment
+    * Set true to use this certificate in apple's sandbox environment.
+    * Credentials for APPLE push
     */
     public AddPushCredentialRequest setIsDevMode(boolean d) {
         this.isDevMode = Boolean.valueOf(d);
@@ -220,7 +223,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="sender_id")
     /**
-    * The sender id, provided by Google.
+    * The sender id, provided by Google. Credentials for GOOGLE push
     */
     public String getSenderId() {
         return this.senderId;
@@ -231,7 +234,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The sender id, provided by Google.
+    * The sender id, provided by Google. Credentials for GOOGLE push
     */
     public AddPushCredentialRequest setSenderId(String d) {
         this.senderId = d;
@@ -242,7 +245,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="server_key")
     /**
-    * The server key, provided by Google.
+    * The server key, provided by Google. Credentials for GOOGLE push
     */
     public String getServerKey() {
         return this.serverKey;
@@ -253,7 +256,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The server key, provided by Google.
+    * The server key, provided by Google. Credentials for GOOGLE push
     */
     public AddPushCredentialRequest setServerKey(String d) {
         this.serverKey = d;
@@ -264,7 +267,8 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="service_account_file")
     /**
-    * The service account key file, provided by Google.
+    * The service account key file, provided by Google. Can be used instead
+    * of <b>server_key</b>. Credentials for GOOGLE push
     */
     public String getServiceAccountFile() {
         return this.serviceAccountFile;
@@ -275,10 +279,77 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The service account key file, provided by Google.
+    * The service account key file, provided by Google. Can be used instead
+    * of <b>server_key</b>. Credentials for GOOGLE push
     */
     public AddPushCredentialRequest setServiceAccountFile(String d) {
         this.serviceAccountFile = d;
+        return this;
+    }
+
+    private String huaweiClientId;
+
+    @RequestField(name="huawei_client_id")
+    /**
+    * The client id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public String getHuaweiClientId() {
+        return this.huaweiClientId;
+    }
+
+    public boolean hasHuaweiClientId() {
+        return this.huaweiClientId != null;
+    }
+
+    /**
+    * The client id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public AddPushCredentialRequest setHuaweiClientId(String d) {
+        this.huaweiClientId = d;
+        return this;
+    }
+
+    private String huaweiClientSecret;
+
+    @RequestField(name="huawei_client_secret")
+    /**
+    * The client secret, provided by Huawei. Credentials for HUAWEI push
+    */
+    public String getHuaweiClientSecret() {
+        return this.huaweiClientSecret;
+    }
+
+    public boolean hasHuaweiClientSecret() {
+        return this.huaweiClientSecret != null;
+    }
+
+    /**
+    * The client secret, provided by Huawei. Credentials for HUAWEI push
+    */
+    public AddPushCredentialRequest setHuaweiClientSecret(String d) {
+        this.huaweiClientSecret = d;
+        return this;
+    }
+
+    private String huaweiApplicationId;
+
+    @RequestField(name="huawei_application_id")
+    /**
+    * The application id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public String getHuaweiApplicationId() {
+        return this.huaweiApplicationId;
+    }
+
+    public boolean hasHuaweiApplicationId() {
+        return this.huaweiApplicationId != null;
+    }
+
+    /**
+    * The application id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public AddPushCredentialRequest setHuaweiApplicationId(String d) {
+        this.huaweiApplicationId = d;
         return this;
     }
 
@@ -383,6 +454,30 @@ public class AddPushCredentialRequest implements Alignable {
             sb.append(aligned)
                 .append("\"serviceAccountFile\": \"")
                 .append(serviceAccountFile)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (huaweiClientId != null) {
+            sb.append(aligned)
+                .append("\"huaweiClientId\": \"")
+                .append(huaweiClientId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (huaweiClientSecret != null) {
+            sb.append(aligned)
+                .append("\"huaweiClientSecret\": \"")
+                .append(huaweiClientSecret)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (huaweiApplicationId != null) {
+            sb.append(aligned)
+                .append("\"huaweiApplicationId\": \"")
+                .append(huaweiApplicationId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

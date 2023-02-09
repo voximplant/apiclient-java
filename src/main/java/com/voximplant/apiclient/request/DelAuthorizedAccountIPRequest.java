@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -19,7 +20,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
     @RequestField(name="authorized_ip")
     /**
     * The authorized IP4 or network to remove. Set to 'all' to remove all
-    * items.
+    * items
     */
     public String getAuthorizedIp() {
         return this.authorizedIp;
@@ -31,7 +32,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
 
     /**
     * The authorized IP4 or network to remove. Set to 'all' to remove all
-    * items.
+    * items
     */
     public DelAuthorizedAccountIPRequest setAuthorizedIp(String d) {
         this.authorizedIp = d;
@@ -43,7 +44,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
     @RequestField(name="contains_ip")
     /**
     * Specify the parameter to remove the networks that contains the
-    * particular IP4. Can be used instead of <b>autharized_ip</b>.
+    * particular IP4. Can be used instead of <b>autharized_ip</b>
     */
     public String getContainsIp() {
         return this.containsIp;
@@ -55,7 +56,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
 
     /**
     * Specify the parameter to remove the networks that contains the
-    * particular IP4. Can be used instead of <b>autharized_ip</b>.
+    * particular IP4. Can be used instead of <b>autharized_ip</b>
     */
     public DelAuthorizedAccountIPRequest setContainsIp(String d) {
         this.containsIp = d;
@@ -68,7 +69,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
     /**
     * Set true to remove the network from the white list. Set false to
     * remove the network from the black list. Omit the parameter to remove
-    * the network from all lists.
+    * the network from all lists
     */
     public Boolean getAllowed() {
         return this.allowed;
@@ -81,7 +82,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
     /**
     * Set true to remove the network from the white list. Set false to
     * remove the network from the black list. Omit the parameter to remove
-    * the network from all lists.
+    * the network from all lists
     */
     public DelAuthorizedAccountIPRequest setAllowed(boolean d) {
         this.allowed = Boolean.valueOf(d);

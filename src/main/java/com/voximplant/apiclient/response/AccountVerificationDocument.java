@@ -19,7 +19,7 @@ public class AccountVerificationDocument implements Alignable {
     private Long accountDocumentId;
 
     /**
-    * The account verification document ID.
+    * The account verification document ID
     */
     public Long getAccountDocumentId() {
         return this.accountDocumentId;
@@ -32,7 +32,7 @@ public class AccountVerificationDocument implements Alignable {
     private Boolean isIndividual;
 
     /**
-    * Is individual, isn't legal entity?
+    * Account belongs to an individual
     */
     public Boolean getIsIndividual() {
         return this.isIndividual;
@@ -45,7 +45,7 @@ public class AccountVerificationDocument implements Alignable {
     private String comment;
 
     /**
-    * The reviewer's comment.
+    * The reviewer's comment
     */
     public String getComment() {
         return this.comment;
@@ -73,7 +73,7 @@ public class AccountVerificationDocument implements Alignable {
 
     /**
     * The account document status. The following values are possible:
-    * ACCEPTED, REJECTED, IN_PROGRESS, INCOMPLETE_SET.
+    * ACCEPTED, REJECTED, IN_PROGRESS, INCOMPLETE_SET
     */
     public String getAccountDocumentStatus() {
         return this.accountDocumentStatus;

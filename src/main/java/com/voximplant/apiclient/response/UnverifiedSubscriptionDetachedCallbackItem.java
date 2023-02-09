@@ -32,7 +32,7 @@ public class UnverifiedSubscriptionDetachedCallbackItem implements Alignable {
 
     /**
     * The subscription description (details). Example: the subscribed phone
-    * number.
+    * number
     */
     public String getName() {
         return this.name;
@@ -40,6 +40,20 @@ public class UnverifiedSubscriptionDetachedCallbackItem implements Alignable {
 
     public boolean hasName() {
         return this.name != null;
+    }
+
+    private SubscriptionCallbackDetails[] details;
+
+    /**
+    * Info about the phone numbers or sip registrations that the
+    * subscription is attached to
+    */
+    public SubscriptionCallbackDetails[] getDetails() {
+        return this.details;
+    }
+
+    public boolean hasDetails() {
+        return this.details != null;
     }
 
     public String toString(int alignment) {
@@ -65,6 +79,12 @@ public class UnverifiedSubscriptionDetachedCallbackItem implements Alignable {
                 .append(name)
                 .append('"')
                 .append(',')
+                .append(System.lineSeparator());
+        }
+        if (details != null) {
+            sb.append(aligned)
+                .append("\"SubscriptionCallbackDetails\": ")
+                .append(StringHelper.arrayToString(details, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

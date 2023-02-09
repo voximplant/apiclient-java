@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetMoneyAmountToChargeRequest implements Alignable {
 
     @RequestField(name="currency")
     /**
-    * The currency name. Examples: USD, RUR, EUR.
+    * The currency name. Examples: USD, RUR, EUR
     */
     public String getCurrency() {
         return this.currency;
@@ -29,7 +30,7 @@ public class GetMoneyAmountToChargeRequest implements Alignable {
     }
 
     /**
-    * The currency name. Examples: USD, RUR, EUR.
+    * The currency name. Examples: USD, RUR, EUR
     */
     public GetMoneyAmountToChargeRequest setCurrency(String d) {
         this.currency = d;

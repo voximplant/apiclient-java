@@ -15,12 +15,12 @@ import com.voximplant.apiclient.util.Alignable;
 */
 public class BankCardBillingLimitInfoType implements Alignable {
 
-    private Long minAmount;
+    private BigDecimal minAmount;
 
     /**
-    * The minimum amount.
+    * The minimum amount
     */
-    public Long getMinAmount() {
+    public BigDecimal getMinAmount() {
         return this.minAmount;
     }
 
@@ -31,7 +31,7 @@ public class BankCardBillingLimitInfoType implements Alignable {
     private String currency;
 
     /**
-    * The currency.
+    * The currency
     */
     public String getCurrency() {
         return this.currency;

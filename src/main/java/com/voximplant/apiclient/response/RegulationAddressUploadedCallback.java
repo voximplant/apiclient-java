@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when proof of address is uploaded. Received as part of the
 * [AccountCallback] structure.
 */
 public class RegulationAddressUploadedCallback implements Alignable {
@@ -19,7 +19,7 @@ public class RegulationAddressUploadedCallback implements Alignable {
     private Long regulationAddressId;
 
     /**
-    * The uploaded document ID. See GetRegulationsAddress.
+    * The uploaded document ID. See GetRegulationsAddress
     */
     public Long getRegulationAddressId() {
         return this.regulationAddressId;
@@ -46,7 +46,7 @@ public class RegulationAddressUploadedCallback implements Alignable {
     private Boolean isIndividual;
 
     /**
-    * Is individual, isn't legal entity?
+    * Account belongs to an individual
     */
     public Boolean getIsIndividual() {
         return this.isIndividual;
@@ -59,7 +59,7 @@ public class RegulationAddressUploadedCallback implements Alignable {
     private String regulationAddressName;
 
     /**
-    * The regulation address name.
+    * The regulation address name
     */
     public String getRegulationAddressName() {
         return this.regulationAddressName;

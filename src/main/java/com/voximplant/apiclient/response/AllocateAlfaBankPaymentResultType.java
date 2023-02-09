@@ -18,7 +18,7 @@ public class AllocateAlfaBankPaymentResultType implements Alignable {
     private String formUrl;
 
     /**
-    * The URL to redirect.
+    * The URL to redirect
     */
     public String getFormUrl() {
         return this.formUrl;
@@ -31,7 +31,7 @@ public class AllocateAlfaBankPaymentResultType implements Alignable {
     private String paymentId ;
 
     /**
-    * The payment ID.
+    * The payment ID
     */
     public String getPaymentId () {
         return this.paymentId ;

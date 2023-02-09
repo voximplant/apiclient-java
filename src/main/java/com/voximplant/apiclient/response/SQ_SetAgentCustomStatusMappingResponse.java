@@ -10,23 +10,28 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-/**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
-*/
-public class ClassificationCompleteCallback implements Alignable {
+public class SQ_SetAgentCustomStatusMappingResponse implements Alignable {
+    private Error error;
 
-    private ClassificationCompleteCallbackItem classificationComplete;
-
-    /**
-    * The classification info.
-    */
-    public ClassificationCompleteCallbackItem getClassificationComplete() {
-        return this.classificationComplete;
+    public Error getError() {
+        return error;
     }
 
-    public boolean hasClassificationComplete() {
-        return this.classificationComplete != null;
+    public boolean hasError() {
+        return this.error != null;
+    }
+
+    private Long result;
+
+    /**
+    * 1
+    */
+    public Long getResult() {
+        return this.result;
+    }
+
+    public boolean hasResult() {
+        return this.result != null;
     }
 
     public String toString(int alignment) {
@@ -38,10 +43,10 @@ public class ClassificationCompleteCallback implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (classificationComplete != null) {
+        if (result != null) {
             sb.append(aligned)
-                .append("\"classificationComplete\": \"")
-                .append(classificationComplete)
+                .append("\"result\": \"")
+                .append(result)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

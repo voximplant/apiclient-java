@@ -18,7 +18,7 @@ public class AccountVerificationType implements Alignable {
     private String verificationName;
 
     /**
-    * The verification name.
+    * The verification name
     */
     public String getVerificationName() {
         return this.verificationName;
@@ -61,7 +61,7 @@ public class AccountVerificationType implements Alignable {
     private AccountVerificationDocument[] documents;
 
     /**
-    * The uploaded documents.
+    * The uploaded documents
     */
     public AccountVerificationDocument[] getDocuments() {
         return this.documents;

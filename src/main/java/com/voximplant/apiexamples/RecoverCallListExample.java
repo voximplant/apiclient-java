@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Restore list with id = 1
+* Restore list with id = 1.
 */
 public class RecoverCallListExample {
     public static void main(String [] args) {

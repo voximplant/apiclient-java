@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -47,7 +48,7 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
     * Date and time of statistics interval begin. Time zone is UTC, format
-    * is 24-h 'YYYY-MM-DD HH:mm:ss'.
+    * is 24-h 'YYYY-MM-DD HH:mm:ss'
     */
     public Date getToDate() {
         return this.toDate;
@@ -59,7 +60,7 @@ public class GetACDQueueStatisticsRequest implements Alignable {
 
     /**
     * Date and time of statistics interval begin. Time zone is UTC, format
-    * is 24-h 'YYYY-MM-DD HH:mm:ss'.
+    * is 24-h 'YYYY-MM-DD HH:mm:ss'
     */
     public GetACDQueueStatisticsRequest setToDate(Date d) {
         this.toDate = d;
@@ -80,7 +81,7 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     * 'ServiceLevel', 'TWT' is for 'TotalWaitingTime', 'TST' is for
     * 'TotalSubmissionTime', 'TAT' is for 'TotalAbandonmentTime', 'THT' is
     * for 'TotalHandlingTime', 'TTT' is for 'TotalTalkTime', 'TACW' is for
-    * 'TotalAfterCallWork'.
+    * 'TotalAfterCallWork'
     */
     public Boolean getAbbreviation() {
         return this.abbreviation;
@@ -101,7 +102,7 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     * 'ServiceLevel', 'TWT' is for 'TotalWaitingTime', 'TST' is for
     * 'TotalSubmissionTime', 'TAT' is for 'TotalAbandonmentTime', 'THT' is
     * for 'TotalHandlingTime', 'TTT' is for 'TotalTalkTime', 'TACW' is for
-    * 'TotalAfterCallWork'.
+    * 'TotalAfterCallWork'
     */
     public GetACDQueueStatisticsRequest setAbbreviation(boolean d) {
         this.abbreviation = Boolean.valueOf(d);
@@ -112,7 +113,8 @@ public class GetACDQueueStatisticsRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list separated by the ';' symbol or the 'all' value.
+    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
+    * to select all ACD queues
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -123,7 +125,8 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list separated by the ';' symbol or the 'all' value.
+    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
+    * to select all ACD queues
     */
     public GetACDQueueStatisticsRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -134,11 +137,11 @@ public class GetACDQueueStatisticsRequest implements Alignable {
 
     @RequestField(name="report")
     /**
-    * List of item names abbreviations separated by the ';' symbol.
-    * Returned JSON will include keys only for the selected items. Special
-    * 'all' value defines all possible items, see [ACDQueueStatisticsType]
-    * for a complete list. See 'abbreviation' description for complete
-    * abbreviation list.
+    * List of item names abbreviations separated by semicolon (;). Returned
+    * JSON will include keys only for the selected items. Special 'all'
+    * value defines all possible items, see [ACDQueueStatisticsType] for a
+    * complete list. See 'abbreviation' description for complete
+    * abbreviation list
     */
     public MultiArgument<String> getReport() {
         return this.report;
@@ -149,11 +152,11 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     }
 
     /**
-    * List of item names abbreviations separated by the ';' symbol.
-    * Returned JSON will include keys only for the selected items. Special
-    * 'all' value defines all possible items, see [ACDQueueStatisticsType]
-    * for a complete list. See 'abbreviation' description for complete
-    * abbreviation list.
+    * List of item names abbreviations separated by semicolon (;). Returned
+    * JSON will include keys only for the selected items. Special 'all'
+    * value defines all possible items, see [ACDQueueStatisticsType] for a
+    * complete list. See 'abbreviation' description for complete
+    * abbreviation list
     */
     public GetACDQueueStatisticsRequest setReport(MultiArgument<String> d) {
         this.report = d;
@@ -168,7 +171,7 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     * the criteria is a day number. If set to 'hour_of_day', the criteria
     * is a 60-minute interval within a day. If set to 'hour', the criteria
     * is both day number and 60-minute interval within that day. If set to
-    * 'none', records are not grouped by date and time.
+    * 'none', records are not grouped by date and time
     */
     public String getAggregation() {
         return this.aggregation;
@@ -183,7 +186,7 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     * the criteria is a day number. If set to 'hour_of_day', the criteria
     * is a 60-minute interval within a day. If set to 'hour', the criteria
     * is both day number and 60-minute interval within that day. If set to
-    * 'none', records are not grouped by date and time.
+    * 'none', records are not grouped by date and time
     */
     public GetACDQueueStatisticsRequest setAggregation(String d) {
         this.aggregation = d;

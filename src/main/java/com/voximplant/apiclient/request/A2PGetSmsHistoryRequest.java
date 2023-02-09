@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="source_number")
     /**
-    * The source phone number.
+    * The source phone number
     */
     public String getSourceNumber() {
         return this.sourceNumber;
@@ -29,7 +30,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The source phone number.
+    * The source phone number
     */
     public A2PGetSmsHistoryRequest setSourceNumber(String d) {
         this.sourceNumber = d;
@@ -40,7 +41,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="destination_number")
     /**
-    * The destination phone number.
+    * The destination phone number
     */
     public String getDestinationNumber() {
         return this.destinationNumber;
@@ -51,7 +52,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The destination phone number.
+    * The destination phone number
     */
     public A2PGetSmsHistoryRequest setDestinationNumber(String d) {
         this.destinationNumber = d;
@@ -62,8 +63,8 @@ public class A2PGetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * Maximum number of resulting rows fetched. Must be not more than 1000.
-    * If left blank, then the default value of 1000 will be used.
+    * Maximum number of resulting rows fetched. Must be not bigger than
+    * 1000. If left blank, then the default value of 1000 will be used
     */
     public Long getCount() {
         return this.count;
@@ -74,8 +75,8 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Maximum number of resulting rows fetched. Must be not more than 1000.
-    * If left blank, then the default value of 1000 will be used.
+    * Maximum number of resulting rows fetched. Must be not bigger than
+    * 1000. If left blank, then the default value of 1000 will be used
     */
     public A2PGetSmsHistoryRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -86,7 +87,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -97,7 +98,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public A2PGetSmsHistoryRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -111,7 +112,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
     * Date from which the search is to start. Format is 'yyyy-MM-dd
-    * HH:mm:ss'.
+    * HH:mm:ss'
     */
     public Date getFromDate() {
         return this.fromDate;
@@ -123,7 +124,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
 
     /**
     * Date from which the search is to start. Format is 'yyyy-MM-dd
-    * HH:mm:ss'.
+    * HH:mm:ss'
     */
     public A2PGetSmsHistoryRequest setFromDate(Date d) {
         this.fromDate = d;
@@ -136,7 +137,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     @RequestField(name="to_date")
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
-    * Date from which the search is to end. Format is 'yyyy-MM-dd HH:mm:ss'.
+    * Date from which the search is to end. Format is 'yyyy-MM-dd HH:mm:ss'
     */
     public Date getToDate() {
         return this.toDate;
@@ -147,7 +148,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Date from which the search is to end. Format is 'yyyy-MM-dd HH:mm:ss'.
+    * Date from which the search is to end. Format is 'yyyy-MM-dd HH:mm:ss'
     */
     public A2PGetSmsHistoryRequest setToDate(Date d) {
         this.toDate = d;
@@ -158,7 +159,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="output")
     /**
-    * The output format. The possible values are: json, csv.
+    * The output format. The possible values are json, csv
     */
     public String getOutput() {
         return this.output;
@@ -169,7 +170,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The output format. The possible values are: json, csv.
+    * The output format. The possible values are json, csv
     */
     public A2PGetSmsHistoryRequest setOutput(String d) {
         this.output = d;
@@ -181,7 +182,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     @RequestField(name="delivery_status")
     /**
     * The delivery status ID: QUEUED - 1, DISPATCHED - 2, ABORTED - 3,
-    * REJECTED - 4, DELIVERED - 5, FAILED - 6, EXPIRED - 7, UNKNOWN - 8.
+    * REJECTED - 4, DELIVERED - 5, FAILED - 6, EXPIRED - 7, UNKNOWN - 8
     */
     public Long getDeliveryStatus() {
         return this.deliveryStatus;
@@ -193,7 +194,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
 
     /**
     * The delivery status ID: QUEUED - 1, DISPATCHED - 2, ABORTED - 3,
-    * REJECTED - 4, DELIVERED - 5, FAILED - 6, EXPIRED - 7, UNKNOWN - 8.
+    * REJECTED - 4, DELIVERED - 5, FAILED - 6, EXPIRED - 7, UNKNOWN - 8
     */
     public A2PGetSmsHistoryRequest setDeliveryStatus(long d) {
         this.deliveryStatus = Long.valueOf(d);

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetSubUserInfoRequest implements Alignable {
 
     @RequestField(name="subuser_id")
     /**
-    * The subuser's ID.
+    * The subuser's ID
     */
     public Long getSubuserId() {
         return this.subuserId;
@@ -29,7 +30,7 @@ public class SetSubUserInfoRequest implements Alignable {
     }
 
     /**
-    * The subuser's ID.
+    * The subuser's ID
     */
     public SetSubUserInfoRequest setSubuserId(long d) {
         this.subuserId = Long.valueOf(d);
@@ -41,7 +42,7 @@ public class SetSubUserInfoRequest implements Alignable {
     @RequestField(name="old_subuser_password")
     /**
     * The subuser old password. It is required if __new_subuser_password__
-    * is specified.
+    * is specified
     */
     public String getOldSubuserPassword() {
         return this.oldSubuserPassword;
@@ -53,7 +54,7 @@ public class SetSubUserInfoRequest implements Alignable {
 
     /**
     * The subuser old password. It is required if __new_subuser_password__
-    * is specified.
+    * is specified
     */
     public SetSubUserInfoRequest setOldSubuserPassword(String d) {
         this.oldSubuserPassword = d;
@@ -64,7 +65,9 @@ public class SetSubUserInfoRequest implements Alignable {
 
     @RequestField(name="new_subuser_password")
     /**
-    * The new user password. The length must be at least 6 symbols.
+    * The new user password. Must be at least 8 characters long and contain
+    * at least one uppercase and lowercase letter, one number, and one
+    * special character
     */
     public String getNewSubuserPassword() {
         return this.newSubuserPassword;
@@ -75,7 +78,9 @@ public class SetSubUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new user password. The length must be at least 6 symbols.
+    * The new user password. Must be at least 8 characters long and contain
+    * at least one uppercase and lowercase letter, one number, and one
+    * special character
     */
     public SetSubUserInfoRequest setNewSubuserPassword(String d) {
         this.newSubuserPassword = d;
@@ -86,7 +91,7 @@ public class SetSubUserInfoRequest implements Alignable {
 
     @RequestField(name="description")
     /**
-    * The new subuser description.
+    * The new subuser description
     */
     public String getDescription() {
         return this.description;
@@ -97,7 +102,7 @@ public class SetSubUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new subuser description.
+    * The new subuser description
     */
     public SetSubUserInfoRequest setDescription(String d) {
         this.description = d;

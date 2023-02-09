@@ -31,7 +31,7 @@ public class PriceGroup implements Alignable {
     private Long priceGroupId;
 
     /**
-    * The price group ID.
+    * The price group ID
     */
     public Long getPriceGroupId() {
         return this.priceGroupId;
@@ -44,7 +44,7 @@ public class PriceGroup implements Alignable {
     private BigDecimal price;
 
     /**
-    * The price for the 'num_resources_per_price' resource count.
+    * The price for the 'num_resources_per_price' resource count
     */
     public BigDecimal getPrice() {
         return this.price;
@@ -57,7 +57,7 @@ public class PriceGroup implements Alignable {
     private Long numResourcesPerPrice;
 
     /**
-    * The resource count per price.
+    * The resource count per price
     */
     public Long getNumResourcesPerPrice() {
         return this.numResourcesPerPrice;
@@ -70,7 +70,7 @@ public class PriceGroup implements Alignable {
     private Long quantum;
 
     /**
-    * The resource rounding quantum.
+    * The resource rounding quantum
     */
     public Long getQuantum() {
         return this.quantum;
@@ -83,7 +83,7 @@ public class PriceGroup implements Alignable {
     private ResourceParams params;
 
     /**
-    * The available resource parameters.
+    * The available resource parameters
     */
     public ResourceParams getParams() {
         return this.params;

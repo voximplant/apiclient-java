@@ -37,7 +37,7 @@ public class CreateManualCallListResponse implements Alignable {
     private Long count;
 
     /**
-    * The number of stored records.
+    * The number of stored records
     */
     public Long getCount() {
         return this.count;
@@ -50,7 +50,7 @@ public class CreateManualCallListResponse implements Alignable {
     private Long listId;
 
     /**
-    * The list ID.
+    * The list ID
     */
     public Long getListId() {
         return this.listId;

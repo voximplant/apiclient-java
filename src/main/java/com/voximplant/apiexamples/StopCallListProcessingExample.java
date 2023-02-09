@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Cancel list with id = 1
+* Cancel list with id = 1.
 */
 public class StopCallListProcessingExample {
     public static void main(String [] args) {

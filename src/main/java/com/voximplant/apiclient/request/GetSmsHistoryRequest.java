@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="source_number")
     /**
-    * The source phone number.
+    * The source phone number
     */
     public String getSourceNumber() {
         return this.sourceNumber;
@@ -29,7 +30,7 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The source phone number.
+    * The source phone number
     */
     public GetSmsHistoryRequest setSourceNumber(String d) {
         this.sourceNumber = d;
@@ -40,7 +41,7 @@ public class GetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="destination_number")
     /**
-    * The destination phone number.
+    * The destination phone number
     */
     public String getDestinationNumber() {
         return this.destinationNumber;
@@ -51,7 +52,7 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The destination phone number.
+    * The destination phone number
     */
     public GetSmsHistoryRequest setDestinationNumber(String d) {
         this.destinationNumber = d;
@@ -63,7 +64,7 @@ public class GetSmsHistoryRequest implements Alignable {
     @RequestField(name="direction")
     /**
     * Sent or received SMS. Possible values: 'IN', 'OUT', 'in, 'out'. Leave
-    * blank to get both incoming and outgoing messages.
+    * blank to get both incoming and outgoing messages
     */
     public String getDirection() {
         return this.direction;
@@ -75,7 +76,7 @@ public class GetSmsHistoryRequest implements Alignable {
 
     /**
     * Sent or received SMS. Possible values: 'IN', 'OUT', 'in, 'out'. Leave
-    * blank to get both incoming and outgoing messages.
+    * blank to get both incoming and outgoing messages
     */
     public GetSmsHistoryRequest setDirection(String d) {
         this.direction = d;
@@ -86,8 +87,8 @@ public class GetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * Maximum number of resulting rows fetched. Must be not more than 1000.
-    * If left blank, then the default value of 1000 will be used.
+    * Maximum number of resulting rows fetched. Must be not bigger than
+    * 1000. If left blank, then the default value of 1000 will be used
     */
     public Long getCount() {
         return this.count;
@@ -98,8 +99,8 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Maximum number of resulting rows fetched. Must be not more than 1000.
-    * If left blank, then the default value of 1000 will be used.
+    * Maximum number of resulting rows fetched. Must be not bigger than
+    * 1000. If left blank, then the default value of 1000 will be used
     */
     public GetSmsHistoryRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -110,7 +111,7 @@ public class GetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -121,7 +122,7 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetSmsHistoryRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -134,7 +135,7 @@ public class GetSmsHistoryRequest implements Alignable {
     @RequestField(name="from_date")
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
-    * Date from which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'.
+    * Date from which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'
     */
     public Date getFromDate() {
         return this.fromDate;
@@ -145,7 +146,7 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Date from which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'.
+    * Date from which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'
     */
     public GetSmsHistoryRequest setFromDate(Date d) {
         this.fromDate = d;
@@ -158,7 +159,7 @@ public class GetSmsHistoryRequest implements Alignable {
     @RequestField(name="to_date")
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
-    * Date until which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'.
+    * Date until which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'
     */
     public Date getToDate() {
         return this.toDate;
@@ -169,7 +170,7 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Date until which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'.
+    * Date until which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'
     */
     public GetSmsHistoryRequest setToDate(Date d) {
         this.toDate = d;
@@ -180,7 +181,7 @@ public class GetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="output")
     /**
-    * The output format. The following values available: json, csv.
+    * The output format. The following values available: json, csv
     */
     public String getOutput() {
         return this.output;
@@ -191,7 +192,7 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The output format. The following values available: json, csv.
+    * The output format. The following values available: json, csv
     */
     public GetSmsHistoryRequest setOutput(String d) {
         this.output = d;

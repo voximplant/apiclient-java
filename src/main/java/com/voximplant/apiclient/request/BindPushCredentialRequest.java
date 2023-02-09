@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class BindPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_credential_id")
     /**
-    * The push credentials ID list separated by the ';' symbol.
+    * The push credentials ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getPushCredentialId() {
         return this.pushCredentialId;
@@ -29,7 +30,7 @@ public class BindPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push credentials ID list separated by the ';' symbol.
+    * The push credentials ID list separated by semicolon (;)
     */
     public BindPushCredentialRequest setPushCredentialId(MultiArgument<Long> d) {
         this.pushCredentialId = d;
@@ -40,8 +41,8 @@ public class BindPushCredentialRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The application ID list separated by semicolon (;). Use the 'all'
+    * value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
@@ -52,8 +53,8 @@ public class BindPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The application ID list separated by semicolon (;). Use the 'all'
+    * value to select all applications
     */
     public BindPushCredentialRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;
@@ -64,7 +65,7 @@ public class BindPushCredentialRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Set to false for unbind. Default value is true.
+    * Set to false for unbind. Default value is true
     */
     public Boolean getBind() {
         return this.bind;
@@ -75,7 +76,7 @@ public class BindPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set to false for unbind. Default value is true.
+    * Set to false for unbind. Default value is true
     */
     public BindPushCredentialRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);

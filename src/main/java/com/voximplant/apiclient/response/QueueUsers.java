@@ -18,7 +18,7 @@ public class QueueUsers implements Alignable {
     private Long userId;
 
     /**
-    * The user ID.
+    * The user ID
     */
     public Long getUserId() {
         return this.userId;

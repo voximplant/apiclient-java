@@ -34,7 +34,7 @@ public class GetCallerIDsResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found record count.
+    * The total found record count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetCallerIDsResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned record count.
+    * The returned record count
     */
     public Long getCount() {
         return this.count;

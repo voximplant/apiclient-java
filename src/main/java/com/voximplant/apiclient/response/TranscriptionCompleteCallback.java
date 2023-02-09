@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when a transcription is saved. Received as part of the
 * [AccountCallback] structure.
 */
 public class TranscriptionCompleteCallback implements Alignable {
@@ -19,7 +19,7 @@ public class TranscriptionCompleteCallback implements Alignable {
     private TranscriptionCompleteCallbackItem transcriptionComplete;
 
     /**
-    * The transcription info.
+    * The transcription info
     */
     public TranscriptionCompleteCallbackItem getTranscriptionComplete() {
         return this.transcriptionComplete;

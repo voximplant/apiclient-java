@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to filter.
+    * The application ID to filter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -29,7 +30,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The application ID to filter.
+    * The application ID to filter
     */
     public GetUsersRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name part to filter.
+    * The application name part to filter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -51,7 +52,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The application name part to filter.
+    * The application name part to filter
     */
     public GetUsersRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -62,7 +63,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="skill_id")
     /**
-    * The skill ID to filter.
+    * The skill ID to filter
     */
     public Long getSkillId() {
         return this.skillId;
@@ -73,7 +74,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The skill ID to filter.
+    * The skill ID to filter
     */
     public GetUsersRequest setSkillId(long d) {
         this.skillId = Long.valueOf(d);
@@ -84,7 +85,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="excluded_skill_id")
     /**
-    * The excluded skill ID to filter.
+    * The excluded skill ID to filter
     */
     public Long getExcludedSkillId() {
         return this.excludedSkillId;
@@ -95,7 +96,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The excluded skill ID to filter.
+    * The excluded skill ID to filter
     */
     public GetUsersRequest setExcludedSkillId(long d) {
         this.excludedSkillId = Long.valueOf(d);
@@ -106,7 +107,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID to filter.
+    * The ACD queue ID to filter
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -117,7 +118,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID to filter.
+    * The ACD queue ID to filter
     */
     public GetUsersRequest setAcdQueueId(long d) {
         this.acdQueueId = Long.valueOf(d);
@@ -128,7 +129,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="excluded_acd_queue_id")
     /**
-    * The excluded ACD queue ID to filter.
+    * The excluded ACD queue ID to filter
     */
     public Long getExcludedAcdQueueId() {
         return this.excludedAcdQueueId;
@@ -139,7 +140,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The excluded ACD queue ID to filter.
+    * The excluded ACD queue ID to filter
     */
     public GetUsersRequest setExcludedAcdQueueId(long d) {
         this.excludedAcdQueueId = Long.valueOf(d);
@@ -150,7 +151,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID to filter.
+    * The user ID to filter
     */
     public Long getUserId() {
         return this.userId;
@@ -161,7 +162,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The user ID to filter.
+    * The user ID to filter
     */
     public GetUsersRequest setUserId(long d) {
         this.userId = Long.valueOf(d);
@@ -172,7 +173,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name part to filter.
+    * The user name part to filter
     */
     public String getUserName() {
         return this.userName;
@@ -183,7 +184,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The user name part to filter.
+    * The user name part to filter
     */
     public GetUsersRequest setUserName(String d) {
         this.userName = d;
@@ -194,7 +195,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="user_active")
     /**
-    * The user active flag to filter.
+    * The user active flag to filter
     */
     public Boolean getUserActive() {
         return this.userActive;
@@ -205,7 +206,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The user active flag to filter.
+    * The user active flag to filter
     */
     public GetUsersRequest setUserActive(boolean d) {
         this.userActive = Boolean.valueOf(d);
@@ -216,7 +217,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="user_display_name")
     /**
-    * The user display name part to filter.
+    * The user display name part to filter
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -227,7 +228,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The user display name part to filter.
+    * The user display name part to filter
     */
     public GetUsersRequest setUserDisplayName(String d) {
         this.userDisplayName = d;
@@ -238,7 +239,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="with_skills")
     /**
-    * Set true to get the bound skills.
+    * Set true to get the bound skills
     */
     public Boolean getWithSkills() {
         return this.withSkills;
@@ -249,7 +250,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound skills.
+    * Set true to get the bound skills
     */
     public GetUsersRequest setWithSkills(boolean d) {
         this.withSkills = Boolean.valueOf(d);
@@ -260,7 +261,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="with_queues")
     /**
-    * Set true to get the bound queues.
+    * Set true to get the bound queues
     */
     public Boolean getWithQueues() {
         return this.withQueues;
@@ -271,7 +272,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound queues.
+    * Set true to get the bound queues
     */
     public GetUsersRequest setWithQueues(boolean d) {
         this.withQueues = Boolean.valueOf(d);
@@ -282,9 +283,9 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="acd_status")
     /**
-    * The ACD status list separated by the ';' symbol to filter. The
+    * The ACD status list separated by semicolon (;) to filter. The
     * following values are possible: OFFLINE, ONLINE, READY, BANNED,
-    * IN_SERVICE, AFTER_SERVICE, TIMEOUT, DND.
+    * IN_SERVICE, AFTER_SERVICE, TIMEOUT, DND
     */
     public MultiArgument<String> getAcdStatus() {
         return this.acdStatus;
@@ -295,9 +296,9 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The ACD status list separated by the ';' symbol to filter. The
+    * The ACD status list separated by semicolon (;) to filter. The
     * following values are possible: OFFLINE, ONLINE, READY, BANNED,
-    * IN_SERVICE, AFTER_SERVICE, TIMEOUT, DND.
+    * IN_SERVICE, AFTER_SERVICE, TIMEOUT, DND
     */
     public GetUsersRequest setAcdStatus(MultiArgument<String> d) {
         this.acdStatus = d;
@@ -308,7 +309,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="showing_skill_id")
     /**
-    * The skill to show in the 'skills' field output.
+    * The skill to show in the 'skills' field output
     */
     public Long getShowingSkillId() {
         return this.showingSkillId;
@@ -319,7 +320,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The skill to show in the 'skills' field output.
+    * The skill to show in the 'skills' field output
     */
     public GetUsersRequest setShowingSkillId(long d) {
         this.showingSkillId = Long.valueOf(d);
@@ -330,7 +331,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -341,7 +342,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetUsersRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -352,7 +353,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -363,7 +364,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetUsersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -375,7 +376,7 @@ public class GetUsersRequest implements Alignable {
     @RequestField(name="order_by")
     /**
     * The following values are available: 'user_id', 'user_name' and
-    * 'user_display_name'.
+    * 'user_display_name'
     */
     public String getOrderBy() {
         return this.orderBy;
@@ -387,7 +388,7 @@ public class GetUsersRequest implements Alignable {
 
     /**
     * The following values are available: 'user_id', 'user_name' and
-    * 'user_display_name'.
+    * 'user_display_name'
     */
     public GetUsersRequest setOrderBy(String d) {
         this.orderBy = d;
@@ -398,7 +399,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="return_live_balance")
     /**
-    * Set true to get the user live balance.
+    * Set true to get the user live balance
     */
     public Boolean getReturnLiveBalance() {
         return this.returnLiveBalance;
@@ -409,7 +410,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the user live balance.
+    * Set true to get the user live balance
     */
     public GetUsersRequest setReturnLiveBalance(boolean d) {
         this.returnLiveBalance = Boolean.valueOf(d);

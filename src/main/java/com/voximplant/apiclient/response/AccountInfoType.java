@@ -18,7 +18,7 @@ public class AccountInfoType implements Alignable {
     private Long accountId;
 
     /**
-    * The account's ID.
+    * The account's ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -31,7 +31,7 @@ public class AccountInfoType implements Alignable {
     private String accountName;
 
     /**
-    * The account's name.
+    * The account's name
     */
     public String getAccountName() {
         return this.accountName;
@@ -44,7 +44,7 @@ public class AccountInfoType implements Alignable {
     private String accountEmail;
 
     /**
-    * The account's email.
+    * The account's email
     */
     public String getAccountEmail() {
         return this.accountEmail;
@@ -58,7 +58,7 @@ public class AccountInfoType implements Alignable {
 
     /**
     * The account API key. Use password or api_key authentication to show
-    * the api_key.
+    * the api_key
     */
     public String getApiKey() {
         return this.apiKey;
@@ -71,7 +71,7 @@ public class AccountInfoType implements Alignable {
     private String accountFirstName;
 
     /**
-    * The first name.
+    * The first name
     */
     public String getAccountFirstName() {
         return this.accountFirstName;
@@ -84,7 +84,7 @@ public class AccountInfoType implements Alignable {
     private String accountLastName;
 
     /**
-    * The last name.
+    * The last name
     */
     public String getAccountLastName() {
         return this.accountLastName;
@@ -138,7 +138,7 @@ public class AccountInfoType implements Alignable {
     private BigDecimal minBalanceToNotify;
 
     /**
-    * The min balance value to notify by email or SMS.
+    * The min balance value to notify by email or SMS
     */
     public BigDecimal getMinBalanceToNotify() {
         return this.minBalanceToNotify;
@@ -151,7 +151,7 @@ public class AccountInfoType implements Alignable {
     private Boolean accountNotifications;
 
     /**
-    * Are the Voximplant notifications required?
+    * Voximplant notifications are required
     */
     public Boolean getAccountNotifications() {
         return this.accountNotifications;
@@ -164,7 +164,7 @@ public class AccountInfoType implements Alignable {
     private Boolean tariffChangingNotifications;
 
     /**
-    * Are the Voximplant plan changing notifications required?
+    * Voximplant plan changing notifications are required
     */
     public Boolean getTariffChangingNotifications() {
         return this.tariffChangingNotifications;
@@ -177,7 +177,7 @@ public class AccountInfoType implements Alignable {
     private Boolean newsNotifications;
 
     /**
-    * Are the Voximplant news notifications required?
+    * Voximplant news notifications are required
     */
     public Boolean getNewsNotifications() {
         return this.newsNotifications;
@@ -190,7 +190,7 @@ public class AccountInfoType implements Alignable {
     private String billingAddressName;
 
     /**
-    * The company or businessman name.
+    * The company or businessman name
     */
     public String getBillingAddressName() {
         return this.billingAddressName;
@@ -217,7 +217,7 @@ public class AccountInfoType implements Alignable {
     private String billingAddressAddress;
 
     /**
-    * The office address.
+    * The office address
     */
     public String getBillingAddressAddress() {
         return this.billingAddressAddress;
@@ -230,7 +230,7 @@ public class AccountInfoType implements Alignable {
     private String billingAddressZip;
 
     /**
-    * The office ZIP.
+    * The office ZIP
     */
     public String getBillingAddressZip() {
         return this.billingAddressZip;
@@ -243,7 +243,7 @@ public class AccountInfoType implements Alignable {
     private String billingAddressPhone;
 
     /**
-    * The office phone number.
+    * The office phone number
     */
     public String getBillingAddressPhone() {
         return this.billingAddressPhone;
@@ -257,7 +257,7 @@ public class AccountInfoType implements Alignable {
 
     /**
     * The office state (US) or province (Canada), up to 100 characters.
-    * Examples: California, Illinois, British Columbia.
+    * Examples: California, Illinois, British Columbia
     */
     public String getBillingAddressState() {
         return this.billingAddressState;
@@ -270,7 +270,7 @@ public class AccountInfoType implements Alignable {
     private Boolean active;
 
     /**
-    * The account activation flag.
+    * The account activation flag
     */
     public Boolean getActive() {
         return this.active;
@@ -283,7 +283,7 @@ public class AccountInfoType implements Alignable {
     private Boolean frozen;
 
     /**
-    * Is account blocked by Voximplant admins or not.
+    * Is account blocked by Voximplant admins or not
     */
     public Boolean getFrozen() {
         return this.frozen;
@@ -296,7 +296,7 @@ public class AccountInfoType implements Alignable {
     private BigDecimal balance;
 
     /**
-    * The account's money.
+    * The account's money
     */
     public BigDecimal getBalance() {
         return this.balance;
@@ -309,7 +309,7 @@ public class AccountInfoType implements Alignable {
     private BigDecimal creditLimit;
 
     /**
-    * The account's credit limit.
+    * The account's credit limit
     */
     public BigDecimal getCreditLimit() {
         return this.creditLimit;
@@ -322,7 +322,7 @@ public class AccountInfoType implements Alignable {
     private String currency;
 
     /**
-    * The currency code (USD, RUR, EUR, ...).
+    * The currency code (USD, RUR, EUR, ...)
     */
     public String getCurrency() {
         return this.currency;
@@ -335,7 +335,7 @@ public class AccountInfoType implements Alignable {
     private Boolean supportRobokassa;
 
     /**
-    * Is the robokassa payment system allowed?
+    * Robokassa payments are allowed
     */
     public Boolean getSupportRobokassa() {
         return this.supportRobokassa;
@@ -348,7 +348,7 @@ public class AccountInfoType implements Alignable {
     private Boolean supportBankCard;
 
     /**
-    * Is the bank card payments allowed?
+    * Bank card payments are allowed
     */
     public Boolean getSupportBankCard() {
         return this.supportBankCard;
@@ -361,7 +361,7 @@ public class AccountInfoType implements Alignable {
     private String bankCardProvider;
 
     /**
-    * The possible values are: BRAINTREE, ALFABANK.
+    * The possible values are BRAINTREE, ALFABANK
     */
     public String getBankCardProvider() {
         return this.bankCardProvider;
@@ -374,7 +374,7 @@ public class AccountInfoType implements Alignable {
     private Boolean supportInvoice;
 
     /**
-    * Is the bank invoice allowed?
+    * Bank invoices are allowed
     */
     public Boolean getSupportInvoice() {
         return this.supportInvoice;
@@ -387,7 +387,7 @@ public class AccountInfoType implements Alignable {
     private String accountCustomData;
 
     /**
-    * The custom data.
+    * The custom data
     */
     public String getAccountCustomData() {
         return this.accountCustomData;
@@ -400,7 +400,7 @@ public class AccountInfoType implements Alignable {
     private String[] accessEntries;
 
     /**
-    * The allowed access entries (the API function names).
+    * The allowed access entries (the API function names)
     */
     public String[] getAccessEntries() {
         return this.accessEntries;
@@ -413,7 +413,7 @@ public class AccountInfoType implements Alignable {
     private Boolean withAccessEntries;
 
     /**
-    * Set true to get the admin user permissions.
+    * Set true to get the admin user permissions
     */
     public Boolean getWithAccessEntries() {
         return this.withAccessEntries;
@@ -460,7 +460,7 @@ public class AccountInfoType implements Alignable {
     private Boolean sendJsError;
 
     /**
-    * Is email sending on a JS error?
+    * Sending email when a JS error occures
     */
     public Boolean getSendJsError() {
         return this.sendJsError;
@@ -473,7 +473,7 @@ public class AccountInfoType implements Alignable {
     private BillingLimitsType billingLimits;
 
     /**
-    * The payments limits applicable to each payment method.
+    * The payments limits applicable to each payment method
     */
     public BillingLimitsType getBillingLimits() {
         return this.billingLimits;
@@ -481,6 +481,19 @@ public class AccountInfoType implements Alignable {
 
     public boolean hasBillingLimits() {
         return this.billingLimits != null;
+    }
+
+    private Boolean a2pSmsEnabled;
+
+    /**
+    * One-way SMS activation flag
+    */
+    public Boolean getA2pSmsEnabled() {
+        return this.a2pSmsEnabled;
+    }
+
+    public boolean hasA2pSmsEnabled() {
+        return this.a2pSmsEnabled != null;
     }
 
     public String toString(int alignment) {
@@ -766,6 +779,14 @@ public class AccountInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"billingLimits\": \"")
                 .append(billingLimits)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (a2pSmsEnabled != null) {
+            sb.append(aligned)
+                .append("\"a2pSmsEnabled\": \"")
+                .append(a2pSmsEnabled)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

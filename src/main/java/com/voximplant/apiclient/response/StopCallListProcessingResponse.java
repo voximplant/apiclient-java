@@ -37,7 +37,7 @@ public class StopCallListProcessingResponse implements Alignable {
     private String msg;
 
     /**
-    * Result message.
+    * Result message
     */
     public String getMsg() {
         return this.msg;

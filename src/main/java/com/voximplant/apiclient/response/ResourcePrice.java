@@ -18,7 +18,7 @@ public class ResourcePrice implements Alignable {
     private String resourceType;
 
     /**
-    * The resource type name. The possible values are: AUDIOHDCONFERENCE,
+    * The resource type name. The possible values are AUDIOHDCONFERENCE,
     * AUDIOHDRECORD, AUDIORECORD, CALLLIST, CALLSESSION, DIALOGFLOW, IM,
     * PSTN_IN_ALASKA, PSTN_IN_GB, PSTN_IN_GEOGRAPHIC, PSTN_IN_GEO_PH,
     * PSTN_IN_RU, PSTN_IN_RU_TOLLFREE, PSTN_INTERNATIONAL, PSTNINTEST,
@@ -45,7 +45,7 @@ public class ResourcePrice implements Alignable {
     private PriceGroup[] priceGroups;
 
     /**
-    * The price group array.
+    * The price group array
     */
     public PriceGroup[] getPriceGroups() {
         return this.priceGroups;

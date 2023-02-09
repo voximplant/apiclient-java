@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetPstnBlackListItemRequest implements Alignable {
 
     @RequestField(name="pstn_blacklist_id")
     /**
-    * The PSTN black list item ID.
+    * The PSTN black list item ID
     */
     public Long getPstnBlacklistId() {
         return this.pstnBlacklistId;
@@ -29,7 +30,7 @@ public class SetPstnBlackListItemRequest implements Alignable {
     }
 
     /**
-    * The PSTN black list item ID.
+    * The PSTN black list item ID
     */
     public SetPstnBlackListItemRequest setPstnBlacklistId(long d) {
         this.pstnBlacklistId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class SetPstnBlackListItemRequest implements Alignable {
 
     @RequestField(name="pstn_blacklist_phone")
     /**
-    * The new phone number in format e164.
+    * The new phone number in format e164
     */
     public String getPstnBlacklistPhone() {
         return this.pstnBlacklistPhone;
@@ -51,7 +52,7 @@ public class SetPstnBlackListItemRequest implements Alignable {
     }
 
     /**
-    * The new phone number in format e164.
+    * The new phone number in format e164
     */
     public SetPstnBlackListItemRequest setPstnBlacklistPhone(String d) {
         this.pstnBlacklistPhone = d;

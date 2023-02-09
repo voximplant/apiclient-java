@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetZIPCodesRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code according to the <b>ISO 3166-1 alpha-2</b>.
+    * The country code according to the <b>ISO 3166-1 alpha-2</b>
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -29,7 +30,7 @@ public class GetZIPCodesRequest implements Alignable {
     }
 
     /**
-    * The country code according to the <b>ISO 3166-1 alpha-2</b>.
+    * The country code according to the <b>ISO 3166-1 alpha-2</b>
     */
     public GetZIPCodesRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -62,7 +63,7 @@ public class GetZIPCodesRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -73,7 +74,7 @@ public class GetZIPCodesRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetZIPCodesRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -84,7 +85,7 @@ public class GetZIPCodesRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -95,7 +96,7 @@ public class GetZIPCodesRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetZIPCodesRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

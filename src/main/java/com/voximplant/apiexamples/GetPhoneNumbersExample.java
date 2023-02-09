@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get the two attached phone numbers.
+* Get two attached phone numbers.
 */
 public class GetPhoneNumbersExample {
     public static void main(String [] args) {

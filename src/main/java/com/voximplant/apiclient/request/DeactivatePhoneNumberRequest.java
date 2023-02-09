@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class DeactivatePhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_id")
     /**
-    * The phone ID list separated by the ';' symbol or the 'all' value.
+    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * select all phone ids
     */
     public MultiArgument<Long> getPhoneId() {
         return this.phoneId;
@@ -29,7 +31,8 @@ public class DeactivatePhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone ID list separated by the ';' symbol or the 'all' value.
+    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * select all phone ids
     */
     public DeactivatePhoneNumberRequest setPhoneId(MultiArgument<Long> d) {
         this.phoneId = d;
@@ -40,8 +43,8 @@ public class DeactivatePhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number list separated by the ';' symbol that can be used
-    * instead of <b>phone_id</b>.
+    * The phone number list separated by semicolon (;) that can be used
+    * instead of <b>phone_id</b>
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -52,8 +55,8 @@ public class DeactivatePhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone number list separated by the ';' symbol that can be used
-    * instead of <b>phone_id</b>.
+    * The phone number list separated by semicolon (;) that can be used
+    * instead of <b>phone_id</b>
     */
     public DeactivatePhoneNumberRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;

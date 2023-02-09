@@ -34,7 +34,7 @@ public class GetACDHistoryResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found ACD session count.
+    * The total found ACD session count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetACDHistoryResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned ACD session count.
+    * The returned ACD session count
     */
     public Long getCount() {
         return this.count;

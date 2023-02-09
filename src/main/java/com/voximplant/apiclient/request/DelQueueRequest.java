@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class DelQueueRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list separated by the ';' symbol.
+    * The ACD queue ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -29,7 +30,7 @@ public class DelQueueRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list separated by the ';' symbol.
+    * The ACD queue ID list separated by semicolon (;)
     */
     public DelQueueRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -41,7 +42,7 @@ public class DelQueueRequest implements Alignable {
     @RequestField(name="acd_queue_name")
     /**
     * The ACD queue name that can be used instead of <b>acd_queue_id</b>.
-    * The ACD queue name list separated by the ';' symbol.
+    * The ACD queue name list separated by semicolon (;)
     */
     public MultiArgument<String> getAcdQueueName() {
         return this.acdQueueName;
@@ -53,7 +54,7 @@ public class DelQueueRequest implements Alignable {
 
     /**
     * The ACD queue name that can be used instead of <b>acd_queue_id</b>.
-    * The ACD queue name list separated by the ';' symbol.
+    * The ACD queue name list separated by semicolon (;)
     */
     public DelQueueRequest setAcdQueueName(MultiArgument<String> d) {
         this.acdQueueName = d;

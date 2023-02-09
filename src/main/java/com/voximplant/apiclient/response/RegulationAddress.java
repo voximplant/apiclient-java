@@ -18,7 +18,7 @@ public class RegulationAddress implements Alignable {
     private Long regulationAddressId;
 
     /**
-    * The regulation address ID.
+    * The regulation address ID
     */
     public Long getRegulationAddressId() {
         return this.regulationAddressId;
@@ -31,7 +31,7 @@ public class RegulationAddress implements Alignable {
     private String externalId;
 
     /**
-    * The external ID.
+    * The external ID
     */
     public String getExternalId() {
         return this.externalId;
@@ -44,7 +44,7 @@ public class RegulationAddress implements Alignable {
     private String countryCode;
 
     /**
-    * The country code.
+    * The country code
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -57,7 +57,7 @@ public class RegulationAddress implements Alignable {
     private String phoneCategoryName;
 
     /**
-    * The phone category name.
+    * The phone category name
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -70,7 +70,7 @@ public class RegulationAddress implements Alignable {
     private String salutation;
 
     /**
-    * The salutation. Possible values: MR, MS, COMPANY.
+    * The salutation. Possible values: MR, MS, COMPANY
     */
     public String getSalutation() {
         return this.salutation;
@@ -83,7 +83,7 @@ public class RegulationAddress implements Alignable {
     private String company;
 
     /**
-    * The company name.
+    * The company name
     */
     public String getCompany() {
         return this.company;
@@ -96,7 +96,7 @@ public class RegulationAddress implements Alignable {
     private String firstName;
 
     /**
-    * The first name.
+    * The first name
     */
     public String getFirstName() {
         return this.firstName;
@@ -109,7 +109,7 @@ public class RegulationAddress implements Alignable {
     private String lastName;
 
     /**
-    * The last name.
+    * The last name
     */
     public String getLastName() {
         return this.lastName;
@@ -122,7 +122,7 @@ public class RegulationAddress implements Alignable {
     private String ownerCountryCode;
 
     /**
-    * The owner country code.
+    * The owner country code
     */
     public String getOwnerCountryCode() {
         return this.ownerCountryCode;
@@ -135,7 +135,7 @@ public class RegulationAddress implements Alignable {
     private String city;
 
     /**
-    * The city name.
+    * The city name
     */
     public String getCity() {
         return this.city;
@@ -148,7 +148,7 @@ public class RegulationAddress implements Alignable {
     private String zipCode;
 
     /**
-    * The zip code.
+    * The zip code
     */
     public String getZipCode() {
         return this.zipCode;
@@ -161,7 +161,7 @@ public class RegulationAddress implements Alignable {
     private String street;
 
     /**
-    * The zip code.
+    * The zip code
     */
     public String getStreet() {
         return this.street;
@@ -174,7 +174,7 @@ public class RegulationAddress implements Alignable {
     private String builderNumber;
 
     /**
-    * The builder number.
+    * The builder number
     */
     public String getBuilderNumber() {
         return this.builderNumber;
@@ -187,7 +187,7 @@ public class RegulationAddress implements Alignable {
     private String builderLatter;
 
     /**
-    * The builder latter.
+    * The builder latter
     */
     public String getBuilderLatter() {
         return this.builderLatter;
@@ -227,7 +227,7 @@ public class RegulationAddress implements Alignable {
     private String phoneRegionCode;
 
     /**
-    * The phone region code.
+    * The phone region code
     */
     public String getPhoneRegionCode() {
         return this.phoneRegionCode;

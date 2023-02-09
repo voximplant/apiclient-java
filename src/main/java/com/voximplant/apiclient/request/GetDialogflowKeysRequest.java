@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetDialogflowKeysRequest implements Alignable {
 
     @RequestField(name="dialogflow_key_id")
     /**
-    * The Dialogflow key's ID.
+    * The Dialogflow key's ID
     */
     public Long getDialogflowKeyId() {
         return this.dialogflowKeyId;
@@ -29,7 +30,7 @@ public class GetDialogflowKeysRequest implements Alignable {
     }
 
     /**
-    * The Dialogflow key's ID.
+    * The Dialogflow key's ID
     */
     public GetDialogflowKeysRequest setDialogflowKeyId(long d) {
         this.dialogflowKeyId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetDialogflowKeysRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The name of the bound application.
+    * The name of the bound application
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -51,7 +52,7 @@ public class GetDialogflowKeysRequest implements Alignable {
     }
 
     /**
-    * The name of the bound application.
+    * The name of the bound application
     */
     public GetDialogflowKeysRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -62,7 +63,7 @@ public class GetDialogflowKeysRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The id of the bound application.
+    * The id of the bound application
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -73,7 +74,7 @@ public class GetDialogflowKeysRequest implements Alignable {
     }
 
     /**
-    * The id of the bound application.
+    * The id of the bound application
     */
     public GetDialogflowKeysRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -84,7 +85,7 @@ public class GetDialogflowKeysRequest implements Alignable {
 
     @RequestField(name="with_secret_info")
     /**
-    * Set true to get the json web key.
+    * Set true to get the json web key
     */
     public Boolean getWithSecretInfo() {
         return this.withSecretInfo;
@@ -95,7 +96,7 @@ public class GetDialogflowKeysRequest implements Alignable {
     }
 
     /**
-    * Set true to get the json web key.
+    * Set true to get the json web key
     */
     public GetDialogflowKeysRequest setWithSecretInfo(boolean d) {
         this.withSecretInfo = Boolean.valueOf(d);

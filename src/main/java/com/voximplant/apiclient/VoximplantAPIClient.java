@@ -99,6 +99,27 @@ public class VoximplantAPIClient {
         return mapper.readValue(impl.performRequest("ChargeAccount", RequestSerializer.serialize(req)), ChargeAccountResponse.class);
     }
 
+    public ChangeAccountPlanResponse changeAccountPlan(ChangeAccountPlanRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("ChangeAccountPlan", RequestSerializer.serialize(req)), ChangeAccountPlanResponse.class);
+    }
+
+    public GetAccountPlansResponse getAccountPlans(GetAccountPlansRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetAccountPlans", RequestSerializer.serialize(req)), GetAccountPlansResponse.class);
+    }
+
+    public GetAvailablePlansResponse getAvailablePlans(GetAvailablePlansRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetAvailablePlans", RequestSerializer.serialize(req)), GetAvailablePlansResponse.class);
+    }
+
     public AddApplicationResponse addApplication(AddApplicationRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -449,6 +470,13 @@ public class VoximplantAPIClient {
         return mapper.readValue(impl.performRequest("DeactivatePhoneNumber", RequestSerializer.serialize(req)), DeactivatePhoneNumberResponse.class);
     }
 
+    public SetPhoneNumberInfoResponse setPhoneNumberInfo(SetPhoneNumberInfoRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SetPhoneNumberInfo", RequestSerializer.serialize(req)), SetPhoneNumberInfoResponse.class);
+    }
+
     public GetPhoneNumbersResponse getPhoneNumbers(GetPhoneNumbersRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -526,6 +554,41 @@ public class VoximplantAPIClient {
         return mapper.readValue(impl.performRequest("VerifyCallerID", RequestSerializer.serialize(req)), VerifyCallerIDResponse.class);
     }
 
+    public AddOutboundTestPhoneNumberResponse addOutboundTestPhoneNumber(AddOutboundTestPhoneNumberRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("AddOutboundTestPhoneNumber", RequestSerializer.serialize(req)), AddOutboundTestPhoneNumberResponse.class);
+    }
+
+    public VerifyOutboundTestPhoneNumberResponse verifyOutboundTestPhoneNumber(VerifyOutboundTestPhoneNumberRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("VerifyOutboundTestPhoneNumber", RequestSerializer.serialize(req)), VerifyOutboundTestPhoneNumberResponse.class);
+    }
+
+    public ActivateOutboundTestPhoneNumberResponse activateOutboundTestPhoneNumber(ActivateOutboundTestPhoneNumberRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("ActivateOutboundTestPhoneNumber", RequestSerializer.serialize(req)), ActivateOutboundTestPhoneNumberResponse.class);
+    }
+
+    public DelOutboundTestPhoneNumberResponse delOutboundTestPhoneNumber(DelOutboundTestPhoneNumberRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("DelOutboundTestPhoneNumber", RequestSerializer.serialize(req)), DelOutboundTestPhoneNumberResponse.class);
+    }
+
+    public GetOutboundTestPhoneNumbersResponse getOutboundTestPhoneNumbers(GetOutboundTestPhoneNumbersRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetOutboundTestPhoneNumbers", RequestSerializer.serialize(req)), GetOutboundTestPhoneNumbersResponse.class);
+    }
+
     public AddQueueResponse addQueue(AddQueueRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -587,6 +650,55 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue(impl.performRequest("GetACDOperatorStatusStatistics", RequestSerializer.serialize(req)), GetACDOperatorStatusStatisticsResponse.class);
+    }
+
+    public GetSmartQueueRealtimeMetricsResponse getSmartQueueRealtimeMetrics(GetSmartQueueRealtimeMetricsRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetSmartQueueRealtimeMetrics", RequestSerializer.serialize(req)), GetSmartQueueRealtimeMetricsResponse.class);
+    }
+
+    public GetSmartQueueDayHistoryResponse getSmartQueueDayHistory(GetSmartQueueDayHistoryRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetSmartQueueDayHistory", RequestSerializer.serialize(req)), GetSmartQueueDayHistoryResponse.class);
+    }
+
+    public RequestSmartQueueHistoryResponse requestSmartQueueHistory(RequestSmartQueueHistoryRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("RequestSmartQueueHistory", RequestSerializer.serialize(req)), RequestSmartQueueHistoryResponse.class);
+    }
+
+    public GetSQStateResponse getSQState(GetSQStateRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetSQState", RequestSerializer.serialize(req)), GetSQStateResponse.class);
+    }
+
+    public SQ_SetAgentCustomStatusMappingResponse sQ_SetAgentCustomStatusMapping(SQ_SetAgentCustomStatusMappingRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_SetAgentCustomStatusMapping", RequestSerializer.serialize(req)), SQ_SetAgentCustomStatusMappingResponse.class);
+    }
+
+    public SQ_GetAgentCustomStatusMappingResponse sQ_GetAgentCustomStatusMapping(SQ_GetAgentCustomStatusMappingRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_GetAgentCustomStatusMapping", RequestSerializer.serialize(req)), SQ_GetAgentCustomStatusMappingResponse.class);
+    }
+
+    public SQ_DeleteAgentCustomStatusMappingResponse sQ_DeleteAgentCustomStatusMapping(SQ_DeleteAgentCustomStatusMappingRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_DeleteAgentCustomStatusMapping", RequestSerializer.serialize(req)), SQ_DeleteAgentCustomStatusMappingResponse.class);
     }
 
     public AddSkillResponse addSkill(AddSkillRequest req) throws java.io.IOException, ClientException {
@@ -729,11 +841,11 @@ public class VoximplantAPIClient {
         return mapper.readValue(impl.performRequest("CheckAuthorizedAccountIP", RequestSerializer.serialize(req)), CheckAuthorizedAccountIPResponse.class);
     }
 
-    public LinkregulationAddressResponse linkregulationAddress(LinkregulationAddressRequest req) throws java.io.IOException, ClientException {
+    public LinkRegulationAddressResponse linkRegulationAddress(LinkRegulationAddressRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue(impl.performRequest("LinkregulationAddress", RequestSerializer.serialize(req)), LinkregulationAddressResponse.class);
+        return mapper.readValue(impl.performRequest("LinkRegulationAddress", RequestSerializer.serialize(req)), LinkRegulationAddressResponse.class);
     }
 
     public GetZIPCodesResponse getZIPCodes(GetZIPCodesRequest req) throws java.io.IOException, ClientException {
@@ -762,6 +874,13 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue(impl.performRequest("GetCountries", RequestSerializer.serialize(req)), GetCountriesResponse.class);
+    }
+
+    public GetAccountPhoneNumberCountriesResponse getAccountPhoneNumberCountries(GetAccountPhoneNumberCountriesRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetAccountPhoneNumberCountries", RequestSerializer.serialize(req)), GetAccountPhoneNumberCountriesResponse.class);
     }
 
     public GetRegionsResponse getRegions(GetRegionsRequest req) throws java.io.IOException, ClientException {
@@ -981,6 +1100,48 @@ public class VoximplantAPIClient {
         return mapper.readValue(impl.performRequest("GetRoleGroups", RequestSerializer.serialize(req)), GetRoleGroupsResponse.class);
     }
 
+    public SetKeyValueItemResponse setKeyValueItem(SetKeyValueItemRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SetKeyValueItem", RequestSerializer.serialize(req)), SetKeyValueItemResponse.class);
+    }
+
+    public DelKeyValueItemResponse delKeyValueItem(DelKeyValueItemRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("DelKeyValueItem", RequestSerializer.serialize(req)), DelKeyValueItemResponse.class);
+    }
+
+    public GetKeyValueItemResponse getKeyValueItem(GetKeyValueItemRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetKeyValueItem", RequestSerializer.serialize(req)), GetKeyValueItemResponse.class);
+    }
+
+    public GetKeyValueItemsResponse getKeyValueItems(GetKeyValueItemsRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetKeyValueItems", RequestSerializer.serialize(req)), GetKeyValueItemsResponse.class);
+    }
+
+    public GetKeyValueKeysResponse getKeyValueKeys(GetKeyValueKeysRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetKeyValueKeys", RequestSerializer.serialize(req)), GetKeyValueKeysResponse.class);
+    }
+
+    public GetAccountInvoicesResponse getAccountInvoices(GetAccountInvoicesRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetAccountInvoices", RequestSerializer.serialize(req)), GetAccountInvoicesResponse.class);
+    }
+
     public GetSmsHistoryResponse getSmsHistory(GetSmsHistoryRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -993,5 +1154,103 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue(impl.performRequest("A2PGetSmsHistory", RequestSerializer.serialize(req)), A2PGetSmsHistoryResponse.class);
+    }
+
+    public SQ_AddQueueResponse sQ_AddQueue(SQ_AddQueueRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_AddQueue", RequestSerializer.serialize(req)), SQ_AddQueueResponse.class);
+    }
+
+    public SQ_SetQueueInfoResponse sQ_SetQueueInfo(SQ_SetQueueInfoRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_SetQueueInfo", RequestSerializer.serialize(req)), SQ_SetQueueInfoResponse.class);
+    }
+
+    public SQ_DelQueueResponse sQ_DelQueue(SQ_DelQueueRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_DelQueue", RequestSerializer.serialize(req)), SQ_DelQueueResponse.class);
+    }
+
+    public SQ_GetQueuesResponse sQ_GetQueues(SQ_GetQueuesRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_GetQueues", RequestSerializer.serialize(req)), SQ_GetQueuesResponse.class);
+    }
+
+    public SQ_AddSkillResponse sQ_AddSkill(SQ_AddSkillRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_AddSkill", RequestSerializer.serialize(req)), SQ_AddSkillResponse.class);
+    }
+
+    public SQ_DelSkillResponse sQ_DelSkill(SQ_DelSkillRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_DelSkill", RequestSerializer.serialize(req)), SQ_DelSkillResponse.class);
+    }
+
+    public SQ_SetSkillInfoResponse sQ_SetSkillInfo(SQ_SetSkillInfoRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_SetSkillInfo", RequestSerializer.serialize(req)), SQ_SetSkillInfoResponse.class);
+    }
+
+    public SQ_BindSkillResponse sQ_BindSkill(SQ_BindSkillRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_BindSkill", RequestSerializer.serialize(req)), SQ_BindSkillResponse.class);
+    }
+
+    public SQ_UnbindSkillResponse sQ_UnbindSkill(SQ_UnbindSkillRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_UnbindSkill", RequestSerializer.serialize(req)), SQ_UnbindSkillResponse.class);
+    }
+
+    public SQ_GetSkillsResponse sQ_GetSkills(SQ_GetSkillsRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_GetSkills", RequestSerializer.serialize(req)), SQ_GetSkillsResponse.class);
+    }
+
+    public SQ_BindAgentResponse sQ_BindAgent(SQ_BindAgentRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_BindAgent", RequestSerializer.serialize(req)), SQ_BindAgentResponse.class);
+    }
+
+    public SQ_UnbindAgentResponse sQ_UnbindAgent(SQ_UnbindAgentRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_UnbindAgent", RequestSerializer.serialize(req)), SQ_UnbindAgentResponse.class);
+    }
+
+    public SQ_GetAgentsResponse sQ_GetAgents(SQ_GetAgentsRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_GetAgents", RequestSerializer.serialize(req)), SQ_GetAgentsResponse.class);
+    }
+
+    public SQ_SetAgentInfoResponse sQ_SetAgentInfo(SQ_SetAgentInfoRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("SQ_SetAgentInfo", RequestSerializer.serialize(req)), SQ_SetAgentInfoResponse.class);
     }
 }

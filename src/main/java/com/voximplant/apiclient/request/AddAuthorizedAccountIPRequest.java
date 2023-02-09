@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class AddAuthorizedAccountIPRequest implements Alignable {
 
     @RequestField(name="authorized_ip")
     /**
-    * The authorized IP4 or network.
+    * The authorized IP4 or network
     */
     public String getAuthorizedIp() {
         return this.authorizedIp;
@@ -29,7 +30,7 @@ public class AddAuthorizedAccountIPRequest implements Alignable {
     }
 
     /**
-    * The authorized IP4 or network.
+    * The authorized IP4 or network
     */
     public AddAuthorizedAccountIPRequest setAuthorizedIp(String d) {
         this.authorizedIp = d;
@@ -40,7 +41,7 @@ public class AddAuthorizedAccountIPRequest implements Alignable {
 
     @RequestField(name="allowed")
     /**
-    * Set false to add the IP to the blacklist.
+    * Set false to add the IP to the blacklist
     */
     public Boolean getAllowed() {
         return this.allowed;
@@ -51,10 +52,32 @@ public class AddAuthorizedAccountIPRequest implements Alignable {
     }
 
     /**
-    * Set false to add the IP to the blacklist.
+    * Set false to add the IP to the blacklist
     */
     public AddAuthorizedAccountIPRequest setAllowed(boolean d) {
         this.allowed = Boolean.valueOf(d);
+        return this;
+    }
+
+    private String description;
+
+    @RequestField(name="description")
+    /**
+    * The IP address description
+    */
+    public String getDescription() {
+        return this.description;
+    }
+
+    public boolean hasDescription() {
+        return this.description != null;
+    }
+
+    /**
+    * The IP address description
+    */
+    public AddAuthorizedAccountIPRequest setDescription(String d) {
+        this.description = d;
         return this;
     }
 
@@ -79,6 +102,14 @@ public class AddAuthorizedAccountIPRequest implements Alignable {
             sb.append(aligned)
                 .append("\"allowed\": \"")
                 .append(allowed)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (description != null) {
+            sb.append(aligned)
+                .append("\"description\": \"")
+                .append(description)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

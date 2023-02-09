@@ -24,7 +24,7 @@ public class GetAccountInfoResponse implements Alignable {
     private AccountInfoType result;
 
     /**
-    * Account's info as the [AccountInfoType] object instance.
+    * Account's info as the [AccountInfoType] object instance
     */
     public AccountInfoType getResult() {
         return this.result;
@@ -37,7 +37,7 @@ public class GetAccountInfoResponse implements Alignable {
     private String apiAddress;
 
     /**
-    * The preferred address for the http api requests.
+    * The preferred address for the Management API requests
     */
     public String getApiAddress() {
         return this.apiAddress;

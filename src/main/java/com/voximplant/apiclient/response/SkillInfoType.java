@@ -18,7 +18,7 @@ public class SkillInfoType implements Alignable {
     private Long skillId;
 
     /**
-    * The skill ID.
+    * The skill ID
     */
     public Long getSkillId() {
         return this.skillId;
@@ -31,7 +31,7 @@ public class SkillInfoType implements Alignable {
     private String skillName;
 
     /**
-    * The skill name.
+    * The skill name
     */
     public String getSkillName() {
         return this.skillName;

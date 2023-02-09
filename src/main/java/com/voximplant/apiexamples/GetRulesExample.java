@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get the first rule for the template 74951234567
+* Get the first rule for the template 74951234567.
 */
 public class GetRulesExample {
     public static void main(String [] args) {

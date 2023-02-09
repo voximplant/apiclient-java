@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="phone_id")
     /**
-    * The phone ID list separated by the ';' symbol or the 'all' value.
+    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * select all phone ids
     */
     public MultiArgument<Long> getPhoneId() {
         return this.phoneId;
@@ -29,7 +31,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The phone ID list separated by the ';' symbol or the 'all' value.
+    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * select all phone ids
     */
     public BindPhoneNumberToApplicationRequest setPhoneId(MultiArgument<Long> d) {
         this.phoneId = d;
@@ -40,8 +43,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number list separated by the ';' symbol that can be used
-    * instead of <b>phone_id</b>.
+    * The phone number list separated by semicolon (;) that can be used
+    * instead of <b>phone_id</b>
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -52,8 +55,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The phone number list separated by the ';' symbol that can be used
-    * instead of <b>phone_id</b>.
+    * The phone number list separated by semicolon (;) that can be used
+    * instead of <b>phone_id</b>
     */
     public BindPhoneNumberToApplicationRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;
@@ -64,7 +67,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -75,7 +78,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public BindPhoneNumberToApplicationRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -86,8 +89,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -98,8 +100,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public BindPhoneNumberToApplicationRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -110,7 +111,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID.
+    * The rule ID
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -121,7 +122,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The rule ID.
+    * The rule ID
     */
     public BindPhoneNumberToApplicationRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -132,7 +133,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name that can be used instead of <b>rule_id</b>.
+    * The rule name that can be used instead of <b>rule_id</b>
     */
     public String getRuleName() {
         return this.ruleName;
@@ -143,7 +144,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The rule name that can be used instead of <b>rule_id</b>.
+    * The rule name that can be used instead of <b>rule_id</b>
     */
     public BindPhoneNumberToApplicationRequest setRuleName(String d) {
         this.ruleName = d;
@@ -154,7 +155,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Bind or unbind?
+    * Bind or unbind (set true or false respectively)
     */
     public Boolean getBind() {
         return this.bind;
@@ -165,7 +166,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * Bind or unbind?
+    * Bind or unbind (set true or false respectively)
     */
     public BindPhoneNumberToApplicationRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);

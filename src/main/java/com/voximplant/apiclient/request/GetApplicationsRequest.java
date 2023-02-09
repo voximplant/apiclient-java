@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to filter.
+    * The application ID to filter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -29,7 +30,7 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * The application ID to filter.
+    * The application ID to filter
     */
     public GetApplicationsRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name part to filter.
+    * The application name part to filter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -51,76 +52,10 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * The application name part to filter.
+    * The application name part to filter
     */
     public GetApplicationsRequest setApplicationName(String d) {
         this.applicationName = d;
-        return this;
-    }
-
-    private Long userId;
-
-    @RequestField(name="user_id")
-    /**
-    * The user ID to filter.
-    */
-    public Long getUserId() {
-        return this.userId;
-    }
-
-    public boolean hasUserId() {
-        return this.userId != null;
-    }
-
-    /**
-    * The user ID to filter.
-    */
-    public GetApplicationsRequest setUserId(long d) {
-        this.userId = Long.valueOf(d);
-        return this;
-    }
-
-    private Long excludedUserId;
-
-    @RequestField(name="excluded_user_id")
-    /**
-    * The excluded user ID to filter.
-    */
-    public Long getExcludedUserId() {
-        return this.excludedUserId;
-    }
-
-    public boolean hasExcludedUserId() {
-        return this.excludedUserId != null;
-    }
-
-    /**
-    * The excluded user ID to filter.
-    */
-    public GetApplicationsRequest setExcludedUserId(long d) {
-        this.excludedUserId = Long.valueOf(d);
-        return this;
-    }
-
-    private Long showingUserId;
-
-    @RequestField(name="showing_user_id")
-    /**
-    * Specify the user ID value to show it in the 'users' array output.
-    */
-    public Long getShowingUserId() {
-        return this.showingUserId;
-    }
-
-    public boolean hasShowingUserId() {
-        return this.showingUserId != null;
-    }
-
-    /**
-    * Specify the user ID value to show it in the 'users' array output.
-    */
-    public GetApplicationsRequest setShowingUserId(long d) {
-        this.showingUserId = Long.valueOf(d);
         return this;
     }
 
@@ -128,7 +63,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="with_rules")
     /**
-    * Set true to get bound rules info.
+    * Set true to get bound rules info
     */
     public Boolean getWithRules() {
         return this.withRules;
@@ -139,7 +74,7 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * Set true to get bound rules info.
+    * Set true to get bound rules info
     */
     public GetApplicationsRequest setWithRules(boolean d) {
         this.withRules = Boolean.valueOf(d);
@@ -150,7 +85,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="with_scenarios")
     /**
-    * Set true to get bound rules and scenarios info.
+    * Set true to get bound rules and scenarios info
     */
     public Boolean getWithScenarios() {
         return this.withScenarios;
@@ -161,7 +96,7 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * Set true to get bound rules and scenarios info.
+    * Set true to get bound rules and scenarios info
     */
     public GetApplicationsRequest setWithScenarios(boolean d) {
         this.withScenarios = Boolean.valueOf(d);
@@ -172,7 +107,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -183,7 +118,7 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetApplicationsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -194,7 +129,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -205,7 +140,7 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetApplicationsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -233,30 +168,6 @@ public class GetApplicationsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"applicationName\": \"")
                 .append(applicationName)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (userId != null) {
-            sb.append(aligned)
-                .append("\"userId\": \"")
-                .append(userId)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (excludedUserId != null) {
-            sb.append(aligned)
-                .append("\"excludedUserId\": \"")
-                .append(excludedUserId)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (showingUserId != null) {
-            sb.append(aligned)
-                .append("\"showingUserId\": \"")
-                .append(showingUserId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

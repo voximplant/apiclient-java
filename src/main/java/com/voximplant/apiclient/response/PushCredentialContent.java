@@ -18,7 +18,7 @@ public class PushCredentialContent implements Alignable {
     private String certFileName;
 
     /**
-    * The file name. Credentials for APPLE push.
+    * The file name. Credentials for APPLE push
     */
     public String getCertFileName() {
         return this.certFileName;
@@ -31,7 +31,7 @@ public class PushCredentialContent implements Alignable {
     private String certPassword;
 
     /**
-    * The password for private key. Credentials for APPLE push.
+    * The password for private key. Credentials for APPLE push
     */
     public String getCertPassword() {
         return this.certPassword;
@@ -44,7 +44,7 @@ public class PushCredentialContent implements Alignable {
     private String certContent;
 
     /**
-    * The certificate content in BASE64. Credentials for APPLE push.
+    * The certificate content in BASE64. Credentials for APPLE push
     */
     public String getCertContent() {
         return this.certContent;
@@ -57,7 +57,7 @@ public class PushCredentialContent implements Alignable {
     private Boolean isDevMode;
 
     /**
-    * The use in a Apple sandbox environment. Credentials for APPLE push.
+    * The use in a Apple sandbox environment. Credentials for APPLE push
     */
     public Boolean getIsDevMode() {
         return this.isDevMode;
@@ -70,7 +70,7 @@ public class PushCredentialContent implements Alignable {
     private String senderId;
 
     /**
-    * The sender id provided by Google. Credentials for GOOGLE push.
+    * The sender id provided by Google. Credentials for GOOGLE push
     */
     public String getSenderId() {
         return this.senderId;
@@ -83,7 +83,7 @@ public class PushCredentialContent implements Alignable {
     private String serverKey;
 
     /**
-    * The server key provided by Google. Credentials for GOOGLE push.
+    * The server key provided by Google. Credentials for GOOGLE push
     */
     public String getServerKey() {
         return this.serverKey;
@@ -91,6 +91,32 @@ public class PushCredentialContent implements Alignable {
 
     public boolean hasServerKey() {
         return this.serverKey != null;
+    }
+
+    private String huaweiClientId;
+
+    /**
+    * The client id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public String getHuaweiClientId() {
+        return this.huaweiClientId;
+    }
+
+    public boolean hasHuaweiClientId() {
+        return this.huaweiClientId != null;
+    }
+
+    private String huaweiApplicationId;
+
+    /**
+    * The application id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public String getHuaweiApplicationId() {
+        return this.huaweiApplicationId;
+    }
+
+    public boolean hasHuaweiApplicationId() {
+        return this.huaweiApplicationId != null;
     }
 
     public String toString(int alignment) {
@@ -146,6 +172,22 @@ public class PushCredentialContent implements Alignable {
             sb.append(aligned)
                 .append("\"serverKey\": \"")
                 .append(serverKey)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (huaweiClientId != null) {
+            sb.append(aligned)
+                .append("\"huaweiClientId\": \"")
+                .append(huaweiClientId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (huaweiApplicationId != null) {
+            sb.append(aligned)
+                .append("\"huaweiApplicationId\": \"")
+                .append(huaweiApplicationId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

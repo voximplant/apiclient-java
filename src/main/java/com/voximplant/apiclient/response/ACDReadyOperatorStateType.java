@@ -18,7 +18,7 @@ public class ACDReadyOperatorStateType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID of the operator.
+    * The user ID of the operator
     */
     public Long getUserId() {
         return this.userId;
@@ -31,7 +31,7 @@ public class ACDReadyOperatorStateType implements Alignable {
     private String userName;
 
     /**
-    * The user name of the operator.
+    * The user name of the operator
     */
     public String getUserName() {
         return this.userName;
@@ -44,7 +44,7 @@ public class ACDReadyOperatorStateType implements Alignable {
     private String userDisplayName;
 
     /**
-    * The display user name of the operator.
+    * The display user name of the operator
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -59,7 +59,7 @@ public class ACDReadyOperatorStateType implements Alignable {
     /**
     * The idle duration in seconds. The minimum of the duration after the
     * last hangup and the duration after the operator status changing to
-    * READY.
+    * READY
     */
     public Long getIdleDuration() {
         return this.idleDuration;

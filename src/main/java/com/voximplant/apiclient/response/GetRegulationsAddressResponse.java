@@ -24,7 +24,7 @@ public class GetRegulationsAddressResponse implements Alignable {
     private RegulationAddress[] result;
 
     /**
-    * The RegulationAddress records.
+    * The RegulationAddress records
     */
     public RegulationAddress[] getResult() {
         return this.result;
@@ -37,7 +37,7 @@ public class GetRegulationsAddressResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned regulation address count.
+    * The returned regulation address count
     */
     public Long getCount() {
         return this.count;

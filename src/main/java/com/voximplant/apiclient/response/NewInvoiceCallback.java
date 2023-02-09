@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when a new invoice is generated. Received as part of the
 * [AccountCallback] structure.
 */
 public class NewInvoiceCallback implements Alignable {
@@ -19,7 +19,7 @@ public class NewInvoiceCallback implements Alignable {
     private NewInvoiceCallbackItem newInvoice;
 
     /**
-    * The invoice info.
+    * The invoice info
     */
     public NewInvoiceCallbackItem getNewInvoice() {
         return this.newInvoice;

@@ -18,7 +18,7 @@ public class ACDSessionInfoType implements Alignable {
     private Long acdSessionHistoryId;
 
     /**
-    * The ACD session history ID.
+    * The ACD session history ID
     */
     public Long getAcdSessionHistoryId() {
         return this.acdSessionHistoryId;
@@ -32,8 +32,8 @@ public class ACDSessionInfoType implements Alignable {
 
     /**
     * The ACD request ID. See the
-    * [ACDRequest.id()](https://voximplant.com/docs/references/voxengine/acd/acdrequest#id)
-    * VoxEngine method.
+    * [ACDRequest.id()](/docs/references/voxengine/acd/acdrequest#id)
+    * VoxEngine method
     */
     public String getAcdRequestId() {
         return this.acdRequestId;
@@ -46,7 +46,7 @@ public class ACDSessionInfoType implements Alignable {
     private Long accountId;
 
     /**
-    * The account ID.
+    * The account ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -73,7 +73,7 @@ public class ACDSessionInfoType implements Alignable {
     private Long priority;
 
     /**
-    * The request priority.
+    * The request priority
     */
     public Long getPriority() {
         return this.priority;
@@ -86,7 +86,7 @@ public class ACDSessionInfoType implements Alignable {
     private Long acdQueueId;
 
     /**
-    * The ACD queue ID.
+    * The ACD queue ID
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -99,7 +99,7 @@ public class ACDSessionInfoType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID.
+    * The user ID
     */
     public Long getUserId() {
         return this.userId;
@@ -112,7 +112,7 @@ public class ACDSessionInfoType implements Alignable {
     private Long waitingDuration;
 
     /**
-    * The waiting duration in seconds.
+    * The waiting duration in seconds
     */
     public Long getWaitingDuration() {
         return this.waitingDuration;
@@ -125,7 +125,7 @@ public class ACDSessionInfoType implements Alignable {
     private Long inServiceDuration;
 
     /**
-    * The conversation duration in seconds.
+    * The conversation duration in seconds
     */
     public Long getInServiceDuration() {
         return this.inServiceDuration;
@@ -138,7 +138,7 @@ public class ACDSessionInfoType implements Alignable {
     private Long afterServiceDuration;
 
     /**
-    * The after service duration in seconds.
+    * The after service duration in seconds
     */
     public Long getAfterServiceDuration() {
         return this.afterServiceDuration;
@@ -151,7 +151,7 @@ public class ACDSessionInfoType implements Alignable {
     private ACDSessionEventInfoType[] events;
 
     /**
-    * The bound events.
+    * The bound events
     */
     public ACDSessionEventInfoType[] getEvents() {
         return this.events;

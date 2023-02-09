@@ -18,7 +18,7 @@ public class ClonedAccountType implements Alignable {
     private Long accountId;
 
     /**
-    * The account's ID.
+    * The account's ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -31,7 +31,7 @@ public class ClonedAccountType implements Alignable {
     private String accountName;
 
     /**
-    * The account's name.
+    * The account's name
     */
     public String getAccountName() {
         return this.accountName;
@@ -44,7 +44,7 @@ public class ClonedAccountType implements Alignable {
     private String accountEmail;
 
     /**
-    * The account's email.
+    * The account's email
     */
     public String getAccountEmail() {
         return this.accountEmail;
@@ -57,7 +57,7 @@ public class ClonedAccountType implements Alignable {
     private Boolean active;
 
     /**
-    * The account activation flag.
+    * The account activation flag
     */
     public Boolean getActive() {
         return this.active;
@@ -70,7 +70,7 @@ public class ClonedAccountType implements Alignable {
     private String apiKey;
 
     /**
-    * The account API key.
+    * The account API key
     */
     public String getApiKey() {
         return this.apiKey;
@@ -83,7 +83,7 @@ public class ClonedAccountType implements Alignable {
     private ClonedUserType[] users;
 
     /**
-    * The cloned users.
+    * The cloned users
     */
     public ClonedUserType[] getUsers() {
         return this.users;
@@ -96,7 +96,7 @@ public class ClonedAccountType implements Alignable {
     private ClonedScenarioType[] scenarios;
 
     /**
-    * The cloned scenarios.
+    * The cloned scenarios
     */
     public ClonedScenarioType[] getScenarios() {
         return this.scenarios;
@@ -109,7 +109,7 @@ public class ClonedAccountType implements Alignable {
     private ClonedApplicationType[] applications;
 
     /**
-    * The cloned applications.
+    * The cloned applications
     */
     public ClonedApplicationType[] getApplications() {
         return this.applications;
@@ -122,7 +122,7 @@ public class ClonedAccountType implements Alignable {
     private ClonedACDQueueType[] acdQueues;
 
     /**
-    * The cloned ACD queues.
+    * The cloned ACD queues
     */
     public ClonedACDQueueType[] getAcdQueues() {
         return this.acdQueues;
@@ -135,7 +135,7 @@ public class ClonedAccountType implements Alignable {
     private ClonedACDSkillType[] acdSkills;
 
     /**
-    * The cloned ACD skills.
+    * The cloned ACD skills
     */
     public ClonedACDSkillType[] getAcdSkills() {
         return this.acdSkills;
@@ -148,7 +148,7 @@ public class ClonedAccountType implements Alignable {
     private ClonedAdminRoleType[] adminRoles;
 
     /**
-    * The cloned admin roles.
+    * The cloned admin roles
     */
     public ClonedAdminRoleType[] getAdminRoles() {
         return this.adminRoles;
@@ -161,7 +161,7 @@ public class ClonedAccountType implements Alignable {
     private ClonedAdminUserType[] adminUsers;
 
     /**
-    * The cloned admin users.
+    * The cloned admin users
     */
     public ClonedAdminUserType[] getAdminUsers() {
         return this.adminUsers;

@@ -18,7 +18,7 @@ public class ScenarioInfoType implements Alignable {
     private Long scenarioId;
 
     /**
-    * The scenario ID.
+    * The scenario ID
     */
     public Long getScenarioId() {
         return this.scenarioId;
@@ -31,7 +31,7 @@ public class ScenarioInfoType implements Alignable {
     private String scenarioName;
 
     /**
-    * The scenario name.
+    * The scenario name
     */
     public String getScenarioName() {
         return this.scenarioName;
@@ -44,7 +44,7 @@ public class ScenarioInfoType implements Alignable {
     private String scenarioScript;
 
     /**
-    * The scenario text.
+    * The scenario text
     */
     public String getScenarioScript() {
         return this.scenarioScript;
@@ -72,7 +72,7 @@ public class ScenarioInfoType implements Alignable {
 
     /**
     * 'True' if the scenario belongs to the parent account, 'false' if the
-    * scenario belongs to the current account.
+    * scenario belongs to the current account
     */
     public Boolean getParent() {
         return this.parent;

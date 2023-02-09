@@ -18,7 +18,7 @@ public class ClonedACDSkillType implements Alignable {
     private Long skillId;
 
     /**
-    * The ACD skill ID.
+    * The ACD skill ID
     */
     public Long getSkillId() {
         return this.skillId;
@@ -31,7 +31,7 @@ public class ClonedACDSkillType implements Alignable {
     private String skillName;
 
     /**
-    * The ACD skill name.
+    * The ACD skill name
     */
     public String getSkillName() {
         return this.skillName;

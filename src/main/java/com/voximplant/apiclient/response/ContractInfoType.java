@@ -18,7 +18,7 @@ public class ContractInfoType implements Alignable {
     private String agreementNumber;
 
     /**
-    * The agreement number.
+    * The agreement number
     */
     public String getAgreementNumber() {
         return this.agreementNumber;

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -40,9 +41,9 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="history_type")
     /**
-    * The history report type list separated by the ';' symbol or the 'all'
-    * value. The following values are possible: calls, transactions, audit,
-    * call_list.
+    * The history report type list separated by semicolon (;). Use the
+    * 'all' value to select all history report types. The following values
+    * are possible: calls, transactions, audit, call_list
     */
     public MultiArgument<String> getHistoryType() {
         return this.historyType;
@@ -53,9 +54,9 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * The history report type list separated by the ';' symbol or the 'all'
-    * value. The following values are possible: calls, transactions, audit,
-    * call_list.
+    * The history report type list separated by semicolon (;). Use the
+    * 'all' value to select all history report types. The following values
+    * are possible: calls, transactions, audit, call_list
     */
     public GetHistoryReportsRequest setHistoryType(MultiArgument<String> d) {
         this.historyType = d;
@@ -114,7 +115,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="is_completed")
     /**
-    * Is report completed?
+    * Report is completed
     */
     public Boolean getIsCompleted() {
         return this.isCompleted;
@@ -125,7 +126,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * Is report completed?
+    * Report is completed
     */
     public GetHistoryReportsRequest setIsCompleted(boolean d) {
         this.isCompleted = Boolean.valueOf(d);
@@ -136,7 +137,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -147,7 +148,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public GetHistoryReportsRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -158,7 +159,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -169,7 +170,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetHistoryReportsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -180,7 +181,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -191,7 +192,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetHistoryReportsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -202,8 +203,8 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to filter. Can be a list separated by the ';'
-    * symbol or the 'all' value.
+    * The application ID to filter. Can be a list separated by semicolon
+    * (;). Use the 'all' value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
@@ -214,8 +215,8 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * The application ID to filter. Can be a list separated by the ';'
-    * symbol or the 'all' value.
+    * The application ID to filter. Can be a list separated by semicolon
+    * (;). Use the 'all' value to select all applications
     */
     public GetHistoryReportsRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;

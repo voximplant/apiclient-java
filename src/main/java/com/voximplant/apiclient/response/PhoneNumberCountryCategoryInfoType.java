@@ -19,7 +19,7 @@ public class PhoneNumberCountryCategoryInfoType implements Alignable {
     private String phoneCategoryName;
 
     /**
-    * The phone category name.
+    * The phone category name
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -32,7 +32,7 @@ public class PhoneNumberCountryCategoryInfoType implements Alignable {
     private Boolean countryHasStates;
 
     /**
-    * True if a country state is used to choose the phone with the category.
+    * True if a country state is used to choose the phone with the category
     */
     public Boolean getCountryHasStates() {
         return this.countryHasStates;
@@ -45,7 +45,7 @@ public class PhoneNumberCountryCategoryInfoType implements Alignable {
     private String localizedCountryName;
 
     /**
-    * The localized country name.
+    * The localized country name
     */
     public String getLocalizedCountryName() {
         return this.localizedCountryName;
@@ -58,7 +58,7 @@ public class PhoneNumberCountryCategoryInfoType implements Alignable {
     private String localizedPhoneCategoryName;
 
     /**
-    * The localized phone category name.
+    * The localized phone category name
     */
     public String getLocalizedPhoneCategoryName() {
         return this.localizedPhoneCategoryName;
@@ -71,7 +71,7 @@ public class PhoneNumberCountryCategoryInfoType implements Alignable {
     private String localizedPhoneRegionName;
 
     /**
-    * The localized phone region name.
+    * The localized phone region name
     */
     public String getLocalizedPhoneRegionName() {
         return this.localizedPhoneRegionName;

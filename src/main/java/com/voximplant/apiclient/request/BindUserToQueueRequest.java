@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Bind or unbind users.
+    * Bind or unbind users
     */
     public Boolean getBind() {
         return this.bind;
@@ -29,7 +30,7 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * Bind or unbind users.
+    * Bind or unbind users
     */
     public BindUserToQueueRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);
@@ -40,7 +41,7 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -51,7 +52,7 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public BindUserToQueueRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -62,8 +63,7 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -74,8 +74,7 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public BindUserToQueueRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -86,8 +85,8 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by the ';' symbol or the 'all' value to
-    * specify all users bound to the application.
+    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * specify all users bound to the application
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -98,8 +97,8 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by the ';' symbol or the 'all' value to
-    * specify all users bound to the application.
+    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * specify all users bound to the application
     */
     public BindUserToQueueRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -110,8 +109,8 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by the ';' symbol. <b>user_name</b> can
-    * be used instead of <b>user_id</b>.
+    * The user name list separated by semicolon (;). <b>user_name</b> can
+    * be used instead of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -122,8 +121,8 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by the ';' symbol. <b>user_name</b> can
-    * be used instead of <b>user_id</b>.
+    * The user name list separated by semicolon (;). <b>user_name</b> can
+    * be used instead of <b>user_id</b>
     */
     public BindUserToQueueRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -134,8 +133,8 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list separated by the ';' symbol or the 'all' value
-    * to specify all queues bound to the application.
+    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
+    * to specify all queues bound to the application
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -146,8 +145,8 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list separated by the ';' symbol or the 'all' value
-    * to specify all queues bound to the application.
+    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
+    * to specify all queues bound to the application
     */
     public BindUserToQueueRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -159,7 +158,7 @@ public class BindUserToQueueRequest implements Alignable {
     @RequestField(name="acd_queue_name")
     /**
     * The queue name that can be used instead of <b>acd_queue_id</b>. The
-    * queue name list separated by the ';' symbol.
+    * queue name list separated by semicolon (;)
     */
     public MultiArgument<String> getAcdQueueName() {
         return this.acdQueueName;
@@ -171,7 +170,7 @@ public class BindUserToQueueRequest implements Alignable {
 
     /**
     * The queue name that can be used instead of <b>acd_queue_id</b>. The
-    * queue name list separated by the ';' symbol.
+    * queue name list separated by semicolon (;)
     */
     public BindUserToQueueRequest setAcdQueueName(MultiArgument<String> d) {
         this.acdQueueName = d;

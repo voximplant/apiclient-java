@@ -18,7 +18,7 @@ public class RuleInfoType implements Alignable {
     private Long ruleId;
 
     /**
-    * The rule ID.
+    * The rule ID
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -31,7 +31,7 @@ public class RuleInfoType implements Alignable {
     private Long applicationId;
 
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -44,7 +44,7 @@ public class RuleInfoType implements Alignable {
     private String ruleName;
 
     /**
-    * The rule name.
+    * The rule name
     */
     public String getRuleName() {
         return this.ruleName;
@@ -57,7 +57,7 @@ public class RuleInfoType implements Alignable {
     private String rulePattern;
 
     /**
-    * The rule pattern regex.
+    * The rule pattern regex
     */
     public String getRulePattern() {
         return this.rulePattern;
@@ -70,7 +70,7 @@ public class RuleInfoType implements Alignable {
     private String rulePatternExclude;
 
     /**
-    * The rule pattern exlude regex.
+    * The rule pattern exlude regex
     */
     public String getRulePatternExclude() {
         return this.rulePatternExclude;
@@ -83,7 +83,7 @@ public class RuleInfoType implements Alignable {
     private Boolean videoConference;
 
     /**
-    * Is video conference required?
+    * Video conference is required
     */
     public Boolean getVideoConference() {
         return this.videoConference;
@@ -96,7 +96,7 @@ public class RuleInfoType implements Alignable {
     private ScenarioInfoType[] scenarios;
 
     /**
-    * The bound scenarios.
+    * The bound scenarios
     */
     public ScenarioInfoType[] getScenarios() {
         return this.scenarios;

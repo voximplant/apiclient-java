@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_credential_id")
     /**
-    * The push credentials id.
+    * The push credentials id
     */
     public Long getPushCredentialId() {
         return this.pushCredentialId;
@@ -29,7 +30,7 @@ public class SetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push credentials id.
+    * The push credentials id
     */
     public SetPushCredentialRequest setPushCredentialId(long d) {
         this.pushCredentialId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class SetPushCredentialRequest implements Alignable {
 
     @RequestField(name="cert_content")
     /**
-    * Public and private keys in PKCS12 format.
+    * Public and private keys in PKCS12 format. Credentials for APPLE push
     */
     public String getCertContent() {
         return this.certContent;
@@ -51,7 +52,7 @@ public class SetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Public and private keys in PKCS12 format.
+    * Public and private keys in PKCS12 format. Credentials for APPLE push
     */
     public SetPushCredentialRequest setCertContent(String d) {
         this.certContent = d;
@@ -62,7 +63,7 @@ public class SetPushCredentialRequest implements Alignable {
 
     @RequestField(name="cert_password")
     /**
-    * The secret password for private key.
+    * The secret password for private key. Credentials for APPLE push
     */
     public String getCertPassword() {
         return this.certPassword;
@@ -73,7 +74,7 @@ public class SetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The secret password for private key.
+    * The secret password for private key. Credentials for APPLE push
     */
     public SetPushCredentialRequest setCertPassword(String d) {
         this.certPassword = d;
@@ -84,7 +85,8 @@ public class SetPushCredentialRequest implements Alignable {
 
     @RequestField(name="is_dev_mode")
     /**
-    * Set true for use this certificate in apple's sandbox environment
+    * Set true to use this certificate in apple's sandbox environment.
+    * Credentials for APPLE push
     */
     public Boolean getIsDevMode() {
         return this.isDevMode;
@@ -95,7 +97,8 @@ public class SetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set true for use this certificate in apple's sandbox environment
+    * Set true to use this certificate in apple's sandbox environment.
+    * Credentials for APPLE push
     */
     public SetPushCredentialRequest setIsDevMode(boolean d) {
         this.isDevMode = Boolean.valueOf(d);
@@ -106,7 +109,7 @@ public class SetPushCredentialRequest implements Alignable {
 
     @RequestField(name="sender_id")
     /**
-    * The sender id, provided by Google.
+    * The sender id, provided by Google. Credentials for GOOGLE push
     */
     public String getSenderId() {
         return this.senderId;
@@ -117,7 +120,7 @@ public class SetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The sender id, provided by Google.
+    * The sender id, provided by Google. Credentials for GOOGLE push
     */
     public SetPushCredentialRequest setSenderId(String d) {
         this.senderId = d;
@@ -128,7 +131,7 @@ public class SetPushCredentialRequest implements Alignable {
 
     @RequestField(name="server_key")
     /**
-    * The server key, provided by Google.
+    * The server key, provided by Google. Credentials for GOOGLE push
     */
     public String getServerKey() {
         return this.serverKey;
@@ -139,10 +142,100 @@ public class SetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The server key, provided by Google.
+    * The server key, provided by Google. Credentials for GOOGLE push
     */
     public SetPushCredentialRequest setServerKey(String d) {
         this.serverKey = d;
+        return this;
+    }
+
+    private String serviceAccountFile;
+
+    @RequestField(name="service_account_file")
+    /**
+    * The service account key file, provided by Google. Can be used instead
+    * of <b>server_key</b>. Credentials for GOOGLE push
+    */
+    public String getServiceAccountFile() {
+        return this.serviceAccountFile;
+    }
+
+    public boolean hasServiceAccountFile() {
+        return this.serviceAccountFile != null;
+    }
+
+    /**
+    * The service account key file, provided by Google. Can be used instead
+    * of <b>server_key</b>. Credentials for GOOGLE push
+    */
+    public SetPushCredentialRequest setServiceAccountFile(String d) {
+        this.serviceAccountFile = d;
+        return this;
+    }
+
+    private String huaweiClientId;
+
+    @RequestField(name="huawei_client_id")
+    /**
+    * The client id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public String getHuaweiClientId() {
+        return this.huaweiClientId;
+    }
+
+    public boolean hasHuaweiClientId() {
+        return this.huaweiClientId != null;
+    }
+
+    /**
+    * The client id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public SetPushCredentialRequest setHuaweiClientId(String d) {
+        this.huaweiClientId = d;
+        return this;
+    }
+
+    private String huaweiClientSecret;
+
+    @RequestField(name="huawei_client_secret")
+    /**
+    * The client secret, provided by Huawei. Credentials for HUAWEI push
+    */
+    public String getHuaweiClientSecret() {
+        return this.huaweiClientSecret;
+    }
+
+    public boolean hasHuaweiClientSecret() {
+        return this.huaweiClientSecret != null;
+    }
+
+    /**
+    * The client secret, provided by Huawei. Credentials for HUAWEI push
+    */
+    public SetPushCredentialRequest setHuaweiClientSecret(String d) {
+        this.huaweiClientSecret = d;
+        return this;
+    }
+
+    private String huaweiApplicationId;
+
+    @RequestField(name="huawei_application_id")
+    /**
+    * The application id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public String getHuaweiApplicationId() {
+        return this.huaweiApplicationId;
+    }
+
+    public boolean hasHuaweiApplicationId() {
+        return this.huaweiApplicationId != null;
+    }
+
+    /**
+    * The application id, provided by Huawei. Credentials for HUAWEI push
+    */
+    public SetPushCredentialRequest setHuaweiApplicationId(String d) {
+        this.huaweiApplicationId = d;
         return this;
     }
 
@@ -199,6 +292,38 @@ public class SetPushCredentialRequest implements Alignable {
             sb.append(aligned)
                 .append("\"serverKey\": \"")
                 .append(serverKey)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (serviceAccountFile != null) {
+            sb.append(aligned)
+                .append("\"serviceAccountFile\": \"")
+                .append(serviceAccountFile)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (huaweiClientId != null) {
+            sb.append(aligned)
+                .append("\"huaweiClientId\": \"")
+                .append(huaweiClientId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (huaweiClientSecret != null) {
+            sb.append(aligned)
+                .append("\"huaweiClientSecret\": \"")
+                .append(huaweiClientSecret)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (huaweiApplicationId != null) {
+            sb.append(aligned)
+                .append("\"huaweiApplicationId\": \"")
+                .append(huaweiApplicationId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -18,7 +18,7 @@ public class A2PSmsDeliveryCallback implements Alignable {
     private Long id;
 
     /**
-    * The SMS delivery ID.
+    * The SMS delivery ID
     */
     public Long getId() {
         return this.id;
@@ -31,7 +31,7 @@ public class A2PSmsDeliveryCallback implements Alignable {
     private String sourceNumber;
 
     /**
-    * The source number.
+    * The source number
     */
     public String getSourceNumber() {
         return this.sourceNumber;
@@ -44,7 +44,7 @@ public class A2PSmsDeliveryCallback implements Alignable {
     private String status;
 
     /**
-    * The SMS delivery status.
+    * The SMS delivery status
     */
     public String getStatus() {
         return this.status;
@@ -57,7 +57,7 @@ public class A2PSmsDeliveryCallback implements Alignable {
     private String destinationNumbers;
 
     /**
-    * The destination number(s).
+    * The destination number(s)
     */
     public String getDestinationNumbers() {
         return this.destinationNumbers;

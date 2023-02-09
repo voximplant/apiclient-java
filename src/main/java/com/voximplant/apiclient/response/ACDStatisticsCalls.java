@@ -18,7 +18,7 @@ public class ACDStatisticsCalls implements Alignable {
     private Long count;
 
     /**
-    * Absolute number of calls.
+    * Absolute number of calls
     */
     public Long getCount() {
         return this.count;
@@ -32,7 +32,7 @@ public class ACDStatisticsCalls implements Alignable {
 
     /**
     * Percentage of answered/rejected/unanswered calls, is counted against
-    * total number of calls.
+    * total number of calls
     */
     public Long getPercent() {
         return this.percent;

@@ -15,23 +15,23 @@ import com.voximplant.apiclient.util.Alignable;
 */
 public class A2PSmsHistoryType implements Alignable {
 
-    private Long id;
+    private Long messageId;
 
     /**
-    * The message ID.
+    * Message ID
     */
-    public Long getId() {
-        return this.id;
+    public Long getMessageId() {
+        return this.messageId;
     }
 
-    public boolean hasId() {
-        return this.id != null;
+    public boolean hasMessageId() {
+        return this.messageId != null;
     }
 
     private Long sourceNumber;
 
     /**
-    * SMS source number.
+    * SMS source number
     */
     public Long getSourceNumber() {
         return this.sourceNumber;
@@ -44,7 +44,7 @@ public class A2PSmsHistoryType implements Alignable {
     private Long destinationNumber;
 
     /**
-    * SMS destination number.
+    * SMS destination number
     */
     public Long getDestinationNumber() {
         return this.destinationNumber;
@@ -57,7 +57,7 @@ public class A2PSmsHistoryType implements Alignable {
     private Long fragments;
 
     /**
-    * Number of fragments the initial message was divided into.
+    * Number of fragments the initial message was divided into
     */
     public Long getFragments() {
         return this.fragments;
@@ -70,7 +70,7 @@ public class A2PSmsHistoryType implements Alignable {
     private BigDecimal cost;
 
     /**
-    * The message cost.
+    * The message cost
     */
     public BigDecimal getCost() {
         return this.cost;
@@ -80,12 +80,12 @@ public class A2PSmsHistoryType implements Alignable {
         return this.cost != null;
     }
 
-    private Long statusId;
+    private String statusId;
 
     /**
-    * The message status. 1 - Success, 2 - Error.
+    * The message status. 1 - Success, 2 - Error
     */
-    public Long getStatusId() {
+    public String getStatusId() {
         return this.statusId;
     }
 
@@ -96,7 +96,7 @@ public class A2PSmsHistoryType implements Alignable {
     private String errorMessage;
 
     /**
-    * Error message (if any).
+    * Error message (if any)
     */
     public String getErrorMessage() {
         return this.errorMessage;
@@ -123,7 +123,7 @@ public class A2PSmsHistoryType implements Alignable {
     private Long transactionId;
 
     /**
-    * The transaction ID for this message.
+    * The transaction ID for this message
     */
     public Long getTransactionId() {
         return this.transactionId;
@@ -147,6 +147,19 @@ public class A2PSmsHistoryType implements Alignable {
         return this.deliveryStatus != null;
     }
 
+    private String text;
+
+    /**
+    * Stored message text
+    */
+    public String getText() {
+        return this.text;
+    }
+
+    public boolean hasText() {
+        return this.text != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -156,10 +169,10 @@ public class A2PSmsHistoryType implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (id != null) {
+        if (messageId != null) {
             sb.append(aligned)
-                .append("\"id\": \"")
-                .append(id)
+                .append("\"messageId\": \"")
+                .append(messageId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
@@ -232,6 +245,14 @@ public class A2PSmsHistoryType implements Alignable {
             sb.append(aligned)
                 .append("\"deliveryStatus\": \"")
                 .append(deliveryStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (text != null) {
+            sb.append(aligned)
+                .append("\"text\": \"")
+                .append(text)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

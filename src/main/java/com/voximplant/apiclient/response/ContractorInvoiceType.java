@@ -18,7 +18,7 @@ public class ContractorInvoiceType implements Alignable {
     private String invoiceNumber;
 
     /**
-    * The invoice number.
+    * The invoice number
     */
     public String getInvoiceNumber() {
         return this.invoiceNumber;
@@ -86,7 +86,7 @@ public class ContractorInvoiceType implements Alignable {
     private BigDecimal totalAmount;
 
     /**
-    * The total invoice amount (RUR).
+    * The total invoice amount (RUR)
     */
     public BigDecimal getTotalAmount() {
         return this.totalAmount;
@@ -99,7 +99,7 @@ public class ContractorInvoiceType implements Alignable {
     private BigDecimal paidAmount;
 
     /**
-    * The paid amount (RUR).
+    * The paid amount (RUR)
     */
     public BigDecimal getPaidAmount() {
         return this.paidAmount;
@@ -112,7 +112,7 @@ public class ContractorInvoiceType implements Alignable {
     private ContractorInvoiceServiceType services;
 
     /**
-    * The service list.
+    * The service list
     */
     public ContractorInvoiceServiceType getServices() {
         return this.services;

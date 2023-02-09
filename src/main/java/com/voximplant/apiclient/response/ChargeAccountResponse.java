@@ -37,7 +37,7 @@ public class ChargeAccountResponse implements Alignable {
     private ShortAccountInfoType accountInfo;
 
     /**
-    * The current account state.
+    * The current account state
     */
     public ShortAccountInfoType getAccountInfo() {
         return this.accountInfo;

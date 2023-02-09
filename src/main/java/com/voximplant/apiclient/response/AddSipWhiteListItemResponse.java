@@ -37,7 +37,7 @@ public class AddSipWhiteListItemResponse implements Alignable {
     private Long sipWhitelistId;
 
     /**
-    * The SIP white list item ID.
+    * The SIP white list item ID
     */
     public Long getSipWhitelistId() {
         return this.sipWhitelistId;

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class DelSipWhiteListItemRequest implements Alignable {
 
     @RequestField(name="sip_whitelist_id")
     /**
-    * The SIP white list item ID to delete.
+    * The SIP white list item ID to delete
     */
     public Long getSipWhitelistId() {
         return this.sipWhitelistId;
@@ -29,7 +30,7 @@ public class DelSipWhiteListItemRequest implements Alignable {
     }
 
     /**
-    * The SIP white list item ID to delete.
+    * The SIP white list item ID to delete
     */
     public DelSipWhiteListItemRequest setSipWhitelistId(long d) {
         this.sipWhitelistId = Long.valueOf(d);

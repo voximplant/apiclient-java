@@ -11,14 +11,14 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* Detailing job telephone calls
+* Detailing job telephone calls.
 */
 public class CallListDetailType implements Alignable {
 
     private Long listId;
 
     /**
-    * The list ID.
+    * The list ID
     */
     public Long getListId() {
         return this.listId;
@@ -41,12 +41,13 @@ public class CallListDetailType implements Alignable {
         return this.customData != null;
     }
 
-    private String startExecutionTime;
+    @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
+    private Date startExecutionTime;
 
     /**
     * Time with which to start the job in 24-h format: HH:mm:ss
     */
-    public String getStartExecutionTime() {
+    public Date getStartExecutionTime() {
         return this.startExecutionTime;
     }
 
@@ -54,12 +55,13 @@ public class CallListDetailType implements Alignable {
         return this.startExecutionTime != null;
     }
 
-    private String finishExecutionTime;
+    @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
+    private Date finishExecutionTime;
 
     /**
     * Time after which the task cannot be performed in 24-h format: HH:mm:ss
     */
-    public String getFinishExecutionTime() {
+    public Date getFinishExecutionTime() {
         return this.finishExecutionTime;
     }
 
@@ -71,7 +73,7 @@ public class CallListDetailType implements Alignable {
 
     /**
     * Results of the task, if it was granted, or information about the
-    * runtime error.
+    * runtime error
     */
     public String getResultData() {
         return this.resultData;
@@ -84,7 +86,7 @@ public class CallListDetailType implements Alignable {
     private String lastAttempt;
 
     /**
-    * Date and time of the last attempt to perform a task.
+    * Date and time of the last attempt to perform a task
     */
     public String getLastAttempt() {
         return this.lastAttempt;
@@ -97,7 +99,7 @@ public class CallListDetailType implements Alignable {
     private Long attemptsLeft;
 
     /**
-    * Number of remaining attempts.
+    * Number of remaining attempts
     */
     public Long getAttemptsLeft() {
         return this.attemptsLeft;
@@ -110,9 +112,9 @@ public class CallListDetailType implements Alignable {
     private Long statusId;
 
     /**
-    * The status ID. The possible values are: __0__ (status = New), __1__
+    * The status ID. The possible values are __0__ (status = New), __1__
     * (status = In progress), __2__ (status = Processed), __3__ (status =
-    * Error), __4__ (status = Cancelled).
+    * Error), __4__ (status = Canceled)
     */
     public Long getStatusId() {
         return this.statusId;
@@ -125,9 +127,9 @@ public class CallListDetailType implements Alignable {
     private String status;
 
     /**
-    * The status name. The possible values are: __New__ (status_id = 0),
+    * The status name. The possible values are __New__ (status_id = 0),
     * __In progress__ (status_id = 1), __Processed__ (status_id = 2),
-    * __Error__ (status_id = 3), __Cancelled__ (status_id = 4).
+    * __Error__ (status_id = 3), __Canceled__ (status_id = 4)
     */
     public String getStatus() {
         return this.status;

@@ -18,7 +18,7 @@ public class KeyInfo implements Alignable {
     private String accountEmail;
 
     /**
-    * Client email.
+    * Client email
     */
     public String getAccountEmail() {
         return this.accountEmail;
@@ -31,7 +31,7 @@ public class KeyInfo implements Alignable {
     private Long accountId;
 
     /**
-    * The account ID.
+    * The account ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -44,7 +44,7 @@ public class KeyInfo implements Alignable {
     private String keyId;
 
     /**
-    * The key ID.
+    * The key ID
     */
     public String getKeyId() {
         return this.keyId;
@@ -57,7 +57,7 @@ public class KeyInfo implements Alignable {
     private String privateKey;
 
     /**
-    * The private key.
+    * The private key
     */
     public String getPrivateKey() {
         return this.privateKey;

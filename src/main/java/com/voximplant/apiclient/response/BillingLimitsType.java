@@ -19,7 +19,7 @@ public class BillingLimitsType implements Alignable {
     private BillingLimitInfoType robokassa;
 
     /**
-    * The Robokassa limits.
+    * The Robokassa limits
     */
     public BillingLimitInfoType getRobokassa() {
         return this.robokassa;
@@ -32,7 +32,7 @@ public class BillingLimitsType implements Alignable {
     private BankCardBillingLimitInfoType bankCard;
 
     /**
-    * The bank card limits.
+    * The bank card limits
     */
     public BankCardBillingLimitInfoType getBankCard() {
         return this.bankCard;
@@ -45,7 +45,7 @@ public class BillingLimitsType implements Alignable {
     private BillingLimitInfoType invoice;
 
     /**
-    * The invoice limits.
+    * The invoice limits
     */
     public BillingLimitInfoType getInvoice() {
         return this.invoice;

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -14,13 +15,13 @@ import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
 public class GetPhoneNumbersRequest implements Alignable {
-    private Long phoneId;
+    private MultiArgument<Long> phoneId;
 
     @RequestField(name="phone_id")
     /**
     * The particular phone ID to filter
     */
-    public Long getPhoneId() {
+    public MultiArgument<Long> getPhoneId() {
         return this.phoneId;
     }
 
@@ -31,8 +32,32 @@ public class GetPhoneNumbersRequest implements Alignable {
     /**
     * The particular phone ID to filter
     */
-    public GetPhoneNumbersRequest setPhoneId(long d) {
-        this.phoneId = Long.valueOf(d);
+    public GetPhoneNumbersRequest setPhoneId(MultiArgument<Long> d) {
+        this.phoneId = d;
+        return this;
+    }
+
+    private MultiArgument<String> phoneNumber;
+
+    @RequestField(name="phone_number")
+    /**
+    * The phone number list separated by semicolon (;) that can be used
+    * instead of <b>phone_id</b>
+    */
+    public MultiArgument<String> getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    public boolean hasPhoneNumber() {
+        return this.phoneNumber != null;
+    }
+
+    /**
+    * The phone number list separated by semicolon (;) that can be used
+    * instead of <b>phone_id</b>
+    */
+    public GetPhoneNumbersRequest setPhoneNumber(MultiArgument<String> d) {
+        this.phoneNumber = d;
         return this;
     }
 
@@ -40,7 +65,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -51,7 +76,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public GetPhoneNumbersRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -62,8 +87,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -74,8 +98,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public GetPhoneNumbersRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -86,7 +109,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="is_bound_to_application")
     /**
-    * Is a phone bound to an application.
+    * Is a phone bound to an application
     */
     public Boolean getIsBoundToApplication() {
         return this.isBoundToApplication;
@@ -97,7 +120,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Is a phone bound to an application.
+    * Is a phone bound to an application
     */
     public GetPhoneNumbersRequest setIsBoundToApplication(boolean d) {
         this.isBoundToApplication = Boolean.valueOf(d);
@@ -130,7 +153,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code list separated by the ';' symbol.
+    * The country code list separated by semicolon (;)
     */
     public MultiArgument<String> getCountryCode() {
         return this.countryCode;
@@ -141,7 +164,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The country code list separated by the ';' symbol.
+    * The country code list separated by semicolon (;)
     */
     public GetPhoneNumbersRequest setCountryCode(MultiArgument<String> d) {
         this.countryCode = d;
@@ -152,7 +175,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -163,7 +186,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public GetPhoneNumbersRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
@@ -174,7 +197,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="canceled")
     /**
-    * The flag of the canceled (deleted) subscription to filter.
+    * The flag of the canceled (deleted) subscription to filter
     */
     public Boolean getCanceled() {
         return this.canceled;
@@ -185,7 +208,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The flag of the canceled (deleted) subscription to filter.
+    * The flag of the canceled (deleted) subscription to filter
     */
     public GetPhoneNumbersRequest setCanceled(boolean d) {
         this.canceled = Boolean.valueOf(d);
@@ -196,7 +219,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="deactivated")
     /**
-    * The flag of the deactivated (frozen) subscription to filter.
+    * The flag of the deactivated (frozen) subscription to filter
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -207,7 +230,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The flag of the deactivated (frozen) subscription to filter.
+    * The flag of the deactivated (frozen) subscription to filter
     */
     public GetPhoneNumbersRequest setDeactivated(boolean d) {
         this.deactivated = Boolean.valueOf(d);
@@ -218,7 +241,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="auto_charge")
     /**
-    * The auto_charge flag to filter.
+    * The auto_charge flag to filter
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -229,7 +252,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The auto_charge flag to filter.
+    * The auto_charge flag to filter
     */
     public GetPhoneNumbersRequest setAutoCharge(boolean d) {
         this.autoCharge = Boolean.valueOf(d);
@@ -336,8 +359,8 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
         return this.childAccountId;
@@ -348,8 +371,8 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public GetPhoneNumbersRequest setChildAccountId(MultiArgument<Long> d) {
         this.childAccountId = d;
@@ -360,7 +383,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="children_phones_only")
     /**
-    * Set true to get the children phones only.
+    * Set true to get the children phones only
     */
     public Boolean getChildrenPhonesOnly() {
         return this.childrenPhonesOnly;
@@ -371,7 +394,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the children phones only.
+    * Set true to get the children phones only
     */
     public GetPhoneNumbersRequest setChildrenPhonesOnly(boolean d) {
         this.childrenPhonesOnly = Boolean.valueOf(d);
@@ -382,7 +405,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="verification_name")
     /**
-    * The required account verification name to filter.
+    * The required account verification name to filter
     */
     public String getVerificationName() {
         return this.verificationName;
@@ -393,7 +416,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The required account verification name to filter.
+    * The required account verification name to filter
     */
     public GetPhoneNumbersRequest setVerificationName(String d) {
         this.verificationName = d;
@@ -404,7 +427,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="verification_status")
     /**
-    * The account verification status list separated by the ';' symbol. The
+    * The account verification status list separated by semicolon (;). The
     * following values are possible: REQUIRED, IN_PROGRESS, VERIFIED
     */
     public MultiArgument<String> getVerificationStatus() {
@@ -416,7 +439,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The account verification status list separated by the ';' symbol. The
+    * The account verification status list separated by semicolon (;). The
     * following values are possible: REQUIRED, IN_PROGRESS, VERIFIED
     */
     public GetPhoneNumbersRequest setVerificationStatus(MultiArgument<String> d) {
@@ -476,7 +499,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="can_be_used")
     /**
-    * Can the unverified account use the phone?
+    * Unverified account can use the phone
     */
     public Boolean getCanBeUsed() {
         return this.canBeUsed;
@@ -487,7 +510,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Can the unverified account use the phone?
+    * Unverified account can use the phone
     */
     public GetPhoneNumbersRequest setCanBeUsed(boolean d) {
         this.canBeUsed = Boolean.valueOf(d);
@@ -503,7 +526,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     * 'deactivated' (deactivated first, active last), 'purchase_date'
     * (descent order), 'phone_next_renewal' (ascent order),
     * 'verification_status', 'unverified_hold_until' (ascent order),
-    * 'verification_name'.
+    * 'verification_name'
     */
     public String getOrderBy() {
         return this.orderBy;
@@ -519,7 +542,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     * 'deactivated' (deactivated first, active last), 'purchase_date'
     * (descent order), 'phone_next_renewal' (ascent order),
     * 'verification_status', 'unverified_hold_until' (ascent order),
-    * 'verification_name'.
+    * 'verification_name'
     */
     public GetPhoneNumbersRequest setOrderBy(String d) {
         this.orderBy = d;
@@ -532,7 +555,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     /**
     * Flag allows you to display only the numbers of the sandbox, real
     * numbers, or all numbers. The following values are possible: 'all',
-    * 'true', 'false'.
+    * 'true', 'false'
     */
     public String getSandbox() {
         return this.sandbox;
@@ -545,7 +568,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     /**
     * Flag allows you to display only the numbers of the sandbox, real
     * numbers, or all numbers. The following values are possible: 'all',
-    * 'true', 'false'.
+    * 'true', 'false'
     */
     public GetPhoneNumbersRequest setSandbox(String d) {
         this.sandbox = d;
@@ -556,7 +579,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -567,7 +590,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetPhoneNumbersRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -578,7 +601,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -589,7 +612,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetPhoneNumbersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -600,7 +623,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="sms_supported")
     /**
-    * The flag of the SMS support.
+    * The flag of the SMS support
     */
     public Boolean getSmsSupported() {
         return this.smsSupported;
@@ -611,7 +634,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The flag of the SMS support.
+    * The flag of the SMS support
     */
     public GetPhoneNumbersRequest setSmsSupported(boolean d) {
         this.smsSupported = Boolean.valueOf(d);
@@ -622,7 +645,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="phone_region_name")
     /**
-    * The region names list separated by the ';' symbol.
+    * The region names list separated by semicolon (;)
     */
     public MultiArgument<String> getPhoneRegionName() {
         return this.phoneRegionName;
@@ -633,7 +656,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The region names list separated by the ';' symbol.
+    * The region names list separated by semicolon (;)
     */
     public GetPhoneNumbersRequest setPhoneRegionName(MultiArgument<String> d) {
         this.phoneRegionName = d;
@@ -644,7 +667,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID list separated by the ';' symbol.
+    * The rule ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getRuleId() {
         return this.ruleId;
@@ -655,7 +678,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The rule ID list separated by the ';' symbol.
+    * The rule ID list separated by semicolon (;)
     */
     public GetPhoneNumbersRequest setRuleId(MultiArgument<Long> d) {
         this.ruleId = d;
@@ -666,8 +689,8 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule names list separated by the ';' symbol. Can be used only if
-    * __application_id__ or __application_name__ is specified.
+    * The rule names list separated by semicolon (;). Can be used only if
+    * __application_id__ or __application_name__ is specified
     */
     public MultiArgument<String> getRuleName() {
         return this.ruleName;
@@ -678,8 +701,8 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The rule names list separated by the ';' symbol. Can be used only if
-    * __application_id__ or __application_name__ is specified.
+    * The rule names list separated by semicolon (;). Can be used only if
+    * __application_id__ or __application_name__ is specified
     */
     public GetPhoneNumbersRequest setRuleName(MultiArgument<String> d) {
         this.ruleName = d;
@@ -690,7 +713,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="is_bound_to_rule")
     /**
-    * Is the number bound to any rule?
+    * Number is bound to some rule
     */
     public Boolean getIsBoundToRule() {
         return this.isBoundToRule;
@@ -701,7 +724,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Is the number bound to any rule?
+    * Number is bound to some rule
     */
     public GetPhoneNumbersRequest setIsBoundToRule(boolean d) {
         this.isBoundToRule = Boolean.valueOf(d);
@@ -721,6 +744,14 @@ public class GetPhoneNumbersRequest implements Alignable {
             sb.append(aligned)
                 .append("\"phoneId\": \"")
                 .append(phoneId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneNumber != null) {
+            sb.append(aligned)
+                .append("\"phoneNumber\": \"")
+                .append(phoneNumber)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

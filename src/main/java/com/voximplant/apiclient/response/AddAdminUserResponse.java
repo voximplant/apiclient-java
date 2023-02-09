@@ -37,7 +37,7 @@ public class AddAdminUserResponse implements Alignable {
     private Long adminUserId;
 
     /**
-    * The new admin user ID.
+    * The new admin user ID
     */
     public Long getAdminUserId() {
         return this.adminUserId;
@@ -50,7 +50,7 @@ public class AddAdminUserResponse implements Alignable {
     private String adminUserApiKey;
 
     /**
-    * The admin user API key.
+    * The admin user API key
     */
     public String getAdminUserApiKey() {
         return this.adminUserApiKey;

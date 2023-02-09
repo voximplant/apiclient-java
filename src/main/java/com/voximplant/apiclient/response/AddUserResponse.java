@@ -37,7 +37,7 @@ public class AddUserResponse implements Alignable {
     private Long userId;
 
     /**
-    * The new user ID.
+    * The new user ID
     */
     public Long getUserId() {
         return this.userId;

@@ -18,7 +18,7 @@ public class AdminUserType implements Alignable {
     private Long adminUserId;
 
     /**
-    * The admin user ID.
+    * The admin user ID
     */
     public Long getAdminUserId() {
         return this.adminUserId;
@@ -31,7 +31,7 @@ public class AdminUserType implements Alignable {
     private String adminUserName;
 
     /**
-    * The admin user name.
+    * The admin user name
     */
     public String getAdminUserName() {
         return this.adminUserName;
@@ -44,7 +44,7 @@ public class AdminUserType implements Alignable {
     private String adminUserDisplayName;
 
     /**
-    * The admin user display name.
+    * The admin user display name
     */
     public String getAdminUserDisplayName() {
         return this.adminUserDisplayName;
@@ -57,7 +57,7 @@ public class AdminUserType implements Alignable {
     private Boolean adminUserActive;
 
     /**
-    * Is allowed to logon?
+    * Login is allowed
     */
     public Boolean getAdminUserActive() {
         return this.adminUserActive;
@@ -84,7 +84,7 @@ public class AdminUserType implements Alignable {
     private String[] accessEntries;
 
     /**
-    * The allowed access entries (the API function names).
+    * The allowed access entries (the API function names)
     */
     public String[] getAccessEntries() {
         return this.accessEntries;
@@ -97,7 +97,7 @@ public class AdminUserType implements Alignable {
     private AdminRoleType[] adminRoles;
 
     /**
-    * The attached admin roles.
+    * The attached admin roles
     */
     public AdminRoleType[] getAdminRoles() {
         return this.adminRoles;

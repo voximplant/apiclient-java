@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class StartNextCallTaskRequest implements Alignable {
 
     @RequestField(name="list_id")
     /**
-    * The list of the call list IDs separated by the ';' symbol.
+    * The list of the call list IDs separated by semicolon (;)
     */
     public MultiArgument<Long> getListId() {
         return this.listId;
@@ -29,7 +30,7 @@ public class StartNextCallTaskRequest implements Alignable {
     }
 
     /**
-    * The list of the call list IDs separated by the ';' symbol.
+    * The list of the call list IDs separated by semicolon (;)
     */
     public StartNextCallTaskRequest setListId(MultiArgument<Long> d) {
         this.listId = d;
@@ -40,8 +41,7 @@ public class StartNextCallTaskRequest implements Alignable {
 
     @RequestField(name="custom_params")
     /**
-    * The custom param to pass the call initiator parameters to the
-    * scenario.
+    * The custom param to pass the call initiator parameters to the scenario
     */
     public String getCustomParams() {
         return this.customParams;
@@ -52,8 +52,7 @@ public class StartNextCallTaskRequest implements Alignable {
     }
 
     /**
-    * The custom param to pass the call initiator parameters to the
-    * scenario.
+    * The custom param to pass the call initiator parameters to the scenario
     */
     public StartNextCallTaskRequest setCustomParams(String d) {
         this.customParams = d;

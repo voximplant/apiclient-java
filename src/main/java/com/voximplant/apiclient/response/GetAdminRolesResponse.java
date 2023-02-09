@@ -34,7 +34,7 @@ public class GetAdminRolesResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found admin role count.
+    * The total found admin role count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetAdminRolesResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned admin role count.
+    * The returned admin role count
     */
     public Long getCount() {
         return this.count;

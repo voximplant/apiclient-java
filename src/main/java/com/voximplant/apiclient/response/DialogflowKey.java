@@ -12,14 +12,14 @@ import com.voximplant.apiclient.util.Alignable;
 
 /**
 * The [Dialogflow](/docs/references/httpapi/dialogflowcredentials)
-* key's content
+* key's content.
 */
 public class DialogflowKey implements Alignable {
 
     private String projectId;
 
     /**
-    * The project ID from Json Web Key.
+    * The project ID from Json Web Key
     */
     public String getProjectId() {
         return this.projectId;

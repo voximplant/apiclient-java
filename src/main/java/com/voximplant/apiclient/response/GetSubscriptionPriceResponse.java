@@ -24,7 +24,7 @@ public class GetSubscriptionPriceResponse implements Alignable {
     private SubscriptionTemplateType[] result;
 
     /**
-    * The subscription template prices.
+    * The subscription template prices
     */
     public SubscriptionTemplateType[] getResult() {
         return this.result;

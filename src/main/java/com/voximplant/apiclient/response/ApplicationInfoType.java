@@ -18,7 +18,7 @@ public class ApplicationInfoType implements Alignable {
     private Long applicationId;
 
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +31,7 @@ public class ApplicationInfoType implements Alignable {
     private String applicationName;
 
     /**
-    * The full application name.
+    * The full application name
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -59,7 +59,7 @@ public class ApplicationInfoType implements Alignable {
 
     /**
     * This flag indicates whether a secure storage for logs and records is
-    * enabled or not.
+    * enabled or not
     */
     public Boolean getSecureRecordStorage() {
         return this.secureRecordStorage;
@@ -67,20 +67,6 @@ public class ApplicationInfoType implements Alignable {
 
     public boolean hasSecureRecordStorage() {
         return this.secureRecordStorage != null;
-    }
-
-    private UserInfoType[] users;
-
-    /**
-    * The filtered users. (Note: a user object contains the 'user_id' field
-    * only)
-    */
-    public UserInfoType[] getUsers() {
-        return this.users;
-    }
-
-    public boolean hasUsers() {
-        return this.users != null;
     }
 
     public String toString(int alignment) {
@@ -122,12 +108,6 @@ public class ApplicationInfoType implements Alignable {
                 .append(secureRecordStorage)
                 .append('"')
                 .append(',')
-                .append(System.lineSeparator());
-        }
-        if (users != null) {
-            sb.append(aligned)
-                .append("\"UserInfoType\": ")
-                .append(StringHelper.arrayToString(users, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

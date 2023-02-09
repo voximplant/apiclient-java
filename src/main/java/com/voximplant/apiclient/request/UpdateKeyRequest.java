@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -40,7 +41,7 @@ public class UpdateKeyRequest implements Alignable {
 
     @RequestField(name="description")
     /**
-    * The key's description.
+    * The key's description
     */
     public String getDescription() {
         return this.description;
@@ -51,7 +52,7 @@ public class UpdateKeyRequest implements Alignable {
     }
 
     /**
-    * The key's description.
+    * The key's description
     */
     public UpdateKeyRequest setDescription(String d) {
         this.description = d;

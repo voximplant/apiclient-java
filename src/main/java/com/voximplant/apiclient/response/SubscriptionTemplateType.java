@@ -18,7 +18,7 @@ public class SubscriptionTemplateType implements Alignable {
     private Long subscriptionTemplateId;
 
     /**
-    * The subscription template ID.
+    * The subscription template ID
     */
     public Long getSubscriptionTemplateId() {
         return this.subscriptionTemplateId;
@@ -28,10 +28,23 @@ public class SubscriptionTemplateType implements Alignable {
         return this.subscriptionTemplateId != null;
     }
 
+    private Long currencyId;
+
+    /**
+    * ID of the original currency
+    */
+    public Long getCurrencyId() {
+        return this.currencyId;
+    }
+
+    public boolean hasCurrencyId() {
+        return this.currencyId != null;
+    }
+
     private BigDecimal installationPrice;
 
     /**
-    * The subscription installation price (without the first monthly fee).
+    * The subscription installation price (without the first monthly fee)
     */
     public BigDecimal getInstallationPrice() {
         return this.installationPrice;
@@ -41,12 +54,25 @@ public class SubscriptionTemplateType implements Alignable {
         return this.installationPrice != null;
     }
 
-    private String price;
+    private Long installationPriceInCurrency;
 
     /**
-    * The subscription monthly fee, including taxes and discounts.
+    * The subscription installation price in the original currency
     */
-    public String getPrice() {
+    public Long getInstallationPriceInCurrency() {
+        return this.installationPriceInCurrency;
+    }
+
+    public boolean hasInstallationPriceInCurrency() {
+        return this.installationPriceInCurrency != null;
+    }
+
+    private Long price;
+
+    /**
+    * The subscription monthly fee, including taxes and discounts
+    */
+    public Long getPrice() {
         return this.price;
     }
 
@@ -54,11 +80,24 @@ public class SubscriptionTemplateType implements Alignable {
         return this.price != null;
     }
 
+    private Long priceInCurrency;
+
+    /**
+    * The subscription monthly fee in the original currency
+    */
+    public Long getPriceInCurrency() {
+        return this.priceInCurrency;
+    }
+
+    public boolean hasPriceInCurrency() {
+        return this.priceInCurrency != null;
+    }
+
     private String period;
 
     /**
     * The charge period in 24-h format: Y-M-D H:m:s. Example: 0-1-0 0:0:0
-    * is 1 month.
+    * is 1 month
     */
     public String getPeriod() {
         return this.period;
@@ -72,7 +111,7 @@ public class SubscriptionTemplateType implements Alignable {
 
     /**
     * The subscription template type. The following values are possible:
-    * PHONE_NUM, SIP_REGISTRATION.
+    * PHONE_NUM, SIP_REGISTRATION
     */
     public String getSubscriptionTemplateType() {
         return this.subscriptionTemplateType;
@@ -86,7 +125,7 @@ public class SubscriptionTemplateType implements Alignable {
 
     /**
     * The subscription template name (example: SIP registration, Phone GB,
-    * Phone RU 495, ...).
+    * Phone RU 495, ...)
     */
     public String getSubscriptionTemplateName() {
         return this.subscriptionTemplateName;
@@ -96,12 +135,12 @@ public class SubscriptionTemplateType implements Alignable {
         return this.subscriptionTemplateName != null;
     }
 
-    private String requiredVerification;
+    private Boolean requiredVerification;
 
     /**
-    * The name of the required verification.
+    * Verification is required for the account
     */
-    public String getRequiredVerification() {
+    public Boolean getRequiredVerification() {
         return this.requiredVerification;
     }
 
@@ -112,8 +151,8 @@ public class SubscriptionTemplateType implements Alignable {
     private String verificationStatus;
 
     /**
-    * The verification status. Possible values are: REQUIRED, IN_PROGRESS,
-    * VERIFIED, NOT_REQUIRED.
+    * The verification status. Possible values are REQUIRED, IN_PROGRESS,
+    * VERIFIED, NOT_REQUIRED
     */
     public String getVerificationStatus() {
         return this.verificationStatus;
@@ -140,6 +179,14 @@ public class SubscriptionTemplateType implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
+        if (currencyId != null) {
+            sb.append(aligned)
+                .append("\"currencyId\": \"")
+                .append(currencyId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (installationPrice != null) {
             sb.append(aligned)
                 .append("\"installationPrice\": \"")
@@ -148,10 +195,26 @@ public class SubscriptionTemplateType implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
+        if (installationPriceInCurrency != null) {
+            sb.append(aligned)
+                .append("\"installationPriceInCurrency\": \"")
+                .append(installationPriceInCurrency)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (price != null) {
             sb.append(aligned)
                 .append("\"price\": \"")
                 .append(price)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (priceInCurrency != null) {
+            sb.append(aligned)
+                .append("\"priceInCurrency\": \"")
+                .append(priceInCurrency)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

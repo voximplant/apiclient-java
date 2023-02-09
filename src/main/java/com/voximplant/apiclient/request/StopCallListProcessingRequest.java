@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class StopCallListProcessingRequest implements Alignable {
 
     @RequestField(name="list_id")
     /**
-    * The list Id.
+    * The list Id
     */
     public Long getListId() {
         return this.listId;
@@ -29,7 +30,7 @@ public class StopCallListProcessingRequest implements Alignable {
     }
 
     /**
-    * The list Id.
+    * The list Id
     */
     public StopCallListProcessingRequest setListId(long d) {
         this.listId = Long.valueOf(d);

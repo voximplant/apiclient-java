@@ -1,8 +1,8 @@
 package com.voximplant.apiexamples;
 
 import com.voximplant.apiclient.ClientException;
-import com.voximplant.apiclient.request.LinkregulationAddressRequest;
-import com.voximplant.apiclient.response.LinkregulationAddressResponse;
+import com.voximplant.apiclient.request.SQ_BindSkillRequest;
+import com.voximplant.apiclient.response.SQ_BindSkillResponse;
 import com.voximplant.apiclient.VoximplantAPIClient;
 import com.voximplant.apiclient.util.MultiArgument;
 import java.util.Date;
@@ -13,17 +13,18 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Link regulation address to phone number
+* Bind the skills with id 1 and 2 to all users.
 */
-public class LinkregulationAddressExample {
+public class SQ_BindSkillExample {
     public static void main(String [] args) {
         try {
             VoximplantAPIClient client = new VoximplantAPIClient("/path/to/credentials.json");
 
 
-            LinkregulationAddressResponse res = client.linkregulationAddress(new LinkregulationAddressRequest()
-                .setRegulationAddressId(1)
-                .setPhoneId(1)
+            SQ_BindSkillResponse res = client.sQ_BindSkill(new SQ_BindSkillRequest()
+                .setApplicationId(1)
+                .setUserId(MultiArgument.forAllValues())
+                .setSqSkills("[{\"sq_skill_id\":1,\"sq_skill_level\":1},{\"sq_skill_id\":2,\"sq_skill_level\":5}]")
             );
             System.out.println("OK");
         } catch (IOException | ClientException e) {

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetRuleInfoRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID.
+    * The rule ID
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -29,7 +30,7 @@ public class SetRuleInfoRequest implements Alignable {
     }
 
     /**
-    * The rule ID.
+    * The rule ID
     */
     public SetRuleInfoRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -62,7 +63,7 @@ public class SetRuleInfoRequest implements Alignable {
 
     @RequestField(name="rule_pattern")
     /**
-    * The new rule pattern regex. The length must be less than 64 KB.
+    * The new rule pattern regex. The length must be less than 64 KB
     */
     public String getRulePattern() {
         return this.rulePattern;
@@ -73,7 +74,7 @@ public class SetRuleInfoRequest implements Alignable {
     }
 
     /**
-    * The new rule pattern regex. The length must be less than 64 KB.
+    * The new rule pattern regex. The length must be less than 64 KB
     */
     public SetRuleInfoRequest setRulePattern(String d) {
         this.rulePattern = d;
@@ -84,7 +85,7 @@ public class SetRuleInfoRequest implements Alignable {
 
     @RequestField(name="rule_pattern_exclude")
     /**
-    * The new exclude pattern regex. The length must be less than 64 KB.
+    * The new exclude pattern regex. The length must be less than 64 KB
     */
     public String getRulePatternExclude() {
         return this.rulePatternExclude;
@@ -95,7 +96,7 @@ public class SetRuleInfoRequest implements Alignable {
     }
 
     /**
-    * The new exclude pattern regex. The length must be less than 64 KB.
+    * The new exclude pattern regex. The length must be less than 64 KB
     */
     public SetRuleInfoRequest setRulePatternExclude(String d) {
         this.rulePatternExclude = d;
@@ -106,7 +107,7 @@ public class SetRuleInfoRequest implements Alignable {
 
     @RequestField(name="video_conference")
     /**
-    * Is video conference required?
+    * Video conference is required
     */
     public Boolean getVideoConference() {
         return this.videoConference;
@@ -117,7 +118,7 @@ public class SetRuleInfoRequest implements Alignable {
     }
 
     /**
-    * Is video conference required?
+    * Video conference is required
     */
     public SetRuleInfoRequest setVideoConference(boolean d) {
         this.videoConference = Boolean.valueOf(d);

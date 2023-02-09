@@ -18,7 +18,7 @@ public class SubscriptionsToChargeType implements Alignable {
     private BigDecimal subscriptionAmount;
 
     /**
-    * The money amount to charge in the specified currency.
+    * The money amount to charge in the specified currency
     */
     public BigDecimal getSubscriptionAmount() {
         return this.subscriptionAmount;
@@ -45,7 +45,7 @@ public class SubscriptionsToChargeType implements Alignable {
 
     /**
     * The subscription description (details). Example: the subscribed phone
-    * number.
+    * number
     */
     public String getSubscriptionDescription() {
         return this.subscriptionDescription;
@@ -58,7 +58,7 @@ public class SubscriptionsToChargeType implements Alignable {
     private Boolean subscriptionAutoCharge;
 
     /**
-    * The auto charge flag.
+    * The auto charge flag
     */
     public Boolean getSubscriptionAutoCharge() {
         return this.subscriptionAutoCharge;
@@ -73,7 +73,7 @@ public class SubscriptionsToChargeType implements Alignable {
 
     /**
     * The next renewal date, format: YYYY-MM-DD. Displayed for only
-    * verified phone numbers.
+    * verified phone numbers
     */
     public Date getSubscriptionNextRenewal() {
         return this.subscriptionNextRenewal;

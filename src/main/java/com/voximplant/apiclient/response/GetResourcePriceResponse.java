@@ -24,7 +24,7 @@ public class GetResourcePriceResponse implements Alignable {
     private ResourcePrice[] result;
 
     /**
-    * The resource prices.
+    * The resource prices
     */
     public ResourcePrice[] getResult() {
         return this.result;

@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Create a new subuser for account_id = 1
+* Create a new subuser for account_id = 1.
 */
 public class AddSubUserExample {
     public static void main(String [] args) {

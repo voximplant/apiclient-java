@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetSkillsRequest implements Alignable {
 
     @RequestField(name="skill_id")
     /**
-    * The skill ID to filter.
+    * The skill ID to filter
     */
     public Long getSkillId() {
         return this.skillId;
@@ -29,7 +30,7 @@ public class GetSkillsRequest implements Alignable {
     }
 
     /**
-    * The skill ID to filter.
+    * The skill ID to filter
     */
     public GetSkillsRequest setSkillId(long d) {
         this.skillId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetSkillsRequest implements Alignable {
 
     @RequestField(name="skill_name")
     /**
-    * The skill name part to filter.
+    * The skill name part to filter
     */
     public String getSkillName() {
         return this.skillName;
@@ -51,7 +52,7 @@ public class GetSkillsRequest implements Alignable {
     }
 
     /**
-    * The skill name part to filter.
+    * The skill name part to filter
     */
     public GetSkillsRequest setSkillName(String d) {
         this.skillName = d;
@@ -62,7 +63,7 @@ public class GetSkillsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -73,7 +74,7 @@ public class GetSkillsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetSkillsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -84,7 +85,7 @@ public class GetSkillsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -95,7 +96,7 @@ public class GetSkillsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetSkillsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

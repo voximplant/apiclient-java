@@ -45,7 +45,7 @@ public class ACDQueueStateType implements Alignable {
     private Long readyOperatorsCount;
 
     /**
-    * Number of ready operators.
+    * Number of ready operators
     */
     public Long getReadyOperatorsCount() {
         return this.readyOperatorsCount;
@@ -73,7 +73,7 @@ public class ACDQueueStateType implements Alignable {
     private Long lockedOperatorsCount;
 
     /**
-    * Number of locked operators.
+    * Number of locked operators
     */
     public Long getLockedOperatorsCount() {
         return this.lockedOperatorsCount;
@@ -87,7 +87,7 @@ public class ACDQueueStateType implements Alignable {
 
     /**
     * List of operators with the 'AFTER_SERVICE' state. This state is set
-    * right after a call is ended to indicate a call postprocessing.
+    * right after a call is ended to indicate a call postprocessing
     */
     public ACDAfterServiceOperatorStateType[] getAfterServiceOperators() {
         return this.afterServiceOperators;
@@ -100,7 +100,7 @@ public class ACDQueueStateType implements Alignable {
     private Long afterServiceOperatorCount;
 
     /**
-    * Number of operators with the 'AFTER SERVICE' state.
+    * Number of operators with the 'AFTER SERVICE' state
     */
     public Long getAfterServiceOperatorCount() {
         return this.afterServiceOperatorCount;

@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get statistics for all queues from the specified date
+* Get WT and TT statistics for the queue from the specified date.
 */
 public class GetACDQueueStatisticsExample {
     public static void main(String [] args) {
@@ -21,10 +21,16 @@ public class GetACDQueueStatisticsExample {
             VoximplantAPIClient client = new VoximplantAPIClient("/path/to/credentials.json");
 
             Calendar fromDate = Calendar.getInstance(TimeZone.getTimeZone("Etc/UTC"));
-            fromDate.set(2017, 1, 1, 0, 0, 0);
+            fromDate.set(2021, 4, 8, 0, 0, 0);
+            Calendar toDate = Calendar.getInstance(TimeZone.getTimeZone("Etc/UTC"));
+            toDate.set(2021, 4, 10, 0, 0, 0);
 
             GetACDQueueStatisticsResponse res = client.getACDQueueStatistics(new GetACDQueueStatisticsRequest()
                 .setFromDate(fromDate.getTime())
+                .setToDate(toDate.getTime())
+                .setAcdQueueId(MultiArgument.forSingleValue(54L))
+                .setReport(MultiArgument.forSingleValue("WT"))
+                .setAggregation("day")
             );
             System.out.println("OK");
         } catch (IOException | ClientException e) {

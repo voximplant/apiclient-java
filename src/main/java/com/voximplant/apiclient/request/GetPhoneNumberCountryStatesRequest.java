@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetPhoneNumberCountryStatesRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code.
+    * The country code
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -29,7 +30,7 @@ public class GetPhoneNumberCountryStatesRequest implements Alignable {
     }
 
     /**
-    * The country code.
+    * The country code
     */
     public GetPhoneNumberCountryStatesRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -40,7 +41,7 @@ public class GetPhoneNumberCountryStatesRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the GetPhoneNumberCategories function.
+    * The phone category name. See the GetPhoneNumberCategories function
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -51,7 +52,7 @@ public class GetPhoneNumberCountryStatesRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the GetPhoneNumberCategories function.
+    * The phone category name. See the GetPhoneNumberCategories function
     */
     public GetPhoneNumberCountryStatesRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
@@ -62,7 +63,7 @@ public class GetPhoneNumberCountryStatesRequest implements Alignable {
 
     @RequestField(name="country_state")
     /**
-    * The country state code (example: AL, CA, ... ).
+    * The country state code (example: AL, CA, ... )
     */
     public String getCountryState() {
         return this.countryState;
@@ -73,7 +74,7 @@ public class GetPhoneNumberCountryStatesRequest implements Alignable {
     }
 
     /**
-    * The country state code (example: AL, CA, ... ).
+    * The country state code (example: AL, CA, ... )
     */
     public GetPhoneNumberCountryStatesRequest setCountryState(String d) {
         this.countryState = d;

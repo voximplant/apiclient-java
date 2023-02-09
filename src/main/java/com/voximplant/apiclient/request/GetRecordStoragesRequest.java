@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetRecordStoragesRequest implements Alignable {
 
     @RequestField(name="record_storage_id")
     /**
-    * The record storage ID list separated by the ';' symbol.
+    * The record storage ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getRecordStorageId() {
         return this.recordStorageId;
@@ -29,7 +30,7 @@ public class GetRecordStoragesRequest implements Alignable {
     }
 
     /**
-    * The record storage ID list separated by the ';' symbol.
+    * The record storage ID list separated by semicolon (;)
     */
     public GetRecordStoragesRequest setRecordStorageId(MultiArgument<Long> d) {
         this.recordStorageId = d;
@@ -40,7 +41,7 @@ public class GetRecordStoragesRequest implements Alignable {
 
     @RequestField(name="record_storage_name")
     /**
-    * The record storage name list separated by the ';' symbol.
+    * The record storage name list separated by semicolon (;)
     */
     public MultiArgument<String> getRecordStorageName() {
         return this.recordStorageName;
@@ -51,7 +52,7 @@ public class GetRecordStoragesRequest implements Alignable {
     }
 
     /**
-    * The record storage name list separated by the ';' symbol.
+    * The record storage name list separated by semicolon (;)
     */
     public GetRecordStoragesRequest setRecordStorageName(MultiArgument<String> d) {
         this.recordStorageName = d;
@@ -63,7 +64,7 @@ public class GetRecordStoragesRequest implements Alignable {
     @RequestField(name="with_private")
     /**
     * Set true to get the private record storages. If set to true, there is
-    * the __is_public : bool__ parameter in a response.
+    * the __is_public : bool__ parameter in a response
     */
     public Boolean getWithPrivate() {
         return this.withPrivate;
@@ -75,7 +76,7 @@ public class GetRecordStoragesRequest implements Alignable {
 
     /**
     * Set true to get the private record storages. If set to true, there is
-    * the __is_public : bool__ parameter in a response.
+    * the __is_public : bool__ parameter in a response
     */
     public GetRecordStoragesRequest setWithPrivate(boolean d) {
         this.withPrivate = Boolean.valueOf(d);

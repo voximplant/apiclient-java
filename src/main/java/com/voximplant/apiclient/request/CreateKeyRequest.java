@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class CreateKeyRequest implements Alignable {
 
     @RequestField(name="description")
     /**
-    * The key's description.
+    * The key's description
     */
     public String getDescription() {
         return this.description;
@@ -29,7 +30,7 @@ public class CreateKeyRequest implements Alignable {
     }
 
     /**
-    * The key's description.
+    * The key's description
     */
     public CreateKeyRequest setDescription(String d) {
         this.description = d;
@@ -40,8 +41,8 @@ public class CreateKeyRequest implements Alignable {
 
     @RequestField(name="role_id")
     /**
-    * The role ID list separated by the ';' symbol. Use it instead of
-    * **role_name**, but not combine with.
+    * The role ID list separated by semicolon (;). Use it instead of
+    * **role_name**, but not combine with
     */
     public MultiArgument<Long> getRoleId() {
         return this.roleId;
@@ -52,8 +53,8 @@ public class CreateKeyRequest implements Alignable {
     }
 
     /**
-    * The role ID list separated by the ';' symbol. Use it instead of
-    * **role_name**, but not combine with.
+    * The role ID list separated by semicolon (;). Use it instead of
+    * **role_name**, but not combine with
     */
     public CreateKeyRequest setRoleId(MultiArgument<Long> d) {
         this.roleId = d;
@@ -64,8 +65,8 @@ public class CreateKeyRequest implements Alignable {
 
     @RequestField(name="role_name")
     /**
-    * The role name list separated by the ';' symbol. Use it instead of
-    * **role_id**, but not combine with.
+    * The role name list separated by semicolon (;). Use it instead of
+    * **role_id**, but not combine with
     */
     public MultiArgument<String> getRoleName() {
         return this.roleName;
@@ -76,8 +77,8 @@ public class CreateKeyRequest implements Alignable {
     }
 
     /**
-    * The role name list separated by the ';' symbol. Use it instead of
-    * **role_id**, but not combine with.
+    * The role name list separated by semicolon (;). Use it instead of
+    * **role_id**, but not combine with
     */
     public CreateKeyRequest setRoleName(MultiArgument<String> d) {
         this.roleName = d;

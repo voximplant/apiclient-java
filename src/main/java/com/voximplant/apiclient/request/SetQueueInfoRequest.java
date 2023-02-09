@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID.
+    * The ACD queue ID
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -29,7 +30,7 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID.
+    * The ACD queue ID
     */
     public SetQueueInfoRequest setAcdQueueId(long d) {
         this.acdQueueId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="acd_queue_name")
     /**
-    * The ACD queue name that can be used instead of <b>acd_queue_id</b>.
+    * The ACD queue name that can be used instead of <b>acd_queue_id</b>
     */
     public String getAcdQueueName() {
         return this.acdQueueName;
@@ -51,7 +52,7 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The ACD queue name that can be used instead of <b>acd_queue_id</b>.
+    * The ACD queue name that can be used instead of <b>acd_queue_id</b>
     */
     public SetQueueInfoRequest setAcdQueueName(String d) {
         this.acdQueueName = d;
@@ -62,7 +63,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="new_acd_queue_name")
     /**
-    * The new queue name. The length must be less than 100.
+    * The new queue name. The length must be less than 100
     */
     public String getNewAcdQueueName() {
         return this.newAcdQueueName;
@@ -73,7 +74,7 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The new queue name. The length must be less than 100.
+    * The new queue name. The length must be less than 100
     */
     public SetQueueInfoRequest setNewAcdQueueName(String d) {
         this.newAcdQueueName = d;
@@ -84,7 +85,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="acd_queue_priority")
     /**
-    * The integer queue priority. The highest priority is 0.
+    * The integer queue priority. The highest priority is 0
     */
     public Long getAcdQueuePriority() {
         return this.acdQueuePriority;
@@ -95,7 +96,7 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The integer queue priority. The highest priority is 0.
+    * The integer queue priority. The highest priority is 0
     */
     public SetQueueInfoRequest setAcdQueuePriority(long d) {
         this.acdQueuePriority = Long.valueOf(d);
@@ -107,7 +108,7 @@ public class SetQueueInfoRequest implements Alignable {
     @RequestField(name="auto_binding")
     /**
     * Set false to disable the auto binding of operators to a queue by
-    * skills comparing.
+    * skills comparing
     */
     public Boolean getAutoBinding() {
         return this.autoBinding;
@@ -119,7 +120,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     /**
     * Set false to disable the auto binding of operators to a queue by
-    * skills comparing.
+    * skills comparing
     */
     public SetQueueInfoRequest setAutoBinding(boolean d) {
         this.autoBinding = Boolean.valueOf(d);
@@ -131,7 +132,7 @@ public class SetQueueInfoRequest implements Alignable {
     @RequestField(name="service_probability")
     /**
     * The value in the range of [0.5 ... 1.0]. The value 1.0 means the
-    * service probability 100% in challenge with a lower priority queue.
+    * service probability 100% in challenge with a lower priority queue
     */
     public Long getServiceProbability() {
         return this.serviceProbability;
@@ -143,7 +144,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     /**
     * The value in the range of [0.5 ... 1.0]. The value 1.0 means the
-    * service probability 100% in challenge with a lower priority queue.
+    * service probability 100% in challenge with a lower priority queue
     */
     public SetQueueInfoRequest setServiceProbability(long d) {
         this.serviceProbability = Long.valueOf(d);
@@ -154,7 +155,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="max_queue_size")
     /**
-    * The max queue size.
+    * The max queue size
     */
     public Long getMaxQueueSize() {
         return this.maxQueueSize;
@@ -165,7 +166,7 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The max queue size.
+    * The max queue size
     */
     public SetQueueInfoRequest setMaxQueueSize(long d) {
         this.maxQueueSize = Long.valueOf(d);
@@ -178,7 +179,7 @@ public class SetQueueInfoRequest implements Alignable {
     /**
     * The max predicted waiting time in minutes. The client is rejected if
     * the predicted waiting time is greater than the max predicted waiting
-    * time.
+    * time
     */
     public Long getMaxWaitingTime() {
         return this.maxWaitingTime;
@@ -191,7 +192,7 @@ public class SetQueueInfoRequest implements Alignable {
     /**
     * The max predicted waiting time in minutes. The client is rejected if
     * the predicted waiting time is greater than the max predicted waiting
-    * time.
+    * time
     */
     public SetQueueInfoRequest setMaxWaitingTime(long d) {
         this.maxWaitingTime = Long.valueOf(d);
@@ -203,7 +204,7 @@ public class SetQueueInfoRequest implements Alignable {
     @RequestField(name="average_service_time")
     /**
     * The average service time in seconds. Specify the parameter to correct
-    * or initialize the waiting time prediction.
+    * or initialize the waiting time prediction
     */
     public Long getAverageServiceTime() {
         return this.averageServiceTime;
@@ -215,7 +216,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     /**
     * The average service time in seconds. Specify the parameter to correct
-    * or initialize the waiting time prediction.
+    * or initialize the waiting time prediction
     */
     public SetQueueInfoRequest setAverageServiceTime(long d) {
         this.averageServiceTime = Long.valueOf(d);
@@ -226,7 +227,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The new application ID.
+    * The new application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -237,7 +238,7 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The new application ID.
+    * The new application ID
     */
     public SetQueueInfoRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);

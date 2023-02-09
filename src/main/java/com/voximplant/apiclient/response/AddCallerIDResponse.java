@@ -37,7 +37,7 @@ public class AddCallerIDResponse implements Alignable {
     private Long calleridId;
 
     /**
-    * The id of the callerID object.
+    * The id of the callerID object
     */
     public Long getCalleridId() {
         return this.calleridId;

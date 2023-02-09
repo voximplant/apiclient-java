@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetSubUserRolesRequest implements Alignable {
 
     @RequestField(name="subuser_id")
     /**
-    * The subuser's ID.
+    * The subuser's ID
     */
     public Long getSubuserId() {
         return this.subuserId;
@@ -29,7 +30,7 @@ public class GetSubUserRolesRequest implements Alignable {
     }
 
     /**
-    * The subuser's ID.
+    * The subuser's ID
     */
     public GetSubUserRolesRequest setSubuserId(long d) {
         this.subuserId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetSubUserRolesRequest implements Alignable {
 
     @RequestField(name="with_expanded_roles")
     /**
-    * Show the roles' additional properties.
+    * Show the roles' additional properties
     */
     public Boolean getWithExpandedRoles() {
         return this.withExpandedRoles;
@@ -51,7 +52,7 @@ public class GetSubUserRolesRequest implements Alignable {
     }
 
     /**
-    * Show the roles' additional properties.
+    * Show the roles' additional properties
     */
     public GetSubUserRolesRequest setWithExpandedRoles(boolean d) {
         this.withExpandedRoles = Boolean.valueOf(d);

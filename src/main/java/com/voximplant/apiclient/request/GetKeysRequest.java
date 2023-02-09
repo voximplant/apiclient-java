@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetKeysRequest implements Alignable {
 
     @RequestField(name="key_id")
     /**
-    * The key's ID.
+    * The key's ID
     */
     public String getKeyId() {
         return this.keyId;
@@ -29,7 +30,7 @@ public class GetKeysRequest implements Alignable {
     }
 
     /**
-    * The key's ID.
+    * The key's ID
     */
     public GetKeysRequest setKeyId(String d) {
         this.keyId = d;
@@ -40,7 +41,7 @@ public class GetKeysRequest implements Alignable {
 
     @RequestField(name="with_roles")
     /**
-    * Show roles for the key.
+    * Show roles for the key
     */
     public Boolean getWithRoles() {
         return this.withRoles;
@@ -51,7 +52,7 @@ public class GetKeysRequest implements Alignable {
     }
 
     /**
-    * Show roles for the key.
+    * Show roles for the key
     */
     public GetKeysRequest setWithRoles(boolean d) {
         this.withRoles = Boolean.valueOf(d);
@@ -62,7 +63,7 @@ public class GetKeysRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -73,7 +74,7 @@ public class GetKeysRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetKeysRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -84,7 +85,7 @@ public class GetKeysRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -95,7 +96,7 @@ public class GetKeysRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetKeysRequest setCount(long d) {
         this.count = Long.valueOf(d);

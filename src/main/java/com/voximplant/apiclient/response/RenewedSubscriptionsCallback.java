@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when subscriptions are renewed. Received as part of the
 * [AccountCallback] structure.
 */
 public class RenewedSubscriptionsCallback implements Alignable {
@@ -19,7 +19,7 @@ public class RenewedSubscriptionsCallback implements Alignable {
     private RenewedSubscriptionsCallbackItem[] subscriptions;
 
     /**
-    * The renewed subscription list.
+    * The renewed subscription list
     */
     public RenewedSubscriptionsCallbackItem[] getSubscriptions() {
         return this.subscriptions;

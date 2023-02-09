@@ -24,7 +24,7 @@ public class GetCallListsResponse implements Alignable {
     private CallListType[] result;
 
     /**
-    * Array of lists.
+    * Array of lists
     */
     public CallListType[] getResult() {
         return this.result;
@@ -37,7 +37,7 @@ public class GetCallListsResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned call list count.
+    * The returned call list count
     */
     public Long getCount() {
         return this.count;
@@ -50,7 +50,7 @@ public class GetCallListsResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found call list count.
+    * The total found call list count
     */
     public Long getTotalCount() {
         return this.totalCount;

@@ -14,7 +14,7 @@ import java.io.IOException;
 
 /**
 * Edit the password and description for the subuser with id = 12 from
-* account_id = 1
+* account_id = 1.
 */
 public class SetSubUserInfoExample {
     public static void main(String [] args) {

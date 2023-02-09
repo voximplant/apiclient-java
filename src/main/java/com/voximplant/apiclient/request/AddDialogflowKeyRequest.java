@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class AddDialogflowKeyRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public String getApplicationId() {
         return this.applicationId;
@@ -29,7 +30,7 @@ public class AddDialogflowKeyRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public AddDialogflowKeyRequest setApplicationId(String d) {
         this.applicationId = d;
@@ -40,7 +41,7 @@ public class AddDialogflowKeyRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name. Can be used instead of <b>application_id</b>.
+    * The application name. Can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -51,7 +52,7 @@ public class AddDialogflowKeyRequest implements Alignable {
     }
 
     /**
-    * The application name. Can be used instead of <b>application_id</b>.
+    * The application name. Can be used instead of <b>application_id</b>
     */
     public AddDialogflowKeyRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -62,7 +63,7 @@ public class AddDialogflowKeyRequest implements Alignable {
 
     @RequestField(name="json_credentials")
     /**
-    * Dialogflow credentials, provided by JWK (Json web key).
+    * Dialogflow credentials, provided by JWK (Json web key)
     */
     public String getJsonCredentials() {
         return this.jsonCredentials;
@@ -73,7 +74,7 @@ public class AddDialogflowKeyRequest implements Alignable {
     }
 
     /**
-    * Dialogflow credentials, provided by JWK (Json web key).
+    * Dialogflow credentials, provided by JWK (Json web key)
     */
     public AddDialogflowKeyRequest setJsonCredentials(String d) {
         this.jsonCredentials = d;
@@ -84,7 +85,7 @@ public class AddDialogflowKeyRequest implements Alignable {
 
     @RequestField(name="description")
     /**
-    * The Dialogflow keys's description.
+    * The Dialogflow keys's description
     */
     public String getDescription() {
         return this.description;
@@ -95,7 +96,7 @@ public class AddDialogflowKeyRequest implements Alignable {
     }
 
     /**
-    * The Dialogflow keys's description.
+    * The Dialogflow keys's description
     */
     public AddDialogflowKeyRequest setDescription(String d) {
         this.description = d;

@@ -61,7 +61,7 @@ public class ACDOperatorStatusStatisticsType implements Alignable {
     private ACDOperatorStatusStatisticsDetail[] acdStatus;
 
     /**
-    * The user statistics.
+    * The user statistics
     */
     public ACDOperatorStatusStatisticsDetail[] getAcdStatus() {
         return this.acdStatus;

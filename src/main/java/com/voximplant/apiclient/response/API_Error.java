@@ -18,7 +18,7 @@ public class API_Error implements Alignable {
     private Long code;
 
     /**
-    * The error code.
+    * The error code
     */
     public Long getCode() {
         return this.code;
@@ -31,7 +31,7 @@ public class API_Error implements Alignable {
     private String msg;
 
     /**
-    * The error description.
+    * The error description
     */
     public String getMsg() {
         return this.msg;

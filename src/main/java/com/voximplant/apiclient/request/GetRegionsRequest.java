@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetRegionsRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code according to the <b>ISO 3166-1 alpha-2</b>.
+    * The country code according to the <b>ISO 3166-1 alpha-2</b>
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -29,7 +30,7 @@ public class GetRegionsRequest implements Alignable {
     }
 
     /**
-    * The country code according to the <b>ISO 3166-1 alpha-2</b>.
+    * The country code according to the <b>ISO 3166-1 alpha-2</b>
     */
     public GetRegionsRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -40,7 +41,7 @@ public class GetRegionsRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -51,7 +52,7 @@ public class GetRegionsRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public GetRegionsRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
@@ -84,7 +85,7 @@ public class GetRegionsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The returned regions count.
+    * The returned regions count
     */
     public Long getCount() {
         return this.count;
@@ -95,7 +96,7 @@ public class GetRegionsRequest implements Alignable {
     }
 
     /**
-    * The returned regions count.
+    * The returned regions count
     */
     public GetRegionsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -106,7 +107,7 @@ public class GetRegionsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -117,7 +118,7 @@ public class GetRegionsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetRegionsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

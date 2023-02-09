@@ -18,7 +18,7 @@ public class AccountCallback implements Alignable {
     private Long callbackId;
 
     /**
-    * The callback ID (sequence).
+    * The callback ID (sequence)
     */
     public Long getCallbackId() {
         return this.callbackId;
@@ -31,15 +31,7 @@ public class AccountCallback implements Alignable {
     private String type;
 
     /**
-    * The callback type. The following values are possible:
-    * account_document_verified, account_is_frozen, account_is_unfrozen,
-    * activate_successful, call_history_report, card_expired,
-    * card_expires_in_month, card_payment, card_payment_failed, js_fail,
-    * min_balance, regulation_address_verified, renewed_subscriptions,
-    * reset_account_password_request, sip_registration_fail,
-    * stagnant_account, subscription_is_detached, subscription_is_frozen,
-    * transaction_history_report, plan_config,
-    * unverified_subscription_detached, sms_inbound.
+    * The callback type
     */
     public String getType() {
         return this.type;
@@ -52,7 +44,7 @@ public class AccountCallback implements Alignable {
     private Long accountId;
 
     /**
-    * The account ID.
+    * The account ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -79,7 +71,7 @@ public class AccountCallback implements Alignable {
     private String accountName;
 
     /**
-    * The account name.
+    * The account name
     */
     public String getAccountName() {
         return this.accountName;
@@ -92,7 +84,7 @@ public class AccountCallback implements Alignable {
     private String accountEmail;
 
     /**
-    * The account email.
+    * The account email
     */
     public String getAccountEmail() {
         return this.accountEmail;
@@ -118,7 +110,7 @@ public class AccountCallback implements Alignable {
     private String accountFirstName;
 
     /**
-    * The first name.
+    * The first name
     */
     public String getAccountFirstName() {
         return this.accountFirstName;
@@ -131,7 +123,7 @@ public class AccountCallback implements Alignable {
     private String accountLastName;
 
     /**
-    * The last name.
+    * The last name
     */
     public String getAccountLastName() {
         return this.accountLastName;
@@ -144,7 +136,7 @@ public class AccountCallback implements Alignable {
     private BigDecimal balance;
 
     /**
-    * The account's money.
+    * The account's money
     */
     public BigDecimal getBalance() {
         return this.balance;
@@ -157,7 +149,7 @@ public class AccountCallback implements Alignable {
     private String currency;
 
     /**
-    * The currency code (USD, RUR, EUR, ...).
+    * The currency code (USD, RUR, EUR, ...)
     */
     public String getCurrency() {
         return this.currency;
@@ -170,7 +162,8 @@ public class AccountCallback implements Alignable {
     private AccountDocumentUploadedCallback accountDocumentUploaded;
 
     /**
-    * The specific account callback details.
+    * Deprecated. Please use the unified
+    * <b>account_document_status_updated</b> callback instead
     */
     public AccountDocumentUploadedCallback getAccountDocumentUploaded() {
         return this.accountDocumentUploaded;
@@ -183,7 +176,7 @@ public class AccountCallback implements Alignable {
     private RegulationAddressUploadedCallback regulationAddressUploaded;
 
     /**
-    * The specific account callback details.
+    * Received when proof of address is uploaded
     */
     public RegulationAddressUploadedCallback getRegulationAddressUploaded() {
         return this.regulationAddressUploaded;
@@ -196,7 +189,8 @@ public class AccountCallback implements Alignable {
     private AccountDocumentVerifiedCallback accountDocumentVerified;
 
     /**
-    * The specific account callback details.
+    * Deprecated. Please use the unified
+    * <b>account_document_status_updated</b> callback instead
     */
     public AccountDocumentVerifiedCallback getAccountDocumentVerified() {
         return this.accountDocumentVerified;
@@ -209,7 +203,7 @@ public class AccountCallback implements Alignable {
     private AccountIsFrozenCallback accountIsFrozen;
 
     /**
-    * The specific account callback details.
+    * Received when an account is frozen
     */
     public AccountIsFrozenCallback getAccountIsFrozen() {
         return this.accountIsFrozen;
@@ -222,7 +216,7 @@ public class AccountCallback implements Alignable {
     private AccountIsUnfrozenCallback accountIsUnfrozen;
 
     /**
-    * The specific account callback details.
+    * Received when an account is unfrozen
     */
     public AccountIsUnfrozenCallback getAccountIsUnfrozen() {
         return this.accountIsUnfrozen;
@@ -235,7 +229,7 @@ public class AccountCallback implements Alignable {
     private ActivateSuccessfulCallback activateSuccessful;
 
     /**
-    * The specific account callback details.
+    * Received when a new (not child) account is created
     */
     public ActivateSuccessfulCallback getActivateSuccessful() {
         return this.activateSuccessful;
@@ -248,7 +242,7 @@ public class AccountCallback implements Alignable {
     private CallHistoryReportCallback callHistoryReport;
 
     /**
-    * The specific account callback details.
+    * Received when a call history report is ready
     */
     public CallHistoryReportCallback getCallHistoryReport() {
         return this.callHistoryReport;
@@ -261,7 +255,7 @@ public class AccountCallback implements Alignable {
     private CardExpiredCallback cardExpired;
 
     /**
-    * The specific account callback details.
+    * Received when a card is expired
     */
     public CardExpiredCallback getCardExpired() {
         return this.cardExpired;
@@ -274,7 +268,7 @@ public class AccountCallback implements Alignable {
     private CardExpiresInMonthCallback cardExpiresInMonth;
 
     /**
-    * The specific account callback details.
+    * Received when one month is left for a card to be expired
     */
     public CardExpiresInMonthCallback getCardExpiresInMonth() {
         return this.cardExpiresInMonth;
@@ -287,7 +281,7 @@ public class AccountCallback implements Alignable {
     private CardPaymentCallback cardPayment;
 
     /**
-    * The specific account callback details.
+    * Received when a bank card payment is made
     */
     public CardPaymentCallback getCardPayment() {
         return this.cardPayment;
@@ -300,7 +294,7 @@ public class AccountCallback implements Alignable {
     private CardPaymentFailedCallback cardPaymentFailed;
 
     /**
-    * The specific account callback details.
+    * Received when a bank card payment is failed
     */
     public CardPaymentFailedCallback getCardPaymentFailed() {
         return this.cardPaymentFailed;
@@ -313,7 +307,7 @@ public class AccountCallback implements Alignable {
     private RobokassaPaymentCallback robokassaPayment;
 
     /**
-    * The specific account callback details.
+    * Received when a robokassa payment is made
     */
     public RobokassaPaymentCallback getRobokassaPayment() {
         return this.robokassaPayment;
@@ -326,7 +320,7 @@ public class AccountCallback implements Alignable {
     private WireTransferCallback wireTransfer;
 
     /**
-    * The specific account callback details.
+    * Received when a wire transfer is made
     */
     public WireTransferCallback getWireTransfer() {
         return this.wireTransfer;
@@ -339,8 +333,9 @@ public class AccountCallback implements Alignable {
     private JSFailCallback jsFail;
 
     /**
-    * The specific account callback details. See the 'send_js_error'
-    * parameter of the 'SetAccountInfo' function.
+    * Received when <b>send_js_error</b> is set to true and a JS error
+    * occures. See the 'send_js_error' parameter of the 'SetAccountInfo'
+    * function
     */
     public JSFailCallback getJsFail() {
         return this.jsFail;
@@ -353,7 +348,7 @@ public class AccountCallback implements Alignable {
     private MinBalanceCallback minBalance;
 
     /**
-    * The specific account callback details.
+    * Received when the minimum balance is reached
     */
     public MinBalanceCallback getMinBalance() {
         return this.minBalance;
@@ -366,7 +361,7 @@ public class AccountCallback implements Alignable {
     private RegulationAddressVerifiedCallback regulationAddressVerified;
 
     /**
-    * The specific account callback details.
+    * Received when proof of address is verified
     */
     public RegulationAddressVerifiedCallback getRegulationAddressVerified() {
         return this.regulationAddressVerified;
@@ -379,7 +374,7 @@ public class AccountCallback implements Alignable {
     private RenewedSubscriptionsCallback renewedSubscriptions;
 
     /**
-    * The specific account callback details.
+    * Received when subscriptions are renewed
     */
     public RenewedSubscriptionsCallback getRenewedSubscriptions() {
         return this.renewedSubscriptions;
@@ -392,7 +387,7 @@ public class AccountCallback implements Alignable {
     private ResetAccountPasswordRequestCallback resetAccountPasswordRequest;
 
     /**
-    * The specific account callback details.
+    * Received when an account password reset is requested
     */
     public ResetAccountPasswordRequestCallback getResetAccountPasswordRequest() {
         return this.resetAccountPasswordRequest;
@@ -405,7 +400,7 @@ public class AccountCallback implements Alignable {
     private SIPRegistrationFailCallback sipRegistrationFail;
 
     /**
-    * The specific account callback details.
+    * Received when one or several SIP registrations are failed
     */
     public SIPRegistrationFailCallback getSipRegistrationFail() {
         return this.sipRegistrationFail;
@@ -415,10 +410,23 @@ public class AccountCallback implements Alignable {
         return this.sipRegistrationFail != null;
     }
 
+    private SIPRegistrationRecoveredCallback sipRegistrationRecovered;
+
+    /**
+    * Received when one or several SIP registrations are recovered
+    */
+    public SIPRegistrationRecoveredCallback getSipRegistrationRecovered() {
+        return this.sipRegistrationRecovered;
+    }
+
+    public boolean hasSipRegistrationRecovered() {
+        return this.sipRegistrationRecovered != null;
+    }
+
     private StagnantAccountCallback stagnantAccount;
 
     /**
-    * The specific account callback details.
+    * Received when there are no actions in accounts after their creation
     */
     public StagnantAccountCallback getStagnantAccount() {
         return this.stagnantAccount;
@@ -431,7 +439,7 @@ public class AccountCallback implements Alignable {
     private SubscriptionIsFrozenCallback subscriptionIsFrozen;
 
     /**
-    * The specific account callback details.
+    * Received when a subscription is frozen
     */
     public SubscriptionIsFrozenCallback getSubscriptionIsFrozen() {
         return this.subscriptionIsFrozen;
@@ -444,7 +452,7 @@ public class AccountCallback implements Alignable {
     private SubscriptionIsDetachedCallback subscriptionIsDetached;
 
     /**
-    * The specific account callback details.
+    * Received when a subscription is canceled
     */
     public SubscriptionIsDetachedCallback getSubscriptionIsDetached() {
         return this.subscriptionIsDetached;
@@ -457,7 +465,7 @@ public class AccountCallback implements Alignable {
     private TransactionHistoryReportCallback transactionHistoryReport;
 
     /**
-    * The specific account callback details.
+    * Received when a transaction history report is ready
     */
     public TransactionHistoryReportCallback getTransactionHistoryReport() {
         return this.transactionHistoryReport;
@@ -470,7 +478,7 @@ public class AccountCallback implements Alignable {
     private PlanConfigCallback planConfig;
 
     /**
-    * The specific account callback details.
+    * Received when a plan (IM, MAU) is changed
     */
     public PlanConfigCallback getPlanConfig() {
         return this.planConfig;
@@ -483,7 +491,7 @@ public class AccountCallback implements Alignable {
     private UnverifiedSubscriptionDetachedCallback unverifiedSubscriptionDetached;
 
     /**
-    * The specific account callback details.
+    * Received when an unverified subscription is canceled
     */
     public UnverifiedSubscriptionDetachedCallback getUnverifiedSubscriptionDetached() {
         return this.unverifiedSubscriptionDetached;
@@ -496,7 +504,7 @@ public class AccountCallback implements Alignable {
     private ExpiringCallerIDCallback expiringCallerid;
 
     /**
-    * The specific account callback details.
+    * Received when a caller ID is about to be expired
     */
     public ExpiringCallerIDCallback getExpiringCallerid() {
         return this.expiringCallerid;
@@ -509,7 +517,7 @@ public class AccountCallback implements Alignable {
     private ExpiredCallerIDCallback expiredCallerid;
 
     /**
-    * The specific account callback details.
+    * Received when a caller ID is expired
     */
     public ExpiredCallerIDCallback getExpiredCallerid() {
         return this.expiredCallerid;
@@ -522,7 +530,7 @@ public class AccountCallback implements Alignable {
     private TranscriptionCompleteCallback transcriptionComplete;
 
     /**
-    * The specific account callback details.
+    * Received when a transcription is saved
     */
     public TranscriptionCompleteCallback getTranscriptionComplete() {
         return this.transcriptionComplete;
@@ -532,23 +540,10 @@ public class AccountCallback implements Alignable {
         return this.transcriptionComplete != null;
     }
 
-    private ClassificationCompleteCallback classificationComplete;
-
-    /**
-    * The specific account callback details.
-    */
-    public ClassificationCompleteCallback getClassificationComplete() {
-        return this.classificationComplete;
-    }
-
-    public boolean hasClassificationComplete() {
-        return this.classificationComplete != null;
-    }
-
     private InboundSmsCallback smsInbound;
 
     /**
-    * The specific account callback details.
+    * Received when an inbound SMS is gotten
     */
     public InboundSmsCallback getSmsInbound() {
         return this.smsInbound;
@@ -561,7 +556,7 @@ public class AccountCallback implements Alignable {
     private NewInvoiceCallback newInvoice;
 
     /**
-    * The specific account callback details.
+    * Received when a new invoice is generated
     */
     public NewInvoiceCallback getNewInvoice() {
         return this.newInvoice;
@@ -574,7 +569,8 @@ public class AccountCallback implements Alignable {
     private ExpiringAgreementCallback expiringAgreement;
 
     /**
-    * The specific account callback details.
+    * Received for the accounts for which the confirmation documents
+    * waiting period expires in 20/15/10/5/1 day(s)
     */
     public ExpiringAgreementCallback getExpiringAgreement() {
         return this.expiringAgreement;
@@ -587,7 +583,8 @@ public class AccountCallback implements Alignable {
     private ExpiredAgreementCallback expiredAgreement;
 
     /**
-    * The specific account callback details.
+    * Received for the accounts for which the confirmation documents
+    * waiting period has already expired or expires today
     */
     public ExpiredAgreementCallback getExpiredAgreement() {
         return this.expiredAgreement;
@@ -600,7 +597,8 @@ public class AccountCallback implements Alignable {
     private RestoredAgreementStatusCallback restoredAgreementStatus;
 
     /**
-    * The specific account callback details.
+    * Received when an expiration date of the confirmation documents
+    * waiting period is changed
     */
     public RestoredAgreementStatusCallback getRestoredAgreementStatus() {
         return this.restoredAgreementStatus;
@@ -613,7 +611,7 @@ public class AccountCallback implements Alignable {
     private BalanceIsChanged balanceIsChanged;
 
     /**
-    * The specific account callback details.
+    * Received when an account is refilled
     */
     public BalanceIsChanged getBalanceIsChanged() {
         return this.balanceIsChanged;
@@ -621,6 +619,113 @@ public class AccountCallback implements Alignable {
 
     public boolean hasBalanceIsChanged() {
         return this.balanceIsChanged != null;
+    }
+
+    private NextChargeAlertCallback nextChargeAlert;
+
+    /**
+    * Received when a plan is to be renewed in 3 days, but there is not
+    * enough money
+    */
+    public NextChargeAlertCallback getNextChargeAlert() {
+        return this.nextChargeAlert;
+    }
+
+    public boolean hasNextChargeAlert() {
+        return this.nextChargeAlert != null;
+    }
+
+    private CertificateExpiredCallback certificateExpired;
+
+    /**
+    * Deprecated. Please use the <b>expired_certificates</b> and
+    * <b>expiring_certificates</b> callbacks instead
+    */
+    public CertificateExpiredCallback getCertificateExpired() {
+        return this.certificateExpired;
+    }
+
+    public boolean hasCertificateExpired() {
+        return this.certificateExpired != null;
+    }
+
+    private ExpiredCertificateCallback expiredCertificates;
+
+    /**
+    * Received for the accounts whose Apple VOIP certificates are expired
+    */
+    public ExpiredCertificateCallback getExpiredCertificates() {
+        return this.expiredCertificates;
+    }
+
+    public boolean hasExpiredCertificates() {
+        return this.expiredCertificates != null;
+    }
+
+    private ExpiringCertificateCallback expiringCertificates;
+
+    /**
+    * Received for the accounts whose Apple VOIP certificates expire in 14
+    * or fewer days
+    */
+    public ExpiringCertificateCallback getExpiringCertificates() {
+        return this.expiringCertificates;
+    }
+
+    public boolean hasExpiringCertificates() {
+        return this.expiringCertificates != null;
+    }
+
+    private AccountDocumentStatusUpdatedCallback accountDocumentStatusUpdated;
+
+    /**
+    * Received when the verification status is updated
+    */
+    public AccountDocumentStatusUpdatedCallback getAccountDocumentStatusUpdated() {
+        return this.accountDocumentStatusUpdated;
+    }
+
+    public boolean hasAccountDocumentStatusUpdated() {
+        return this.accountDocumentStatusUpdated != null;
+    }
+
+    private A2PActivatedCallback a2pSmsActivated;
+
+    /**
+    * Received when A2P SMS are activated
+    */
+    public A2PActivatedCallback getA2pSmsActivated() {
+        return this.a2pSmsActivated;
+    }
+
+    public boolean hasA2pSmsActivated() {
+        return this.a2pSmsActivated != null;
+    }
+
+    private RegulationAddressDocumentsRequestedCallback regulationAddressDocumentsRequested;
+
+    /**
+    * Received when the verification status is changed to PENDING
+    */
+    public RegulationAddressDocumentsRequestedCallback getRegulationAddressDocumentsRequested() {
+        return this.regulationAddressDocumentsRequested;
+    }
+
+    public boolean hasRegulationAddressDocumentsRequested() {
+        return this.regulationAddressDocumentsRequested != null;
+    }
+
+    private InvoiceReceivedCallback invoiceReceived;
+
+    /**
+    * Received when a monthly invoice is sent
+    */
+    public InvoiceReceivedCallback getInvoiceReceived() {
+        return this.invoiceReceived;
+    }
+
+    public boolean hasInvoiceReceived() {
+        return this.invoiceReceived != null;
     }
 
     public String toString(int alignment) {
@@ -872,6 +977,14 @@ public class AccountCallback implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
+        if (sipRegistrationRecovered != null) {
+            sb.append(aligned)
+                .append("\"sipRegistrationRecovered\": \"")
+                .append(sipRegistrationRecovered)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (stagnantAccount != null) {
             sb.append(aligned)
                 .append("\"stagnantAccount\": \"")
@@ -944,14 +1057,6 @@ public class AccountCallback implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (classificationComplete != null) {
-            sb.append(aligned)
-                .append("\"classificationComplete\": \"")
-                .append(classificationComplete)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
         if (smsInbound != null) {
             sb.append(aligned)
                 .append("\"smsInbound\": \"")
@@ -996,6 +1101,70 @@ public class AccountCallback implements Alignable {
             sb.append(aligned)
                 .append("\"balanceIsChanged\": \"")
                 .append(balanceIsChanged)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (nextChargeAlert != null) {
+            sb.append(aligned)
+                .append("\"nextChargeAlert\": \"")
+                .append(nextChargeAlert)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (certificateExpired != null) {
+            sb.append(aligned)
+                .append("\"certificateExpired\": \"")
+                .append(certificateExpired)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (expiredCertificates != null) {
+            sb.append(aligned)
+                .append("\"expiredCertificates\": \"")
+                .append(expiredCertificates)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (expiringCertificates != null) {
+            sb.append(aligned)
+                .append("\"expiringCertificates\": \"")
+                .append(expiringCertificates)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountDocumentStatusUpdated != null) {
+            sb.append(aligned)
+                .append("\"accountDocumentStatusUpdated\": \"")
+                .append(accountDocumentStatusUpdated)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (a2pSmsActivated != null) {
+            sb.append(aligned)
+                .append("\"a2pSmsActivated\": \"")
+                .append(a2pSmsActivated)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (regulationAddressDocumentsRequested != null) {
+            sb.append(aligned)
+                .append("\"regulationAddressDocumentsRequested\": \"")
+                .append(regulationAddressDocumentsRequested)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (invoiceReceived != null) {
+            sb.append(aligned)
+                .append("\"invoiceReceived\": \"")
+                .append(invoiceReceived)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

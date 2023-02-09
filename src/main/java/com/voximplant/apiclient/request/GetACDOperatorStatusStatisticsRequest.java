@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -47,7 +48,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
     * Date and time of statistics interval begin. Time zone is UTC, format
-    * is 24-h 'YYYY-MM-DD HH:mm:ss'.
+    * is 24-h 'YYYY-MM-DD HH:mm:ss'
     */
     public Date getToDate() {
         return this.toDate;
@@ -59,7 +60,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
 
     /**
     * Date and time of statistics interval begin. Time zone is UTC, format
-    * is 24-h 'YYYY-MM-DD HH:mm:ss'.
+    * is 24-h 'YYYY-MM-DD HH:mm:ss'
     */
     public GetACDOperatorStatusStatisticsRequest setToDate(Date d) {
         this.toDate = d;
@@ -70,9 +71,9 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
 
     @RequestField(name="acd_status")
     /**
-    * The ACD status list separated by the ';' symbol. The following values
+    * The ACD status list separated by semicolon (;). The following values
     * are possible: OFFLINE, ONLINE, READY, BANNED, IN_SERVICE,
-    * AFTER_SERVICE, TIMEOUT, DND.
+    * AFTER_SERVICE, TIMEOUT, DND
     */
     public MultiArgument<String> getAcdStatus() {
         return this.acdStatus;
@@ -83,9 +84,9 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     }
 
     /**
-    * The ACD status list separated by the ';' symbol. The following values
+    * The ACD status list separated by semicolon (;). The following values
     * are possible: OFFLINE, ONLINE, READY, BANNED, IN_SERVICE,
-    * AFTER_SERVICE, TIMEOUT, DND.
+    * AFTER_SERVICE, TIMEOUT, DND
     */
     public GetACDOperatorStatusStatisticsRequest setAcdStatus(MultiArgument<String> d) {
         this.acdStatus = d;
@@ -96,7 +97,8 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by the ';' symbol or the 'all' value. 
+    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * select all users
     */
     public MultiArgument<String> getUserId() {
         return this.userId;
@@ -107,7 +109,8 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by the ';' symbol or the 'all' value. 
+    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * select all users
     */
     public GetACDOperatorStatusStatisticsRequest setUserId(MultiArgument<String> d) {
         this.userId = d;
@@ -122,7 +125,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     * the criteria is a day number. If set to 'hour_of_day', the criteria
     * is a 60-minute interval within a day. If set to 'hour', the criteria
     * is both day number and 60-minute interval within that day. If set to
-    * 'none', records are not grouped by date and time.
+    * 'none', records are not grouped by date and time
     */
     public String getAggregation() {
         return this.aggregation;
@@ -137,7 +140,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     * the criteria is a day number. If set to 'hour_of_day', the criteria
     * is a 60-minute interval within a day. If set to 'hour', the criteria
     * is both day number and 60-minute interval within that day. If set to
-    * 'none', records are not grouped by date and time.
+    * 'none', records are not grouped by date and time
     */
     public GetACDOperatorStatusStatisticsRequest setAggregation(String d) {
         this.aggregation = d;
@@ -153,7 +156,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     * date according to the 'aggregation' parameter. If set to
     * 'aggregation', first-level array in the resulting JSON will group
     * records according to the 'aggregation' parameter, and second-level
-    * array will group them by the user ID.
+    * array will group them by the user ID
     */
     public String getGroup() {
         return this.group;
@@ -169,7 +172,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     * date according to the 'aggregation' parameter. If set to
     * 'aggregation', first-level array in the resulting JSON will group
     * records according to the 'aggregation' parameter, and second-level
-    * array will group them by the user ID.
+    * array will group them by the user ID
     */
     public GetACDOperatorStatusStatisticsRequest setGroup(String d) {
         this.group = d;

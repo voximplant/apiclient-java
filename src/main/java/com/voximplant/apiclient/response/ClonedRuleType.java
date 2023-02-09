@@ -18,7 +18,7 @@ public class ClonedRuleType implements Alignable {
     private Long ruleId;
 
     /**
-    * The rule ID.
+    * The rule ID
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -31,7 +31,7 @@ public class ClonedRuleType implements Alignable {
     private String ruleName;
 
     /**
-    * The rule name.
+    * The rule name
     */
     public String getRuleName() {
         return this.ruleName;

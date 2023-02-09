@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetAccountInfoRequest implements Alignable {
 
     @RequestField(name="return_live_balance")
     /**
-    * Set true to get the account's live balance.
+    * Set true to get the account's live balance
     */
     public Boolean getReturnLiveBalance() {
         return this.returnLiveBalance;
@@ -29,7 +30,7 @@ public class GetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set true to get the account's live balance.
+    * Set true to get the account's live balance
     */
     public GetAccountInfoRequest setReturnLiveBalance(boolean d) {
         this.returnLiveBalance = Boolean.valueOf(d);

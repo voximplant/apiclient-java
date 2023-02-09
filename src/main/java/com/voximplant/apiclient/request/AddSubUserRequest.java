@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,10 +19,9 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="new_subuser_name")
     /**
-    * Login of a new subuser for <a
-    * href='/docs/howtos/integration/httpapi/auth'>authentication</a>,
-    * should be unique within the Voximplant account. The login specified
-    * is always converted to lowercase.
+    * The new subuser login for managent api authentication, should be
+    * unique within the Voximplant account. The login specified is always
+    * converted to lowercase
     */
     public String getNewSubuserName() {
         return this.newSubuserName;
@@ -32,10 +32,9 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * Login of a new subuser for <a
-    * href='/docs/howtos/integration/httpapi/auth'>authentication</a>,
-    * should be unique within the Voximplant account. The login specified
-    * is always converted to lowercase.
+    * The new subuser login for managent api authentication, should be
+    * unique within the Voximplant account. The login specified is always
+    * converted to lowercase
     */
     public AddSubUserRequest setNewSubuserName(String d) {
         this.newSubuserName = d;
@@ -46,7 +45,9 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="new_subuser_password")
     /**
-    * Password of a new subuser, plain text.
+    * The new subuser password. Must be at least 8 characters long and
+    * contain at least one uppercase and lowercase letter, one number, and
+    * one special character
     */
     public String getNewSubuserPassword() {
         return this.newSubuserPassword;
@@ -57,7 +58,9 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * Password of a new subuser, plain text.
+    * The new subuser password. Must be at least 8 characters long and
+    * contain at least one uppercase and lowercase letter, one number, and
+    * one special character
     */
     public AddSubUserRequest setNewSubuserPassword(String d) {
         this.newSubuserPassword = d;
@@ -68,7 +71,7 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="role_id")
     /**
-    * The role id list separated by the ';' symbol.
+    * The role id list separated by semicolon (;)
     */
     public MultiArgument<Long> getRoleId() {
         return this.roleId;
@@ -79,7 +82,7 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * The role id list separated by the ';' symbol.
+    * The role id list separated by semicolon (;)
     */
     public AddSubUserRequest setRoleId(MultiArgument<Long> d) {
         this.roleId = d;
@@ -90,7 +93,7 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="role_name")
     /**
-    * The role name list separated by the ';' symbol.
+    * The role name list separated by semicolon (;)
     */
     public MultiArgument<String> getRoleName() {
         return this.roleName;
@@ -101,7 +104,7 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * The role name list separated by the ';' symbol.
+    * The role name list separated by semicolon (;)
     */
     public AddSubUserRequest setRoleName(MultiArgument<String> d) {
         this.roleName = d;
@@ -112,7 +115,7 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="description")
     /**
-    * Description of a new subuser.
+    * Description of a new subuser
     */
     public String getDescription() {
         return this.description;
@@ -123,7 +126,7 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * Description of a new subuser.
+    * Description of a new subuser
     */
     public AddSubUserRequest setDescription(String d) {
         this.description = d;

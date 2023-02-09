@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID. Run the scripts from the user if set.
+    * The user ID. Run the scripts from the user if set
     */
     public Long getUserId() {
         return this.userId;
@@ -29,7 +30,7 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The user ID. Run the scripts from the user if set.
+    * The user ID. Run the scripts from the user if set
     */
     public StartScenariosRequest setUserId(long d) {
         this.userId = Long.valueOf(d);
@@ -41,7 +42,7 @@ public class StartScenariosRequest implements Alignable {
     @RequestField(name="user_name")
     /**
     * The user name that can be used instead of <b>user_id</b>. Run the
-    * scripts from the user if set.
+    * scripts from the user if set
     */
     public String getUserName() {
         return this.userName;
@@ -53,7 +54,7 @@ public class StartScenariosRequest implements Alignable {
 
     /**
     * The user name that can be used instead of <b>user_id</b>. Run the
-    * scripts from the user if set.
+    * scripts from the user if set
     */
     public StartScenariosRequest setUserName(String d) {
         this.userName = d;
@@ -64,7 +65,7 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -75,7 +76,7 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public StartScenariosRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -86,8 +87,7 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -98,8 +98,7 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public StartScenariosRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -110,7 +109,8 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID.
+    * The rule ID that needs to be launched. Please note, the necessary
+    * scenario needs to be attached to the rule
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -121,7 +121,8 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The rule ID.
+    * The rule ID that needs to be launched. Please note, the necessary
+    * scenario needs to be attached to the rule
     */
     public StartScenariosRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -132,10 +133,11 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="script_custom_data")
     /**
-    * The script custom data (like a script argument). Can be accessed in
-    * JS scenario via the <a
-    * href='//voximplant.com/docs/references/voxengine/voxengine#customdata'>VoxEngine.customData()</a>
-    * method
+    * The script custom data, that can be accessed in the scenario via the
+    * <a
+    * href='/docs/references/voxengine/voxengine/customdata'>VoxEngine.customData()</a>
+    * method. Use the application/x-www-form-urlencoded content type with
+    * UTF-8 encoding.
     */
     public String getScriptCustomData() {
         return this.scriptCustomData;
@@ -146,10 +148,11 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The script custom data (like a script argument). Can be accessed in
-    * JS scenario via the <a
-    * href='//voximplant.com/docs/references/voxengine/voxengine#customdata'>VoxEngine.customData()</a>
-    * method
+    * The script custom data, that can be accessed in the scenario via the
+    * <a
+    * href='/docs/references/voxengine/voxengine/customdata'>VoxEngine.customData()</a>
+    * method. Use the application/x-www-form-urlencoded content type with
+    * UTF-8 encoding.
     */
     public StartScenariosRequest setScriptCustomData(String d) {
         this.scriptCustomData = d;
@@ -161,7 +164,7 @@ public class StartScenariosRequest implements Alignable {
     @RequestField(name="reference_ip")
     /**
     * Specifies the IP from the geolocation of predicted subscribers. It
-    * allows selecting the nearest server for serving subscribers.
+    * allows selecting the nearest server for serving subscribers
     */
     public String getReferenceIp() {
         return this.referenceIp;
@@ -173,7 +176,7 @@ public class StartScenariosRequest implements Alignable {
 
     /**
     * Specifies the IP from the geolocation of predicted subscribers. It
-    * allows selecting the nearest server for serving subscribers.
+    * allows selecting the nearest server for serving subscribers
     */
     public StartScenariosRequest setReferenceIp(String d) {
         this.referenceIp = d;
@@ -184,7 +187,7 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="with_check_url")
     /**
-    * Set true to get media server session lists url.
+    * Set true to get media server session lists url
     */
     public Boolean getWithCheckUrl() {
         return this.withCheckUrl;
@@ -195,7 +198,7 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * Set true to get media server session lists url.
+    * Set true to get media server session lists url
     */
     public StartScenariosRequest setWithCheckUrl(boolean d) {
         this.withCheckUrl = Boolean.valueOf(d);

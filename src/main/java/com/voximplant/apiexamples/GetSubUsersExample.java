@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get subusers info
+* Get subusers info.
 */
 public class GetSubUsersExample {
     public static void main(String [] args) {

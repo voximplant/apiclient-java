@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -70,7 +71,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="timezone")
     /**
-    * The selected timezone or the 'auto' value (the account location).
+    * The selected timezone or the 'auto' value (the account location)
     */
     public String getTimezone() {
         return this.timezone;
@@ -81,7 +82,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The selected timezone or the 'auto' value (the account location).
+    * The selected timezone or the 'auto' value (the account location)
     */
     public GetCallHistoryRequest setTimezone(String d) {
         this.timezone = d;
@@ -92,11 +93,16 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="call_session_history_id")
     /**
-    * The call session history ID list separated by the ';' symbol. The
-    * sessions IDs can be accessed in JS scenario via the <b>sessionID</b>
-    * property of the <a
-    * href='//voximplant.com/docs/references/voxengine/appevents#started'>AppEvents.Started</a>
-    * event
+    * To get the call history for the specific sessions, pass the session
+    * IDs to this parameter separated by a semicolon (;). You can find the
+    * session ID in the <a
+    * href='/docs/references/voxengine/appevents#started'>AppEvents.Started</a>
+    * event's <b>sessionID</b> property in a scenario, or retrieve it from
+    * the <b>call_session_history_id</b> value returned from the <a
+    * href='https://voximplant.com/docs/references/httpapi/scenarios#reorderscenarios'>StartScenarios</a>
+    * or <a
+    * href='https://voximplant.com/docs/references/httpapi/scenarios#startconference'>StartConference</a>
+    * methods
     */
     public MultiArgument<Long> getCallSessionHistoryId() {
         return this.callSessionHistoryId;
@@ -107,11 +113,16 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The call session history ID list separated by the ';' symbol. The
-    * sessions IDs can be accessed in JS scenario via the <b>sessionID</b>
-    * property of the <a
-    * href='//voximplant.com/docs/references/voxengine/appevents#started'>AppEvents.Started</a>
-    * event
+    * To get the call history for the specific sessions, pass the session
+    * IDs to this parameter separated by a semicolon (;). You can find the
+    * session ID in the <a
+    * href='/docs/references/voxengine/appevents#started'>AppEvents.Started</a>
+    * event's <b>sessionID</b> property in a scenario, or retrieve it from
+    * the <b>call_session_history_id</b> value returned from the <a
+    * href='https://voximplant.com/docs/references/httpapi/scenarios#reorderscenarios'>StartScenarios</a>
+    * or <a
+    * href='https://voximplant.com/docs/references/httpapi/scenarios#startconference'>StartConference</a>
+    * methods
     */
     public GetCallHistoryRequest setCallSessionHistoryId(MultiArgument<Long> d) {
         this.callSessionHistoryId = d;
@@ -122,7 +133,8 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * To receive the call history for a specific application, pass the
+    * application ID to this parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -133,7 +145,8 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * To receive the call history for a specific application, pass the
+    * application ID to this parameter
     */
     public GetCallHistoryRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -144,7 +157,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name, can be used instead of <b>application_id</b>.
+    * The application name, can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -155,7 +168,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The application name, can be used instead of <b>application_id</b>.
+    * The application name, can be used instead of <b>application_id</b>
     */
     public GetCallHistoryRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -166,8 +179,9 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by the ';' symbol. If it's specified, the
-    * output will contain the calls from the listed users only.
+    * To receive the call history for a specific users, pass the user ID
+    * list separated by semicolon (;). If it's specified, the output
+    * contains the calls from the listed users only
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -178,8 +192,9 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by the ';' symbol. If it's specified, the
-    * output will contain the calls from the listed users only.
+    * To receive the call history for a specific users, pass the user ID
+    * list separated by semicolon (;). If it's specified, the output
+    * contains the calls from the listed users only
     */
     public GetCallHistoryRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -190,7 +205,9 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name to filter.
+    * To receive the call history for a specific routing rule, pass the
+    * rule name to this parameter. Applies only if you set application_id
+    * or application_name
     */
     public String getRuleName() {
         return this.ruleName;
@@ -201,7 +218,9 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The rule name to filter.
+    * To receive the call history for a specific routing rule, pass the
+    * rule name to this parameter. Applies only if you set application_id
+    * or application_name
     */
     public GetCallHistoryRequest setRuleName(String d) {
         this.ruleName = d;
@@ -212,7 +231,9 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="remote_number")
     /**
-    * The remote number list separated by the ';' symbol.
+    * To receive a call history for a specific remote numbers, pass the
+    * number list separated by semicolon (;). A remote number is a number
+    * on the client side
     */
     public MultiArgument<String> getRemoteNumber() {
         return this.remoteNumber;
@@ -223,7 +244,9 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The remote number list separated by the ';' symbol.
+    * To receive a call history for a specific remote numbers, pass the
+    * number list separated by semicolon (;). A remote number is a number
+    * on the client side
     */
     public GetCallHistoryRequest setRemoteNumber(MultiArgument<String> d) {
         this.remoteNumber = d;
@@ -234,7 +257,9 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="local_number")
     /**
-    * The local number list separated by the ';' symbol.
+    * To receive a call history for a specific local numbers, pass the
+    * number list separated by semicolon (;). A local number is a number on
+    * the platform side
     */
     public MultiArgument<String> getLocalNumber() {
         return this.localNumber;
@@ -245,7 +270,9 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The local number list separated by the ';' symbol.
+    * To receive a call history for a specific local numbers, pass the
+    * number list separated by semicolon (;). A local number is a number on
+    * the platform side
     */
     public GetCallHistoryRequest setLocalNumber(MultiArgument<String> d) {
         this.localNumber = d;
@@ -256,7 +283,8 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="call_session_history_custom_data")
     /**
-    * The custom_data to filter sessions.
+    * To filter the call history by the custom_data passed to the call
+    * sessions, pass the custom data to this parameter
     */
     public String getCallSessionHistoryCustomData() {
         return this.callSessionHistoryCustomData;
@@ -267,7 +295,8 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The custom_data to filter sessions.
+    * To filter the call history by the custom_data passed to the call
+    * sessions, pass the custom data to this parameter
     */
     public GetCallHistoryRequest setCallSessionHistoryCustomData(String d) {
         this.callSessionHistoryCustomData = d;
@@ -278,7 +307,9 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_calls")
     /**
-    * Set true to get the bound calls.
+    * Specifies whether to receive a list of sessions with all calls within
+    * the sessions, including phone numbers, call cost and other
+    * information
     */
     public Boolean getWithCalls() {
         return this.withCalls;
@@ -289,7 +320,9 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound calls.
+    * Specifies whether to receive a list of sessions with all calls within
+    * the sessions, including phone numbers, call cost and other
+    * information
     */
     public GetCallHistoryRequest setWithCalls(boolean d) {
         this.withCalls = Boolean.valueOf(d);
@@ -300,7 +333,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_records")
     /**
-    * Set true to get the bound records.
+    * Specifies whether to get the calls' records
     */
     public Boolean getWithRecords() {
         return this.withRecords;
@@ -311,7 +344,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound records.
+    * Specifies whether to get the calls' records
     */
     public GetCallHistoryRequest setWithRecords(boolean d) {
         this.withRecords = Boolean.valueOf(d);
@@ -322,7 +355,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_other_resources")
     /**
-    * Set true to get other resources usage (see [ResourceUsageType]).
+    * Set true to get other resources usage (see [ResourceUsageType])
     */
     public Boolean getWithOtherResources() {
         return this.withOtherResources;
@@ -333,7 +366,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get other resources usage (see [ResourceUsageType]).
+    * Set true to get other resources usage (see [ResourceUsageType])
     */
     public GetCallHistoryRequest setWithOtherResources(boolean d) {
         this.withOtherResources = Boolean.valueOf(d);
@@ -344,8 +377,8 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
         return this.childAccountId;
@@ -356,8 +389,8 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public GetCallHistoryRequest setChildAccountId(MultiArgument<Long> d) {
         this.childAccountId = d;
@@ -368,7 +401,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="children_calls_only")
     /**
-    * Set true to get the children account calls only.
+    * Set true to get the children account calls only
     */
     public Boolean getChildrenCallsOnly() {
         return this.childrenCallsOnly;
@@ -379,7 +412,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the children account calls only.
+    * Set true to get the children account calls only
     */
     public GetCallHistoryRequest setChildrenCallsOnly(boolean d) {
         this.childrenCallsOnly = Boolean.valueOf(d);
@@ -412,7 +445,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -423,7 +456,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public GetCallHistoryRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -434,7 +467,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_total_count")
     /**
-    * Set false to omit the 'total_count' and increase performance.
+    * Set false to omit the 'total_count' and increase performance
     */
     public Boolean getWithTotalCount() {
         return this.withTotalCount;
@@ -445,7 +478,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the 'total_count' and increase performance.
+    * Set false to omit the 'total_count' and increase performance
     */
     public GetCallHistoryRequest setWithTotalCount(boolean d) {
         this.withTotalCount = Boolean.valueOf(d);
@@ -456,7 +489,8 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The number of returning records. In the synchronous mode, the maximum
+    * value is 1000
     */
     public Long getCount() {
         return this.count;
@@ -467,7 +501,8 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The number of returning records. In the synchronous mode, the maximum
+    * value is 1000
     */
     public GetCallHistoryRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -478,7 +513,8 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The number of records to skip in the output with a maximum value of
+    * 10000
     */
     public Long getOffset() {
         return this.offset;
@@ -489,7 +525,8 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The number of records to skip in the output with a maximum value of
+    * 10000
     */
     public GetCallHistoryRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -500,7 +537,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="output")
     /**
-    * The output format. The following values available: json, csv.
+    * The output format. The following values available: json, csv
     */
     public String getOutput() {
         return this.output;
@@ -511,7 +548,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The output format. The following values available: json, csv.
+    * The output format. The following values available: json, csv
     */
     public GetCallHistoryRequest setOutput(String d) {
         this.output = d;
@@ -523,8 +560,9 @@ public class GetCallHistoryRequest implements Alignable {
     @RequestField(name="is_async")
     /**
     * Set true to get records in the asynchronous mode (for csv output
-    * only). If it's true, the request is available via [GetHistoryReports]
-    * and [DownloadHistoryReport] methods.
+    * only). <b>Use this mode to download large amounts of data</b>. See
+    * the [GetHistoryReports], [DownloadHistoryReport] functions for
+    * details
     */
     public Boolean getIsAsync() {
         return this.isAsync;
@@ -536,8 +574,9 @@ public class GetCallHistoryRequest implements Alignable {
 
     /**
     * Set true to get records in the asynchronous mode (for csv output
-    * only). If it's true, the request is available via [GetHistoryReports]
-    * and [DownloadHistoryReport] methods.
+    * only). <b>Use this mode to download large amounts of data</b>. See
+    * the [GetHistoryReports], [DownloadHistoryReport] functions for
+    * details
     */
     public GetCallHistoryRequest setIsAsync(boolean d) {
         this.isAsync = Boolean.valueOf(d);

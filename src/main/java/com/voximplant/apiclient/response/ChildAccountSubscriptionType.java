@@ -19,7 +19,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private Long subscriptionId;
 
     /**
-    * The subscription ID.
+    * The subscription ID
     */
     public Long getSubscriptionId() {
         return this.subscriptionId;
@@ -32,7 +32,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private String subscriptionName;
 
     /**
-    * The subscription name.
+    * The subscription name
     */
     public String getSubscriptionName() {
         return this.subscriptionName;
@@ -45,7 +45,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private Long subscriptionTemplateId;
 
     /**
-    * The subscription template ID.
+    * The subscription template ID
     */
     public Long getSubscriptionTemplateId() {
         return this.subscriptionTemplateId;
@@ -58,7 +58,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private Boolean autoCharge;
 
     /**
-    * Is the subscription prolonged automatically?
+    * The subscription is prolonged automatically
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -72,7 +72,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private Date nextRenewal;
 
     /**
-    * The next charge UTC date in format: YYYY-MM-DD.
+    * The next charge UTC date in format: YYYY-MM-DD
     */
     public Date getNextRenewal() {
         return this.nextRenewal;
@@ -85,7 +85,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private BigDecimal periodicPrice;
 
     /**
-    * The periodic payment amount.
+    * The periodic payment amount
     */
     public BigDecimal getPeriodicPrice() {
         return this.periodicPrice;
@@ -98,7 +98,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private Boolean active;
 
     /**
-    * Is the subscription active?
+    * The subscription is active
     */
     public Boolean getActive() {
         return this.active;

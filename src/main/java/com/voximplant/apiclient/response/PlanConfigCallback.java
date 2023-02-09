@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when a plan (IM, MAU) is changed. Received as part of the
 * [AccountCallback] structure.
 */
 public class PlanConfigCallback implements Alignable {
@@ -19,7 +19,7 @@ public class PlanConfigCallback implements Alignable {
     private String planType;
 
     /**
-    * The plan type. The possible values are: IM, MAU.
+    * The plan type. The possible values are IM, MAU
     */
     public String getPlanType() {
         return this.planType;
@@ -32,7 +32,7 @@ public class PlanConfigCallback implements Alignable {
     private String planName;
 
     /**
-    * The plan name.
+    * The plan name
     */
     public String getPlanName() {
         return this.planName;
@@ -45,7 +45,7 @@ public class PlanConfigCallback implements Alignable {
     private PlanPackageConfig[] packages;
 
     /**
-    * The account plan package array.
+    * The account plan package array
     */
     public PlanPackageConfig[] getPackages() {
         return this.packages;

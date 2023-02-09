@@ -18,7 +18,7 @@ public class CallInfoType implements Alignable {
     private Long callId;
 
     /**
-    * The call history ID.
+    * The call history ID
     */
     public Long getCallId() {
         return this.callId;
@@ -46,7 +46,7 @@ public class CallInfoType implements Alignable {
     private Long duration;
 
     /**
-    * The call duration in seconds.
+    * The call duration in seconds
     */
     public Long getDuration() {
         return this.duration;
@@ -59,7 +59,7 @@ public class CallInfoType implements Alignable {
     private String localNumber;
 
     /**
-    * The local number.
+    * The local number on the platform side
     */
     public String getLocalNumber() {
         return this.localNumber;
@@ -72,7 +72,7 @@ public class CallInfoType implements Alignable {
     private String remoteNumber;
 
     /**
-    * The remote number.
+    * The remote number on the client side
     */
     public String getRemoteNumber() {
         return this.remoteNumber;
@@ -85,7 +85,8 @@ public class CallInfoType implements Alignable {
     private String remoteNumberType;
 
     /**
-    * The remote number type.
+    * The type of the remote number, such as PSTN, mobile, user or sip
+    * address
     */
     public String getRemoteNumberType() {
         return this.remoteNumberType;
@@ -98,7 +99,7 @@ public class CallInfoType implements Alignable {
     private Boolean incoming;
 
     /**
-    * The incoming flag.
+    * The incoming flag
     */
     public Boolean getIncoming() {
         return this.incoming;
@@ -111,7 +112,7 @@ public class CallInfoType implements Alignable {
     private Boolean successful;
 
     /**
-    * The success flag.
+    * The success flag
     */
     public Boolean getSuccessful() {
         return this.successful;
@@ -124,7 +125,7 @@ public class CallInfoType implements Alignable {
     private Long transactionId;
 
     /**
-    * The transaction ID.
+    * The transaction ID
     */
     public Long getTransactionId() {
         return this.transactionId;
@@ -137,7 +138,7 @@ public class CallInfoType implements Alignable {
     private String recordUrl;
 
     /**
-    * The record URL.
+    * The record URL
     */
     public String getRecordUrl() {
         return this.recordUrl;
@@ -150,7 +151,7 @@ public class CallInfoType implements Alignable {
     private String mediaServerAddress;
 
     /**
-    * The media server IP address.
+    * The media server IP address
     */
     public String getMediaServerAddress() {
         return this.mediaServerAddress;
@@ -163,7 +164,7 @@ public class CallInfoType implements Alignable {
     private BigDecimal cost;
 
     /**
-    * The call cost.
+    * The call cost
     */
     public BigDecimal getCost() {
         return this.cost;
@@ -176,7 +177,7 @@ public class CallInfoType implements Alignable {
     private String customData;
 
     /**
-    * The custom data.
+    * The custom data passed to the JS session
     */
     public String getCustomData() {
         return this.customData;

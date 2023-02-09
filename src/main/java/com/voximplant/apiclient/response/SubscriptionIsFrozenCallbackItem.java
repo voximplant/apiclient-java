@@ -32,7 +32,7 @@ public class SubscriptionIsFrozenCallbackItem implements Alignable {
 
     /**
     * The subscription description (details). Example: the subscribed phone
-    * number.
+    * number
     */
     public String getName() {
         return this.name;
@@ -45,7 +45,7 @@ public class SubscriptionIsFrozenCallbackItem implements Alignable {
     private BigDecimal cost;
 
     /**
-    * The subscription cost.
+    * The subscription cost
     */
     public BigDecimal getCost() {
         return this.cost;
@@ -53,6 +53,20 @@ public class SubscriptionIsFrozenCallbackItem implements Alignable {
 
     public boolean hasCost() {
         return this.cost != null;
+    }
+
+    private SubscriptionCallbackDetails[] details;
+
+    /**
+    * Info about the phone numbers or sip registrations that the
+    * subscription is attached to
+    */
+    public SubscriptionCallbackDetails[] getDetails() {
+        return this.details;
+    }
+
+    public boolean hasDetails() {
+        return this.details != null;
     }
 
     public String toString(int alignment) {
@@ -86,6 +100,12 @@ public class SubscriptionIsFrozenCallbackItem implements Alignable {
                 .append(cost)
                 .append('"')
                 .append(',')
+                .append(System.lineSeparator());
+        }
+        if (details != null) {
+            sb.append(aligned)
+                .append("\"SubscriptionCallbackDetails\": ")
+                .append(StringHelper.arrayToString(details, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

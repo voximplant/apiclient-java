@@ -34,7 +34,7 @@ public class GetHistoryReportsResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found reports count.
+    * The total found reports count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetHistoryReportsResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned reports count.
+    * The returned reports count
     */
     public Long getCount() {
         return this.count;

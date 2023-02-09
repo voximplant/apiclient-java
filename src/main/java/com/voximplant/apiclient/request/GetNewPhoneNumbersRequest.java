@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code.
+    * The country code
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -29,7 +30,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The country code.
+    * The country code
     */
     public GetNewPhoneNumbersRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -40,7 +41,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the GetPhoneNumberCategories function.
+    * The phone category name. See the [GetPhoneNumberCategories] function
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -51,7 +52,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the GetPhoneNumberCategories function.
+    * The phone category name. See the [GetPhoneNumberCategories] function
     */
     public GetNewPhoneNumbersRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
@@ -63,7 +64,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     @RequestField(name="country_state")
     /**
     * The country state. See the GetPhoneNumberCategories and
-    * GetPhoneNumberCountryStates functions.
+    * GetPhoneNumberCountryStates functions
     */
     public String getCountryState() {
         return this.countryState;
@@ -75,7 +76,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     /**
     * The country state. See the GetPhoneNumberCategories and
-    * GetPhoneNumberCountryStates functions.
+    * GetPhoneNumberCountryStates functions
     */
     public GetNewPhoneNumbersRequest setCountryState(String d) {
         this.countryState = d;
@@ -86,7 +87,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="phone_region_id")
     /**
-    * The phone region ID. See the [GetPhoneNumberRegions] method.
+    * The phone region ID. See the [GetPhoneNumberRegions] method
     */
     public Long getPhoneRegionId() {
         return this.phoneRegionId;
@@ -97,7 +98,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The phone region ID. See the [GetPhoneNumberRegions] method.
+    * The phone region ID. See the [GetPhoneNumberRegions] method
     */
     public GetNewPhoneNumbersRequest setPhoneRegionId(long d) {
         this.phoneRegionId = Long.valueOf(d);
@@ -108,7 +109,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -119,7 +120,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetNewPhoneNumbersRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -130,7 +131,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -141,7 +142,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetNewPhoneNumbersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

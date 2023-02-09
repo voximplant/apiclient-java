@@ -15,10 +15,36 @@ import com.voximplant.apiclient.util.Alignable;
 */
 public class CallSessionInfoType implements Alignable {
 
+    private String ruleName;
+
+    /**
+    * The routing rule name
+    */
+    public String getRuleName() {
+        return this.ruleName;
+    }
+
+    public boolean hasRuleName() {
+        return this.ruleName != null;
+    }
+
+    private String applicationName;
+
+    /**
+    * The application name
+    */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
     private Long callSessionHistoryId;
 
     /**
-    * The call session history ID.
+    * The unique JS session identifier
     */
     public Long getCallSessionHistoryId() {
         return this.callSessionHistoryId;
@@ -31,7 +57,7 @@ public class CallSessionInfoType implements Alignable {
     private Long accountId;
 
     /**
-    * The account ID.
+    * The account ID that initiates the JS session
     */
     public Long getAccountId() {
         return this.accountId;
@@ -44,7 +70,7 @@ public class CallSessionInfoType implements Alignable {
     private Long applicationId;
 
     /**
-    * The application ID.
+    * The application ID that initiates the JS session
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -57,7 +83,7 @@ public class CallSessionInfoType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID.
+    * The user ID that initiates the JS session
     */
     public Long getUserId() {
         return this.userId;
@@ -85,7 +111,8 @@ public class CallSessionInfoType implements Alignable {
     private Long duration;
 
     /**
-    * The session duration in seconds.
+    * The entire JS session duration in seconds. The session can contain
+    * multiple calls
     */
     public Long getDuration() {
         return this.duration;
@@ -98,7 +125,7 @@ public class CallSessionInfoType implements Alignable {
     private String initiatorAddress;
 
     /**
-    * The initiator IP address.
+    * The initiator IP address
     */
     public String getInitiatorAddress() {
         return this.initiatorAddress;
@@ -111,7 +138,7 @@ public class CallSessionInfoType implements Alignable {
     private String mediaServerAddress;
 
     /**
-    * The media server IP address.
+    * The media server IP address
     */
     public String getMediaServerAddress() {
         return this.mediaServerAddress;
@@ -124,7 +151,8 @@ public class CallSessionInfoType implements Alignable {
     private String logFileUrl;
 
     /**
-    * The session log URL.
+    * The link to the session log. The log retention policy is 1 month,
+    * after that time this field clears
     */
     public String getLogFileUrl() {
         return this.logFileUrl;
@@ -137,9 +165,9 @@ public class CallSessionInfoType implements Alignable {
     private String finishReason;
 
     /**
-    * The finish reason. Possible values are: __Normal termination__,
+    * The finish reason. Possible values are __Normal termination__,
     * __Insufficient funds__, __Internal error (billing timeout)__,
-    * __Terminated administratively__, __JS Error__, __Timeout__.
+    * __Terminated administratively__, __JS session error__, __Timeout__
     */
     public String getFinishReason() {
         return this.finishReason;
@@ -152,7 +180,8 @@ public class CallSessionInfoType implements Alignable {
     private CallInfoType[] calls;
 
     /**
-    * The bound calls.
+    * The calls within JS session, including durations, cost, phone numbers
+    * and other information
     */
     public CallInfoType[] getCalls() {
         return this.calls;
@@ -165,7 +194,7 @@ public class CallSessionInfoType implements Alignable {
     private ResourceUsageType[] otherResourceUsage;
 
     /**
-    * The used resorces.
+    * The used resorces
     */
     public ResourceUsageType[] getOtherResourceUsage() {
         return this.otherResourceUsage;
@@ -178,7 +207,7 @@ public class CallSessionInfoType implements Alignable {
     private RecordType[] records;
 
     /**
-    * The bound records.
+    * The bound records
     */
     public RecordType[] getRecords() {
         return this.records;
@@ -191,7 +220,7 @@ public class CallSessionInfoType implements Alignable {
     private String customData;
 
     /**
-    * The custom data.
+    * The custom data
     */
     public String getCustomData() {
         return this.customData;
@@ -210,6 +239,22 @@ public class CallSessionInfoType implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (callSessionHistoryId != null) {
             sb.append(aligned)
                 .append("\"callSessionHistoryId\": \"")

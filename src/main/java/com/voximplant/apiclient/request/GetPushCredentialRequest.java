@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_credential_id")
     /**
-    * The push credentials id.
+    * The push credentials id
     */
     public Long getPushCredentialId() {
         return this.pushCredentialId;
@@ -29,7 +30,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push credentials id.
+    * The push credentials id
     */
     public GetPushCredentialRequest setPushCredentialId(long d) {
         this.pushCredentialId = Long.valueOf(d);
@@ -40,8 +41,8 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_provider_name")
     /**
-    * The push provider name. The possible values are: APPLE, APPLE_VOIP,
-    * GOOGLE.
+    * The push provider name. The possible values are APPLE, APPLE_VOIP,
+    * GOOGLE, HUAWEI
     */
     public String getPushProviderName() {
         return this.pushProviderName;
@@ -52,8 +53,8 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push provider name. The possible values are: APPLE, APPLE_VOIP,
-    * GOOGLE.
+    * The push provider name. The possible values are APPLE, APPLE_VOIP,
+    * GOOGLE, HUAWEI
     */
     public GetPushCredentialRequest setPushProviderName(String d) {
         this.pushProviderName = d;
@@ -64,7 +65,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_provider_id")
     /**
-    * The push provider id.
+    * The push provider id. Can be used instead of <b>push_provider_name</b>
     */
     public Long getPushProviderId() {
         return this.pushProviderId;
@@ -75,7 +76,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push provider id.
+    * The push provider id. Can be used instead of <b>push_provider_name</b>
     */
     public GetPushCredentialRequest setPushProviderId(long d) {
         this.pushProviderId = Long.valueOf(d);
@@ -86,7 +87,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The name of the bound application.
+    * The name of the bound application
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -97,7 +98,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The name of the bound application.
+    * The name of the bound application
     */
     public GetPushCredentialRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -108,7 +109,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The id of the bound application.
+    * The id of the bound application
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -119,7 +120,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The id of the bound application.
+    * The id of the bound application
     */
     public GetPushCredentialRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -130,7 +131,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="with_cert")
     /**
-    * Set true to get the user's certificate.
+    * Set true to get the user's certificate
     */
     public Boolean getWithCert() {
         return this.withCert;
@@ -141,7 +142,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set true to get the user's certificate.
+    * Set true to get the user's certificate
     */
     public GetPushCredentialRequest setWithCert(boolean d) {
         this.withCert = Boolean.valueOf(d);
@@ -152,7 +153,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="with_secret_info")
     /**
-    * Set true to get the certificate's password.
+    * Set true to get the certificate's password
     */
     public Boolean getWithSecretInfo() {
         return this.withSecretInfo;
@@ -163,7 +164,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set true to get the certificate's password.
+    * Set true to get the certificate's password
     */
     public GetPushCredentialRequest setWithSecretInfo(boolean d) {
         this.withSecretInfo = Boolean.valueOf(d);

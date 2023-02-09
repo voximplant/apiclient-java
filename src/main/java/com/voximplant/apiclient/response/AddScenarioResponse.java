@@ -37,7 +37,7 @@ public class AddScenarioResponse implements Alignable {
     private Long scenarioId;
 
     /**
-    * The new scenario ID.
+    * The new scenario ID
     */
     public Long getScenarioId() {
         return this.scenarioId;

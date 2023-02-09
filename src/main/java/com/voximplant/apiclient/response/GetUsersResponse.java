@@ -24,7 +24,7 @@ public class GetUsersResponse implements Alignable {
     private UserInfoType[] result;
 
     /**
-    * The UserInfoType records.
+    * The UserInfoType records
     */
     public UserInfoType[] getResult() {
         return this.result;
@@ -37,7 +37,7 @@ public class GetUsersResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found user count.
+    * The total found user count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -50,7 +50,7 @@ public class GetUsersResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned user count.
+    * The returned user count
     */
     public Long getCount() {
         return this.count;

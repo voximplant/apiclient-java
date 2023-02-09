@@ -18,7 +18,7 @@ public class ExchangeRates implements Alignable {
     private BigDecimal RUR;
 
     /**
-    * The RUR exchange rate.
+    * The RUR exchange rate
     */
     public BigDecimal getRUR() {
         return this.RUR;
@@ -31,7 +31,7 @@ public class ExchangeRates implements Alignable {
     private BigDecimal EUR;
 
     /**
-    * The EUR exchange rate.
+    * The EUR exchange rate
     */
     public BigDecimal getEUR() {
         return this.EUR;
@@ -44,7 +44,7 @@ public class ExchangeRates implements Alignable {
     private BigDecimal USD;
 
     /**
-    * The USD exchange rate. It's always equal to 1.
+    * The USD exchange rate. It's always equal to 1
     */
     public BigDecimal getUSD() {
         return this.USD;

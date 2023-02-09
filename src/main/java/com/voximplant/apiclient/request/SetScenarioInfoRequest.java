@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetScenarioInfoRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID.
+    * The scenario ID
     */
     public Long getScenarioId() {
         return this.scenarioId;
@@ -29,7 +30,7 @@ public class SetScenarioInfoRequest implements Alignable {
     }
 
     /**
-    * The scenario ID.
+    * The scenario ID
     */
     public SetScenarioInfoRequest setScenarioId(long d) {
         this.scenarioId = Long.valueOf(d);
@@ -41,7 +42,7 @@ public class SetScenarioInfoRequest implements Alignable {
     @RequestField(name="required_scenario_name")
     /**
     * The name of the scenario to edit, can be used instead of
-    * <b>scenario_id</b>.
+    * <b>scenario_id</b>
     */
     public String getRequiredScenarioName() {
         return this.requiredScenarioName;
@@ -53,7 +54,7 @@ public class SetScenarioInfoRequest implements Alignable {
 
     /**
     * The name of the scenario to edit, can be used instead of
-    * <b>scenario_id</b>.
+    * <b>scenario_id</b>
     */
     public SetScenarioInfoRequest setRequiredScenarioName(String d) {
         this.requiredScenarioName = d;
@@ -86,7 +87,8 @@ public class SetScenarioInfoRequest implements Alignable {
 
     @RequestField(name="scenario_script")
     /**
-    * The new scenario text. The length must be less than 128 KB.
+    * The new scenario text. Use the application/x-www-form-urlencoded
+    * content type with UTF-8 encoding. The length must be less than 128 KB
     */
     public String getScenarioScript() {
         return this.scenarioScript;
@@ -97,7 +99,8 @@ public class SetScenarioInfoRequest implements Alignable {
     }
 
     /**
-    * The new scenario text. The length must be less than 128 KB.
+    * The new scenario text. Use the application/x-www-form-urlencoded
+    * content type with UTF-8 encoding. The length must be less than 128 KB
     */
     public SetScenarioInfoRequest setScenarioScript(String d) {
         this.scenarioScript = d;

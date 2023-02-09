@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user to edit.
+    * The user to edit
     */
     public Long getUserId() {
         return this.userId;
@@ -29,7 +30,7 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The user to edit.
+    * The user to edit
     */
     public SetUserInfoRequest setUserId(long d) {
         this.userId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name that can be used instead of <b>user_id</b>.
+    * The user name that can be used instead of <b>user_id</b>
     */
     public String getUserName() {
         return this.userName;
@@ -51,7 +52,7 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The user name that can be used instead of <b>user_id</b>.
+    * The user name that can be used instead of <b>user_id</b>
     */
     public SetUserInfoRequest setUserName(String d) {
         this.userName = d;
@@ -63,7 +64,7 @@ public class SetUserInfoRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * The application ID. It is required if the <b>user_name</b> is
-    * specified.
+    * specified
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -75,7 +76,7 @@ public class SetUserInfoRequest implements Alignable {
 
     /**
     * The application ID. It is required if the <b>user_name</b> is
-    * specified.
+    * specified
     */
     public SetUserInfoRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -86,8 +87,7 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -98,8 +98,7 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public SetUserInfoRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -132,7 +131,7 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="user_display_name")
     /**
-    * The new user display name. The length must be less than 256.
+    * The new user display name. The length must be less than 256
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -143,7 +142,7 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new user display name. The length must be less than 256.
+    * The new user display name. The length must be less than 256
     */
     public SetUserInfoRequest setUserDisplayName(String d) {
         this.userDisplayName = d;
@@ -154,7 +153,9 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="user_password")
     /**
-    * The new user password. The length must be at least 6 symbols.
+    * The new user password. Must be at least 8 characters long and contain
+    * at least one uppercase and lowercase letter, one number, and one
+    * special character
     */
     public String getUserPassword() {
         return this.userPassword;
@@ -165,7 +166,9 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new user password. The length must be at least 6 symbols.
+    * The new user password. Must be at least 8 characters long and contain
+    * at least one uppercase and lowercase letter, one number, and one
+    * special character
     */
     public SetUserInfoRequest setUserPassword(String d) {
         this.userPassword = d;
@@ -177,7 +180,7 @@ public class SetUserInfoRequest implements Alignable {
     @RequestField(name="parent_accounting")
     /**
     * Set 'true' to use the parent account's money, 'false' to use a
-    * separate user balance.
+    * separate user balance
     */
     public Boolean getParentAccounting() {
         return this.parentAccounting;
@@ -189,7 +192,7 @@ public class SetUserInfoRequest implements Alignable {
 
     /**
     * Set 'true' to use the parent account's money, 'false' to use a
-    * separate user balance.
+    * separate user balance
     */
     public SetUserInfoRequest setParentAccounting(boolean d) {
         this.parentAccounting = Boolean.valueOf(d);
@@ -244,7 +247,7 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="mobile_phone")
     /**
-    * The new user mobile phone. The length must be less than 50.
+    * The new user mobile phone. The length must be less than 50
     */
     public String getMobilePhone() {
         return this.mobilePhone;
@@ -255,7 +258,7 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new user mobile phone. The length must be less than 50.
+    * The new user mobile phone. The length must be less than 50
     */
     public SetUserInfoRequest setMobilePhone(String d) {
         this.mobilePhone = d;

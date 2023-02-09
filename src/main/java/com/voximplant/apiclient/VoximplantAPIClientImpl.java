@@ -71,7 +71,6 @@ class VoximplantAPIClientImpl {
         builder.setHeader(headers);
         builder.signWith(SignatureAlgorithm.RS256, this.privateKey);
         String ss = builder.compact();
-        System.out.println("token generated");
         return "Bearer "+ss;
     }
 

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="required_admin_user_id")
     /**
-    * The admin user ID to filter.
+    * The admin user ID to filter
     */
     public Long getRequiredAdminUserId() {
         return this.requiredAdminUserId;
@@ -29,7 +30,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * The admin user ID to filter.
+    * The admin user ID to filter
     */
     public GetAdminUsersRequest setRequiredAdminUserId(long d) {
         this.requiredAdminUserId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="required_admin_user_name")
     /**
-    * The admin user name part to filter.
+    * The admin user name part to filter
     */
     public String getRequiredAdminUserName() {
         return this.requiredAdminUserName;
@@ -51,7 +52,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * The admin user name part to filter.
+    * The admin user name part to filter
     */
     public GetAdminUsersRequest setRequiredAdminUserName(String d) {
         this.requiredAdminUserName = d;
@@ -62,7 +63,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="admin_user_display_name")
     /**
-    * The admin user display name part to filter.
+    * The admin user display name part to filter
     */
     public String getAdminUserDisplayName() {
         return this.adminUserDisplayName;
@@ -73,7 +74,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * The admin user display name part to filter.
+    * The admin user display name part to filter
     */
     public GetAdminUsersRequest setAdminUserDisplayName(String d) {
         this.adminUserDisplayName = d;
@@ -84,7 +85,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="admin_user_active")
     /**
-    * The admin user active flag to filter.
+    * The admin user active flag to filter
     */
     public Boolean getAdminUserActive() {
         return this.adminUserActive;
@@ -95,7 +96,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * The admin user active flag to filter.
+    * The admin user active flag to filter
     */
     public GetAdminUsersRequest setAdminUserActive(boolean d) {
         this.adminUserActive = Boolean.valueOf(d);
@@ -106,7 +107,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="with_roles")
     /**
-    * Set true to get the attached admin roles.
+    * Set true to get the attached admin roles
     */
     public Boolean getWithRoles() {
         return this.withRoles;
@@ -117,7 +118,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the attached admin roles.
+    * Set true to get the attached admin roles
     */
     public GetAdminUsersRequest setWithRoles(boolean d) {
         this.withRoles = Boolean.valueOf(d);
@@ -128,7 +129,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="with_access_entries")
     /**
-    * Set true to get the admin user permissions.
+    * Set true to get the admin user permissions
     */
     public Boolean getWithAccessEntries() {
         return this.withAccessEntries;
@@ -139,7 +140,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the admin user permissions.
+    * Set true to get the admin user permissions
     */
     public GetAdminUsersRequest setWithAccessEntries(boolean d) {
         this.withAccessEntries = Boolean.valueOf(d);
@@ -150,7 +151,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -161,7 +162,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetAdminUsersRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -172,7 +173,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -183,7 +184,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetAdminUsersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

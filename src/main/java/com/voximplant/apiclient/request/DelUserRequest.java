@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class DelUserRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by the ';' symbol or the 'all' value.
+    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * select all users
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -29,7 +31,8 @@ public class DelUserRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by the ';' symbol or the 'all' value.
+    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * select all users
     */
     public DelUserRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -40,8 +43,8 @@ public class DelUserRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by the ';' symbol that can be used
-    * instead of <b>user_id</b>.
+    * The user name list separated by semicolon (;) that can be used
+    * instead of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -52,8 +55,8 @@ public class DelUserRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by the ';' symbol that can be used
-    * instead of <b>user_id</b>.
+    * The user name list separated by semicolon (;) that can be used
+    * instead of <b>user_id</b>
     */
     public DelUserRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -65,7 +68,7 @@ public class DelUserRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * Delete the specified users bound to the application ID. It is
-    * required if the <b>user_name</b> is specified.
+    * required if the <b>user_name</b> is specified
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -77,7 +80,7 @@ public class DelUserRequest implements Alignable {
 
     /**
     * Delete the specified users bound to the application ID. It is
-    * required if the <b>user_name</b> is specified.
+    * required if the <b>user_name</b> is specified
     */
     public DelUserRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -89,7 +92,7 @@ public class DelUserRequest implements Alignable {
     @RequestField(name="application_name")
     /**
     * Delete the specified users bound to the application name. Can be used
-    * instead of the <b>application_id</b> parameter.
+    * instead of the <b>application_id</b> parameter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -101,7 +104,7 @@ public class DelUserRequest implements Alignable {
 
     /**
     * Delete the specified users bound to the application name. Can be used
-    * instead of the <b>application_id</b> parameter.
+    * instead of the <b>application_id</b> parameter
     */
     public DelUserRequest setApplicationName(String d) {
         this.applicationName = d;

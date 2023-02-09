@@ -18,7 +18,7 @@ public class AuthorizedAccountIPType implements Alignable {
     private String authorizedIp;
 
     /**
-    * The authorized IP4 or network.
+    * The authorized IP4 or network
     */
     public String getAuthorizedIp() {
         return this.authorizedIp;
@@ -31,7 +31,7 @@ public class AuthorizedAccountIPType implements Alignable {
     private Boolean allowed;
 
     /**
-    * The allowed flag (true - whitelist, false - blacklist).
+    * The allowed flag (true - whitelist, false - blacklist)
     */
     public Boolean getAllowed() {
         return this.allowed;

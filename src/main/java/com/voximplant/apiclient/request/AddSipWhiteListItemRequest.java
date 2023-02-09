@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -19,7 +20,7 @@ public class AddSipWhiteListItemRequest implements Alignable {
     @RequestField(name="sip_whitelist_network")
     /**
     * The network address in format A.B.C.D/L or A.B.C.D/a.b.c.d (example
-    * 192.168.1.5/16).
+    * 192.168.1.5/16)
     */
     public String getSipWhitelistNetwork() {
         return this.sipWhitelistNetwork;
@@ -31,10 +32,32 @@ public class AddSipWhiteListItemRequest implements Alignable {
 
     /**
     * The network address in format A.B.C.D/L or A.B.C.D/a.b.c.d (example
-    * 192.168.1.5/16).
+    * 192.168.1.5/16)
     */
     public AddSipWhiteListItemRequest setSipWhitelistNetwork(String d) {
         this.sipWhitelistNetwork = d;
+        return this;
+    }
+
+    private String description;
+
+    @RequestField(name="description")
+    /**
+    * The network address description
+    */
+    public String getDescription() {
+        return this.description;
+    }
+
+    public boolean hasDescription() {
+        return this.description != null;
+    }
+
+    /**
+    * The network address description
+    */
+    public AddSipWhiteListItemRequest setDescription(String d) {
+        this.description = d;
         return this;
     }
 
@@ -51,6 +74,14 @@ public class AddSipWhiteListItemRequest implements Alignable {
             sb.append(aligned)
                 .append("\"sipWhitelistNetwork\": \"")
                 .append(sipWhitelistNetwork)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (description != null) {
+            sb.append(aligned)
+                .append("\"description\": \"")
+                .append(description)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class DelAdminUserRequest implements Alignable {
 
     @RequestField(name="required_admin_user_id")
     /**
-    * The admin user ID list separated by the ';' symbol or the 'all' value.
+    * The admin user ID list separated by semicolon (;). Use the 'all'
+    * value to select all admin users
     */
     public MultiArgument<Long> getRequiredAdminUserId() {
         return this.requiredAdminUserId;
@@ -29,7 +31,8 @@ public class DelAdminUserRequest implements Alignable {
     }
 
     /**
-    * The admin user ID list separated by the ';' symbol or the 'all' value.
+    * The admin user ID list separated by semicolon (;). Use the 'all'
+    * value to select all admin users
     */
     public DelAdminUserRequest setRequiredAdminUserId(MultiArgument<Long> d) {
         this.requiredAdminUserId = d;
@@ -41,7 +44,7 @@ public class DelAdminUserRequest implements Alignable {
     @RequestField(name="required_admin_user_name")
     /**
     * The admin user name to delete, can be used instead of
-    * <b>required_admin_user_id</b>.
+    * <b>required_admin_user_id</b>
     */
     public MultiArgument<String> getRequiredAdminUserName() {
         return this.requiredAdminUserName;
@@ -53,7 +56,7 @@ public class DelAdminUserRequest implements Alignable {
 
     /**
     * The admin user name to delete, can be used instead of
-    * <b>required_admin_user_id</b>.
+    * <b>required_admin_user_id</b>
     */
     public DelAdminUserRequest setRequiredAdminUserName(MultiArgument<String> d) {
         this.requiredAdminUserName = d;

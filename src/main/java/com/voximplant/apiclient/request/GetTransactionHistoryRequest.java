@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -70,7 +71,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="timezone")
     /**
-    * The selected timezone or the 'auto' value (the account location).
+    * The selected timezone or the 'auto' value (the account location)
     */
     public String getTimezone() {
         return this.timezone;
@@ -81,7 +82,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The selected timezone or the 'auto' value (the account location).
+    * The selected timezone or the 'auto' value (the account location)
     */
     public GetTransactionHistoryRequest setTimezone(String d) {
         this.timezone = d;
@@ -92,7 +93,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="transaction_id")
     /**
-    * The transaction ID list separated by the ';' symbol.
+    * The transaction ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getTransactionId() {
         return this.transactionId;
@@ -103,7 +104,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The transaction ID list separated by the ';' symbol.
+    * The transaction ID list separated by semicolon (;)
     */
     public GetTransactionHistoryRequest setTransactionId(MultiArgument<Long> d) {
         this.transactionId = d;
@@ -114,7 +115,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="payment_reference")
     /**
-    * The external payment reference to filter.
+    * The external payment reference to filter
     */
     public String getPaymentReference() {
         return this.paymentReference;
@@ -125,7 +126,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The external payment reference to filter.
+    * The external payment reference to filter
     */
     public GetTransactionHistoryRequest setPaymentReference(String d) {
         this.paymentReference = d;
@@ -136,12 +137,23 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="transaction_type")
     /**
-    * The transaction type list separated by the ';' symbol. The following
-    * values are possible: periodic_charge, resource_charge,
-    * money_distribution, subscription_charge,
-    * subscription_installation_charge, card_periodic_payment,
-    * card_overrun_payment, card_payment, robokassa_payment, gift,
-    * add_money, subscription_cancel, adjustment, wire_transfer, refund.
+    * The transaction type list separated by semicolon (;). The following
+    * values are possible: resource_charge, money_distribution,
+    * subscription_charge, subscription_installation_charge,
+    * card_periodic_payment, card_overrun_payment, card_payment,
+    * rub_card_periodic_payment, rub_card_overrun_payment,
+    * rub_card_payment, robokassa_payment, gift, promo, adjustment,
+    * wire_transfer, us_wire_transfer, refund, discount, mgp_charge,
+    * mgp_startup, mgp_business, mgp_big_business, mgp_enterprise,
+    * mgp_large_enterprise, techsupport_charge, tax_charge,
+    * monthly_fee_charge, grace_credit_payment, grace_credit_provision,
+    * mau_charge, mau_overrun, im_charge, im_overrun, fmc_charge,
+    * sip_registration_charge, development_fee, money_transfer_to_child,
+    * money_transfer_to_parent, money_acceptance_from_child,
+    * money_acceptance_from_parent, phone_number_installation,
+    * phone_number_charge, toll_free_phone_number_installation,
+    * toll_free_phone_number_charge, services, user_money_transfer,
+    * paypal_payment, paypal_overrun_payment, paypal_periodic_payment
     */
     public MultiArgument<String> getTransactionType() {
         return this.transactionType;
@@ -152,12 +164,23 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The transaction type list separated by the ';' symbol. The following
-    * values are possible: periodic_charge, resource_charge,
-    * money_distribution, subscription_charge,
-    * subscription_installation_charge, card_periodic_payment,
-    * card_overrun_payment, card_payment, robokassa_payment, gift,
-    * add_money, subscription_cancel, adjustment, wire_transfer, refund.
+    * The transaction type list separated by semicolon (;). The following
+    * values are possible: resource_charge, money_distribution,
+    * subscription_charge, subscription_installation_charge,
+    * card_periodic_payment, card_overrun_payment, card_payment,
+    * rub_card_periodic_payment, rub_card_overrun_payment,
+    * rub_card_payment, robokassa_payment, gift, promo, adjustment,
+    * wire_transfer, us_wire_transfer, refund, discount, mgp_charge,
+    * mgp_startup, mgp_business, mgp_big_business, mgp_enterprise,
+    * mgp_large_enterprise, techsupport_charge, tax_charge,
+    * monthly_fee_charge, grace_credit_payment, grace_credit_provision,
+    * mau_charge, mau_overrun, im_charge, im_overrun, fmc_charge,
+    * sip_registration_charge, development_fee, money_transfer_to_child,
+    * money_transfer_to_parent, money_acceptance_from_child,
+    * money_acceptance_from_parent, phone_number_installation,
+    * phone_number_charge, toll_free_phone_number_installation,
+    * toll_free_phone_number_charge, services, user_money_transfer,
+    * paypal_payment, paypal_overrun_payment, paypal_periodic_payment
     */
     public GetTransactionHistoryRequest setTransactionType(MultiArgument<String> d) {
         this.transactionType = d;
@@ -168,7 +191,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by the ';' symbol.
+    * The user ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -179,7 +202,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by the ';' symbol.
+    * The user ID list separated by semicolon (;)
     */
     public GetTransactionHistoryRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -190,8 +213,8 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
         return this.childAccountId;
@@ -202,8 +225,8 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public GetTransactionHistoryRequest setChildAccountId(MultiArgument<Long> d) {
         this.childAccountId = d;
@@ -214,7 +237,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="children_transactions_only")
     /**
-    * Set true to get the children account transactions only.
+    * Set true to get the children account transactions only
     */
     public Boolean getChildrenTransactionsOnly() {
         return this.childrenTransactionsOnly;
@@ -225,7 +248,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the children account transactions only.
+    * Set true to get the children account transactions only
     */
     public GetTransactionHistoryRequest setChildrenTransactionsOnly(boolean d) {
         this.childrenTransactionsOnly = Boolean.valueOf(d);
@@ -236,7 +259,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="users_transactions_only")
     /**
-    * Set true to get the users' transactions only.
+    * Set true to get the users' transactions only
     */
     public Boolean getUsersTransactionsOnly() {
         return this.usersTransactionsOnly;
@@ -247,7 +270,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the users' transactions only.
+    * Set true to get the users' transactions only
     */
     public GetTransactionHistoryRequest setUsersTransactionsOnly(boolean d) {
         this.usersTransactionsOnly = Boolean.valueOf(d);
@@ -258,7 +281,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -269,7 +292,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public GetTransactionHistoryRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -280,7 +303,8 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The number of returning records. In the synchronous mode, the maximum
+    * value is 1000
     */
     public Long getCount() {
         return this.count;
@@ -291,7 +315,8 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The number of returning records. In the synchronous mode, the maximum
+    * value is 1000
     */
     public GetTransactionHistoryRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -302,7 +327,8 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The number of records to skip in the output with a maximum value of
+    * 10000
     */
     public Long getOffset() {
         return this.offset;
@@ -313,7 +339,8 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The number of records to skip in the output with a maximum value of
+    * 10000
     */
     public GetTransactionHistoryRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -347,8 +374,9 @@ public class GetTransactionHistoryRequest implements Alignable {
     @RequestField(name="is_async")
     /**
     * Set true to get records in the asynchronous mode (for csv output
-    * only). See the [GetHistoryReports], [DownloadHistoryReport]
-    * functions.
+    * only). <b>Use this mode to download large amounts of data</b>. See
+    * the [GetHistoryReports], [DownloadHistoryReport] functions for
+    * details
     */
     public Boolean getIsAsync() {
         return this.isAsync;
@@ -360,11 +388,36 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     /**
     * Set true to get records in the asynchronous mode (for csv output
-    * only). See the [GetHistoryReports], [DownloadHistoryReport]
-    * functions.
+    * only). <b>Use this mode to download large amounts of data</b>. See
+    * the [GetHistoryReports], [DownloadHistoryReport] functions for
+    * details
     */
     public GetTransactionHistoryRequest setIsAsync(boolean d) {
         this.isAsync = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Boolean isUncommitted;
+
+    @RequestField(name="is_uncommitted")
+    /**
+    * Set true to get transactions on hold (transactions for which money is
+    * reserved but not yet withdrawn from the account)
+    */
+    public Boolean getIsUncommitted() {
+        return this.isUncommitted;
+    }
+
+    public boolean hasIsUncommitted() {
+        return this.isUncommitted != null;
+    }
+
+    /**
+    * Set true to get transactions on hold (transactions for which money is
+    * reserved but not yet withdrawn from the account)
+    */
+    public GetTransactionHistoryRequest setIsUncommitted(boolean d) {
+        this.isUncommitted = Boolean.valueOf(d);
         return this;
     }
 
@@ -493,6 +546,14 @@ public class GetTransactionHistoryRequest implements Alignable {
             sb.append(aligned)
                 .append("\"isAsync\": \"")
                 .append(isAsync)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isUncommitted != null) {
+            sb.append(aligned)
+                .append("\"isUncommitted\": \"")
+                .append(isUncommitted)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

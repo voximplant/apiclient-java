@@ -18,7 +18,7 @@ public class ContractorInvoiceServiceType implements Alignable {
     private String serviceName;
 
     /**
-    * The service name.
+    * The service name
     */
     public String getServiceName() {
         return this.serviceName;
@@ -31,7 +31,7 @@ public class ContractorInvoiceServiceType implements Alignable {
     private BigDecimal serviceCost;
 
     /**
-    * The service cost (RUR).
+    * The service cost (RUR)
     */
     public BigDecimal getServiceCost() {
         return this.serviceCost;

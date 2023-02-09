@@ -18,7 +18,7 @@ public class ACDSessionEventInfoType implements Alignable {
     private Long acdSessionEventId;
 
     /**
-    * The ACD session event ID.
+    * The ACD session event ID
     */
     public Long getAcdSessionEventId() {
         return this.acdSessionEventId;
@@ -45,7 +45,7 @@ public class ACDSessionEventInfoType implements Alignable {
     private String type;
 
     /**
-    * The event type name.
+    * The event type name
     */
     public String getType() {
         return this.type;
@@ -58,7 +58,7 @@ public class ACDSessionEventInfoType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID.
+    * The user ID
     */
     public Long getUserId() {
         return this.userId;
@@ -71,7 +71,7 @@ public class ACDSessionEventInfoType implements Alignable {
     private String customData;
 
     /**
-    * The custom data.
+    * The custom data
     */
     public String getCustomData() {
         return this.customData;

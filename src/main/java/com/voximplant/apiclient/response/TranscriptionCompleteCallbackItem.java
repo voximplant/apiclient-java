@@ -18,7 +18,7 @@ public class TranscriptionCompleteCallbackItem implements Alignable {
     private String recordUrl;
 
     /**
-    * The record url.
+    * The record url
     */
     public String getRecordUrl() {
         return this.recordUrl;
@@ -31,7 +31,8 @@ public class TranscriptionCompleteCallbackItem implements Alignable {
     private String transcriptionUrl;
 
     /**
-    * The transcription url.
+    * Transcription URL. To open the URL, please add authorization
+    * parameters and <b>record_id</b> to it
     */
     public String getTranscriptionUrl() {
         return this.transcriptionUrl;
@@ -44,7 +45,7 @@ public class TranscriptionCompleteCallbackItem implements Alignable {
     private Long callSessionHistoryId;
 
     /**
-    * The call session history id.
+    * The call session history ID
     */
     public Long getCallSessionHistoryId() {
         return this.callSessionHistoryId;
@@ -57,7 +58,7 @@ public class TranscriptionCompleteCallbackItem implements Alignable {
     private BigDecimal transcriptionCost;
 
     /**
-    * The cost of transcription.
+    * The cost of transcription
     */
     public BigDecimal getTranscriptionCost() {
         return this.transcriptionCost;

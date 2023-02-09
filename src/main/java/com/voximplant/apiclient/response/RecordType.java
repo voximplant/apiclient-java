@@ -18,7 +18,7 @@ public class RecordType implements Alignable {
     private Long recordId;
 
     /**
-    * The record ID.
+    * The record ID
     */
     public Long getRecordId() {
         return this.recordId;
@@ -31,7 +31,7 @@ public class RecordType implements Alignable {
     private String recordName;
 
     /**
-    * The record name.
+    * The record name
     */
     public String getRecordName() {
         return this.recordName;
@@ -44,7 +44,7 @@ public class RecordType implements Alignable {
     private BigDecimal cost;
 
     /**
-    * The record cost.
+    * The record cost
     */
     public BigDecimal getCost() {
         return this.cost;
@@ -72,7 +72,7 @@ public class RecordType implements Alignable {
     private Long duration;
 
     /**
-    * The call duration in seconds.
+    * The call duration in seconds
     */
     public Long getDuration() {
         return this.duration;
@@ -85,7 +85,7 @@ public class RecordType implements Alignable {
     private String recordUrl;
 
     /**
-    * The record URL.
+    * The record URL
     */
     public String getRecordUrl() {
         return this.recordUrl;
@@ -98,7 +98,7 @@ public class RecordType implements Alignable {
     private Long transactionId;
 
     /**
-    * The transaction ID.
+    * The transaction ID
     */
     public Long getTransactionId() {
         return this.transactionId;
@@ -111,7 +111,7 @@ public class RecordType implements Alignable {
     private BigDecimal fileSize;
 
     /**
-    * The file size.
+    * The file size
     */
     public BigDecimal getFileSize() {
         return this.fileSize;
@@ -124,7 +124,8 @@ public class RecordType implements Alignable {
     private String transcriptionUrl;
 
     /**
-    * The url of transcription.
+    * Transcription URL. To open the URL, please add authorization
+    * parameters and <b>record_id</b> to it
     */
     public String getTranscriptionUrl() {
         return this.transcriptionUrl;
@@ -137,8 +138,8 @@ public class RecordType implements Alignable {
     private String transcriptionStatus;
 
     /**
-    * The status of transcription. The possible values are: Not required,
-    * In progress, Complete
+    * The status of transcription. The possible values are Not required, In
+    * progress, Complete
     */
     public String getTranscriptionStatus() {
         return this.transcriptionStatus;

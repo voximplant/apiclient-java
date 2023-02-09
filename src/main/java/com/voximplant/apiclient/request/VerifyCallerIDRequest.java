@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class VerifyCallerIDRequest implements Alignable {
 
     @RequestField(name="callerid_id")
     /**
-    * The id of the callerID object.
+    * The id of the callerID object
     */
     public Long getCalleridId() {
         return this.calleridId;
@@ -29,7 +30,7 @@ public class VerifyCallerIDRequest implements Alignable {
     }
 
     /**
-    * The id of the callerID object.
+    * The id of the callerID object
     */
     public VerifyCallerIDRequest setCalleridId(long d) {
         this.calleridId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class VerifyCallerIDRequest implements Alignable {
 
     @RequestField(name="callerid_number")
     /**
-    * The callerID number that can be used instead of <b>callerid_id</b>.
+    * The callerID number that can be used instead of <b>callerid_id</b>
     */
     public String getCalleridNumber() {
         return this.calleridNumber;
@@ -51,7 +52,7 @@ public class VerifyCallerIDRequest implements Alignable {
     }
 
     /**
-    * The callerID number that can be used instead of <b>callerid_id</b>.
+    * The callerID number that can be used instead of <b>callerid_id</b>
     */
     public VerifyCallerIDRequest setCalleridNumber(String d) {
         this.calleridNumber = d;

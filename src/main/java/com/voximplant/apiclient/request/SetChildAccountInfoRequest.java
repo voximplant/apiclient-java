@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,8 +19,8 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
         return this.childAccountId;
@@ -30,8 +31,8 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public SetChildAccountInfoRequest setChildAccountId(MultiArgument<Long> d) {
         this.childAccountId = d;
@@ -42,8 +43,8 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="child_account_name")
     /**
-    * The child account name list separated by the ';' symbol. Can be used
-    * instead of <b>child_account_id</b>.
+    * The child account name list separated by semicolon (;). Can be used
+    * instead of <b>child_account_id</b>
     */
     public MultiArgument<String> getChildAccountName() {
         return this.childAccountName;
@@ -54,8 +55,8 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The child account name list separated by the ';' symbol. Can be used
-    * instead of <b>child_account_id</b>.
+    * The child account name list separated by semicolon (;). Can be used
+    * instead of <b>child_account_id</b>
     */
     public SetChildAccountInfoRequest setChildAccountName(MultiArgument<String> d) {
         this.childAccountName = d;
@@ -66,8 +67,8 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="child_account_email")
     /**
-    * The child account email list separated by the ';' symbol. Can be used
-    * instead of <b>child_account_id</b>.
+    * The child account email list separated by semicolon (;). Can be used
+    * instead of <b>child_account_id</b>
     */
     public MultiArgument<String> getChildAccountEmail() {
         return this.childAccountEmail;
@@ -78,8 +79,8 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The child account email list separated by the ';' symbol. Can be used
-    * instead of <b>child_account_id</b>.
+    * The child account email list separated by semicolon (;). Can be used
+    * instead of <b>child_account_id</b>
     */
     public SetChildAccountInfoRequest setChildAccountEmail(MultiArgument<String> d) {
         this.childAccountEmail = d;
@@ -90,7 +91,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="new_child_account_email")
     /**
-    * The new child account email.
+    * The new child account email
     */
     public String getNewChildAccountEmail() {
         return this.newChildAccountEmail;
@@ -101,7 +102,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The new child account email.
+    * The new child account email
     */
     public SetChildAccountInfoRequest setNewChildAccountEmail(String d) {
         this.newChildAccountEmail = d;
@@ -112,7 +113,9 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="new_child_account_password")
     /**
-    * The new child account password.
+    * The new child account password. Must be at least 8 characters long
+    * and contain at least one uppercase and lowercase letter, one number,
+    * and one special character
     */
     public String getNewChildAccountPassword() {
         return this.newChildAccountPassword;
@@ -123,7 +126,9 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The new child account password.
+    * The new child account password. Must be at least 8 characters long
+    * and contain at least one uppercase and lowercase letter, one number,
+    * and one special character
     */
     public SetChildAccountInfoRequest setNewChildAccountPassword(String d) {
         this.newChildAccountPassword = d;
@@ -134,7 +139,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="account_notifications")
     /**
-    * Are the Voximplant notifications required?
+    * Voximplant notifications are required
     */
     public Boolean getAccountNotifications() {
         return this.accountNotifications;
@@ -145,7 +150,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Are the Voximplant notifications required?
+    * Voximplant notifications are required
     */
     public SetChildAccountInfoRequest setAccountNotifications(boolean d) {
         this.accountNotifications = Boolean.valueOf(d);
@@ -156,7 +161,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="tariff_changing_notifications")
     /**
-    * Set to true to receive the emails about the Voximplant plan changing.
+    * Set to true to receive the emails about the Voximplant plan changing
     */
     public Boolean getTariffChangingNotifications() {
         return this.tariffChangingNotifications;
@@ -167,7 +172,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about the Voximplant plan changing.
+    * Set to true to receive the emails about the Voximplant plan changing
     */
     public SetChildAccountInfoRequest setTariffChangingNotifications(boolean d) {
         this.tariffChangingNotifications = Boolean.valueOf(d);
@@ -178,7 +183,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="news_notifications")
     /**
-    * Set to true to receive the emails about the Voximplant news.
+    * Set to true to receive the emails about the Voximplant news
     */
     public Boolean getNewsNotifications() {
         return this.newsNotifications;
@@ -189,7 +194,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about the Voximplant news.
+    * Set to true to receive the emails about the Voximplant news
     */
     public SetChildAccountInfoRequest setNewsNotifications(boolean d) {
         this.newsNotifications = Boolean.valueOf(d);
@@ -200,7 +205,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="active")
     /**
-    * Set false to disable the child account.
+    * Set false to disable the child account
     */
     public Boolean getActive() {
         return this.active;
@@ -211,7 +216,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set false to disable the child account.
+    * Set false to disable the child account
     */
     public SetChildAccountInfoRequest setActive(boolean d) {
         this.active = Boolean.valueOf(d);
@@ -330,7 +335,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="min_balance_to_notify")
     /**
-    * The min balance value to notify by email or SMS.
+    * The min balance value to notify by email or SMS
     */
     public BigDecimal getMinBalanceToNotify() {
         return this.minBalanceToNotify;
@@ -341,7 +346,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The min balance value to notify by email or SMS.
+    * The min balance value to notify by email or SMS
     */
     public SetChildAccountInfoRequest setMinBalanceToNotify(BigDecimal d) {
         this.minBalanceToNotify = d;
@@ -352,7 +357,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="support_robokassa")
     /**
-    * Set to true to allow the robokassa payments.
+    * Set to true to allow the robokassa payments
     */
     public Boolean getSupportRobokassa() {
         return this.supportRobokassa;
@@ -363,7 +368,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to allow the robokassa payments.
+    * Set to true to allow the robokassa payments
     */
     public SetChildAccountInfoRequest setSupportRobokassa(boolean d) {
         this.supportRobokassa = Boolean.valueOf(d);
@@ -374,7 +379,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="support_bank_card")
     /**
-    * Set to true to allow the bank card payments.
+    * Set to true to allow the bank card payments
     */
     public Boolean getSupportBankCard() {
         return this.supportBankCard;
@@ -385,7 +390,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to allow the bank card payments.
+    * Set to true to allow the bank card payments
     */
     public SetChildAccountInfoRequest setSupportBankCard(boolean d) {
         this.supportBankCard = Boolean.valueOf(d);
@@ -396,7 +401,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="support_invoice")
     /**
-    * Set to true to allow the bank invoices.
+    * Set to true to allow the bank invoices
     */
     public Boolean getSupportInvoice() {
         return this.supportInvoice;
@@ -407,7 +412,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to allow the bank invoices.
+    * Set to true to allow the bank invoices
     */
     public SetChildAccountInfoRequest setSupportInvoice(boolean d) {
         this.supportInvoice = Boolean.valueOf(d);
@@ -418,7 +423,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="can_use_restricted")
     /**
-    * Set to true to allow use restricted directions.
+    * Set to true to allow use restricted directions
     */
     public Boolean getCanUseRestricted() {
         return this.canUseRestricted;
@@ -429,7 +434,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to allow use restricted directions.
+    * Set to true to allow use restricted directions
     */
     public SetChildAccountInfoRequest setCanUseRestricted(boolean d) {
         this.canUseRestricted = Boolean.valueOf(d);
@@ -440,7 +445,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="min_payment_amount")
     /**
-    * The minimum payment amount.
+    * The minimum payment amount
     */
     public Long getMinPaymentAmount() {
         return this.minPaymentAmount;
@@ -451,7 +456,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The minimum payment amount.
+    * The minimum payment amount
     */
     public SetChildAccountInfoRequest setMinPaymentAmount(long d) {
         this.minPaymentAmount = Long.valueOf(d);

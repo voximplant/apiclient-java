@@ -18,7 +18,7 @@ public class MGPInfo implements Alignable {
     private Long mgpId;
 
     /**
-    * The MGP ID.
+    * The MGP ID
     */
     public Long getMgpId() {
         return this.mgpId;
@@ -31,7 +31,7 @@ public class MGPInfo implements Alignable {
     private Long mgpTemplateId;
 
     /**
-    * The MGP template ID.
+    * The MGP template ID
     */
     public Long getMgpTemplateId() {
         return this.mgpTemplateId;
@@ -44,7 +44,7 @@ public class MGPInfo implements Alignable {
     private Long mgpTemplatePrice;
 
     /**
-    * The MGP template price.
+    * The MGP template price
     */
     public Long getMgpTemplatePrice() {
         return this.mgpTemplatePrice;
@@ -57,7 +57,7 @@ public class MGPInfo implements Alignable {
     private String mgpTemplateCurrency;
 
     /**
-    * The MGP template currency.
+    * The MGP template currency
     */
     public String getMgpTemplateCurrency() {
         return this.mgpTemplateCurrency;
@@ -71,7 +71,7 @@ public class MGPInfo implements Alignable {
     private Date mgpActivated;
 
     /**
-    * The MGP activation date.
+    * The MGP activation date
     */
     public Date getMgpActivated() {
         return this.mgpActivated;
@@ -85,7 +85,7 @@ public class MGPInfo implements Alignable {
     private Date mgpDeactivated;
 
     /**
-    * The MGP deactivation date.
+    * The MGP deactivation date
     */
     public Date getMgpDeactivated() {
         return this.mgpDeactivated;

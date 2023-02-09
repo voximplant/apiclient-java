@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID list separated by the ';' symbol.
+    * The scenario ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -29,7 +30,7 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario ID list separated by the ';' symbol.
+    * The scenario ID list separated by semicolon (;)
     */
     public BindScenarioRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;
@@ -40,8 +41,8 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The scenario name list separated by the ';' symbol. Can be used
-    * instead of <b>scenario_id</b>.
+    * The scenario name list separated by semicolon (;). Can be used
+    * instead of <b>scenario_id</b>
     */
     public MultiArgument<String> getScenarioName() {
         return this.scenarioName;
@@ -52,8 +53,8 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario name list separated by the ';' symbol. Can be used
-    * instead of <b>scenario_id</b>.
+    * The scenario name list separated by semicolon (;). Can be used
+    * instead of <b>scenario_id</b>
     */
     public BindScenarioRequest setScenarioName(MultiArgument<String> d) {
         this.scenarioName = d;
@@ -64,7 +65,8 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID.
+    * The rule ID to bind the scenario. The rule and the scenario need to
+    * be in the same application
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -75,7 +77,8 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The rule ID.
+    * The rule ID to bind the scenario. The rule and the scenario need to
+    * be in the same application
     */
     public BindScenarioRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -86,7 +89,7 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name that can be used instead of <b>rule_id</b>.
+    * The rule name that can be used instead of <b>rule_id</b>
     */
     public String getRuleName() {
         return this.ruleName;
@@ -97,7 +100,7 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The rule name that can be used instead of <b>rule_id</b>.
+    * The rule name that can be used instead of <b>rule_id</b>
     */
     public BindScenarioRequest setRuleName(String d) {
         this.ruleName = d;
@@ -108,7 +111,7 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -119,7 +122,7 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public BindScenarioRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -130,8 +133,7 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -142,8 +144,7 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public BindScenarioRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -154,7 +155,7 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Bind or unbind?
+    * Bind or unbind (set true or false respectively)
     */
     public Boolean getBind() {
         return this.bind;
@@ -165,7 +166,7 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * Bind or unbind?
+    * Bind or unbind (set true or false respectively)
     */
     public BindScenarioRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);

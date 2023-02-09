@@ -32,7 +32,7 @@ public class BankCardErrorType implements Alignable {
     private String msg;
 
     /**
-    * The error message.
+    * The error message
     */
     public String getMsg() {
         return this.msg;
@@ -45,7 +45,7 @@ public class BankCardErrorType implements Alignable {
     private BigDecimal amount;
 
     /**
-    * The amount in the payment currency.
+    * The amount in the payment currency
     */
     public BigDecimal getAmount() {
         return this.amount;
@@ -58,7 +58,7 @@ public class BankCardErrorType implements Alignable {
     private String currency;
 
     /**
-    * The payment currency.
+    * The payment currency
     */
     public String getCurrency() {
         return this.currency;

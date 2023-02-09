@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Start the next call task
+* Start the next call task.
 */
 public class StartNextCallTaskExample {
     public static void main(String [] args) {

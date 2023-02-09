@@ -23,7 +23,10 @@ public class GetPhoneNumbersResponse implements Alignable {
 
     private AttachedPhoneInfoType[] result;
 
-        public AttachedPhoneInfoType[] getResult() {
+    /**
+    * Phone numbers info
+    */
+    public AttachedPhoneInfoType[] getResult() {
         return this.result;
     }
 
@@ -34,7 +37,7 @@ public class GetPhoneNumbersResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found phone count.
+    * The total found phone count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +50,7 @@ public class GetPhoneNumbersResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned phone count.
+    * The returned phone count
     */
     public Long getCount() {
         return this.count;

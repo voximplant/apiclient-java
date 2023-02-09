@@ -11,15 +11,16 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
+* Received when an expiration date of the confirmation documents
+* waiting period is changed. Received as part of the [AccountCallback]
+* structure.
 */
 public class RestoredAgreementStatusCallback implements Alignable {
 
     private Long documentId;
 
     /**
-    * ID of the agreement document which status has been changed.
+    * ID of the agreement document which status has been changed
     */
     public Long getDocumentId() {
         return this.documentId;
@@ -33,7 +34,7 @@ public class RestoredAgreementStatusCallback implements Alignable {
     private Date expirationDate;
 
     /**
-    * The new date of agreement expiration in format: YYYY-MM-DD.
+    * The new date of agreement expiration in format: YYYY-MM-DD
     */
     public Date getExpirationDate() {
         return this.expirationDate;

@@ -18,7 +18,7 @@ public class PlanType implements Alignable {
     private Long planSubscriptionTemplateId;
 
     /**
-    * The current plan ID.
+    * The current plan ID
     */
     public Long getPlanSubscriptionTemplateId() {
         return this.planSubscriptionTemplateId;
@@ -31,7 +31,7 @@ public class PlanType implements Alignable {
     private String planType;
 
     /**
-    * The plan type. The possible values are: IM, MAU.
+    * The plan type. The possible values are IM, MAU
     */
     public String getPlanType() {
         return this.planType;
@@ -44,7 +44,7 @@ public class PlanType implements Alignable {
     private String planName;
 
     /**
-    * The plan name.
+    * The plan name
     */
     public String getPlanName() {
         return this.planName;
@@ -57,7 +57,7 @@ public class PlanType implements Alignable {
     private BigDecimal periodicCharge;
 
     /**
-    * The plan monthly charge.
+    * The plan monthly charge
     */
     public BigDecimal getPeriodicCharge() {
         return this.periodicCharge;
@@ -70,7 +70,7 @@ public class PlanType implements Alignable {
     private PlanPackageType[] packages;
 
     /**
-    * The account package array.
+    * The account package array
     */
     public PlanPackageType[] getPackages() {
         return this.packages;

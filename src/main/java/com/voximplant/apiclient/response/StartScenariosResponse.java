@@ -37,12 +37,12 @@ public class StartScenariosResponse implements Alignable {
     private String mediaSessionAccessUrl;
 
     /**
-    * The URL to control a created media session. It can be used for
+    * The URL to control a created media session. You can use it for
     * arbitrary tasks such as stopping scenario or passing additional data
     * to it. Making HTTP request on this URL will result in the
-    * [AppEvents.HttpRequest](https://voximplant.com/docs/references/voxengine/appevents#httprequest)
+    * [AppEvents.HttpRequest](/docs/references/voxengine/appevents#httprequest)
     * VoxEngine event being triggered for scenario, with HTTP request data
-    * passed to it.
+    * passed to it
     */
     public String getMediaSessionAccessUrl() {
         return this.mediaSessionAccessUrl;
@@ -55,12 +55,12 @@ public class StartScenariosResponse implements Alignable {
     private String mediaSessionAccessSecureUrl;
 
     /**
-    * The URL to control a created media session. It can be used for
+    * The URL to control a created media session. You can use it for
     * arbitrary tasks such as stopping scenario or passing additional data
     * to it. Making HTTPS request on this URL will result in the
-    * [AppEvents.HttpRequest](https://voximplant.com/docs/references/voxengine/appevents#httprequest)
+    * [AppEvents.HttpRequest](/docs/references/voxengine/appevents#httprequest)
     * VoxEngine event being triggered for scenario, with HTTP request data
-    * passed to it.
+    * passed to it
     */
     public String getMediaSessionAccessSecureUrl() {
         return this.mediaSessionAccessSecureUrl;
@@ -81,6 +81,22 @@ public class StartScenariosResponse implements Alignable {
 
     public boolean hasMediaSessionCheckUrl() {
         return this.mediaSessionCheckUrl != null;
+    }
+
+    private Long callSessionHistoryId;
+
+    /**
+    * The call session history ID. To search a call session result, paste
+    * the ID to the <a
+    * href='/docs/references/httpapi/history#getcallhistory'>GetCallHistory</a>
+    * method's <b>call_session_history_id</b> parameter
+    */
+    public Long getCallSessionHistoryId() {
+        return this.callSessionHistoryId;
+    }
+
+    public boolean hasCallSessionHistoryId() {
+        return this.callSessionHistoryId != null;
     }
 
     public String toString(int alignment) {
@@ -120,6 +136,14 @@ public class StartScenariosResponse implements Alignable {
             sb.append(aligned)
                 .append("\"mediaSessionCheckUrl\": \"")
                 .append(mediaSessionCheckUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callSessionHistoryId != null) {
+            sb.append(aligned)
+                .append("\"callSessionHistoryId\": \"")
+                .append(callSessionHistoryId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

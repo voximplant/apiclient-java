@@ -18,7 +18,7 @@ public class PlanPackageConfig implements Alignable {
     private Long[] priceGroupId;
 
     /**
-    * The price group IDs.
+    * The price group IDs
     */
     public Long[] getPriceGroupId() {
         return this.priceGroupId;
@@ -31,7 +31,7 @@ public class PlanPackageConfig implements Alignable {
     private String packageName;
 
     /**
-    * The package name.
+    * The package name
     */
     public String getPackageName() {
         return this.packageName;
@@ -44,7 +44,7 @@ public class PlanPackageConfig implements Alignable {
     private String packageUuid;
 
     /**
-    * The package UUID.
+    * The package UUID
     */
     public String getPackageUuid() {
         return this.packageUuid;
@@ -57,7 +57,7 @@ public class PlanPackageConfig implements Alignable {
     private Boolean mayOverrun;
 
     /**
-    * Is overrun enabled?
+    * Overrun is enabled
     */
     public Boolean getMayOverrun() {
         return this.mayOverrun;
@@ -70,7 +70,7 @@ public class PlanPackageConfig implements Alignable {
     private Long packageSize;
 
     /**
-    * The current package size (including overrun).
+    * The current package size (including overrun)
     */
     public Long getPackageSize() {
         return this.packageSize;

@@ -15,23 +15,23 @@ import com.voximplant.apiclient.util.Alignable;
 */
 public class SmsTransaction implements Alignable {
 
-    private Long transactionId;
+    private Long messageId;
 
     /**
-    * The transaction ID.
+    * Message ID
     */
-    public Long getTransactionId() {
-        return this.transactionId;
+    public Long getMessageId() {
+        return this.messageId;
     }
 
-    public boolean hasTransactionId() {
-        return this.transactionId != null;
+    public boolean hasMessageId() {
+        return this.messageId != null;
     }
 
     private String destinationNumber;
 
     /**
-    * The SMS destination number.
+    * The SMS destination number
     */
     public String getDestinationNumber() {
         return this.destinationNumber;
@@ -50,10 +50,10 @@ public class SmsTransaction implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (transactionId != null) {
+        if (messageId != null) {
             sb.append(aligned)
-                .append("\"transactionId\": \"")
-                .append(transactionId)
+                .append("\"messageId\": \"")
+                .append(messageId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class DelScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID list separated by the ';' symbol or the 'all' value.
+    * The scenario ID list separated by semicolon (;). Use the 'all' value
+    * to delete all scenarios in all applications
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -29,7 +31,8 @@ public class DelScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario ID list separated by the ';' symbol or the 'all' value.
+    * The scenario ID list separated by semicolon (;). Use the 'all' value
+    * to delete all scenarios in all applications
     */
     public DelScenarioRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;
@@ -40,8 +43,8 @@ public class DelScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The scenario name list separated by the ';' symbol. Can be used
-    * instead of <b>scenario_id</b>.
+    * The scenario name list separated by semicolon (;). Can be used
+    * instead of <b>scenario_id</b>
     */
     public MultiArgument<String> getScenarioName() {
         return this.scenarioName;
@@ -52,8 +55,8 @@ public class DelScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario name list separated by the ';' symbol. Can be used
-    * instead of <b>scenario_id</b>.
+    * The scenario name list separated by semicolon (;). Can be used
+    * instead of <b>scenario_id</b>
     */
     public DelScenarioRequest setScenarioName(MultiArgument<String> d) {
         this.scenarioName = d;

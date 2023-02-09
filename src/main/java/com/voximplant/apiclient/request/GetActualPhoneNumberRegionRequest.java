@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code.
+    * The country code
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -29,7 +30,7 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
     }
 
     /**
-    * The country code.
+    * The country code
     */
     public GetActualPhoneNumberRegionRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -40,7 +41,7 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -51,10 +52,32 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * The phone category name. See the [GetPhoneNumberCategories] method
     */
     public GetActualPhoneNumberRegionRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
+        return this;
+    }
+
+    private String countryState;
+
+    @RequestField(name="country_state")
+    /**
+    * The country state code (example: AL, CA, ... )
+    */
+    public String getCountryState() {
+        return this.countryState;
+    }
+
+    public boolean hasCountryState() {
+        return this.countryState != null;
+    }
+
+    /**
+    * The country state code (example: AL, CA, ... )
+    */
+    public GetActualPhoneNumberRegionRequest setCountryState(String d) {
+        this.countryState = d;
         return this;
     }
 
@@ -62,7 +85,7 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
 
     @RequestField(name="phone_region_id")
     /**
-    * The phone region ID to filter.
+    * The phone region ID to filter
     */
     public Long getPhoneRegionId() {
         return this.phoneRegionId;
@@ -73,7 +96,7 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
     }
 
     /**
-    * The phone region ID to filter.
+    * The phone region ID to filter
     */
     public GetActualPhoneNumberRegionRequest setPhoneRegionId(long d) {
         this.phoneRegionId = Long.valueOf(d);
@@ -84,7 +107,7 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
 
     @RequestField(name="locale")
     /**
-    * The 2-letter locale code. Supported values are EN, RU.
+    * The 2-letter locale code. Supported values are EN, RU
     */
     public String getLocale() {
         return this.locale;
@@ -95,7 +118,7 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
     }
 
     /**
-    * The 2-letter locale code. Supported values are EN, RU.
+    * The 2-letter locale code. Supported values are EN, RU
     */
     public GetActualPhoneNumberRegionRequest setLocale(String d) {
         this.locale = d;
@@ -123,6 +146,14 @@ public class GetActualPhoneNumberRegionRequest implements Alignable {
             sb.append(aligned)
                 .append("\"phoneCategoryName\": \"")
                 .append(phoneCategoryName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (countryState != null) {
+            sb.append(aligned)
+                .append("\"countryState\": \"")
+                .append(countryState)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

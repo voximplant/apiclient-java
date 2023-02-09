@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetCurrencyRateRequest implements Alignable {
 
     @RequestField(name="currency")
     /**
-    * The currency code list separated by the ';' symbol. Examples: RUR,
+    * The currency code list separated by semicolon (;). Examples: RUR,
     * EUR, USD
     */
     public MultiArgument<String> getCurrency() {
@@ -30,7 +31,7 @@ public class GetCurrencyRateRequest implements Alignable {
     }
 
     /**
-    * The currency code list separated by the ';' symbol. Examples: RUR,
+    * The currency code list separated by semicolon (;). Examples: RUR,
     * EUR, USD
     */
     public GetCurrencyRateRequest setCurrency(MultiArgument<String> d) {

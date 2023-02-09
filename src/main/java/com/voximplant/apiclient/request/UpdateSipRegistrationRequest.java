@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -40,7 +41,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="sip_username")
     /**
-    * The user name.
+    * The user name
     */
     public String getSipUsername() {
         return this.sipUsername;
@@ -51,7 +52,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * The user name.
+    * The user name
     */
     public UpdateSipRegistrationRequest setSipUsername(String d) {
         this.sipUsername = d;
@@ -151,7 +152,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * The application ID which the SIP registration will be bound to. Can
-    * be used instead of the <b>application_name</b> parameter.
+    * be used instead of the <b>application_name</b> parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -163,7 +164,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
 
     /**
     * The application ID which the SIP registration will be bound to. Can
-    * be used instead of the <b>application_name</b> parameter.
+    * be used instead of the <b>application_name</b> parameter
     */
     public UpdateSipRegistrationRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -175,7 +176,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
     @RequestField(name="application_name")
     /**
     * The application name which the SIP registration will be bound to. Can
-    * be used instead of the <b>application_id</b> parameter.
+    * be used instead of the <b>application_id</b> parameter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -187,7 +188,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
 
     /**
     * The application name which the SIP registration will be bound to. Can
-    * be used instead of the <b>application_id</b> parameter.
+    * be used instead of the <b>application_id</b> parameter
     */
     public UpdateSipRegistrationRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -199,7 +200,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
     @RequestField(name="rule_id")
     /**
     * The rule ID which the SIP registration will be bound to. Can be used
-    * instead of the <b>rule_name</b> parameter.
+    * instead of the <b>rule_name</b> parameter
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -211,7 +212,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
 
     /**
     * The rule ID which the SIP registration will be bound to. Can be used
-    * instead of the <b>rule_name</b> parameter.
+    * instead of the <b>rule_name</b> parameter
     */
     public UpdateSipRegistrationRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -223,7 +224,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
     @RequestField(name="rule_name")
     /**
     * The rule name which the SIP registration will be bound to. Can be
-    * used instead of the <b>rule_id</b> parameter.
+    * used instead of the <b>rule_id</b> parameter
     */
     public String getRuleName() {
         return this.ruleName;
@@ -235,7 +236,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
 
     /**
     * The rule name which the SIP registration will be bound to. Can be
-    * used instead of the <b>rule_id</b> parameter.
+    * used instead of the <b>rule_id</b> parameter
     */
     public UpdateSipRegistrationRequest setRuleName(String d) {
         this.ruleName = d;
@@ -247,7 +248,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * The user ID which the SIP registration will be bound to. Can be used
-    * instead of the <b>user_name</b> parameter.
+    * instead of the <b>user_name</b> parameter
     */
     public Long getUserId() {
         return this.userId;
@@ -259,7 +260,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
 
     /**
     * The user ID which the SIP registration will be bound to. Can be used
-    * instead of the <b>user_name</b> parameter.
+    * instead of the <b>user_name</b> parameter
     */
     public UpdateSipRegistrationRequest setUserId(long d) {
         this.userId = Long.valueOf(d);
@@ -271,7 +272,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
     @RequestField(name="user_name")
     /**
     * The user name which the SIP registration will be bound to. Can be
-    * used instead of the <b>user_id</b> parameter.
+    * used instead of the <b>user_id</b> parameter
     */
     public String getUserName() {
         return this.userName;
@@ -283,7 +284,7 @@ public class UpdateSipRegistrationRequest implements Alignable {
 
     /**
     * The user name which the SIP registration will be bound to. Can be
-    * used instead of the <b>user_id</b> parameter.
+    * used instead of the <b>user_id</b> parameter
     */
     public UpdateSipRegistrationRequest setUserName(String d) {
         this.userName = d;

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -14,13 +15,13 @@ import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
 public class GetPhoneNumberCategoriesRequest implements Alignable {
-    private String countryCode;
+    private MultiArgument<String> countryCode;
 
     @RequestField(name="country_code")
     /**
-    * The country code.
+    * Country code list separated by semicolon (;)
     */
-    public String getCountryCode() {
+    public MultiArgument<String> getCountryCode() {
         return this.countryCode;
     }
 
@@ -29,9 +30,9 @@ public class GetPhoneNumberCategoriesRequest implements Alignable {
     }
 
     /**
-    * The country code.
+    * Country code list separated by semicolon (;)
     */
-    public GetPhoneNumberCategoriesRequest setCountryCode(String d) {
+    public GetPhoneNumberCategoriesRequest setCountryCode(MultiArgument<String> d) {
         this.countryCode = d;
         return this;
     }
@@ -42,7 +43,7 @@ public class GetPhoneNumberCategoriesRequest implements Alignable {
     /**
     * Flag allows you to display phone number categories only of the
     * sandbox, real or all .The following values are possible: 'all',
-    * 'true', 'false'.
+    * 'true', 'false'
     */
     public String getSandbox() {
         return this.sandbox;
@@ -55,7 +56,7 @@ public class GetPhoneNumberCategoriesRequest implements Alignable {
     /**
     * Flag allows you to display phone number categories only of the
     * sandbox, real or all .The following values are possible: 'all',
-    * 'true', 'false'.
+    * 'true', 'false'
     */
     public GetPhoneNumberCategoriesRequest setSandbox(String d) {
         this.sandbox = d;
@@ -66,7 +67,7 @@ public class GetPhoneNumberCategoriesRequest implements Alignable {
 
     @RequestField(name="locale")
     /**
-    * The 2-letter locale code. Supported values are EN, RU.
+    * The 2-letter locale code. Supported values are EN, RU
     */
     public String getLocale() {
         return this.locale;
@@ -77,7 +78,7 @@ public class GetPhoneNumberCategoriesRequest implements Alignable {
     }
 
     /**
-    * The 2-letter locale code. Supported values are EN, RU.
+    * The 2-letter locale code. Supported values are EN, RU
     */
     public GetPhoneNumberCategoriesRequest setLocale(String d) {
         this.locale = d;

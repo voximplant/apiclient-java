@@ -18,7 +18,7 @@ public class BankCardType implements Alignable {
     private String bankCardProvider;
 
     /**
-    * The payment system. The possible values are: ALFABANK, BRAINTREE.
+    * The payment system. The possible values are ALFABANK, BRAINTREE
     */
     public String getBankCardProvider() {
         return this.bankCardProvider;
@@ -31,7 +31,7 @@ public class BankCardType implements Alignable {
     private Boolean autoCharge;
 
     /**
-    * The auto_charge flag.
+    * The auto_charge flag
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -44,7 +44,7 @@ public class BankCardType implements Alignable {
     private BigDecimal minBalance ;
 
     /**
-    * The min account balance to trigger the auto charging.
+    * The min account balance to trigger the auto charging
     */
     public BigDecimal getMinBalance () {
         return this.minBalance ;
@@ -57,7 +57,7 @@ public class BankCardType implements Alignable {
     private BigDecimal cardOverrunValue;
 
     /**
-    * The card overrun value in the account currency.
+    * The card overrun value in the account currency
     */
     public BigDecimal getCardOverrunValue() {
         return this.cardOverrunValue;
@@ -70,7 +70,7 @@ public class BankCardType implements Alignable {
     private Long expirationYear;
 
     /**
-    * The card expiration year.
+    * The card expiration year
     */
     public Long getExpirationYear() {
         return this.expirationYear;
@@ -83,7 +83,7 @@ public class BankCardType implements Alignable {
     private Long expirationMonth;
 
     /**
-    * The card expiration month.
+    * The card expiration month
     */
     public Long getExpirationMonth() {
         return this.expirationMonth;
@@ -96,7 +96,7 @@ public class BankCardType implements Alignable {
     private Long acct;
 
     /**
-    * The last card number digits.
+    * The last card number digits
     */
     public Long getAcct() {
         return this.acct;
@@ -109,7 +109,7 @@ public class BankCardType implements Alignable {
     private BankCardErrorType lastError;
 
     /**
-    * The last card error.
+    * The last card error
     */
     public BankCardErrorType getLastError() {
         return this.lastError;
@@ -122,7 +122,7 @@ public class BankCardType implements Alignable {
     private String cardHolder;
 
     /**
-    * The cardholder’s first name and last name.
+    * The cardholder’s first name and last name
     */
     public String getCardHolder() {
         return this.cardHolder;
@@ -135,7 +135,7 @@ public class BankCardType implements Alignable {
     private String cardType;
 
     /**
-    * The card's payment system. The possible values are: VISA, MASTER CARD.
+    * The card's payment system. The possible values are VISA, MASTER CARD
     */
     public String getCardType() {
         return this.cardType;

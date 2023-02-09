@@ -24,7 +24,7 @@ public class GetAccountDocumentsResponse implements Alignable {
     private AccountVerifications[] result;
 
     /**
-    * The account verifications.
+    * The account verifications
     */
     public AccountVerifications[] getResult() {
         return this.result;

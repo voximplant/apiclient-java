@@ -18,7 +18,7 @@ public class CallListType implements Alignable {
     private Long listId;
 
     /**
-    * The list ID.
+    * The list ID
     */
     public Long getListId() {
         return this.listId;
@@ -31,7 +31,7 @@ public class CallListType implements Alignable {
     private String listName;
 
     /**
-    * The list name.
+    * The list name
     */
     public String getListName() {
         return this.listName;
@@ -44,7 +44,7 @@ public class CallListType implements Alignable {
     private Long priority;
 
     /**
-    * The priority of the call list.
+    * The priority of the call list
     */
     public Long getPriority() {
         return this.priority;
@@ -57,7 +57,7 @@ public class CallListType implements Alignable {
     private Long ruleId;
 
     /**
-    * The rule id.
+    * The rule id
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -70,7 +70,7 @@ public class CallListType implements Alignable {
     private Long maxSimultaneous;
 
     /**
-    * The maximum number of simultaneous tasks.
+    * The maximum number of simultaneous tasks
     */
     public Long getMaxSimultaneous() {
         return this.maxSimultaneous;
@@ -83,7 +83,7 @@ public class CallListType implements Alignable {
     private Long numAttempts;
 
     /**
-    * The number of task attempts run, which failed to call.
+    * The number of task attempts run, which failed to call
     */
     public Long getNumAttempts() {
         return this.numAttempts;
@@ -124,7 +124,7 @@ public class CallListType implements Alignable {
     private Long intervalSeconds;
 
     /**
-    * The interval between attempts in seconds.
+    * The interval between attempts in seconds
     */
     public Long getIntervalSeconds() {
         return this.intervalSeconds;
@@ -137,8 +137,8 @@ public class CallListType implements Alignable {
     private String status;
 
     /**
-    * The status name. The possible values are: __In progress__,
-    * __Completed__, __Canceled__.
+    * The status name. The possible values are __In progress__,
+    * __Completed__, __Canceled__
     */
     public String getStatus() {
         return this.status;

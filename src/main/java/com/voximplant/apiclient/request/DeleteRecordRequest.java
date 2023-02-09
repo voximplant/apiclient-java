@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,9 @@ public class DeleteRecordRequest implements Alignable {
 
     @RequestField(name="record_url")
     /**
-    * Url to remove.
+    * The record URL to remove. You can retrieve the record URL via the <a
+    * href="https://voximplant.com/docs/references/httpapi/structure/callsessioninfotype#records">CallSessionInfoType.records</a>
+    * method
     */
     public String getRecordUrl() {
         return this.recordUrl;
@@ -29,7 +32,9 @@ public class DeleteRecordRequest implements Alignable {
     }
 
     /**
-    * Url to remove.
+    * The record URL to remove. You can retrieve the record URL via the <a
+    * href="https://voximplant.com/docs/references/httpapi/structure/callsessioninfotype#records">CallSessionInfoType.records</a>
+    * method
     */
     public DeleteRecordRequest setRecordUrl(String d) {
         this.recordUrl = d;
@@ -40,7 +45,9 @@ public class DeleteRecordRequest implements Alignable {
 
     @RequestField(name="record_id")
     /**
-    * The record id for remove.
+    * The record ID to remove. You can retrieve the record ID via the <a
+    * href="https://voximplant.com/docs/references/httpapi/structure/callsessioninfotype#records">CallSessionInfoType.records</a>
+    * method
     */
     public Long getRecordId() {
         return this.recordId;
@@ -51,7 +58,9 @@ public class DeleteRecordRequest implements Alignable {
     }
 
     /**
-    * The record id for remove.
+    * The record ID to remove. You can retrieve the record ID via the <a
+    * href="https://voximplant.com/docs/references/httpapi/structure/callsessioninfotype#records">CallSessionInfoType.records</a>
+    * method
     */
     public DeleteRecordRequest setRecordId(long d) {
         this.recordId = Long.valueOf(d);

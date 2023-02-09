@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -29,7 +30,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public AddRuleRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name, can be used instead of <b>application_id</b>.
+    * The application name, can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -51,7 +52,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * The application name, can be used instead of <b>application_id</b>.
+    * The application name, can be used instead of <b>application_id</b>
     */
     public AddRuleRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -84,7 +85,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="rule_pattern")
     /**
-    * The rule pattern regex. The length must be less than 64 KB.
+    * The rule pattern regex. The length must be less than 64 KB
     */
     public String getRulePattern() {
         return this.rulePattern;
@@ -95,7 +96,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * The rule pattern regex. The length must be less than 64 KB.
+    * The rule pattern regex. The length must be less than 64 KB
     */
     public AddRuleRequest setRulePattern(String d) {
         this.rulePattern = d;
@@ -106,7 +107,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="rule_pattern_exclude")
     /**
-    * The exclude pattern regex. The length must be less than 64 KB.
+    * The exclude pattern regex. The length must be less than 64 KB
     */
     public String getRulePatternExclude() {
         return this.rulePatternExclude;
@@ -117,7 +118,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * The exclude pattern regex. The length must be less than 64 KB.
+    * The exclude pattern regex. The length must be less than 64 KB
     */
     public AddRuleRequest setRulePatternExclude(String d) {
         this.rulePatternExclude = d;
@@ -128,7 +129,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="video_conference")
     /**
-    * Is video conference required?
+    * Video conference is required
     */
     public Boolean getVideoConference() {
         return this.videoConference;
@@ -139,7 +140,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * Is video conference required?
+    * Video conference is required
     */
     public AddRuleRequest setVideoConference(boolean d) {
         this.videoConference = Boolean.valueOf(d);
@@ -150,7 +151,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID list separated by the ';' symbol.
+    * The scenario ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -161,7 +162,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * The scenario ID list separated by the ';' symbol.
+    * The scenario ID list separated by semicolon (;)
     */
     public AddRuleRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;
@@ -172,8 +173,8 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The scenario name list separated by the ';' symbol. Can be used
-    * instead of <b>scenario_id</b>.
+    * The scenario name list separated by semicolon (;). Can be used
+    * instead of <b>scenario_id</b>
     */
     public MultiArgument<String> getScenarioName() {
         return this.scenarioName;
@@ -184,8 +185,8 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * The scenario name list separated by the ';' symbol. Can be used
-    * instead of <b>scenario_id</b>.
+    * The scenario name list separated by semicolon (;). Can be used
+    * instead of <b>scenario_id</b>
     */
     public AddRuleRequest setScenarioName(MultiArgument<String> d) {
         this.scenarioName = d;

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by the ';' symbol or the 'all' value.
+    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * select all users
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -29,7 +31,8 @@ public class TransferMoneyToUserRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by the ';' symbol or the 'all' value.
+    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * select all users
     */
     public TransferMoneyToUserRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -40,8 +43,8 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by the ';' symbol that can be used
-    * instead of <b>user_id</b>.
+    * The user name list separated by semicolon (;) that can be used
+    * instead of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -52,8 +55,8 @@ public class TransferMoneyToUserRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by the ';' symbol that can be used
-    * instead of <b>user_id</b>.
+    * The user name list separated by semicolon (;) that can be used
+    * instead of <b>user_id</b>
     */
     public TransferMoneyToUserRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -89,7 +92,7 @@ public class TransferMoneyToUserRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * The application ID. It is required if the <b>user_name</b> is
-    * specified.
+    * specified
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -101,7 +104,7 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     /**
     * The application ID. It is required if the <b>user_name</b> is
-    * specified.
+    * specified
     */
     public TransferMoneyToUserRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -112,8 +115,7 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -124,8 +126,7 @@ public class TransferMoneyToUserRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public TransferMoneyToUserRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -136,7 +137,7 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     @RequestField(name="currency")
     /**
-    * The amount currency. Examples: RUR, EUR, USD.
+    * The amount currency. Examples: RUR, EUR, USD
     */
     public String getCurrency() {
         return this.currency;
@@ -147,7 +148,7 @@ public class TransferMoneyToUserRequest implements Alignable {
     }
 
     /**
-    * The amount currency. Examples: RUR, EUR, USD.
+    * The amount currency. Examples: RUR, EUR, USD
     */
     public TransferMoneyToUserRequest setCurrency(String d) {
         this.currency = d;
@@ -159,7 +160,7 @@ public class TransferMoneyToUserRequest implements Alignable {
     @RequestField(name="strict_mode")
     /**
     * Returns error if strict_mode is true and a user or the account hasn't
-    * enough money.
+    * enough money
     */
     public Boolean getStrictMode() {
         return this.strictMode;
@@ -171,7 +172,7 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     /**
     * Returns error if strict_mode is true and a user or the account hasn't
-    * enough money.
+    * enough money
     */
     public TransferMoneyToUserRequest setStrictMode(boolean d) {
         this.strictMode = Boolean.valueOf(d);
@@ -182,7 +183,7 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     @RequestField(name="user_transaction_description")
     /**
-    * The user transaction description.
+    * The user transaction description
     */
     public String getUserTransactionDescription() {
         return this.userTransactionDescription;
@@ -193,7 +194,7 @@ public class TransferMoneyToUserRequest implements Alignable {
     }
 
     /**
-    * The user transaction description.
+    * The user transaction description
     */
     public TransferMoneyToUserRequest setUserTransactionDescription(String d) {
         this.userTransactionDescription = d;

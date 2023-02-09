@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class A2PSendSmsRequest implements Alignable {
 
     @RequestField(name="src_number")
     /**
-    * The source phone number.
+    * The source phone number
     */
     public String getSrcNumber() {
         return this.srcNumber;
@@ -29,7 +30,7 @@ public class A2PSendSmsRequest implements Alignable {
     }
 
     /**
-    * The source phone number.
+    * The source phone number
     */
     public A2PSendSmsRequest setSrcNumber(String d) {
         this.srcNumber = d;
@@ -40,7 +41,8 @@ public class A2PSendSmsRequest implements Alignable {
 
     @RequestField(name="dst_numbers")
     /**
-    * The destination phone numbers separated by the ';' symbol.
+    * The destination phone numbers separated by semicolon (;). The maximum
+    * number of these phone numbers is 100
     */
     public MultiArgument<String> getDstNumbers() {
         return this.dstNumbers;
@@ -51,7 +53,8 @@ public class A2PSendSmsRequest implements Alignable {
     }
 
     /**
-    * The destination phone numbers separated by the ';' symbol.
+    * The destination phone numbers separated by semicolon (;). The maximum
+    * number of these phone numbers is 100
     */
     public A2PSendSmsRequest setDstNumbers(MultiArgument<String> d) {
         this.dstNumbers = d;
@@ -62,7 +65,9 @@ public class A2PSendSmsRequest implements Alignable {
 
     @RequestField(name="text")
     /**
-    * The message text, up to 1600 characters.
+    * The message text, up to 1600 characters. We split long messages
+    * greater than 160 GSM-7 characters or 70 UTF-16 characters into
+    * multiple segments. Each segment is charged as one message
     */
     public String getText() {
         return this.text;
@@ -73,10 +78,34 @@ public class A2PSendSmsRequest implements Alignable {
     }
 
     /**
-    * The message text, up to 1600 characters.
+    * The message text, up to 1600 characters. We split long messages
+    * greater than 160 GSM-7 characters or 70 UTF-16 characters into
+    * multiple segments. Each segment is charged as one message
     */
     public A2PSendSmsRequest setText(String d) {
         this.text = d;
+        return this;
+    }
+
+    private Boolean storeBody;
+
+    @RequestField(name="store_body")
+    /**
+    * Set to true to store outbound message texts. Default value is false
+    */
+    public Boolean getStoreBody() {
+        return this.storeBody;
+    }
+
+    public boolean hasStoreBody() {
+        return this.storeBody != null;
+    }
+
+    /**
+    * Set to true to store outbound message texts. Default value is false
+    */
+    public A2PSendSmsRequest setStoreBody(boolean d) {
+        this.storeBody = Boolean.valueOf(d);
         return this;
     }
 
@@ -109,6 +138,14 @@ public class A2PSendSmsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"text\": \"")
                 .append(text)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (storeBody != null) {
+            sb.append(aligned)
+                .append("\"storeBody\": \"")
+                .append(storeBody)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

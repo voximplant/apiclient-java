@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Search zip codes in Germany
+* Search for zip codes in Germany.
 */
 public class GetZIPCodesExample {
     public static void main(String [] args) {

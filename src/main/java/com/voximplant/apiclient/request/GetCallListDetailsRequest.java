@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetCallListDetailsRequest implements Alignable {
 
     @RequestField(name="list_id")
     /**
-    * The list ID.
+    * The list ID
     */
     public Long getListId() {
         return this.listId;
@@ -29,7 +30,7 @@ public class GetCallListDetailsRequest implements Alignable {
     }
 
     /**
-    * The list ID.
+    * The list ID
     */
     public GetCallListDetailsRequest setListId(long d) {
         this.listId = Long.valueOf(d);
@@ -62,7 +63,7 @@ public class GetCallListDetailsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -73,7 +74,7 @@ public class GetCallListDetailsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetCallListDetailsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

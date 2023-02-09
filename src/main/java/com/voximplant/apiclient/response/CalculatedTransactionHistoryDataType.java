@@ -19,7 +19,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private Long transactionCount;
 
     /**
-    * The transaction count in the report.
+    * The transaction count in the report
     */
     public Long getTransactionCount() {
         return this.transactionCount;
@@ -32,7 +32,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private Long totalTransactionCount;
 
     /**
-    * The total found filtered transaction count.
+    * The total found filtered transaction count
     */
     public Long getTotalTransactionCount() {
         return this.totalTransactionCount;
@@ -71,7 +71,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private Long accountId;
 
     /**
-    * The account ID.
+    * The account ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -84,7 +84,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID.
+    * The user ID
     */
     public Long getUserId() {
         return this.userId;
@@ -97,7 +97,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private Long userName;
 
     /**
-    * The user name.
+    * The user name
     */
     public Long getUserName() {
         return this.userName;
@@ -110,7 +110,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private Boolean isChecked;
 
     /**
-    * true if balance&transactions are valid.
+    * true if balance&transactions are valid
     */
     public Boolean getIsChecked() {
         return this.isChecked;
@@ -123,7 +123,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private String timezone;
 
     /**
-    * The selected timezone.
+    * The selected timezone
     */
     public String getTimezone() {
         return this.timezone;

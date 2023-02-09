@@ -18,7 +18,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private Long phoneRegionId;
 
     /**
-    * The region ID.
+    * The region ID
     */
     public Long getPhoneRegionId() {
         return this.phoneRegionId;
@@ -31,7 +31,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private String phoneRegionName;
 
     /**
-    * The full region name.
+    * The full region name
     */
     public String getPhoneRegionName() {
         return this.phoneRegionName;
@@ -44,7 +44,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private String phoneRegionCode;
 
     /**
-    * The region phone prefix.
+    * The region phone prefix
     */
     public String getPhoneRegionCode() {
         return this.phoneRegionCode;
@@ -57,7 +57,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private Long phoneCount;
 
     /**
-    * The phone number count in stock for the region.
+    * The phone number count in stock for the region
     */
     public Long getPhoneCount() {
         return this.phoneCount;
@@ -81,12 +81,12 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
         return this.verificationStatus != null;
     }
 
-    private String requiredVerification;
+    private Boolean requiredVerification;
 
     /**
-    * The required account verification name.
+    * Verification is required for the account
     */
-    public String getRequiredVerification() {
+    public Boolean getRequiredVerification() {
         return this.requiredVerification;
     }
 
@@ -97,7 +97,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private BigDecimal phonePrice;
 
     /**
-    * The phone monthly charge.
+    * The phone monthly charge
     */
     public BigDecimal getPhonePrice() {
         return this.phonePrice;
@@ -110,7 +110,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private BigDecimal phoneInstallationPrice;
 
     /**
-    * The phone installation price (without the first monthly fee).
+    * The phone installation price (without the first monthly fee)
     */
     public BigDecimal getPhoneInstallationPrice() {
         return this.phoneInstallationPrice;
@@ -124,7 +124,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
 
     /**
     * The charge period in 24-h format: Y-M-D H:m:s. Example: 0-1-0 0:0:0
-    * is 1 month.
+    * is 1 month
     */
     public String getPhonePeriod() {
         return this.phonePeriod;
@@ -137,7 +137,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private Boolean isNeedRegulationAddress;
 
     /**
-    * The flag of the need proof of address.
+    * The flag of the need proof of address
     */
     public Boolean getIsNeedRegulationAddress() {
         return this.isNeedRegulationAddress;
@@ -150,8 +150,8 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private String regulationAddressType;
 
     /**
-    * The type of regulation address. The possible values are: LOCAL,
-    * NATIONAL, WORLDWIDE.
+    * The type of regulation address. The possible values are LOCAL,
+    * NATIONAL, WORLDWIDE
     */
     public String getRegulationAddressType() {
         return this.regulationAddressType;
@@ -166,12 +166,12 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     /**
     * If <b>true</b>, SMS is supported for phone numbers in this region.
     * SMS needs to be explicitly enabled for a phone number via the
-    * [ControlSms] HTTP API before sending or receiving SMS. If SMS is
-    * supported and enabled, SMS can be sent from a phone number using the
-    * [SendSmsMessage] HTTP API and received using the [InboundSmsCallback]
-    * property of the HTTP callback. See <a
-    * href='/docs/howtos/integration/httpapi/callbacks'>this article</a>
-    * for HTTP callback details.
+    * [ControlSms] Management API before sending or receiving SMS. If SMS
+    * is supported and enabled, SMS can be sent from a phone number using
+    * the [SendSmsMessage] Management API and received using the
+    * [InboundSmsCallback] property of the HTTP callback. See <a
+    * href='/docs/guides/managementapi/callbacks'>this article</a> for HTTP
+    * callback details
     */
     public Boolean getIsSmsSupported() {
         return this.isSmsSupported;
@@ -185,7 +185,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
 
     /**
     * [Array](MultipleNumbersPrice) with info about multiple numbers
-    * subscription for the child accounts.
+    * subscription for the child accounts
     */
     public MultipleNumbersPrice[] getMultipleNumbersPrice() {
         return this.multipleNumbersPrice;
@@ -198,7 +198,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private String localizedCountryName;
 
     /**
-    * The localized country name.
+    * The localized country name
     */
     public String getLocalizedCountryName() {
         return this.localizedCountryName;
@@ -211,7 +211,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private String localizedPhoneCategoryName;
 
     /**
-    * The localized phone category name.
+    * The localized phone category name
     */
     public String getLocalizedPhoneCategoryName() {
         return this.localizedPhoneCategoryName;
@@ -224,7 +224,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private String localizedPhoneRegionName;
 
     /**
-    * The localized phone region name.
+    * The localized phone region name
     */
     public String getLocalizedPhoneRegionName() {
         return this.localizedPhoneRegionName;

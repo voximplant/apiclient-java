@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class DelDialogflowKeyRequest implements Alignable {
 
     @RequestField(name="dialogflow_key_id")
     /**
-    * The Dialogflow key's ID.
+    * The Dialogflow key's ID
     */
     public Long getDialogflowKeyId() {
         return this.dialogflowKeyId;
@@ -29,7 +30,7 @@ public class DelDialogflowKeyRequest implements Alignable {
     }
 
     /**
-    * The Dialogflow key's ID.
+    * The Dialogflow key's ID
     */
     public DelDialogflowKeyRequest setDialogflowKeyId(long d) {
         this.dialogflowKeyId = Long.valueOf(d);

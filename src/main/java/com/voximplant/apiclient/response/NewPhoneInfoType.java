@@ -18,7 +18,7 @@ public class NewPhoneInfoType implements Alignable {
     private Long phoneId;
 
     /**
-    * The phone ID.
+    * The phone ID
     */
     public Long getPhoneId() {
         return this.phoneId;
@@ -31,7 +31,7 @@ public class NewPhoneInfoType implements Alignable {
     private String phoneNumber;
 
     /**
-    * The phone number.
+    * The phone number
     */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -44,7 +44,7 @@ public class NewPhoneInfoType implements Alignable {
     private BigDecimal phonePrice;
 
     /**
-    * The phone monthly charge.
+    * The phone monthly charge
     */
     public BigDecimal getPhonePrice() {
         return this.phonePrice;
@@ -57,7 +57,7 @@ public class NewPhoneInfoType implements Alignable {
     private BigDecimal phoneInstallationPrice;
 
     /**
-    * The phone installation price (without the first monthly fee).
+    * The phone installation price (without the first monthly fee)
     */
     public BigDecimal getPhoneInstallationPrice() {
         return this.phoneInstallationPrice;
@@ -70,7 +70,7 @@ public class NewPhoneInfoType implements Alignable {
     private String phoneCountryCode;
 
     /**
-    * The phone country code (2 symbols).
+    * The phone country code (2 symbols)
     */
     public String getPhoneCountryCode() {
         return this.phoneCountryCode;
@@ -84,7 +84,7 @@ public class NewPhoneInfoType implements Alignable {
 
     /**
     * The charge period in 24-h format: Y-M-D H:m:s. Example: 0-1-0 0:0:0
-    * is 1 month.
+    * is 1 month
     */
     public String getPhonePeriod() {
         return this.phonePeriod;

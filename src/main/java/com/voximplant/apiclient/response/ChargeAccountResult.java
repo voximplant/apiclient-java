@@ -18,7 +18,7 @@ public class ChargeAccountResult implements Alignable {
     private BigDecimal chargedAmount;
 
     /**
-    * The charged money amount.
+    * The charged money amount
     */
     public BigDecimal getChargedAmount() {
         return this.chargedAmount;
@@ -31,7 +31,7 @@ public class ChargeAccountResult implements Alignable {
     private ChargedPhoneType[] phones;
 
     /**
-    * The charged phone list.
+    * The charged phone list
     */
     public ChargedPhoneType[] getPhones() {
         return this.phones;

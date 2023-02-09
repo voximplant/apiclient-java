@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetRolesRequest implements Alignable {
 
     @RequestField(name="group_name")
     /**
-    * The role group.
+    * The role group
     */
     public String getGroupName() {
         return this.groupName;
@@ -29,7 +30,7 @@ public class GetRolesRequest implements Alignable {
     }
 
     /**
-    * The role group.
+    * The role group
     */
     public GetRolesRequest setGroupName(String d) {
         this.groupName = d;

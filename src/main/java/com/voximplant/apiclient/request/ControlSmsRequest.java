@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class ControlSmsRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number.
+    * The phone number
     */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -29,7 +30,7 @@ public class ControlSmsRequest implements Alignable {
     }
 
     /**
-    * The phone number.
+    * The phone number
     */
     public ControlSmsRequest setPhoneNumber(String d) {
         this.phoneNumber = d;
@@ -41,7 +42,7 @@ public class ControlSmsRequest implements Alignable {
     @RequestField(name="command")
     /**
     * The SMS control command. The following values are possible: enable,
-    * disable.
+    * disable
     */
     public String getCommand() {
         return this.command;
@@ -53,7 +54,7 @@ public class ControlSmsRequest implements Alignable {
 
     /**
     * The SMS control command. The following values are possible: enable,
-    * disable.
+    * disable
     */
     public ControlSmsRequest setCommand(String d) {
         this.command = d;

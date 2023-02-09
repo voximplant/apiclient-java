@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class DelPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_credential_id")
     /**
-    * The push credentials id.
+    * The push credentials id
     */
     public Long getPushCredentialId() {
         return this.pushCredentialId;
@@ -29,7 +30,7 @@ public class DelPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push credentials id.
+    * The push credentials id
     */
     public DelPushCredentialRequest setPushCredentialId(long d) {
         this.pushCredentialId = Long.valueOf(d);

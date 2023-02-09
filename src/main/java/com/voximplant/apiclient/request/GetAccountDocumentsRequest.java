@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -42,7 +43,7 @@ public class GetAccountDocumentsRequest implements Alignable {
 
     @RequestField(name="verification_name")
     /**
-    * The required account verification name to filter.
+    * The required account verification name to filter
     */
     public String getVerificationName() {
         return this.verificationName;
@@ -53,7 +54,7 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * The required account verification name to filter.
+    * The required account verification name to filter
     */
     public GetAccountDocumentsRequest setVerificationName(String d) {
         this.verificationName = d;
@@ -64,7 +65,7 @@ public class GetAccountDocumentsRequest implements Alignable {
 
     @RequestField(name="verification_status")
     /**
-    * The account verification status list separated by the ';' symbol. The
+    * The account verification status list separated by semicolon (;). The
     * following values are possible: REQUIRED, IN_PROGRESS, VERIFIED
     */
     public MultiArgument<String> getVerificationStatus() {
@@ -76,7 +77,7 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * The account verification status list separated by the ';' symbol. The
+    * The account verification status list separated by semicolon (;). The
     * following values are possible: REQUIRED, IN_PROGRESS, VERIFIED
     */
     public GetAccountDocumentsRequest setVerificationStatus(MultiArgument<String> d) {
@@ -140,8 +141,8 @@ public class GetAccountDocumentsRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
         return this.childAccountId;
@@ -152,8 +153,8 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The child account ID list separated by semicolon (;). Use the 'all'
+    * value to select all child accounts
     */
     public GetAccountDocumentsRequest setChildAccountId(MultiArgument<Long> d) {
         this.childAccountId = d;
@@ -164,7 +165,7 @@ public class GetAccountDocumentsRequest implements Alignable {
 
     @RequestField(name="children_verifications_only")
     /**
-    * Set true to get the children account verifications only.
+    * Set true to get the children account verifications only
     */
     public Boolean getChildrenVerificationsOnly() {
         return this.childrenVerificationsOnly;
@@ -175,7 +176,7 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * Set true to get the children account verifications only.
+    * Set true to get the children account verifications only
     */
     public GetAccountDocumentsRequest setChildrenVerificationsOnly(boolean d) {
         this.childrenVerificationsOnly = Boolean.valueOf(d);

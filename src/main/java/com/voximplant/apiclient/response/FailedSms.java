@@ -18,7 +18,7 @@ public class FailedSms implements Alignable {
     private String destinationNumber;
 
     /**
-    * The SMS destination number.
+    * The SMS destination number
     */
     public String getDestinationNumber() {
         return this.destinationNumber;
@@ -31,7 +31,7 @@ public class FailedSms implements Alignable {
     private String errorDescription;
 
     /**
-    * The error description.
+    * The error description
     */
     public String getErrorDescription() {
         return this.errorDescription;
@@ -44,7 +44,7 @@ public class FailedSms implements Alignable {
     private Long errorCode;
 
     /**
-    * The error code.
+    * The error code
     */
     public Long getErrorCode() {
         return this.errorCode;

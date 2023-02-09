@@ -24,7 +24,7 @@ public class GetCallHistoryResponse implements Alignable {
     private CallSessionInfoType[] result;
 
     /**
-    * The CallSessionInfoType records in sync mode or 1 in async mode.
+    * The CallSessionInfoType records in sync mode or 1 in async mode
     */
     public CallSessionInfoType[] getResult() {
         return this.result;
@@ -37,7 +37,7 @@ public class GetCallHistoryResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found call session count (sync mode).
+    * The total found call session count (sync mode)
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -50,7 +50,7 @@ public class GetCallHistoryResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned call session count (sync mode).
+    * The returned call session count (sync mode)
     */
     public Long getCount() {
         return this.count;
@@ -63,7 +63,7 @@ public class GetCallHistoryResponse implements Alignable {
     private String timezone;
 
     /**
-    * The used timezone.
+    * The used timezone
     */
     public String getTimezone() {
         return this.timezone;
@@ -76,7 +76,7 @@ public class GetCallHistoryResponse implements Alignable {
     private Long historyReportId;
 
     /**
-    * The history report ID (async mode).
+    * The history report ID (async mode)
     */
     public Long getHistoryReportId() {
         return this.historyReportId;

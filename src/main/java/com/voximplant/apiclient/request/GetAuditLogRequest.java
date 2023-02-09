@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -66,7 +67,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="timezone")
     /**
-    * The selected timezone or the 'auto' value (the account location).
+    * The selected timezone or the 'auto' value (the account location)
     */
     public String getTimezone() {
         return this.timezone;
@@ -77,7 +78,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The selected timezone or the 'auto' value (the account location).
+    * The selected timezone or the 'auto' value (the account location)
     */
     public GetAuditLogRequest setTimezone(String d) {
         this.timezone = d;
@@ -88,7 +89,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="audit_log_id")
     /**
-    * The audit history ID list separated by the ';' symbol.
+    * The audit history ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getAuditLogId() {
         return this.auditLogId;
@@ -99,7 +100,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The audit history ID list separated by the ';' symbol.
+    * The audit history ID list separated by semicolon (;)
     */
     public GetAuditLogRequest setAuditLogId(MultiArgument<Long> d) {
         this.auditLogId = d;
@@ -110,7 +111,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="filtered_admin_user_id")
     /**
-    * The admin user ID to filter.
+    * The admin user ID to filter
     */
     public String getFilteredAdminUserId() {
         return this.filteredAdminUserId;
@@ -121,7 +122,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The admin user ID to filter.
+    * The admin user ID to filter
     */
     public GetAuditLogRequest setFilteredAdminUserId(String d) {
         this.filteredAdminUserId = d;
@@ -132,7 +133,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="filtered_ip")
     /**
-    * The IP list separated by the ';' symbol to filter.
+    * The IP list separated by semicolon (;) to filter
     */
     public MultiArgument<String> getFilteredIp() {
         return this.filteredIp;
@@ -143,7 +144,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The IP list separated by the ';' symbol to filter.
+    * The IP list separated by semicolon (;) to filter
     */
     public GetAuditLogRequest setFilteredIp(MultiArgument<String> d) {
         this.filteredIp = d;
@@ -154,7 +155,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="filtered_cmd")
     /**
-    * The function list separated by the ';' symbol to filter.
+    * The function list separated by semicolon (;) to filter
     */
     public MultiArgument<String> getFilteredCmd() {
         return this.filteredCmd;
@@ -165,7 +166,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The function list separated by the ';' symbol to filter.
+    * The function list separated by semicolon (;) to filter
     */
     public GetAuditLogRequest setFilteredCmd(MultiArgument<String> d) {
         this.filteredCmd = d;
@@ -177,7 +178,7 @@ public class GetAuditLogRequest implements Alignable {
     @RequestField(name="advanced_filters")
     /**
     * A relation ID to filter (for example: a phone_number value, a user_id
-    * value, an application_id value).
+    * value, an application_id value)
     */
     public String getAdvancedFilters() {
         return this.advancedFilters;
@@ -189,7 +190,7 @@ public class GetAuditLogRequest implements Alignable {
 
     /**
     * A relation ID to filter (for example: a phone_number value, a user_id
-    * value, an application_id value).
+    * value, an application_id value)
     */
     public GetAuditLogRequest setAdvancedFilters(String d) {
         this.advancedFilters = d;
@@ -222,7 +223,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -233,7 +234,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public GetAuditLogRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -244,7 +245,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="with_total_count")
     /**
-    * Set false to omit the 'total_count' and increase performance.
+    * Set false to omit the 'total_count' and increase performance
     */
     public Boolean getWithTotalCount() {
         return this.withTotalCount;
@@ -255,7 +256,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the 'total_count' and increase performance.
+    * Set false to omit the 'total_count' and increase performance
     */
     public GetAuditLogRequest setWithTotalCount(boolean d) {
         this.withTotalCount = Boolean.valueOf(d);
@@ -266,7 +267,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -277,7 +278,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetAuditLogRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -288,7 +289,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -299,7 +300,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetAuditLogRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -310,7 +311,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="output")
     /**
-    * The output format. The following values available: json, csv.
+    * The output format. The following values available: json, csv
     */
     public String getOutput() {
         return this.output;
@@ -321,7 +322,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The output format. The following values available: json, csv.
+    * The output format. The following values available: json, csv
     */
     public GetAuditLogRequest setOutput(String d) {
         this.output = d;
@@ -334,7 +335,7 @@ public class GetAuditLogRequest implements Alignable {
     /**
     * Set true to get records in the asynchronous mode (for csv output
     * only). If it's true, the request is available via [GetHistoryReports]
-    * and [DownloadHistoryReport] methods.
+    * and [DownloadHistoryReport] methods
     */
     public Boolean getIsAsync() {
         return this.isAsync;
@@ -347,7 +348,7 @@ public class GetAuditLogRequest implements Alignable {
     /**
     * Set true to get records in the asynchronous mode (for csv output
     * only). If it's true, the request is available via [GetHistoryReports]
-    * and [DownloadHistoryReport] methods.
+    * and [DownloadHistoryReport] methods
     */
     public GetAuditLogRequest setIsAsync(boolean d) {
         this.isAsync = Boolean.valueOf(d);

@@ -11,14 +11,14 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* Detailing SIP registration
+* Detailing SIP registration.
 */
 public class SIPRegistrationType implements Alignable {
 
     private Long sipRegistrationId;
 
     /**
-    * The SIP registration ID.
+    * The SIP registration ID
     */
     public Long getSipRegistrationId() {
         return this.sipRegistrationId;
@@ -31,7 +31,7 @@ public class SIPRegistrationType implements Alignable {
     private String sipUsername;
 
     /**
-    * The user name from sip proxy.
+    * The user name from sip proxy
     */
     public String getSipUsername() {
         return this.sipUsername;
@@ -44,7 +44,7 @@ public class SIPRegistrationType implements Alignable {
     private String proxy;
 
     /**
-    * The sip proxy.
+    * The sip proxy
     */
     public String getProxy() {
         return this.proxy;
@@ -57,7 +57,7 @@ public class SIPRegistrationType implements Alignable {
     private Long lastUpdated;
 
     /**
-    * The last time updated.
+    * The last time updated
     */
     public Long getLastUpdated() {
         return this.lastUpdated;
@@ -83,7 +83,7 @@ public class SIPRegistrationType implements Alignable {
     private String outboundProxy;
 
     /**
-    * The outbound proxy.
+    * The outbound proxy
     */
     public String getOutboundProxy() {
         return this.outboundProxy;
@@ -96,7 +96,7 @@ public class SIPRegistrationType implements Alignable {
     private Boolean successful;
 
     /**
-    * The successful SIP registration.
+    * The successful SIP registration
     */
     public Boolean getSuccessful() {
         return this.successful;
@@ -109,7 +109,7 @@ public class SIPRegistrationType implements Alignable {
     private Long statusCode;
 
     /**
-    * The status code from SIP registration.
+    * The status code from a SIP registration
     */
     public Long getStatusCode() {
         return this.statusCode;
@@ -122,7 +122,7 @@ public class SIPRegistrationType implements Alignable {
     private String errorMessage;
 
     /**
-    * The error message from SIP registration.
+    * The error message from a SIP registration
     */
     public String getErrorMessage() {
         return this.errorMessage;
@@ -136,7 +136,7 @@ public class SIPRegistrationType implements Alignable {
 
     /**
     * The subscription deactivation flag. The SIP registration is frozen if
-    * true.
+    * true
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -177,7 +177,7 @@ public class SIPRegistrationType implements Alignable {
     private String subscriptionPrice;
 
     /**
-    * The subscription monthly charge.
+    * The subscription monthly charge
     */
     public String getSubscriptionPrice() {
         return this.subscriptionPrice;
@@ -190,7 +190,8 @@ public class SIPRegistrationType implements Alignable {
     private Boolean isPersistent;
 
     /**
-    * Is SIP registration persistent or on the user logon?
+    * SIP registration is persistent. Set false to activate it only on the
+    * user login
     */
     public Boolean getIsPersistent() {
         return this.isPersistent;
@@ -203,7 +204,7 @@ public class SIPRegistrationType implements Alignable {
     private Long userId;
 
     /**
-    * The id of the bound user.
+    * The id of the bound user
     */
     public Long getUserId() {
         return this.userId;
@@ -216,7 +217,7 @@ public class SIPRegistrationType implements Alignable {
     private String userName;
 
     /**
-    * The name of the bound user.
+    * The name of the bound user
     */
     public String getUserName() {
         return this.userName;
@@ -229,7 +230,7 @@ public class SIPRegistrationType implements Alignable {
     private Long applicationId;
 
     /**
-    * The id of the bound application.
+    * The id of the bound application
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -242,7 +243,7 @@ public class SIPRegistrationType implements Alignable {
     private String applicationName;
 
     /**
-    * The name of the bound application.
+    * The name of the bound application
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -255,7 +256,7 @@ public class SIPRegistrationType implements Alignable {
     private Long ruleId;
 
     /**
-    * The id of the bound rule.
+    * The id of the bound rule
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -268,7 +269,7 @@ public class SIPRegistrationType implements Alignable {
     private String ruleName;
 
     /**
-    * The name of the bound rule.
+    * The name of the bound rule
     */
     public String getRuleName() {
         return this.ruleName;

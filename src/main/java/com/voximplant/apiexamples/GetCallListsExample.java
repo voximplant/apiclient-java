@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get all lists registered by user
+* Get all lists registered by user.
 */
 public class GetCallListsExample {
     public static void main(String [] args) {

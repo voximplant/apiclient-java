@@ -34,7 +34,7 @@ public class GetAuthorizedAccountIPsResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found network count.
+    * The total found network count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetAuthorizedAccountIPsResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned network count.
+    * The returned network count
     */
     public Long getCount() {
         return this.count;

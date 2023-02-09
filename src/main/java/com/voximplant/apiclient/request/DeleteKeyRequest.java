@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class DeleteKeyRequest implements Alignable {
 
     @RequestField(name="key_id")
     /**
-    * The key's ID.
+    * The key's ID
     */
     public String getKeyId() {
         return this.keyId;
@@ -29,7 +30,7 @@ public class DeleteKeyRequest implements Alignable {
     }
 
     /**
-    * The key's ID.
+    * The key's ID
     */
     public DeleteKeyRequest setKeyId(String d) {
         this.keyId = d;

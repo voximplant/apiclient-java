@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetAdminUserInfoRequest implements Alignable {
 
     @RequestField(name="required_admin_user_id")
     /**
-    * The admin user to edit.
+    * The admin user to edit
     */
     public Long getRequiredAdminUserId() {
         return this.requiredAdminUserId;
@@ -29,7 +30,7 @@ public class SetAdminUserInfoRequest implements Alignable {
     }
 
     /**
-    * The admin user to edit.
+    * The admin user to edit
     */
     public SetAdminUserInfoRequest setRequiredAdminUserId(long d) {
         this.requiredAdminUserId = Long.valueOf(d);
@@ -41,7 +42,7 @@ public class SetAdminUserInfoRequest implements Alignable {
     @RequestField(name="required_admin_user_name")
     /**
     * The admin user to edit, can be used instead of
-    * <b>required_admin_user_id</b>.
+    * <b>required_admin_user_id</b>
     */
     public String getRequiredAdminUserName() {
         return this.requiredAdminUserName;
@@ -53,7 +54,7 @@ public class SetAdminUserInfoRequest implements Alignable {
 
     /**
     * The admin user to edit, can be used instead of
-    * <b>required_admin_user_id</b>.
+    * <b>required_admin_user_id</b>
     */
     public SetAdminUserInfoRequest setRequiredAdminUserName(String d) {
         this.requiredAdminUserName = d;
@@ -64,7 +65,7 @@ public class SetAdminUserInfoRequest implements Alignable {
 
     @RequestField(name="new_admin_user_name")
     /**
-    * The new admin user name. The length must be less than 50.
+    * The new admin user name. The length must be less than 50
     */
     public String getNewAdminUserName() {
         return this.newAdminUserName;
@@ -75,7 +76,7 @@ public class SetAdminUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new admin user name. The length must be less than 50.
+    * The new admin user name. The length must be less than 50
     */
     public SetAdminUserInfoRequest setNewAdminUserName(String d) {
         this.newAdminUserName = d;
@@ -86,7 +87,7 @@ public class SetAdminUserInfoRequest implements Alignable {
 
     @RequestField(name="admin_user_display_name")
     /**
-    * The new admin user display name. The length must be less than 256.
+    * The new admin user display name. The length must be less than 256
     */
     public String getAdminUserDisplayName() {
         return this.adminUserDisplayName;
@@ -97,7 +98,7 @@ public class SetAdminUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new admin user display name. The length must be less than 256.
+    * The new admin user display name. The length must be less than 256
     */
     public SetAdminUserInfoRequest setAdminUserDisplayName(String d) {
         this.adminUserDisplayName = d;
@@ -108,7 +109,7 @@ public class SetAdminUserInfoRequest implements Alignable {
 
     @RequestField(name="new_admin_user_password")
     /**
-    * The new admin user password. The length must be at least 6 symbols.
+    * The new admin user password. The length must be at least 6 symbols
     */
     public String getNewAdminUserPassword() {
         return this.newAdminUserPassword;
@@ -119,7 +120,7 @@ public class SetAdminUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new admin user password. The length must be at least 6 symbols.
+    * The new admin user password. The length must be at least 6 symbols
     */
     public SetAdminUserInfoRequest setNewAdminUserPassword(String d) {
         this.newAdminUserPassword = d;
@@ -130,7 +131,7 @@ public class SetAdminUserInfoRequest implements Alignable {
 
     @RequestField(name="admin_user_active")
     /**
-    * The admin user enable flag.
+    * The admin user enable flag
     */
     public Boolean getAdminUserActive() {
         return this.adminUserActive;
@@ -141,7 +142,7 @@ public class SetAdminUserInfoRequest implements Alignable {
     }
 
     /**
-    * The admin user enable flag.
+    * The admin user enable flag
     */
     public SetAdminUserInfoRequest setAdminUserActive(boolean d) {
         this.adminUserActive = Boolean.valueOf(d);

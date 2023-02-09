@@ -19,7 +19,7 @@ public class SmartQueueMetricsGroupsValues implements Alignable {
     private Date fromDate;
 
     /**
-    * The start of the period.
+    * The start of the period
     */
     public Date getFromDate() {
         return this.fromDate;
@@ -33,7 +33,7 @@ public class SmartQueueMetricsGroupsValues implements Alignable {
     private Date toDate;
 
     /**
-    * The end of the period.
+    * The end of the period
     */
     public Date getToDate() {
         return this.toDate;
@@ -46,7 +46,7 @@ public class SmartQueueMetricsGroupsValues implements Alignable {
     private Long value;
 
     /**
-    * The report value.
+    * The report value
     */
     public Long getValue() {
         return this.value;

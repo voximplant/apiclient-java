@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class ReorderScenariosRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID.
+    * The rule ID
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -29,7 +30,7 @@ public class ReorderScenariosRequest implements Alignable {
     }
 
     /**
-    * The rule ID.
+    * The rule ID
     */
     public ReorderScenariosRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class ReorderScenariosRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name that can be used instead of <b>rule_id</b>.
+    * The rule name that can be used instead of <b>rule_id</b>
     */
     public String getRuleName() {
         return this.ruleName;
@@ -51,7 +52,7 @@ public class ReorderScenariosRequest implements Alignable {
     }
 
     /**
-    * The rule name that can be used instead of <b>rule_id</b>.
+    * The rule name that can be used instead of <b>rule_id</b>
     */
     public ReorderScenariosRequest setRuleName(String d) {
         this.ruleName = d;
@@ -62,7 +63,7 @@ public class ReorderScenariosRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID list separated by the ';' symbol.
+    * The scenario ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -73,7 +74,7 @@ public class ReorderScenariosRequest implements Alignable {
     }
 
     /**
-    * The scenario ID list separated by the ';' symbol.
+    * The scenario ID list separated by semicolon (;)
     */
     public ReorderScenariosRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;

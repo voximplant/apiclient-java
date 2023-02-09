@@ -18,7 +18,7 @@ public class ACDLockedOperatorStateType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID of the operator.
+    * The user ID of the operator
     */
     public Long getUserId() {
         return this.userId;
@@ -31,7 +31,7 @@ public class ACDLockedOperatorStateType implements Alignable {
     private String userName;
 
     /**
-    * The user name of the operator.
+    * The user name of the operator
     */
     public String getUserName() {
         return this.userName;
@@ -44,7 +44,7 @@ public class ACDLockedOperatorStateType implements Alignable {
     private String userDisplayName;
 
     /**
-    * The display user name of the operator.
+    * The display user name of the operator
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -72,7 +72,7 @@ public class ACDLockedOperatorStateType implements Alignable {
     private ACDLock[] locks;
 
     /**
-    * The operator locks.
+    * The operator locks
     */
     public ACDLock[] getLocks() {
         return this.locks;
@@ -85,7 +85,7 @@ public class ACDLockedOperatorStateType implements Alignable {
     private ACDOperatorCall[] acdCalls;
 
     /**
-    * The ACD operator calls.
+    * The ACD operator calls
     */
     public ACDOperatorCall[] getAcdCalls() {
         return this.acdCalls;
@@ -99,10 +99,10 @@ public class ACDLockedOperatorStateType implements Alignable {
 
     /**
     * The operator <a
-    * href='//voximplant.com/docs/references/websdk/voximplant/operatoracdstatuses'>status
+    * href='/docs/references/websdk/voximplant/operatoracdstatuses'>status
     * string</a>. 'BANNED' string indicates temporarily <a
-    * href='/docs/tutorials/step-by-step-call-center-tutorial'>banned
-    * operators</a>. The following values are possible: READY, BANNED.
+    * href='/docs/guides/smartqueue/acdv1'>banned operators</a>. The
+    * following values are possible: READY, BANNED
     */
     public String getStatus() {
         return this.status;

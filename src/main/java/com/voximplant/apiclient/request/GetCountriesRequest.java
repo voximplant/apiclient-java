@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetCountriesRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code according to the <b>ISO 3166-1 alpha-2</b>.
+    * The country code according to the <b>ISO 3166-1 alpha-2</b>
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -29,7 +30,7 @@ public class GetCountriesRequest implements Alignable {
     }
 
     /**
-    * The country code according to the <b>ISO 3166-1 alpha-2</b>.
+    * The country code according to the <b>ISO 3166-1 alpha-2</b>
     */
     public GetCountriesRequest setCountryCode(String d) {
         this.countryCode = d;

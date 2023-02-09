@@ -11,16 +11,16 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The HTTP account callbacks body. See <a
-* href='/docs/howtos/integration/httpapi/callbacks'>this article</a>
-* for details.
+* The account callbacks body. See <a
+* href='/docs/guides/managementapi/callbacks'>this article</a> for
+* details.
 */
 public class AccountCallbacks implements Alignable {
 
     private AccountCallback[] callbacks;
 
     /**
-    * The account callback array.
+    * The account callback array
     */
     public AccountCallback[] getCallbacks() {
         return this.callbacks;

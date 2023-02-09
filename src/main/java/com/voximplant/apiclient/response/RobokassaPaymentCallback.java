@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when a robokassa payment is made. Received as part of the
 * [AccountCallback] structure.
 */
 public class RobokassaPaymentCallback implements Alignable {
@@ -19,7 +19,7 @@ public class RobokassaPaymentCallback implements Alignable {
     private Long transactionId;
 
     /**
-    * The transaction ID.
+    * The transaction ID
     */
     public Long getTransactionId() {
         return this.transactionId;
@@ -32,7 +32,7 @@ public class RobokassaPaymentCallback implements Alignable {
     private String transactionType;
 
     /**
-    * The transaction type.
+    * The transaction type
     */
     public String getTransactionType() {
         return this.transactionType;
@@ -45,7 +45,7 @@ public class RobokassaPaymentCallback implements Alignable {
     private BigDecimal amount;
 
     /**
-    * The amount in the account currency.
+    * The amount in the account currency
     */
     public BigDecimal getAmount() {
         return this.amount;

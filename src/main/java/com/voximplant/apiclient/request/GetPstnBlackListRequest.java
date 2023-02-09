@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetPstnBlackListRequest implements Alignable {
 
     @RequestField(name="pstn_blacklist_id")
     /**
-    * The PSTN black list item ID for filter.
+    * The PSTN black list item ID for filter
     */
     public Long getPstnBlacklistId() {
         return this.pstnBlacklistId;
@@ -29,7 +30,7 @@ public class GetPstnBlackListRequest implements Alignable {
     }
 
     /**
-    * The PSTN black list item ID for filter.
+    * The PSTN black list item ID for filter
     */
     public GetPstnBlackListRequest setPstnBlacklistId(long d) {
         this.pstnBlacklistId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetPstnBlackListRequest implements Alignable {
 
     @RequestField(name="pstn_blacklist_phone")
     /**
-    * The phone number in format e164 for filter.
+    * The phone number in format e164 for filter
     */
     public String getPstnBlacklistPhone() {
         return this.pstnBlacklistPhone;
@@ -51,7 +52,7 @@ public class GetPstnBlackListRequest implements Alignable {
     }
 
     /**
-    * The phone number in format e164 for filter.
+    * The phone number in format e164 for filter
     */
     public GetPstnBlackListRequest setPstnBlacklistPhone(String d) {
         this.pstnBlacklistPhone = d;
@@ -62,7 +63,7 @@ public class GetPstnBlackListRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -73,7 +74,7 @@ public class GetPstnBlackListRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetPstnBlackListRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -84,7 +85,7 @@ public class GetPstnBlackListRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -95,7 +96,7 @@ public class GetPstnBlackListRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetPstnBlackListRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

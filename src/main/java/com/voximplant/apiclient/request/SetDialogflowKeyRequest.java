@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetDialogflowKeyRequest implements Alignable {
 
     @RequestField(name="dialogflow_key_id")
     /**
-    * The Dialogflow key's ID.
+    * The Dialogflow key's ID
     */
     public Long getDialogflowKeyId() {
         return this.dialogflowKeyId;
@@ -29,7 +30,7 @@ public class SetDialogflowKeyRequest implements Alignable {
     }
 
     /**
-    * The Dialogflow key's ID.
+    * The Dialogflow key's ID
     */
     public SetDialogflowKeyRequest setDialogflowKeyId(long d) {
         this.dialogflowKeyId = Long.valueOf(d);
@@ -41,7 +42,7 @@ public class SetDialogflowKeyRequest implements Alignable {
     @RequestField(name="description")
     /**
     * The Dialogflow keys's description. To clear previously set
-    * description leave the parameter blank or put whitespaces only.
+    * description leave the parameter blank or put whitespaces only
     */
     public String getDescription() {
         return this.description;
@@ -53,7 +54,7 @@ public class SetDialogflowKeyRequest implements Alignable {
 
     /**
     * The Dialogflow keys's description. To clear previously set
-    * description leave the parameter blank or put whitespaces only.
+    * description leave the parameter blank or put whitespaces only
     */
     public SetDialogflowKeyRequest setDescription(String d) {
         this.description = d;

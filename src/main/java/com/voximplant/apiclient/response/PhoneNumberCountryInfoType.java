@@ -18,7 +18,7 @@ public class PhoneNumberCountryInfoType implements Alignable {
     private String countryCode;
 
     /**
-    * The country code.
+    * The country code
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -31,7 +31,7 @@ public class PhoneNumberCountryInfoType implements Alignable {
     private String phonePrefix;
 
     /**
-    * The country phone prefix.
+    * The country phone prefix
     */
     public String getPhonePrefix() {
         return this.phonePrefix;
@@ -44,7 +44,7 @@ public class PhoneNumberCountryInfoType implements Alignable {
     private Boolean canListPhoneNumbers;
 
     /**
-    * True if can list phone numbers.
+    * True if can list phone numbers
     */
     public Boolean getCanListPhoneNumbers() {
         return this.canListPhoneNumbers;
@@ -57,7 +57,7 @@ public class PhoneNumberCountryInfoType implements Alignable {
     private PhoneNumberCountryCategoryInfoType[] phoneCategories;
 
     /**
-    * The phone categories.
+    * The phone categories
     */
     public PhoneNumberCountryCategoryInfoType[] getPhoneCategories() {
         return this.phoneCategories;
@@ -65,6 +65,20 @@ public class PhoneNumberCountryInfoType implements Alignable {
 
     public boolean hasPhoneCategories() {
         return this.phoneCategories != null;
+    }
+
+    private Boolean emergencyCallsToBeEnabled;
+
+    /**
+    * If <b>true</b>, you need to make a request to enable calls to
+    * emergency numbers
+    */
+    public Boolean getEmergencyCallsToBeEnabled() {
+        return this.emergencyCallsToBeEnabled;
+    }
+
+    public boolean hasEmergencyCallsToBeEnabled() {
+        return this.emergencyCallsToBeEnabled != null;
     }
 
     public String toString(int alignment) {
@@ -104,6 +118,14 @@ public class PhoneNumberCountryInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"PhoneNumberCountryCategoryInfoType\": ")
                 .append(StringHelper.arrayToString(phoneCategories, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (emergencyCallsToBeEnabled != null) {
+            sb.append(aligned)
+                .append("\"emergencyCallsToBeEnabled\": \"")
+                .append(emergencyCallsToBeEnabled)
+                .append('"')
+                .append(',')
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

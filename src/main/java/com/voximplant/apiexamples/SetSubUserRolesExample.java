@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Add the roles 1, 2, 3 to the subuser with id = 12
+* Add the roles 1, 2, 3 to the subuser with id = 12.
 */
 public class SetSubUserRolesExample {
     public static void main(String [] args) {

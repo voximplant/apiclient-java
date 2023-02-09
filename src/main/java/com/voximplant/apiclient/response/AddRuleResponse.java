@@ -37,7 +37,7 @@ public class AddRuleResponse implements Alignable {
     private Long ruleId;
 
     /**
-    * The new rule ID.
+    * The new rule ID
     */
     public Long getRuleId() {
         return this.ruleId;

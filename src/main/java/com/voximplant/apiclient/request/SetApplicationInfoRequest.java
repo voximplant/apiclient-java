@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetApplicationInfoRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -29,7 +30,7 @@ public class SetApplicationInfoRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public SetApplicationInfoRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -40,8 +41,7 @@ public class SetApplicationInfoRequest implements Alignable {
 
     @RequestField(name="required_application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getRequiredApplicationName() {
         return this.requiredApplicationName;
@@ -52,8 +52,7 @@ public class SetApplicationInfoRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public SetApplicationInfoRequest setRequiredApplicationName(String d) {
         this.requiredApplicationName = d;

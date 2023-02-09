@@ -34,7 +34,7 @@ public class GetPstnBlackListResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found phone numbers count.
+    * The total found phone numbers count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetPstnBlackListResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned phone numbers count.
+    * The returned phone numbers count
     */
     public Long getCount() {
         return this.count;

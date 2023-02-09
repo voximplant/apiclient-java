@@ -31,7 +31,7 @@ public class DialogflowKeyInfo implements Alignable {
     private DialogflowKey content;
 
     /**
-    * The key's content.
+    * The key's content
     */
     public DialogflowKey getContent() {
         return this.content;
@@ -44,7 +44,7 @@ public class DialogflowKeyInfo implements Alignable {
     private ApplicationInfoType[] applications;
 
     /**
-    * Bound applications.
+    * Bound applications
     */
     public ApplicationInfoType[] getApplications() {
         return this.applications;

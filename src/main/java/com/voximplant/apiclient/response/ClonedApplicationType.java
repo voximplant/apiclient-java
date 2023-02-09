@@ -18,7 +18,7 @@ public class ClonedApplicationType implements Alignable {
     private Long applicationId;
 
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +31,7 @@ public class ClonedApplicationType implements Alignable {
     private String applicationName;
 
     /**
-    * The full application name.
+    * The full application name
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -44,7 +44,7 @@ public class ClonedApplicationType implements Alignable {
     private ClonedRuleType[] users;
 
     /**
-    * The cloned rules.
+    * The cloned rules
     */
     public ClonedRuleType[] getUsers() {
         return this.users;

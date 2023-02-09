@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,8 +19,8 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="list_id")
     /**
-    * The list ID to filter. Can be a list separated by the ';' symbol or
-    * the 'all' value.
+    * The list ID to filter. Can be a list separated by semicolon (;). Use
+    * the 'all' value to select all lists
     */
     public MultiArgument<Long> getListId() {
         return this.listId;
@@ -30,8 +31,8 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The list ID to filter. Can be a list separated by the ';' symbol or
-    * the 'all' value.
+    * The list ID to filter. Can be a list separated by semicolon (;). Use
+    * the 'all' value to select all lists
     */
     public GetCallListsRequest setListId(MultiArgument<Long> d) {
         this.listId = d;
@@ -134,7 +135,7 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="type_list")
     /**
-    * The type of the call list. The possible values are: AUTOMATIC and
+    * The type of the call list. The possible values are AUTOMATIC and
     * MANUAL
     */
     public String getTypeList() {
@@ -146,7 +147,7 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The type of the call list. The possible values are: AUTOMATIC and
+    * The type of the call list. The possible values are AUTOMATIC and
     * MANUAL
     */
     public GetCallListsRequest setTypeList(String d) {
@@ -158,7 +159,7 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -169,7 +170,7 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetCallListsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -180,7 +181,7 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -191,7 +192,7 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetCallListsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -202,8 +203,8 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to filter. Can be a list separated by the ';'
-    * symbol or the 'all' value.
+    * The application ID to filter. Can be a list separated by semicolon
+    * (;). Use the 'all' value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
@@ -214,8 +215,8 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The application ID to filter. Can be a list separated by the ';'
-    * symbol or the 'all' value.
+    * The application ID to filter. Can be a list separated by semicolon
+    * (;). Use the 'all' value to select all applications
     */
     public GetCallListsRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;

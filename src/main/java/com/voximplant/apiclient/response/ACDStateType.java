@@ -18,7 +18,7 @@ public class ACDStateType implements Alignable {
     private ACDQueueStateType[] acdQueues;
 
     /**
-    * The queues' states.
+    * The queues' states
     */
     public ACDQueueStateType[] getAcdQueues() {
         return this.acdQueues;

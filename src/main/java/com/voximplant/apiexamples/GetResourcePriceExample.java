@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get the price to call to the phone number 79263332211
+* Get the price to call to the phone number 79263332211.
 */
 public class GetResourcePriceExample {
     public static void main(String [] args) {

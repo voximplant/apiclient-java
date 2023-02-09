@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -40,7 +41,8 @@ public class AddScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_script")
     /**
-    * The scenario text. The length must be less than 128 KB.
+    * The scenario text. Use the application/x-www-form-urlencoded content
+    * type with UTF-8 encoding. The length must be less than 128 KB
     */
     public String getScenarioScript() {
         return this.scenarioScript;
@@ -51,7 +53,8 @@ public class AddScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario text. The length must be less than 128 KB.
+    * The scenario text. Use the application/x-www-form-urlencoded content
+    * type with UTF-8 encoding. The length must be less than 128 KB
     */
     public AddScenarioRequest setScenarioScript(String d) {
         this.scenarioScript = d;
@@ -62,7 +65,9 @@ public class AddScenarioRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID.
+    * The rule ID. The new scenario binds to the specified rule. Please
+    * note, if you do not bind the scenario to any rule, you cannot execute
+    * the scenario
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -73,7 +78,9 @@ public class AddScenarioRequest implements Alignable {
     }
 
     /**
-    * The rule ID.
+    * The rule ID. The new scenario binds to the specified rule. Please
+    * note, if you do not bind the scenario to any rule, you cannot execute
+    * the scenario
     */
     public AddScenarioRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -84,7 +91,7 @@ public class AddScenarioRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name that can be used instead of <b>rule_id</b>.
+    * The rule name that can be used instead of <b>rule_id</b>
     */
     public String getRuleName() {
         return this.ruleName;
@@ -95,7 +102,7 @@ public class AddScenarioRequest implements Alignable {
     }
 
     /**
-    * The rule name that can be used instead of <b>rule_id</b>.
+    * The rule name that can be used instead of <b>rule_id</b>
     */
     public AddScenarioRequest setRuleName(String d) {
         this.ruleName = d;
@@ -106,7 +113,7 @@ public class AddScenarioRequest implements Alignable {
 
     @RequestField(name="rewrite")
     /**
-    * Is the existing scenario rewrite?
+    * Rewrite the existing scenario
     */
     public Boolean getRewrite() {
         return this.rewrite;
@@ -117,7 +124,7 @@ public class AddScenarioRequest implements Alignable {
     }
 
     /**
-    * Is the existing scenario rewrite?
+    * Rewrite the existing scenario
     */
     public AddScenarioRequest setRewrite(boolean d) {
         this.rewrite = Boolean.valueOf(d);

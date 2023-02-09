@@ -37,7 +37,7 @@ public class TransferMoneyToUserResponse implements Alignable {
     private BigDecimal balance;
 
     /**
-    * The new account balance.
+    * The new account balance
     */
     public BigDecimal getBalance() {
         return this.balance;

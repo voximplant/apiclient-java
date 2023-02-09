@@ -18,7 +18,7 @@ public class ACDWaitingCallStateType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID of the operator to try to service the request.
+    * The user ID of the operator to try to service the request
     */
     public Long getUserId() {
         return this.userId;
@@ -31,7 +31,7 @@ public class ACDWaitingCallStateType implements Alignable {
     private String userName;
 
     /**
-    * The user name of the operator.
+    * The user name of the operator
     */
     public String getUserName() {
         return this.userName;
@@ -44,7 +44,7 @@ public class ACDWaitingCallStateType implements Alignable {
     private String userDisplayName;
 
     /**
-    * The display user name of the operator.
+    * The display user name of the operator
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -57,7 +57,7 @@ public class ACDWaitingCallStateType implements Alignable {
     private Long priority;
 
     /**
-    * The request priority.
+    * The request priority
     */
     public Long getPriority() {
         return this.priority;
@@ -70,7 +70,7 @@ public class ACDWaitingCallStateType implements Alignable {
     private String callerid;
 
     /**
-    * The client callerid.
+    * The client callerid
     */
     public String getCallerid() {
         return this.callerid;
@@ -97,7 +97,7 @@ public class ACDWaitingCallStateType implements Alignable {
     private Long waitingTime;
 
     /**
-    * The waiting time in seconds.
+    * The waiting time in seconds
     */
     public Long getWaitingTime() {
         return this.waitingTime;
@@ -110,7 +110,7 @@ public class ACDWaitingCallStateType implements Alignable {
     private Long minutesToSubmit;
 
     /**
-    * The predicted minutes left to start servicing.
+    * The predicted minutes left to start servicing
     */
     public Long getMinutesToSubmit() {
         return this.minutesToSubmit;
@@ -123,7 +123,7 @@ public class ACDWaitingCallStateType implements Alignable {
     private Long acdSessionHistoryId;
 
     /**
-    * The ACD session history ID of the request.
+    * The ACD session history ID of the request
     */
     public Long getAcdSessionHistoryId() {
         return this.acdSessionHistoryId;

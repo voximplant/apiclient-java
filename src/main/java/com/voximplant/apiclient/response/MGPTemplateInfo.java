@@ -18,7 +18,7 @@ public class MGPTemplateInfo implements Alignable {
     private Long mgpTemplateId;
 
     /**
-    * The MGP template ID.
+    * The MGP template ID
     */
     public Long getMgpTemplateId() {
         return this.mgpTemplateId;
@@ -31,7 +31,7 @@ public class MGPTemplateInfo implements Alignable {
     private String mgpTemplateName;
 
     /**
-    * The MGP template name.
+    * The MGP template name
     */
     public String getMgpTemplateName() {
         return this.mgpTemplateName;
@@ -44,7 +44,7 @@ public class MGPTemplateInfo implements Alignable {
     private Long mgpTemplatePrice;
 
     /**
-    * The MGP template price.
+    * The MGP template price
     */
     public Long getMgpTemplatePrice() {
         return this.mgpTemplatePrice;
@@ -57,7 +57,7 @@ public class MGPTemplateInfo implements Alignable {
     private String mgpTemplateCurrency;
 
     /**
-    * The MGP template currency.
+    * The MGP template currency
     */
     public String getMgpTemplateCurrency() {
         return this.mgpTemplateCurrency;

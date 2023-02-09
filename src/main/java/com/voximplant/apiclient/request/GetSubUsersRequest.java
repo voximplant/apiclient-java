@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetSubUsersRequest implements Alignable {
 
     @RequestField(name="subuser_id")
     /**
-    * The subuser's ID.
+    * The subuser's ID
     */
     public Long getSubuserId() {
         return this.subuserId;
@@ -29,7 +30,7 @@ public class GetSubUsersRequest implements Alignable {
     }
 
     /**
-    * The subuser's ID.
+    * The subuser's ID
     */
     public GetSubUsersRequest setSubuserId(long d) {
         this.subuserId = Long.valueOf(d);
@@ -62,7 +63,7 @@ public class GetSubUsersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -73,7 +74,7 @@ public class GetSubUsersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetSubUsersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -84,7 +85,7 @@ public class GetSubUsersRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -95,7 +96,7 @@ public class GetSubUsersRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetSubUsersRequest setCount(long d) {
         this.count = Long.valueOf(d);

@@ -27,7 +27,7 @@ public class GetAvailableRegulationsResponse implements Alignable {
     * If result equals 1: 1) the user has at least one regulation address
     * which is appropriate for verification or 2) the verification is not
     * required. If result equals 0, the regulations address needs to be
-    * created.
+    * created
     */
     public Boolean getResult() {
         return this.result;
@@ -40,7 +40,7 @@ public class GetAvailableRegulationsResponse implements Alignable {
     private RegulationAddress[] availableAddress;
 
     /**
-    * The available RegulationAddress records.
+    * The available RegulationAddress records
     */
     public RegulationAddress[] getAvailableAddress() {
         return this.availableAddress;
@@ -53,7 +53,7 @@ public class GetAvailableRegulationsResponse implements Alignable {
     private Long countInProgress;
 
     /**
-    * The count of RegulationAddress in progress status.
+    * The count of RegulationAddress in progress status
     */
     public Long getCountInProgress() {
         return this.countInProgress;

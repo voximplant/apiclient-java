@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
 
     @RequestField(name="authorized_ip")
     /**
-    * The authorized IP4 or network to filter.
+    * The authorized IP4 or network to filter
     */
     public String getAuthorizedIp() {
         return this.authorizedIp;
@@ -29,7 +30,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
     }
 
     /**
-    * The authorized IP4 or network to filter.
+    * The authorized IP4 or network to filter
     */
     public GetAuthorizedAccountIPsRequest setAuthorizedIp(String d) {
         this.authorizedIp = d;
@@ -40,7 +41,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
 
     @RequestField(name="allowed")
     /**
-    * The allowed flag to filter.
+    * The allowed flag to filter
     */
     public Boolean getAllowed() {
         return this.allowed;
@@ -51,7 +52,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
     }
 
     /**
-    * The allowed flag to filter.
+    * The allowed flag to filter
     */
     public GetAuthorizedAccountIPsRequest setAllowed(boolean d) {
         this.allowed = Boolean.valueOf(d);
@@ -63,7 +64,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
     @RequestField(name="contains_ip")
     /**
     * Specify the parameter to filter the networks that contains the
-    * particular IP4.
+    * particular IP4
     */
     public String getContainsIp() {
         return this.containsIp;
@@ -75,7 +76,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
 
     /**
     * Specify the parameter to filter the networks that contains the
-    * particular IP4.
+    * particular IP4
     */
     public GetAuthorizedAccountIPsRequest setContainsIp(String d) {
         this.containsIp = d;
@@ -86,7 +87,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -97,7 +98,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetAuthorizedAccountIPsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -108,7 +109,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -119,10 +120,32 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetAuthorizedAccountIPsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
+        return this;
+    }
+
+    private String description;
+
+    @RequestField(name="description")
+    /**
+    * The IP address description
+    */
+    public String getDescription() {
+        return this.description;
+    }
+
+    public boolean hasDescription() {
+        return this.description != null;
+    }
+
+    /**
+    * The IP address description
+    */
+    public GetAuthorizedAccountIPsRequest setDescription(String d) {
+        this.description = d;
         return this;
     }
 
@@ -171,6 +194,14 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"offset\": \"")
                 .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (description != null) {
+            sb.append(aligned)
+                .append("\"description\": \"")
+                .append(description)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

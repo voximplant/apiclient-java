@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when proof of address is verified. Received as part of the
 * [AccountCallback] structure.
 */
 public class RegulationAddressVerifiedCallback implements Alignable {
@@ -19,7 +19,7 @@ public class RegulationAddressVerifiedCallback implements Alignable {
     private Long regulationAddressId;
 
     /**
-    * The uploaded document ID.
+    * The uploaded document ID
     */
     public Long getRegulationAddressId() {
         return this.regulationAddressId;
@@ -33,8 +33,7 @@ public class RegulationAddressVerifiedCallback implements Alignable {
 
     /**
     * The document verification status. The following values are possible:
-    * WAITING_CONFIRMATION_DOCS, VERIFIED, REJECTED,
-    * WAITING_PERIOD_EXPIRED.
+    * VERIFIED, DECLINED
     */
     public String getRegulationAddressStatus() {
         return this.regulationAddressStatus;
@@ -61,7 +60,7 @@ public class RegulationAddressVerifiedCallback implements Alignable {
     private Boolean isIndividual;
 
     /**
-    * Is individual, isn't legal entity?
+    * Account belongs to an individual
     */
     public Boolean getIsIndividual() {
         return this.isIndividual;
@@ -74,7 +73,7 @@ public class RegulationAddressVerifiedCallback implements Alignable {
     private String comment;
 
     /**
-    * The reviewer's comment.
+    * The reviewer's comment
     */
     public String getComment() {
         return this.comment;
@@ -87,7 +86,7 @@ public class RegulationAddressVerifiedCallback implements Alignable {
     private String regulationAddressName;
 
     /**
-    * The regulation address name.
+    * The regulation address name
     */
     public String getRegulationAddressName() {
         return this.regulationAddressName;

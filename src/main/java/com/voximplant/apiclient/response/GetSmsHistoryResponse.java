@@ -34,7 +34,7 @@ public class GetSmsHistoryResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * Total number of distinct messages fetched.
+    * Total number of messages matching the query parameters
     */
     public Long getTotalCount() {
         return this.totalCount;

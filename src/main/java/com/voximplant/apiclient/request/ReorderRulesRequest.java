@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class ReorderRulesRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID list separated by the ';' symbol.
+    * The rule ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getRuleId() {
         return this.ruleId;
@@ -29,7 +30,7 @@ public class ReorderRulesRequest implements Alignable {
     }
 
     /**
-    * The rule ID list separated by the ';' symbol.
+    * The rule ID list separated by semicolon (;)
     */
     public ReorderRulesRequest setRuleId(MultiArgument<Long> d) {
         this.ruleId = d;

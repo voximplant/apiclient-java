@@ -34,7 +34,7 @@ public class GetTransactionHistoryResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found transaction count.
+    * The total found transaction count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetTransactionHistoryResponse implements Alignable {
     private String timezone;
 
     /**
-    * The used timezone. 'Etc/GMT' for example.
+    * The used timezone. 'Etc/GMT' for example
     */
     public String getTimezone() {
         return this.timezone;
@@ -60,7 +60,7 @@ public class GetTransactionHistoryResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned transaction count.
+    * The returned transaction count
     */
     public Long getCount() {
         return this.count;
@@ -73,7 +73,7 @@ public class GetTransactionHistoryResponse implements Alignable {
     private Long historyReportId;
 
     /**
-    * The history report ID (async mode).
+    * The history report ID (async mode)
     */
     public Long getHistoryReportId() {
         return this.historyReportId;

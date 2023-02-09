@@ -18,7 +18,7 @@ public class CallerIDInfoType implements Alignable {
     private Long calleridId;
 
     /**
-    * The callerID id.
+    * The callerID id
     */
     public Long getCalleridId() {
         return this.calleridId;
@@ -31,7 +31,7 @@ public class CallerIDInfoType implements Alignable {
     private String calleridNumber;
 
     /**
-    * The callerID number.
+    * The callerID number
     */
     public String getCalleridNumber() {
         return this.calleridNumber;
@@ -44,7 +44,7 @@ public class CallerIDInfoType implements Alignable {
     private Boolean active;
 
     /**
-    * The active flag.
+    * The active flag
     */
     public Boolean getActive() {
         return this.active;
@@ -57,7 +57,7 @@ public class CallerIDInfoType implements Alignable {
     private Long codeEnteringAttemptsLeft;
 
     /**
-    * The code entering attempts left for the unverified callerID.
+    * The code entering attempts left for the unverified callerID
     */
     public Long getCodeEnteringAttemptsLeft() {
         return this.codeEnteringAttemptsLeft;
@@ -70,7 +70,7 @@ public class CallerIDInfoType implements Alignable {
     private Long verificationCallAttemptsLeft;
 
     /**
-    * The verification call attempts left for the unverified callerID.
+    * The verification call attempts left for the unverified callerID
     */
     public Long getVerificationCallAttemptsLeft() {
         return this.verificationCallAttemptsLeft;
@@ -85,7 +85,7 @@ public class CallerIDInfoType implements Alignable {
 
     /**
     * The verification ending date in format: YYYY-MM-DD (for the verified
-    * callerID).
+    * callerID)
     */
     public Date getVerifiedUntil() {
         return this.verifiedUntil;

@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when a subscription is frozen. Received as part of the
 * [AccountCallback] structure.
 */
 public class SubscriptionIsFrozenCallback implements Alignable {
@@ -19,7 +19,7 @@ public class SubscriptionIsFrozenCallback implements Alignable {
     private SubscriptionIsFrozenCallbackItem[] subscriptions;
 
     /**
-    * The frozen subscription list.
+    * The frozen subscription list
     */
     public SubscriptionIsFrozenCallbackItem[] getSubscriptions() {
         return this.subscriptions;

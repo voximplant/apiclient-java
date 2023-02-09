@@ -14,7 +14,7 @@ import java.io.IOException;
 
 /**
 * Get the first call session history record with calls and record URLs
-* from the 2020-02-25 00:00:00 UTC to the 2020-02-26 00:00:00 UTC
+* from the 2020-02-25 00:00:00 UTC to the 2020-02-26 00:00:00 UTC.
 */
 public class GetCallHistoryExample {
     public static void main(String [] args) {

@@ -18,7 +18,7 @@ public class AdminRoleType implements Alignable {
     private Long adminRoleId;
 
     /**
-    * The admin role ID.
+    * The admin role ID
     */
     public Long getAdminRoleId() {
         return this.adminRoleId;
@@ -31,7 +31,7 @@ public class AdminRoleType implements Alignable {
     private String adminRoleName;
 
     /**
-    * The admin role name.
+    * The admin role name
     */
     public String getAdminRoleName() {
         return this.adminRoleName;
@@ -44,7 +44,7 @@ public class AdminRoleType implements Alignable {
     private Boolean adminRoleActive;
 
     /**
-    * If false the allowed and denied entries have no affect.
+    * If false the allowed and denied entries have no affect
     */
     public Boolean getAdminRoleActive() {
         return this.adminRoleActive;
@@ -57,7 +57,7 @@ public class AdminRoleType implements Alignable {
     private Boolean systemRole;
 
     /**
-    * Is a system role?
+    * It's a system role
     */
     public Boolean getSystemRole() {
         return this.systemRole;
@@ -84,7 +84,7 @@ public class AdminRoleType implements Alignable {
     private String[] allowedEntries;
 
     /**
-    * The allowed access entries (the API function names).
+    * The allowed access entries (the API function names)
     */
     public String[] getAllowedEntries() {
         return this.allowedEntries;
@@ -97,7 +97,7 @@ public class AdminRoleType implements Alignable {
     private String[] deniedEntries;
 
     /**
-    * The denied access entries (the API function names).
+    * The denied access entries (the API function names)
     */
     public String[] getDeniedEntries() {
         return this.deniedEntries;

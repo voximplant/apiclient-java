@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Delete the subuser with id = 12 from account_id = 1
+* Delete the subuser with id = 12 from account_id = 1.
 */
 public class DelSubUserExample {
     public static void main(String [] args) {

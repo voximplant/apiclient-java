@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetKeyRolesRequest implements Alignable {
 
     @RequestField(name="key_id")
     /**
-    * The key's ID.
+    * The key's ID
     */
     public String getKeyId() {
         return this.keyId;
@@ -29,7 +30,7 @@ public class SetKeyRolesRequest implements Alignable {
     }
 
     /**
-    * The key's ID.
+    * The key's ID
     */
     public SetKeyRolesRequest setKeyId(String d) {
         this.keyId = d;
@@ -40,7 +41,7 @@ public class SetKeyRolesRequest implements Alignable {
 
     @RequestField(name="role_id")
     /**
-    * The role id list separated by the ';' symbol.
+    * The role id list separated by semicolon (;)
     */
     public MultiArgument<Long> getRoleId() {
         return this.roleId;
@@ -51,7 +52,7 @@ public class SetKeyRolesRequest implements Alignable {
     }
 
     /**
-    * The role id list separated by the ';' symbol.
+    * The role id list separated by semicolon (;)
     */
     public SetKeyRolesRequest setRoleId(MultiArgument<Long> d) {
         this.roleId = d;
@@ -62,7 +63,7 @@ public class SetKeyRolesRequest implements Alignable {
 
     @RequestField(name="role_name")
     /**
-    * The role name list separated by the ';' symbol.
+    * The role name list separated by semicolon (;)
     */
     public MultiArgument<String> getRoleName() {
         return this.roleName;
@@ -73,7 +74,7 @@ public class SetKeyRolesRequest implements Alignable {
     }
 
     /**
-    * The role name list separated by the ';' symbol.
+    * The role name list separated by semicolon (;)
     */
     public SetKeyRolesRequest setRoleName(MultiArgument<String> d) {
         this.roleName = d;

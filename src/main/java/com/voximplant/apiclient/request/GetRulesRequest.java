@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -29,7 +30,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The application ID.
+    * The application ID
     */
     public GetRulesRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -40,8 +41,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -52,8 +52,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of
-    * <b>application_id</b>.
+    * The application name that can be used instead of <b>application_id</b>
     */
     public GetRulesRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -86,7 +85,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name part to filter.
+    * The rule name part to filter
     */
     public String getRuleName() {
         return this.ruleName;
@@ -97,7 +96,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The rule name part to filter.
+    * The rule name part to filter
     */
     public GetRulesRequest setRuleName(String d) {
         this.ruleName = d;
@@ -108,7 +107,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="video_conference")
     /**
-    * The video conference flag to filter.
+    * The video conference flag to filter
     */
     public Boolean getVideoConference() {
         return this.videoConference;
@@ -119,7 +118,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The video conference flag to filter.
+    * The video conference flag to filter
     */
     public GetRulesRequest setVideoConference(boolean d) {
         this.videoConference = Boolean.valueOf(d);
@@ -152,7 +151,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="with_scenarios")
     /**
-    * Set true to get bound scenarios info.
+    * Set true to get bound scenarios info
     */
     public Boolean getWithScenarios() {
         return this.withScenarios;
@@ -163,7 +162,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * Set true to get bound scenarios info.
+    * Set true to get bound scenarios info
     */
     public GetRulesRequest setWithScenarios(boolean d) {
         this.withScenarios = Boolean.valueOf(d);
@@ -174,7 +173,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -185,7 +184,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetRulesRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -196,7 +195,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -207,7 +206,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetRulesRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

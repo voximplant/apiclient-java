@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class DelSkillRequest implements Alignable {
 
     @RequestField(name="skill_id")
     /**
-    * The skill ID.
+    * The skill ID
     */
     public Long getSkillId() {
         return this.skillId;
@@ -29,7 +30,7 @@ public class DelSkillRequest implements Alignable {
     }
 
     /**
-    * The skill ID.
+    * The skill ID
     */
     public DelSkillRequest setSkillId(long d) {
         this.skillId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class DelSkillRequest implements Alignable {
 
     @RequestField(name="skill_name")
     /**
-    * The skill name that can be used instead of <b>skill_id</b>.
+    * The skill name that can be used instead of <b>skill_id</b>
     */
     public String getSkillName() {
         return this.skillName;
@@ -51,7 +52,7 @@ public class DelSkillRequest implements Alignable {
     }
 
     /**
-    * The skill name that can be used instead of <b>skill_id</b>.
+    * The skill name that can be used instead of <b>skill_id</b>
     */
     public DelSkillRequest setSkillName(String d) {
         this.skillName = d;

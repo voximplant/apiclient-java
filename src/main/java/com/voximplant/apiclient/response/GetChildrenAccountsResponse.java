@@ -34,7 +34,7 @@ public class GetChildrenAccountsResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found user count.
+    * The total found user count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetChildrenAccountsResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned user count.
+    * The returned user count
     */
     public Long getCount() {
         return this.count;

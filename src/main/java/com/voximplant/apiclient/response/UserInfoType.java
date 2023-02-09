@@ -18,7 +18,7 @@ public class UserInfoType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID.
+    * The user ID
     */
     public Long getUserId() {
         return this.userId;
@@ -31,7 +31,7 @@ public class UserInfoType implements Alignable {
     private String userName;
 
     /**
-    * The user name.
+    * The user name
     */
     public String getUserName() {
         return this.userName;
@@ -44,7 +44,7 @@ public class UserInfoType implements Alignable {
     private String userDisplayName;
 
     /**
-    * The display user name.
+    * The display user name
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -57,7 +57,7 @@ public class UserInfoType implements Alignable {
     private Boolean userActive;
 
     /**
-    * The user active flag.
+    * The user active flag
     */
     public Boolean getUserActive() {
         return this.userActive;
@@ -71,7 +71,7 @@ public class UserInfoType implements Alignable {
 
     /**
     * 'True' if the user uses the parent account's money, 'false' if the
-    * user has a separate balance.
+    * user has a separate balance
     */
     public Boolean getParentAccounting() {
         return this.parentAccounting;
@@ -84,7 +84,7 @@ public class UserInfoType implements Alignable {
     private String mobilePhone;
 
     /**
-    * The user mobile phone.
+    * The user mobile phone
     */
     public String getMobilePhone() {
         return this.mobilePhone;
@@ -99,7 +99,7 @@ public class UserInfoType implements Alignable {
     /**
     * The current user's money in the currency specified for the account.
     * The value is the number rounded to 4 decimal places and it changes
-    * during the calls, transcribing, purchases etc.
+    * during the calls, transcribing, purchases etc
     */
     public BigDecimal getLiveBalance() {
         return this.liveBalance;
@@ -116,7 +116,7 @@ public class UserInfoType implements Alignable {
     * The value is the number rounded to 4 decimal places. The parameter is
     * the alias to live_balance by default. But there is a possibility to
     * make the alias to fixed_balance: just to pass
-    * return_live_balance=false into the [GetAccountInfo] method.
+    * return_live_balance=false into the [GetAccountInfo] method
     */
     public BigDecimal getBalance() {
         return this.balance;
@@ -129,8 +129,7 @@ public class UserInfoType implements Alignable {
     private BigDecimal fixedBalance;
 
     /**
-    * The last committed balance which was approved by billing's
-    * transaction.
+    * The last committed balance which was approved by billing's transaction
     */
     public BigDecimal getFixedBalance() {
         return this.fixedBalance;
@@ -143,7 +142,7 @@ public class UserInfoType implements Alignable {
     private String userCustomData;
 
     /**
-    * The custom data.
+    * The custom data
     */
     public String getUserCustomData() {
         return this.userCustomData;
@@ -156,7 +155,7 @@ public class UserInfoType implements Alignable {
     private ApplicationInfoType[] applications;
 
     /**
-    * The bound applications.
+    * The bound applications
     */
     public ApplicationInfoType[] getApplications() {
         return this.applications;
@@ -169,7 +168,7 @@ public class UserInfoType implements Alignable {
     private SkillInfoType[] skills;
 
     /**
-    * The bound skills.
+    * The bound skills
     */
     public SkillInfoType[] getSkills() {
         return this.skills;
@@ -182,7 +181,7 @@ public class UserInfoType implements Alignable {
     private ACDQueueOperatorInfoType[] acdQueues;
 
     /**
-    * The bound ACD queues.
+    * The bound ACD queues
     */
     public ACDQueueOperatorInfoType[] getAcdQueues() {
         return this.acdQueues;
@@ -196,7 +195,7 @@ public class UserInfoType implements Alignable {
 
     /**
     * The ACD operator status. The following values are possible: OFFLINE,
-    * ONLINE, READY, BANNED, IN_SERVICE, AFTER_SERVICE, TIMEOUT, DND.
+    * ONLINE, READY, BANNED, IN_SERVICE, AFTER_SERVICE, TIMEOUT, DND
     */
     public String getAcdStatus() {
         return this.acdStatus;

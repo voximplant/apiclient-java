@@ -18,7 +18,7 @@ public class RecordStorageInfoType implements Alignable {
     private Long recordStorageId;
 
     /**
-    * The record storage ID.
+    * The record storage ID
     */
     public Long getRecordStorageId() {
         return this.recordStorageId;
@@ -31,7 +31,7 @@ public class RecordStorageInfoType implements Alignable {
     private String recordStorageName;
 
     /**
-    * The record storage name.
+    * The record storage name
     */
     public String getRecordStorageName() {
         return this.recordStorageName;
@@ -44,7 +44,7 @@ public class RecordStorageInfoType implements Alignable {
     private Boolean isPublic;
 
     /**
-    * The public flag (The admin permission required).
+    * The public flag (The admin permission required)
     */
     public Boolean getIsPublic() {
         return this.isPublic;

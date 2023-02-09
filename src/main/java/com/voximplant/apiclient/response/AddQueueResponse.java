@@ -37,7 +37,7 @@ public class AddQueueResponse implements Alignable {
     private Long acdQueueId;
 
     /**
-    * The ACD queue ID.
+    * The ACD queue ID
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;

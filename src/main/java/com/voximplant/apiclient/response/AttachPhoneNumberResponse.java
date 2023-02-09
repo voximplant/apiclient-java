@@ -37,7 +37,7 @@ public class AttachPhoneNumberResponse implements Alignable {
     private NewAttachedPhoneInfoType[] phoneNumbers;
 
     /**
-    * The attached phone numbers.
+    * The attached phone numbers
     */
     public NewAttachedPhoneInfoType[] getPhoneNumbers() {
         return this.phoneNumbers;

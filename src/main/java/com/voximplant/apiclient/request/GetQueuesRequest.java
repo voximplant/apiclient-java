@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID to filter.
+    * The ACD queue ID to filter
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -29,7 +30,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID to filter.
+    * The ACD queue ID to filter
     */
     public GetQueuesRequest setAcdQueueId(long d) {
         this.acdQueueId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="acd_queue_name")
     /**
-    * The ACD queue name part to filter.
+    * The ACD queue name part to filter
     */
     public String getAcdQueueName() {
         return this.acdQueueName;
@@ -51,7 +52,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The ACD queue name part to filter.
+    * The ACD queue name part to filter
     */
     public GetQueuesRequest setAcdQueueName(String d) {
         this.acdQueueName = d;
@@ -62,7 +63,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to filter.
+    * The application ID to filter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -73,7 +74,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The application ID to filter.
+    * The application ID to filter
     */
     public GetQueuesRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -84,7 +85,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="skill_id")
     /**
-    * The skill ID to filter.
+    * The skill ID to filter
     */
     public Long getSkillId() {
         return this.skillId;
@@ -95,7 +96,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The skill ID to filter.
+    * The skill ID to filter
     */
     public GetQueuesRequest setSkillId(long d) {
         this.skillId = Long.valueOf(d);
@@ -106,7 +107,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="excluded_skill_id")
     /**
-    * The excluded skill ID to filter.
+    * The excluded skill ID to filter
     */
     public Long getExcludedSkillId() {
         return this.excludedSkillId;
@@ -117,7 +118,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The excluded skill ID to filter.
+    * The excluded skill ID to filter
     */
     public GetQueuesRequest setExcludedSkillId(long d) {
         this.excludedSkillId = Long.valueOf(d);
@@ -128,7 +129,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="with_skills")
     /**
-    * Set true to get the bound skills.
+    * Set true to get the bound skills
     */
     public Boolean getWithSkills() {
         return this.withSkills;
@@ -139,7 +140,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound skills.
+    * Set true to get the bound skills
     */
     public GetQueuesRequest setWithSkills(boolean d) {
         this.withSkills = Boolean.valueOf(d);
@@ -150,7 +151,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="showing_skill_id")
     /**
-    * The skill to show in the 'skills' field output.
+    * The skill to show in the 'skills' field output
     */
     public Long getShowingSkillId() {
         return this.showingSkillId;
@@ -161,7 +162,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The skill to show in the 'skills' field output.
+    * The skill to show in the 'skills' field output
     */
     public GetQueuesRequest setShowingSkillId(long d) {
         this.showingSkillId = Long.valueOf(d);
@@ -172,7 +173,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -183,7 +184,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetQueuesRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -194,7 +195,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -205,10 +206,32 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetQueuesRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
+        return this;
+    }
+
+    private Boolean withOperatorcount;
+
+    @RequestField(name="with_operatorcount")
+    /**
+    * Number of agents bound to the queue
+    */
+    public Boolean getWithOperatorcount() {
+        return this.withOperatorcount;
+    }
+
+    public boolean hasWithOperatorcount() {
+        return this.withOperatorcount != null;
+    }
+
+    /**
+    * Number of agents bound to the queue
+    */
+    public GetQueuesRequest setWithOperatorcount(boolean d) {
+        this.withOperatorcount = Boolean.valueOf(d);
         return this;
     }
 
@@ -289,6 +312,14 @@ public class GetQueuesRequest implements Alignable {
             sb.append(aligned)
                 .append("\"offset\": \"")
                 .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withOperatorcount != null) {
+            sb.append(aligned)
+                .append("\"withOperatorcount\": \"")
+                .append(withOperatorcount)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

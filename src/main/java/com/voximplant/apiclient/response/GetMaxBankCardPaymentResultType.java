@@ -19,7 +19,7 @@ public class GetMaxBankCardPaymentResultType implements Alignable {
 
     /**
     * The maximum payment for the specified card. It's always equal or less
-    * than **new_max_payment**.
+    * than **new_max_payment**
     */
     public Long getMaxPayment() {
         return this.maxPayment;
@@ -33,8 +33,7 @@ public class GetMaxBankCardPaymentResultType implements Alignable {
 
     /**
     * The maximum payment available for any card. The values depends on
-    * payment gateways, previous transactions during the last 24 hours,
-    * etc.
+    * payment gateways, previous transactions during the last 24 hours, etc
     */
     public Long getNewMaxPayment() {
         return this.newMaxPayment;
@@ -47,7 +46,7 @@ public class GetMaxBankCardPaymentResultType implements Alignable {
     private String currency;
 
     /**
-    * The currency code (USD, RUR, ...).
+    * The currency code (USD, RUR, ...)
     */
     public String getCurrency() {
         return this.currency;

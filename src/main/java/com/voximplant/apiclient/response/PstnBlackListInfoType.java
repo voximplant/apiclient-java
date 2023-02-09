@@ -18,7 +18,7 @@ public class PstnBlackListInfoType implements Alignable {
     private Long pstnBlacklistId;
 
     /**
-    * The black list item ID.
+    * The black list item ID
     */
     public Long getPstnBlacklistId() {
         return this.pstnBlacklistId;
@@ -31,7 +31,7 @@ public class PstnBlackListInfoType implements Alignable {
     private String pstnBlacklistPhone ;
 
     /**
-    * The phone number.
+    * The phone number
     */
     public String getPstnBlacklistPhone () {
         return this.pstnBlacklistPhone ;

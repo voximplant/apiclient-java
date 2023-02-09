@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -40,7 +41,7 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="user_display_name")
     /**
-    * The user display name. The length must be less than 256.
+    * The user display name. The length must be less than 256
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -51,7 +52,7 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The user display name. The length must be less than 256.
+    * The user display name. The length must be less than 256
     */
     public AddUserRequest setUserDisplayName(String d) {
         this.userDisplayName = d;
@@ -62,7 +63,9 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="user_password")
     /**
-    * The user password. The length must be at least 6 symbols.
+    * The user password. Must be at least 8 characters long and contain at
+    * least one uppercase and lowercase letter, one number, and one special
+    * character
     */
     public String getUserPassword() {
         return this.userPassword;
@@ -73,7 +76,9 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The user password. The length must be at least 6 symbols.
+    * The user password. Must be at least 8 characters long and contain at
+    * least one uppercase and lowercase letter, one number, and one special
+    * character
     */
     public AddUserRequest setUserPassword(String d) {
         this.userPassword = d;
@@ -85,7 +90,7 @@ public class AddUserRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * The application ID which a new user will be bound to. Can be used
-    * instead of the <b>application_name</b> parameter.
+    * instead of the <b>application_name</b> parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -97,7 +102,7 @@ public class AddUserRequest implements Alignable {
 
     /**
     * The application ID which a new user will be bound to. Can be used
-    * instead of the <b>application_name</b> parameter.
+    * instead of the <b>application_name</b> parameter
     */
     public AddUserRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -109,7 +114,7 @@ public class AddUserRequest implements Alignable {
     @RequestField(name="application_name")
     /**
     * The application name which a new user will be bound to. Can be used
-    * instead of the <b>application_id</b> parameter.
+    * instead of the <b>application_id</b> parameter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -121,7 +126,7 @@ public class AddUserRequest implements Alignable {
 
     /**
     * The application name which a new user will be bound to. Can be used
-    * instead of the <b>application_id</b> parameter.
+    * instead of the <b>application_id</b> parameter
     */
     public AddUserRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -133,7 +138,7 @@ public class AddUserRequest implements Alignable {
     @RequestField(name="parent_accounting")
     /**
     * 'True' if the user will use the parent account's money, 'false' if
-    * the user will have a separate balance.
+    * the user will have a separate balance
     */
     public Boolean getParentAccounting() {
         return this.parentAccounting;
@@ -145,7 +150,7 @@ public class AddUserRequest implements Alignable {
 
     /**
     * 'True' if the user will use the parent account's money, 'false' if
-    * the user will have a separate balance.
+    * the user will have a separate balance
     */
     public AddUserRequest setParentAccounting(boolean d) {
         this.parentAccounting = Boolean.valueOf(d);
@@ -156,7 +161,7 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="mobile_phone")
     /**
-    * The user mobile phone. The length must be less than 50.
+    * The user mobile phone. The length must be less than 50
     */
     public String getMobilePhone() {
         return this.mobilePhone;
@@ -167,7 +172,7 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The user mobile phone. The length must be less than 50.
+    * The user mobile phone. The length must be less than 50
     */
     public AddUserRequest setMobilePhone(String d) {
         this.mobilePhone = d;

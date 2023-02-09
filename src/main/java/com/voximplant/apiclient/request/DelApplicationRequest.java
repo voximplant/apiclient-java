@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,8 +19,8 @@ public class DelApplicationRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The application ID list separated by semicolon (;). Use the 'all'
+    * value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
@@ -30,8 +31,8 @@ public class DelApplicationRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by the ';' symbol or the 'all'
-    * value.
+    * The application ID list separated by semicolon (;). Use the 'all'
+    * value to select all applications
     */
     public DelApplicationRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;
@@ -42,8 +43,8 @@ public class DelApplicationRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name list separated by the ';' symbol. Can be used
-    * instead of <b>appliction_id</b>.
+    * The application name list separated by semicolon (;). Can be used
+    * instead of <b>application_id</b>
     */
     public MultiArgument<String> getApplicationName() {
         return this.applicationName;
@@ -54,8 +55,8 @@ public class DelApplicationRequest implements Alignable {
     }
 
     /**
-    * The application name list separated by the ';' symbol. Can be used
-    * instead of <b>appliction_id</b>.
+    * The application name list separated by semicolon (;). Can be used
+    * instead of <b>application_id</b>
     */
     public DelApplicationRequest setApplicationName(MultiArgument<String> d) {
         this.applicationName = d;

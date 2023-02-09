@@ -18,7 +18,7 @@ public class ACDQueueOperatorInfoType implements Alignable {
     private Long acdQueueId;
 
     /**
-    * The ACD queue ID.
+    * The ACD queue ID
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -31,7 +31,7 @@ public class ACDQueueOperatorInfoType implements Alignable {
     private String acdQueueName;
 
     /**
-    * The ACD queue name.
+    * The ACD queue name
     */
     public String getAcdQueueName() {
         return this.acdQueueName;
@@ -44,7 +44,7 @@ public class ACDQueueOperatorInfoType implements Alignable {
     private Boolean autoLink;
 
     /**
-    * The user is bound to the ACD queue in manual mode if false.
+    * The user is bound to the ACD queue in manual mode if false
     */
     public Boolean getAutoLink() {
         return this.autoLink;

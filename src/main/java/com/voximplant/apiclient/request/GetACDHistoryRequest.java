@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -66,7 +67,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="acd_session_history_id")
     /**
-    * The ACD session history ID list separated by the ';' symbol.
+    * The ACD session history ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getAcdSessionHistoryId() {
         return this.acdSessionHistoryId;
@@ -77,7 +78,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The ACD session history ID list separated by the ';' symbol.
+    * The ACD session history ID list separated by semicolon (;)
     */
     public GetACDHistoryRequest setAcdSessionHistoryId(MultiArgument<Long> d) {
         this.acdSessionHistoryId = d;
@@ -88,7 +89,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="acd_request_id")
     /**
-    * The ACD request ID list separated by the ';' symbol.
+    * The ACD request ID list separated by semicolon (;)
     */
     public MultiArgument<String> getAcdRequestId() {
         return this.acdRequestId;
@@ -99,7 +100,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The ACD request ID list separated by the ';' symbol.
+    * The ACD request ID list separated by semicolon (;)
     */
     public GetACDHistoryRequest setAcdRequestId(MultiArgument<String> d) {
         this.acdRequestId = d;
@@ -110,7 +111,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list to filter separated by the ';' symbol.
+    * The ACD queue ID list to filter separated by semicolon (;)
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -121,7 +122,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list to filter separated by the ';' symbol.
+    * The ACD queue ID list to filter separated by semicolon (;)
     */
     public GetACDHistoryRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -132,7 +133,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list to filter separated by the ';' symbol.
+    * The user ID list to filter separated by semicolon (;)
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -143,7 +144,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The user ID list to filter separated by the ';' symbol.
+    * The user ID list to filter separated by semicolon (;)
     */
     public GetACDHistoryRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -154,7 +155,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="operator_hangup")
     /**
-    * Set true to get the calls terminated by the operator.
+    * Set true to get the calls terminated by the operator
     */
     public Boolean getOperatorHangup() {
         return this.operatorHangup;
@@ -165,7 +166,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the calls terminated by the operator.
+    * Set true to get the calls terminated by the operator
     */
     public GetACDHistoryRequest setOperatorHangup(boolean d) {
         this.operatorHangup = Boolean.valueOf(d);
@@ -176,7 +177,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="unserviced")
     /**
-    * The unserviced calls by the operator.
+    * The unserviced calls by the operator
     */
     public Boolean getUnserviced() {
         return this.unserviced;
@@ -187,7 +188,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The unserviced calls by the operator.
+    * The unserviced calls by the operator
     */
     public GetACDHistoryRequest setUnserviced(boolean d) {
         this.unserviced = Boolean.valueOf(d);
@@ -198,7 +199,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="min_waiting_time")
     /**
-    * The min waiting time filter.
+    * The min waiting time filter
     */
     public Long getMinWaitingTime() {
         return this.minWaitingTime;
@@ -209,7 +210,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The min waiting time filter.
+    * The min waiting time filter
     */
     public GetACDHistoryRequest setMinWaitingTime(long d) {
         this.minWaitingTime = Long.valueOf(d);
@@ -221,7 +222,7 @@ public class GetACDHistoryRequest implements Alignable {
     @RequestField(name="rejected")
     /**
     * The rejected calls by the 'max_queue_size', 'max_waiting_time'
-    * threshold.
+    * threshold
     */
     public Boolean getRejected() {
         return this.rejected;
@@ -233,7 +234,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     /**
     * The rejected calls by the 'max_queue_size', 'max_waiting_time'
-    * threshold.
+    * threshold
     */
     public GetACDHistoryRequest setRejected(boolean d) {
         this.rejected = Boolean.valueOf(d);
@@ -244,7 +245,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="with_events")
     /**
-    * Set true to get the bound events.
+    * Set true to get the bound events
     */
     public Boolean getWithEvents() {
         return this.withEvents;
@@ -255,7 +256,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound events.
+    * Set true to get the bound events
     */
     public GetACDHistoryRequest setWithEvents(boolean d) {
         this.withEvents = Boolean.valueOf(d);
@@ -288,7 +289,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -299,7 +300,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order.
+    * Set true to get records in the descent order
     */
     public GetACDHistoryRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -310,7 +311,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -321,7 +322,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetACDHistoryRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -332,7 +333,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -343,7 +344,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetACDHistoryRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

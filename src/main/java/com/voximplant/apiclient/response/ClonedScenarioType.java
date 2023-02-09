@@ -18,7 +18,7 @@ public class ClonedScenarioType implements Alignable {
     private Long scenarioId;
 
     /**
-    * The scenario ID.
+    * The scenario ID
     */
     public Long getScenarioId() {
         return this.scenarioId;
@@ -31,7 +31,7 @@ public class ClonedScenarioType implements Alignable {
     private String scenarioName;
 
     /**
-    * The scenario name.
+    * The scenario name
     */
     public String getScenarioName() {
         return this.scenarioName;

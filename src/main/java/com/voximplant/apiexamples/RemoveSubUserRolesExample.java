@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Remove roles 1,2,3 from the subuser with id = 12
+* Remove roles 1,2,3 from the subuser with id = 12.
 */
 public class RemoveSubUserRolesExample {
     public static void main(String [] args) {

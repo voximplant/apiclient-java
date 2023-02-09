@@ -18,7 +18,7 @@ public class SubUserID implements Alignable {
     private Long subuserId;
 
     /**
-    * The subuser ID.
+    * The subuser ID
     */
     public Long getSubuserId() {
         return this.subuserId;

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -41,7 +42,7 @@ public class BindSipRegistrationRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * The application ID which the SIP registration will be bound to. Can
-    * be used instead of the <b>application_name</b> parameter.
+    * be used instead of the <b>application_name</b> parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -53,7 +54,7 @@ public class BindSipRegistrationRequest implements Alignable {
 
     /**
     * The application ID which the SIP registration will be bound to. Can
-    * be used instead of the <b>application_name</b> parameter.
+    * be used instead of the <b>application_name</b> parameter
     */
     public BindSipRegistrationRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -65,7 +66,7 @@ public class BindSipRegistrationRequest implements Alignable {
     @RequestField(name="application_name")
     /**
     * The application name which the SIP registration will be bound to. Can
-    * be used instead of the <b>application_id</b> parameter.
+    * be used instead of the <b>application_id</b> parameter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -77,7 +78,7 @@ public class BindSipRegistrationRequest implements Alignable {
 
     /**
     * The application name which the SIP registration will be bound to. Can
-    * be used instead of the <b>application_id</b> parameter.
+    * be used instead of the <b>application_id</b> parameter
     */
     public BindSipRegistrationRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -89,7 +90,7 @@ public class BindSipRegistrationRequest implements Alignable {
     @RequestField(name="rule_id")
     /**
     * The rule ID which the SIP registration will be bound to. Can be used
-    * instead of the <b>rule_name</b> parameter.
+    * instead of the <b>rule_name</b> parameter
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -101,7 +102,7 @@ public class BindSipRegistrationRequest implements Alignable {
 
     /**
     * The rule ID which the SIP registration will be bound to. Can be used
-    * instead of the <b>rule_name</b> parameter.
+    * instead of the <b>rule_name</b> parameter
     */
     public BindSipRegistrationRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -113,7 +114,7 @@ public class BindSipRegistrationRequest implements Alignable {
     @RequestField(name="rule_name")
     /**
     * The rule name which the SIP registration will be bound to. Can be
-    * used instead of the <b>rule_id</b> parameter.
+    * used instead of the <b>rule_id</b> parameter
     */
     public String getRuleName() {
         return this.ruleName;
@@ -125,7 +126,7 @@ public class BindSipRegistrationRequest implements Alignable {
 
     /**
     * The rule name which the SIP registration will be bound to. Can be
-    * used instead of the <b>rule_id</b> parameter.
+    * used instead of the <b>rule_id</b> parameter
     */
     public BindSipRegistrationRequest setRuleName(String d) {
         this.ruleName = d;
@@ -137,7 +138,7 @@ public class BindSipRegistrationRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * The user ID which the SIP registration will be bound to. Can be used
-    * instead of the <b>user_name</b> parameter.
+    * instead of the <b>user_name</b> parameter
     */
     public Long getUserId() {
         return this.userId;
@@ -149,7 +150,7 @@ public class BindSipRegistrationRequest implements Alignable {
 
     /**
     * The user ID which the SIP registration will be bound to. Can be used
-    * instead of the <b>user_name</b> parameter.
+    * instead of the <b>user_name</b> parameter
     */
     public BindSipRegistrationRequest setUserId(long d) {
         this.userId = Long.valueOf(d);
@@ -161,7 +162,7 @@ public class BindSipRegistrationRequest implements Alignable {
     @RequestField(name="user_name")
     /**
     * The user name which the SIP registration will be bound to. Can be
-    * used instead of the <b>user_id</b> parameter.
+    * used instead of the <b>user_id</b> parameter
     */
     public String getUserName() {
         return this.userName;
@@ -173,7 +174,7 @@ public class BindSipRegistrationRequest implements Alignable {
 
     /**
     * The user name which the SIP registration will be bound to. Can be
-    * used instead of the <b>user_id</b> parameter.
+    * used instead of the <b>user_id</b> parameter
     */
     public BindSipRegistrationRequest setUserName(String d) {
         this.userName = d;
@@ -184,7 +185,7 @@ public class BindSipRegistrationRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Bind or unbind?
+    * Bind or unbind (set true or false respectively)
     */
     public Boolean getBind() {
         return this.bind;
@@ -195,7 +196,7 @@ public class BindSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * Bind or unbind?
+    * Bind or unbind (set true or false respectively)
     */
     public BindSipRegistrationRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);

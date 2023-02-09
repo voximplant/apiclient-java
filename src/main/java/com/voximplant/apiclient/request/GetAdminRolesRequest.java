@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="admin_role_id")
     /**
-    * The admin role ID to filter.
+    * The admin role ID to filter
     */
     public Long getAdminRoleId() {
         return this.adminRoleId;
@@ -29,7 +30,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The admin role ID to filter.
+    * The admin role ID to filter
     */
     public GetAdminRolesRequest setAdminRoleId(long d) {
         this.adminRoleId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="admin_role_name")
     /**
-    * The admin role name part to filter.
+    * The admin role name part to filter
     */
     public String getAdminRoleName() {
         return this.adminRoleName;
@@ -51,7 +52,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The admin role name part to filter.
+    * The admin role name part to filter
     */
     public GetAdminRolesRequest setAdminRoleName(String d) {
         this.adminRoleName = d;
@@ -62,7 +63,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="admin_role_active")
     /**
-    * The admin role active flag to filter.
+    * The admin role active flag to filter
     */
     public Boolean getAdminRoleActive() {
         return this.adminRoleActive;
@@ -73,7 +74,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The admin role active flag to filter.
+    * The admin role active flag to filter
     */
     public GetAdminRolesRequest setAdminRoleActive(boolean d) {
         this.adminRoleActive = Boolean.valueOf(d);
@@ -84,7 +85,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="with_entries")
     /**
-    * Set true to get the permissions.
+    * Set true to get the permissions
     */
     public Boolean getWithEntries() {
         return this.withEntries;
@@ -95,7 +96,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set true to get the permissions.
+    * Set true to get the permissions
     */
     public GetAdminRolesRequest setWithEntries(boolean d) {
         this.withEntries = Boolean.valueOf(d);
@@ -106,7 +107,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="with_account_roles")
     /**
-    * Set false to omit the account roles.
+    * Set false to omit the account roles
     */
     public Boolean getWithAccountRoles() {
         return this.withAccountRoles;
@@ -117,7 +118,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the account roles.
+    * Set false to omit the account roles
     */
     public GetAdminRolesRequest setWithAccountRoles(boolean d) {
         this.withAccountRoles = Boolean.valueOf(d);
@@ -128,7 +129,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="with_parent_roles")
     /**
-    * Set false to omit the parent roles.
+    * Set false to omit the parent roles
     */
     public Boolean getWithParentRoles() {
         return this.withParentRoles;
@@ -139,7 +140,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the parent roles.
+    * Set false to omit the parent roles
     */
     public GetAdminRolesRequest setWithParentRoles(boolean d) {
         this.withParentRoles = Boolean.valueOf(d);
@@ -150,7 +151,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="with_system_roles")
     /**
-    * Set false to omit the system roles.
+    * Set false to omit the system roles
     */
     public Boolean getWithSystemRoles() {
         return this.withSystemRoles;
@@ -161,7 +162,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the system roles.
+    * Set false to omit the system roles
     */
     public GetAdminRolesRequest setWithSystemRoles(boolean d) {
         this.withSystemRoles = Boolean.valueOf(d);
@@ -172,8 +173,8 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="included_admin_user_id")
     /**
-    * The attached admin user ID list separated by the ';' symbol or the
-    * 'all' value.
+    * The attached admin user ID list separated by semicolon (;). Use the
+    * 'all' value to select all admin users
     */
     public MultiArgument<Long> getIncludedAdminUserId() {
         return this.includedAdminUserId;
@@ -184,8 +185,8 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The attached admin user ID list separated by the ';' symbol or the
-    * 'all' value.
+    * The attached admin user ID list separated by semicolon (;). Use the
+    * 'all' value to select all admin users
     */
     public GetAdminRolesRequest setIncludedAdminUserId(MultiArgument<Long> d) {
         this.includedAdminUserId = d;
@@ -196,8 +197,8 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="excluded_admin_user_id")
     /**
-    * The not attached admin user ID list separated by the ';' symbol or
-    * the 'all' value.
+    * Not attached admin user ID list separated by semicolon (;). Use the
+    * 'all' value to select all admin users
     */
     public MultiArgument<Long> getExcludedAdminUserId() {
         return this.excludedAdminUserId;
@@ -208,8 +209,8 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The not attached admin user ID list separated by the ';' symbol or
-    * the 'all' value.
+    * Not attached admin user ID list separated by semicolon (;). Use the
+    * 'all' value to select all admin users
     */
     public GetAdminRolesRequest setExcludedAdminUserId(MultiArgument<Long> d) {
         this.excludedAdminUserId = d;
@@ -220,7 +221,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="full_admin_users_matching")
     /**
-    * Set false to get roles with partial admin user list matching.
+    * Set false to get roles with partial admin user list matching
     */
     public String getFullAdminUsersMatching() {
         return this.fullAdminUsersMatching;
@@ -231,7 +232,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set false to get roles with partial admin user list matching.
+    * Set false to get roles with partial admin user list matching
     */
     public GetAdminRolesRequest setFullAdminUsersMatching(String d) {
         this.fullAdminUsersMatching = d;
@@ -242,7 +243,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="showing_admin_user_id")
     /**
-    * The admin user to show in the 'admin_users' field output.
+    * The admin user to show in the 'admin_users' field output
     */
     public Long getShowingAdminUserId() {
         return this.showingAdminUserId;
@@ -253,7 +254,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The admin user to show in the 'admin_users' field output.
+    * The admin user to show in the 'admin_users' field output
     */
     public GetAdminRolesRequest setShowingAdminUserId(long d) {
         this.showingAdminUserId = Long.valueOf(d);
@@ -264,7 +265,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -275,7 +276,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetAdminRolesRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -286,7 +287,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -297,7 +298,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetAdminRolesRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

@@ -18,7 +18,7 @@ public class InvoiceUnits implements Alignable {
     private String description;
 
     /**
-    * The service name.
+    * The service name
     */
     public String getDescription() {
         return this.description;
@@ -31,7 +31,7 @@ public class InvoiceUnits implements Alignable {
     private BigDecimal amount;
 
     /**
-    * The service fee (excluding taxes).
+    * The service fee (excluding taxes)
     */
     public BigDecimal getAmount() {
         return this.amount;
@@ -44,7 +44,7 @@ public class InvoiceUnits implements Alignable {
     private BigDecimal vatRate;
 
     /**
-    * The tax rate in the range of [0 ... 1].
+    * The tax rate in the range of [0 ... 1]
     */
     public BigDecimal getVatRate() {
         return this.vatRate;
@@ -57,7 +57,7 @@ public class InvoiceUnits implements Alignable {
     private BigDecimal taxAmount;
 
     /**
-    * The tax amount.
+    * The tax amount
     */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;

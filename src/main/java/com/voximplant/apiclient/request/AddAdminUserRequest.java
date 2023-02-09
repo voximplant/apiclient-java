@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class AddAdminUserRequest implements Alignable {
 
     @RequestField(name="new_admin_user_name")
     /**
-    * The admin user name. The length must be less than 50.
+    * The admin user name. The length must be less than 50
     */
     public String getNewAdminUserName() {
         return this.newAdminUserName;
@@ -29,7 +30,7 @@ public class AddAdminUserRequest implements Alignable {
     }
 
     /**
-    * The admin user name. The length must be less than 50.
+    * The admin user name. The length must be less than 50
     */
     public AddAdminUserRequest setNewAdminUserName(String d) {
         this.newAdminUserName = d;
@@ -40,7 +41,7 @@ public class AddAdminUserRequest implements Alignable {
 
     @RequestField(name="admin_user_display_name")
     /**
-    * The admin user display name. The length must be less than 256.
+    * The admin user display name. The length must be less than 256
     */
     public String getAdminUserDisplayName() {
         return this.adminUserDisplayName;
@@ -51,7 +52,7 @@ public class AddAdminUserRequest implements Alignable {
     }
 
     /**
-    * The admin user display name. The length must be less than 256.
+    * The admin user display name. The length must be less than 256
     */
     public AddAdminUserRequest setAdminUserDisplayName(String d) {
         this.adminUserDisplayName = d;
@@ -62,7 +63,7 @@ public class AddAdminUserRequest implements Alignable {
 
     @RequestField(name="new_admin_user_password")
     /**
-    * The admin user password. The length must be at least 6 symbols.
+    * The admin user password. The length must be at least 6 symbols
     */
     public String getNewAdminUserPassword() {
         return this.newAdminUserPassword;
@@ -73,7 +74,7 @@ public class AddAdminUserRequest implements Alignable {
     }
 
     /**
-    * The admin user password. The length must be at least 6 symbols.
+    * The admin user password. The length must be at least 6 symbols
     */
     public AddAdminUserRequest setNewAdminUserPassword(String d) {
         this.newAdminUserPassword = d;
@@ -84,7 +85,7 @@ public class AddAdminUserRequest implements Alignable {
 
     @RequestField(name="admin_user_active")
     /**
-    * The admin user enable flag.
+    * The admin user enable flag
     */
     public Boolean getAdminUserActive() {
         return this.adminUserActive;
@@ -95,7 +96,7 @@ public class AddAdminUserRequest implements Alignable {
     }
 
     /**
-    * The admin user enable flag.
+    * The admin user enable flag
     */
     public AddAdminUserRequest setAdminUserActive(boolean d) {
         this.adminUserActive = Boolean.valueOf(d);
@@ -107,9 +108,9 @@ public class AddAdminUserRequest implements Alignable {
     @RequestField(name="admin_role_id")
     /**
     * The role(s) ID created via <a
-    * href='//voximplant.com/docs/references/httpapi/adminroles'>Managing
-    * Admin Roles</a> methods. The attaching admin role ID list separated
-    * by the ';' symbol or the 'all' value.
+    * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
+    * methods. The attaching admin role ID list separated by semicolon (;).
+    * Use the 'all' value to select all admin roles
     */
     public String getAdminRoleId() {
         return this.adminRoleId;
@@ -121,9 +122,9 @@ public class AddAdminUserRequest implements Alignable {
 
     /**
     * The role(s) ID created via <a
-    * href='//voximplant.com/docs/references/httpapi/adminroles'>Managing
-    * Admin Roles</a> methods. The attaching admin role ID list separated
-    * by the ';' symbol or the 'all' value.
+    * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
+    * methods. The attaching admin role ID list separated by semicolon (;).
+    * Use the 'all' value to select all admin roles
     */
     public AddAdminUserRequest setAdminRoleId(String d) {
         this.adminRoleId = d;
@@ -135,9 +136,9 @@ public class AddAdminUserRequest implements Alignable {
     @RequestField(name="admin_role_name")
     /**
     * The role(s) name(s) created via <a
-    * href='//voximplant.com/docs/references/httpapi/adminroles'>Managing
-    * Admin Roles</a> methods. The attaching admin role name that can be
-    * used instead of <b>admin_role_id</b>.
+    * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
+    * methods. The attaching admin role name that can be used instead of
+    * <b>admin_role_id</b>
     */
     public MultiArgument<String> getAdminRoleName() {
         return this.adminRoleName;
@@ -149,9 +150,9 @@ public class AddAdminUserRequest implements Alignable {
 
     /**
     * The role(s) name(s) created via <a
-    * href='//voximplant.com/docs/references/httpapi/adminroles'>Managing
-    * Admin Roles</a> methods. The attaching admin role name that can be
-    * used instead of <b>admin_role_id</b>.
+    * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
+    * methods. The attaching admin role name that can be used instead of
+    * <b>admin_role_id</b>
     */
     public AddAdminUserRequest setAdminRoleName(MultiArgument<String> d) {
         this.adminRoleName = d;

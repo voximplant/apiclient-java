@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     @RequestField(name="callerid_id")
     /**
-    * The id of the callerID object to filter.
+    * The id of the callerID object to filter
     */
     public Long getCalleridId() {
         return this.calleridId;
@@ -29,7 +30,7 @@ public class GetCallerIDsRequest implements Alignable {
     }
 
     /**
-    * The id of the callerID object to filter.
+    * The id of the callerID object to filter
     */
     public GetCallerIDsRequest setCalleridId(long d) {
         this.calleridId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     @RequestField(name="callerid_number")
     /**
-    * The phone number to filter.
+    * The phone number to filter
     */
     public String getCalleridNumber() {
         return this.calleridNumber;
@@ -51,7 +52,7 @@ public class GetCallerIDsRequest implements Alignable {
     }
 
     /**
-    * The phone number to filter.
+    * The phone number to filter
     */
     public GetCallerIDsRequest setCalleridNumber(String d) {
         this.calleridNumber = d;
@@ -62,7 +63,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     @RequestField(name="active")
     /**
-    * The active flag to filter.
+    * The active flag to filter
     */
     public Boolean getActive() {
         return this.active;
@@ -73,7 +74,7 @@ public class GetCallerIDsRequest implements Alignable {
     }
 
     /**
-    * The active flag to filter.
+    * The active flag to filter
     */
     public GetCallerIDsRequest setActive(boolean d) {
         this.active = Boolean.valueOf(d);
@@ -85,7 +86,7 @@ public class GetCallerIDsRequest implements Alignable {
     @RequestField(name="order_by")
     /**
     * The following values are available: 'caller_number' (ascent order),
-    * 'verified_until' (ascent order).
+    * 'verified_until' (ascent order)
     */
     public String getOrderBy() {
         return this.orderBy;
@@ -97,7 +98,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     /**
     * The following values are available: 'caller_number' (ascent order),
-    * 'verified_until' (ascent order).
+    * 'verified_until' (ascent order)
     */
     public GetCallerIDsRequest setOrderBy(String d) {
         this.orderBy = d;
@@ -108,7 +109,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -119,7 +120,7 @@ public class GetCallerIDsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetCallerIDsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -130,7 +131,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -141,7 +142,7 @@ public class GetCallerIDsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetCallerIDsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

@@ -19,7 +19,7 @@ public class MultipleNumbersPrice implements Alignable {
 
     /**
     * The number of subscriptions which must be purchased simultaneously to
-    * enable a multiple numbers subscription.
+    * enable a multiple numbers subscription
     */
     public Long getCount() {
         return this.count;
@@ -33,7 +33,7 @@ public class MultipleNumbersPrice implements Alignable {
 
     /**
     * The subscription price for one number, i.e., the total multiple
-    * numbers subscription price divided by the __count__ value.
+    * numbers subscription price divided by the __count__ value
     */
     public BigDecimal getPrice() {
         return this.price;
@@ -47,7 +47,7 @@ public class MultipleNumbersPrice implements Alignable {
 
     /**
     * The installation price for one number, i.e., the total multiple
-    * numbers installation price divided by the __count__ value.
+    * numbers installation price divided by the __count__ value
     */
     public BigDecimal getInstallationPrice() {
         return this.installationPrice;

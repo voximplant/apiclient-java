@@ -11,8 +11,8 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
+* Received when when <b>send_js_error</b> is set to true and a JS error
+* occures. Received as part of the [AccountCallback] structure.
 */
 public class JSFailCallback implements Alignable {
 

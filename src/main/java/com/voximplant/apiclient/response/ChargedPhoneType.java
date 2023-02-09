@@ -18,7 +18,7 @@ public class ChargedPhoneType implements Alignable {
     private Long phoneId;
 
     /**
-    * The phone ID.
+    * The phone ID
     */
     public Long getPhoneId() {
         return this.phoneId;
@@ -31,7 +31,7 @@ public class ChargedPhoneType implements Alignable {
     private String phoneNumber;
 
     /**
-    * The phone number.
+    * The phone number
     */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -44,7 +44,7 @@ public class ChargedPhoneType implements Alignable {
     private Boolean deactivated;
 
     /**
-    * Is subscription frozen?
+    * Subscription is frozen
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -57,7 +57,7 @@ public class ChargedPhoneType implements Alignable {
     private Boolean isCharged;
 
     /**
-    * Has phone been charged?
+    * Phone number has been charged
     */
     public Boolean getIsCharged() {
         return this.isCharged;

@@ -11,47 +11,47 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details.
+* Skill binding mode for the [SQ_BindSkill] function.
 */
-public class ClassificationCompleteCallbackItem implements Alignable {
+public class SQSkillBindingModes implements Alignable {
 
-    private Long recordId;
-
-    /**
-    * The record ID.
-    */
-    public Long getRecordId() {
-        return this.recordId;
-    }
-
-    public boolean hasRecordId() {
-        return this.recordId != null;
-    }
-
-    private ClassificationUnit[] classificationInfo;
+    private String add;
 
     /**
-    * Array with the classification results.
+    * Add new skills to the agents
     */
-    public ClassificationUnit[] getClassificationInfo() {
-        return this.classificationInfo;
+    public String getAdd() {
+        return this.add;
     }
 
-    public boolean hasClassificationInfo() {
-        return this.classificationInfo != null;
+    public boolean hasAdd() {
+        return this.add != null;
     }
 
-    private BigDecimal classificationCost;
+    private String replaceSkills;
 
     /**
-    * The cost of classification.
+    * Replace agent skills with new ones
     */
-    public BigDecimal getClassificationCost() {
-        return this.classificationCost;
+    public String getReplaceSkills() {
+        return this.replaceSkills;
     }
 
-    public boolean hasClassificationCost() {
-        return this.classificationCost != null;
+    public boolean hasReplaceSkills() {
+        return this.replaceSkills != null;
+    }
+
+    private String replaceAgents;
+
+    /**
+    * Replace agents with new ones
+    */
+    public String getReplaceAgents() {
+        return this.replaceAgents;
+    }
+
+    public boolean hasReplaceAgents() {
+        return this.replaceAgents != null;
     }
 
     public String toString(int alignment) {
@@ -63,24 +63,26 @@ public class ClassificationCompleteCallbackItem implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (recordId != null) {
+        if (add != null) {
             sb.append(aligned)
-                .append("\"recordId\": \"")
-                .append(recordId)
+                .append("\"add\": \"")
+                .append(add)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (classificationInfo != null) {
+        if (replaceSkills != null) {
             sb.append(aligned)
-                .append("\"ClassificationUnit\": ")
-                .append(StringHelper.arrayToString(classificationInfo, alignment + 1))
+                .append("\"replaceSkills\": \"")
+                .append(replaceSkills)
+                .append('"')
+                .append(',')
                 .append(System.lineSeparator());
         }
-        if (classificationCost != null) {
+        if (replaceAgents != null) {
             sb.append(aligned)
-                .append("\"classificationCost\": \"")
-                .append(classificationCost)
+                .append("\"replaceAgents\": \"")
+                .append(replaceAgents)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

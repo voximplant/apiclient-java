@@ -18,7 +18,7 @@ public class ContactInfoType implements Alignable {
     private Long contactId;
 
     /**
-    * The contact ID.
+    * The contact ID
     */
     public Long getContactId() {
         return this.contactId;
@@ -31,7 +31,7 @@ public class ContactInfoType implements Alignable {
     private String contactType;
 
     /**
-    * The contact type. The following values are available: 'email'.
+    * The contact type. The following values are available: 'email'
     */
     public String getContactType() {
         return this.contactType;
@@ -44,7 +44,7 @@ public class ContactInfoType implements Alignable {
     private String contactData;
 
     /**
-    * The contact data (i.g. email).
+    * The contact data (i.g. email)
     */
     public String getContactData() {
         return this.contactData;
@@ -57,7 +57,7 @@ public class ContactInfoType implements Alignable {
     private Boolean isPersistent;
 
     /**
-    * The persistent flag.
+    * The persistent flag
     */
     public Boolean getIsPersistent() {
         return this.isPersistent;
@@ -70,7 +70,7 @@ public class ContactInfoType implements Alignable {
     private String description;
 
     /**
-    * The contact description.
+    * The contact description
     */
     public String getDescription() {
         return this.description;
@@ -83,7 +83,7 @@ public class ContactInfoType implements Alignable {
     private Long nextVerificationAfterSec;
 
     /**
-    * The verification code sending timeout is seconds.
+    * The verification code sending timeout is seconds
     */
     public Long getNextVerificationAfterSec() {
         return this.nextVerificationAfterSec;
@@ -112,7 +112,7 @@ public class ContactInfoType implements Alignable {
 
     /**
     * The attached notification group list. The following groups are
-    * available: 'news', 'tariff_changing', 'account', 'development'.
+    * available: 'news', 'tariff_changing', 'account', 'development'
     */
     public String[] getNotificationGroup() {
         return this.notificationGroup;

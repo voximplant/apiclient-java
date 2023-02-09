@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Search regulation address with ID = 1
+* Search regulation address with ID = 1.
 */
 public class GetRegulationsAddressExample {
     public static void main(String [] args) {

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class DelAdminRoleRequest implements Alignable {
 
     @RequestField(name="admin_role_id")
     /**
-    * The admin role ID list separated by the ';' symbol or the 'all' value.
+    * The admin role ID list separated by semicolon (;). Use the 'all'
+    * value to select all admin roles
     */
     public MultiArgument<Long> getAdminRoleId() {
         return this.adminRoleId;
@@ -29,7 +31,8 @@ public class DelAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The admin role ID list separated by the ';' symbol or the 'all' value.
+    * The admin role ID list separated by semicolon (;). Use the 'all'
+    * value to select all admin roles
     */
     public DelAdminRoleRequest setAdminRoleId(MultiArgument<Long> d) {
         this.adminRoleId = d;
@@ -41,7 +44,7 @@ public class DelAdminRoleRequest implements Alignable {
     @RequestField(name="admin_role_name")
     /**
     * The admin role name to delete, can be used instead of
-    * <b>admin_role_id</b>.
+    * <b>admin_role_id</b>
     */
     public MultiArgument<String> getAdminRoleName() {
         return this.adminRoleName;
@@ -53,7 +56,7 @@ public class DelAdminRoleRequest implements Alignable {
 
     /**
     * The admin role name to delete, can be used instead of
-    * <b>admin_role_id</b>.
+    * <b>admin_role_id</b>
     */
     public DelAdminRoleRequest setAdminRoleName(MultiArgument<String> d) {
         this.adminRoleName = d;

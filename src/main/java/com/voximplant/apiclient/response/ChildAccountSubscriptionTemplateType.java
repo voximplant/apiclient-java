@@ -18,7 +18,7 @@ public class ChildAccountSubscriptionTemplateType implements Alignable {
     private Long subscriptionTemplateId;
 
     /**
-    * The subscription template ID.
+    * The subscription template ID
     */
     public Long getSubscriptionTemplateId() {
         return this.subscriptionTemplateId;
@@ -31,7 +31,7 @@ public class ChildAccountSubscriptionTemplateType implements Alignable {
     private String subscriptionTemplateName;
 
     /**
-    * The subscription template name.
+    * The subscription template name
     */
     public String getSubscriptionTemplateName() {
         return this.subscriptionTemplateName;
@@ -44,7 +44,7 @@ public class ChildAccountSubscriptionTemplateType implements Alignable {
     private BigDecimal installationPrice;
 
     /**
-    * The subscription template installation price.
+    * The subscription template installation price
     */
     public BigDecimal getInstallationPrice() {
         return this.installationPrice;
@@ -57,7 +57,7 @@ public class ChildAccountSubscriptionTemplateType implements Alignable {
     private BigDecimal periodicPrice;
 
     /**
-    * The subscription template periodic price.
+    * The subscription template periodic price
     */
     public BigDecimal getPeriodicPrice() {
         return this.periodicPrice;

@@ -18,7 +18,7 @@ public class ResourceUsageType implements Alignable {
     private Long resourceUsageId;
 
     /**
-    * The resource usage ID.
+    * The resource usage ID
     */
     public Long getResourceUsageId() {
         return this.resourceUsageId;
@@ -31,9 +31,9 @@ public class ResourceUsageType implements Alignable {
     private String resourceType;
 
     /**
-    * The resource type. The possible values are: CALLSESSION, VIDEOCALL,
+    * The resource type. The possible values are CALLSESSION, VIDEOCALL,
     * VIDEORECORD, VOICEMAILDETECTION, YANDEXASR, ASR, TRANSCRIPTION,
-    * TTS_TEXT_GOOGLE, TTS_YANDEX, AUDIOHDCONFERENCE.
+    * TTS_TEXT_GOOGLE, TTS_YANDEX, AUDIOHDCONFERENCE
     */
     public String getResourceType() {
         return this.resourceType;
@@ -46,7 +46,7 @@ public class ResourceUsageType implements Alignable {
     private BigDecimal cost;
 
     /**
-    * The resource cost.
+    * The resource cost
     */
     public BigDecimal getCost() {
         return this.cost;
@@ -59,7 +59,7 @@ public class ResourceUsageType implements Alignable {
     private String description;
 
     /**
-    * The description.
+    * The description
     */
     public String getDescription() {
         return this.description;
@@ -87,7 +87,7 @@ public class ResourceUsageType implements Alignable {
     private Long transactionId;
 
     /**
-    * The transaction ID.
+    * The transaction ID
     */
     public Long getTransactionId() {
         return this.transactionId;
@@ -100,7 +100,7 @@ public class ResourceUsageType implements Alignable {
     private Long resourceQuantity;
 
     /**
-    * The resource quantity.
+    * The resource quantity
     */
     public Long getResourceQuantity() {
         return this.resourceQuantity;
@@ -113,7 +113,7 @@ public class ResourceUsageType implements Alignable {
     private String unit;
 
     /**
-    * The resource unit.
+    * The resource unit
     */
     public String getUnit() {
         return this.unit;
@@ -126,7 +126,7 @@ public class ResourceUsageType implements Alignable {
     private Long refCallId;
 
     /**
-    * The reference to call.
+    * The reference to call
     */
     public Long getRefCallId() {
         return this.refCallId;

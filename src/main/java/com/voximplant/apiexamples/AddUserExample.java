@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Add a new user
+* Add a new user.
 */
 public class AddUserExample {
     public static void main(String [] args) {

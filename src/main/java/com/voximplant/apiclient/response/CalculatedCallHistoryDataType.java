@@ -19,7 +19,7 @@ public class CalculatedCallHistoryDataType implements Alignable {
     private Long sessionCount;
 
     /**
-    * The session count in the report.
+    * The session count in the report
     */
     public Long getSessionCount() {
         return this.sessionCount;
@@ -32,7 +32,7 @@ public class CalculatedCallHistoryDataType implements Alignable {
     private Long totalSessionCount;
 
     /**
-    * The total found filtered session count.
+    * The total found filtered session count
     */
     public Long getTotalSessionCount() {
         return this.totalSessionCount;
@@ -45,7 +45,7 @@ public class CalculatedCallHistoryDataType implements Alignable {
     private String timezone;
 
     /**
-    * The selected timezone.
+    * The selected timezone
     */
     public String getTimezone() {
         return this.timezone;

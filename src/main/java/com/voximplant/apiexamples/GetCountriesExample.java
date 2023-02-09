@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get Germany
+* Get Germany.
 */
 public class GetCountriesExample {
     public static void main(String [] args) {

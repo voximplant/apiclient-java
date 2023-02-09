@@ -37,7 +37,7 @@ public class CreateSipRegistrationResponse implements Alignable {
     private Long sipRegistrationId;
 
     /**
-    * The sip registration id.
+    * The sip registration id
     */
     public Long getSipRegistrationId() {
         return this.sipRegistrationId;
@@ -50,7 +50,7 @@ public class CreateSipRegistrationResponse implements Alignable {
     private ShortAccountInfoType accountInfo;
 
     /**
-    * The current account state.
+    * The current account state
     */
     public ShortAccountInfoType getAccountInfo() {
         return this.accountInfo;

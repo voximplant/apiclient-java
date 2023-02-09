@@ -44,8 +44,8 @@ public class PushCredentialInfo implements Alignable {
     private String pushProviderName;
 
     /**
-    * The push provider name. The possible values are: APPLE, APPLE_VOIP,
-    * GOOGLE
+    * The push provider name. The possible values are APPLE, APPLE_VOIP,
+    * GOOGLE, HUAWEI
     */
     public String getPushProviderName() {
         return this.pushProviderName;
@@ -58,7 +58,7 @@ public class PushCredentialInfo implements Alignable {
     private String credentialBundle;
 
     /**
-    * The bundle of Android/iOS application.
+    * The bundle of Android/iOS application
     */
     public String getCredentialBundle() {
         return this.credentialBundle;
@@ -68,12 +68,12 @@ public class PushCredentialInfo implements Alignable {
         return this.credentialBundle != null;
     }
 
-    private PushCredentialContent content;
+    private PushCredentialContent[] content;
 
     /**
-    * The credentials content.
+    * The credentials content
     */
-    public PushCredentialContent getContent() {
+    public PushCredentialContent[] getContent() {
         return this.content;
     }
 
@@ -84,7 +84,7 @@ public class PushCredentialInfo implements Alignable {
     private ApplicationInfoType[] applications;
 
     /**
-    * Bound applications.
+    * Bound applications
     */
     public ApplicationInfoType[] getApplications() {
         return this.applications;
@@ -137,10 +137,8 @@ public class PushCredentialInfo implements Alignable {
         }
         if (content != null) {
             sb.append(aligned)
-                .append("\"content\": \"")
-                .append(content)
-                .append('"')
-                .append(',')
+                .append("\"PushCredentialContent\": ")
+                .append(StringHelper.arrayToString(content, alignment + 1))
                 .append(System.lineSeparator());
         }
         if (applications != null) {

@@ -34,7 +34,7 @@ public class GetQueuesResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found queue count.
+    * The total found queue count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetQueuesResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned queue count.
+    * The returned queue count
     */
     public Long getCount() {
         return this.count;

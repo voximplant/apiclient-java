@@ -37,7 +37,7 @@ public class AddPstnBlackListItemResponse implements Alignable {
     private Long pstnBlacklistId;
 
     /**
-    * The PSTN black list item ID.
+    * The PSTN black list item ID
     */
     public Long getPstnBlacklistId() {
         return this.pstnBlacklistId;

@@ -31,10 +31,23 @@ public class SendSmsMessageResponse implements Alignable {
         return this.result != null;
     }
 
+    private Long messageId;
+
+    /**
+    * Message ID
+    */
+    public Long getMessageId() {
+        return this.messageId;
+    }
+
+    public boolean hasMessageId() {
+        return this.messageId != null;
+    }
+
     private Long fragmentsCount;
 
     /**
-    * The number of fragments the message was divided into.
+    * The number of fragments the message was divided into
     */
     public Long getFragmentsCount() {
         return this.fragmentsCount;
@@ -57,6 +70,14 @@ public class SendSmsMessageResponse implements Alignable {
             sb.append(aligned)
                 .append("\"result\": \"")
                 .append(result)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (messageId != null) {
+            sb.append(aligned)
+                .append("\"messageId\": \"")
+                .append(messageId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

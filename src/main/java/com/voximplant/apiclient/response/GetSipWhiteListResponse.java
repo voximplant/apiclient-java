@@ -34,7 +34,7 @@ public class GetSipWhiteListResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found networks count.
+    * The total found networks count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetSipWhiteListResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned networks count.
+    * The returned networks count
     */
     public Long getCount() {
         return this.count;

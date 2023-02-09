@@ -15,23 +15,23 @@ import com.voximplant.apiclient.util.Alignable;
 */
 public class SmsHistoryType implements Alignable {
 
-    private Long smsId;
+    private Long messageId;
 
     /**
-    * Id of the message.
+    * Message ID
     */
-    public Long getSmsId() {
-        return this.smsId;
+    public Long getMessageId() {
+        return this.messageId;
     }
 
-    public boolean hasSmsId() {
-        return this.smsId != null;
+    public boolean hasMessageId() {
+        return this.messageId != null;
     }
 
     private Long sourceNumber;
 
     /**
-    * Number being called from.
+    * Number being called from
     */
     public Long getSourceNumber() {
         return this.sourceNumber;
@@ -44,7 +44,7 @@ public class SmsHistoryType implements Alignable {
     private Long destinationNumber;
 
     /**
-    * Number being called to.
+    * Number being called to
     */
     public Long getDestinationNumber() {
         return this.destinationNumber;
@@ -57,7 +57,7 @@ public class SmsHistoryType implements Alignable {
     private String direction;
 
     /**
-    * Incoming or outgoing message.
+    * Incoming or outgoing message
     */
     public String getDirection() {
         return this.direction;
@@ -70,7 +70,7 @@ public class SmsHistoryType implements Alignable {
     private Long fragments;
 
     /**
-    * Number of fragments the initial message was divided into.
+    * Number of fragments the initial message was divided into
     */
     public Long getFragments() {
         return this.fragments;
@@ -83,7 +83,7 @@ public class SmsHistoryType implements Alignable {
     private BigDecimal cost;
 
     /**
-    * Cost of the message.
+    * Cost of the message
     */
     public BigDecimal getCost() {
         return this.cost;
@@ -93,12 +93,12 @@ public class SmsHistoryType implements Alignable {
         return this.cost != null;
     }
 
-    private Long statusId;
+    private String statusId;
 
     /**
-    * Status of the message. 1 - Success, 2 - Error.
+    * Status of the message. 1 - Success, 2 - Error
     */
-    public Long getStatusId() {
+    public String getStatusId() {
         return this.statusId;
     }
 
@@ -109,7 +109,7 @@ public class SmsHistoryType implements Alignable {
     private String errorMessage;
 
     /**
-    * Error message if any.
+    * Error message (if any)
     */
     public String getErrorMessage() {
         return this.errorMessage;
@@ -136,7 +136,7 @@ public class SmsHistoryType implements Alignable {
     private Long transactionId;
 
     /**
-    * Id of the transaction for this message.
+    * Id of the transaction for this message
     */
     public Long getTransactionId() {
         return this.transactionId;
@@ -144,6 +144,19 @@ public class SmsHistoryType implements Alignable {
 
     public boolean hasTransactionId() {
         return this.transactionId != null;
+    }
+
+    private String text;
+
+    /**
+    * Stored message text
+    */
+    public String getText() {
+        return this.text;
+    }
+
+    public boolean hasText() {
+        return this.text != null;
     }
 
     public String toString(int alignment) {
@@ -155,10 +168,10 @@ public class SmsHistoryType implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (smsId != null) {
+        if (messageId != null) {
             sb.append(aligned)
-                .append("\"smsId\": \"")
-                .append(smsId)
+                .append("\"messageId\": \"")
+                .append(messageId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
@@ -231,6 +244,14 @@ public class SmsHistoryType implements Alignable {
             sb.append(aligned)
                 .append("\"transactionId\": \"")
                 .append(transactionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (text != null) {
+            sb.append(aligned)
+                .append("\"text\": \"")
+                .append(text)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

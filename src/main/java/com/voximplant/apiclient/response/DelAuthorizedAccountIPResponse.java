@@ -24,7 +24,7 @@ public class DelAuthorizedAccountIPResponse implements Alignable {
     private Long result;
 
     /**
-    * The removed network count.
+    * The removed network count
     */
     public Long getResult() {
         return this.result;

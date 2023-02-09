@@ -37,7 +37,7 @@ public class StartNextCallTaskResponse implements Alignable {
     private Long listId;
 
     /**
-    * The list id.
+    * The list id
     */
     public Long getListId() {
         return this.listId;

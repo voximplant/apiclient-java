@@ -37,7 +37,7 @@ public class AddAdminRoleResponse implements Alignable {
     private Long adminRoleId;
 
     /**
-    * The new admin role ID.
+    * The new admin role ID
     */
     public Long getAdminRoleId() {
         return this.adminRoleId;

@@ -11,14 +11,14 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details.
+* Received when a caller ID is expired.
 */
 public class ExpiredCallerIDCallback implements Alignable {
 
     private String[] callerids;
 
     /**
-    * The list of the expired Caller IDs.
+    * The list of the expired Caller IDs
     */
     public String[] getCallerids() {
         return this.callerids;

@@ -14,7 +14,7 @@ import java.io.IOException;
 
 /**
 * Get the two ACD session history records from the 2012-01-01 00:00:00
-* to the 2014-04-01 00:00:00
+* to the 2014-04-01 00:00:00.
 */
 public class GetACDHistoryExample {
     public static void main(String [] args) {

@@ -34,7 +34,7 @@ public class GetAdminUsersResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found admin user count.
+    * The total found admin user count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetAdminUsersResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned admin user count.
+    * The returned admin user count
     */
     public Long getCount() {
         return this.count;

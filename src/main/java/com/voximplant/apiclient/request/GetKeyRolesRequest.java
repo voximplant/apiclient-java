@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetKeyRolesRequest implements Alignable {
 
     @RequestField(name="key_id")
     /**
-    * The key's ID.
+    * The key's ID
     */
     public String getKeyId() {
         return this.keyId;
@@ -29,7 +30,7 @@ public class GetKeyRolesRequest implements Alignable {
     }
 
     /**
-    * The key's ID.
+    * The key's ID
     */
     public GetKeyRolesRequest setKeyId(String d) {
         this.keyId = d;
@@ -40,7 +41,7 @@ public class GetKeyRolesRequest implements Alignable {
 
     @RequestField(name="with_expanded_roles")
     /**
-    * Show the roles' additional properties.
+    * Show the roles' additional properties
     */
     public Boolean getWithExpandedRoles() {
         return this.withExpandedRoles;
@@ -51,7 +52,7 @@ public class GetKeyRolesRequest implements Alignable {
     }
 
     /**
-    * Show the roles' additional properties.
+    * Show the roles' additional properties
     */
     public GetKeyRolesRequest setWithExpandedRoles(boolean d) {
         this.withExpandedRoles = Boolean.valueOf(d);

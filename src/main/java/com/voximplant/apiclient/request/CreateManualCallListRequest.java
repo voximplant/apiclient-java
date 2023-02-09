@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID.
+    * The rule ID
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -29,7 +30,7 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * The rule ID.
+    * The rule ID
     */
     public CreateManualCallListRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -41,7 +42,7 @@ public class CreateManualCallListRequest implements Alignable {
     @RequestField(name="priority")
     /**
     * Call list priority. The value is in the range of [0 ... 2^31] where
-    * zero is the highest priority.
+    * zero is the highest priority
     */
     public Long getPriority() {
         return this.priority;
@@ -53,7 +54,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     /**
     * Call list priority. The value is in the range of [0 ... 2^31] where
-    * zero is the highest priority.
+    * zero is the highest priority
     */
     public CreateManualCallListRequest setPriority(long d) {
         this.priority = Long.valueOf(d);
@@ -64,7 +65,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     @RequestField(name="max_simultaneous")
     /**
-    * Number simultaneously processed tasks.
+    * Number of simultaneously processed tasks
     */
     public Long getMaxSimultaneous() {
         return this.maxSimultaneous;
@@ -75,7 +76,7 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * Number simultaneously processed tasks.
+    * Number of simultaneously processed tasks
     */
     public CreateManualCallListRequest setMaxSimultaneous(long d) {
         this.maxSimultaneous = Long.valueOf(d);
@@ -108,7 +109,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     @RequestField(name="name")
     /**
-    * File name.
+    * File name
     */
     public String getName() {
         return this.name;
@@ -119,7 +120,7 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * File name.
+    * File name
     */
     public CreateManualCallListRequest setName(String d) {
         this.name = d;
@@ -132,7 +133,7 @@ public class CreateManualCallListRequest implements Alignable {
     /**
     * Send as "body" part of the HTTP request or as multiform. The sending
     * "file_content" via URL is at its own risk because the network devices
-    * tend to drop HTTP requests with large headers.
+    * tend to drop HTTP requests with large headers
     */
     public String getFileContent() {
         return this.fileContent;
@@ -145,7 +146,7 @@ public class CreateManualCallListRequest implements Alignable {
     /**
     * Send as "body" part of the HTTP request or as multiform. The sending
     * "file_content" via URL is at its own risk because the network devices
-    * tend to drop HTTP requests with large headers.
+    * tend to drop HTTP requests with large headers
     */
     public CreateManualCallListRequest setFileContent(String d) {
         this.fileContent = d;
@@ -156,7 +157,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     @RequestField(name="interval_seconds")
     /**
-    * Interval between call attempts in seconds. The default is 0.
+    * Interval between call attempts in seconds. The default is 0
     */
     public Long getIntervalSeconds() {
         return this.intervalSeconds;
@@ -167,7 +168,7 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * Interval between call attempts in seconds. The default is 0.
+    * Interval between call attempts in seconds. The default is 0
     */
     public CreateManualCallListRequest setIntervalSeconds(long d) {
         this.intervalSeconds = Long.valueOf(d);
@@ -178,7 +179,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     @RequestField(name="encoding")
     /**
-    * Encoding file. The default is UTF-8.
+    * Encoding file. The default is UTF-8
     */
     public String getEncoding() {
         return this.encoding;
@@ -189,7 +190,7 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * Encoding file. The default is UTF-8.
+    * Encoding file. The default is UTF-8
     */
     public CreateManualCallListRequest setEncoding(String d) {
         this.encoding = d;
@@ -222,7 +223,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     @RequestField(name="escape")
     /**
-    * Escape character for parsing csv.
+    * Escape character for parsing csv
     */
     public String getEscape() {
         return this.escape;
@@ -233,7 +234,7 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * Escape character for parsing csv.
+    * Escape character for parsing csv
     */
     public CreateManualCallListRequest setEscape(String d) {
         this.escape = d;
@@ -245,7 +246,7 @@ public class CreateManualCallListRequest implements Alignable {
     @RequestField(name="reference_ip")
     /**
     * Specifies the IP from the geolocation of the call list subscribers.
-    * It allows selecting the nearest server for serving subscribers.
+    * It allows selecting the nearest server for serving subscribers
     */
     public String getReferenceIp() {
         return this.referenceIp;
@@ -257,7 +258,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     /**
     * Specifies the IP from the geolocation of the call list subscribers.
-    * It allows selecting the nearest server for serving subscribers.
+    * It allows selecting the nearest server for serving subscribers
     */
     public CreateManualCallListRequest setReferenceIp(String d) {
         this.referenceIp = d;

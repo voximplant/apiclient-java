@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
 
     @RequestField(name="subscription_template_id")
     /**
-    * The subscription template ID list separated by the ';' symbol.
+    * The subscription template ID list separated by semicolon (;)
     */
     public MultiArgument<Long> getSubscriptionTemplateId() {
         return this.subscriptionTemplateId;
@@ -29,7 +30,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
     }
 
     /**
-    * The subscription template ID list separated by the ';' symbol.
+    * The subscription template ID list separated by semicolon (;)
     */
     public GetSubscriptionPriceRequest setSubscriptionTemplateId(MultiArgument<Long> d) {
         this.subscriptionTemplateId = d;
@@ -41,7 +42,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
     @RequestField(name="subscription_template_type")
     /**
     * The subscription template type. The following values are possible:
-    * PHONE_NUM, SIP_REGISTRATION.
+    * PHONE_NUM, SIP_REGISTRATION
     */
     public String getSubscriptionTemplateType() {
         return this.subscriptionTemplateType;
@@ -53,7 +54,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
 
     /**
     * The subscription template type. The following values are possible:
-    * PHONE_NUM, SIP_REGISTRATION.
+    * PHONE_NUM, SIP_REGISTRATION
     */
     public GetSubscriptionPriceRequest setSubscriptionTemplateType(String d) {
         this.subscriptionTemplateType = d;
@@ -65,7 +66,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
     @RequestField(name="subscription_template_name")
     /**
     * The subscription template name  (example: SIP registration, Phone GB,
-    * Phone RU 495, ...).
+    * Phone RU 495, ...)
     */
     public String getSubscriptionTemplateName() {
         return this.subscriptionTemplateName;
@@ -77,7 +78,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
 
     /**
     * The subscription template name  (example: SIP registration, Phone GB,
-    * Phone RU 495, ...).
+    * Phone RU 495, ...)
     */
     public GetSubscriptionPriceRequest setSubscriptionTemplateName(String d) {
         this.subscriptionTemplateName = d;
@@ -88,7 +89,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -99,7 +100,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetSubscriptionPriceRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -110,7 +111,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -121,7 +122,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetSubscriptionPriceRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

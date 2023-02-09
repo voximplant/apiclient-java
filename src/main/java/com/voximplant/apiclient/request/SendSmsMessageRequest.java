@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SendSmsMessageRequest implements Alignable {
 
     @RequestField(name="source")
     /**
-    * The source phone number.
+    * The source phone number
     */
     public String getSource() {
         return this.source;
@@ -29,7 +30,7 @@ public class SendSmsMessageRequest implements Alignable {
     }
 
     /**
-    * The source phone number.
+    * The source phone number
     */
     public SendSmsMessageRequest setSource(String d) {
         this.source = d;
@@ -40,7 +41,7 @@ public class SendSmsMessageRequest implements Alignable {
 
     @RequestField(name="destination")
     /**
-    * The destination phone number.
+    * The destination phone number
     */
     public String getDestination() {
         return this.destination;
@@ -51,7 +52,7 @@ public class SendSmsMessageRequest implements Alignable {
     }
 
     /**
-    * The destination phone number.
+    * The destination phone number
     */
     public SendSmsMessageRequest setDestination(String d) {
         this.destination = d;
@@ -62,9 +63,9 @@ public class SendSmsMessageRequest implements Alignable {
 
     @RequestField(name="sms_body")
     /**
-    * The message text, up to 70 characters. The message of 71-140
-    * characters is billed like 2 messages; the message of 141-210
-    * characters is billed like 3 messages and so on.
+    * The message text, up to 765 characters. We split long messages
+    * greater than 160 GSM-7 characters or 70 UTF-16 characters into
+    * multiple segments. Each segment is charged as one message
     */
     public String getSmsBody() {
         return this.smsBody;
@@ -75,12 +76,34 @@ public class SendSmsMessageRequest implements Alignable {
     }
 
     /**
-    * The message text, up to 70 characters. The message of 71-140
-    * characters is billed like 2 messages; the message of 141-210
-    * characters is billed like 3 messages and so on.
+    * The message text, up to 765 characters. We split long messages
+    * greater than 160 GSM-7 characters or 70 UTF-16 characters into
+    * multiple segments. Each segment is charged as one message
     */
     public SendSmsMessageRequest setSmsBody(String d) {
         this.smsBody = d;
+        return this;
+    }
+
+    private Boolean storeBody;
+
+    @RequestField(name="store_body")
+    /**
+    * Set to true to store outbound message texts. Default value is false
+    */
+    public Boolean getStoreBody() {
+        return this.storeBody;
+    }
+
+    public boolean hasStoreBody() {
+        return this.storeBody != null;
+    }
+
+    /**
+    * Set to true to store outbound message texts. Default value is false
+    */
+    public SendSmsMessageRequest setStoreBody(boolean d) {
+        this.storeBody = Boolean.valueOf(d);
         return this;
     }
 
@@ -113,6 +136,14 @@ public class SendSmsMessageRequest implements Alignable {
             sb.append(aligned)
                 .append("\"smsBody\": \"")
                 .append(smsBody)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (storeBody != null) {
+            sb.append(aligned)
+                .append("\"storeBody\": \"")
+                .append(storeBody)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

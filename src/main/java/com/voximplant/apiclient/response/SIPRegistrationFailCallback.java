@@ -11,22 +11,22 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
+* Received when one or several SIP registrations are failed. Received
+* as part of the [AccountCallback] structure.
 */
 public class SIPRegistrationFailCallback implements Alignable {
 
-    private Long sipRegistrationId;
+    private SIPRegistrationIsFailedCallbackItem[] sipRegistrations;
 
     /**
-    * The SIP registration ID.
+    * SIP registration array
     */
-    public Long getSipRegistrationId() {
-        return this.sipRegistrationId;
+    public SIPRegistrationIsFailedCallbackItem[] getSipRegistrations() {
+        return this.sipRegistrations;
     }
 
-    public boolean hasSipRegistrationId() {
-        return this.sipRegistrationId != null;
+    public boolean hasSipRegistrations() {
+        return this.sipRegistrations != null;
     }
 
     public String toString(int alignment) {
@@ -38,12 +38,10 @@ public class SIPRegistrationFailCallback implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (sipRegistrationId != null) {
+        if (sipRegistrations != null) {
             sb.append(aligned)
-                .append("\"sipRegistrationId\": \"")
-                .append(sipRegistrationId)
-                .append('"')
-                .append(',')
+                .append("\"SIPRegistrationIsFailedCallbackItem\": ")
+                .append(StringHelper.arrayToString(sipRegistrations, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

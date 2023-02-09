@@ -18,7 +18,7 @@ public class InboundSmsCallbackItem implements Alignable {
     private String sourceNumber;
 
     /**
-    * The source phone number.
+    * The source phone number
     */
     public String getSourceNumber() {
         return this.sourceNumber;
@@ -31,7 +31,7 @@ public class InboundSmsCallbackItem implements Alignable {
     private String destinationNumber;
 
     /**
-    * The destination phone number.
+    * The destination phone number
     */
     public String getDestinationNumber() {
         return this.destinationNumber;
@@ -44,7 +44,7 @@ public class InboundSmsCallbackItem implements Alignable {
     private String smsBody;
 
     /**
-    * The message.
+    * The message
     */
     public String getSmsBody() {
         return this.smsBody;

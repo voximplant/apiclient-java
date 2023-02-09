@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class DelPstnBlackListItemRequest implements Alignable {
 
     @RequestField(name="pstn_blacklist_id")
     /**
-    * The PSTN black list item ID.
+    * The PSTN black list item ID
     */
     public Long getPstnBlacklistId() {
         return this.pstnBlacklistId;
@@ -29,7 +30,7 @@ public class DelPstnBlackListItemRequest implements Alignable {
     }
 
     /**
-    * The PSTN black list item ID.
+    * The PSTN black list item ID
     */
     public DelPstnBlackListItemRequest setPstnBlacklistId(long d) {
         this.pstnBlacklistId = Long.valueOf(d);

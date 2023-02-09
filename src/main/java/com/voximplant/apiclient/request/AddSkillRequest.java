@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class AddSkillRequest implements Alignable {
 
     @RequestField(name="skill_name")
     /**
-    * The ACD operator skill name. The length must be less than 512.
+    * The ACD operator skill name. The length must be less than 512
     */
     public String getSkillName() {
         return this.skillName;
@@ -29,7 +30,7 @@ public class AddSkillRequest implements Alignable {
     }
 
     /**
-    * The ACD operator skill name. The length must be less than 512.
+    * The ACD operator skill name. The length must be less than 512
     */
     public AddSkillRequest setSkillName(String d) {
         this.skillName = d;

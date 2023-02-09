@@ -34,7 +34,7 @@ public class GetScenariosResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found scenario count.
+    * The total found scenario count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetScenariosResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned scenario count.
+    * The returned scenario count
     */
     public Long getCount() {
         return this.count;

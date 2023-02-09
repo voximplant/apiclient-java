@@ -34,7 +34,7 @@ public class GetNewPhoneNumbersResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found phone count.
+    * The total found phone count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetNewPhoneNumbersResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned phone count.
+    * The returned phone count
     */
     public Long getCount() {
         return this.count;

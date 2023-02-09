@@ -11,15 +11,15 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
+* Deprecated. Please use the unified
+* [AccountDocumentStatusUpdatedCallback] callback instead.
 */
 public class AccountDocumentVerifiedCallback implements Alignable {
 
     private Long accountDocumentId;
 
     /**
-    * The uploaded document ID.
+    * The uploaded document ID
     */
     public Long getAccountDocumentId() {
         return this.accountDocumentId;
@@ -33,7 +33,7 @@ public class AccountDocumentVerifiedCallback implements Alignable {
 
     /**
     * The document verification status. The following values are possible:
-    * ACCEPTED, REJECTED
+    * WAITING_CONFIRMATION_DOCS, VERIFIED, REJECTED
     */
     public String getAccountDocumentStatus() {
         return this.accountDocumentStatus;
@@ -60,7 +60,7 @@ public class AccountDocumentVerifiedCallback implements Alignable {
     private Boolean isIndividual;
 
     /**
-    * Is individual, isn't legal entity?
+    * Account belongs to an individual
     */
     public Boolean getIsIndividual() {
         return this.isIndividual;
@@ -73,7 +73,7 @@ public class AccountDocumentVerifiedCallback implements Alignable {
     private String comment;
 
     /**
-    * The reviewer's comment.
+    * The reviewer's comment
     */
     public String getComment() {
         return this.comment;
@@ -86,7 +86,7 @@ public class AccountDocumentVerifiedCallback implements Alignable {
     private String verificationName;
 
     /**
-    * The verification name (type).
+    * The verification name (type)
     */
     public String getVerificationName() {
         return this.verificationName;
@@ -94,6 +94,20 @@ public class AccountDocumentVerifiedCallback implements Alignable {
 
     public boolean hasVerificationName() {
         return this.verificationName != null;
+    }
+
+    private String legalStatus;
+
+    /**
+    * Status of the user in the context of entrepreneurial activity.
+    * Possible values are 'individual', 'entrepreneur', 'legal entity'
+    */
+    public String getLegalStatus() {
+        return this.legalStatus;
+    }
+
+    public boolean hasLegalStatus() {
+        return this.legalStatus != null;
     }
 
     public String toString(int alignment) {
@@ -149,6 +163,14 @@ public class AccountDocumentVerifiedCallback implements Alignable {
             sb.append(aligned)
                 .append("\"verificationName\": \"")
                 .append(verificationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (legalStatus != null) {
+            sb.append(aligned)
+                .append("\"legalStatus\": \"")
+                .append(legalStatus)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

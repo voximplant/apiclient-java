@@ -24,7 +24,7 @@ public class GetCallListDetailsResponse implements Alignable {
     private CallListDetailType[] result;
 
     /**
-    * Array of tasks for the roll call.
+    * Array of tasks for the roll call
     */
     public CallListDetailType[] getResult() {
         return this.result;
@@ -37,7 +37,7 @@ public class GetCallListDetailsResponse implements Alignable {
     private Long count;
 
     /**
-    * The number of tasks.
+    * The number of tasks
     */
     public Long getCount() {
         return this.count;

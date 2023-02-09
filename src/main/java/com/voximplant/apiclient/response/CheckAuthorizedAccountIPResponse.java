@@ -24,7 +24,7 @@ public class CheckAuthorizedAccountIPResponse implements Alignable {
     private Boolean result;
 
     /**
-    * True if IP is allowed.
+    * True if IP is allowed
     */
     public Boolean getResult() {
         return this.result;
@@ -37,7 +37,7 @@ public class CheckAuthorizedAccountIPResponse implements Alignable {
     private String authorizedIp;
 
     /**
-    * The matched authorized IP or network (if found).
+    * The matched authorized IP or network (if found)
     */
     public String getAuthorizedIp() {
         return this.authorizedIp;

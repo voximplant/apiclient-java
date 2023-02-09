@@ -18,7 +18,7 @@ public class RegulationRegionRecord implements Alignable {
     private Long phoneRegionId;
 
     /**
-    * The regulation address ID.
+    * The regulation address ID
     */
     public Long getPhoneRegionId() {
         return this.phoneRegionId;

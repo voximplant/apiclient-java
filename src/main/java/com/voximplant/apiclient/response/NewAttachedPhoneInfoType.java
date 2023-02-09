@@ -18,7 +18,7 @@ public class NewAttachedPhoneInfoType implements Alignable {
     private Long phoneId;
 
     /**
-    * The phone ID.
+    * The phone ID
     */
     public Long getPhoneId() {
         return this.phoneId;
@@ -31,7 +31,7 @@ public class NewAttachedPhoneInfoType implements Alignable {
     private String phoneNumber;
 
     /**
-    * The phone number.
+    * The phone number
     */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -41,12 +41,12 @@ public class NewAttachedPhoneInfoType implements Alignable {
         return this.phoneNumber != null;
     }
 
-    private String requiredVerification;
+    private Boolean requiredVerification;
 
     /**
-    * The required account verification name.
+    * Verification is required for the account
     */
-    public String getRequiredVerification() {
+    public Boolean getRequiredVerification() {
         return this.requiredVerification;
     }
 

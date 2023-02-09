@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The account ID list separated by the ';' symbol or the 'all' value.
+    * The account ID list separated by semicolon (;). Use the 'all' value
+    * to select all accounts
     */
     public MultiArgument<Long> getChildAccountId() {
         return this.childAccountId;
@@ -29,7 +31,8 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The account ID list separated by the ';' symbol or the 'all' value.
+    * The account ID list separated by semicolon (;). Use the 'all' value
+    * to select all accounts
     */
     public GetChildrenAccountsRequest setChildAccountId(MultiArgument<Long> d) {
         this.childAccountId = d;
@@ -40,7 +43,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="child_account_name")
     /**
-    * The child account name part to filter.
+    * The child account name part to filter
     */
     public String getChildAccountName() {
         return this.childAccountName;
@@ -51,7 +54,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The child account name part to filter.
+    * The child account name part to filter
     */
     public GetChildrenAccountsRequest setChildAccountName(String d) {
         this.childAccountName = d;
@@ -62,7 +65,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="child_account_email")
     /**
-    * The child ccount email to filter.
+    * The child ccount email to filter
     */
     public String getChildAccountEmail() {
         return this.childAccountEmail;
@@ -73,7 +76,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The child ccount email to filter.
+    * The child ccount email to filter
     */
     public GetChildrenAccountsRequest setChildAccountEmail(String d) {
         this.childAccountEmail = d;
@@ -84,7 +87,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="active")
     /**
-    * The active flag to filter.
+    * The active flag to filter
     */
     public Boolean getActive() {
         return this.active;
@@ -95,7 +98,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The active flag to filter.
+    * The active flag to filter
     */
     public GetChildrenAccountsRequest setActive(boolean d) {
         this.active = Boolean.valueOf(d);
@@ -106,7 +109,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="frozen")
     /**
-    * The frozen flag to filter.
+    * The frozen flag to filter
     */
     public Boolean getFrozen() {
         return this.frozen;
@@ -117,7 +120,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The frozen flag to filter.
+    * The frozen flag to filter
     */
     public GetChildrenAccountsRequest setFrozen(boolean d) {
         this.frozen = Boolean.valueOf(d);
@@ -128,7 +131,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="ignore_invalid_accounts")
     /**
-    * Set true to ignore the invalid 'child_account_id' items.
+    * Set true to ignore the invalid 'child_account_id' items
     */
     public Boolean getIgnoreInvalidAccounts() {
         return this.ignoreInvalidAccounts;
@@ -139,7 +142,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * Set true to ignore the invalid 'child_account_id' items.
+    * Set true to ignore the invalid 'child_account_id' items
     */
     public GetChildrenAccountsRequest setIgnoreInvalidAccounts(boolean d) {
         this.ignoreInvalidAccounts = Boolean.valueOf(d);
@@ -150,7 +153,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="brief_output")
     /**
-    * Set true to output the account_id only.
+    * Set true to output the account_id only
     */
     public Boolean getBriefOutput() {
         return this.briefOutput;
@@ -161,7 +164,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * Set true to output the account_id only.
+    * Set true to output the account_id only
     */
     public GetChildrenAccountsRequest setBriefOutput(boolean d) {
         this.briefOutput = Boolean.valueOf(d);
@@ -172,7 +175,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="medium_output")
     /**
-    * Set true to output the account_id, account_name, account_email only.
+    * Set true to output the account_id, account_name, account_email only
     */
     public Boolean getMediumOutput() {
         return this.mediumOutput;
@@ -183,7 +186,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * Set true to output the account_id, account_name, account_email only.
+    * Set true to output the account_id, account_name, account_email only
     */
     public GetChildrenAccountsRequest setMediumOutput(boolean d) {
         this.mediumOutput = Boolean.valueOf(d);
@@ -194,7 +197,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public Long getCount() {
         return this.count;
@@ -205,7 +208,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count.
+    * The max returning record count
     */
     public GetChildrenAccountsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -216,7 +219,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -227,7 +230,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output.
+    * The first <b>N</b> records will be skipped in the output
     */
     public GetChildrenAccountsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -239,7 +242,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     @RequestField(name="order_by")
     /**
     * The following values are available: 'child_account_id',
-    * 'child_account_name' and 'child_account_email'.
+    * 'child_account_name' and 'child_account_email'
     */
     public String getOrderBy() {
         return this.orderBy;
@@ -251,7 +254,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     /**
     * The following values are available: 'child_account_id',
-    * 'child_account_name' and 'child_account_email'.
+    * 'child_account_name' and 'child_account_email'
     */
     public GetChildrenAccountsRequest setOrderBy(String d) {
         this.orderBy = d;
@@ -262,7 +265,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="return_live_balance")
     /**
-    * Set true to get the user live balance.
+    * Set true to get the user live balance
     */
     public Boolean getReturnLiveBalance() {
         return this.returnLiveBalance;
@@ -273,7 +276,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * Set true to get the user live balance.
+    * Set true to get the user live balance
     */
     public GetChildrenAccountsRequest setReturnLiveBalance(boolean d) {
         this.returnLiveBalance = Boolean.valueOf(d);

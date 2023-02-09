@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class CheckAuthorizedAccountIPRequest implements Alignable {
 
     @RequestField(name="authorized_ip")
     /**
-    * The IP4 to test.
+    * The IP4 to test
     */
     public String getAuthorizedIp() {
         return this.authorizedIp;
@@ -29,7 +30,7 @@ public class CheckAuthorizedAccountIPRequest implements Alignable {
     }
 
     /**
-    * The IP4 to test.
+    * The IP4 to test
     */
     public CheckAuthorizedAccountIPRequest setAuthorizedIp(String d) {
         this.authorizedIp = d;

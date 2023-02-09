@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -60,6 +61,28 @@ public class SetSipWhiteListItemRequest implements Alignable {
         return this;
     }
 
+    private String description;
+
+    @RequestField(name="description")
+    /**
+    * The network address description
+    */
+    public String getDescription() {
+        return this.description;
+    }
+
+    public boolean hasDescription() {
+        return this.description != null;
+    }
+
+    /**
+    * The network address description
+    */
+    public SetSipWhiteListItemRequest setDescription(String d) {
+        this.description = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -81,6 +104,14 @@ public class SetSipWhiteListItemRequest implements Alignable {
             sb.append(aligned)
                 .append("\"sipWhitelistNetwork\": \"")
                 .append(sipWhitelistNetwork)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (description != null) {
+            sb.append(aligned)
+                .append("\"description\": \"")
+                .append(description)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

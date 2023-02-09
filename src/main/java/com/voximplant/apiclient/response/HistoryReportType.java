@@ -18,7 +18,7 @@ public class HistoryReportType implements Alignable {
     private Long historyReportId;
 
     /**
-    * The call history report ID.
+    * The call history report ID
     */
     public Long getHistoryReportId() {
         return this.historyReportId;
@@ -32,7 +32,7 @@ public class HistoryReportType implements Alignable {
 
     /**
     * The history report type. The following values are possible: calls,
-    * transactions, audit, call_list.
+    * transactions, audit, call_list
     */
     public String getHistoryType() {
         return this.historyType;
@@ -75,7 +75,7 @@ public class HistoryReportType implements Alignable {
 
     /**
     * The UTC completion time in 24-h format: YYYY-MM-DD HH:mm:ss. The
-    * report is completed if the field exists.
+    * report is completed if the field exists
     */
     public Date getCompleted() {
         return this.completed;
@@ -88,7 +88,7 @@ public class HistoryReportType implements Alignable {
     private String fileName;
 
     /**
-    * The report file name.
+    * The report file name
     */
     public String getFileName() {
         return this.fileName;
@@ -101,7 +101,7 @@ public class HistoryReportType implements Alignable {
     private BigDecimal fileSize;
 
     /**
-    * The report file size.
+    * The report file size
     */
     public BigDecimal getFileSize() {
         return this.fileSize;
@@ -114,7 +114,7 @@ public class HistoryReportType implements Alignable {
     private BigDecimal downloadSize;
 
     /**
-    * The gzipped report size to download.
+    * The gzipped report size to download
     */
     public BigDecimal getDownloadSize() {
         return this.downloadSize;
@@ -127,7 +127,7 @@ public class HistoryReportType implements Alignable {
     private Long downloadCount;
 
     /**
-    * The download attempt count.
+    * The download attempt count
     */
     public Long getDownloadCount() {
         return this.downloadCount;
@@ -142,7 +142,7 @@ public class HistoryReportType implements Alignable {
 
     /**
     * The last download UTC time in 24-h format: YYYY-MM-DD HH:mm:ss. The
-    * report is completed if the field exists.
+    * report is completed if the field exists
     */
     public Date getLastDownloaded() {
         return this.lastDownloaded;
@@ -157,7 +157,7 @@ public class HistoryReportType implements Alignable {
 
     /**
     * Store the report until the UTC time in 24-h format: YYYY-MM-DD
-    * HH:mm:ss. The report is completed if the field exists.
+    * HH:mm:ss. The report is completed if the field exists
     */
     public Date getStoreUntil() {
         return this.storeUntil;
@@ -170,7 +170,7 @@ public class HistoryReportType implements Alignable {
     private API_Error error;
 
     /**
-    * The report error.
+    * The report error
     */
     public API_Error getError() {
         return this.error;
@@ -184,7 +184,7 @@ public class HistoryReportType implements Alignable {
 
     /**
     * The report order filters (the saved [GetCallHistory],
-    * [GetTransactionHistory] parameters).
+    * [GetTransactionHistory] parameters)
     */
     public Object getFilters() {
         return this.filters;
@@ -199,7 +199,7 @@ public class HistoryReportType implements Alignable {
     /**
     * The calculated report data (the specific report data, see
     * [CalculatedCallHistoryDataType],
-    * [CalculatedTransactionHistoryDataType]).
+    * [CalculatedTransactionHistoryDataType])
     */
     public Object getCalculatedData() {
         return this.calculatedData;

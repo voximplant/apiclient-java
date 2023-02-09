@@ -19,7 +19,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
 
     /**
     * The money amount of the subscriptions + plan + negative_balance in
-    * the specified currency.
+    * the specified currency
     */
     public BigDecimal getAmount() {
         return this.amount;
@@ -33,7 +33,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
 
     /**
     * The 'amount' value minus the positive account balance in the
-    * specified currency.
+    * specified currency
     */
     public BigDecimal getMinAmount() {
         return this.minAmount;
@@ -47,7 +47,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
 
     /**
     * Exists if bank card payments are allowed. It's the maximum of the
-    * 'amount' in USD and the min_card_payment (10$).
+    * 'amount' in USD and the min_card_payment (10$)
     */
     public BigDecimal getBankCardAmountUsd() {
         return this.bankCardAmountUsd;
@@ -61,7 +61,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
 
     /**
     * Exists if bank card payments are allowed. It's the maximum of the
-    * 'min_amount' in USD and the min_card_payment (10$).
+    * 'min_amount' in USD and the min_card_payment (10$)
     */
     public BigDecimal getMinBankCardAmountUsd() {
         return this.minBankCardAmountUsd;
@@ -75,7 +75,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
 
     /**
     * Exists if robokassa payments are allowed. It's the maximum of the
-    * 'min_amount' in RUR and the min_robokassa_payment (500 RUR).
+    * 'min_amount' in RUR and the min_robokassa_payment (500 RUR)
     */
     public BigDecimal getRobokassaAmountRub() {
         return this.robokassaAmountRub;
@@ -89,7 +89,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
 
     /**
     * Exists if robokassa payments are allowed. It's the maximum of the
-    * 'min_amount' in RUR and the min_robokassa_payment (500 RUR).
+    * 'min_amount' in RUR and the min_robokassa_payment (500 RUR)
     */
     public BigDecimal getMinRobokassaAmountRub() {
         return this.minRobokassaAmountRub;
@@ -102,7 +102,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
     private SubscriptionsToChargeType[] subscriptions;
 
     /**
-    * The subscriptions to charge.
+    * The subscriptions to charge
     */
     public SubscriptionsToChargeType[] getSubscriptions() {
         return this.subscriptions;

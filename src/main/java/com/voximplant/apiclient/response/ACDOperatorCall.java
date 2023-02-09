@@ -18,7 +18,7 @@ public class ACDOperatorCall implements Alignable {
     private Long acdSessionHistoryId;
 
     /**
-    * The ACD session history ID of the request.
+    * The ACD session history ID of the request
     */
     public Long getAcdSessionHistoryId() {
         return this.acdSessionHistoryId;
@@ -31,7 +31,7 @@ public class ACDOperatorCall implements Alignable {
     private String acdRequestId;
 
     /**
-    * The internal ACD session history ID.
+    * The internal ACD session history ID
     */
     public String getAcdRequestId() {
         return this.acdRequestId;
@@ -44,7 +44,7 @@ public class ACDOperatorCall implements Alignable {
     private Long acdQueueId;
 
     /**
-    * The ACD queue ID.
+    * The ACD queue ID
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -57,7 +57,7 @@ public class ACDOperatorCall implements Alignable {
     private String acdQueueName;
 
     /**
-    * The ACD queue name.
+    * The ACD queue name
     */
     public String getAcdQueueName() {
         return this.acdQueueName;
@@ -70,7 +70,7 @@ public class ACDOperatorCall implements Alignable {
     private String callerid;
 
     /**
-    * The client callerid.
+    * The client callerid
     */
     public String getCallerid() {
         return this.callerid;

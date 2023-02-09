@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,8 @@ public class AttachAdminRoleRequest implements Alignable {
 
     @RequestField(name="required_admin_user_id")
     /**
-    * The admin user ID list separated by the ';' symbol or the 'all' value.
+    * The admin user ID list separated by semicolon (;). Use the 'all'
+    * value to select all admin users
     */
     public MultiArgument<Long> getRequiredAdminUserId() {
         return this.requiredAdminUserId;
@@ -29,7 +31,8 @@ public class AttachAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The admin user ID list separated by the ';' symbol or the 'all' value.
+    * The admin user ID list separated by semicolon (;). Use the 'all'
+    * value to select all admin users
     */
     public AttachAdminRoleRequest setRequiredAdminUserId(MultiArgument<Long> d) {
         this.requiredAdminUserId = d;
@@ -41,7 +44,7 @@ public class AttachAdminRoleRequest implements Alignable {
     @RequestField(name="required_admin_user_name")
     /**
     * The admin user name to bind, can be used instead of
-    * <b>required_admin_user_id</b>.
+    * <b>required_admin_user_id</b>
     */
     public MultiArgument<String> getRequiredAdminUserName() {
         return this.requiredAdminUserName;
@@ -53,7 +56,7 @@ public class AttachAdminRoleRequest implements Alignable {
 
     /**
     * The admin user name to bind, can be used instead of
-    * <b>required_admin_user_id</b>.
+    * <b>required_admin_user_id</b>
     */
     public AttachAdminRoleRequest setRequiredAdminUserName(MultiArgument<String> d) {
         this.requiredAdminUserName = d;
@@ -65,9 +68,9 @@ public class AttachAdminRoleRequest implements Alignable {
     @RequestField(name="admin_role_id")
     /**
     * The role(s) ID created via <a
-    * href='//voximplant.com/docs/references/httpapi/adminroles'>Managing
-    * Admin Roles</a> methods. The attached admin role ID list separated by
-    * the ';' symbol or the 'all' value.
+    * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
+    * methods. The attached admin role ID list separated by semicolon (;).
+    * Use the 'all' value to select alladmin roles
     */
     public MultiArgument<Long> getAdminRoleId() {
         return this.adminRoleId;
@@ -79,9 +82,9 @@ public class AttachAdminRoleRequest implements Alignable {
 
     /**
     * The role(s) ID created via <a
-    * href='//voximplant.com/docs/references/httpapi/adminroles'>Managing
-    * Admin Roles</a> methods. The attached admin role ID list separated by
-    * the ';' symbol or the 'all' value.
+    * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
+    * methods. The attached admin role ID list separated by semicolon (;).
+    * Use the 'all' value to select alladmin roles
     */
     public AttachAdminRoleRequest setAdminRoleId(MultiArgument<Long> d) {
         this.adminRoleId = d;
@@ -93,9 +96,9 @@ public class AttachAdminRoleRequest implements Alignable {
     @RequestField(name="admin_role_name")
     /**
     * The role(s) name(s) created via <a
-    * href='//voximplant.com/docs/references/httpapi/adminroles'>Managing
-    * Admin Roles</a> methods. The admin role name to attach, can be used
-    * instead of <b>admin_role_id</b>.
+    * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
+    * methods. The admin role name to attach, can be used instead of
+    * <b>admin_role_id</b>
     */
     public MultiArgument<String> getAdminRoleName() {
         return this.adminRoleName;
@@ -107,9 +110,9 @@ public class AttachAdminRoleRequest implements Alignable {
 
     /**
     * The role(s) name(s) created via <a
-    * href='//voximplant.com/docs/references/httpapi/adminroles'>Managing
-    * Admin Roles</a> methods. The admin role name to attach, can be used
-    * instead of <b>admin_role_id</b>.
+    * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
+    * methods. The admin role name to attach, can be used instead of
+    * <b>admin_role_id</b>
     */
     public AttachAdminRoleRequest setAdminRoleName(MultiArgument<String> d) {
         this.adminRoleName = d;
@@ -120,7 +123,7 @@ public class AttachAdminRoleRequest implements Alignable {
 
     @RequestField(name="mode")
     /**
-    * The merge mode. The following values are possible: add, del, set.
+    * The merge mode. The following values are possible: add, del, set
     */
     public String getMode() {
         return this.mode;
@@ -131,7 +134,7 @@ public class AttachAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The merge mode. The following values are possible: add, del, set.
+    * The merge mode. The following values are possible: add, del, set
     */
     public AttachAdminRoleRequest setMode(String d) {
         this.mode = d;

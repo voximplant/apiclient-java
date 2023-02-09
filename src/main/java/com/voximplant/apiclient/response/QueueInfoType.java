@@ -18,7 +18,7 @@ public class QueueInfoType implements Alignable {
     private Long acdQueueId;
 
     /**
-    * The ACD queue ID.
+    * The ACD queue ID
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -31,7 +31,7 @@ public class QueueInfoType implements Alignable {
     private String acdQueueName;
 
     /**
-    * The queue name.
+    * The queue name
     */
     public String getAcdQueueName() {
         return this.acdQueueName;
@@ -44,7 +44,7 @@ public class QueueInfoType implements Alignable {
     private Long applicationId;
 
     /**
-    * The application ID.
+    * The application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -57,7 +57,7 @@ public class QueueInfoType implements Alignable {
     private Long acdQueuePriority;
 
     /**
-    * The integer queue priority. The highest priority is 0.
+    * The integer queue priority. The highest priority is 0
     */
     public Long getAcdQueuePriority() {
         return this.acdQueuePriority;
@@ -71,7 +71,7 @@ public class QueueInfoType implements Alignable {
 
     /**
     * The value in the range of [0.5 ... 1.0]. The value 1.0 means the
-    * service probability 100% in challenge with a lower priority queue.
+    * service probability 100% in challenge with a lower priority queue
     */
     public Long getServiceProbability() {
         return this.serviceProbability;
@@ -85,7 +85,7 @@ public class QueueInfoType implements Alignable {
 
     /**
     * Set false to disable the auto binding of operators to a queue by
-    * skills comparing.
+    * skills comparing
     */
     public Boolean getAutoBinding() {
         return this.autoBinding;
@@ -101,7 +101,7 @@ public class QueueInfoType implements Alignable {
     * The maximum predicted waiting time in minutes. When a call is going
     * to be enqueued to the queue, its predicted waiting time should be
     * less or equal to the maximum predicted waiting time; otherwise, a
-    * call would be rejected.
+    * call would be rejected
     */
     public Long getMaxWaitingTime() {
         return this.maxWaitingTime;
@@ -114,7 +114,7 @@ public class QueueInfoType implements Alignable {
     private Long maxQueueSize;
 
     /**
-    * The maximum number of calls that can be enqueued into this queue.
+    * The maximum number of calls that can be enqueued into this queue
     */
     public Long getMaxQueueSize() {
         return this.maxQueueSize;
@@ -128,7 +128,7 @@ public class QueueInfoType implements Alignable {
 
     /**
     * The average service time in seconds. Specify the parameter to correct
-    * or initialize the waiting time prediction.
+    * or initialize the waiting time prediction
     */
     public Long getAverageServiceTime() {
         return this.averageServiceTime;
@@ -183,7 +183,7 @@ public class QueueInfoType implements Alignable {
     private QueueUsers[] users;
 
     /**
-    * The queue users info.
+    * The queue users info
     */
     public QueueUsers[] getUsers() {
         return this.users;
@@ -196,7 +196,7 @@ public class QueueInfoType implements Alignable {
     private QueueSkills[] skills;
 
     /**
-    * The queue skills info.
+    * The queue skills info
     */
     public QueueSkills[] getSkills() {
         return this.skills;
@@ -209,7 +209,7 @@ public class QueueInfoType implements Alignable {
     private Long[] slThresholds;
 
     /**
-    * The service level thresholds in seconds.
+    * The service level thresholds in seconds
     */
     public Long[] getSlThresholds() {
         return this.slThresholds;
@@ -217,6 +217,19 @@ public class QueueInfoType implements Alignable {
 
     public boolean hasSlThresholds() {
         return this.slThresholds != null;
+    }
+
+    private Long operatorcount;
+
+    /**
+    * Number of agents bound to the queue
+    */
+    public Long getOperatorcount() {
+        return this.operatorcount;
+    }
+
+    public boolean hasOperatorcount() {
+        return this.operatorcount != null;
     }
 
     public String toString(int alignment) {
@@ -340,6 +353,14 @@ public class QueueInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"number\": ")
                 .append(StringHelper.arrayToString(slThresholds, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (operatorcount != null) {
+            sb.append(aligned)
+                .append("\"operatorcount\": \"")
+                .append(operatorcount)
+                .append('"')
+                .append(',')
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

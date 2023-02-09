@@ -24,7 +24,7 @@ public class GetCurrencyRateResponse implements Alignable {
     private ExchangeRates result;
 
     /**
-    * The exchange rates.
+    * The exchange rates
     */
     public ExchangeRates getResult() {
         return this.result;

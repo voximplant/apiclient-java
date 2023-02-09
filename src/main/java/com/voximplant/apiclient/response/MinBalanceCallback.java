@@ -11,7 +11,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
+* Received when the minimum balance is reached. Received as part of the
 * [AccountCallback] structure.
 */
 public class MinBalanceCallback implements Alignable {
@@ -21,7 +21,7 @@ public class MinBalanceCallback implements Alignable {
     /**
     * True if the credit threshold exceeded. The credit threshold =
     * credit_limit - min_balance_to_notify, wherein min_balance_to_notify >
-    * 0.
+    * 0
     */
     public Boolean getIsMinCredit() {
         return this.isMinCredit;
@@ -34,7 +34,7 @@ public class MinBalanceCallback implements Alignable {
     private Boolean isRepeated;
 
     /**
-    * True if the callback is repeated.
+    * True if the callback is repeated
     */
     public Boolean getIsRepeated() {
         return this.isRepeated;

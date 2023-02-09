@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
@@ -18,7 +19,7 @@ public class SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="skill_id")
     /**
-    * The skill ID.
+    * The skill ID
     */
     public Long getSkillId() {
         return this.skillId;
@@ -29,7 +30,7 @@ public class SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * The skill ID.
+    * The skill ID
     */
     public SetSkillInfoRequest setSkillId(long d) {
         this.skillId = Long.valueOf(d);
@@ -40,7 +41,7 @@ public class SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="skill_name")
     /**
-    * The skill name that can be used instead of <b>skill_id</b>.
+    * The skill name that can be used instead of <b>skill_id</b>
     */
     public String getSkillName() {
         return this.skillName;
@@ -51,7 +52,7 @@ public class SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * The skill name that can be used instead of <b>skill_id</b>.
+    * The skill name that can be used instead of <b>skill_id</b>
     */
     public SetSkillInfoRequest setSkillName(String d) {
         this.skillName = d;
@@ -62,7 +63,7 @@ public class SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="new_skill_name")
     /**
-    * The new skill name. The length must be less than 512.
+    * The new skill name. The length must be less than 512
     */
     public String getNewSkillName() {
         return this.newSkillName;
@@ -73,7 +74,7 @@ public class SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * The new skill name. The length must be less than 512.
+    * The new skill name. The length must be less than 512
     */
     public SetSkillInfoRequest setNewSkillName(String d) {
         this.newSkillName = d;

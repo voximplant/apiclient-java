@@ -34,7 +34,7 @@ public class GetApplicationsResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found application count.
+    * The total found application count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetApplicationsResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned application count.
+    * The returned application count
     */
     public Long getCount() {
         return this.count;

@@ -18,7 +18,7 @@ public class ClonedAdminRoleType implements Alignable {
     private Long adminRoleId;
 
     /**
-    * The admin role ID.
+    * The admin role ID
     */
     public Long getAdminRoleId() {
         return this.adminRoleId;
@@ -31,7 +31,7 @@ public class ClonedAdminRoleType implements Alignable {
     private String adminRoleName;
 
     /**
-    * The admin role name.
+    * The admin role name
     */
     public String getAdminRoleName() {
         return this.adminRoleName;

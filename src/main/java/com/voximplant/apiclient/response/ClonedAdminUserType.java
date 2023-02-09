@@ -18,7 +18,7 @@ public class ClonedAdminUserType implements Alignable {
     private Long adminUserId;
 
     /**
-    * The admin user ID.
+    * The admin user ID
     */
     public Long getAdminUserId() {
         return this.adminUserId;
@@ -31,7 +31,7 @@ public class ClonedAdminUserType implements Alignable {
     private String adminUserName;
 
     /**
-    * The admin user name.
+    * The admin user name
     */
     public String getAdminUserName() {
         return this.adminUserName;
@@ -44,7 +44,7 @@ public class ClonedAdminUserType implements Alignable {
     private String adminUserApiKey;
 
     /**
-    * The API key of the admin user.
+    * The API key of the admin user
     */
     public String getAdminUserApiKey() {
         return this.adminUserApiKey;

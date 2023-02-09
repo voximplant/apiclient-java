@@ -18,7 +18,7 @@ public class PlanPackageType implements Alignable {
     private Long[] priceGroupId;
 
     /**
-    * The price group IDs.
+    * The price group IDs
     */
     public Long[] getPriceGroupId() {
         return this.priceGroupId;
@@ -31,7 +31,7 @@ public class PlanPackageType implements Alignable {
     private String packageName;
 
     /**
-    * The package name.
+    * The package name
     */
     public String getPackageName() {
         return this.packageName;
@@ -44,7 +44,7 @@ public class PlanPackageType implements Alignable {
     private Boolean mayOverrun;
 
     /**
-    * Is overrun enabled?
+    * Overrun is enabled
     */
     public Boolean getMayOverrun() {
         return this.mayOverrun;
@@ -57,7 +57,7 @@ public class PlanPackageType implements Alignable {
     private BigDecimal overrunPrice;
 
     /**
-    * The overrun amount.
+    * The overrun amount
     */
     public BigDecimal getOverrunPrice() {
         return this.overrunPrice;
@@ -70,7 +70,7 @@ public class PlanPackageType implements Alignable {
     private Long overrunResources;
 
     /**
-    * The number of resources (e.g., messages) per overrun.
+    * The number of resources (e.g., messages) per overrun
     */
     public Long getOverrunResources() {
         return this.overrunResources;
@@ -83,7 +83,7 @@ public class PlanPackageType implements Alignable {
     private Long packageSize;
 
     /**
-    * The package size.
+    * The package size
     */
     public Long getPackageSize() {
         return this.packageSize;

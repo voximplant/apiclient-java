@@ -18,7 +18,7 @@ public class AuditLogInfoType implements Alignable {
     private Long auditLogId;
 
     /**
-    * The  ID.
+    * The  ID
     */
     public Long getAuditLogId() {
         return this.auditLogId;
@@ -31,7 +31,7 @@ public class AuditLogInfoType implements Alignable {
     private Long accountId;
 
     /**
-    * The account ID.
+    * The account ID
     */
     public Long getAccountId() {
         return this.accountId;
@@ -59,7 +59,7 @@ public class AuditLogInfoType implements Alignable {
     private String ip;
 
     /**
-    * The initiator IP address.
+    * The initiator IP address
     */
     public String getIp() {
         return this.ip;
@@ -72,7 +72,7 @@ public class AuditLogInfoType implements Alignable {
     private String cmdName;
 
     /**
-    * The called function.
+    * The called function
     */
     public String getCmdName() {
         return this.cmdName;
@@ -85,7 +85,7 @@ public class AuditLogInfoType implements Alignable {
     private Map<String, Object> cmdArgs;
 
     /**
-    * The arguments of the called function (they may be masked or resolved).
+    * The arguments of the called function (they may be masked or resolved)
     */
     public Map<String, Object> getCmdArgs() {
         return this.cmdArgs;
@@ -98,7 +98,7 @@ public class AuditLogInfoType implements Alignable {
     private Map<String, Object> cmdResult;
 
     /**
-    * The modified values.
+    * The modified values
     */
     public Map<String, Object> getCmdResult() {
         return this.cmdResult;

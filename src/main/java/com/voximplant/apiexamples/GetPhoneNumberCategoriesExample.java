@@ -22,7 +22,7 @@ public class GetPhoneNumberCategoriesExample {
 
 
             GetPhoneNumberCategoriesResponse res = client.getPhoneNumberCategories(new GetPhoneNumberCategoriesRequest()
-                .setCountryCode("RU")
+                .setCountryCode(MultiArgument.forSingleValue("RU"))
             );
             System.out.println("OK");
         } catch (IOException | ClientException e) {

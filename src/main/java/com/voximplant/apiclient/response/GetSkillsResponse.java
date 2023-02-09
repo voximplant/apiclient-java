@@ -34,7 +34,7 @@ public class GetSkillsResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found skill count.
+    * The total found skill count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -47,7 +47,7 @@ public class GetSkillsResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned skill count.
+    * The returned skill count
     */
     public Long getCount() {
         return this.count;

@@ -11,15 +11,15 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The specific account callback details. Received as part of the
-* [AccountCallback] structure.
+* Received when an unverified subscription is canceled. Received as
+* part of the [AccountCallback] structure.
 */
 public class UnverifiedSubscriptionDetachedCallback implements Alignable {
 
     private UnverifiedSubscriptionDetachedCallbackItem[] subscriptions;
 
     /**
-    * The frozen subscription list.
+    * The frozen subscription list
     */
     public UnverifiedSubscriptionDetachedCallbackItem[] getSubscriptions() {
         return this.subscriptions;

@@ -18,7 +18,7 @@ public class ContractorInfoType implements Alignable {
     private String inn;
 
     /**
-    * Russian-specific ID for tax purposes.
+    * Russian-specific ID for tax purposes
     */
     public String getInn() {
         return this.inn;
@@ -32,7 +32,7 @@ public class ContractorInfoType implements Alignable {
 
     /**
     * Additional Russian-specific ID for tax purposes for businesses; there
-    * is no KPP for individual entrepreneurs.
+    * is no KPP for individual entrepreneurs
     */
     public String getKpp() {
         return this.kpp;
@@ -45,7 +45,7 @@ public class ContractorInfoType implements Alignable {
     private String companyName;
 
     /**
-    * The full company name.
+    * The full company name
     */
     public String getCompanyName() {
         return this.companyName;
@@ -58,7 +58,7 @@ public class ContractorInfoType implements Alignable {
     private String companyAddress;
 
     /**
-    * The full company address with a postcode.
+    * The full company address with a postcode
     */
     public String getCompanyAddress() {
         return this.companyAddress;
@@ -71,7 +71,7 @@ public class ContractorInfoType implements Alignable {
     private String companyPhone;
 
     /**
-    * The company phone.
+    * The company phone
     */
     public String getCompanyPhone() {
         return this.companyPhone;
@@ -84,7 +84,7 @@ public class ContractorInfoType implements Alignable {
     private String correspondenceAddress;
 
     /**
-    * The correspondence address.
+    * The correspondence address
     */
     public String getCorrespondenceAddress() {
         return this.correspondenceAddress;
@@ -97,7 +97,7 @@ public class ContractorInfoType implements Alignable {
     private String correspondenceEmail;
 
     /**
-    * The correspondence email.
+    * The correspondence email
     */
     public String getCorrespondenceEmail() {
         return this.correspondenceEmail;
@@ -110,7 +110,7 @@ public class ContractorInfoType implements Alignable {
     private String correspondenceTo;
 
     /**
-    * The correspondence to.
+    * The correspondence to
     */
     public String getCorrespondenceTo() {
         return this.correspondenceTo;
@@ -123,7 +123,7 @@ public class ContractorInfoType implements Alignable {
     private ContractInfoType contract;
 
     /**
-    * The contract info.
+    * The contract info
     */
     public ContractInfoType getContract() {
         return this.contract;
