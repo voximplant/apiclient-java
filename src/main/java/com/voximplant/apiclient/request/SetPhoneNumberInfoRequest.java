@@ -67,7 +67,7 @@ public class SetPhoneNumberInfoRequest implements Alignable {
 
     @RequestField(name="incoming_sms_callback_url")
     /**
-    * If set, the callback of an inbound SMS will be sent to this url,
+    * If set, the callback of an incoming SMS will be sent to this url,
     * otherwise, it will be sent to the general account URL
     */
     public String getIncomingSmsCallbackUrl() {
@@ -79,7 +79,7 @@ public class SetPhoneNumberInfoRequest implements Alignable {
     }
 
     /**
-    * If set, the callback of an inbound SMS will be sent to this url,
+    * If set, the callback of an incoming SMS will be sent to this url,
     * otherwise, it will be sent to the general account URL
     */
     public SetPhoneNumberInfoRequest setIncomingSmsCallbackUrl(String d) {

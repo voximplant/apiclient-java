@@ -162,6 +162,32 @@ public class SubscriptionTemplateType implements Alignable {
         return this.verificationStatus != null;
     }
 
+    private Long installationTaxReserve;
+
+    /**
+    * The phone number installation tax reserve
+    */
+    public Long getInstallationTaxReserve() {
+        return this.installationTaxReserve;
+    }
+
+    public boolean hasInstallationTaxReserve() {
+        return this.installationTaxReserve != null;
+    }
+
+    private Long taxReserve;
+
+    /**
+    * The phone number tax reserve
+    */
+    public Long getTaxReserve() {
+        return this.taxReserve;
+    }
+
+    public boolean hasTaxReserve() {
+        return this.taxReserve != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -255,6 +281,22 @@ public class SubscriptionTemplateType implements Alignable {
             sb.append(aligned)
                 .append("\"verificationStatus\": \"")
                 .append(verificationStatus)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (installationTaxReserve != null) {
+            sb.append(aligned)
+                .append("\"installationTaxReserve\": \"")
+                .append(installationTaxReserve)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (taxReserve != null) {
+            sb.append(aligned)
+                .append("\"taxReserve\": \"")
+                .append(taxReserve)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

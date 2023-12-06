@@ -14,12 +14,14 @@ import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class CreateManualCallListRequest implements Alignable {
+public class CreateCallListRequest implements Alignable {
     private Long ruleId;
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID
+    * The rule ID. It's specified in the <a
+    * href='//manage.voximplant.com/applications'>Applications</a> section
+    * of the Control Panel
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -30,9 +32,11 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * The rule ID
+    * The rule ID. It's specified in the <a
+    * href='//manage.voximplant.com/applications'>Applications</a> section
+    * of the Control Panel
     */
-    public CreateManualCallListRequest setRuleId(long d) {
+    public CreateCallListRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
         return this;
     }
@@ -56,7 +60,7 @@ public class CreateManualCallListRequest implements Alignable {
     * Call list priority. The value is in the range of [0 ... 2^31] where
     * zero is the highest priority
     */
-    public CreateManualCallListRequest setPriority(long d) {
+    public CreateCallListRequest setPriority(long d) {
         this.priority = Long.valueOf(d);
         return this;
     }
@@ -78,7 +82,7 @@ public class CreateManualCallListRequest implements Alignable {
     /**
     * Number of simultaneously processed tasks
     */
-    public CreateManualCallListRequest setMaxSimultaneous(long d) {
+    public CreateCallListRequest setMaxSimultaneous(long d) {
         this.maxSimultaneous = Long.valueOf(d);
         return this;
     }
@@ -87,7 +91,7 @@ public class CreateManualCallListRequest implements Alignable {
 
     @RequestField(name="num_attempts")
     /**
-    * Number of attempts. Should be equal or greater than <b>1</b>
+    * Number of attempts. Minimum is <b>1</b>, maximum is <b>5</b>
     */
     public Long getNumAttempts() {
         return this.numAttempts;
@@ -98,9 +102,9 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * Number of attempts. Should be equal or greater than <b>1</b>
+    * Number of attempts. Minimum is <b>1</b>, maximum is <b>5</b>
     */
-    public CreateManualCallListRequest setNumAttempts(long d) {
+    public CreateCallListRequest setNumAttempts(long d) {
         this.numAttempts = Long.valueOf(d);
         return this;
     }
@@ -109,7 +113,8 @@ public class CreateManualCallListRequest implements Alignable {
 
     @RequestField(name="name")
     /**
-    * File name
+    * File name, up to 255 characters and can't contain the '/' and '\'
+    * symbols
     */
     public String getName() {
         return this.name;
@@ -120,9 +125,10 @@ public class CreateManualCallListRequest implements Alignable {
     }
 
     /**
-    * File name
+    * File name, up to 255 characters and can't contain the '/' and '\'
+    * symbols
     */
-    public CreateManualCallListRequest setName(String d) {
+    public CreateCallListRequest setName(String d) {
         this.name = d;
         return this;
     }
@@ -148,7 +154,7 @@ public class CreateManualCallListRequest implements Alignable {
     * "file_content" via URL is at its own risk because the network devices
     * tend to drop HTTP requests with large headers
     */
-    public CreateManualCallListRequest setFileContent(String d) {
+    public CreateCallListRequest setFileContent(String d) {
         this.fileContent = d;
         return this;
     }
@@ -170,7 +176,7 @@ public class CreateManualCallListRequest implements Alignable {
     /**
     * Interval between call attempts in seconds. The default is 0
     */
-    public CreateManualCallListRequest setIntervalSeconds(long d) {
+    public CreateCallListRequest setIntervalSeconds(long d) {
         this.intervalSeconds = Long.valueOf(d);
         return this;
     }
@@ -192,7 +198,7 @@ public class CreateManualCallListRequest implements Alignable {
     /**
     * Encoding file. The default is UTF-8
     */
-    public CreateManualCallListRequest setEncoding(String d) {
+    public CreateCallListRequest setEncoding(String d) {
         this.encoding = d;
         return this;
     }
@@ -214,7 +220,7 @@ public class CreateManualCallListRequest implements Alignable {
     /**
     * Separator values. The default is ';'
     */
-    public CreateManualCallListRequest setDelimiter(String d) {
+    public CreateCallListRequest setDelimiter(String d) {
         this.delimiter = d;
         return this;
     }
@@ -236,7 +242,7 @@ public class CreateManualCallListRequest implements Alignable {
     /**
     * Escape character for parsing csv
     */
-    public CreateManualCallListRequest setEscape(String d) {
+    public CreateCallListRequest setEscape(String d) {
         this.escape = d;
         return this;
     }
@@ -260,7 +266,7 @@ public class CreateManualCallListRequest implements Alignable {
     * Specifies the IP from the geolocation of the call list subscribers.
     * It allows selecting the nearest server for serving subscribers
     */
-    public CreateManualCallListRequest setReferenceIp(String d) {
+    public CreateCallListRequest setReferenceIp(String d) {
         this.referenceIp = d;
         return this;
     }

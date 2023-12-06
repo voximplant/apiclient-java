@@ -129,7 +129,7 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * The smart queue ID list with a maximum of 5 values separated by
+    * The SmartQueue ID list with a maximum of 5 values separated by
     * semicolon (;). Can operate as filter for the
     * **calls_blocked_percentage**, **count_blocked_calls**,
     * **average_abandonment_rate**, **count_abandonment_calls**,
@@ -150,7 +150,7 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
     }
 
     /**
-    * The smart queue ID list with a maximum of 5 values separated by
+    * The SmartQueue ID list with a maximum of 5 values separated by
     * semicolon (;). Can operate as filter for the
     * **calls_blocked_percentage**, **count_blocked_calls**,
     * **average_abandonment_rate**, **count_abandonment_calls**,
@@ -171,7 +171,7 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * The smart queue name list separated by semicolon (;). Can be used
+    * The SmartQueue name list separated by semicolon (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public MultiArgument<String> getSqQueueName() {
@@ -183,7 +183,7 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
     }
 
     /**
-    * The smart queue name list separated by semicolon (;). Can be used
+    * The SmartQueue name list separated by semicolon (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public RequestSmartQueueHistoryRequest setSqQueueName(MultiArgument<String> d) {

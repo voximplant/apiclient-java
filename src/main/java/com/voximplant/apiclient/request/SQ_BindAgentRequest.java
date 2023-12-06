@@ -65,8 +65,8 @@ public class SQ_BindAgentRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * ID of the smart queue. Pass a list of values divided by ; or the
-    * "all" keyword
+    * ID of the SmartQueue. Pass a list of values divided by ; or the "all"
+    * keyword
     */
     public String getSqQueueId() {
         return this.sqQueueId;
@@ -77,8 +77,8 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * ID of the smart queue. Pass a list of values divided by ; or the
-    * "all" keyword
+    * ID of the SmartQueue. Pass a list of values divided by ; or the "all"
+    * keyword
     */
     public SQ_BindAgentRequest setSqQueueId(String d) {
         this.sqQueueId = d;
@@ -89,7 +89,7 @@ public class SQ_BindAgentRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * Name of the smart queue. Pass a list of names divided by ; or the
+    * Name of the SmartQueue. Pass a list of names divided by ; or the
     * "all" keyword
     */
     public String getSqQueueName() {
@@ -101,7 +101,7 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * Name of the smart queue. Pass a list of names divided by ; or the
+    * Name of the SmartQueue. Pass a list of names divided by ; or the
     * "all" keyword
     */
     public SQ_BindAgentRequest setSqQueueName(String d) {

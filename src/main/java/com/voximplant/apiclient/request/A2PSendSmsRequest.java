@@ -19,7 +19,8 @@ public class A2PSendSmsRequest implements Alignable {
 
     @RequestField(name="src_number")
     /**
-    * The source phone number
+    * The SenderID for outbound SMS. Please contact support for installing
+    * a SenderID
     */
     public String getSrcNumber() {
         return this.srcNumber;
@@ -30,7 +31,8 @@ public class A2PSendSmsRequest implements Alignable {
     }
 
     /**
-    * The source phone number
+    * The SenderID for outbound SMS. Please contact support for installing
+    * a SenderID
     */
     public A2PSendSmsRequest setSrcNumber(String d) {
         this.srcNumber = d;

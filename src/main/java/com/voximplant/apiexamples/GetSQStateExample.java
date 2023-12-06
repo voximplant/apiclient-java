@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get the current state of the smart queue with id = 1.
+* Get the current state of the SmartQueue with id = 1.
 */
 public class GetSQStateExample {
     public static void main(String [] args) {

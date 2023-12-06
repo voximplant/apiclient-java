@@ -65,7 +65,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * List of smart queue IDs separated by semicolon (;). Use 'all' to
+    * List of SmartQueue IDs separated by semicolon (;). Use 'all' to
     * select all the queues
     */
     public MultiArgument<Long> getSqQueueId() {
@@ -77,7 +77,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * List of smart queue IDs separated by semicolon (;). Use 'all' to
+    * List of SmartQueue IDs separated by semicolon (;). Use 'all' to
     * select all the queues
     */
     public SQ_GetAgentsRequest setSqQueueId(MultiArgument<Long> d) {
@@ -89,7 +89,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * List of smart queue names separated by semicolon (;). Can be used
+    * List of SmartQueue names separated by semicolon (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public MultiArgument<String> getSqQueueName() {
@@ -101,7 +101,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * List of smart queue names separated by semicolon (;). Can be used
+    * List of SmartQueue names separated by semicolon (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public SQ_GetAgentsRequest setSqQueueName(MultiArgument<String> d) {
@@ -113,7 +113,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="excluded_sq_queue_id")
     /**
-    * ID of the smart queue to exclude
+    * ID of the SmartQueue to exclude
     */
     public Long getExcludedSqQueueId() {
         return this.excludedSqQueueId;
@@ -124,7 +124,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * ID of the smart queue to exclude
+    * ID of the SmartQueue to exclude
     */
     public SQ_GetAgentsRequest setExcludedSqQueueId(long d) {
         this.excludedSqQueueId = Long.valueOf(d);
@@ -135,7 +135,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="excluded_sq_queue_name")
     /**
-    * Name of the smart queue to exclude. Can be used instead of
+    * Name of the SmartQueue to exclude. Can be used instead of
     * <b>excluded_sq_queue_id</b>
     */
     public String getExcludedSqQueueName() {
@@ -147,7 +147,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Name of the smart queue to exclude. Can be used instead of
+    * Name of the SmartQueue to exclude. Can be used instead of
     * <b>excluded_sq_queue_id</b>
     */
     public SQ_GetAgentsRequest setExcludedSqQueueName(String d) {

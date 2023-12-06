@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class StartNextCallTaskResponse implements Alignable {
+public class CreateCallListResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -21,12 +21,12 @@ public class StartNextCallTaskResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long result;
+    private Boolean result;
 
     /**
     * true
     */
-    public Long getResult() {
+    public Boolean getResult() {
         return this.result;
     }
 
@@ -34,10 +34,23 @@ public class StartNextCallTaskResponse implements Alignable {
         return this.result != null;
     }
 
+    private Long count;
+
+    /**
+    * The number of stored records
+    */
+    public Long getCount() {
+        return this.count;
+    }
+
+    public boolean hasCount() {
+        return this.count != null;
+    }
+
     private Long listId;
 
     /**
-    * The list id
+    * The list ID
     */
     public Long getListId() {
         return this.listId;
@@ -60,6 +73,14 @@ public class StartNextCallTaskResponse implements Alignable {
             sb.append(aligned)
                 .append("\"result\": \"")
                 .append(result)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

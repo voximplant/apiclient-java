@@ -112,7 +112,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
     * Date from which the search is to start. Format is 'yyyy-MM-dd
-    * HH:mm:ss'
+    * HH:mm:ss', time zone is UTC
     */
     public Date getFromDate() {
         return this.fromDate;
@@ -124,7 +124,7 @@ public class A2PGetSmsHistoryRequest implements Alignable {
 
     /**
     * Date from which the search is to start. Format is 'yyyy-MM-dd
-    * HH:mm:ss'
+    * HH:mm:ss', time zone is UTC
     */
     public A2PGetSmsHistoryRequest setFromDate(Date d) {
         this.fromDate = d;
@@ -137,7 +137,8 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     @RequestField(name="to_date")
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
-    * Date from which the search is to end. Format is 'yyyy-MM-dd HH:mm:ss'
+    * Date from which the search is to end. Format is 'yyyy-MM-dd
+    * HH:mm:ss', time zone is UTC
     */
     public Date getToDate() {
         return this.toDate;
@@ -148,7 +149,8 @@ public class A2PGetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Date from which the search is to end. Format is 'yyyy-MM-dd HH:mm:ss'
+    * Date from which the search is to end. Format is 'yyyy-MM-dd
+    * HH:mm:ss', time zone is UTC
     */
     public A2PGetSmsHistoryRequest setToDate(Date d) {
         this.toDate = d;

@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class CreateManualCallListResponse implements Alignable {
+public class GetBriefCallHistoryResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -21,12 +21,12 @@ public class CreateManualCallListResponse implements Alignable {
         return this.error != null;
     }
 
-    private Boolean result;
+    private Long result;
 
     /**
-    * true
+    * In the async mode, the value is always 1
     */
-    public Boolean getResult() {
+    public Long getResult() {
         return this.result;
     }
 
@@ -34,30 +34,17 @@ public class CreateManualCallListResponse implements Alignable {
         return this.result != null;
     }
 
-    private Long count;
+    private Long historyReportId;
 
     /**
-    * The number of stored records
+    * The history report ID
     */
-    public Long getCount() {
-        return this.count;
+    public Long getHistoryReportId() {
+        return this.historyReportId;
     }
 
-    public boolean hasCount() {
-        return this.count != null;
-    }
-
-    private Long listId;
-
-    /**
-    * The list ID
-    */
-    public Long getListId() {
-        return this.listId;
-    }
-
-    public boolean hasListId() {
-        return this.listId != null;
+    public boolean hasHistoryReportId() {
+        return this.historyReportId != null;
     }
 
     public String toString(int alignment) {
@@ -77,18 +64,10 @@ public class CreateManualCallListResponse implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (count != null) {
+        if (historyReportId != null) {
             sb.append(aligned)
-                .append("\"count\": \"")
-                .append(count)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (listId != null) {
-            sb.append(aligned)
-                .append("\"listId\": \"")
-                .append(listId)
+                .append("\"historyReportId\": \"")
+                .append(historyReportId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -183,18 +183,11 @@ public class VoximplantAPIClient {
         return mapper.readValue(impl.performRequest("TransferMoneyToUser", RequestSerializer.serialize(req)), TransferMoneyToUserResponse.class);
     }
 
-    public CreateManualCallListResponse createManualCallList(CreateManualCallListRequest req) throws java.io.IOException, ClientException {
+    public CreateCallListResponse createCallList(CreateCallListRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue(impl.performRequest("CreateManualCallList", RequestSerializer.serialize(req)), CreateManualCallListResponse.class);
-    }
-
-    public StartNextCallTaskResponse startNextCallTask(StartNextCallTaskRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue(impl.performRequest("StartNextCallTask", RequestSerializer.serialize(req)), StartNextCallTaskResponse.class);
+        return mapper.readValue(impl.performRequest("CreateCallList", RequestSerializer.serialize(req)), CreateCallListResponse.class);
     }
 
     public GetCallListsResponse getCallLists(GetCallListsRequest req) throws java.io.IOException, ClientException {
@@ -321,6 +314,13 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue(impl.performRequest("GetCallHistory", RequestSerializer.serialize(req)), GetCallHistoryResponse.class);
+    }
+
+    public GetBriefCallHistoryResponse getBriefCallHistory(GetBriefCallHistoryRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue(impl.performRequest("GetBriefCallHistory", RequestSerializer.serialize(req)), GetBriefCallHistoryResponse.class);
     }
 
     public GetHistoryReportsResponse getHistoryReports(GetHistoryReportsRequest req) throws java.io.IOException, ClientException {

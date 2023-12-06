@@ -29,32 +29,108 @@ public class MultipleNumbersPrice implements Alignable {
         return this.count != null;
     }
 
-    private BigDecimal price;
+    private Long installationTaxReserve;
 
     /**
-    * The subscription price for one number, i.e., the total multiple
-    * numbers subscription price divided by the __count__ value
+    * The phone number installation tax reserve
     */
-    public BigDecimal getPrice() {
-        return this.price;
+    public Long getInstallationTaxReserve() {
+        return this.installationTaxReserve;
     }
 
-    public boolean hasPrice() {
-        return this.price != null;
+    public boolean hasInstallationTaxReserve() {
+        return this.installationTaxReserve != null;
     }
 
-    private BigDecimal installationPrice;
+    private Long taxReserve;
 
     /**
-    * The installation price for one number, i.e., the total multiple
-    * numbers installation price divided by the __count__ value
+    * The phone number tax reserve
     */
-    public BigDecimal getInstallationPrice() {
-        return this.installationPrice;
+    public Long getTaxReserve() {
+        return this.taxReserve;
     }
 
-    public boolean hasInstallationPrice() {
-        return this.installationPrice != null;
+    public boolean hasTaxReserve() {
+        return this.taxReserve != null;
+    }
+
+    private Long localPrice;
+
+    /**
+    * Phone number price from the price list
+    */
+    public Long getLocalPrice() {
+        return this.localPrice;
+    }
+
+    public boolean hasLocalPrice() {
+        return this.localPrice != null;
+    }
+
+    private Long localInstallationPrice;
+
+    /**
+    * Phone number installation price from the price list
+    */
+    public Long getLocalInstallationPrice() {
+        return this.localInstallationPrice;
+    }
+
+    public boolean hasLocalInstallationPrice() {
+        return this.localInstallationPrice != null;
+    }
+
+    private String localCurrency;
+
+    /**
+    * Price list currency
+    */
+    public String getLocalCurrency() {
+        return this.localCurrency;
+    }
+
+    public boolean hasLocalCurrency() {
+        return this.localCurrency != null;
+    }
+
+    private Long accountPrice;
+
+    /**
+    * Phone number price in the account currency
+    */
+    public Long getAccountPrice() {
+        return this.accountPrice;
+    }
+
+    public boolean hasAccountPrice() {
+        return this.accountPrice != null;
+    }
+
+    private Long accountInstallationPrice;
+
+    /**
+    * Phone number installation price in the account currency
+    */
+    public Long getAccountInstallationPrice() {
+        return this.accountInstallationPrice;
+    }
+
+    public boolean hasAccountInstallationPrice() {
+        return this.accountInstallationPrice != null;
+    }
+
+    private String accountCurrency;
+
+    /**
+    * Account currency
+    */
+    public String getAccountCurrency() {
+        return this.accountCurrency;
+    }
+
+    public boolean hasAccountCurrency() {
+        return this.accountCurrency != null;
     }
 
     public String toString(int alignment) {
@@ -74,18 +150,66 @@ public class MultipleNumbersPrice implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (price != null) {
+        if (installationTaxReserve != null) {
             sb.append(aligned)
-                .append("\"price\": \"")
-                .append(price)
+                .append("\"installationTaxReserve\": \"")
+                .append(installationTaxReserve)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (installationPrice != null) {
+        if (taxReserve != null) {
             sb.append(aligned)
-                .append("\"installationPrice\": \"")
-                .append(installationPrice)
+                .append("\"taxReserve\": \"")
+                .append(taxReserve)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localPrice != null) {
+            sb.append(aligned)
+                .append("\"localPrice\": \"")
+                .append(localPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localInstallationPrice != null) {
+            sb.append(aligned)
+                .append("\"localInstallationPrice\": \"")
+                .append(localInstallationPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localCurrency != null) {
+            sb.append(aligned)
+                .append("\"localCurrency\": \"")
+                .append(localCurrency)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountPrice != null) {
+            sb.append(aligned)
+                .append("\"accountPrice\": \"")
+                .append(accountPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountInstallationPrice != null) {
+            sb.append(aligned)
+                .append("\"accountInstallationPrice\": \"")
+                .append(accountInstallationPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountCurrency != null) {
+            sb.append(aligned)
+                .append("\"accountCurrency\": \"")
+                .append(accountCurrency)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

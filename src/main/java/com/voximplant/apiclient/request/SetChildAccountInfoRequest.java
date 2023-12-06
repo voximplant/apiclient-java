@@ -441,28 +441,6 @@ public class SetChildAccountInfoRequest implements Alignable {
         return this;
     }
 
-    private Long minPaymentAmount;
-
-    @RequestField(name="min_payment_amount")
-    /**
-    * The minimum payment amount
-    */
-    public Long getMinPaymentAmount() {
-        return this.minPaymentAmount;
-    }
-
-    public boolean hasMinPaymentAmount() {
-        return this.minPaymentAmount != null;
-    }
-
-    /**
-    * The minimum payment amount
-    */
-    public SetChildAccountInfoRequest setMinPaymentAmount(long d) {
-        this.minPaymentAmount = Long.valueOf(d);
-        return this;
-    }
-
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -596,14 +574,6 @@ public class SetChildAccountInfoRequest implements Alignable {
             sb.append(aligned)
                 .append("\"canUseRestricted\": \"")
                 .append(canUseRestricted)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (minPaymentAmount != null) {
-            sb.append(aligned)
-                .append("\"minPaymentAmount\": \"")
-                .append(minPaymentAmount)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

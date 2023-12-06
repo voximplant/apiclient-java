@@ -20,7 +20,7 @@ public class GetCurrencyRateRequest implements Alignable {
     @RequestField(name="currency")
     /**
     * The currency code list separated by semicolon (;). Examples: RUR,
-    * EUR, USD
+    * KZT, EUR, USD
     */
     public MultiArgument<String> getCurrency() {
         return this.currency;
@@ -32,7 +32,7 @@ public class GetCurrencyRateRequest implements Alignable {
 
     /**
     * The currency code list separated by semicolon (;). Examples: RUR,
-    * EUR, USD
+    * KZT, EUR, USD
     */
     public GetCurrencyRateRequest setCurrency(MultiArgument<String> d) {
         this.currency = d;

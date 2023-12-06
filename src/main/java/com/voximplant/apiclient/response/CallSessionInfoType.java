@@ -152,7 +152,10 @@ public class CallSessionInfoType implements Alignable {
 
     /**
     * The link to the session log. The log retention policy is 1 month,
-    * after that time this field clears
+    * after that time this field clears. If you have issues accessing the
+    * log file, check if the application has "Secure storage of
+    * applications and logs" feature enabled. In this case, you need to <a
+    * href='/docs/guides/managementapi/secureobjects'>authorize</a>.
     */
     public String getLogFileUrl() {
         return this.logFileUrl;

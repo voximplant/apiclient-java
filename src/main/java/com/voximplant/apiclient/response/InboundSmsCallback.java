@@ -11,17 +11,18 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The inbound SMS callback. Received as a part of the [AccountCallback]
-* structure. If the <b>incoming_sms_notification_url</b> parameter is
-* set, the notification of an inbound SMS is sent to this url,
-* otherwise, it is sent to the general account URL.
+* The incoming SMS callback. Received as a part of the
+* [AccountCallback] structure. If the
+* <b>incoming_sms_notification_url</b> parameter is set, the
+* notification of an incoming SMS is sent to this url, otherwise, it is
+* sent to the general account URL.
 */
 public class InboundSmsCallback implements Alignable {
 
     private InboundSmsCallbackItem smsInbound;
 
     /**
-    * The inbound SMS info
+    * The incoming SMS info
     */
     public InboundSmsCallbackItem getSmsInbound() {
         return this.smsInbound;

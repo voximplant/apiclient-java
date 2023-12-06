@@ -18,7 +18,7 @@ public class SmartQueueState implements Alignable {
     private Long sqQueueId;
 
     /**
-    * The smart queue ID
+    * The SmartQueue ID
     */
     public Long getSqQueueId() {
         return this.sqQueueId;
@@ -31,7 +31,7 @@ public class SmartQueueState implements Alignable {
     private String sqQueueName;
 
     /**
-    * The smart queue name
+    * The SmartQueue name
     */
     public String getSqQueueName() {
         return this.sqQueueName;

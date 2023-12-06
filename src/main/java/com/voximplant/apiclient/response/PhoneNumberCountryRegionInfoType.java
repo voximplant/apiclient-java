@@ -94,32 +94,6 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
         return this.requiredVerification != null;
     }
 
-    private BigDecimal phonePrice;
-
-    /**
-    * The phone monthly charge
-    */
-    public BigDecimal getPhonePrice() {
-        return this.phonePrice;
-    }
-
-    public boolean hasPhonePrice() {
-        return this.phonePrice != null;
-    }
-
-    private BigDecimal phoneInstallationPrice;
-
-    /**
-    * The phone installation price (without the first monthly fee)
-    */
-    public BigDecimal getPhoneInstallationPrice() {
-        return this.phoneInstallationPrice;
-    }
-
-    public boolean hasPhoneInstallationPrice() {
-        return this.phoneInstallationPrice != null;
-    }
-
     private String phonePeriod;
 
     /**
@@ -234,6 +208,110 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
         return this.localizedPhoneRegionName != null;
     }
 
+    private Long phoneInstallationTaxReserve;
+
+    /**
+    * The phone number installation tax reserve
+    */
+    public Long getPhoneInstallationTaxReserve() {
+        return this.phoneInstallationTaxReserve;
+    }
+
+    public boolean hasPhoneInstallationTaxReserve() {
+        return this.phoneInstallationTaxReserve != null;
+    }
+
+    private Long phoneTaxReserve;
+
+    /**
+    * The phone number tax reserve
+    */
+    public Long getPhoneTaxReserve() {
+        return this.phoneTaxReserve;
+    }
+
+    public boolean hasPhoneTaxReserve() {
+        return this.phoneTaxReserve != null;
+    }
+
+    private Long localPrice;
+
+    /**
+    * Phone number price from the price list
+    */
+    public Long getLocalPrice() {
+        return this.localPrice;
+    }
+
+    public boolean hasLocalPrice() {
+        return this.localPrice != null;
+    }
+
+    private Long localInstallationPrice;
+
+    /**
+    * Phone number installation price from the price list
+    */
+    public Long getLocalInstallationPrice() {
+        return this.localInstallationPrice;
+    }
+
+    public boolean hasLocalInstallationPrice() {
+        return this.localInstallationPrice != null;
+    }
+
+    private String localCurrency;
+
+    /**
+    * Price list currency
+    */
+    public String getLocalCurrency() {
+        return this.localCurrency;
+    }
+
+    public boolean hasLocalCurrency() {
+        return this.localCurrency != null;
+    }
+
+    private Long accountPrice;
+
+    /**
+    * Phone number price in the account currency
+    */
+    public Long getAccountPrice() {
+        return this.accountPrice;
+    }
+
+    public boolean hasAccountPrice() {
+        return this.accountPrice != null;
+    }
+
+    private Long accountInstallationPrice;
+
+    /**
+    * Phone number installation price in the account currency
+    */
+    public Long getAccountInstallationPrice() {
+        return this.accountInstallationPrice;
+    }
+
+    public boolean hasAccountInstallationPrice() {
+        return this.accountInstallationPrice != null;
+    }
+
+    private String accountCurrency;
+
+    /**
+    * Account currency
+    */
+    public String getAccountCurrency() {
+        return this.accountCurrency;
+    }
+
+    public boolean hasAccountCurrency() {
+        return this.accountCurrency != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -287,22 +365,6 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"requiredVerification\": \"")
                 .append(requiredVerification)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (phonePrice != null) {
-            sb.append(aligned)
-                .append("\"phonePrice\": \"")
-                .append(phonePrice)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (phoneInstallationPrice != null) {
-            sb.append(aligned)
-                .append("\"phoneInstallationPrice\": \"")
-                .append(phoneInstallationPrice)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
@@ -365,6 +427,70 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"localizedPhoneRegionName\": \"")
                 .append(localizedPhoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneInstallationTaxReserve != null) {
+            sb.append(aligned)
+                .append("\"phoneInstallationTaxReserve\": \"")
+                .append(phoneInstallationTaxReserve)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneTaxReserve != null) {
+            sb.append(aligned)
+                .append("\"phoneTaxReserve\": \"")
+                .append(phoneTaxReserve)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localPrice != null) {
+            sb.append(aligned)
+                .append("\"localPrice\": \"")
+                .append(localPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localInstallationPrice != null) {
+            sb.append(aligned)
+                .append("\"localInstallationPrice\": \"")
+                .append(localInstallationPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localCurrency != null) {
+            sb.append(aligned)
+                .append("\"localCurrency\": \"")
+                .append(localCurrency)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountPrice != null) {
+            sb.append(aligned)
+                .append("\"accountPrice\": \"")
+                .append(accountPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountInstallationPrice != null) {
+            sb.append(aligned)
+                .append("\"accountInstallationPrice\": \"")
+                .append(accountInstallationPrice)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (accountCurrency != null) {
+            sb.append(aligned)
+                .append("\"accountCurrency\": \"")
+                .append(accountCurrency)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

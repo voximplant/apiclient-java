@@ -65,7 +65,7 @@ public class SQ_AddQueueRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * Unique smart queue name within the application, up to 100 characters
+    * Unique SmartQueue name within the application, up to 100 characters
     */
     public String getSqQueueName() {
         return this.sqQueueName;
@@ -76,7 +76,7 @@ public class SQ_AddQueueRequest implements Alignable {
     }
 
     /**
-    * Unique smart queue name within the application, up to 100 characters
+    * Unique SmartQueue name within the application, up to 100 characters
     */
     public SQ_AddQueueRequest setSqQueueName(String d) {
         this.sqQueueName = d;

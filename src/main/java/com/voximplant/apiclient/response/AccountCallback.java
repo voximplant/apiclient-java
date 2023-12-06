@@ -543,7 +543,7 @@ public class AccountCallback implements Alignable {
     private InboundSmsCallback smsInbound;
 
     /**
-    * Received when an inbound SMS is gotten
+    * Received when an incoming SMS is gotten
     */
     public InboundSmsCallback getSmsInbound() {
         return this.smsInbound;

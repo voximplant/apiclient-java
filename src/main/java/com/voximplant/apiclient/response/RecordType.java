@@ -85,7 +85,10 @@ public class RecordType implements Alignable {
     private String recordUrl;
 
     /**
-    * The record URL
+    * The record URL.  If you have issues accessing the record file, check
+    * if the application has "Secure storage of applications and logs"
+    * feature enabled. In this case, you need to <a
+    * href='/docs/guides/managementapi/secureobjects'>authorize</a>.
     */
     public String getRecordUrl() {
         return this.recordUrl;

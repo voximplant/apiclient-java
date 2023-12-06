@@ -65,7 +65,7 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * ID of the smart queue to search for
+    * ID of the SmartQueue to search for
     */
     public Long getSqQueueId() {
         return this.sqQueueId;
@@ -76,7 +76,7 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * ID of the smart queue to search for
+    * ID of the SmartQueue to search for
     */
     public SQ_SetQueueInfoRequest setSqQueueId(long d) {
         this.sqQueueId = Long.valueOf(d);
@@ -87,7 +87,7 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * Name of the smart queue to search for. Can be used instead of
+    * Name of the SmartQueue to search for. Can be used instead of
     * <b>sq_queue_id</b>
     */
     public String getSqQueueName() {
@@ -99,7 +99,7 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * Name of the smart queue to search for. Can be used instead of
+    * Name of the SmartQueue to search for. Can be used instead of
     * <b>sq_queue_id</b>
     */
     public SQ_SetQueueInfoRequest setSqQueueName(String d) {
@@ -111,7 +111,7 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="new_sq_queue_name")
     /**
-    * New smart queue name within the application, up to 100 characters
+    * New SmartQueue name within the application, up to 100 characters
     */
     public String getNewSqQueueName() {
         return this.newSqQueueName;
@@ -122,7 +122,7 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * New smart queue name within the application, up to 100 characters
+    * New SmartQueue name within the application, up to 100 characters
     */
     public SQ_SetQueueInfoRequest setNewSqQueueName(String d) {
         this.newSqQueueName = d;

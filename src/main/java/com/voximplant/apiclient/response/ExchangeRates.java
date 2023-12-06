@@ -28,6 +28,19 @@ public class ExchangeRates implements Alignable {
         return this.RUR != null;
     }
 
+    private BigDecimal KZT;
+
+    /**
+    * The KZT exchange rate
+    */
+    public BigDecimal getKZT() {
+        return this.KZT;
+    }
+
+    public boolean hasKZT() {
+        return this.KZT != null;
+    }
+
     private BigDecimal EUR;
 
     /**
@@ -67,6 +80,14 @@ public class ExchangeRates implements Alignable {
             sb.append(aligned)
                 .append("\"RUR\": \"")
                 .append(RUR)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (KZT != null) {
+            sb.append(aligned)
+                .append("\"KZT\": \"")
+                .append(KZT)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

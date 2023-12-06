@@ -97,7 +97,10 @@ public class SmartQueueState_Task implements Alignable {
     private Object customData;
 
     /**
-    * Custom data
+    * Custom data text string for the current task. You can set the custom
+    * data in the
+    * [enqueueTask](/docs/references/voxengine/voxengine/enqueuetask#enqueuetask)
+    * method
     */
     public Object getCustomData() {
         return this.customData;

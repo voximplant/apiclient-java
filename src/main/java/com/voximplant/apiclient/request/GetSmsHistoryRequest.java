@@ -135,7 +135,8 @@ public class GetSmsHistoryRequest implements Alignable {
     @RequestField(name="from_date")
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
-    * Date from which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'
+    * Date from which to perform search. Format is 'yyyy-MM-dd HH:mm:ss',
+    * time zone is UTC
     */
     public Date getFromDate() {
         return this.fromDate;
@@ -146,7 +147,8 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Date from which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'
+    * Date from which to perform search. Format is 'yyyy-MM-dd HH:mm:ss',
+    * time zone is UTC
     */
     public GetSmsHistoryRequest setFromDate(Date d) {
         this.fromDate = d;
@@ -159,7 +161,8 @@ public class GetSmsHistoryRequest implements Alignable {
     @RequestField(name="to_date")
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
-    * Date until which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'
+    * Date until which to perform search. Format is 'yyyy-MM-dd HH:mm:ss',
+    * time zone is UTC
     */
     public Date getToDate() {
         return this.toDate;
@@ -170,7 +173,8 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Date until which to perform search. Format is 'yyyy-MM-dd HH:mm:ss'
+    * Date until which to perform search. Format is 'yyyy-MM-dd HH:mm:ss',
+    * time zone is UTC
     */
     public GetSmsHistoryRequest setToDate(Date d) {
         this.toDate = d;

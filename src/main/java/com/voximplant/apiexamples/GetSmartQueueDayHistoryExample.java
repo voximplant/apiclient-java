@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.io.IOException;
 
 /**
-* Get the time agents spent in the ONLINE status for all smart queues
+* Get the time agents spent in the ONLINE status for all SmartQueues
 * within one application.
 */
 public class GetSmartQueueDayHistoryExample {

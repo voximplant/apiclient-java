@@ -679,7 +679,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="store_inbound_sms")
     /**
-    * Set to true to store inbound message texts. Default value is false
+    * Set to true to store incoming message texts. Default value is false
     */
     public Boolean getStoreInboundSms() {
         return this.storeInboundSms;
@@ -690,7 +690,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to store inbound message texts. Default value is false
+    * Set to true to store incoming message texts. Default value is false
     */
     public SetAccountInfoRequest setStoreInboundSms(boolean d) {
         this.storeInboundSms = Boolean.valueOf(d);

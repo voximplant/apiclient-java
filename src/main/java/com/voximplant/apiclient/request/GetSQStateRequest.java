@@ -65,8 +65,8 @@ public class GetSQStateRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * The smart queue ID list separated by semicolon (;). Use the 'all'
-    * value to select all smart queues
+    * The SmartQueue ID list separated by semicolon (;). Use the 'all'
+    * value to select all SmartQueues
     */
     public MultiArgument<Long> getSqQueueId() {
         return this.sqQueueId;
@@ -77,8 +77,8 @@ public class GetSQStateRequest implements Alignable {
     }
 
     /**
-    * The smart queue ID list separated by semicolon (;). Use the 'all'
-    * value to select all smart queues
+    * The SmartQueue ID list separated by semicolon (;). Use the 'all'
+    * value to select all SmartQueues
     */
     public GetSQStateRequest setSqQueueId(MultiArgument<Long> d) {
         this.sqQueueId = d;
@@ -89,7 +89,7 @@ public class GetSQStateRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * The smart queue name list separated by semicolon (;). Can be used
+    * The SmartQueue name list separated by semicolon (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public MultiArgument<String> getSqQueueName() {
@@ -101,7 +101,7 @@ public class GetSQStateRequest implements Alignable {
     }
 
     /**
-    * The smart queue name list separated by semicolon (;). Can be used
+    * The SmartQueue name list separated by semicolon (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public GetSQStateRequest setSqQueueName(MultiArgument<String> d) {

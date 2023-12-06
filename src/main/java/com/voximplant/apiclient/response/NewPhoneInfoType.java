@@ -120,6 +120,32 @@ public class NewPhoneInfoType implements Alignable {
         return this.phoneRegionName != null;
     }
 
+    private Long phoneInstallationTaxReserve;
+
+    /**
+    * The phone number installation tax reserve
+    */
+    public Long getPhoneInstallationTaxReserve() {
+        return this.phoneInstallationTaxReserve;
+    }
+
+    public boolean hasPhoneInstallationTaxReserve() {
+        return this.phoneInstallationTaxReserve != null;
+    }
+
+    private Long phoneTaxReserve;
+
+    /**
+    * The phone number tax reserve
+    */
+    public Long getPhoneTaxReserve() {
+        return this.phoneTaxReserve;
+    }
+
+    public boolean hasPhoneTaxReserve() {
+        return this.phoneTaxReserve != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -189,6 +215,22 @@ public class NewPhoneInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"phoneRegionName\": \"")
                 .append(phoneRegionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneInstallationTaxReserve != null) {
+            sb.append(aligned)
+                .append("\"phoneInstallationTaxReserve\": \"")
+                .append(phoneInstallationTaxReserve)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneTaxReserve != null) {
+            sb.append(aligned)
+                .append("\"phoneTaxReserve\": \"")
+                .append(phoneTaxReserve)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

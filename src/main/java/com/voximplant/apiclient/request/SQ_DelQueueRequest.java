@@ -65,7 +65,7 @@ public class SQ_DelQueueRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * List of smart queue IDs separated by semicolon (;). Use 'all' to
+    * List of SmartQueue IDs separated by semicolon (;). Use 'all' to
     * delete all the queues
     */
     public MultiArgument<Long> getSqQueueId() {
@@ -77,7 +77,7 @@ public class SQ_DelQueueRequest implements Alignable {
     }
 
     /**
-    * List of smart queue IDs separated by semicolon (;). Use 'all' to
+    * List of SmartQueue IDs separated by semicolon (;). Use 'all' to
     * delete all the queues
     */
     public SQ_DelQueueRequest setSqQueueId(MultiArgument<Long> d) {
@@ -89,7 +89,7 @@ public class SQ_DelQueueRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * List of smart queue names separated by semicolon (;). Can be used
+    * List of SmartQueue names separated by semicolon (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public MultiArgument<String> getSqQueueName() {
@@ -101,7 +101,7 @@ public class SQ_DelQueueRequest implements Alignable {
     }
 
     /**
-    * List of smart queue names separated by semicolon (;). Can be used
+    * List of SmartQueue names separated by semicolon (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public SQ_DelQueueRequest setSqQueueName(MultiArgument<String> d) {
