@@ -137,8 +137,8 @@ public class SQ_AddQueueRequest implements Alignable {
 
     @RequestField(name="call_task_selection")
     /**
-    * Strategy of prioritizing CALL-type requests for service. Accepts one
-    * of the following values: "MAX_PRIORITY", "MAX_WAITING_TIME"
+    * Call type requests prioritizing strategy. Accepts one of the
+    * [SQTaskSelectionStrategies] enum values
     */
     public String getCallTaskSelection() {
         return this.callTaskSelection;
@@ -149,8 +149,8 @@ public class SQ_AddQueueRequest implements Alignable {
     }
 
     /**
-    * Strategy of prioritizing CALL-type requests for service. Accepts one
-    * of the following values: "MAX_PRIORITY", "MAX_WAITING_TIME"
+    * Call type requests prioritizing strategy. Accepts one of the
+    * [SQTaskSelectionStrategies] enum values
     */
     public SQ_AddQueueRequest setCallTaskSelection(String d) {
         this.callTaskSelection = d;
@@ -161,9 +161,9 @@ public class SQ_AddQueueRequest implements Alignable {
 
     @RequestField(name="im_task_selection")
     /**
-    * Strategy of prioritizing IM-type requests for service. Accepts one of
-    * the following values: "MAX_PRIORITY", "MAX_WAITING_TIME". Equals to
-    * the **call_task_selection** value by default
+    * IM type requests prioritizing strategy. Accepts one of the
+    * [SQTaskSelectionStrategies] enum values. Equals to the
+    * **call_task_selection** value by default
     */
     public String getImTaskSelection() {
         return this.imTaskSelection;
@@ -174,9 +174,9 @@ public class SQ_AddQueueRequest implements Alignable {
     }
 
     /**
-    * Strategy of prioritizing IM-type requests for service. Accepts one of
-    * the following values: "MAX_PRIORITY", "MAX_WAITING_TIME". Equals to
-    * the **call_task_selection** value by default
+    * IM type requests prioritizing strategy. Accepts one of the
+    * [SQTaskSelectionStrategies] enum values. Equals to the
+    * **call_task_selection** value by default
     */
     public SQ_AddQueueRequest setImTaskSelection(String d) {
         this.imTaskSelection = d;

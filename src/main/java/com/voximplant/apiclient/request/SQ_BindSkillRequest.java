@@ -137,13 +137,13 @@ public class SQ_BindSkillRequest implements Alignable {
         return this;
     }
 
-    private SQSkillBindingModes[] bindMode;
+    private String bindMode;
 
     @RequestField(name="bind_mode")
     /**
-    * Binding mode
+    * Binding mode. Accepts one of the [SQSkillBindingModes] enum values
     */
-    public SQSkillBindingModes[] getBindMode() {
+    public String getBindMode() {
         return this.bindMode;
     }
 
@@ -152,9 +152,9 @@ public class SQ_BindSkillRequest implements Alignable {
     }
 
     /**
-    * Binding mode
+    * Binding mode. Accepts one of the [SQSkillBindingModes] enum values
     */
-    public SQ_BindSkillRequest setBindMode(SQSkillBindingModes[] d) {
+    public SQ_BindSkillRequest setBindMode(String d) {
         this.bindMode = d;
         return this;
     }
@@ -210,8 +210,10 @@ public class SQ_BindSkillRequest implements Alignable {
         }
         if (bindMode != null) {
             sb.append(aligned)
-                .append("\"SQSkillBindingModes\": ")
-                .append(StringHelper.arrayToString(bindMode, alignment + 1))
+                .append("\"bindMode\": \"")
+                .append(bindMode)
+                .append('"')
+                .append(',')
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

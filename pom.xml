@@ -6,12 +6,12 @@
 
     <groupId>com.voximplant</groupId>
     <artifactId>apiclient</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>voximplant-apiclient</name>
     <description>Voximplant Java API client library. Voximplant is a cloud communications platform for business and developers</description>
-    <url>https://github.com/voximplant/apiclient-java</url>
+    <url>https://voximplant.com</url>
 
     <licenses>
         <license>

@@ -137,7 +137,7 @@ public class StartScenariosRequest implements Alignable {
     * <a
     * href='/docs/references/voxengine/voxengine/customdata'>VoxEngine.customData()</a>
     * method. Use the application/x-www-form-urlencoded content type with
-    * UTF-8 encoding.
+    * UTF-8 encoding
     */
     public String getScriptCustomData() {
         return this.scriptCustomData;
@@ -152,7 +152,7 @@ public class StartScenariosRequest implements Alignable {
     * <a
     * href='/docs/references/voxengine/voxengine/customdata'>VoxEngine.customData()</a>
     * method. Use the application/x-www-form-urlencoded content type with
-    * UTF-8 encoding.
+    * UTF-8 encoding
     */
     public StartScenariosRequest setScriptCustomData(String d) {
         this.scriptCustomData = d;
@@ -180,6 +180,30 @@ public class StartScenariosRequest implements Alignable {
     */
     public StartScenariosRequest setReferenceIp(String d) {
         this.referenceIp = d;
+        return this;
+    }
+
+    private String serverLocation;
+
+    @RequestField(name="server_location")
+    /**
+    * Specifies the location of the server where the scenario needs to be
+    * executed
+    */
+    public String getServerLocation() {
+        return this.serverLocation;
+    }
+
+    public boolean hasServerLocation() {
+        return this.serverLocation != null;
+    }
+
+    /**
+    * Specifies the location of the server where the scenario needs to be
+    * executed
+    */
+    public StartScenariosRequest setServerLocation(String d) {
+        this.serverLocation = d;
         return this;
     }
 
@@ -266,6 +290,14 @@ public class StartScenariosRequest implements Alignable {
             sb.append(aligned)
                 .append("\"referenceIp\": \"")
                 .append(referenceIp)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (serverLocation != null) {
+            sb.append(aligned)
+                .append("\"serverLocation\": \"")
+                .append(serverLocation)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
