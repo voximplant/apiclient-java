@@ -71,8 +71,8 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
-    * to select all ACD queues
+    * The ACD queue ID list separated by semicolons (;). Use the 'all'
+    * value to select all ACD queues
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -83,8 +83,8 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
-    * to select all ACD queues
+    * The ACD queue ID list separated by semicolons (;). Use the 'all'
+    * value to select all ACD queues
     */
     public GetACDOperatorStatisticsRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -95,7 +95,7 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * The user ID list separated by semicolons (;). Use the 'all' value to
     * select all users
     */
     public MultiArgument<Long> getUserId() {
@@ -107,7 +107,7 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * The user ID list separated by semicolons (;). Use the 'all' value to
     * select all users
     */
     public GetACDOperatorStatisticsRequest setUserId(MultiArgument<Long> d) {
@@ -153,11 +153,11 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
 
     @RequestField(name="report")
     /**
-    * List of item names abbreviations separated by semicolon (;). Returned
-    * JSON will include keys only for the selected items. Special 'all'
-    * value defines all possible items, see [ACDOperatorStatisticsType] for
-    * a complete list. See 'abbreviation' description for complete
-    * abbreviation list
+    * List of item names abbreviations separated by semicolons (;).
+    * Returned JSON will include keys only for the selected items. Special
+    * 'all' value defines all possible items, see
+    * [ACDOperatorStatisticsType] for a complete list. See 'abbreviation'
+    * description for complete abbreviation list
     */
     public MultiArgument<String> getReport() {
         return this.report;
@@ -168,11 +168,11 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
     }
 
     /**
-    * List of item names abbreviations separated by semicolon (;). Returned
-    * JSON will include keys only for the selected items. Special 'all'
-    * value defines all possible items, see [ACDOperatorStatisticsType] for
-    * a complete list. See 'abbreviation' description for complete
-    * abbreviation list
+    * List of item names abbreviations separated by semicolons (;).
+    * Returned JSON will include keys only for the selected items. Special
+    * 'all' value defines all possible items, see
+    * [ACDOperatorStatisticsType] for a complete list. See 'abbreviation'
+    * description for complete abbreviation list
     */
     public GetACDOperatorStatisticsRequest setReport(MultiArgument<String> d) {
         this.report = d;

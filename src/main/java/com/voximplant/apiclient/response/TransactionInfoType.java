@@ -85,7 +85,7 @@ public class TransactionInfoType implements Alignable {
     private String transactionType;
 
     /**
-    * The transaction type. The following values are possible:
+    * The transaction type. The following values are possible: gift_revoke,
     * resource_charge, money_distribution, subscription_charge,
     * subscription_installation_charge, card_periodic_payment,
     * card_overrun_payment, card_payment, rub_card_periodic_payment,

@@ -109,8 +109,8 @@ public class AddAdminUserRequest implements Alignable {
     /**
     * The role(s) ID created via <a
     * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
-    * methods. The attaching admin role ID list separated by semicolon (;).
-    * Use the 'all' value to select all admin roles
+    * methods. The attaching admin role ID list separated by semicolons
+    * (;). Use the 'all' value to select all admin roles
     */
     public String getAdminRoleId() {
         return this.adminRoleId;
@@ -123,8 +123,8 @@ public class AddAdminUserRequest implements Alignable {
     /**
     * The role(s) ID created via <a
     * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
-    * methods. The attaching admin role ID list separated by semicolon (;).
-    * Use the 'all' value to select all admin roles
+    * methods. The attaching admin role ID list separated by semicolons
+    * (;). Use the 'all' value to select all admin roles
     */
     public AddAdminUserRequest setAdminRoleId(String d) {
         this.adminRoleId = d;

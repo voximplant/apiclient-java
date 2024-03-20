@@ -113,7 +113,7 @@ public class SQ_BindAgentRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * List of user IDs separated by semicolon (;). Use 'all' to select all
+    * List of user IDs separated by semicolons (;). Use 'all' to select all
     * the users
     */
     public MultiArgument<Long> getUserId() {
@@ -125,7 +125,7 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * List of user IDs separated by semicolon (;). Use 'all' to select all
+    * List of user IDs separated by semicolons (;). Use 'all' to select all
     * the users
     */
     public SQ_BindAgentRequest setUserId(MultiArgument<Long> d) {
@@ -137,8 +137,8 @@ public class SQ_BindAgentRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * List of user names separated by semicolon (;). Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -149,8 +149,8 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * List of user names separated by semicolon (;). Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of <b>user_id</b>
     */
     public SQ_BindAgentRequest setUserName(MultiArgument<String> d) {
         this.userName = d;

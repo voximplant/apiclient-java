@@ -19,7 +19,7 @@ public class ChargeAccountRequest implements Alignable {
 
     @RequestField(name="phone_id")
     /**
-    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * The phone ID list separated by semicolons (;). Use the 'all' value to
     * select all phone ids. You should specify the phones having the
     * auto_charge=false
     */
@@ -32,7 +32,7 @@ public class ChargeAccountRequest implements Alignable {
     }
 
     /**
-    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * The phone ID list separated by semicolons (;). Use the 'all' value to
     * select all phone ids. You should specify the phones having the
     * auto_charge=false
     */
@@ -45,9 +45,10 @@ public class ChargeAccountRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number list separated by semicolon (;). Use the 'all' value
-    * to select all phone numbers. Can be used instead of <b>phone_id</b>.
-    * You should specify the phones having the auto_charge=false
+    * The phone number list separated by semicolons (;). Use the 'all'
+    * value to select all phone numbers. Can be used instead of
+    * <b>phone_id</b>. You should specify the phones having the
+    * auto_charge=false
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -58,9 +59,10 @@ public class ChargeAccountRequest implements Alignable {
     }
 
     /**
-    * The phone number list separated by semicolon (;). Use the 'all' value
-    * to select all phone numbers. Can be used instead of <b>phone_id</b>.
-    * You should specify the phones having the auto_charge=false
+    * The phone number list separated by semicolons (;). Use the 'all'
+    * value to select all phone numbers. Can be used instead of
+    * <b>phone_id</b>. You should specify the phones having the
+    * auto_charge=false
     */
     public ChargeAccountRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;

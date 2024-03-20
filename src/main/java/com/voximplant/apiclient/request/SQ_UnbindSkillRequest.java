@@ -65,7 +65,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * List of user IDs separated by semicolon (;). Use 'all' to select all
+    * List of user IDs separated by semicolons (;). Use 'all' to select all
     * the users
     */
     public MultiArgument<Long> getUserId() {
@@ -77,7 +77,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * List of user IDs separated by semicolon (;). Use 'all' to select all
+    * List of user IDs separated by semicolons (;). Use 'all' to select all
     * the users
     */
     public SQ_UnbindSkillRequest setUserId(MultiArgument<Long> d) {
@@ -89,8 +89,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * List of user names separated by semicolon (;). Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -101,8 +101,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * List of user names separated by semicolon (;). Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of <b>user_id</b>
     */
     public SQ_UnbindSkillRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -113,7 +113,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="sq_skill_id")
     /**
-    * List of skill IDs separated by semicolon (;). Use 'all' to undbind
+    * List of skill IDs separated by semicolons (;). Use 'all' to undbind
     * all the skills
     */
     public MultiArgument<Long> getSqSkillId() {
@@ -125,7 +125,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * List of skill IDs separated by semicolon (;). Use 'all' to undbind
+    * List of skill IDs separated by semicolons (;). Use 'all' to undbind
     * all the skills
     */
     public SQ_UnbindSkillRequest setSqSkillId(MultiArgument<Long> d) {
@@ -137,7 +137,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="sq_skill_name")
     /**
-    * List of skill names separated by semicolon (;). Can be used instead
+    * List of skill names separated by semicolons (;). Can be used instead
     * of <b>sq_skill_id</b>
     */
     public MultiArgument<String> getSqSkillName() {
@@ -149,7 +149,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * List of skill names separated by semicolon (;). Can be used instead
+    * List of skill names separated by semicolons (;). Can be used instead
     * of <b>sq_skill_id</b>
     */
     public SQ_UnbindSkillRequest setSqSkillName(MultiArgument<String> d) {

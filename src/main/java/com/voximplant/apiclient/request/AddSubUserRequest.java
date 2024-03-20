@@ -71,7 +71,7 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="role_id")
     /**
-    * The role id list separated by semicolon (;)
+    * The role id list separated by semicolons (;)
     */
     public MultiArgument<Long> getRoleId() {
         return this.roleId;
@@ -82,7 +82,7 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * The role id list separated by semicolon (;)
+    * The role id list separated by semicolons (;)
     */
     public AddSubUserRequest setRoleId(MultiArgument<Long> d) {
         this.roleId = d;
@@ -93,7 +93,7 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="role_name")
     /**
-    * The role name list separated by semicolon (;)
+    * The role name list separated by semicolons (;)
     */
     public MultiArgument<String> getRoleName() {
         return this.roleName;
@@ -104,7 +104,7 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * The role name list separated by semicolon (;)
+    * The role name list separated by semicolons (;)
     */
     public AddSubUserRequest setRoleName(MultiArgument<String> d) {
         this.roleName = d;

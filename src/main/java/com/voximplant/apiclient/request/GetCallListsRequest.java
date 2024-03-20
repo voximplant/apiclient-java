@@ -19,7 +19,7 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="list_id")
     /**
-    * The list ID to filter. Can be a list separated by semicolon (;). Use
+    * The list ID to filter. Can be a list separated by semicolons (;). Use
     * the 'all' value to select all lists
     */
     public MultiArgument<Long> getListId() {
@@ -31,7 +31,7 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The list ID to filter. Can be a list separated by semicolon (;). Use
+    * The list ID to filter. Can be a list separated by semicolons (;). Use
     * the 'all' value to select all lists
     */
     public GetCallListsRequest setListId(MultiArgument<Long> d) {
@@ -203,7 +203,7 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to filter. Can be a list separated by semicolon
+    * The application ID to filter. Can be a list separated by semicolons
     * (;). Use the 'all' value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
@@ -215,7 +215,7 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The application ID to filter. Can be a list separated by semicolon
+    * The application ID to filter. Can be a list separated by semicolons
     * (;). Use the 'all' value to select all applications
     */
     public GetCallListsRequest setApplicationId(MultiArgument<Long> d) {

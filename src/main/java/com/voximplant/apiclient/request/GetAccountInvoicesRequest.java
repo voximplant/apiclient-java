@@ -43,7 +43,7 @@ public class GetAccountInvoicesRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * Number of invooces to show per page. Default value is 20
+    * Number of invoices to show per page. Default value is 20
     */
     public Long getCount() {
         return this.count;
@@ -54,7 +54,7 @@ public class GetAccountInvoicesRequest implements Alignable {
     }
 
     /**
-    * Number of invooces to show per page. Default value is 20
+    * Number of invoices to show per page. Default value is 20
     */
     public GetAccountInvoicesRequest setCount(long d) {
         this.count = Long.valueOf(d);

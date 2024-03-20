@@ -206,7 +206,7 @@ public class GetBriefCallHistoryRequest implements Alignable {
     @RequestField(name="remote_number")
     /**
     * To receive a call history for a specific remote numbers, pass the
-    * number list separated by semicolon (;). A remote number is a number
+    * number list separated by semicolons (;). A remote number is a number
     * on the client side
     */
     public MultiArgument<String> getRemoteNumber() {
@@ -219,7 +219,7 @@ public class GetBriefCallHistoryRequest implements Alignable {
 
     /**
     * To receive a call history for a specific remote numbers, pass the
-    * number list separated by semicolon (;). A remote number is a number
+    * number list separated by semicolons (;). A remote number is a number
     * on the client side
     */
     public GetBriefCallHistoryRequest setRemoteNumber(MultiArgument<String> d) {
@@ -232,8 +232,8 @@ public class GetBriefCallHistoryRequest implements Alignable {
     @RequestField(name="local_number")
     /**
     * To receive a call history for a specific local numbers, pass the
-    * number list separated by semicolon (;). A local number is a number on
-    * the platform side
+    * number list separated by semicolons (;). A local number is a number
+    * on the platform side
     */
     public MultiArgument<String> getLocalNumber() {
         return this.localNumber;
@@ -245,8 +245,8 @@ public class GetBriefCallHistoryRequest implements Alignable {
 
     /**
     * To receive a call history for a specific local numbers, pass the
-    * number list separated by semicolon (;). A local number is a number on
-    * the platform side
+    * number list separated by semicolons (;). A local number is a number
+    * on the platform side
     */
     public GetBriefCallHistoryRequest setLocalNumber(MultiArgument<String> d) {
         this.localNumber = d;

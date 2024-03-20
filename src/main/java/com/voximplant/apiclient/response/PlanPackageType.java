@@ -44,7 +44,7 @@ public class PlanPackageType implements Alignable {
     private Boolean mayOverrun;
 
     /**
-    * Overrun is enabled
+    * Whether overrun is enabled
     */
     public Boolean getMayOverrun() {
         return this.mayOverrun;

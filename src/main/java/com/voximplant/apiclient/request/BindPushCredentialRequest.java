@@ -19,7 +19,7 @@ public class BindPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_credential_id")
     /**
-    * The push credentials ID list separated by semicolon (;)
+    * The push credentials ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getPushCredentialId() {
         return this.pushCredentialId;
@@ -30,7 +30,7 @@ public class BindPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push credentials ID list separated by semicolon (;)
+    * The push credentials ID list separated by semicolons (;)
     */
     public BindPushCredentialRequest setPushCredentialId(MultiArgument<Long> d) {
         this.pushCredentialId = d;
@@ -41,7 +41,7 @@ public class BindPushCredentialRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by semicolon (;). Use the 'all'
+    * The application ID list separated by semicolons (;). Use the 'all'
     * value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
@@ -53,7 +53,7 @@ public class BindPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by semicolon (;). Use the 'all'
+    * The application ID list separated by semicolons (;). Use the 'all'
     * value to select all applications
     */
     public BindPushCredentialRequest setApplicationId(MultiArgument<Long> d) {

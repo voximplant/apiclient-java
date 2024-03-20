@@ -65,8 +65,8 @@ public class SQ_DelSkillRequest implements Alignable {
 
     @RequestField(name="sq_skill_id")
     /**
-    * List of skill IDs separated by semicolon (;). Use 'all' to delete all
-    * the skills
+    * List of skill IDs separated by semicolons (;). Use 'all' to delete
+    * all the skills
     */
     public MultiArgument<Long> getSqSkillId() {
         return this.sqSkillId;
@@ -77,8 +77,8 @@ public class SQ_DelSkillRequest implements Alignable {
     }
 
     /**
-    * List of skill IDs separated by semicolon (;). Use 'all' to delete all
-    * the skills
+    * List of skill IDs separated by semicolons (;). Use 'all' to delete
+    * all the skills
     */
     public SQ_DelSkillRequest setSqSkillId(MultiArgument<Long> d) {
         this.sqSkillId = d;
@@ -89,7 +89,7 @@ public class SQ_DelSkillRequest implements Alignable {
 
     @RequestField(name="sq_skill_name")
     /**
-    * List of skill names separated by semicolon (;). Can be used instead
+    * List of skill names separated by semicolons (;). Can be used instead
     * of <b>sq_skill_id</b>
     */
     public MultiArgument<String> getSqSkillName() {
@@ -101,7 +101,7 @@ public class SQ_DelSkillRequest implements Alignable {
     }
 
     /**
-    * List of skill names separated by semicolon (;). Can be used instead
+    * List of skill names separated by semicolons (;). Can be used instead
     * of <b>sq_skill_id</b>
     */
     public SQ_DelSkillRequest setSqSkillName(MultiArgument<String> d) {

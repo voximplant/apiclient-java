@@ -19,7 +19,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
 
     @RequestField(name="subscription_template_id")
     /**
-    * The subscription template ID list separated by semicolon (;)
+    * The subscription template ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getSubscriptionTemplateId() {
         return this.subscriptionTemplateId;
@@ -30,7 +30,7 @@ public class GetSubscriptionPriceRequest implements Alignable {
     }
 
     /**
-    * The subscription template ID list separated by semicolon (;)
+    * The subscription template ID list separated by semicolons (;)
     */
     public GetSubscriptionPriceRequest setSubscriptionTemplateId(MultiArgument<Long> d) {
         this.subscriptionTemplateId = d;

@@ -85,7 +85,7 @@ public class AddDialogflowKeyRequest implements Alignable {
 
     @RequestField(name="description")
     /**
-    * The Dialogflow keys's description
+    * The Dialogflow key's description
     */
     public String getDescription() {
         return this.description;
@@ -96,7 +96,7 @@ public class AddDialogflowKeyRequest implements Alignable {
     }
 
     /**
-    * The Dialogflow keys's description
+    * The Dialogflow key's description
     */
     public AddDialogflowKeyRequest setDescription(String d) {
         this.description = d;

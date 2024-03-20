@@ -19,7 +19,7 @@ public class GetAvailablePlansRequest implements Alignable {
 
     @RequestField(name="plan_type")
     /**
-    * The plan type list separated by semicolon (;). The possible values
+    * The plan type list separated by semicolons (;). The possible values
     * are IM, MAU
     */
     public MultiArgument<String> getPlanType() {
@@ -31,7 +31,7 @@ public class GetAvailablePlansRequest implements Alignable {
     }
 
     /**
-    * The plan type list separated by semicolon (;). The possible values
+    * The plan type list separated by semicolons (;). The possible values
     * are IM, MAU
     */
     public GetAvailablePlansRequest setPlanType(MultiArgument<String> d) {
@@ -43,7 +43,7 @@ public class GetAvailablePlansRequest implements Alignable {
 
     @RequestField(name="plan_subscription_template_id")
     /**
-    * The plan ID list separated by semicolon (;)
+    * The plan ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getPlanSubscriptionTemplateId() {
         return this.planSubscriptionTemplateId;
@@ -54,7 +54,7 @@ public class GetAvailablePlansRequest implements Alignable {
     }
 
     /**
-    * The plan ID list separated by semicolon (;)
+    * The plan ID list separated by semicolons (;)
     */
     public GetAvailablePlansRequest setPlanSubscriptionTemplateId(MultiArgument<Long> d) {
         this.planSubscriptionTemplateId = d;

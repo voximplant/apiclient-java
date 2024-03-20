@@ -19,7 +19,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="phone_id")
     /**
-    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * The phone ID list separated by semicolons (;). Use the 'all' value to
     * select all phone ids
     */
     public MultiArgument<Long> getPhoneId() {
@@ -31,7 +31,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The phone ID list separated by semicolon (;). Use the 'all' value to
+    * The phone ID list separated by semicolons (;). Use the 'all' value to
     * select all phone ids
     */
     public BindPhoneNumberToApplicationRequest setPhoneId(MultiArgument<Long> d) {
@@ -43,7 +43,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number list separated by semicolon (;) that can be used
+    * The phone number list separated by semicolons (;) that can be used
     * instead of <b>phone_id</b>
     */
     public MultiArgument<String> getPhoneNumber() {
@@ -55,7 +55,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The phone number list separated by semicolon (;) that can be used
+    * The phone number list separated by semicolons (;) that can be used
     * instead of <b>phone_id</b>
     */
     public BindPhoneNumberToApplicationRequest setPhoneNumber(MultiArgument<String> d) {

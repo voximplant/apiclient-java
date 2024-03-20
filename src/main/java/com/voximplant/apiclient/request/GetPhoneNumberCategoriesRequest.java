@@ -19,7 +19,7 @@ public class GetPhoneNumberCategoriesRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * Country code list separated by semicolon (;)
+    * Country code list separated by semicolons (;)
     */
     public MultiArgument<String> getCountryCode() {
         return this.countryCode;
@@ -30,7 +30,7 @@ public class GetPhoneNumberCategoriesRequest implements Alignable {
     }
 
     /**
-    * Country code list separated by semicolon (;)
+    * Country code list separated by semicolons (;)
     */
     public GetPhoneNumberCategoriesRequest setCountryCode(MultiArgument<String> d) {
         this.countryCode = d;

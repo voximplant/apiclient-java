@@ -19,7 +19,7 @@ public class DelAdminRoleRequest implements Alignable {
 
     @RequestField(name="admin_role_id")
     /**
-    * The admin role ID list separated by semicolon (;). Use the 'all'
+    * The admin role ID list separated by semicolons (;). Use the 'all'
     * value to select all admin roles
     */
     public MultiArgument<Long> getAdminRoleId() {
@@ -31,7 +31,7 @@ public class DelAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The admin role ID list separated by semicolon (;). Use the 'all'
+    * The admin role ID list separated by semicolons (;). Use the 'all'
     * value to select all admin roles
     */
     public DelAdminRoleRequest setAdminRoleId(MultiArgument<Long> d) {

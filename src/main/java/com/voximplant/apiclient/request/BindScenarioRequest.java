@@ -19,7 +19,7 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID list separated by semicolon (;)
+    * The scenario ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -30,7 +30,7 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario ID list separated by semicolon (;)
+    * The scenario ID list separated by semicolons (;)
     */
     public BindScenarioRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;
@@ -41,7 +41,7 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The scenario name list separated by semicolon (;). Can be used
+    * The scenario name list separated by semicolons (;). Can be used
     * instead of <b>scenario_id</b>
     */
     public MultiArgument<String> getScenarioName() {
@@ -53,7 +53,7 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario name list separated by semicolon (;). Can be used
+    * The scenario name list separated by semicolons (;). Can be used
     * instead of <b>scenario_id</b>
     */
     public BindScenarioRequest setScenarioName(MultiArgument<String> d) {

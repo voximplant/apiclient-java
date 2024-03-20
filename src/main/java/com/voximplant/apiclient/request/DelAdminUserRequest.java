@@ -19,7 +19,7 @@ public class DelAdminUserRequest implements Alignable {
 
     @RequestField(name="required_admin_user_id")
     /**
-    * The admin user ID list separated by semicolon (;). Use the 'all'
+    * The admin user ID list separated by semicolons (;). Use the 'all'
     * value to select all admin users
     */
     public MultiArgument<Long> getRequiredAdminUserId() {
@@ -31,7 +31,7 @@ public class DelAdminUserRequest implements Alignable {
     }
 
     /**
-    * The admin user ID list separated by semicolon (;). Use the 'all'
+    * The admin user ID list separated by semicolons (;). Use the 'all'
     * value to select all admin users
     */
     public DelAdminUserRequest setRequiredAdminUserId(MultiArgument<Long> d) {

@@ -99,7 +99,7 @@ public class CallInfoType implements Alignable {
     private Boolean incoming;
 
     /**
-    * The incoming flag
+    * Whether the call is incoming
     */
     public Boolean getIncoming() {
         return this.incoming;
@@ -112,7 +112,7 @@ public class CallInfoType implements Alignable {
     private Boolean successful;
 
     /**
-    * The success flag
+    * Whether the call is successful
     */
     public Boolean getSuccessful() {
         return this.successful;

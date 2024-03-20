@@ -19,8 +19,8 @@ public class GetACDStateRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
-    * to select all ACD queues
+    * The ACD queue ID list separated by semicolons (;). Use the 'all'
+    * value to select all ACD queues
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -31,8 +31,8 @@ public class GetACDStateRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
-    * to select all ACD queues
+    * The ACD queue ID list separated by semicolons (;). Use the 'all'
+    * value to select all ACD queues
     */
     public GetACDStateRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;

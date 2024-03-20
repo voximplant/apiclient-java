@@ -19,7 +19,7 @@ public class AttachAdminRoleRequest implements Alignable {
 
     @RequestField(name="required_admin_user_id")
     /**
-    * The admin user ID list separated by semicolon (;). Use the 'all'
+    * The admin user ID list separated by semicolons (;). Use the 'all'
     * value to select all admin users
     */
     public MultiArgument<Long> getRequiredAdminUserId() {
@@ -31,7 +31,7 @@ public class AttachAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The admin user ID list separated by semicolon (;). Use the 'all'
+    * The admin user ID list separated by semicolons (;). Use the 'all'
     * value to select all admin users
     */
     public AttachAdminRoleRequest setRequiredAdminUserId(MultiArgument<Long> d) {
@@ -69,7 +69,7 @@ public class AttachAdminRoleRequest implements Alignable {
     /**
     * The role(s) ID created via <a
     * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
-    * methods. The attached admin role ID list separated by semicolon (;).
+    * methods. The attached admin role ID list separated by semicolons (;).
     * Use the 'all' value to select alladmin roles
     */
     public MultiArgument<Long> getAdminRoleId() {
@@ -83,7 +83,7 @@ public class AttachAdminRoleRequest implements Alignable {
     /**
     * The role(s) ID created via <a
     * href='/docs/references/httpapi/adminroles'>Managing Admin Roles</a>
-    * methods. The attached admin role ID list separated by semicolon (;).
+    * methods. The attached admin role ID list separated by semicolons (;).
     * Use the 'all' value to select alladmin roles
     */
     public AttachAdminRoleRequest setAdminRoleId(MultiArgument<Long> d) {

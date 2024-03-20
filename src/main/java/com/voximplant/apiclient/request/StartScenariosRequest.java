@@ -188,7 +188,9 @@ public class StartScenariosRequest implements Alignable {
     @RequestField(name="server_location")
     /**
     * Specifies the location of the server where the scenario needs to be
-    * executed
+    * executed. Has higher priority than `reference_ip`. Request
+    * [getServerLocations](https://api.voximplant.com/getServerLocations)
+    * for possible values
     */
     public String getServerLocation() {
         return this.serverLocation;
@@ -200,7 +202,9 @@ public class StartScenariosRequest implements Alignable {
 
     /**
     * Specifies the location of the server where the scenario needs to be
-    * executed
+    * executed. Has higher priority than `reference_ip`. Request
+    * [getServerLocations](https://api.voximplant.com/getServerLocations)
+    * for possible values
     */
     public StartScenariosRequest setServerLocation(String d) {
         this.serverLocation = d;

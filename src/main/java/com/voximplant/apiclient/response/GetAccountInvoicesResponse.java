@@ -21,12 +21,12 @@ public class GetAccountInvoicesResponse implements Alignable {
         return this.error != null;
     }
 
-    private AccountInvocie result;
+    private AccountInvoice result;
 
     /**
     * Array of the account invoices
     */
-    public AccountInvocie getResult() {
+    public AccountInvoice getResult() {
         return this.result;
     }
 

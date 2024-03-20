@@ -70,7 +70,7 @@ public class RuleInfoType implements Alignable {
     private String rulePatternExclude;
 
     /**
-    * The rule pattern exlude regex
+    * The rule pattern excluding regex
     */
     public String getRulePatternExclude() {
         return this.rulePatternExclude;
@@ -83,7 +83,7 @@ public class RuleInfoType implements Alignable {
     private Boolean videoConference;
 
     /**
-    * Video conference is required
+    * Whether video conference is required
     */
     public Boolean getVideoConference() {
         return this.videoConference;

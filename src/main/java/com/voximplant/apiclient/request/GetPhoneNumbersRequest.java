@@ -41,7 +41,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number list separated by semicolon (;) that can be used
+    * The phone number list separated by semicolons (;) that can be used
     * instead of <b>phone_id</b>
     */
     public MultiArgument<String> getPhoneNumber() {
@@ -53,7 +53,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The phone number list separated by semicolon (;) that can be used
+    * The phone number list separated by semicolons (;) that can be used
     * instead of <b>phone_id</b>
     */
     public GetPhoneNumbersRequest setPhoneNumber(MultiArgument<String> d) {
@@ -153,7 +153,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code list separated by semicolon (;)
+    * The country code list separated by semicolons (;)
     */
     public MultiArgument<String> getCountryCode() {
         return this.countryCode;
@@ -164,7 +164,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The country code list separated by semicolon (;)
+    * The country code list separated by semicolons (;)
     */
     public GetPhoneNumbersRequest setCountryCode(MultiArgument<String> d) {
         this.countryCode = d;
@@ -359,7 +359,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
+    * The child account ID list separated by semicolons (;). Use the 'all'
     * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
@@ -371,7 +371,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
+    * The child account ID list separated by semicolons (;). Use the 'all'
     * value to select all child accounts
     */
     public GetPhoneNumbersRequest setChildAccountId(MultiArgument<Long> d) {
@@ -427,7 +427,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="verification_status")
     /**
-    * The account verification status list separated by semicolon (;). The
+    * The account verification status list separated by semicolons (;). The
     * following values are possible: REQUIRED, IN_PROGRESS, VERIFIED
     */
     public MultiArgument<String> getVerificationStatus() {
@@ -439,7 +439,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The account verification status list separated by semicolon (;). The
+    * The account verification status list separated by semicolons (;). The
     * following values are possible: REQUIRED, IN_PROGRESS, VERIFIED
     */
     public GetPhoneNumbersRequest setVerificationStatus(MultiArgument<String> d) {
@@ -645,7 +645,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="phone_region_name")
     /**
-    * The region names list separated by semicolon (;)
+    * The region names list separated by semicolons (;)
     */
     public MultiArgument<String> getPhoneRegionName() {
         return this.phoneRegionName;
@@ -656,7 +656,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The region names list separated by semicolon (;)
+    * The region names list separated by semicolons (;)
     */
     public GetPhoneNumbersRequest setPhoneRegionName(MultiArgument<String> d) {
         this.phoneRegionName = d;
@@ -667,7 +667,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID list separated by semicolon (;)
+    * The rule ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getRuleId() {
         return this.ruleId;
@@ -678,7 +678,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The rule ID list separated by semicolon (;)
+    * The rule ID list separated by semicolons (;)
     */
     public GetPhoneNumbersRequest setRuleId(MultiArgument<Long> d) {
         this.ruleId = d;
@@ -689,7 +689,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule names list separated by semicolon (;). Can be used only if
+    * The rule names list separated by semicolons (;). Can be used only if
     * __application_id__ or __application_name__ is specified
     */
     public MultiArgument<String> getRuleName() {
@@ -701,7 +701,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The rule names list separated by semicolon (;). Can be used only if
+    * The rule names list separated by semicolons (;). Can be used only if
     * __application_id__ or __application_name__ is specified
     */
     public GetPhoneNumbersRequest setRuleName(MultiArgument<String> d) {

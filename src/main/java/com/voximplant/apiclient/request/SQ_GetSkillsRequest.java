@@ -65,7 +65,7 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * List of user IDs separated by semicolon (;)
+    * List of user IDs separated by semicolons (;)
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -76,7 +76,7 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * List of user IDs separated by semicolon (;)
+    * List of user IDs separated by semicolons (;)
     */
     public SQ_GetSkillsRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -87,8 +87,8 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * List of user names separated by semicolon (;). Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -99,8 +99,8 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * List of user names separated by semicolon (;). Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of <b>user_id</b>
     */
     public SQ_GetSkillsRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -111,7 +111,7 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     @RequestField(name="sq_skill_id")
     /**
-    * List of skill IDs separated by semicolon (;)
+    * List of skill IDs separated by semicolons (;)
     */
     public MultiArgument<Long> getSqSkillId() {
         return this.sqSkillId;
@@ -122,7 +122,7 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * List of skill IDs separated by semicolon (;)
+    * List of skill IDs separated by semicolons (;)
     */
     public SQ_GetSkillsRequest setSqSkillId(MultiArgument<Long> d) {
         this.sqSkillId = d;
@@ -133,7 +133,7 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     @RequestField(name="sq_skill_name")
     /**
-    * List of skill names separated by semicolon (;). Can be used instead
+    * List of skill names separated by semicolons (;). Can be used instead
     * of <b>sq_skill_id</b>
     */
     public MultiArgument<String> getSqSkillName() {
@@ -145,7 +145,7 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * List of skill names separated by semicolon (;). Can be used instead
+    * List of skill names separated by semicolons (;). Can be used instead
     * of <b>sq_skill_id</b>
     */
     public SQ_GetSkillsRequest setSqSkillName(MultiArgument<String> d) {

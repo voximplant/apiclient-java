@@ -63,7 +63,7 @@ public class ReorderScenariosRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID list separated by semicolon (;)
+    * The scenario ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -74,7 +74,7 @@ public class ReorderScenariosRequest implements Alignable {
     }
 
     /**
-    * The scenario ID list separated by semicolon (;)
+    * The scenario ID list separated by semicolons (;)
     */
     public ReorderScenariosRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;

@@ -19,7 +19,7 @@ public class GetAccountPhoneNumberCountriesRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by semicolon (;) to filter
+    * The application ID list separated by semicolons (;) to filter
     */
     public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
@@ -30,7 +30,7 @@ public class GetAccountPhoneNumberCountriesRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by semicolon (;) to filter
+    * The application ID list separated by semicolons (;) to filter
     */
     public GetAccountPhoneNumberCountriesRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;

@@ -65,7 +65,7 @@ public class GetAccountDocumentsRequest implements Alignable {
 
     @RequestField(name="verification_status")
     /**
-    * The account verification status list separated by semicolon (;). The
+    * The account verification status list separated by semicolons (;). The
     * following values are possible: REQUIRED, IN_PROGRESS, VERIFIED
     */
     public MultiArgument<String> getVerificationStatus() {
@@ -77,7 +77,7 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * The account verification status list separated by semicolon (;). The
+    * The account verification status list separated by semicolons (;). The
     * following values are possible: REQUIRED, IN_PROGRESS, VERIFIED
     */
     public GetAccountDocumentsRequest setVerificationStatus(MultiArgument<String> d) {
@@ -141,7 +141,7 @@ public class GetAccountDocumentsRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
+    * The child account ID list separated by semicolons (;). Use the 'all'
     * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
@@ -153,7 +153,7 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
+    * The child account ID list separated by semicolons (;). Use the 'all'
     * value to select all child accounts
     */
     public GetAccountDocumentsRequest setChildAccountId(MultiArgument<Long> d) {

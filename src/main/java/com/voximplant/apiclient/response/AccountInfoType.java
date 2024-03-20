@@ -151,7 +151,7 @@ public class AccountInfoType implements Alignable {
     private Boolean accountNotifications;
 
     /**
-    * Voximplant notifications are required
+    * Whether Voximplant notifications are required
     */
     public Boolean getAccountNotifications() {
         return this.accountNotifications;
@@ -164,7 +164,7 @@ public class AccountInfoType implements Alignable {
     private Boolean tariffChangingNotifications;
 
     /**
-    * Voximplant plan changing notifications are required
+    * Whether Voximplant plan changing notifications are required
     */
     public Boolean getTariffChangingNotifications() {
         return this.tariffChangingNotifications;
@@ -177,7 +177,7 @@ public class AccountInfoType implements Alignable {
     private Boolean newsNotifications;
 
     /**
-    * Voximplant news notifications are required
+    * Whether Voximplant news notifications are required
     */
     public Boolean getNewsNotifications() {
         return this.newsNotifications;
@@ -270,7 +270,7 @@ public class AccountInfoType implements Alignable {
     private Boolean active;
 
     /**
-    * The account activation flag
+    * Whether the account is ctive
     */
     public Boolean getActive() {
         return this.active;
@@ -283,7 +283,7 @@ public class AccountInfoType implements Alignable {
     private Boolean frozen;
 
     /**
-    * Is account blocked by Voximplant admins or not
+    * Whether account is blocked by Voximplant admins
     */
     public Boolean getFrozen() {
         return this.frozen;
@@ -335,7 +335,7 @@ public class AccountInfoType implements Alignable {
     private Boolean supportRobokassa;
 
     /**
-    * Robokassa payments are allowed
+    * Whether Robokassa payments are allowed
     */
     public Boolean getSupportRobokassa() {
         return this.supportRobokassa;
@@ -348,7 +348,7 @@ public class AccountInfoType implements Alignable {
     private Boolean supportBankCard;
 
     /**
-    * Bank card payments are allowed
+    * Whether Bank card payments are allowed
     */
     public Boolean getSupportBankCard() {
         return this.supportBankCard;
@@ -374,7 +374,7 @@ public class AccountInfoType implements Alignable {
     private Boolean supportInvoice;
 
     /**
-    * Bank invoices are allowed
+    * Whether Bank invoices are allowed
     */
     public Boolean getSupportInvoice() {
         return this.supportInvoice;
@@ -413,7 +413,7 @@ public class AccountInfoType implements Alignable {
     private Boolean withAccessEntries;
 
     /**
-    * Set true to get the admin user permissions
+    * Whether the admin user permissions are granted
     */
     public Boolean getWithAccessEntries() {
         return this.withAccessEntries;
@@ -460,7 +460,7 @@ public class AccountInfoType implements Alignable {
     private Boolean sendJsError;
 
     /**
-    * Sending email when a JS error occures
+    * Whether to send an email when a JS error occures
     */
     public Boolean getSendJsError() {
         return this.sendJsError;
@@ -486,7 +486,7 @@ public class AccountInfoType implements Alignable {
     private Boolean a2pSmsEnabled;
 
     /**
-    * One-way SMS activation flag
+    * Whether to activate one-way SMS
     */
     public Boolean getA2pSmsEnabled() {
         return this.a2pSmsEnabled;

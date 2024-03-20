@@ -19,7 +19,7 @@ public class DelApplicationRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by semicolon (;). Use the 'all'
+    * The application ID list separated by semicolons (;). Use the 'all'
     * value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
@@ -31,7 +31,7 @@ public class DelApplicationRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by semicolon (;). Use the 'all'
+    * The application ID list separated by semicolons (;). Use the 'all'
     * value to select all applications
     */
     public DelApplicationRequest setApplicationId(MultiArgument<Long> d) {
@@ -43,7 +43,7 @@ public class DelApplicationRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name list separated by semicolon (;). Can be used
+    * The application name list separated by semicolons (;). Can be used
     * instead of <b>application_id</b>
     */
     public MultiArgument<String> getApplicationName() {
@@ -55,7 +55,7 @@ public class DelApplicationRequest implements Alignable {
     }
 
     /**
-    * The application name list separated by semicolon (;). Can be used
+    * The application name list separated by semicolons (;). Can be used
     * instead of <b>application_id</b>
     */
     public DelApplicationRequest setApplicationName(MultiArgument<String> d) {

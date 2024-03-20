@@ -19,7 +19,7 @@ public class GetRecordStoragesRequest implements Alignable {
 
     @RequestField(name="record_storage_id")
     /**
-    * The record storage ID list separated by semicolon (;)
+    * The record storage ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getRecordStorageId() {
         return this.recordStorageId;
@@ -30,7 +30,7 @@ public class GetRecordStoragesRequest implements Alignable {
     }
 
     /**
-    * The record storage ID list separated by semicolon (;)
+    * The record storage ID list separated by semicolons (;)
     */
     public GetRecordStoragesRequest setRecordStorageId(MultiArgument<Long> d) {
         this.recordStorageId = d;
@@ -41,7 +41,7 @@ public class GetRecordStoragesRequest implements Alignable {
 
     @RequestField(name="record_storage_name")
     /**
-    * The record storage name list separated by semicolon (;)
+    * The record storage name list separated by semicolons (;)
     */
     public MultiArgument<String> getRecordStorageName() {
         return this.recordStorageName;
@@ -52,7 +52,7 @@ public class GetRecordStoragesRequest implements Alignable {
     }
 
     /**
-    * The record storage name list separated by semicolon (;)
+    * The record storage name list separated by semicolons (;)
     */
     public GetRecordStoragesRequest setRecordStorageName(MultiArgument<String> d) {
         this.recordStorageName = d;

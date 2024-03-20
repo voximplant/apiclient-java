@@ -19,7 +19,7 @@ public class ReorderRulesRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID list separated by semicolon (;)
+    * The rule ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getRuleId() {
         return this.ruleId;
@@ -30,7 +30,7 @@ public class ReorderRulesRequest implements Alignable {
     }
 
     /**
-    * The rule ID list separated by semicolon (;)
+    * The rule ID list separated by semicolons (;)
     */
     public ReorderRulesRequest setRuleId(MultiArgument<Long> d) {
         this.ruleId = d;

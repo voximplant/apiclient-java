@@ -41,7 +41,7 @@ public class BindDialogflowKeysRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by semicolon (;). Use the 'all'
+    * The application ID list separated by semicolons (;). Use the 'all'
     * value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
@@ -53,7 +53,7 @@ public class BindDialogflowKeysRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by semicolon (;). Use the 'all'
+    * The application ID list separated by semicolons (;). Use the 'all'
     * value to select all applications
     */
     public BindDialogflowKeysRequest setApplicationId(MultiArgument<Long> d) {

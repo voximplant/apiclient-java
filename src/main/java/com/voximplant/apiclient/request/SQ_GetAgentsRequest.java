@@ -65,7 +65,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * List of SmartQueue IDs separated by semicolon (;). Use 'all' to
+    * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
     * select all the queues
     */
     public MultiArgument<Long> getSqQueueId() {
@@ -77,7 +77,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * List of SmartQueue IDs separated by semicolon (;). Use 'all' to
+    * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
     * select all the queues
     */
     public SQ_GetAgentsRequest setSqQueueId(MultiArgument<Long> d) {
@@ -89,7 +89,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * List of SmartQueue names separated by semicolon (;). Can be used
+    * List of SmartQueue names separated by semicolons (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public MultiArgument<String> getSqQueueName() {
@@ -101,7 +101,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * List of SmartQueue names separated by semicolon (;). Can be used
+    * List of SmartQueue names separated by semicolons (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public SQ_GetAgentsRequest setSqQueueName(MultiArgument<String> d) {
@@ -187,7 +187,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * List of user IDs separated by semicolon (;)
+    * List of user IDs separated by semicolons (;)
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -198,7 +198,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * List of user IDs separated by semicolon (;)
+    * List of user IDs separated by semicolons (;)
     */
     public SQ_GetAgentsRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -209,8 +209,8 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * List of user names separated by semicolon (;). Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -221,8 +221,8 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * List of user names separated by semicolon (;). Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of <b>user_id</b>
     */
     public SQ_GetAgentsRequest setUserName(MultiArgument<String> d) {
         this.userName = d;

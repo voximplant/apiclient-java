@@ -113,8 +113,8 @@ public class GetACDQueueStatisticsRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
-    * to select all ACD queues
+    * The ACD queue ID list separated by semicolons (;). Use the 'all'
+    * value to select all ACD queues
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -125,8 +125,8 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
-    * to select all ACD queues
+    * The ACD queue ID list separated by semicolons (;). Use the 'all'
+    * value to select all ACD queues
     */
     public GetACDQueueStatisticsRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -137,10 +137,10 @@ public class GetACDQueueStatisticsRequest implements Alignable {
 
     @RequestField(name="report")
     /**
-    * List of item names abbreviations separated by semicolon (;). Returned
-    * JSON will include keys only for the selected items. Special 'all'
-    * value defines all possible items, see [ACDQueueStatisticsType] for a
-    * complete list. See 'abbreviation' description for complete
+    * List of item names abbreviations separated by semicolons (;).
+    * Returned JSON will include keys only for the selected items. Special
+    * 'all' value defines all possible items, see [ACDQueueStatisticsType]
+    * for a complete list. See 'abbreviation' description for complete
     * abbreviation list
     */
     public MultiArgument<String> getReport() {
@@ -152,10 +152,10 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     }
 
     /**
-    * List of item names abbreviations separated by semicolon (;). Returned
-    * JSON will include keys only for the selected items. Special 'all'
-    * value defines all possible items, see [ACDQueueStatisticsType] for a
-    * complete list. See 'abbreviation' description for complete
+    * List of item names abbreviations separated by semicolons (;).
+    * Returned JSON will include keys only for the selected items. Special
+    * 'all' value defines all possible items, see [ACDQueueStatisticsType]
+    * for a complete list. See 'abbreviation' description for complete
     * abbreviation list
     */
     public GetACDQueueStatisticsRequest setReport(MultiArgument<String> d) {

@@ -67,7 +67,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="acd_session_history_id")
     /**
-    * The ACD session history ID list separated by semicolon (;)
+    * The ACD session history ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getAcdSessionHistoryId() {
         return this.acdSessionHistoryId;
@@ -78,7 +78,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The ACD session history ID list separated by semicolon (;)
+    * The ACD session history ID list separated by semicolons (;)
     */
     public GetACDHistoryRequest setAcdSessionHistoryId(MultiArgument<Long> d) {
         this.acdSessionHistoryId = d;
@@ -89,7 +89,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="acd_request_id")
     /**
-    * The ACD request ID list separated by semicolon (;)
+    * The ACD request ID list separated by semicolons (;)
     */
     public MultiArgument<String> getAcdRequestId() {
         return this.acdRequestId;
@@ -100,7 +100,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The ACD request ID list separated by semicolon (;)
+    * The ACD request ID list separated by semicolons (;)
     */
     public GetACDHistoryRequest setAcdRequestId(MultiArgument<String> d) {
         this.acdRequestId = d;
@@ -111,7 +111,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list to filter separated by semicolon (;)
+    * The ACD queue ID list to filter separated by semicolons (;)
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -122,7 +122,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list to filter separated by semicolon (;)
+    * The ACD queue ID list to filter separated by semicolons (;)
     */
     public GetACDHistoryRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -133,7 +133,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list to filter separated by semicolon (;)
+    * The user ID list to filter separated by semicolons (;)
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -144,7 +144,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The user ID list to filter separated by semicolon (;)
+    * The user ID list to filter separated by semicolons (;)
     */
     public GetACDHistoryRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;

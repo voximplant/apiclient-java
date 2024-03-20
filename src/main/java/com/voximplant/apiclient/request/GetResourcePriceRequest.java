@@ -19,7 +19,7 @@ public class GetResourcePriceRequest implements Alignable {
 
     @RequestField(name="resource_type")
     /**
-    * The resource type list separated by semicolon (;). The possible
+    * The resource type list separated by semicolons (;). The possible
     * values are AUDIOHDCONFERENCE, AUDIOHDRECORD, AUDIORECORD, CALLLIST,
     * CALLSESSION, DIALOGFLOW, IM, PSTN_IN_ALASKA, PSTN_IN_GB,
     * PSTN_IN_GEOGRAPHIC, PSTN_IN_GEO_PH, PSTN_IN_RU, PSTN_IN_RU_TOLLFREE,
@@ -44,7 +44,7 @@ public class GetResourcePriceRequest implements Alignable {
     }
 
     /**
-    * The resource type list separated by semicolon (;). The possible
+    * The resource type list separated by semicolons (;). The possible
     * values are AUDIOHDCONFERENCE, AUDIOHDRECORD, AUDIORECORD, CALLLIST,
     * CALLSESSION, DIALOGFLOW, IM, PSTN_IN_ALASKA, PSTN_IN_GB,
     * PSTN_IN_GEOGRAPHIC, PSTN_IN_GEO_PH, PSTN_IN_RU, PSTN_IN_RU_TOLLFREE,
@@ -69,7 +69,7 @@ public class GetResourcePriceRequest implements Alignable {
 
     @RequestField(name="price_group_id")
     /**
-    * The price group ID list separated by semicolon (;)
+    * The price group ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getPriceGroupId() {
         return this.priceGroupId;
@@ -80,7 +80,7 @@ public class GetResourcePriceRequest implements Alignable {
     }
 
     /**
-    * The price group ID list separated by semicolon (;)
+    * The price group ID list separated by semicolons (;)
     */
     public GetResourcePriceRequest setPriceGroupId(MultiArgument<Long> d) {
         this.priceGroupId = d;
@@ -113,7 +113,7 @@ public class GetResourcePriceRequest implements Alignable {
 
     @RequestField(name="resource_param")
     /**
-    * The resource parameter list separated by semicolon (;). Example: a
+    * The resource parameter list separated by semicolons (;). Example: a
     * phone number list
     */
     public MultiArgument<String> getResourceParam() {
@@ -125,7 +125,7 @@ public class GetResourcePriceRequest implements Alignable {
     }
 
     /**
-    * The resource parameter list separated by semicolon (;). Example: a
+    * The resource parameter list separated by semicolons (;). Example: a
     * phone number list
     */
     public GetResourcePriceRequest setResourceParam(MultiArgument<String> d) {

@@ -19,7 +19,7 @@ public class DelRuleRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID list separated by semicolon (;). Use the 'all' value to
+    * The rule ID list separated by semicolons (;). Use the 'all' value to
     * select all rules
     */
     public MultiArgument<Long> getRuleId() {
@@ -31,7 +31,7 @@ public class DelRuleRequest implements Alignable {
     }
 
     /**
-    * The rule ID list separated by semicolon (;). Use the 'all' value to
+    * The rule ID list separated by semicolons (;). Use the 'all' value to
     * select all rules
     */
     public DelRuleRequest setRuleId(MultiArgument<Long> d) {
@@ -43,8 +43,8 @@ public class DelRuleRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name list separated by semicolon (;). Can be used instead of
-    * <b>rule_id</b>
+    * The rule name list separated by semicolons (;). Can be used instead
+    * of <b>rule_id</b>
     */
     public MultiArgument<String> getRuleName() {
         return this.ruleName;
@@ -55,8 +55,8 @@ public class DelRuleRequest implements Alignable {
     }
 
     /**
-    * The rule name list separated by semicolon (;). Can be used instead of
-    * <b>rule_id</b>
+    * The rule name list separated by semicolons (;). Can be used instead
+    * of <b>rule_id</b>
     */
     public DelRuleRequest setRuleName(MultiArgument<String> d) {
         this.ruleName = d;
@@ -67,7 +67,7 @@ public class DelRuleRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by semicolon (;). Use the 'all'
+    * The application ID list separated by semicolons (;). Use the 'all'
     * value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
@@ -79,7 +79,7 @@ public class DelRuleRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by semicolon (;). Use the 'all'
+    * The application ID list separated by semicolons (;). Use the 'all'
     * value to select all applications
     */
     public DelRuleRequest setApplicationId(MultiArgument<Long> d) {
@@ -91,7 +91,7 @@ public class DelRuleRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name list separated by semicolon (;). Can be used
+    * The application name list separated by semicolons (;). Can be used
     * instead of <b>application_id</b>
     */
     public MultiArgument<String> getApplicationName() {
@@ -103,7 +103,7 @@ public class DelRuleRequest implements Alignable {
     }
 
     /**
-    * The application name list separated by semicolon (;). Can be used
+    * The application name list separated by semicolons (;). Can be used
     * instead of <b>application_id</b>
     */
     public DelRuleRequest setApplicationName(MultiArgument<String> d) {

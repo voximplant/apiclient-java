@@ -19,7 +19,7 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * The user ID list separated by semicolons (;). Use the 'all' value to
     * select all users
     */
     public MultiArgument<Long> getUserId() {
@@ -31,7 +31,7 @@ public class TransferMoneyToUserRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * The user ID list separated by semicolons (;). Use the 'all' value to
     * select all users
     */
     public TransferMoneyToUserRequest setUserId(MultiArgument<Long> d) {
@@ -43,7 +43,7 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by semicolon (;) that can be used
+    * The user name list separated by semicolons (;) that can be used
     * instead of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
@@ -55,7 +55,7 @@ public class TransferMoneyToUserRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by semicolon (;) that can be used
+    * The user name list separated by semicolons (;) that can be used
     * instead of <b>user_id</b>
     */
     public TransferMoneyToUserRequest setUserName(MultiArgument<String> d) {

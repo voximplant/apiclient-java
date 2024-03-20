@@ -283,7 +283,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="acd_status")
     /**
-    * The ACD status list separated by semicolon (;) to filter. The
+    * The ACD status list separated by semicolons (;) to filter. The
     * following values are possible: OFFLINE, ONLINE, READY, BANNED,
     * IN_SERVICE, AFTER_SERVICE, TIMEOUT, DND
     */
@@ -296,7 +296,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The ACD status list separated by semicolon (;) to filter. The
+    * The ACD status list separated by semicolons (;) to filter. The
     * following values are possible: OFFLINE, ONLINE, READY, BANNED,
     * IN_SERVICE, AFTER_SERVICE, TIMEOUT, DND
     */

@@ -271,6 +271,34 @@ public class CreateCallListRequest implements Alignable {
         return this;
     }
 
+    private String serverLocation;
+
+    @RequestField(name="server_location")
+    /**
+    * Specifies the location of the server where the scenario needs to be
+    * executed. Has higher priority than `reference_ip`. Request
+    * [getServerLocations](https://api.voximplant.com/getServerLocations)
+    * for possible values
+    */
+    public String getServerLocation() {
+        return this.serverLocation;
+    }
+
+    public boolean hasServerLocation() {
+        return this.serverLocation != null;
+    }
+
+    /**
+    * Specifies the location of the server where the scenario needs to be
+    * executed. Has higher priority than `reference_ip`. Request
+    * [getServerLocations](https://api.voximplant.com/getServerLocations)
+    * for possible values
+    */
+    public CreateCallListRequest setServerLocation(String d) {
+        this.serverLocation = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -364,6 +392,14 @@ public class CreateCallListRequest implements Alignable {
             sb.append(aligned)
                 .append("\"referenceIp\": \"")
                 .append(referenceIp)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (serverLocation != null) {
+            sb.append(aligned)
+                .append("\"serverLocation\": \"")
+                .append(serverLocation)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

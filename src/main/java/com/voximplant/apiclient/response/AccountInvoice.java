@@ -13,7 +13,7 @@ import com.voximplant.apiclient.util.Alignable;
 /**
 * GetAccountInvoices function result.
 */
-public class AccountInvocie implements Alignable {
+public class AccountInvoice implements Alignable {
 
     private InvoicePeriod period;
 

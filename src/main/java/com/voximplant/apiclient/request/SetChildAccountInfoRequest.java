@@ -19,7 +19,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
+    * The child account ID list separated by semicolons (;). Use the 'all'
     * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
@@ -31,7 +31,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
+    * The child account ID list separated by semicolons (;). Use the 'all'
     * value to select all child accounts
     */
     public SetChildAccountInfoRequest setChildAccountId(MultiArgument<Long> d) {
@@ -43,7 +43,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="child_account_name")
     /**
-    * The child account name list separated by semicolon (;). Can be used
+    * The child account name list separated by semicolons (;). Can be used
     * instead of <b>child_account_id</b>
     */
     public MultiArgument<String> getChildAccountName() {
@@ -55,7 +55,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The child account name list separated by semicolon (;). Can be used
+    * The child account name list separated by semicolons (;). Can be used
     * instead of <b>child_account_id</b>
     */
     public SetChildAccountInfoRequest setChildAccountName(MultiArgument<String> d) {
@@ -67,7 +67,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="child_account_email")
     /**
-    * The child account email list separated by semicolon (;). Can be used
+    * The child account email list separated by semicolons (;). Can be used
     * instead of <b>child_account_id</b>
     */
     public MultiArgument<String> getChildAccountEmail() {
@@ -79,7 +79,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The child account email list separated by semicolon (;). Can be used
+    * The child account email list separated by semicolons (;). Can be used
     * instead of <b>child_account_id</b>
     */
     public SetChildAccountInfoRequest setChildAccountEmail(MultiArgument<String> d) {

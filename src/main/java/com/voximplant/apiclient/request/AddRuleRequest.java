@@ -151,7 +151,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID list separated by semicolon (;)
+    * The scenario ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -162,7 +162,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * The scenario ID list separated by semicolon (;)
+    * The scenario ID list separated by semicolons (;)
     */
     public AddRuleRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;
@@ -173,7 +173,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The scenario name list separated by semicolon (;). Can be used
+    * The scenario name list separated by semicolons (;). Can be used
     * instead of <b>scenario_id</b>
     */
     public MultiArgument<String> getScenarioName() {
@@ -185,7 +185,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * The scenario name list separated by semicolon (;). Can be used
+    * The scenario name list separated by semicolons (;). Can be used
     * instead of <b>scenario_id</b>
     */
     public AddRuleRequest setScenarioName(MultiArgument<String> d) {

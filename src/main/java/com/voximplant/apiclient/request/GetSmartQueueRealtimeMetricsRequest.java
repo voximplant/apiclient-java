@@ -65,7 +65,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list with a maximum of 5 values separated by semicolon
+    * The user ID list with a maximum of 5 values separated by semicolons
     * (;). Use the 'all' value to select all users. Can operate as a filter
     * for the **occupancy_rate**, **sum_agents_online_time**,
     * **sum_agents_ready_time**, **sum_agents_dialing_time**,
@@ -85,7 +85,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
     }
 
     /**
-    * The user ID list with a maximum of 5 values separated by semicolon
+    * The user ID list with a maximum of 5 values separated by semicolons
     * (;). Use the 'all' value to select all users. Can operate as a filter
     * for the **occupancy_rate**, **sum_agents_online_time**,
     * **sum_agents_ready_time**, **sum_agents_dialing_time**,
@@ -105,7 +105,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by semicolon (;). <b>user_name</b> can
+    * The user name list separated by semicolons (;). <b>user_name</b> can
     * be used instead of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
@@ -117,7 +117,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by semicolon (;). <b>user_name</b> can
+    * The user name list separated by semicolons (;). <b>user_name</b> can
     * be used instead of <b>user_id</b>
     */
     public GetSmartQueueRealtimeMetricsRequest setUserName(MultiArgument<String> d) {
@@ -130,7 +130,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
     @RequestField(name="sq_queue_id")
     /**
     * The SmartQueue ID list with a maximum of 5 values separated by
-    * semicolon (;). Can operate as filter for the
+    * semicolons (;). Can operate as filter for the
     * **calls_blocked_percentage**, **count_blocked_calls**,
     * **average_abandonment_rate**, **count_abandonment_calls**,
     * **service_level**, **occupancy_rate**, **min_time_in_queue**,
@@ -151,7 +151,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
 
     /**
     * The SmartQueue ID list with a maximum of 5 values separated by
-    * semicolon (;). Can operate as filter for the
+    * semicolons (;). Can operate as filter for the
     * **calls_blocked_percentage**, **count_blocked_calls**,
     * **average_abandonment_rate**, **count_abandonment_calls**,
     * **service_level**, **occupancy_rate**, **min_time_in_queue**,
@@ -171,7 +171,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * The SmartQueue name list separated by semicolon (;). Can be used
+    * The SmartQueue name list separated by semicolons (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public MultiArgument<String> getSqQueueName() {
@@ -183,7 +183,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
     }
 
     /**
-    * The SmartQueue name list separated by semicolon (;). Can be used
+    * The SmartQueue name list separated by semicolons (;). Can be used
     * instead of <b>sq_queue_id</b>
     */
     public GetSmartQueueRealtimeMetricsRequest setSqQueueName(MultiArgument<String> d) {

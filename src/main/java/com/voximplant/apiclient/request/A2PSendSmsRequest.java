@@ -43,8 +43,8 @@ public class A2PSendSmsRequest implements Alignable {
 
     @RequestField(name="dst_numbers")
     /**
-    * The destination phone numbers separated by semicolon (;). The maximum
-    * number of these phone numbers is 100
+    * The destination phone numbers separated by semicolons (;). The
+    * maximum number of these phone numbers is 100
     */
     public MultiArgument<String> getDstNumbers() {
         return this.dstNumbers;
@@ -55,8 +55,8 @@ public class A2PSendSmsRequest implements Alignable {
     }
 
     /**
-    * The destination phone numbers separated by semicolon (;). The maximum
-    * number of these phone numbers is 100
+    * The destination phone numbers separated by semicolons (;). The
+    * maximum number of these phone numbers is 100
     */
     public A2PSendSmsRequest setDstNumbers(MultiArgument<String> d) {
         this.dstNumbers = d;

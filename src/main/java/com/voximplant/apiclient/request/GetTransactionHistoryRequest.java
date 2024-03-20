@@ -93,7 +93,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="transaction_id")
     /**
-    * The transaction ID list separated by semicolon (;)
+    * The transaction ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getTransactionId() {
         return this.transactionId;
@@ -104,7 +104,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The transaction ID list separated by semicolon (;)
+    * The transaction ID list separated by semicolons (;)
     */
     public GetTransactionHistoryRequest setTransactionId(MultiArgument<Long> d) {
         this.transactionId = d;
@@ -137,15 +137,15 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="transaction_type")
     /**
-    * The transaction type list separated by semicolon (;). The following
-    * values are possible: resource_charge, money_distribution,
-    * subscription_charge, subscription_installation_charge,
-    * card_periodic_payment, card_overrun_payment, card_payment,
-    * rub_card_periodic_payment, rub_card_overrun_payment,
-    * rub_card_payment, robokassa_payment, gift, promo, adjustment,
-    * wire_transfer, us_wire_transfer, refund, discount, mgp_charge,
-    * mgp_startup, mgp_business, mgp_big_business, mgp_enterprise,
-    * mgp_large_enterprise, techsupport_charge, tax_charge,
+    * The transaction type list separated by semicolons (;). The following
+    * values are possible: gift_revoke, resource_charge,
+    * money_distribution, subscription_charge,
+    * subscription_installation_charge, card_periodic_payment,
+    * card_overrun_payment, card_payment, rub_card_periodic_payment,
+    * rub_card_overrun_payment, rub_card_payment, robokassa_payment, gift,
+    * promo, adjustment, wire_transfer, us_wire_transfer, refund, discount,
+    * mgp_charge, mgp_startup, mgp_business, mgp_big_business,
+    * mgp_enterprise, mgp_large_enterprise, techsupport_charge, tax_charge,
     * monthly_fee_charge, grace_credit_payment, grace_credit_provision,
     * mau_charge, mau_overrun, im_charge, im_overrun, fmc_charge,
     * sip_registration_charge, development_fee, money_transfer_to_child,
@@ -164,15 +164,15 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The transaction type list separated by semicolon (;). The following
-    * values are possible: resource_charge, money_distribution,
-    * subscription_charge, subscription_installation_charge,
-    * card_periodic_payment, card_overrun_payment, card_payment,
-    * rub_card_periodic_payment, rub_card_overrun_payment,
-    * rub_card_payment, robokassa_payment, gift, promo, adjustment,
-    * wire_transfer, us_wire_transfer, refund, discount, mgp_charge,
-    * mgp_startup, mgp_business, mgp_big_business, mgp_enterprise,
-    * mgp_large_enterprise, techsupport_charge, tax_charge,
+    * The transaction type list separated by semicolons (;). The following
+    * values are possible: gift_revoke, resource_charge,
+    * money_distribution, subscription_charge,
+    * subscription_installation_charge, card_periodic_payment,
+    * card_overrun_payment, card_payment, rub_card_periodic_payment,
+    * rub_card_overrun_payment, rub_card_payment, robokassa_payment, gift,
+    * promo, adjustment, wire_transfer, us_wire_transfer, refund, discount,
+    * mgp_charge, mgp_startup, mgp_business, mgp_big_business,
+    * mgp_enterprise, mgp_large_enterprise, techsupport_charge, tax_charge,
     * monthly_fee_charge, grace_credit_payment, grace_credit_provision,
     * mau_charge, mau_overrun, im_charge, im_overrun, fmc_charge,
     * sip_registration_charge, development_fee, money_transfer_to_child,
@@ -191,7 +191,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by semicolon (;)
+    * The user ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -202,7 +202,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by semicolon (;)
+    * The user ID list separated by semicolons (;)
     */
     public GetTransactionHistoryRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -213,7 +213,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
+    * The child account ID list separated by semicolons (;). Use the 'all'
     * value to select all child accounts
     */
     public MultiArgument<Long> getChildAccountId() {
@@ -225,7 +225,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
+    * The child account ID list separated by semicolons (;). Use the 'all'
     * value to select all child accounts
     */
     public GetTransactionHistoryRequest setChildAccountId(MultiArgument<Long> d) {

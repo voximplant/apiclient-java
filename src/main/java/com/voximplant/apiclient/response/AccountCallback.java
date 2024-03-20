@@ -334,7 +334,7 @@ public class AccountCallback implements Alignable {
 
     /**
     * Received when <b>send_js_error</b> is set to true and a JS error
-    * occures. See the 'send_js_error' parameter of the 'SetAccountInfo'
+    * occurs. See the 'send_js_error' parameter of the 'SetAccountInfo'
     * function
     */
     public JSFailCallback getJsFail() {

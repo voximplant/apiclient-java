@@ -85,7 +85,7 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * The user ID list separated by semicolons (;). Use the 'all' value to
     * specify all users bound to the application
     */
     public MultiArgument<Long> getUserId() {
@@ -97,7 +97,7 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * The user ID list separated by semicolons (;). Use the 'all' value to
     * specify all users bound to the application
     */
     public BindUserToQueueRequest setUserId(MultiArgument<Long> d) {
@@ -109,7 +109,7 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by semicolon (;). <b>user_name</b> can
+    * The user name list separated by semicolons (;). <b>user_name</b> can
     * be used instead of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
@@ -121,7 +121,7 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by semicolon (;). <b>user_name</b> can
+    * The user name list separated by semicolons (;). <b>user_name</b> can
     * be used instead of <b>user_id</b>
     */
     public BindUserToQueueRequest setUserName(MultiArgument<String> d) {
@@ -133,8 +133,8 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
-    * to specify all queues bound to the application
+    * The ACD queue ID list separated by semicolons (;). Use the 'all'
+    * value to specify all queues bound to the application
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -145,8 +145,8 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID list separated by semicolon (;). Use the 'all' value
-    * to specify all queues bound to the application
+    * The ACD queue ID list separated by semicolons (;). Use the 'all'
+    * value to specify all queues bound to the application
     */
     public BindUserToQueueRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -158,7 +158,7 @@ public class BindUserToQueueRequest implements Alignable {
     @RequestField(name="acd_queue_name")
     /**
     * The queue name that can be used instead of <b>acd_queue_id</b>. The
-    * queue name list separated by semicolon (;)
+    * queue name list separated by semicolons (;)
     */
     public MultiArgument<String> getAcdQueueName() {
         return this.acdQueueName;
@@ -170,7 +170,7 @@ public class BindUserToQueueRequest implements Alignable {
 
     /**
     * The queue name that can be used instead of <b>acd_queue_id</b>. The
-    * queue name list separated by semicolon (;)
+    * queue name list separated by semicolons (;)
     */
     public BindUserToQueueRequest setAcdQueueName(MultiArgument<String> d) {
         this.acdQueueName = d;

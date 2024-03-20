@@ -129,7 +129,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID list separated by semicolon (;) to filter. Can be
+    * The application ID list separated by semicolons (;) to filter. Can be
     * used instead of <b>application_name</b>
     */
     public MultiArgument<Long> getApplicationId() {
@@ -141,7 +141,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The application ID list separated by semicolon (;) to filter. Can be
+    * The application ID list separated by semicolons (;) to filter. Can be
     * used instead of <b>application_name</b>
     */
     public GetSipRegistrationsRequest setApplicationId(MultiArgument<Long> d) {
@@ -153,7 +153,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name list separated by semicolon (;) to filter. Can
+    * The application name list separated by semicolons (;) to filter. Can
     * be used instead of <b>application_id</b>
     */
     public MultiArgument<String> getApplicationName() {
@@ -165,7 +165,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The application name list separated by semicolon (;) to filter. Can
+    * The application name list separated by semicolons (;) to filter. Can
     * be used instead of <b>application_id</b>
     */
     public GetSipRegistrationsRequest setApplicationName(MultiArgument<String> d) {
@@ -199,7 +199,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID list separated by semicolon (;) to filter. Can be used
+    * The rule ID list separated by semicolons (;) to filter. Can be used
     * instead of <b>rule_name</b>
     */
     public MultiArgument<Long> getRuleId() {
@@ -211,7 +211,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The rule ID list separated by semicolon (;) to filter. Can be used
+    * The rule ID list separated by semicolons (;) to filter. Can be used
     * instead of <b>rule_name</b>
     */
     public GetSipRegistrationsRequest setRuleId(MultiArgument<Long> d) {
@@ -223,7 +223,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name list separated by semicolon (;) to filter. Can be used
+    * The rule name list separated by semicolons (;) to filter. Can be used
     * instead of <b>rule_id</b>
     */
     public MultiArgument<String> getRuleName() {
@@ -235,7 +235,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The rule name list separated by semicolon (;) to filter. Can be used
+    * The rule name list separated by semicolons (;) to filter. Can be used
     * instead of <b>rule_id</b>
     */
     public GetSipRegistrationsRequest setRuleName(MultiArgument<String> d) {
@@ -247,7 +247,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by semicolon (;) to filter. Can be used
+    * The user ID list separated by semicolons (;) to filter. Can be used
     * instead of <b>user_name</b>
     */
     public MultiArgument<Long> getUserId() {
@@ -259,7 +259,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by semicolon (;) to filter. Can be used
+    * The user ID list separated by semicolons (;) to filter. Can be used
     * instead of <b>user_name</b>
     */
     public GetSipRegistrationsRequest setUserId(MultiArgument<Long> d) {
@@ -271,7 +271,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by semicolon (;) to filter. Can be used
+    * The user name list separated by semicolons (;) to filter. Can be used
     * instead of <b>user_id</b>
     */
     public MultiArgument<String> getUserName() {
@@ -283,7 +283,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by semicolon (;) to filter. Can be used
+    * The user name list separated by semicolons (;) to filter. Can be used
     * instead of <b>user_id</b>
     */
     public GetSipRegistrationsRequest setUserName(MultiArgument<String> d) {

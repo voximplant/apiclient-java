@@ -110,7 +110,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private Boolean isChecked;
 
     /**
-    * true if balance&transactions are valid
+    * Whether the balance and transactions are valid
     */
     public Boolean getIsChecked() {
         return this.isChecked;

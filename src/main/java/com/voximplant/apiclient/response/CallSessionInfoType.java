@@ -168,7 +168,7 @@ public class CallSessionInfoType implements Alignable {
     private String finishReason;
 
     /**
-    * The finish reason. Possible values are __Normal termination__,
+    * Finish reason. Possible values are __Normal termination__,
     * __Insufficient funds__, __Internal error (billing timeout)__,
     * __Terminated administratively__, __JS session error__, __Timeout__
     */
@@ -183,7 +183,7 @@ public class CallSessionInfoType implements Alignable {
     private CallInfoType[] calls;
 
     /**
-    * The calls within JS session, including durations, cost, phone numbers
+    * Calls within the JS session, including durations, cost, phone numbers
     * and other information
     */
     public CallInfoType[] getCalls() {
@@ -197,7 +197,7 @@ public class CallSessionInfoType implements Alignable {
     private ResourceUsageType[] otherResourceUsage;
 
     /**
-    * The used resorces
+    * Used resources
     */
     public ResourceUsageType[] getOtherResourceUsage() {
         return this.otherResourceUsage;
@@ -210,7 +210,7 @@ public class CallSessionInfoType implements Alignable {
     private RecordType[] records;
 
     /**
-    * The bound records
+    * Bound records
     */
     public RecordType[] getRecords() {
         return this.records;
@@ -223,7 +223,7 @@ public class CallSessionInfoType implements Alignable {
     private String customData;
 
     /**
-    * The custom data
+    * Custom data
     */
     public String getCustomData() {
         return this.customData;

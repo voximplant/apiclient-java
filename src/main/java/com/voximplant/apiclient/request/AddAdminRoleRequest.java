@@ -65,7 +65,7 @@ public class AddAdminRoleRequest implements Alignable {
 
     @RequestField(name="like_admin_role_id")
     /**
-    * The admin role ID list separated by semicolon (;). Use the 'all'
+    * The admin role ID list separated by semicolons (;). Use the 'all'
     * value to select all admin roles. The list specifies the roles from
     * which the new role automatically copies all permissions
     * (allowed_entries and denied_entries)
@@ -79,7 +79,7 @@ public class AddAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The admin role ID list separated by semicolon (;). Use the 'all'
+    * The admin role ID list separated by semicolons (;). Use the 'all'
     * value to select all admin roles. The list specifies the roles from
     * which the new role automatically copies all permissions
     * (allowed_entries and denied_entries)
@@ -121,7 +121,7 @@ public class AddAdminRoleRequest implements Alignable {
 
     @RequestField(name="allowed_entries")
     /**
-    * The list of allowed access entries separated by semicolon (;) (the
+    * The list of allowed access entries separated by semicolons (;) (the
     * API function names)
     */
     public MultiArgument<String> getAllowedEntries() {
@@ -133,7 +133,7 @@ public class AddAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The list of allowed access entries separated by semicolon (;) (the
+    * The list of allowed access entries separated by semicolons (;) (the
     * API function names)
     */
     public AddAdminRoleRequest setAllowedEntries(MultiArgument<String> d) {
@@ -145,8 +145,8 @@ public class AddAdminRoleRequest implements Alignable {
 
     @RequestField(name="denied_entries")
     /**
-    * The list of denied access entries separated by semicolon (;) (the API
-    * function names)
+    * The list of denied access entries separated by semicolons (;) (the
+    * API function names)
     */
     public MultiArgument<String> getDeniedEntries() {
         return this.deniedEntries;
@@ -157,8 +157,8 @@ public class AddAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The list of denied access entries separated by semicolon (;) (the API
-    * function names)
+    * The list of denied access entries separated by semicolons (;) (the
+    * API function names)
     */
     public AddAdminRoleRequest setDeniedEntries(MultiArgument<String> d) {
         this.deniedEntries = d;

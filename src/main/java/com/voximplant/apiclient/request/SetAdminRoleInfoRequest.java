@@ -133,7 +133,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
 
     @RequestField(name="allowed_entries")
     /**
-    * The list of allowed access entry changes separated by semicolon (;)
+    * The list of allowed access entry changes separated by semicolons (;)
     * (the API function names)
     */
     public MultiArgument<String> getAllowedEntries() {
@@ -145,7 +145,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
     }
 
     /**
-    * The list of allowed access entry changes separated by semicolon (;)
+    * The list of allowed access entry changes separated by semicolons (;)
     * (the API function names)
     */
     public SetAdminRoleInfoRequest setAllowedEntries(MultiArgument<String> d) {
@@ -157,7 +157,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
 
     @RequestField(name="denied_entries")
     /**
-    * The list of denied access entry changes separated by semicolon (;)
+    * The list of denied access entry changes separated by semicolons (;)
     * (the API function names)
     */
     public MultiArgument<String> getDeniedEntries() {
@@ -169,7 +169,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
     }
 
     /**
-    * The list of denied access entry changes separated by semicolon (;)
+    * The list of denied access entry changes separated by semicolons (;)
     * (the API function names)
     */
     public SetAdminRoleInfoRequest setDeniedEntries(MultiArgument<String> d) {
@@ -181,7 +181,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
 
     @RequestField(name="like_admin_role_id")
     /**
-    * The admin role ID list separated by semicolon (;). Use the 'all'
+    * The admin role ID list separated by semicolons (;). Use the 'all'
     * value to select all admin roles. The list specifies the roles from
     * which the allowed_entries and denied_entries will be merged
     */
@@ -194,7 +194,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
     }
 
     /**
-    * The admin role ID list separated by semicolon (;). Use the 'all'
+    * The admin role ID list separated by semicolons (;). Use the 'all'
     * value to select all admin roles. The list specifies the roles from
     * which the allowed_entries and denied_entries will be merged
     */

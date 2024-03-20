@@ -71,7 +71,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
 
     @RequestField(name="acd_status")
     /**
-    * The ACD status list separated by semicolon (;). The following values
+    * The ACD status list separated by semicolons (;). The following values
     * are possible: OFFLINE, ONLINE, READY, BANNED, IN_SERVICE,
     * AFTER_SERVICE, TIMEOUT, DND
     */
@@ -84,7 +84,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     }
 
     /**
-    * The ACD status list separated by semicolon (;). The following values
+    * The ACD status list separated by semicolons (;). The following values
     * are possible: OFFLINE, ONLINE, READY, BANNED, IN_SERVICE,
     * AFTER_SERVICE, TIMEOUT, DND
     */
@@ -97,7 +97,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * The user ID list separated by semicolons (;). Use the 'all' value to
     * select all users
     */
     public MultiArgument<String> getUserId() {
@@ -109,7 +109,7 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by semicolon (;). Use the 'all' value to
+    * The user ID list separated by semicolons (;). Use the 'all' value to
     * select all users
     */
     public GetACDOperatorStatusStatisticsRequest setUserId(MultiArgument<String> d) {

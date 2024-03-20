@@ -71,7 +71,7 @@ public class ScenarioInfoType implements Alignable {
     private Boolean parent;
 
     /**
-    * 'True' if the scenario belongs to the parent account, 'false' if the
+    * Whether the scenario belongs to the parent account, 'false' if the
     * scenario belongs to the current account
     */
     public Boolean getParent() {

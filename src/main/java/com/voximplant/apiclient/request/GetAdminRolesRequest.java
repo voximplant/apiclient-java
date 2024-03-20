@@ -173,7 +173,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="included_admin_user_id")
     /**
-    * The attached admin user ID list separated by semicolon (;). Use the
+    * The attached admin user ID list separated by semicolons (;). Use the
     * 'all' value to select all admin users
     */
     public MultiArgument<Long> getIncludedAdminUserId() {
@@ -185,7 +185,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The attached admin user ID list separated by semicolon (;). Use the
+    * The attached admin user ID list separated by semicolons (;). Use the
     * 'all' value to select all admin users
     */
     public GetAdminRolesRequest setIncludedAdminUserId(MultiArgument<Long> d) {
@@ -197,7 +197,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="excluded_admin_user_id")
     /**
-    * Not attached admin user ID list separated by semicolon (;). Use the
+    * Not attached admin user ID list separated by semicolons (;). Use the
     * 'all' value to select all admin users
     */
     public MultiArgument<Long> getExcludedAdminUserId() {
@@ -209,7 +209,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Not attached admin user ID list separated by semicolon (;). Use the
+    * Not attached admin user ID list separated by semicolons (;). Use the
     * 'all' value to select all admin users
     */
     public GetAdminRolesRequest setExcludedAdminUserId(MultiArgument<Long> d) {

@@ -41,7 +41,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="history_type")
     /**
-    * The history report type list separated by semicolon (;). Use the
+    * The history report type list separated by semicolons (;). Use the
     * 'all' value to select all history report types. The following values
     * are possible: calls, calls_brief, transactions, audit, call_list
     */
@@ -54,7 +54,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * The history report type list separated by semicolon (;). Use the
+    * The history report type list separated by semicolons (;). Use the
     * 'all' value to select all history report types. The following values
     * are possible: calls, calls_brief, transactions, audit, call_list
     */
@@ -203,7 +203,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to filter. Can be a list separated by semicolon
+    * The application ID to filter. Can be a list separated by semicolons
     * (;). Use the 'all' value to select all applications
     */
     public MultiArgument<Long> getApplicationId() {
@@ -215,7 +215,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * The application ID to filter. Can be a list separated by semicolon
+    * The application ID to filter. Can be a list separated by semicolons
     * (;). Use the 'all' value to select all applications
     */
     public GetHistoryReportsRequest setApplicationId(MultiArgument<Long> d) {

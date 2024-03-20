@@ -31,7 +31,7 @@ public class ShortAccountInfoType implements Alignable {
     private Boolean frozen;
 
     /**
-    * Is account blocked by Voximplant admins or not
+    * Whether account is blocked by Voximplant admins or not
     */
     public Boolean getFrozen() {
         return this.frozen;

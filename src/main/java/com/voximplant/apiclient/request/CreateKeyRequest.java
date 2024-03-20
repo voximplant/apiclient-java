@@ -41,7 +41,7 @@ public class CreateKeyRequest implements Alignable {
 
     @RequestField(name="role_id")
     /**
-    * The role ID list separated by semicolon (;). Use it instead of
+    * The role ID list separated by semicolons (;). Use it instead of
     * **role_name**, but not combine with
     */
     public MultiArgument<Long> getRoleId() {
@@ -53,7 +53,7 @@ public class CreateKeyRequest implements Alignable {
     }
 
     /**
-    * The role ID list separated by semicolon (;). Use it instead of
+    * The role ID list separated by semicolons (;). Use it instead of
     * **role_name**, but not combine with
     */
     public CreateKeyRequest setRoleId(MultiArgument<Long> d) {
@@ -65,7 +65,7 @@ public class CreateKeyRequest implements Alignable {
 
     @RequestField(name="role_name")
     /**
-    * The role name list separated by semicolon (;). Use it instead of
+    * The role name list separated by semicolons (;). Use it instead of
     * **role_id**, but not combine with
     */
     public MultiArgument<String> getRoleName() {
@@ -77,7 +77,7 @@ public class CreateKeyRequest implements Alignable {
     }
 
     /**
-    * The role name list separated by semicolon (;). Use it instead of
+    * The role name list separated by semicolons (;). Use it instead of
     * **role_id**, but not combine with
     */
     public CreateKeyRequest setRoleName(MultiArgument<String> d) {

@@ -180,7 +180,7 @@ public class GetCallHistoryRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * To receive the call history for a specific users, pass the user ID
-    * list separated by semicolon (;). If it's specified, the output
+    * list separated by semicolons (;). If it's specified, the output
     * contains the calls from the listed users only
     */
     public MultiArgument<Long> getUserId() {
@@ -193,7 +193,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     /**
     * To receive the call history for a specific users, pass the user ID
-    * list separated by semicolon (;). If it's specified, the output
+    * list separated by semicolons (;). If it's specified, the output
     * contains the calls from the listed users only
     */
     public GetCallHistoryRequest setUserId(MultiArgument<Long> d) {
@@ -232,7 +232,7 @@ public class GetCallHistoryRequest implements Alignable {
     @RequestField(name="remote_number")
     /**
     * To receive a call history for a specific remote numbers, pass the
-    * number list separated by semicolon (;). A remote number is a number
+    * number list separated by semicolons (;). A remote number is a number
     * on the client side
     */
     public MultiArgument<String> getRemoteNumber() {
@@ -245,7 +245,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     /**
     * To receive a call history for a specific remote numbers, pass the
-    * number list separated by semicolon (;). A remote number is a number
+    * number list separated by semicolons (;). A remote number is a number
     * on the client side
     */
     public GetCallHistoryRequest setRemoteNumber(MultiArgument<String> d) {
@@ -258,8 +258,8 @@ public class GetCallHistoryRequest implements Alignable {
     @RequestField(name="local_number")
     /**
     * To receive a call history for a specific local numbers, pass the
-    * number list separated by semicolon (;). A local number is a number on
-    * the platform side
+    * number list separated by semicolons (;). A local number is a number
+    * on the platform side
     */
     public MultiArgument<String> getLocalNumber() {
         return this.localNumber;
@@ -271,8 +271,8 @@ public class GetCallHistoryRequest implements Alignable {
 
     /**
     * To receive a call history for a specific local numbers, pass the
-    * number list separated by semicolon (;). A local number is a number on
-    * the platform side
+    * number list separated by semicolons (;). A local number is a number
+    * on the platform side
     */
     public GetCallHistoryRequest setLocalNumber(MultiArgument<String> d) {
         this.localNumber = d;
@@ -377,8 +377,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="child_account_id")
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
-    * value to select all child accounts
+    * The child account ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getChildAccountId() {
         return this.childAccountId;
@@ -389,8 +388,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The child account ID list separated by semicolon (;). Use the 'all'
-    * value to select all child accounts
+    * The child account ID list separated by semicolons (;)
     */
     public GetCallHistoryRequest setChildAccountId(MultiArgument<Long> d) {
         this.childAccountId = d;

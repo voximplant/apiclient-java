@@ -12,7 +12,7 @@ import com.voximplant.apiclient.util.Alignable;
 
 /**
 * Received when when <b>send_js_error</b> is set to true and a JS error
-* occures. Received as part of the [AccountCallback] structure.
+* occurs. Received as part of the [AccountCallback] structure.
 */
 public class JSFailCallback implements Alignable {
 

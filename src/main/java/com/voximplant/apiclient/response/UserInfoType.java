@@ -57,7 +57,7 @@ public class UserInfoType implements Alignable {
     private Boolean userActive;
 
     /**
-    * The user active flag
+    * Whether the user is active
     */
     public Boolean getUserActive() {
         return this.userActive;
@@ -70,8 +70,8 @@ public class UserInfoType implements Alignable {
     private Boolean parentAccounting;
 
     /**
-    * 'True' if the user uses the parent account's money, 'false' if the
-    * user has a separate balance
+    * Whether the user uses the parent account's money, 'false' if the user
+    * has a separate balance
     */
     public Boolean getParentAccounting() {
         return this.parentAccounting;

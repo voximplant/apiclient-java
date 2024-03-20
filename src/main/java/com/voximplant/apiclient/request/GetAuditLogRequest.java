@@ -89,7 +89,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="audit_log_id")
     /**
-    * The audit history ID list separated by semicolon (;)
+    * The audit history ID list separated by semicolons (;)
     */
     public MultiArgument<Long> getAuditLogId() {
         return this.auditLogId;
@@ -100,7 +100,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The audit history ID list separated by semicolon (;)
+    * The audit history ID list separated by semicolons (;)
     */
     public GetAuditLogRequest setAuditLogId(MultiArgument<Long> d) {
         this.auditLogId = d;
@@ -133,7 +133,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="filtered_ip")
     /**
-    * The IP list separated by semicolon (;) to filter
+    * The IP list separated by semicolons (;) to filter
     */
     public MultiArgument<String> getFilteredIp() {
         return this.filteredIp;
@@ -144,7 +144,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The IP list separated by semicolon (;) to filter
+    * The IP list separated by semicolons (;) to filter
     */
     public GetAuditLogRequest setFilteredIp(MultiArgument<String> d) {
         this.filteredIp = d;
@@ -155,7 +155,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="filtered_cmd")
     /**
-    * The function list separated by semicolon (;) to filter
+    * The function list separated by semicolons (;) to filter
     */
     public MultiArgument<String> getFilteredCmd() {
         return this.filteredCmd;
@@ -166,7 +166,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The function list separated by semicolon (;) to filter
+    * The function list separated by semicolons (;) to filter
     */
     public GetAuditLogRequest setFilteredCmd(MultiArgument<String> d) {
         this.filteredCmd = d;

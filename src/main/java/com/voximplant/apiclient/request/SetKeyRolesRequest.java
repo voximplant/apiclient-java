@@ -41,7 +41,7 @@ public class SetKeyRolesRequest implements Alignable {
 
     @RequestField(name="role_id")
     /**
-    * The role id list separated by semicolon (;)
+    * The role id list separated by semicolons (;)
     */
     public MultiArgument<Long> getRoleId() {
         return this.roleId;
@@ -52,7 +52,7 @@ public class SetKeyRolesRequest implements Alignable {
     }
 
     /**
-    * The role id list separated by semicolon (;)
+    * The role id list separated by semicolons (;)
     */
     public SetKeyRolesRequest setRoleId(MultiArgument<Long> d) {
         this.roleId = d;
@@ -63,7 +63,7 @@ public class SetKeyRolesRequest implements Alignable {
 
     @RequestField(name="role_name")
     /**
-    * The role name list separated by semicolon (;)
+    * The role name list separated by semicolons (;)
     */
     public MultiArgument<String> getRoleName() {
         return this.roleName;
@@ -74,7 +74,7 @@ public class SetKeyRolesRequest implements Alignable {
     }
 
     /**
-    * The role name list separated by semicolon (;)
+    * The role name list separated by semicolons (;)
     */
     public SetKeyRolesRequest setRoleName(MultiArgument<String> d) {
         this.roleName = d;

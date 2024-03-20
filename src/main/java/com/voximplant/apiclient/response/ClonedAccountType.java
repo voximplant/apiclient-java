@@ -57,7 +57,7 @@ public class ClonedAccountType implements Alignable {
     private Boolean active;
 
     /**
-    * The account activation flag
+    * Whether the account is active
     */
     public Boolean getActive() {
         return this.active;
