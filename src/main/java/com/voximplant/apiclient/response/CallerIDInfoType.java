@@ -44,7 +44,7 @@ public class CallerIDInfoType implements Alignable {
     private Boolean active;
 
     /**
-    * The active flag
+    * Whether active
     */
     public Boolean getActive() {
         return this.active;

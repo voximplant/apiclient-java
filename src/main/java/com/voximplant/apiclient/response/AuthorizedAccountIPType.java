@@ -31,7 +31,7 @@ public class AuthorizedAccountIPType implements Alignable {
     private Boolean allowed;
 
     /**
-    * The allowed flag (true - whitelist, false - blacklist)
+    * Whether the IP is allowed (true - whitelist, false - blacklist)
     */
     public Boolean getAllowed() {
         return this.allowed;

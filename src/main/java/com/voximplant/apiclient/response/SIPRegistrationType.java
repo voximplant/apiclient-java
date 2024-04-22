@@ -83,7 +83,7 @@ public class SIPRegistrationType implements Alignable {
     private String outboundProxy;
 
     /**
-    * The outbound proxy
+    * The outgoing proxy
     */
     public String getOutboundProxy() {
         return this.outboundProxy;
@@ -96,7 +96,7 @@ public class SIPRegistrationType implements Alignable {
     private Boolean successful;
 
     /**
-    * The successful SIP registration
+    * Whether the SIP registration is successful
     */
     public Boolean getSuccessful() {
         return this.successful;
@@ -135,8 +135,8 @@ public class SIPRegistrationType implements Alignable {
     private Boolean deactivated;
 
     /**
-    * The subscription deactivation flag. The SIP registration is frozen if
-    * true
+    * Whether the subscription is deactivation. The SIP registration is
+    * frozen if true
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -190,8 +190,8 @@ public class SIPRegistrationType implements Alignable {
     private Boolean isPersistent;
 
     /**
-    * SIP registration is persistent. Set false to activate it only on the
-    * user login
+    * Whether the SIP registration is persistent. Set false to activate it
+    * only on the user login
     */
     public Boolean getIsPersistent() {
         return this.isPersistent;

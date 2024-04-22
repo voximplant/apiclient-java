@@ -57,7 +57,8 @@ public class PushCredentialContent implements Alignable {
     private Boolean isDevMode;
 
     /**
-    * The use in a Apple sandbox environment. Credentials for APPLE push
+    * Whether to use in a Apple sandbox environment. Credentials for APPLE
+    * push
     */
     public Boolean getIsDevMode() {
         return this.isDevMode;

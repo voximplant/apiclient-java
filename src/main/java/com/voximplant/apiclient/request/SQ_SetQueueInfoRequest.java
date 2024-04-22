@@ -158,8 +158,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     @RequestField(name="im_agent_selection")
     /**
     * Agent selection strategy for messages. Accepts one of the following
-    * values: "MOST_QUALIFIED", "LEAST_QUALIFIED", "MAX_WAITING_TIME".
-    * Equals to the **call_agent_selection** value by default
+    * values: "MOST_QUALIFIED", "LEAST_QUALIFIED", "MAX_WAITING_TIME". The
+    * default value is **call_agent_selection**
     */
     public String getImAgentSelection() {
         return this.imAgentSelection;
@@ -171,8 +171,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     /**
     * Agent selection strategy for messages. Accepts one of the following
-    * values: "MOST_QUALIFIED", "LEAST_QUALIFIED", "MAX_WAITING_TIME".
-    * Equals to the **call_agent_selection** value by default
+    * values: "MOST_QUALIFIED", "LEAST_QUALIFIED", "MAX_WAITING_TIME". The
+    * default value is **call_agent_selection**
     */
     public SQ_SetQueueInfoRequest setImAgentSelection(String d) {
         this.imAgentSelection = d;
@@ -208,8 +208,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     @RequestField(name="im_task_selection")
     /**
     * Strategy of prioritizing IM-type requests for service. Accepts one of
-    * the following values: "MAX_PRIORITY", "MAX_WAITING_TIME". Equals to
-    * the **call_task_selection** value by default
+    * the following values: "MAX_PRIORITY", "MAX_WAITING_TIME". The default
+    * value is **call_task_selection**
     */
     public String getImTaskSelection() {
         return this.imTaskSelection;
@@ -221,8 +221,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     /**
     * Strategy of prioritizing IM-type requests for service. Accepts one of
-    * the following values: "MAX_PRIORITY", "MAX_WAITING_TIME". Equals to
-    * the **call_task_selection** value by default
+    * the following values: "MAX_PRIORITY", "MAX_WAITING_TIME". The default
+    * value is **call_task_selection**
     */
     public SQ_SetQueueInfoRequest setImTaskSelection(String d) {
         this.imTaskSelection = d;

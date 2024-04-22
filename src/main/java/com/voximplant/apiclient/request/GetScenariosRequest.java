@@ -43,7 +43,7 @@ public class GetScenariosRequest implements Alignable {
     /**
     * The scenario name to filter. Can be used instead of
     * <b>scenario_id</b>. All scenarios containing this param in their
-    * names will be returned. The parameter is case insensitive
+    * names are returned. The parameter is case insensitive
     */
     public String getScenarioName() {
         return this.scenarioName;
@@ -56,7 +56,7 @@ public class GetScenariosRequest implements Alignable {
     /**
     * The scenario name to filter. Can be used instead of
     * <b>scenario_id</b>. All scenarios containing this param in their
-    * names will be returned. The parameter is case insensitive
+    * names are returned. The parameter is case insensitive
     */
     public GetScenariosRequest setScenarioName(String d) {
         this.scenarioName = d;
@@ -67,7 +67,7 @@ public class GetScenariosRequest implements Alignable {
 
     @RequestField(name="with_script")
     /**
-    * Set true to get the scenario text. You must specify the 'scenario_id'
+    * Whether to get the scenario text. You must specify the 'scenario_id'
     * too!
     */
     public Boolean getWithScript() {
@@ -79,7 +79,7 @@ public class GetScenariosRequest implements Alignable {
     }
 
     /**
-    * Set true to get the scenario text. You must specify the 'scenario_id'
+    * Whether to get the scenario text. You must specify the 'scenario_id'
     * too!
     */
     public GetScenariosRequest setWithScript(boolean d) {
@@ -113,7 +113,7 @@ public class GetScenariosRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -124,7 +124,7 @@ public class GetScenariosRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetScenariosRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

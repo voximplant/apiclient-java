@@ -177,7 +177,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="force_verification")
     /**
-    * The force verification flag
+    * Whether the force verification is enabled
     */
     public Boolean getForceVerification() {
         return this.forceVerification;
@@ -188,7 +188,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The force verification flag
+    * Whether the force verification is enabled
     */
     public AttachPhoneNumberRequest setForceVerification(boolean d) {
         this.forceVerification = Boolean.valueOf(d);

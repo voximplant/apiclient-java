@@ -58,7 +58,7 @@ public class SubscriptionsToChargeType implements Alignable {
     private Boolean subscriptionAutoCharge;
 
     /**
-    * The auto charge flag
+    * Whether the subscription charges automatically
     */
     public Boolean getSubscriptionAutoCharge() {
         return this.subscriptionAutoCharge;

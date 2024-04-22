@@ -19,7 +19,7 @@ public class MinBalanceCallback implements Alignable {
     private Boolean isMinCredit;
 
     /**
-    * True if the credit threshold exceeded. The credit threshold =
+    * Whether the credit threshold exceeded. The credit threshold =
     * credit_limit - min_balance_to_notify, wherein min_balance_to_notify >
     * 0
     */
@@ -34,7 +34,7 @@ public class MinBalanceCallback implements Alignable {
     private Boolean isRepeated;
 
     /**
-    * True if the callback is repeated
+    * Whether the callback is repeated
     */
     public Boolean getIsRepeated() {
         return this.isRepeated;

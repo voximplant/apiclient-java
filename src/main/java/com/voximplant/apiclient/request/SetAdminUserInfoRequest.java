@@ -131,7 +131,7 @@ public class SetAdminUserInfoRequest implements Alignable {
 
     @RequestField(name="admin_user_active")
     /**
-    * The admin user enable flag
+    * Whether the admin user is active
     */
     public Boolean getAdminUserActive() {
         return this.adminUserActive;
@@ -142,7 +142,7 @@ public class SetAdminUserInfoRequest implements Alignable {
     }
 
     /**
-    * The admin user enable flag
+    * Whether the admin user is active
     */
     public SetAdminUserInfoRequest setAdminUserActive(boolean d) {
         this.adminUserActive = Boolean.valueOf(d);

@@ -32,7 +32,7 @@ public class TransactionHistoryReportCallback implements Alignable {
     private Boolean success;
 
     /**
-    * Success flag
+    * Whether the request is successful
     */
     public Boolean getSuccess() {
         return this.success;

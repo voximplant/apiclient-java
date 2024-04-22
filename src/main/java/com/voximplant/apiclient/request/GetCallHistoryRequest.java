@@ -180,7 +180,7 @@ public class GetCallHistoryRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * To receive the call history for a specific users, pass the user ID
-    * list separated by semicolons (;). If it's specified, the output
+    * list separated by semicolons (;). If it is specified, the output
     * contains the calls from the listed users only
     */
     public MultiArgument<Long> getUserId() {
@@ -193,7 +193,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     /**
     * To receive the call history for a specific users, pass the user ID
-    * list separated by semicolons (;). If it's specified, the output
+    * list separated by semicolons (;). If it is specified, the output
     * contains the calls from the listed users only
     */
     public GetCallHistoryRequest setUserId(MultiArgument<Long> d) {
@@ -307,9 +307,8 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_calls")
     /**
-    * Specifies whether to receive a list of sessions with all calls within
-    * the sessions, including phone numbers, call cost and other
-    * information
+    * Whether to receive a list of sessions with all calls within the
+    * sessions, including phone numbers, call cost and other information
     */
     public Boolean getWithCalls() {
         return this.withCalls;
@@ -320,9 +319,8 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Specifies whether to receive a list of sessions with all calls within
-    * the sessions, including phone numbers, call cost and other
-    * information
+    * Whether to receive a list of sessions with all calls within the
+    * sessions, including phone numbers, call cost and other information
     */
     public GetCallHistoryRequest setWithCalls(boolean d) {
         this.withCalls = Boolean.valueOf(d);
@@ -333,7 +331,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_records")
     /**
-    * Specifies whether to get the calls' records
+    * Whether to get the calls' records
     */
     public Boolean getWithRecords() {
         return this.withRecords;
@@ -344,7 +342,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Specifies whether to get the calls' records
+    * Whether to get the calls' records
     */
     public GetCallHistoryRequest setWithRecords(boolean d) {
         this.withRecords = Boolean.valueOf(d);
@@ -355,7 +353,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_other_resources")
     /**
-    * Set true to get other resources usage (see [ResourceUsageType])
+    * Whether to get other resources usage (see [ResourceUsageType])
     */
     public Boolean getWithOtherResources() {
         return this.withOtherResources;
@@ -366,7 +364,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get other resources usage (see [ResourceUsageType])
+    * Whether to get other resources usage (see [ResourceUsageType])
     */
     public GetCallHistoryRequest setWithOtherResources(boolean d) {
         this.withOtherResources = Boolean.valueOf(d);
@@ -399,7 +397,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="children_calls_only")
     /**
-    * Set true to get the children account calls only
+    * Whether to get the children account calls only
     */
     public Boolean getChildrenCallsOnly() {
         return this.childrenCallsOnly;
@@ -410,7 +408,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the children account calls only
+    * Whether to get the children account calls only
     */
     public GetCallHistoryRequest setChildrenCallsOnly(boolean d) {
         this.childrenCallsOnly = Boolean.valueOf(d);
@@ -421,7 +419,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_header")
     /**
-    * Set false to get a CSV file without the column names if the output=csv
+    * Whether to get a CSV file with the column names if the output=csv
     */
     public Boolean getWithHeader() {
         return this.withHeader;
@@ -432,7 +430,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set false to get a CSV file without the column names if the output=csv
+    * Whether to get a CSV file with the column names if the output=csv
     */
     public GetCallHistoryRequest setWithHeader(boolean d) {
         this.withHeader = Boolean.valueOf(d);
@@ -443,7 +441,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -454,7 +452,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public GetCallHistoryRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -465,7 +463,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_total_count")
     /**
-    * Set false to omit the 'total_count' and increase performance
+    * Whether to include the 'total_count' and increase performance
     */
     public Boolean getWithTotalCount() {
         return this.withTotalCount;
@@ -476,7 +474,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the 'total_count' and increase performance
+    * Whether to include the 'total_count' and increase performance
     */
     public GetCallHistoryRequest setWithTotalCount(boolean d) {
         this.withTotalCount = Boolean.valueOf(d);
@@ -557,7 +555,7 @@ public class GetCallHistoryRequest implements Alignable {
 
     @RequestField(name="is_async")
     /**
-    * Set true to get records in the asynchronous mode (for csv output
+    * Whether to get records in the asynchronous mode (for csv output
     * only). <b>Use this mode to download large amounts of data</b>. See
     * the [GetHistoryReports], [DownloadHistoryReport] functions for
     * details
@@ -571,7 +569,7 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the asynchronous mode (for csv output
+    * Whether to get records in the asynchronous mode (for csv output
     * only). <b>Use this mode to download large amounts of data</b>. See
     * the [GetHistoryReports], [DownloadHistoryReport] functions for
     * details

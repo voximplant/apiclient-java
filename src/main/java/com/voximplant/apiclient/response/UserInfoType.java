@@ -57,7 +57,8 @@ public class UserInfoType implements Alignable {
     private Boolean userActive;
 
     /**
-    * Whether the user is active
+    * Whether the user is active. Inactive users cannot log in to
+    * applications
     */
     public Boolean getUserActive() {
         return this.userActive;
@@ -129,7 +130,8 @@ public class UserInfoType implements Alignable {
     private BigDecimal fixedBalance;
 
     /**
-    * The last committed balance which was approved by billing's transaction
+    * The last committed balance which has been approved by billing's
+    * transaction
     */
     public BigDecimal getFixedBalance() {
         return this.fixedBalance;

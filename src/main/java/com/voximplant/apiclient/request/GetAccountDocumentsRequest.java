@@ -19,7 +19,7 @@ public class GetAccountDocumentsRequest implements Alignable {
 
     @RequestField(name="with_details")
     /**
-    * Set true to view the uploaded document statuses. (The flag is ignored
+    * Whether to view the uploaded document statuses. (The flag is ignored
     * with the child_account_id=all)
     */
     public Boolean getWithDetails() {
@@ -31,7 +31,7 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * Set true to view the uploaded document statuses. (The flag is ignored
+    * Whether to view the uploaded document statuses. (The flag is ignored
     * with the child_account_id=all)
     */
     public GetAccountDocumentsRequest setWithDetails(boolean d) {
@@ -165,7 +165,7 @@ public class GetAccountDocumentsRequest implements Alignable {
 
     @RequestField(name="children_verifications_only")
     /**
-    * Set true to get the children account verifications only
+    * Whether to get the children account verifications only
     */
     public Boolean getChildrenVerificationsOnly() {
         return this.childrenVerificationsOnly;
@@ -176,7 +176,7 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * Set true to get the children account verifications only
+    * Whether to get the children account verifications only
     */
     public GetAccountDocumentsRequest setChildrenVerificationsOnly(boolean d) {
         this.childrenVerificationsOnly = Boolean.valueOf(d);

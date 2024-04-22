@@ -41,7 +41,8 @@ public class AddApplicationRequest implements Alignable {
 
     @RequestField(name="secure_record_storage")
     /**
-    * Enable secure storage for all logs and records of the application
+    * Whether to enable secure storage for all logs and records of the
+    * application
     */
     public Boolean getSecureRecordStorage() {
         return this.secureRecordStorage;
@@ -52,7 +53,8 @@ public class AddApplicationRequest implements Alignable {
     }
 
     /**
-    * Enable secure storage for all logs and records of the application
+    * Whether to enable secure storage for all logs and records of the
+    * application
     */
     public AddApplicationRequest setSecureRecordStorage(boolean d) {
         this.secureRecordStorage = Boolean.valueOf(d);

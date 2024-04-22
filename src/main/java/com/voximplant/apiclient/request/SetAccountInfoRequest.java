@@ -263,7 +263,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="account_notifications")
     /**
-    * Voximplant notifications are required
+    * Whether Voximplant notifications are required
     */
     public Boolean getAccountNotifications() {
         return this.accountNotifications;
@@ -274,7 +274,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Voximplant notifications are required
+    * Whether Voximplant notifications are required
     */
     public SetAccountInfoRequest setAccountNotifications(boolean d) {
         this.accountNotifications = Boolean.valueOf(d);
@@ -285,7 +285,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="tariff_changing_notifications")
     /**
-    * Set to true to receive the emails about the Voximplant plan changing
+    * Whether to receive the emails about the Voximplant plan changing
     */
     public Boolean getTariffChangingNotifications() {
         return this.tariffChangingNotifications;
@@ -296,7 +296,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about the Voximplant plan changing
+    * Whether to receive the emails about the Voximplant plan changing
     */
     public SetAccountInfoRequest setTariffChangingNotifications(boolean d) {
         this.tariffChangingNotifications = Boolean.valueOf(d);
@@ -307,7 +307,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="news_notifications")
     /**
-    * Set to true to receive the emails about the Voximplant news
+    * Whether to receive the emails about the Voximplant news
     */
     public Boolean getNewsNotifications() {
         return this.newsNotifications;
@@ -318,7 +318,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about the Voximplant news
+    * Whether to receive the emails about the Voximplant news
     */
     public SetAccountInfoRequest setNewsNotifications(boolean d) {
         this.newsNotifications = Boolean.valueOf(d);
@@ -329,7 +329,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="send_js_error")
     /**
-    * Set to true to receive the emails about a JS scenario error
+    * Whether to receive the emails about a JS scenario error
     */
     public Boolean getSendJsError() {
         return this.sendJsError;
@@ -340,7 +340,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about a JS scenario error
+    * Whether to receive the emails about a JS scenario error
     */
     public SetAccountInfoRequest setSendJsError(boolean d) {
         this.sendJsError = Boolean.valueOf(d);
@@ -508,7 +508,7 @@ public class SetAccountInfoRequest implements Alignable {
     @RequestField(name="billing_address_address")
     /**
     * The valid address that needs to be specified to pay for any services.
-    * It can't be deleted later, only changed
+    * You cannot delete it later, only change
     */
     public String getBillingAddressAddress() {
         return this.billingAddressAddress;
@@ -520,7 +520,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     /**
     * The valid address that needs to be specified to pay for any services.
-    * It can't be deleted later, only changed
+    * You cannot delete it later, only change
     */
     public SetAccountInfoRequest setBillingAddressAddress(String d) {
         this.billingAddressAddress = d;
@@ -597,10 +597,10 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="callback_url")
     /**
-    * If URL is specified, Voximplant cloud will make HTTP POST requests to
-    * it when something happens. For a full list of reasons see the
+    * If URL is specified, Voximplant cloud makes HTTP POST requests to it
+    * when something happens. For a full list of reasons see the
     * <b>type</b> field of the [AccountCallback] structure. The HTTP
-    * request will have a JSON-encoded body that conforms to the
+    * request has a JSON-encoded body that conforms to the
     * [AccountCallbacks] structure
     */
     public String getCallbackUrl() {
@@ -612,10 +612,10 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * If URL is specified, Voximplant cloud will make HTTP POST requests to
-    * it when something happens. For a full list of reasons see the
+    * If URL is specified, Voximplant cloud makes HTTP POST requests to it
+    * when something happens. For a full list of reasons see the
     * <b>type</b> field of the [AccountCallback] structure. The HTTP
-    * request will have a JSON-encoded body that conforms to the
+    * request has a JSON-encoded body that conforms to the
     * [AccountCallbacks] structure
     */
     public SetAccountInfoRequest setCallbackUrl(String d) {
@@ -628,10 +628,9 @@ public class SetAccountInfoRequest implements Alignable {
     @RequestField(name="callback_salt")
     /**
     * If salt string is specified, each HTTP request made by the Voximplant
-    * cloud toward the <b>callback_url</b> will have a <b>salt</b> field
-    * set to MD5 hash of account information and salt. That hash can be
-    * used be a developer to ensure that HTTP request is made by the
-    * Voximplant cloud
+    * cloud toward the <b>callback_url</b> has a <b>salt</b> field set to
+    * MD5 hash of account information and salt. That hash can be used be a
+    * developer to ensure that HTTP request is made by the Voximplant cloud
     */
     public String getCallbackSalt() {
         return this.callbackSalt;
@@ -643,10 +642,9 @@ public class SetAccountInfoRequest implements Alignable {
 
     /**
     * If salt string is specified, each HTTP request made by the Voximplant
-    * cloud toward the <b>callback_url</b> will have a <b>salt</b> field
-    * set to MD5 hash of account information and salt. That hash can be
-    * used be a developer to ensure that HTTP request is made by the
-    * Voximplant cloud
+    * cloud toward the <b>callback_url</b> has a <b>salt</b> field set to
+    * MD5 hash of account information and salt. That hash can be used be a
+    * developer to ensure that HTTP request is made by the Voximplant cloud
     */
     public SetAccountInfoRequest setCallbackSalt(String d) {
         this.callbackSalt = d;
@@ -657,7 +655,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="store_outbound_sms")
     /**
-    * Set to true to store outbound message texts. Default value is false
+    * Whether to store outgoing message texts. Default value is false
     */
     public Boolean getStoreOutboundSms() {
         return this.storeOutboundSms;
@@ -668,7 +666,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to store outbound message texts. Default value is false
+    * Whether to store outgoing message texts. Default value is false
     */
     public SetAccountInfoRequest setStoreOutboundSms(boolean d) {
         this.storeOutboundSms = Boolean.valueOf(d);
@@ -679,7 +677,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="store_inbound_sms")
     /**
-    * Set to true to store incoming message texts. Default value is false
+    * Whether to store incoming message texts. Default value is false
     */
     public Boolean getStoreInboundSms() {
         return this.storeInboundSms;
@@ -690,7 +688,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to store incoming message texts. Default value is false
+    * Whether to store incoming message texts. Default value is false
     */
     public SetAccountInfoRequest setStoreInboundSms(boolean d) {
         this.storeInboundSms = Boolean.valueOf(d);

@@ -65,7 +65,7 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="is_active")
     /**
-    * Find only active call lists
+    * Whether to find only active call lists
     */
     public Boolean getIsActive() {
         return this.isActive;
@@ -76,7 +76,7 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * Find only active call lists
+    * Whether to find only active call lists
     */
     public GetCallListsRequest setIsActive(boolean d) {
         this.isActive = Boolean.valueOf(d);
@@ -181,7 +181,7 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -192,7 +192,7 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetCallListsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

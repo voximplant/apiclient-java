@@ -98,7 +98,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean deactivated;
 
     /**
-    * The flag of the frozen subscription
+    * Whether the subscription is frozen
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -111,7 +111,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean canceled;
 
     /**
-    * The flag of the deleted subscription
+    * Whether the subscription is cancelled
     */
     public Boolean getCanceled() {
         return this.canceled;
@@ -124,7 +124,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean autoCharge;
 
     /**
-    * The auto_charge flag
+    * Whether to charge automatically
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -202,7 +202,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean requiredVerification;
 
     /**
-    * Verification is required for the account
+    * Whether the verification is required for the account
     */
     public Boolean getRequiredVerification() {
         return this.requiredVerification;
@@ -231,8 +231,8 @@ public class AttachedPhoneInfoType implements Alignable {
 
     /**
     * Unverified phone hold until the date in format: YYYY-MM-DD (if the
-    * account verification is required). The number will be detached on
-    * that day automatically!
+    * account verification is required). The number is detached on that day
+    * automatically!
     */
     public Date getUnverifiedHoldUntil() {
         return this.unverifiedHoldUntil;
@@ -245,7 +245,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean canBeUsed;
 
     /**
-    * Unverified account can use the phone
+    * Whether a not verified account can use the phone
     */
     public Boolean getCanBeUsed() {
         return this.canBeUsed;
@@ -258,13 +258,13 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean isSmsSupported;
 
     /**
-    * If <b>true</b>, SMS is supported for this phone number. SMS needs to
-    * be explicitly enabled via the [ControlSms] Management API before
-    * sending or receiving SMS. If SMS is supported and enabled, SMS can be
-    * sent from this phone number using the [SendSmsMessage] Management API
-    * and received using the [InboundSmsCallback] property of the HTTP
-    * callback. See <a href='/docs/guides/managementapi/callbacks'>this
-    * article</a> for HTTP callback details
+    * Whether SMS is supported for this phone number. SMS needs to be
+    * explicitly enabled via the [ControlSms] Management API before sending
+    * or receiving SMS. If SMS is supported and enabled, SMS can be sent
+    * from this phone number via the [SendSmsMessage] Management API and
+    * received via the [InboundSmsCallback] property of the HTTP callback.
+    * See <a href='/docs/guides/managementapi/callbacks'>this article</a>
+    * for HTTP callback details
     */
     public Boolean getIsSmsSupported() {
         return this.isSmsSupported;
@@ -277,8 +277,8 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean isSmsEnabled;
 
     /**
-    * If <b>true</b>, SMS sending and receiving is enabled for this phone
-    * number via the [ControlSms] Management API
+    * Whether SMS sending and receiving is enabled for this phone number
+    * via the [ControlSms] Management API
     */
     public Boolean getIsSmsEnabled() {
         return this.isSmsEnabled;
@@ -291,8 +291,8 @@ public class AttachedPhoneInfoType implements Alignable {
     private String incomingSmsCallbackUrl;
 
     /**
-    * If set, the callback of an incoming SMS will be sent to this url,
-    * otherwise, it will be sent to the general account URL
+    * If set, the callback of an incoming SMS is sent to this url,
+    * otherwise, it is sent to the general account URL
     */
     public String getIncomingSmsCallbackUrl() {
         return this.incomingSmsCallbackUrl;
@@ -305,8 +305,8 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean emergencyCallsToBeEnabled;
 
     /**
-    * If <b>true</b>, you need to make a request to enable calls to
-    * emergency numbers
+    * Whether you need to make a request to enable calls to emergency
+    * numbers
     */
     public Boolean getEmergencyCallsToBeEnabled() {
         return this.emergencyCallsToBeEnabled;
@@ -319,7 +319,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private Boolean emergencyCallsEnabled;
 
     /**
-    * If <b>true</b>, calls to emergency numbers are enabled
+    * Whether calls to emergency numbers are enabled
     */
     public Boolean getEmergencyCallsEnabled() {
         return this.emergencyCallsEnabled;

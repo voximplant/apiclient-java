@@ -138,7 +138,7 @@ public class SubscriptionTemplateType implements Alignable {
     private Boolean requiredVerification;
 
     /**
-    * Verification is required for the account
+    * Whether verification is required for the account
     */
     public Boolean getRequiredVerification() {
         return this.requiredVerification;

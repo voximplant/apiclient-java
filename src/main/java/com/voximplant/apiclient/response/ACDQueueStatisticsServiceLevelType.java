@@ -19,7 +19,7 @@ public class ACDQueueStatisticsServiceLevelType implements Alignable {
     private Long acceptableWaitingTime;
 
     /**
-    * Maximum time, is seconds, user was waiting operator for a given
+    * Maximum time, is seconds, user is waiting operator for a given
     * service level
     */
     public Long getAcceptableWaitingTime() {

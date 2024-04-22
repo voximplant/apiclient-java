@@ -41,7 +41,7 @@ public class AddAuthorizedAccountIPRequest implements Alignable {
 
     @RequestField(name="allowed")
     /**
-    * Set false to add the IP to the blacklist
+    * Whether to remove the IP from the blacklist
     */
     public Boolean getAllowed() {
         return this.allowed;
@@ -52,7 +52,7 @@ public class AddAuthorizedAccountIPRequest implements Alignable {
     }
 
     /**
-    * Set false to add the IP to the blacklist
+    * Whether to remove the IP from the blacklist
     */
     public AddAuthorizedAccountIPRequest setAllowed(boolean d) {
         this.allowed = Boolean.valueOf(d);

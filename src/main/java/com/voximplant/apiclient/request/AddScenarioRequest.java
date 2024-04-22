@@ -113,7 +113,7 @@ public class AddScenarioRequest implements Alignable {
 
     @RequestField(name="rewrite")
     /**
-    * Rewrite the existing scenario
+    * Whether to rewrite the existing scenario
     */
     public Boolean getRewrite() {
         return this.rewrite;
@@ -124,7 +124,7 @@ public class AddScenarioRequest implements Alignable {
     }
 
     /**
-    * Rewrite the existing scenario
+    * Whether to rewrite the existing scenario
     */
     public AddScenarioRequest setRewrite(boolean d) {
         this.rewrite = Boolean.valueOf(d);

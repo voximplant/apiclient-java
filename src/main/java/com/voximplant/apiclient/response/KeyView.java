@@ -67,6 +67,19 @@ public class KeyView implements Alignable {
         return this.subuser != null;
     }
 
+    private String keyName;
+
+    /**
+    * The key's name
+    */
+    public String getKeyName() {
+        return this.keyName;
+    }
+
+    public boolean hasKeyName() {
+        return this.keyName != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -102,6 +115,14 @@ public class KeyView implements Alignable {
             sb.append(aligned)
                 .append("\"SubUserView\": ")
                 .append(StringHelper.arrayToString(subuser, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (keyName != null) {
+            sb.append(aligned)
+                .append("\"keyName\": \"")
+                .append(keyName)
+                .append('"')
+                .append(',')
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

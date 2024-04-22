@@ -269,7 +269,7 @@ public class SQ_GetQueuesRequest implements Alignable {
 
     @RequestField(name="with_agentcount")
     /**
-    * Number of agents bound to the queue
+    * Whether to include the number of agents bound to the queue
     */
     public Boolean getWithAgentcount() {
         return this.withAgentcount;
@@ -280,7 +280,7 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Number of agents bound to the queue
+    * Whether to include the number of agents bound to the queue
     */
     public SQ_GetQueuesRequest setWithAgentcount(boolean d) {
         this.withAgentcount = Boolean.valueOf(d);

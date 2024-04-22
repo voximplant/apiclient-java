@@ -57,7 +57,7 @@ public class ContactInfoType implements Alignable {
     private Boolean isPersistent;
 
     /**
-    * The persistent flag
+    * Whether the contact is persistent
     */
     public Boolean getIsPersistent() {
         return this.isPersistent;

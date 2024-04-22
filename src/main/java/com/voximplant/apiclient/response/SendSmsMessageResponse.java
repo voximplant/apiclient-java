@@ -47,7 +47,7 @@ public class SendSmsMessageResponse implements Alignable {
     private Long fragmentsCount;
 
     /**
-    * The number of fragments the message was divided into
+    * The number of fragments the message is divided into
     */
     public Long getFragmentsCount() {
         return this.fragmentsCount;

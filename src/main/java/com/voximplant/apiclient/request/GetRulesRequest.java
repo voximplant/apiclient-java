@@ -107,7 +107,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="video_conference")
     /**
-    * The video conference flag to filter
+    * Whether it is a video conference to filter
     */
     public Boolean getVideoConference() {
         return this.videoConference;
@@ -118,7 +118,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The video conference flag to filter
+    * Whether it is a video conference to filter
     */
     public GetRulesRequest setVideoConference(boolean d) {
         this.videoConference = Boolean.valueOf(d);
@@ -151,7 +151,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="with_scenarios")
     /**
-    * Set true to get bound scenarios info
+    * Whether to get bound scenarios info
     */
     public Boolean getWithScenarios() {
         return this.withScenarios;
@@ -162,7 +162,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * Set true to get bound scenarios info
+    * Whether to get bound scenarios info
     */
     public GetRulesRequest setWithScenarios(boolean d) {
         this.withScenarios = Boolean.valueOf(d);
@@ -195,7 +195,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -206,7 +206,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetRulesRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

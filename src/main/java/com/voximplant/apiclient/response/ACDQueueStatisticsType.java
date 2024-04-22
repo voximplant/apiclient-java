@@ -19,7 +19,7 @@ public class ACDQueueStatisticsType implements Alignable {
     private Date date;
 
     /**
-    * If aggregation was enabled, contains UTC date for the results in 24-h
+    * If aggregation is enabled, contains UTC date for the results in 24-h
     * 'YYYY-MM-DD' format
     */
     public Date getDate() {
@@ -33,7 +33,7 @@ public class ACDQueueStatisticsType implements Alignable {
     private Long hour;
 
     /**
-    * If aggregation was enabled, contains the 60-minute interval number
+    * If aggregation is enabled, contains the 60-minute interval number
     * from 1 to 24
     */
     public Long getHour() {

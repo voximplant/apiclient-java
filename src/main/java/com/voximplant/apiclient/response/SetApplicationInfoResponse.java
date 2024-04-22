@@ -50,8 +50,7 @@ public class SetApplicationInfoResponse implements Alignable {
     private Boolean secureRecordStorage;
 
     /**
-    * This flag indicates whether a secure storage for logs and records is
-    * enabled or not
+    * Whether a secure storage for logs and records is enabled or not
     */
     public Boolean getSecureRecordStorage() {
         return this.secureRecordStorage;

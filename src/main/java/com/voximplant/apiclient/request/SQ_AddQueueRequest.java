@@ -112,8 +112,8 @@ public class SQ_AddQueueRequest implements Alignable {
     @RequestField(name="im_agent_selection")
     /**
     * Agent selection strategy for messages. Accepts one of the following
-    * values: "MOST_QUALIFIED", "LEAST_QUALIFIED", "MAX_WAITING_TIME".
-    * Equals to the **call_agent_selection** value by default
+    * values: "MOST_QUALIFIED", "LEAST_QUALIFIED", "MAX_WAITING_TIME". The
+    * default value is **call_agent_selection**
     */
     public String getImAgentSelection() {
         return this.imAgentSelection;
@@ -125,8 +125,8 @@ public class SQ_AddQueueRequest implements Alignable {
 
     /**
     * Agent selection strategy for messages. Accepts one of the following
-    * values: "MOST_QUALIFIED", "LEAST_QUALIFIED", "MAX_WAITING_TIME".
-    * Equals to the **call_agent_selection** value by default
+    * values: "MOST_QUALIFIED", "LEAST_QUALIFIED", "MAX_WAITING_TIME". The
+    * default value is **call_agent_selection**
     */
     public SQ_AddQueueRequest setImAgentSelection(String d) {
         this.imAgentSelection = d;
@@ -162,8 +162,8 @@ public class SQ_AddQueueRequest implements Alignable {
     @RequestField(name="im_task_selection")
     /**
     * IM type requests prioritizing strategy. Accepts one of the
-    * [SQTaskSelectionStrategies] enum values. Equals to the
-    * **call_task_selection** value by default
+    * [SQTaskSelectionStrategies] enum values. The default value is
+    * **call_task_selection**
     */
     public String getImTaskSelection() {
         return this.imTaskSelection;
@@ -175,8 +175,8 @@ public class SQ_AddQueueRequest implements Alignable {
 
     /**
     * IM type requests prioritizing strategy. Accepts one of the
-    * [SQTaskSelectionStrategies] enum values. Equals to the
-    * **call_task_selection** value by default
+    * [SQTaskSelectionStrategies] enum values. The default value is
+    * **call_task_selection**
     */
     public SQ_AddQueueRequest setImTaskSelection(String d) {
         this.imTaskSelection = d;

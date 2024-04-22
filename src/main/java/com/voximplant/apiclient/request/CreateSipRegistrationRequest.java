@@ -85,7 +85,7 @@ public class CreateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="outbound_proxy")
     /**
-    * The outbound SIP proxy
+    * The outgoing SIP proxy
     */
     public String getOutboundProxy() {
         return this.outboundProxy;
@@ -96,7 +96,7 @@ public class CreateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * The outbound SIP proxy
+    * The outgoing SIP proxy
     */
     public CreateSipRegistrationRequest setOutboundProxy(String d) {
         this.outboundProxy = d;
@@ -129,8 +129,8 @@ public class CreateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="is_persistent")
     /**
-    * SIP registration is persistent. Set false to activate it only on the
-    * user login
+    * Whether SIP registration is persistent. Set false to activate it only
+    * on the user login
     */
     public Boolean getIsPersistent() {
         return this.isPersistent;
@@ -141,8 +141,8 @@ public class CreateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * SIP registration is persistent. Set false to activate it only on the
-    * user login
+    * Whether SIP registration is persistent. Set false to activate it only
+    * on the user login
     */
     public CreateSipRegistrationRequest setIsPersistent(boolean d) {
         this.isPersistent = Boolean.valueOf(d);
@@ -153,8 +153,8 @@ public class CreateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID which a new SIP registration will be bound to. Can
-    * be used instead of the <b>application_name</b> parameter
+    * The application ID which a new SIP registration is to be bound to.
+    * Can be used instead of the <b>application_name</b> parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -165,8 +165,8 @@ public class CreateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * The application ID which a new SIP registration will be bound to. Can
-    * be used instead of the <b>application_name</b> parameter
+    * The application ID which a new SIP registration is to be bound to.
+    * Can be used instead of the <b>application_name</b> parameter
     */
     public CreateSipRegistrationRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -177,7 +177,7 @@ public class CreateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name which a new SIP registration will be bound to.
+    * The application name which a new SIP registration is to be bound to.
     * Can be used instead of the <b>application_id</b> parameter
     */
     public String getApplicationName() {
@@ -189,7 +189,7 @@ public class CreateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * The application name which a new SIP registration will be bound to.
+    * The application name which a new SIP registration is to be bound to.
     * Can be used instead of the <b>application_id</b> parameter
     */
     public CreateSipRegistrationRequest setApplicationName(String d) {
@@ -201,7 +201,7 @@ public class CreateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID which a new SIP registration will be bound to. Can be
+    * The rule ID which a new SIP registration is to be bound to. Can be
     * used instead of the <b>rule_name</b> parameter
     */
     public Long getRuleId() {
@@ -213,7 +213,7 @@ public class CreateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * The rule ID which a new SIP registration will be bound to. Can be
+    * The rule ID which a new SIP registration is to be bound to. Can be
     * used instead of the <b>rule_name</b> parameter
     */
     public CreateSipRegistrationRequest setRuleId(long d) {
@@ -225,7 +225,7 @@ public class CreateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name which a new SIP registration will be bound to. Can be
+    * The rule name which a new SIP registration is to be bound to. Can be
     * used instead of the <b>rule_id</b> parameter
     */
     public String getRuleName() {
@@ -237,7 +237,7 @@ public class CreateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * The rule name which a new SIP registration will be bound to. Can be
+    * The rule name which a new SIP registration is to be bound to. Can be
     * used instead of the <b>rule_id</b> parameter
     */
     public CreateSipRegistrationRequest setRuleName(String d) {
@@ -249,7 +249,7 @@ public class CreateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID which a new SIP registration will be bound to. Can be
+    * The user ID which a new SIP registration is to be bound to. Can be
     * used instead of the <b>user_name</b> parameter
     */
     public Long getUserId() {
@@ -261,7 +261,7 @@ public class CreateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * The user ID which a new SIP registration will be bound to. Can be
+    * The user ID which a new SIP registration is to be bound to. Can be
     * used instead of the <b>user_name</b> parameter
     */
     public CreateSipRegistrationRequest setUserId(long d) {
@@ -273,7 +273,7 @@ public class CreateSipRegistrationRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name which a new SIP registration will be bound to. Can be
+    * The user name which a new SIP registration is to be bound to. Can be
     * used instead of the <b>user_id</b> parameter
     */
     public String getUserName() {
@@ -285,7 +285,7 @@ public class CreateSipRegistrationRequest implements Alignable {
     }
 
     /**
-    * The user name which a new SIP registration will be bound to. Can be
+    * The user name which a new SIP registration is to be bound to. Can be
     * used instead of the <b>user_id</b> parameter
     */
     public CreateSipRegistrationRequest setUserName(String d) {

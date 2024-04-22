@@ -57,7 +57,7 @@ public class AdminUserType implements Alignable {
     private Boolean adminUserActive;
 
     /**
-    * Login is allowed
+    * Whether login is allowed
     */
     public Boolean getAdminUserActive() {
         return this.adminUserActive;

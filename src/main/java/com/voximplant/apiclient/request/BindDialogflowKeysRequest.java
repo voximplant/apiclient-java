@@ -65,7 +65,7 @@ public class BindDialogflowKeysRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Set to false to unbind. Default value is true
+    * Whether to bind or unbind (set true or false respectively)
     */
     public Boolean getBind() {
         return this.bind;
@@ -76,7 +76,7 @@ public class BindDialogflowKeysRequest implements Alignable {
     }
 
     /**
-    * Set to false to unbind. Default value is true
+    * Whether to bind or unbind (set true or false respectively)
     */
     public BindDialogflowKeysRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);

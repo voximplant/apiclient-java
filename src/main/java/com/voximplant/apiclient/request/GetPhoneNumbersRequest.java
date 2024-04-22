@@ -109,7 +109,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="is_bound_to_application")
     /**
-    * Is a phone bound to an application
+    * Whether the phone number bound to an application
     */
     public Boolean getIsBoundToApplication() {
         return this.isBoundToApplication;
@@ -120,7 +120,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Is a phone bound to an application
+    * Whether the phone number bound to an application
     */
     public GetPhoneNumbersRequest setIsBoundToApplication(boolean d) {
         this.isBoundToApplication = Boolean.valueOf(d);
@@ -197,7 +197,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="canceled")
     /**
-    * The flag of the canceled (deleted) subscription to filter
+    * Whether the subscription is cancelled to filter
     */
     public Boolean getCanceled() {
         return this.canceled;
@@ -208,7 +208,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The flag of the canceled (deleted) subscription to filter
+    * Whether the subscription is cancelled to filter
     */
     public GetPhoneNumbersRequest setCanceled(boolean d) {
         this.canceled = Boolean.valueOf(d);
@@ -219,7 +219,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="deactivated")
     /**
-    * The flag of the deactivated (frozen) subscription to filter
+    * Whether the subscription is frozen to filter
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -230,7 +230,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The flag of the deactivated (frozen) subscription to filter
+    * Whether the subscription is frozen to filter
     */
     public GetPhoneNumbersRequest setDeactivated(boolean d) {
         this.deactivated = Boolean.valueOf(d);
@@ -241,7 +241,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="auto_charge")
     /**
-    * The auto_charge flag to filter
+    * Whether the auto_charge flag is enabled
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -252,7 +252,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The auto_charge flag to filter
+    * Whether the auto_charge flag is enabled
     */
     public GetPhoneNumbersRequest setAutoCharge(boolean d) {
         this.autoCharge = Boolean.valueOf(d);
@@ -383,7 +383,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="children_phones_only")
     /**
-    * Set true to get the children phones only
+    * Whether to get the children phones only
     */
     public Boolean getChildrenPhonesOnly() {
         return this.childrenPhonesOnly;
@@ -394,7 +394,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the children phones only
+    * Whether to get the children phones only
     */
     public GetPhoneNumbersRequest setChildrenPhonesOnly(boolean d) {
         this.childrenPhonesOnly = Boolean.valueOf(d);
@@ -499,7 +499,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="can_be_used")
     /**
-    * Unverified account can use the phone
+    * Whether a not verified account can use the phone
     */
     public Boolean getCanBeUsed() {
         return this.canBeUsed;
@@ -510,7 +510,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Unverified account can use the phone
+    * Whether a not verified account can use the phone
     */
     public GetPhoneNumbersRequest setCanBeUsed(boolean d) {
         this.canBeUsed = Boolean.valueOf(d);
@@ -601,7 +601,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -612,7 +612,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetPhoneNumbersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -623,7 +623,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="sms_supported")
     /**
-    * The flag of the SMS support
+    * Whether the SMS support is enabled
     */
     public Boolean getSmsSupported() {
         return this.smsSupported;
@@ -634,7 +634,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The flag of the SMS support
+    * Whether the SMS support is enabled
     */
     public GetPhoneNumbersRequest setSmsSupported(boolean d) {
         this.smsSupported = Boolean.valueOf(d);
@@ -713,7 +713,7 @@ public class GetPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="is_bound_to_rule")
     /**
-    * Number is bound to some rule
+    * Whether the phone number is bound to some rule
     */
     public Boolean getIsBoundToRule() {
         return this.isBoundToRule;
@@ -724,7 +724,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Number is bound to some rule
+    * Whether the phone number is bound to some rule
     */
     public GetPhoneNumbersRequest setIsBoundToRule(boolean d) {
         this.isBoundToRule = Boolean.valueOf(d);

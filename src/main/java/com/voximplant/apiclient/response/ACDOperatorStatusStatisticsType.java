@@ -19,7 +19,7 @@ public class ACDOperatorStatusStatisticsType implements Alignable {
     private String userId;
 
     /**
-    * If aggregation was enabled, contains user ID  for the results
+    * If aggregation is enabled, contains user ID for the results
     */
     public String getUserId() {
         return this.userId;
@@ -33,8 +33,8 @@ public class ACDOperatorStatusStatisticsType implements Alignable {
     private Date date;
 
     /**
-    * If aggregation was enabled, contains UTC date  for the results in
-    * 24-h 'YYYY-MM-DD' format
+    * If aggregation is enabled, contains UTC date for the results in 24-h
+    * 'YYYY-MM-DD' format
     */
     public Date getDate() {
         return this.date;
@@ -47,7 +47,7 @@ public class ACDOperatorStatusStatisticsType implements Alignable {
     private Long hour;
 
     /**
-    * If aggregation was enabled, contains the  60-minute interval number
+    * If aggregation is enabled, contains the 60-minute interval number
     * from 1 to 24
     */
     public Long getHour() {

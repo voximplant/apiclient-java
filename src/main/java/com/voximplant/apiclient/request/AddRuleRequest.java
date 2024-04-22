@@ -129,7 +129,7 @@ public class AddRuleRequest implements Alignable {
 
     @RequestField(name="video_conference")
     /**
-    * Video conference is required
+    * Whether video conference is required
     */
     public Boolean getVideoConference() {
         return this.videoConference;
@@ -140,7 +140,7 @@ public class AddRuleRequest implements Alignable {
     }
 
     /**
-    * Video conference is required
+    * Whether video conference is required
     */
     public AddRuleRequest setVideoConference(boolean d) {
         this.videoConference = Boolean.valueOf(d);

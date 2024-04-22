@@ -47,7 +47,7 @@ public class AccountVerificationType implements Alignable {
 
     /**
     * Unverified subscriptions hold until the date in format: YYYY-MM-DD
-    * (if the account verification is required). Some subscriptions will be
+    * (if the account verification is required). Some subscriptions are
     * detached on that day automatically!
     */
     public Date getUnverifiedHoldUntil() {

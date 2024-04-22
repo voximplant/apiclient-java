@@ -115,7 +115,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="is_completed")
     /**
-    * Report is completed
+    * Whether the report is completed
     */
     public Boolean getIsCompleted() {
         return this.isCompleted;
@@ -126,7 +126,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * Report is completed
+    * Whether the report is completed
     */
     public GetHistoryReportsRequest setIsCompleted(boolean d) {
         this.isCompleted = Boolean.valueOf(d);
@@ -137,7 +137,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -148,7 +148,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public GetHistoryReportsRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -181,7 +181,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -192,7 +192,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetHistoryReportsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

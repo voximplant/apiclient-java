@@ -19,7 +19,7 @@ public class GetAccountInfoRequest implements Alignable {
 
     @RequestField(name="return_live_balance")
     /**
-    * Set true to get the account's live balance
+    * Whether to get the account's live balance
     */
     public Boolean getReturnLiveBalance() {
         return this.returnLiveBalance;
@@ -30,7 +30,7 @@ public class GetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set true to get the account's live balance
+    * Whether to get the account's live balance
     */
     public GetAccountInfoRequest setReturnLiveBalance(boolean d) {
         this.returnLiveBalance = Boolean.valueOf(d);

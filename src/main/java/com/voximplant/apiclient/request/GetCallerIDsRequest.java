@@ -63,7 +63,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     @RequestField(name="active")
     /**
-    * The active flag to filter
+    * Whether the account is active to filter
     */
     public Boolean getActive() {
         return this.active;
@@ -74,7 +74,7 @@ public class GetCallerIDsRequest implements Alignable {
     }
 
     /**
-    * The active flag to filter
+    * Whether the account is active to filter
     */
     public GetCallerIDsRequest setActive(boolean d) {
         this.active = Boolean.valueOf(d);
@@ -131,7 +131,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -142,7 +142,7 @@ public class GetCallerIDsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetCallerIDsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

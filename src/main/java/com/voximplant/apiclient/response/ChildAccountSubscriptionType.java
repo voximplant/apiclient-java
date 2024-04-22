@@ -58,7 +58,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private Boolean autoCharge;
 
     /**
-    * The subscription is prolonged automatically
+    * Whether the subscription is prolonged automatically
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -98,7 +98,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private Boolean active;
 
     /**
-    * The subscription is active
+    * Whether the subscription is active
     */
     public Boolean getActive() {
         return this.active;

@@ -44,7 +44,7 @@ public class RoleView implements Alignable {
     private Boolean inherited;
 
     /**
-    * Shows that the role is inherited
+    * Whether the role is inherited
     */
     public Boolean getInherited() {
         return this.inherited;
@@ -83,7 +83,7 @@ public class RoleView implements Alignable {
     private Boolean guiOnly;
 
     /**
-    * Shows that the role is gui only
+    * Whether the role is gui only
     */
     public Boolean getGuiOnly() {
         return this.guiOnly;

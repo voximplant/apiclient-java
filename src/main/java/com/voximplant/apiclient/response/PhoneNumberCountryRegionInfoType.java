@@ -84,7 +84,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private Boolean requiredVerification;
 
     /**
-    * Verification is required for the account
+    * Whether verification is required for the account
     */
     public Boolean getRequiredVerification() {
         return this.requiredVerification;
@@ -111,7 +111,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private Boolean isNeedRegulationAddress;
 
     /**
-    * The flag of the need proof of address
+    * Whether to need proof of address
     */
     public Boolean getIsNeedRegulationAddress() {
         return this.isNeedRegulationAddress;
@@ -138,11 +138,11 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private Boolean isSmsSupported;
 
     /**
-    * If <b>true</b>, SMS is supported for phone numbers in this region.
-    * SMS needs to be explicitly enabled for a phone number via the
-    * [ControlSms] Management API before sending or receiving SMS. If SMS
-    * is supported and enabled, SMS can be sent from a phone number using
-    * the [SendSmsMessage] Management API and received using the
+    * Whether SMS is supported for phone numbers in this region. SMS needs
+    * to be explicitly enabled for a phone number via the [ControlSms]
+    * Management API before sending or receiving SMS. If SMS is supported
+    * and enabled, SMS can be sent from a phone number via the
+    * [SendSmsMessage] Management API and received via the
     * [InboundSmsCallback] property of the HTTP callback. See <a
     * href='/docs/guides/managementapi/callbacks'>this article</a> for HTTP
     * callback details

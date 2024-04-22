@@ -85,8 +85,8 @@ public class SetAdminRoleInfoRequest implements Alignable {
 
     @RequestField(name="admin_role_active")
     /**
-    * The admin role enable flag. If false the allowed and denied entries
-    * have no affect
+    * Whether the admin role is enabled. If false the allowed and denied
+    * entries have no affect
     */
     public Boolean getAdminRoleActive() {
         return this.adminRoleActive;
@@ -97,8 +97,8 @@ public class SetAdminRoleInfoRequest implements Alignable {
     }
 
     /**
-    * The admin role enable flag. If false the allowed and denied entries
-    * have no affect
+    * Whether the admin role is enabled. If false the allowed and denied
+    * entries have no affect
     */
     public SetAdminRoleInfoRequest setAdminRoleActive(boolean d) {
         this.adminRoleActive = Boolean.valueOf(d);
@@ -183,7 +183,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
     /**
     * The admin role ID list separated by semicolons (;). Use the 'all'
     * value to select all admin roles. The list specifies the roles from
-    * which the allowed_entries and denied_entries will be merged
+    * which the allowed_entries and denied_entries are merged
     */
     public MultiArgument<Long> getLikeAdminRoleId() {
         return this.likeAdminRoleId;
@@ -196,7 +196,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
     /**
     * The admin role ID list separated by semicolons (;). Use the 'all'
     * value to select all admin roles. The list specifies the roles from
-    * which the allowed_entries and denied_entries will be merged
+    * which the allowed_entries and denied_entries are merged
     */
     public SetAdminRoleInfoRequest setLikeAdminRoleId(MultiArgument<Long> d) {
         this.likeAdminRoleId = d;
@@ -209,7 +209,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
     /**
     * The admin role name, can be used instead of
     * <b>like_admin_role_id</b>. The name specifies a role from which the
-    * allowed_entries and denied_entries will be merged
+    * allowed_entries and denied_entries are merged
     */
     public MultiArgument<String> getLikeAdminRoleName() {
         return this.likeAdminRoleName;
@@ -222,7 +222,7 @@ public class SetAdminRoleInfoRequest implements Alignable {
     /**
     * The admin role name, can be used instead of
     * <b>like_admin_role_id</b>. The name specifies a role from which the
-    * allowed_entries and denied_entries will be merged
+    * allowed_entries and denied_entries are merged
     */
     public SetAdminRoleInfoRequest setLikeAdminRoleName(MultiArgument<String> d) {
         this.likeAdminRoleName = d;

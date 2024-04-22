@@ -41,7 +41,7 @@ public class GetKeyRolesRequest implements Alignable {
 
     @RequestField(name="with_expanded_roles")
     /**
-    * Show the roles' additional properties
+    * Whether to show the roles' additional properties
     */
     public Boolean getWithExpandedRoles() {
         return this.withExpandedRoles;
@@ -52,7 +52,7 @@ public class GetKeyRolesRequest implements Alignable {
     }
 
     /**
-    * Show the roles' additional properties
+    * Whether to show the roles' additional properties
     */
     public GetKeyRolesRequest setWithExpandedRoles(boolean d) {
         this.withExpandedRoles = Boolean.valueOf(d);

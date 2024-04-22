@@ -41,7 +41,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
 
     @RequestField(name="allowed")
     /**
-    * The allowed flag to filter
+    * Whether the IP is allowed
     */
     public Boolean getAllowed() {
         return this.allowed;
@@ -52,7 +52,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
     }
 
     /**
-    * The allowed flag to filter
+    * Whether the IP is allowed
     */
     public GetAuthorizedAccountIPsRequest setAllowed(boolean d) {
         this.allowed = Boolean.valueOf(d);
@@ -109,7 +109,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -120,7 +120,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetAuthorizedAccountIPsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

@@ -97,7 +97,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="active")
     /**
-    * The active flag to filter
+    * Whether the filter is active
     */
     public Boolean getActive() {
         return this.active;
@@ -108,7 +108,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The active flag to filter
+    * Whether the filter is active
     */
     public GetChildrenAccountsRequest setActive(boolean d) {
         this.active = Boolean.valueOf(d);
@@ -119,7 +119,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="frozen")
     /**
-    * The frozen flag to filter
+    * Whether the filter is frozen
     */
     public Boolean getFrozen() {
         return this.frozen;
@@ -130,7 +130,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The frozen flag to filter
+    * Whether the filter is frozen
     */
     public GetChildrenAccountsRequest setFrozen(boolean d) {
         this.frozen = Boolean.valueOf(d);
@@ -141,7 +141,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="ignore_invalid_accounts")
     /**
-    * Set true to ignore the invalid 'child_account_id' items
+    * Whether to ignore the invalid 'child_account_id' items
     */
     public Boolean getIgnoreInvalidAccounts() {
         return this.ignoreInvalidAccounts;
@@ -152,7 +152,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * Set true to ignore the invalid 'child_account_id' items
+    * Whether to ignore the invalid 'child_account_id' items
     */
     public GetChildrenAccountsRequest setIgnoreInvalidAccounts(boolean d) {
         this.ignoreInvalidAccounts = Boolean.valueOf(d);
@@ -163,7 +163,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="brief_output")
     /**
-    * Set true to output the account_id only
+    * Whether to output the account_id only
     */
     public Boolean getBriefOutput() {
         return this.briefOutput;
@@ -174,7 +174,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * Set true to output the account_id only
+    * Whether to output the account_id only
     */
     public GetChildrenAccountsRequest setBriefOutput(boolean d) {
         this.briefOutput = Boolean.valueOf(d);
@@ -185,7 +185,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="medium_output")
     /**
-    * Set true to output the account_id, account_name, account_email only
+    * Whether to output the account_id, account_name, account_email only
     */
     public Boolean getMediumOutput() {
         return this.mediumOutput;
@@ -196,7 +196,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * Set true to output the account_id, account_name, account_email only
+    * Whether to output the account_id, account_name, account_email only
     */
     public GetChildrenAccountsRequest setMediumOutput(boolean d) {
         this.mediumOutput = Boolean.valueOf(d);
@@ -229,7 +229,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -240,7 +240,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetChildrenAccountsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -275,7 +275,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="return_live_balance")
     /**
-    * Set true to get the user live balance
+    * Whether to get the user live balance
     */
     public Boolean getReturnLiveBalance() {
         return this.returnLiveBalance;
@@ -286,7 +286,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * Set true to get the user live balance
+    * Whether to get the user live balance
     */
     public GetChildrenAccountsRequest setReturnLiveBalance(boolean d) {
         this.returnLiveBalance = Boolean.valueOf(d);

@@ -159,8 +159,8 @@ public class TransferMoneyToUserRequest implements Alignable {
 
     @RequestField(name="strict_mode")
     /**
-    * Returns error if strict_mode is true and a user or the account hasn't
-    * enough money
+    * Whether to enable the strict mode. Returns error if strict_mode is
+    * true and a user or the account does not have enough money
     */
     public Boolean getStrictMode() {
         return this.strictMode;
@@ -171,8 +171,8 @@ public class TransferMoneyToUserRequest implements Alignable {
     }
 
     /**
-    * Returns error if strict_mode is true and a user or the account hasn't
-    * enough money
+    * Whether to enable the strict mode. Returns error if strict_mode is
+    * true and a user or the account does not have enough money
     */
     public TransferMoneyToUserRequest setStrictMode(boolean d) {
         this.strictMode = Boolean.valueOf(d);

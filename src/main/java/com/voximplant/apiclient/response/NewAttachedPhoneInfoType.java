@@ -44,7 +44,7 @@ public class NewAttachedPhoneInfoType implements Alignable {
     private Boolean requiredVerification;
 
     /**
-    * Verification is required for the account
+    * Whether verification is required for the account
     */
     public Boolean getRequiredVerification() {
         return this.requiredVerification;
@@ -73,8 +73,8 @@ public class NewAttachedPhoneInfoType implements Alignable {
 
     /**
     * Unverified phone hold until the date in format: YYYY-MM-DD (if the
-    * account verification is required). The number will be detached on
-    * that day automatically!
+    * account verification is required). The number is detached on that day
+    * automatically!
     */
     public Date getUnverifiedHoldUntil() {
         return this.unverifiedHoldUntil;

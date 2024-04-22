@@ -237,7 +237,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="children_transactions_only")
     /**
-    * Set true to get the children account transactions only
+    * Whether to get the children account transactions only
     */
     public Boolean getChildrenTransactionsOnly() {
         return this.childrenTransactionsOnly;
@@ -248,7 +248,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the children account transactions only
+    * Whether to get the children account transactions only
     */
     public GetTransactionHistoryRequest setChildrenTransactionsOnly(boolean d) {
         this.childrenTransactionsOnly = Boolean.valueOf(d);
@@ -259,7 +259,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="users_transactions_only")
     /**
-    * Set true to get the users' transactions only
+    * Whether to get the users' transactions only
     */
     public Boolean getUsersTransactionsOnly() {
         return this.usersTransactionsOnly;
@@ -270,7 +270,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the users' transactions only
+    * Whether to get the users' transactions only
     */
     public GetTransactionHistoryRequest setUsersTransactionsOnly(boolean d) {
         this.usersTransactionsOnly = Boolean.valueOf(d);
@@ -281,7 +281,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -292,7 +292,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public GetTransactionHistoryRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -373,7 +373,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="is_async")
     /**
-    * Set true to get records in the asynchronous mode (for csv output
+    * Whether to get records in the asynchronous mode (for csv output
     * only). <b>Use this mode to download large amounts of data</b>. See
     * the [GetHistoryReports], [DownloadHistoryReport] functions for
     * details
@@ -387,7 +387,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the asynchronous mode (for csv output
+    * Whether to get records in the asynchronous mode (for csv output
     * only). <b>Use this mode to download large amounts of data</b>. See
     * the [GetHistoryReports], [DownloadHistoryReport] functions for
     * details
@@ -401,7 +401,7 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="is_uncommitted")
     /**
-    * Set true to get transactions on hold (transactions for which money is
+    * Whether to get transactions on hold (transactions for which money is
     * reserved but not yet withdrawn from the account)
     */
     public Boolean getIsUncommitted() {
@@ -413,7 +413,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get transactions on hold (transactions for which money is
+    * Whether to get transactions on hold (transactions for which money is
     * reserved but not yet withdrawn from the account)
     */
     public GetTransactionHistoryRequest setIsUncommitted(boolean d) {

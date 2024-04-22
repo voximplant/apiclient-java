@@ -44,7 +44,7 @@ public class ChargedPhoneType implements Alignable {
     private Boolean deactivated;
 
     /**
-    * Subscription is frozen
+    * Whether the subscription is frozen
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -57,7 +57,7 @@ public class ChargedPhoneType implements Alignable {
     private Boolean isCharged;
 
     /**
-    * Phone number has been charged
+    * Whether the phone number has been charged
     */
     public Boolean getIsCharged() {
         return this.isCharged;

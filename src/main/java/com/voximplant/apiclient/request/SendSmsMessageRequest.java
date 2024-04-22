@@ -89,7 +89,7 @@ public class SendSmsMessageRequest implements Alignable {
 
     @RequestField(name="store_body")
     /**
-    * Set to true to store outbound message texts. Default value is false
+    * Whether to store outgoing message texts. Default value is false
     */
     public Boolean getStoreBody() {
         return this.storeBody;
@@ -100,7 +100,7 @@ public class SendSmsMessageRequest implements Alignable {
     }
 
     /**
-    * Set to true to store outbound message texts. Default value is false
+    * Whether to store outgoing message texts. Default value is false
     */
     public SendSmsMessageRequest setStoreBody(boolean d) {
         this.storeBody = Boolean.valueOf(d);

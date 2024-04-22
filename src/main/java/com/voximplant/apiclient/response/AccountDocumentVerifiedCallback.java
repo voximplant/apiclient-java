@@ -60,7 +60,7 @@ public class AccountDocumentVerifiedCallback implements Alignable {
     private Boolean isIndividual;
 
     /**
-    * Account belongs to an individual
+    * Whether the account belongs to an individual
     */
     public Boolean getIsIndividual() {
         return this.isIndividual;

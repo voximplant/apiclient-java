@@ -281,7 +281,7 @@ public class GetBriefCallHistoryRequest implements Alignable {
 
     @RequestField(name="with_header")
     /**
-    * Set false to get a CSV file without the column names if the output=csv
+    * Whether to get a CSV file with the column names if the output=csv
     */
     public Boolean getWithHeader() {
         return this.withHeader;
@@ -292,7 +292,7 @@ public class GetBriefCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set false to get a CSV file without the column names if the output=csv
+    * Whether to get a CSV file with the column names if the output=csv
     */
     public GetBriefCallHistoryRequest setWithHeader(boolean d) {
         this.withHeader = Boolean.valueOf(d);
@@ -303,7 +303,7 @@ public class GetBriefCallHistoryRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -314,7 +314,7 @@ public class GetBriefCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public GetBriefCallHistoryRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -347,7 +347,7 @@ public class GetBriefCallHistoryRequest implements Alignable {
 
     @RequestField(name="is_async")
     /**
-    * Set true to get records in the asynchronous mode. <b>Use this mode to
+    * Whether to get records in the asynchronous mode. <b>Use this mode to
     * download large amounts of data</b>. See the [GetHistoryReports],
     * [DownloadHistoryReport] functions for details
     */
@@ -360,7 +360,7 @@ public class GetBriefCallHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the asynchronous mode. <b>Use this mode to
+    * Whether to get records in the asynchronous mode. <b>Use this mode to
     * download large amounts of data</b>. See the [GetHistoryReports],
     * [DownloadHistoryReport] functions for details
     */

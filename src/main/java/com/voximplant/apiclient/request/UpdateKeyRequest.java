@@ -59,6 +59,28 @@ public class UpdateKeyRequest implements Alignable {
         return this;
     }
 
+    private String keyName;
+
+    @RequestField(name="key_name")
+    /**
+    * The key's name, up to 50 characters. Cannot be empty
+    */
+    public String getKeyName() {
+        return this.keyName;
+    }
+
+    public boolean hasKeyName() {
+        return this.keyName != null;
+    }
+
+    /**
+    * The key's name, up to 50 characters. Cannot be empty
+    */
+    public UpdateKeyRequest setKeyName(String d) {
+        this.keyName = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -80,6 +102,14 @@ public class UpdateKeyRequest implements Alignable {
             sb.append(aligned)
                 .append("\"description\": \"")
                 .append(description)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (keyName != null) {
+            sb.append(aligned)
+                .append("\"keyName\": \"")
+                .append(keyName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -89,7 +89,7 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID which a new user will be bound to. Can be used
+    * The application ID which a new user is to be bound to. Can be used
     * instead of the <b>application_name</b> parameter
     */
     public Long getApplicationId() {
@@ -101,7 +101,7 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The application ID which a new user will be bound to. Can be used
+    * The application ID which a new user is to be bound to. Can be used
     * instead of the <b>application_name</b> parameter
     */
     public AddUserRequest setApplicationId(long d) {
@@ -113,7 +113,7 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name which a new user will be bound to. Can be used
+    * The application name which a new user is to be bound to. Can be used
     * instead of the <b>application_id</b> parameter
     */
     public String getApplicationName() {
@@ -125,7 +125,7 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The application name which a new user will be bound to. Can be used
+    * The application name which a new user is to be bound to. Can be used
     * instead of the <b>application_id</b> parameter
     */
     public AddUserRequest setApplicationName(String d) {
@@ -137,8 +137,8 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="parent_accounting")
     /**
-    * 'True' if the user will use the parent account's money, 'false' if
-    * the user will have a separate balance
+    * Whether the user uses the parent account's money, 'false' if the user
+    * has a separate balance
     */
     public Boolean getParentAccounting() {
         return this.parentAccounting;
@@ -149,8 +149,8 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * 'True' if the user will use the parent account's money, 'false' if
-    * the user will have a separate balance
+    * Whether the user uses the parent account's money, 'false' if the user
+    * has a separate balance
     */
     public AddUserRequest setParentAccounting(boolean d) {
         this.parentAccounting = Boolean.valueOf(d);
@@ -183,7 +183,8 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="user_active")
     /**
-    * The user enable flag
+    * Whether the user is active. Inactive users cannot log in to
+    * applications
     */
     public Boolean getUserActive() {
         return this.userActive;
@@ -194,7 +195,8 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The user enable flag
+    * Whether the user is active. Inactive users cannot log in to
+    * applications
     */
     public AddUserRequest setUserActive(boolean d) {
         this.userActive = Boolean.valueOf(d);

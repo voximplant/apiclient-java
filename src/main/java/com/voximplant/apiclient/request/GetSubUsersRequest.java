@@ -41,7 +41,7 @@ public class GetSubUsersRequest implements Alignable {
 
     @RequestField(name="with_roles")
     /**
-    * Show subuser's roles
+    * Whether to show subuser's roles
     */
     public Boolean getWithRoles() {
         return this.withRoles;
@@ -52,7 +52,7 @@ public class GetSubUsersRequest implements Alignable {
     }
 
     /**
-    * Show subuser's roles
+    * Whether to show subuser's roles
     */
     public GetSubUsersRequest setWithRoles(boolean d) {
         this.withRoles = Boolean.valueOf(d);
@@ -63,7 +63,7 @@ public class GetSubUsersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -74,7 +74,7 @@ public class GetSubUsersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetSubUsersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

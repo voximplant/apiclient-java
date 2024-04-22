@@ -19,7 +19,7 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID. It's specified in the <a
+    * The rule ID. It is specified in the <a
     * href='//manage.voximplant.com/applications'>Applications</a> section
     * of the Control Panel
     */
@@ -32,7 +32,7 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * The rule ID. It's specified in the <a
+    * The rule ID. It is specified in the <a
     * href='//manage.voximplant.com/applications'>Applications</a> section
     * of the Control Panel
     */
@@ -113,7 +113,7 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="name")
     /**
-    * File name, up to 255 characters and can't contain the '/' and '\'
+    * File name, up to 255 characters and cannot contain the '/' and '\'
     * symbols
     */
     public String getName() {
@@ -125,7 +125,7 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * File name, up to 255 characters and can't contain the '/' and '\'
+    * File name, up to 255 characters and cannot contain the '/' and '\'
     * symbols
     */
     public CreateCallListRequest setName(String d) {

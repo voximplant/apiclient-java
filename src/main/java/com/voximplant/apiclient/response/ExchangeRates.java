@@ -57,7 +57,7 @@ public class ExchangeRates implements Alignable {
     private BigDecimal USD;
 
     /**
-    * The USD exchange rate. It's always equal to 1
+    * The USD exchange rate. It is always equal to 1
     */
     public BigDecimal getUSD() {
         return this.USD;

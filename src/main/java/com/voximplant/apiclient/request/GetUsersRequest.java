@@ -195,7 +195,8 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="user_active")
     /**
-    * The user active flag to filter
+    * Whether the user is active to filter. Inactive users cannot log in to
+    * applications
     */
     public Boolean getUserActive() {
         return this.userActive;
@@ -206,7 +207,8 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The user active flag to filter
+    * Whether the user is active to filter. Inactive users cannot log in to
+    * applications
     */
     public GetUsersRequest setUserActive(boolean d) {
         this.userActive = Boolean.valueOf(d);
@@ -239,7 +241,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="with_skills")
     /**
-    * Set true to get the bound skills
+    * Whether to get the bound skills
     */
     public Boolean getWithSkills() {
         return this.withSkills;
@@ -250,7 +252,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound skills
+    * Whether to get the bound skills
     */
     public GetUsersRequest setWithSkills(boolean d) {
         this.withSkills = Boolean.valueOf(d);
@@ -261,7 +263,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="with_queues")
     /**
-    * Set true to get the bound queues
+    * Whether to get the bound queues
     */
     public Boolean getWithQueues() {
         return this.withQueues;
@@ -272,7 +274,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound queues
+    * Whether to get the bound queues
     */
     public GetUsersRequest setWithQueues(boolean d) {
         this.withQueues = Boolean.valueOf(d);
@@ -353,7 +355,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -364,7 +366,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetUsersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -399,7 +401,7 @@ public class GetUsersRequest implements Alignable {
 
     @RequestField(name="return_live_balance")
     /**
-    * Set true to get the user live balance
+    * Whether to get the user live balance
     */
     public Boolean getReturnLiveBalance() {
         return this.returnLiveBalance;
@@ -410,7 +412,7 @@ public class GetUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the user live balance
+    * Whether to get the user live balance
     */
     public GetUsersRequest setReturnLiveBalance(boolean d) {
         this.returnLiveBalance = Boolean.valueOf(d);

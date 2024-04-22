@@ -426,10 +426,10 @@ public class AccountInfoType implements Alignable {
     private String callbackUrl;
 
     /**
-    * If URL is specified, Voximplant cloud will make HTTP POST requests to
-    * it when something happens. For a full list of reasons see the
+    * If URL is specified, Voximplant cloud makes HTTP POST requests to it
+    * when something happens. For a full list of reasons see the
     * <b>type</b> field of the [AccountCallback] structure. The HTTP
-    * request will have a JSON-encoded body that conforms to the
+    * request has a JSON-encoded body that conforms to the
     * [AccountCallbacks] structure
     */
     public String getCallbackUrl() {
@@ -444,10 +444,9 @@ public class AccountInfoType implements Alignable {
 
     /**
     * If salt string is specified, each HTTP request made by the Voximplant
-    * cloud toward the <b>callback_url</b> will have a <b>salt</b> field
-    * set to MD5 hash of account information and salt. That hash can be
-    * used be a developer to ensure that HTTP request is made by the
-    * Voximplant cloud
+    * cloud toward the <b>callback_url</b> has a <b>salt</b> field set to
+    * MD5 hash of account information and salt. That hash can be used be a
+    * developer to ensure that HTTP request is made by the Voximplant cloud
     */
     public String getCallbackSalt() {
         return this.callbackSalt;

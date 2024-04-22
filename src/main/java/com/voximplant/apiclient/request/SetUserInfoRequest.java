@@ -179,8 +179,8 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="parent_accounting")
     /**
-    * Set 'true' to use the parent account's money, 'false' to use a
-    * separate user balance
+    * Whether to use the parent account's money, 'false' to use a separate
+    * user balance
     */
     public Boolean getParentAccounting() {
         return this.parentAccounting;
@@ -191,8 +191,8 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * Set 'true' to use the parent account's money, 'false' to use a
-    * separate user balance
+    * Whether to use the parent account's money, 'false' to use a separate
+    * user balance
     */
     public SetUserInfoRequest setParentAccounting(boolean d) {
         this.parentAccounting = Boolean.valueOf(d);
@@ -203,7 +203,8 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="user_active")
     /**
-    * The user enable flag
+    * Whether the user is active. Inactive users cannot log in to
+    * applications
     */
     public Boolean getUserActive() {
         return this.userActive;
@@ -214,7 +215,8 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The user enable flag
+    * Whether the user is active. Inactive users cannot log in to
+    * applications
     */
     public SetUserInfoRequest setUserActive(boolean d) {
         this.userActive = Boolean.valueOf(d);

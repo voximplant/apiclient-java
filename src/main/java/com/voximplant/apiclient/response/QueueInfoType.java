@@ -84,8 +84,8 @@ public class QueueInfoType implements Alignable {
     private Boolean autoBinding;
 
     /**
-    * Set false to disable the auto binding of operators to a queue by
-    * skills comparing
+    * Whether to enable the auto binding of operators to a queue by skills
+    * comparing
     */
     public Boolean getAutoBinding() {
         return this.autoBinding;

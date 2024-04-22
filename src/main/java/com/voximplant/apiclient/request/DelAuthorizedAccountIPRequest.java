@@ -67,7 +67,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
 
     @RequestField(name="allowed")
     /**
-    * Set true to remove the network from the white list. Set false to
+    * Whether to remove the network from the white list. Set false to
     * remove the network from the black list. Omit the parameter to remove
     * the network from all lists
     */
@@ -80,7 +80,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
     }
 
     /**
-    * Set true to remove the network from the white list. Set false to
+    * Whether to remove the network from the white list. Set false to
     * remove the network from the black list. Omit the parameter to remove
     * the network from all lists
     */

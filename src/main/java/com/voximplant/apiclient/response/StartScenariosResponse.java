@@ -39,7 +39,7 @@ public class StartScenariosResponse implements Alignable {
     /**
     * The URL to control a created media session. You can use it for
     * arbitrary tasks such as stopping scenario or passing additional data
-    * to it. Making HTTP request on this URL will result in the
+    * to it. Making HTTP request on this URL results in the
     * [AppEvents.HttpRequest](/docs/references/voxengine/appevents#httprequest)
     * VoxEngine event being triggered for scenario, with HTTP request data
     * passed to it
@@ -57,7 +57,7 @@ public class StartScenariosResponse implements Alignable {
     /**
     * The URL to control a created media session. You can use it for
     * arbitrary tasks such as stopping scenario or passing additional data
-    * to it. Making HTTPS request on this URL will result in the
+    * to it. Making HTTPS request on this URL results in the
     * [AppEvents.HttpRequest](/docs/references/voxengine/appevents#httprequest)
     * VoxEngine event being triggered for scenario, with HTTP request data
     * passed to it

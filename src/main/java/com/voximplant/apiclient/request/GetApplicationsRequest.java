@@ -63,7 +63,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="with_rules")
     /**
-    * Set true to get bound rules info
+    * Whether to get bound rules info
     */
     public Boolean getWithRules() {
         return this.withRules;
@@ -74,7 +74,7 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * Set true to get bound rules info
+    * Whether to get bound rules info
     */
     public GetApplicationsRequest setWithRules(boolean d) {
         this.withRules = Boolean.valueOf(d);
@@ -85,7 +85,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="with_scenarios")
     /**
-    * Set true to get bound rules and scenarios info
+    * Whether to get bound rules and scenarios info
     */
     public Boolean getWithScenarios() {
         return this.withScenarios;
@@ -96,7 +96,7 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * Set true to get bound rules and scenarios info
+    * Whether to get bound rules and scenarios info
     */
     public GetApplicationsRequest setWithScenarios(boolean d) {
         this.withScenarios = Boolean.valueOf(d);
@@ -129,7 +129,7 @@ public class GetApplicationsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -140,7 +140,7 @@ public class GetApplicationsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetApplicationsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

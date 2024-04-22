@@ -199,7 +199,7 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="is_dev_mode")
     /**
-    * Set true to use this certificate in apple's sandbox environment.
+    * Whether to use this certificate in apple's sandbox environment.
     * Credentials for APPLE push
     */
     public Boolean getIsDevMode() {
@@ -211,7 +211,7 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set true to use this certificate in apple's sandbox environment.
+    * Whether to use this certificate in apple's sandbox environment.
     * Credentials for APPLE push
     */
     public AddPushCredentialRequest setIsDevMode(boolean d) {

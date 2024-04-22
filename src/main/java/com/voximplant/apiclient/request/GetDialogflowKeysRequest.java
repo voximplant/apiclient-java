@@ -85,7 +85,7 @@ public class GetDialogflowKeysRequest implements Alignable {
 
     @RequestField(name="with_secret_info")
     /**
-    * Set true to get the json web key
+    * Whether to get the json web key
     */
     public Boolean getWithSecretInfo() {
         return this.withSecretInfo;
@@ -96,7 +96,7 @@ public class GetDialogflowKeysRequest implements Alignable {
     }
 
     /**
-    * Set true to get the json web key
+    * Whether to get the json web key
     */
     public GetDialogflowKeysRequest setWithSecretInfo(boolean d) {
         this.withSecretInfo = Boolean.valueOf(d);

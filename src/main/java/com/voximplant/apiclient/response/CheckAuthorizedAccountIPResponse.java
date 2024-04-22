@@ -24,7 +24,7 @@ public class CheckAuthorizedAccountIPResponse implements Alignable {
     private Boolean result;
 
     /**
-    * True if IP is allowed
+    * Whether the IP is allowed
     */
     public Boolean getResult() {
         return this.result;

@@ -19,7 +19,7 @@ public class BindUserToQueueRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Bind or unbind users
+    * Whether to bind or unbind users
     */
     public Boolean getBind() {
         return this.bind;
@@ -30,7 +30,7 @@ public class BindUserToQueueRequest implements Alignable {
     }
 
     /**
-    * Bind or unbind users
+    * Whether to bind or unbind users
     */
     public BindUserToQueueRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);

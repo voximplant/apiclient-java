@@ -151,12 +151,12 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
 
     @RequestField(name="group")
     /**
-    * If set to 'user', first-level array in the resulting JSON will group
-    * records by the user ID, and second-level array will group them by
-    * date according to the 'aggregation' parameter. If set to
-    * 'aggregation', first-level array in the resulting JSON will group
-    * records according to the 'aggregation' parameter, and second-level
-    * array will group them by the user ID
+    * If set to 'user', first-level array in the resulting JSON groups
+    * records by the user ID, and second-level array groups them by date
+    * according to the 'aggregation' parameter. If set to 'aggregation',
+    * first-level array in the resulting JSON groups records according to
+    * the 'aggregation' parameter, and second-level array groups them by
+    * the user ID
     */
     public String getGroup() {
         return this.group;
@@ -167,12 +167,12 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     }
 
     /**
-    * If set to 'user', first-level array in the resulting JSON will group
-    * records by the user ID, and second-level array will group them by
-    * date according to the 'aggregation' parameter. If set to
-    * 'aggregation', first-level array in the resulting JSON will group
-    * records according to the 'aggregation' parameter, and second-level
-    * array will group them by the user ID
+    * If set to 'user', first-level array in the resulting JSON groups
+    * records by the user ID, and second-level array groups them by date
+    * according to the 'aggregation' parameter. If set to 'aggregation',
+    * first-level array in the resulting JSON groups records according to
+    * the 'aggregation' parameter, and second-level array groups them by
+    * the user ID
     */
     public GetACDOperatorStatusStatisticsRequest setGroup(String d) {
         this.group = d;

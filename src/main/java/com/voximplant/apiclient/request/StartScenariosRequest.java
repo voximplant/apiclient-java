@@ -215,7 +215,7 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="with_check_url")
     /**
-    * Set true to get media server session lists url
+    * Whether to get media server session lists url
     */
     public Boolean getWithCheckUrl() {
         return this.withCheckUrl;
@@ -226,7 +226,7 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * Set true to get media server session lists url
+    * Whether to get media server session lists url
     */
     public StartScenariosRequest setWithCheckUrl(boolean d) {
         this.withCheckUrl = Boolean.valueOf(d);

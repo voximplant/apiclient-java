@@ -107,7 +107,7 @@ public class GetRegionsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -118,7 +118,7 @@ public class GetRegionsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetRegionsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

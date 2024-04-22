@@ -19,7 +19,7 @@ public class A2PSendSmsRequest implements Alignable {
 
     @RequestField(name="src_number")
     /**
-    * The SenderID for outbound SMS. Please contact support for installing
+    * The SenderID for outgoing SMS. Please contact support for installing
     * a SenderID
     */
     public String getSrcNumber() {
@@ -31,7 +31,7 @@ public class A2PSendSmsRequest implements Alignable {
     }
 
     /**
-    * The SenderID for outbound SMS. Please contact support for installing
+    * The SenderID for outgoing SMS. Please contact support for installing
     * a SenderID
     */
     public A2PSendSmsRequest setSrcNumber(String d) {
@@ -93,7 +93,7 @@ public class A2PSendSmsRequest implements Alignable {
 
     @RequestField(name="store_body")
     /**
-    * Set to true to store outbound message texts. Default value is false
+    * Whether to store outgoing message texts. Default value is false
     */
     public Boolean getStoreBody() {
         return this.storeBody;
@@ -104,7 +104,7 @@ public class A2PSendSmsRequest implements Alignable {
     }
 
     /**
-    * Set to true to store outbound message texts. Default value is false
+    * Whether to store outgoing message texts. Default value is false
     */
     public A2PSendSmsRequest setStoreBody(boolean d) {
         this.storeBody = Boolean.valueOf(d);

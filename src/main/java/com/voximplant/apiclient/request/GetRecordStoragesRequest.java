@@ -63,7 +63,7 @@ public class GetRecordStoragesRequest implements Alignable {
 
     @RequestField(name="with_private")
     /**
-    * Set true to get the private record storages. If set to true, there is
+    * Whether to get the private record storages. If set to true, there is
     * the __is_public : bool__ parameter in a response
     */
     public Boolean getWithPrivate() {
@@ -75,7 +75,7 @@ public class GetRecordStoragesRequest implements Alignable {
     }
 
     /**
-    * Set true to get the private record storages. If set to true, there is
+    * Whether to get the private record storages. If set to true, there is
     * the __is_public : bool__ parameter in a response
     */
     public GetRecordStoragesRequest setWithPrivate(boolean d) {

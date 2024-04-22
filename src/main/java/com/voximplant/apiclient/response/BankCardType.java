@@ -31,7 +31,7 @@ public class BankCardType implements Alignable {
     private Boolean autoCharge;
 
     /**
-    * The auto_charge flag
+    * Whether the auto_charge is enabled
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;

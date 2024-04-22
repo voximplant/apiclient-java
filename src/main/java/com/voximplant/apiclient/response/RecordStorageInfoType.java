@@ -44,7 +44,7 @@ public class RecordStorageInfoType implements Alignable {
     private Boolean isPublic;
 
     /**
-    * The public flag (The admin permission required)
+    * Whether the storage is public (The admin permission required)
     */
     public Boolean getIsPublic() {
         return this.isPublic;

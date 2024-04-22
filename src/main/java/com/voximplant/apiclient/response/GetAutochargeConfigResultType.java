@@ -18,7 +18,7 @@ public class GetAutochargeConfigResultType implements Alignable {
     private Boolean autoCharge;
 
     /**
-    * Is auto charge enabled or not
+    * Whether auto charge enabled or not
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;

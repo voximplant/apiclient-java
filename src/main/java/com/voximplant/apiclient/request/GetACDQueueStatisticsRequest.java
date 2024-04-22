@@ -71,17 +71,16 @@ public class GetACDQueueStatisticsRequest implements Alignable {
 
     @RequestField(name="abbreviation")
     /**
-    * If set to <b>true</b>, key names in returned JSON will be abbreviated
-    * to reduce response byte size. The abbreviations are: 'WT' for
-    * 'WaitingTime', 'SA' for 'SpeedOfAnswer', 'AT' is for
-    * 'AbandonmentTime', 'HT' is for 'HandlingTime', 'TT' is for
-    * 'TalkTime', 'ACW' is for 'AfterCallWork', 'QL' is for 'QueueLength',
-    * 'TC' is for 'TotalCalls', 'AC' is for 'AnsweredCalls', 'UAC' is for
-    * 'UnansweredCalls', 'RC' is for 'RejectedCalls', 'SL' is for
-    * 'ServiceLevel', 'TWT' is for 'TotalWaitingTime', 'TST' is for
-    * 'TotalSubmissionTime', 'TAT' is for 'TotalAbandonmentTime', 'THT' is
-    * for 'TotalHandlingTime', 'TTT' is for 'TotalTalkTime', 'TACW' is for
-    * 'TotalAfterCallWork'
+    * Whether key names in returned JSON are abbreviated to reduce response
+    * byte size. The abbreviations are: 'WT' for 'WaitingTime', 'SA' for
+    * 'SpeedOfAnswer', 'AT' is for 'AbandonmentTime', 'HT' is for
+    * 'HandlingTime', 'TT' is for 'TalkTime', 'ACW' is for 'AfterCallWork',
+    * 'QL' is for 'QueueLength', 'TC' is for 'TotalCalls', 'AC' is for
+    * 'AnsweredCalls', 'UAC' is for 'UnansweredCalls', 'RC' is for
+    * 'RejectedCalls', 'SL' is for 'ServiceLevel', 'TWT' is for
+    * 'TotalWaitingTime', 'TST' is for 'TotalSubmissionTime', 'TAT' is for
+    * 'TotalAbandonmentTime', 'THT' is for 'TotalHandlingTime', 'TTT' is
+    * for 'TotalTalkTime', 'TACW' is for 'TotalAfterCallWork'
     */
     public Boolean getAbbreviation() {
         return this.abbreviation;
@@ -92,17 +91,16 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     }
 
     /**
-    * If set to <b>true</b>, key names in returned JSON will be abbreviated
-    * to reduce response byte size. The abbreviations are: 'WT' for
-    * 'WaitingTime', 'SA' for 'SpeedOfAnswer', 'AT' is for
-    * 'AbandonmentTime', 'HT' is for 'HandlingTime', 'TT' is for
-    * 'TalkTime', 'ACW' is for 'AfterCallWork', 'QL' is for 'QueueLength',
-    * 'TC' is for 'TotalCalls', 'AC' is for 'AnsweredCalls', 'UAC' is for
-    * 'UnansweredCalls', 'RC' is for 'RejectedCalls', 'SL' is for
-    * 'ServiceLevel', 'TWT' is for 'TotalWaitingTime', 'TST' is for
-    * 'TotalSubmissionTime', 'TAT' is for 'TotalAbandonmentTime', 'THT' is
-    * for 'TotalHandlingTime', 'TTT' is for 'TotalTalkTime', 'TACW' is for
-    * 'TotalAfterCallWork'
+    * Whether key names in returned JSON are abbreviated to reduce response
+    * byte size. The abbreviations are: 'WT' for 'WaitingTime', 'SA' for
+    * 'SpeedOfAnswer', 'AT' is for 'AbandonmentTime', 'HT' is for
+    * 'HandlingTime', 'TT' is for 'TalkTime', 'ACW' is for 'AfterCallWork',
+    * 'QL' is for 'QueueLength', 'TC' is for 'TotalCalls', 'AC' is for
+    * 'AnsweredCalls', 'UAC' is for 'UnansweredCalls', 'RC' is for
+    * 'RejectedCalls', 'SL' is for 'ServiceLevel', 'TWT' is for
+    * 'TotalWaitingTime', 'TST' is for 'TotalSubmissionTime', 'TAT' is for
+    * 'TotalAbandonmentTime', 'THT' is for 'TotalHandlingTime', 'TTT' is
+    * for 'TotalTalkTime', 'TACW' is for 'TotalAfterCallWork'
     */
     public GetACDQueueStatisticsRequest setAbbreviation(boolean d) {
         this.abbreviation = Boolean.valueOf(d);
@@ -138,7 +136,7 @@ public class GetACDQueueStatisticsRequest implements Alignable {
     @RequestField(name="report")
     /**
     * List of item names abbreviations separated by semicolons (;).
-    * Returned JSON will include keys only for the selected items. Special
+    * Returned JSON includes keys only for the selected items. Special
     * 'all' value defines all possible items, see [ACDQueueStatisticsType]
     * for a complete list. See 'abbreviation' description for complete
     * abbreviation list
@@ -153,7 +151,7 @@ public class GetACDQueueStatisticsRequest implements Alignable {
 
     /**
     * List of item names abbreviations separated by semicolons (;).
-    * Returned JSON will include keys only for the selected items. Special
+    * Returned JSON includes keys only for the selected items. Special
     * 'all' value defines all possible items, see [ACDQueueStatisticsType]
     * for a complete list. See 'abbreviation' description for complete
     * abbreviation list

@@ -46,7 +46,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
     private BigDecimal bankCardAmountUsd;
 
     /**
-    * Exists if bank card payments are allowed. It's the maximum of the
+    * Exists if bank card payments are allowed. It is the maximum of the
     * 'amount' in USD and the min_card_payment (10$)
     */
     public BigDecimal getBankCardAmountUsd() {
@@ -60,7 +60,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
     private BigDecimal minBankCardAmountUsd;
 
     /**
-    * Exists if bank card payments are allowed. It's the maximum of the
+    * Exists if bank card payments are allowed. It is the maximum of the
     * 'min_amount' in USD and the min_card_payment (10$)
     */
     public BigDecimal getMinBankCardAmountUsd() {
@@ -74,7 +74,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
     private BigDecimal robokassaAmountRub;
 
     /**
-    * Exists if robokassa payments are allowed. It's the maximum of the
+    * Exists if robokassa payments are allowed. It is the maximum of the
     * 'min_amount' in RUR and the min_robokassa_payment (500 RUR)
     */
     public BigDecimal getRobokassaAmountRub() {
@@ -88,7 +88,7 @@ public class GetMoneyAmountToChargeResult implements Alignable {
     private BigDecimal minRobokassaAmountRub;
 
     /**
-    * Exists if robokassa payments are allowed. It's the maximum of the
+    * Exists if robokassa payments are allowed. It is the maximum of the
     * 'min_amount' in RUR and the min_robokassa_payment (500 RUR)
     */
     public BigDecimal getMinRobokassaAmountRub() {

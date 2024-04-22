@@ -32,7 +32,7 @@ public class PhoneNumberCountryCategoryInfoType implements Alignable {
     private Boolean countryHasStates;
 
     /**
-    * True if a country state is used to choose the phone with the category
+    * Whether the chosen phone number country has states
     */
     public Boolean getCountryHasStates() {
         return this.countryHasStates;

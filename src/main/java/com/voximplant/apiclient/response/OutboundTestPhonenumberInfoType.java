@@ -31,7 +31,7 @@ public class OutboundTestPhonenumberInfoType implements Alignable {
     private Boolean isVerified;
 
     /**
-    * The verification status
+    * Whether the phone number is verified
     */
     public Boolean getIsVerified() {
         return this.isVerified;

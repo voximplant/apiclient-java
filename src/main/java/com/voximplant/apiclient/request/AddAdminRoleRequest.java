@@ -41,8 +41,8 @@ public class AddAdminRoleRequest implements Alignable {
 
     @RequestField(name="admin_role_active")
     /**
-    * The admin role enable flag. If false the allowed and denied entries
-    * have no affect
+    * Whether the admin role is enabled. If false the allowed and denied
+    * entries have no affect
     */
     public Boolean getAdminRoleActive() {
         return this.adminRoleActive;
@@ -53,8 +53,8 @@ public class AddAdminRoleRequest implements Alignable {
     }
 
     /**
-    * The admin role enable flag. If false the allowed and denied entries
-    * have no affect
+    * Whether the admin role is enabled. If false the allowed and denied
+    * entries have no affect
     */
     public AddAdminRoleRequest setAdminRoleActive(boolean d) {
         this.adminRoleActive = Boolean.valueOf(d);

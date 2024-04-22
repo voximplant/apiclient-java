@@ -65,7 +65,7 @@ public class BindPushCredentialRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Set to false for unbind. Default value is true
+    * Whether to bind or unbind (set true or false respectively)
     */
     public Boolean getBind() {
         return this.bind;
@@ -76,7 +76,7 @@ public class BindPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set to false for unbind. Default value is true
+    * Whether to bind or unbind (set true or false respectively)
     */
     public BindPushCredentialRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);

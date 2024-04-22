@@ -63,7 +63,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="admin_role_active")
     /**
-    * The admin role active flag to filter
+    * Whether the admin role is enabled to filter
     */
     public Boolean getAdminRoleActive() {
         return this.adminRoleActive;
@@ -74,7 +74,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The admin role active flag to filter
+    * Whether the admin role is enabled to filter
     */
     public GetAdminRolesRequest setAdminRoleActive(boolean d) {
         this.adminRoleActive = Boolean.valueOf(d);
@@ -85,7 +85,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="with_entries")
     /**
-    * Set true to get the permissions
+    * Whether to get the permissions
     */
     public Boolean getWithEntries() {
         return this.withEntries;
@@ -96,7 +96,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set true to get the permissions
+    * Whether to get the permissions
     */
     public GetAdminRolesRequest setWithEntries(boolean d) {
         this.withEntries = Boolean.valueOf(d);
@@ -107,7 +107,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="with_account_roles")
     /**
-    * Set false to omit the account roles
+    * Whether to include the account roles
     */
     public Boolean getWithAccountRoles() {
         return this.withAccountRoles;
@@ -118,7 +118,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the account roles
+    * Whether to include the account roles
     */
     public GetAdminRolesRequest setWithAccountRoles(boolean d) {
         this.withAccountRoles = Boolean.valueOf(d);
@@ -129,7 +129,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="with_parent_roles")
     /**
-    * Set false to omit the parent roles
+    * Whether to include the parent roles
     */
     public Boolean getWithParentRoles() {
         return this.withParentRoles;
@@ -140,7 +140,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the parent roles
+    * Whether to include the parent roles
     */
     public GetAdminRolesRequest setWithParentRoles(boolean d) {
         this.withParentRoles = Boolean.valueOf(d);
@@ -151,7 +151,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="with_system_roles")
     /**
-    * Set false to omit the system roles
+    * Whether to include the system roles
     */
     public Boolean getWithSystemRoles() {
         return this.withSystemRoles;
@@ -162,7 +162,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the system roles
+    * Whether to include the system roles
     */
     public GetAdminRolesRequest setWithSystemRoles(boolean d) {
         this.withSystemRoles = Boolean.valueOf(d);
@@ -287,7 +287,7 @@ public class GetAdminRolesRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -298,7 +298,7 @@ public class GetAdminRolesRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetAdminRolesRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

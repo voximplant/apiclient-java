@@ -85,8 +85,8 @@ public class GetPhoneNumberRegionsRequest implements Alignable {
 
     @RequestField(name="omit_empty")
     /**
-    * Set to 'false' to show all the regions (with and without phone
-    * numbers in stock)
+    * Whether not to show all the regions (with and without phone numbers
+    * in stock)
     */
     public Boolean getOmitEmpty() {
         return this.omitEmpty;
@@ -97,8 +97,8 @@ public class GetPhoneNumberRegionsRequest implements Alignable {
     }
 
     /**
-    * Set to 'false' to show all the regions (with and without phone
-    * numbers in stock)
+    * Whether not to show all the regions (with and without phone numbers
+    * in stock)
     */
     public GetPhoneNumberRegionsRequest setOmitEmpty(boolean d) {
         this.omitEmpty = Boolean.valueOf(d);

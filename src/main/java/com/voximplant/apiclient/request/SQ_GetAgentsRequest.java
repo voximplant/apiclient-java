@@ -285,7 +285,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="with_sq_skills")
     /**
-    * Display agent skills
+    * Whether to display agent skills
     */
     public Boolean getWithSqSkills() {
         return this.withSqSkills;
@@ -296,7 +296,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Display agent skills
+    * Whether to display agent skills
     */
     public SQ_GetAgentsRequest setWithSqSkills(boolean d) {
         this.withSqSkills = Boolean.valueOf(d);
@@ -307,7 +307,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="with_sq_queues")
     /**
-    * Display agent queues
+    * Whether to display agent queues
     */
     public Boolean getWithSqQueues() {
         return this.withSqQueues;
@@ -318,7 +318,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Display agent queues
+    * Whether to display agent queues
     */
     public SQ_GetAgentsRequest setWithSqQueues(boolean d) {
         this.withSqQueues = Boolean.valueOf(d);
@@ -329,7 +329,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="with_sq_statuses")
     /**
-    * Display agent current statuses
+    * Whether to display agent current statuses
     */
     public Boolean getWithSqStatuses() {
         return this.withSqStatuses;
@@ -340,7 +340,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Display agent current statuses
+    * Whether to display agent current statuses
     */
     public SQ_GetAgentsRequest setWithSqStatuses(boolean d) {
         this.withSqStatuses = Boolean.valueOf(d);
@@ -395,8 +395,8 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="handle_calls")
     /**
-    * The agent can handle calls. When set to false, the agent is excluded
-    * from the CALL-request distribution
+    * Whether the agent can handle calls. When set to false, the agent is
+    * excluded from the CALL-request distribution
     */
     public Boolean getHandleCalls() {
         return this.handleCalls;
@@ -407,8 +407,8 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * The agent can handle calls. When set to false, the agent is excluded
-    * from the CALL-request distribution
+    * Whether the agent can handle calls. When set to false, the agent is
+    * excluded from the CALL-request distribution
     */
     public SQ_GetAgentsRequest setHandleCalls(boolean d) {
         this.handleCalls = Boolean.valueOf(d);

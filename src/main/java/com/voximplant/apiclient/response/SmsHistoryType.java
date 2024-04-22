@@ -70,7 +70,7 @@ public class SmsHistoryType implements Alignable {
     private Long fragments;
 
     /**
-    * Number of fragments the initial message was divided into
+    * Number of fragments the initial message is divided into
     */
     public Long getFragments() {
         return this.fragments;

@@ -45,7 +45,7 @@ public class ContractorInvoiceType implements Alignable {
     private Boolean isPostPayment;
 
     /**
-    * The post payment flag
+    * Whether it is post payment
     */
     public Boolean getIsPostPayment() {
         return this.isPostPayment;

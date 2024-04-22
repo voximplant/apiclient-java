@@ -44,7 +44,7 @@ public class PhoneNumberCountryInfoType implements Alignable {
     private Boolean canListPhoneNumbers;
 
     /**
-    * True if can list phone numbers
+    * Whether to list phone numbers
     */
     public Boolean getCanListPhoneNumbers() {
         return this.canListPhoneNumbers;
@@ -70,8 +70,8 @@ public class PhoneNumberCountryInfoType implements Alignable {
     private Boolean emergencyCallsToBeEnabled;
 
     /**
-    * If <b>true</b>, you need to make a request to enable calls to
-    * emergency numbers
+    * Whether you need to make a request to enable calls to emergency
+    * numbers
     */
     public Boolean getEmergencyCallsToBeEnabled() {
         return this.emergencyCallsToBeEnabled;

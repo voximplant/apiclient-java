@@ -44,7 +44,7 @@ public class ACDQueueOperatorInfoType implements Alignable {
     private Boolean autoLink;
 
     /**
-    * The user is bound to the ACD queue in manual mode if false
+    * Whether the user is bound to the ACD queue in manual mode if false
     */
     public Boolean getAutoLink() {
         return this.autoLink;

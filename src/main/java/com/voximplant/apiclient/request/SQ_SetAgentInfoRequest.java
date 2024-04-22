@@ -135,8 +135,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
 
     @RequestField(name="handle_calls")
     /**
-    * The agent can handle calls. When set to false, the agent is excluded
-    * from the CALL-request distribution
+    * Whether the agent can handle calls. When set to false, the agent is
+    * excluded from the CALL-request distribution
     */
     public Boolean getHandleCalls() {
         return this.handleCalls;
@@ -147,8 +147,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
     }
 
     /**
-    * The agent can handle calls. When set to false, the agent is excluded
-    * from the CALL-request distribution
+    * Whether the agent can handle calls. When set to false, the agent is
+    * excluded from the CALL-request distribution
     */
     public SQ_SetAgentInfoRequest setHandleCalls(boolean d) {
         this.handleCalls = Boolean.valueOf(d);

@@ -129,7 +129,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="verified")
     /**
-    * Show only verified regulation address
+    * Whether to show only verified regulation address
     */
     public Boolean getVerified() {
         return this.verified;
@@ -140,7 +140,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * Show only verified regulation address
+    * Whether to show only verified regulation address
     */
     public GetRegulationsAddressRequest setVerified(boolean d) {
         this.verified = Boolean.valueOf(d);
@@ -151,7 +151,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="in_progress")
     /**
-    * Show only in progress regulation address
+    * Whether to show only in progress regulation address
     */
     public Boolean getInProgress() {
         return this.inProgress;
@@ -162,7 +162,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * Show only in progress regulation address
+    * Whether to show only in progress regulation address
     */
     public GetRegulationsAddressRequest setInProgress(boolean d) {
         this.inProgress = Boolean.valueOf(d);
@@ -173,7 +173,7 @@ public class GetRegulationsAddressRequest implements Alignable {
 
     @RequestField(name="with_region_code")
     /**
-    * Return with phone_region_code parameters
+    * Whether to return with phone_region_code parameters
     */
     public Boolean getWithRegionCode() {
         return this.withRegionCode;
@@ -184,7 +184,7 @@ public class GetRegulationsAddressRequest implements Alignable {
     }
 
     /**
-    * Return with phone_region_code parameters
+    * Whether to return with phone_region_code parameters
     */
     public GetRegulationsAddressRequest setWithRegionCode(boolean d) {
         this.withRegionCode = Boolean.valueOf(d);

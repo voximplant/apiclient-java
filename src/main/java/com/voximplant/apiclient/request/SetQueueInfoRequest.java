@@ -107,8 +107,8 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="auto_binding")
     /**
-    * Set false to disable the auto binding of operators to a queue by
-    * skills comparing
+    * Whether to enable the auto binding of operators to a queue by skills
+    * comparing
     */
     public Boolean getAutoBinding() {
         return this.autoBinding;
@@ -119,8 +119,8 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * Set false to disable the auto binding of operators to a queue by
-    * skills comparing
+    * Whether to enable the auto binding of operators to a queue by skills
+    * comparing
     */
     public SetQueueInfoRequest setAutoBinding(boolean d) {
         this.autoBinding = Boolean.valueOf(d);

@@ -63,7 +63,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="deactivated")
     /**
-    * Set true to show the frozen SIP registrations only
+    * Whether to show the frozen SIP registrations only
     */
     public Boolean getDeactivated() {
         return this.deactivated;
@@ -74,7 +74,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * Set true to show the frozen SIP registrations only
+    * Whether to show the frozen SIP registrations only
     */
     public GetSipRegistrationsRequest setDeactivated(boolean d) {
         this.deactivated = Boolean.valueOf(d);
@@ -85,7 +85,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="successful")
     /**
-    * Set false to show the unsuccessful SIP registrations only
+    * Whether to show the successful SIP registrations only
     */
     public Boolean getSuccessful() {
         return this.successful;
@@ -96,7 +96,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * Set false to show the unsuccessful SIP registrations only
+    * Whether to show the successful SIP registrations only
     */
     public GetSipRegistrationsRequest setSuccessful(boolean d) {
         this.successful = Boolean.valueOf(d);
@@ -107,7 +107,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="is_persistent")
     /**
-    * The persistent flag to filter
+    * Whether the SIP registration is persistent to filter
     */
     public Boolean getIsPersistent() {
         return this.isPersistent;
@@ -118,7 +118,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The persistent flag to filter
+    * Whether the SIP registration is persistent to filter
     */
     public GetSipRegistrationsRequest setIsPersistent(boolean d) {
         this.isPersistent = Boolean.valueOf(d);
@@ -177,7 +177,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="is_bound_to_application")
     /**
-    * Is a SIP registration bound to an application
+    * Whether SIP registration bound to an application
     */
     public Boolean getIsBoundToApplication() {
         return this.isBoundToApplication;
@@ -188,7 +188,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * Is a SIP registration bound to an application
+    * Whether SIP registration bound to an application
     */
     public GetSipRegistrationsRequest setIsBoundToApplication(boolean d) {
         this.isBoundToApplication = Boolean.valueOf(d);
@@ -317,7 +317,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="in_progress")
     /**
-    * SIP registration is still in progress
+    * Whether SIP registration is still in progress
     */
     public Boolean getInProgress() {
         return this.inProgress;
@@ -328,7 +328,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * SIP registration is still in progress
+    * Whether SIP registration is still in progress
     */
     public GetSipRegistrationsRequest setInProgress(boolean d) {
         this.inProgress = Boolean.valueOf(d);
@@ -389,7 +389,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -400,7 +400,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetSipRegistrationsRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

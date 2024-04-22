@@ -119,13 +119,12 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
 
     @RequestField(name="abbreviation")
     /**
-    * If set to <b>true</b>, key names in returned JSON will be abbreviated
-    * to reduce response byte size. The abbreviations are: 'SA' for
-    * 'SpeedOfAnswer', 'HT' for 'HandlingTime', 'TT' for 'TalkTime', 'ACW'
-    * for 'AfterCallWork', 'TDT' for 'TotalDialingTime', 'THT' for
-    * 'TotalHandlingTime', 'TTT' for 'TotalTalkTime', 'TACW' for
-    * 'TotalAfterCallWork', 'AC' for 'AnsweredCalls', 'UAC' for
-    * 'UnansweredCalls'
+    * Whether key names in returned JSON are abbreviated to reduce response
+    * byte size. The abbreviations are: 'SA' for 'SpeedOfAnswer', 'HT' for
+    * 'HandlingTime', 'TT' for 'TalkTime', 'ACW' for 'AfterCallWork', 'TDT'
+    * for 'TotalDialingTime', 'THT' for 'TotalHandlingTime', 'TTT' for
+    * 'TotalTalkTime', 'TACW' for 'TotalAfterCallWork', 'AC' for
+    * 'AnsweredCalls', 'UAC' for 'UnansweredCalls'
     */
     public Boolean getAbbreviation() {
         return this.abbreviation;
@@ -136,13 +135,12 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
     }
 
     /**
-    * If set to <b>true</b>, key names in returned JSON will be abbreviated
-    * to reduce response byte size. The abbreviations are: 'SA' for
-    * 'SpeedOfAnswer', 'HT' for 'HandlingTime', 'TT' for 'TalkTime', 'ACW'
-    * for 'AfterCallWork', 'TDT' for 'TotalDialingTime', 'THT' for
-    * 'TotalHandlingTime', 'TTT' for 'TotalTalkTime', 'TACW' for
-    * 'TotalAfterCallWork', 'AC' for 'AnsweredCalls', 'UAC' for
-    * 'UnansweredCalls'
+    * Whether key names in returned JSON are abbreviated to reduce response
+    * byte size. The abbreviations are: 'SA' for 'SpeedOfAnswer', 'HT' for
+    * 'HandlingTime', 'TT' for 'TalkTime', 'ACW' for 'AfterCallWork', 'TDT'
+    * for 'TotalDialingTime', 'THT' for 'TotalHandlingTime', 'TTT' for
+    * 'TotalTalkTime', 'TACW' for 'TotalAfterCallWork', 'AC' for
+    * 'AnsweredCalls', 'UAC' for 'UnansweredCalls'
     */
     public GetACDOperatorStatisticsRequest setAbbreviation(boolean d) {
         this.abbreviation = Boolean.valueOf(d);
@@ -154,7 +152,7 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
     @RequestField(name="report")
     /**
     * List of item names abbreviations separated by semicolons (;).
-    * Returned JSON will include keys only for the selected items. Special
+    * Returned JSON includes keys only for the selected items. Special
     * 'all' value defines all possible items, see
     * [ACDOperatorStatisticsType] for a complete list. See 'abbreviation'
     * description for complete abbreviation list
@@ -169,7 +167,7 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
 
     /**
     * List of item names abbreviations separated by semicolons (;).
-    * Returned JSON will include keys only for the selected items. Special
+    * Returned JSON includes keys only for the selected items. Special
     * 'all' value defines all possible items, see
     * [ACDOperatorStatisticsType] for a complete list. See 'abbreviation'
     * description for complete abbreviation list
@@ -213,12 +211,12 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
 
     @RequestField(name="group")
     /**
-    * If set to 'user', first-level array in the resulting JSON will group
-    * records by the user ID, and second-level array will group them by
-    * date according to the 'aggregation' parameter. If set to
-    * 'aggregation', first-level array in the resulting JSON will group
-    * records according to the 'aggregation' parameter, and second-level
-    * array will group them by the user ID
+    * If set to 'user', first-level array in the resulting JSON groups
+    * records by the user ID, and second-level array groups them by date
+    * according to the 'aggregation' parameter. If set to 'aggregation',
+    * first-level array in the resulting JSON groups records according to
+    * the 'aggregation' parameter, and second-level array groups them by
+    * the user ID
     */
     public String getGroup() {
         return this.group;
@@ -229,12 +227,12 @@ public class GetACDOperatorStatisticsRequest implements Alignable {
     }
 
     /**
-    * If set to 'user', first-level array in the resulting JSON will group
-    * records by the user ID, and second-level array will group them by
-    * date according to the 'aggregation' parameter. If set to
-    * 'aggregation', first-level array in the resulting JSON will group
-    * records according to the 'aggregation' parameter, and second-level
-    * array will group them by the user ID
+    * If set to 'user', first-level array in the resulting JSON groups
+    * records by the user ID, and second-level array groups them by date
+    * according to the 'aggregation' parameter. If set to 'aggregation',
+    * first-level array in the resulting JSON groups records according to
+    * the 'aggregation' parameter, and second-level array groups them by
+    * the user ID
     */
     public GetACDOperatorStatisticsRequest setGroup(String d) {
         this.group = d;

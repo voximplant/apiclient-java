@@ -201,7 +201,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="with_header")
     /**
-    * Set false to get a CSV file without the column names if the output=csv
+    * Whether to get a CSV file with the column names if the output=csv
     */
     public Boolean getWithHeader() {
         return this.withHeader;
@@ -212,7 +212,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * Set false to get a CSV file without the column names if the output=csv
+    * Whether to get a CSV file with the column names if the output=csv
     */
     public GetAuditLogRequest setWithHeader(boolean d) {
         this.withHeader = Boolean.valueOf(d);
@@ -223,7 +223,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -234,7 +234,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public GetAuditLogRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -245,7 +245,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="with_total_count")
     /**
-    * Set false to omit the 'total_count' and increase performance
+    * Whether to include the 'total_count' and increase performance
     */
     public Boolean getWithTotalCount() {
         return this.withTotalCount;
@@ -256,7 +256,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * Set false to omit the 'total_count' and increase performance
+    * Whether to include the 'total_count' and increase performance
     */
     public GetAuditLogRequest setWithTotalCount(boolean d) {
         this.withTotalCount = Boolean.valueOf(d);
@@ -289,7 +289,7 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -300,7 +300,7 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetAuditLogRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -333,9 +333,9 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="is_async")
     /**
-    * Set true to get records in the asynchronous mode (for csv output
-    * only). If it's true, the request is available via [GetHistoryReports]
-    * and [DownloadHistoryReport] methods
+    * Whether to get records in the asynchronous mode (for csv output
+    * only). If it is true, the request is available via
+    * [GetHistoryReports] and [DownloadHistoryReport] methods
     */
     public Boolean getIsAsync() {
         return this.isAsync;
@@ -346,9 +346,9 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the asynchronous mode (for csv output
-    * only). If it's true, the request is available via [GetHistoryReports]
-    * and [DownloadHistoryReport] methods
+    * Whether to get records in the asynchronous mode (for csv output
+    * only). If it is true, the request is available via
+    * [GetHistoryReports] and [DownloadHistoryReport] methods
     */
     public GetAuditLogRequest setIsAsync(boolean d) {
         this.isAsync = Boolean.valueOf(d);

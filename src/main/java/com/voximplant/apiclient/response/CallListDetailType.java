@@ -72,7 +72,7 @@ public class CallListDetailType implements Alignable {
     private String resultData;
 
     /**
-    * Results of the task, if it was granted, or information about the
+    * Results of the task, if it is granted, or information about the
     * runtime error
     */
     public String getResultData() {

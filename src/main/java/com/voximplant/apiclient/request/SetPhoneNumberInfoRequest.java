@@ -67,8 +67,8 @@ public class SetPhoneNumberInfoRequest implements Alignable {
 
     @RequestField(name="incoming_sms_callback_url")
     /**
-    * If set, the callback of an incoming SMS will be sent to this url,
-    * otherwise, it will be sent to the general account URL
+    * If set, the callback of an incoming SMS is sent to this url,
+    * otherwise, it is sent to the general account URL
     */
     public String getIncomingSmsCallbackUrl() {
         return this.incomingSmsCallbackUrl;
@@ -79,8 +79,8 @@ public class SetPhoneNumberInfoRequest implements Alignable {
     }
 
     /**
-    * If set, the callback of an incoming SMS will be sent to this url,
-    * otherwise, it will be sent to the general account URL
+    * If set, the callback of an incoming SMS is sent to this url,
+    * otherwise, it is sent to the general account URL
     */
     public SetPhoneNumberInfoRequest setIncomingSmsCallbackUrl(String d) {
         this.incomingSmsCallbackUrl = d;
@@ -91,7 +91,7 @@ public class SetPhoneNumberInfoRequest implements Alignable {
 
     @RequestField(name="auto_charge")
     /**
-    * Set true to enable the auto charging
+    * Whether to enable the auto charging
     */
     public Boolean getAutoCharge() {
         return this.autoCharge;
@@ -102,7 +102,7 @@ public class SetPhoneNumberInfoRequest implements Alignable {
     }
 
     /**
-    * Set true to enable the auto charging
+    * Whether to enable the auto charging
     */
     public SetPhoneNumberInfoRequest setAutoCharge(boolean d) {
         this.autoCharge = Boolean.valueOf(d);

@@ -18,7 +18,7 @@ public class GetMaxBankCardPaymentResultType implements Alignable {
     private Long maxPayment;
 
     /**
-    * The maximum payment for the specified card. It's always equal or less
+    * The maximum payment for the specified card. It always equals or less
     * than **new_max_payment**
     */
     public Long getMaxPayment() {

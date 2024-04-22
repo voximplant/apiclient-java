@@ -129,7 +129,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="with_skills")
     /**
-    * Set true to get the bound skills
+    * Whether to get the bound skills
     */
     public Boolean getWithSkills() {
         return this.withSkills;
@@ -140,7 +140,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound skills
+    * Whether to get the bound skills
     */
     public GetQueuesRequest setWithSkills(boolean d) {
         this.withSkills = Boolean.valueOf(d);
@@ -195,7 +195,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -206,7 +206,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetQueuesRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
@@ -217,7 +217,7 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="with_operatorcount")
     /**
-    * Number of agents bound to the queue
+    * Whether to include the number of agents bound to the queue
     */
     public Boolean getWithOperatorcount() {
         return this.withOperatorcount;
@@ -228,7 +228,7 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Number of agents bound to the queue
+    * Whether to include the number of agents bound to the queue
     */
     public GetQueuesRequest setWithOperatorcount(boolean d) {
         this.withOperatorcount = Boolean.valueOf(d);

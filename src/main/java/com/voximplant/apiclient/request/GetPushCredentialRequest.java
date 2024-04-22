@@ -131,7 +131,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="with_cert")
     /**
-    * Set true to get the user's certificate
+    * Whether to get the user's certificate
     */
     public Boolean getWithCert() {
         return this.withCert;
@@ -142,7 +142,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set true to get the user's certificate
+    * Whether to get the user's certificate
     */
     public GetPushCredentialRequest setWithCert(boolean d) {
         this.withCert = Boolean.valueOf(d);
@@ -153,7 +153,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="with_secret_info")
     /**
-    * Set true to get the certificate's password
+    * Whether to get the certificate's password
     */
     public Boolean getWithSecretInfo() {
         return this.withSecretInfo;
@@ -164,7 +164,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * Set true to get the certificate's password
+    * Whether to get the certificate's password
     */
     public GetPushCredentialRequest setWithSecretInfo(boolean d) {
         this.withSecretInfo = Boolean.valueOf(d);

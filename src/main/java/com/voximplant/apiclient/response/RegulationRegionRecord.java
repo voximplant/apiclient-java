@@ -57,7 +57,7 @@ public class RegulationRegionRecord implements Alignable {
     private Boolean isNeedRegulationAddress;
 
     /**
-    * The need to confirm the address
+    * Whether need to confirm the address
     */
     public Boolean getIsNeedRegulationAddress() {
         return this.isNeedRegulationAddress;

@@ -88,7 +88,7 @@ public class GetSmsHistoryRequest implements Alignable {
     @RequestField(name="count")
     /**
     * Maximum number of resulting rows fetched. Must be not bigger than
-    * 1000. If left blank, then the default value of 1000 will be used
+    * 1000. If left blank, then the default value of 1000 is used
     */
     public Long getCount() {
         return this.count;
@@ -100,7 +100,7 @@ public class GetSmsHistoryRequest implements Alignable {
 
     /**
     * Maximum number of resulting rows fetched. Must be not bigger than
-    * 1000. If left blank, then the default value of 1000 will be used
+    * 1000. If left blank, then the default value of 1000 is used
     */
     public GetSmsHistoryRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -111,7 +111,7 @@ public class GetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -122,7 +122,7 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetSmsHistoryRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

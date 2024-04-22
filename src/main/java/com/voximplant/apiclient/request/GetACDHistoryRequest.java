@@ -155,7 +155,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="operator_hangup")
     /**
-    * Set true to get the calls terminated by the operator
+    * Whether to get the calls terminated by the operator
     */
     public Boolean getOperatorHangup() {
         return this.operatorHangup;
@@ -166,7 +166,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the calls terminated by the operator
+    * Whether to get the calls terminated by the operator
     */
     public GetACDHistoryRequest setOperatorHangup(boolean d) {
         this.operatorHangup = Boolean.valueOf(d);
@@ -177,7 +177,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="unserviced")
     /**
-    * The unserviced calls by the operator
+    * Whether the call is unserviced by the operator
     */
     public Boolean getUnserviced() {
         return this.unserviced;
@@ -188,7 +188,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The unserviced calls by the operator
+    * Whether the call is unserviced by the operator
     */
     public GetACDHistoryRequest setUnserviced(boolean d) {
         this.unserviced = Boolean.valueOf(d);
@@ -221,8 +221,8 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="rejected")
     /**
-    * The rejected calls by the 'max_queue_size', 'max_waiting_time'
-    * threshold
+    * Whether the call is rejected calls by the 'max_queue_size',
+    * 'max_waiting_time' threshold
     */
     public Boolean getRejected() {
         return this.rejected;
@@ -233,8 +233,8 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The rejected calls by the 'max_queue_size', 'max_waiting_time'
-    * threshold
+    * Whether the call is rejected calls by the 'max_queue_size',
+    * 'max_waiting_time' threshold
     */
     public GetACDHistoryRequest setRejected(boolean d) {
         this.rejected = Boolean.valueOf(d);
@@ -245,7 +245,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="with_events")
     /**
-    * Set true to get the bound events
+    * Whether to get the bound events
     */
     public Boolean getWithEvents() {
         return this.withEvents;
@@ -256,7 +256,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get the bound events
+    * Whether to get the bound events
     */
     public GetACDHistoryRequest setWithEvents(boolean d) {
         this.withEvents = Boolean.valueOf(d);
@@ -267,7 +267,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="with_header")
     /**
-    * Set false to get a CSV file without the column names if the output=csv
+    * Whether to get a CSV file with the column names if the output=csv
     */
     public Boolean getWithHeader() {
         return this.withHeader;
@@ -278,7 +278,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * Set false to get a CSV file without the column names if the output=csv
+    * Whether to get a CSV file with the column names if the output=csv
     */
     public GetACDHistoryRequest setWithHeader(boolean d) {
         this.withHeader = Boolean.valueOf(d);
@@ -289,7 +289,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="desc_order")
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public Boolean getDescOrder() {
         return this.descOrder;
@@ -300,7 +300,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * Set true to get records in the descent order
+    * Whether to get records in the descent order
     */
     public GetACDHistoryRequest setDescOrder(boolean d) {
         this.descOrder = Boolean.valueOf(d);
@@ -333,7 +333,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -344,7 +344,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetACDHistoryRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

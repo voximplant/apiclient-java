@@ -155,7 +155,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="bind")
     /**
-    * Bind or unbind (set true or false respectively)
+    * Whether to bind or unbind (set true or false respectively)
     */
     public Boolean getBind() {
         return this.bind;
@@ -166,7 +166,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * Bind or unbind (set true or false respectively)
+    * Whether to bind or unbind (set true or false respectively)
     */
     public BindPhoneNumberToApplicationRequest setBind(boolean d) {
         this.bind = Boolean.valueOf(d);

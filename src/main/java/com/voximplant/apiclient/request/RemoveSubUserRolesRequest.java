@@ -85,7 +85,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
 
     @RequestField(name="force")
     /**
-    * Remove roles from all subuser keys
+    * Whether to remove roles from all subuser keys
     */
     public Boolean getForce() {
         return this.force;
@@ -96,7 +96,7 @@ public class RemoveSubUserRolesRequest implements Alignable {
     }
 
     /**
-    * Remove roles from all subuser keys
+    * Whether to remove roles from all subuser keys
     */
     public RemoveSubUserRolesRequest setForce(boolean d) {
         this.force = Boolean.valueOf(d);

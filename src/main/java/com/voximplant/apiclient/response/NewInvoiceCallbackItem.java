@@ -44,7 +44,7 @@ public class NewInvoiceCallbackItem implements Alignable {
     private Boolean prepayment;
 
     /**
-    * It's a prepayment
+    * Whether it is a prepayment
     */
     public Boolean getPrepayment() {
         return this.prepayment;

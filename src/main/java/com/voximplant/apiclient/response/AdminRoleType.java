@@ -44,7 +44,7 @@ public class AdminRoleType implements Alignable {
     private Boolean adminRoleActive;
 
     /**
-    * If false the allowed and denied entries have no affect
+    * Whether to ignore the allowed and denied entries
     */
     public Boolean getAdminRoleActive() {
         return this.adminRoleActive;
@@ -57,7 +57,7 @@ public class AdminRoleType implements Alignable {
     private Boolean systemRole;
 
     /**
-    * It's a system role
+    * Whether it is a system role
     */
     public Boolean getSystemRole() {
         return this.systemRole;

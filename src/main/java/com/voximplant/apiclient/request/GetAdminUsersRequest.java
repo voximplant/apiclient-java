@@ -85,7 +85,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="admin_user_active")
     /**
-    * The admin user active flag to filter
+    * Whether the admin user is active to filter
     */
     public Boolean getAdminUserActive() {
         return this.adminUserActive;
@@ -96,7 +96,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * The admin user active flag to filter
+    * Whether the admin user is active to filter
     */
     public GetAdminUsersRequest setAdminUserActive(boolean d) {
         this.adminUserActive = Boolean.valueOf(d);
@@ -107,7 +107,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="with_roles")
     /**
-    * Set true to get the attached admin roles
+    * Whether to get the attached admin roles
     */
     public Boolean getWithRoles() {
         return this.withRoles;
@@ -118,7 +118,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the attached admin roles
+    * Whether to get the attached admin roles
     */
     public GetAdminUsersRequest setWithRoles(boolean d) {
         this.withRoles = Boolean.valueOf(d);
@@ -129,7 +129,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="with_access_entries")
     /**
-    * Set true to get the admin user permissions
+    * Whether to get the admin user permissions
     */
     public Boolean getWithAccessEntries() {
         return this.withAccessEntries;
@@ -140,7 +140,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * Set true to get the admin user permissions
+    * Whether to get the admin user permissions
     */
     public GetAdminUsersRequest setWithAccessEntries(boolean d) {
         this.withAccessEntries = Boolean.valueOf(d);
@@ -173,7 +173,7 @@ public class GetAdminUsersRequest implements Alignable {
 
     @RequestField(name="offset")
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public Long getOffset() {
         return this.offset;
@@ -184,7 +184,7 @@ public class GetAdminUsersRequest implements Alignable {
     }
 
     /**
-    * The first <b>N</b> records will be skipped in the output
+    * The first <b>N</b> records are skipped in the output
     */
     public GetAdminUsersRequest setOffset(long d) {
         this.offset = Long.valueOf(d);

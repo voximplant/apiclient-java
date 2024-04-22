@@ -139,7 +139,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="account_notifications")
     /**
-    * Voximplant notifications are required
+    * Whether Voximplant notifications are required
     */
     public Boolean getAccountNotifications() {
         return this.accountNotifications;
@@ -150,7 +150,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Voximplant notifications are required
+    * Whether Voximplant notifications are required
     */
     public SetChildAccountInfoRequest setAccountNotifications(boolean d) {
         this.accountNotifications = Boolean.valueOf(d);
@@ -161,7 +161,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="tariff_changing_notifications")
     /**
-    * Set to true to receive the emails about the Voximplant plan changing
+    * Whether to receive the emails about the Voximplant plan changing
     */
     public Boolean getTariffChangingNotifications() {
         return this.tariffChangingNotifications;
@@ -172,7 +172,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about the Voximplant plan changing
+    * Whether to receive the emails about the Voximplant plan changing
     */
     public SetChildAccountInfoRequest setTariffChangingNotifications(boolean d) {
         this.tariffChangingNotifications = Boolean.valueOf(d);
@@ -183,7 +183,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="news_notifications")
     /**
-    * Set to true to receive the emails about the Voximplant news
+    * Whether to receive the emails about the Voximplant news
     */
     public Boolean getNewsNotifications() {
         return this.newsNotifications;
@@ -194,7 +194,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to receive the emails about the Voximplant news
+    * Whether to receive the emails about the Voximplant news
     */
     public SetChildAccountInfoRequest setNewsNotifications(boolean d) {
         this.newsNotifications = Boolean.valueOf(d);
@@ -205,7 +205,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="active")
     /**
-    * Set false to disable the child account
+    * Whether to enable the child account
     */
     public Boolean getActive() {
         return this.active;
@@ -216,7 +216,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set false to disable the child account
+    * Whether to enable the child account
     */
     public SetChildAccountInfoRequest setActive(boolean d) {
         this.active = Boolean.valueOf(d);
@@ -357,7 +357,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="support_robokassa")
     /**
-    * Set to true to allow the robokassa payments
+    * Whether to allow the robokassa payments
     */
     public Boolean getSupportRobokassa() {
         return this.supportRobokassa;
@@ -368,7 +368,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to allow the robokassa payments
+    * Whether to allow the robokassa payments
     */
     public SetChildAccountInfoRequest setSupportRobokassa(boolean d) {
         this.supportRobokassa = Boolean.valueOf(d);
@@ -379,7 +379,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="support_bank_card")
     /**
-    * Set to true to allow the bank card payments
+    * Whether to allow the bank card payments
     */
     public Boolean getSupportBankCard() {
         return this.supportBankCard;
@@ -390,7 +390,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to allow the bank card payments
+    * Whether to allow the bank card payments
     */
     public SetChildAccountInfoRequest setSupportBankCard(boolean d) {
         this.supportBankCard = Boolean.valueOf(d);
@@ -401,7 +401,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="support_invoice")
     /**
-    * Set to true to allow the bank invoices
+    * Whether to allow the bank invoices
     */
     public Boolean getSupportInvoice() {
         return this.supportInvoice;
@@ -412,7 +412,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to allow the bank invoices
+    * Whether to allow the bank invoices
     */
     public SetChildAccountInfoRequest setSupportInvoice(boolean d) {
         this.supportInvoice = Boolean.valueOf(d);
@@ -423,7 +423,7 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="can_use_restricted")
     /**
-    * Set to true to allow use restricted directions
+    * Whether to allow use restricted directions
     */
     public Boolean getCanUseRestricted() {
         return this.canUseRestricted;
@@ -434,7 +434,7 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * Set to true to allow use restricted directions
+    * Whether to allow use restricted directions
     */
     public SetChildAccountInfoRequest setCanUseRestricted(boolean d) {
         this.canUseRestricted = Boolean.valueOf(d);

@@ -19,7 +19,7 @@ public class A2PActivatedCallback implements Alignable {
     private Boolean a2pEnabled;
 
     /**
-    * A2P messages are allowed
+    * Whether A2P messages are allowed
     */
     public Boolean getA2pEnabled() {
         return this.a2pEnabled;
