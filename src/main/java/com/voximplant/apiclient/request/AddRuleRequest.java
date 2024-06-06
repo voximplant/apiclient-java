@@ -147,6 +147,30 @@ public class AddRuleRequest implements Alignable {
         return this;
     }
 
+    private String bindKeyId;
+
+    @RequestField(name="bind_key_id")
+    /**
+    * The service account ID to bind to the rule. Read more in the
+    * [guide](/docs/guides/voxengine/management-api)
+    */
+    public String getBindKeyId() {
+        return this.bindKeyId;
+    }
+
+    public boolean hasBindKeyId() {
+        return this.bindKeyId != null;
+    }
+
+    /**
+    * The service account ID to bind to the rule. Read more in the
+    * [guide](/docs/guides/voxengine/management-api)
+    */
+    public AddRuleRequest setBindKeyId(String d) {
+        this.bindKeyId = d;
+        return this;
+    }
+
     private MultiArgument<Long> scenarioId;
 
     @RequestField(name="scenario_id")
@@ -246,6 +270,14 @@ public class AddRuleRequest implements Alignable {
             sb.append(aligned)
                 .append("\"videoConference\": \"")
                 .append(videoConference)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (bindKeyId != null) {
+            sb.append(aligned)
+                .append("\"bindKeyId\": \"")
+                .append(bindKeyId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

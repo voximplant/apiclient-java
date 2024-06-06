@@ -125,6 +125,30 @@ public class SetRuleInfoRequest implements Alignable {
         return this;
     }
 
+    private String bindKeyId;
+
+    @RequestField(name="bind_key_id")
+    /**
+    * The service account ID to bind to the rule. Read more in the
+    * [guide](/docs/guides/voxengine/management-api)
+    */
+    public String getBindKeyId() {
+        return this.bindKeyId;
+    }
+
+    public boolean hasBindKeyId() {
+        return this.bindKeyId != null;
+    }
+
+    /**
+    * The service account ID to bind to the rule. Read more in the
+    * [guide](/docs/guides/voxengine/management-api)
+    */
+    public SetRuleInfoRequest setBindKeyId(String d) {
+        this.bindKeyId = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -170,6 +194,14 @@ public class SetRuleInfoRequest implements Alignable {
             sb.append(aligned)
                 .append("\"videoConference\": \"")
                 .append(videoConference)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (bindKeyId != null) {
+            sb.append(aligned)
+                .append("\"bindKeyId\": \"")
+                .append(bindKeyId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

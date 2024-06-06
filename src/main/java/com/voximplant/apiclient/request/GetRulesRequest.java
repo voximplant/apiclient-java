@@ -125,6 +125,30 @@ public class GetRulesRequest implements Alignable {
         return this;
     }
 
+    private String attachedKeyId;
+
+    @RequestField(name="attached_key_id")
+    /**
+    * The service account ID bound to the rule. Read more in the
+    * [guide](/docs/guides/voxengine/management-api)
+    */
+    public String getAttachedKeyId() {
+        return this.attachedKeyId;
+    }
+
+    public boolean hasAttachedKeyId() {
+        return this.attachedKeyId != null;
+    }
+
+    /**
+    * The service account ID bound to the rule. Read more in the
+    * [guide](/docs/guides/voxengine/management-api)
+    */
+    public GetRulesRequest setAttachedKeyId(String d) {
+        this.attachedKeyId = d;
+        return this;
+    }
+
     private String template;
 
     @RequestField(name="template")
@@ -258,6 +282,14 @@ public class GetRulesRequest implements Alignable {
             sb.append(aligned)
                 .append("\"videoConference\": \"")
                 .append(videoConference)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (attachedKeyId != null) {
+            sb.append(aligned)
+                .append("\"attachedKeyId\": \"")
+                .append(attachedKeyId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

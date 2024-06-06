@@ -139,6 +139,32 @@ public class CallListDetailType implements Alignable {
         return this.status != null;
     }
 
+    private Long taskId;
+
+    /**
+    * The call list task ID
+    */
+    public Long getTaskId() {
+        return this.taskId;
+    }
+
+    public boolean hasTaskId() {
+        return this.taskId != null;
+    }
+
+    private String taskUuid;
+
+    /**
+    * The call list task UUID
+    */
+    public String getTaskUuid() {
+        return this.taskUuid;
+    }
+
+    public boolean hasTaskUuid() {
+        return this.taskUuid != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -216,6 +242,22 @@ public class CallListDetailType implements Alignable {
             sb.append(aligned)
                 .append("\"status\": \"")
                 .append(status)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (taskId != null) {
+            sb.append(aligned)
+                .append("\"taskId\": \"")
+                .append(taskId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (taskUuid != null) {
+            sb.append(aligned)
+                .append("\"taskUuid\": \"")
+                .append(taskUuid)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

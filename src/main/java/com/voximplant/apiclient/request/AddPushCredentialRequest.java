@@ -43,7 +43,9 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_provider_id")
     /**
-    * The push provider id. Can be used instead of <b>push_provider_name</b>
+    * The push provider id. Can be used instead of
+    * <b>push_provider_name</b>. The possible values are: 1 — APPLE, 2 —
+    * GOOGLE, 3 — APPLE_VOIP, 5 — HUAWEI.
     */
     public Long getPushProviderId() {
         return this.pushProviderId;
@@ -54,7 +56,9 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push provider id. Can be used instead of <b>push_provider_name</b>
+    * The push provider id. Can be used instead of
+    * <b>push_provider_name</b>. The possible values are: 1 — APPLE, 2 —
+    * GOOGLE, 3 — APPLE_VOIP, 5 — HUAWEI.
     */
     public AddPushCredentialRequest setPushProviderId(long d) {
         this.pushProviderId = Long.valueOf(d);
