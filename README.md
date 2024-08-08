@@ -23,7 +23,7 @@ Setup a `maven` dependency for your project:
 ```xml
 
 <dependency>
-    <groupId>org.voximplant</groupId>
+    <groupId>com.voximplant</groupId>
     <artifactId>apiclient</artifactId>
     <version>1.7.0</version>
 </dependency>
