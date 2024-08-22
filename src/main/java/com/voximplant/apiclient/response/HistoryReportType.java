@@ -152,12 +152,12 @@ public class HistoryReportType implements Alignable {
         return this.lastDownloaded != null;
     }
 
-    @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
+    @JsonDeserialize(using=com.voximplant.apiclient.util.DateDeserializer.class)
     private Date storeUntil;
 
     /**
-    * Store the report until the UTC time in 24-h format: YYYY-MM-DD
-    * HH:mm:ss. The report is completed if the field exists
+    * Store the report until the date in format: YYYY-MM-DD. The report is
+    * completed if the field exists
     */
     public Date getStoreUntil() {
         return this.storeUntil;
@@ -165,19 +165,6 @@ public class HistoryReportType implements Alignable {
 
     public boolean hasStoreUntil() {
         return this.storeUntil != null;
-    }
-
-    private API_Error error;
-
-    /**
-    * The report error
-    */
-    public API_Error getError() {
-        return this.error;
-    }
-
-    public boolean hasError() {
-        return this.error != null;
     }
 
     private Object filters;
@@ -302,14 +289,6 @@ public class HistoryReportType implements Alignable {
             sb.append(aligned)
                 .append("\"storeUntil\": \"")
                 .append(storeUntil)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (error != null) {
-            sb.append(aligned)
-                .append("\"error\": \"")
-                .append(error)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -55,6 +55,19 @@ public class PushCredentialInfo implements Alignable {
         return this.pushProviderName != null;
     }
 
+    private String expirationDate;
+
+    /**
+    * The expiration date of the push certificate
+    */
+    public String getExpirationDate() {
+        return this.expirationDate;
+    }
+
+    public boolean hasExpirationDate() {
+        return this.expirationDate != null;
+    }
+
     private String credentialBundle;
 
     /**
@@ -123,6 +136,14 @@ public class PushCredentialInfo implements Alignable {
             sb.append(aligned)
                 .append("\"pushProviderName\": \"")
                 .append(pushProviderName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (expirationDate != null) {
+            sb.append(aligned)
+                .append("\"expirationDate\": \"")
+                .append(expirationDate)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
