@@ -18,7 +18,7 @@ public class AuditLogInfoType implements Alignable {
     private Long auditLogId;
 
     /**
-    * The  ID
+    * The audit log ID
     */
     public Long getAuditLogId() {
         return this.auditLogId;
@@ -26,6 +26,32 @@ public class AuditLogInfoType implements Alignable {
 
     public boolean hasAuditLogId() {
         return this.auditLogId != null;
+    }
+
+    private Long subuserId;
+
+    /**
+    * The subuser's ID
+    */
+    public Long getSubuserId() {
+        return this.subuserId;
+    }
+
+    public boolean hasSubuserId() {
+        return this.subuserId != null;
+    }
+
+    private String subuserName;
+
+    /**
+    * The subuser's name
+    */
+    public String getSubuserName() {
+        return this.subuserName;
+    }
+
+    public boolean hasSubuserName() {
+        return this.subuserName != null;
     }
 
     private Long accountId;
@@ -121,6 +147,22 @@ public class AuditLogInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"auditLogId\": \"")
                 .append(auditLogId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subuserId != null) {
+            sb.append(aligned)
+                .append("\"subuserId\": \"")
+                .append(subuserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subuserName != null) {
+            sb.append(aligned)
+                .append("\"subuserName\": \"")
+                .append(subuserName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
