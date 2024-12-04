@@ -43,7 +43,8 @@ public class GetHistoryReportsRequest implements Alignable {
     /**
     * The history report type list separated by semicolons (;). Use the
     * 'all' value to select all history report types. The following values
-    * are possible: calls, calls_brief, transactions, audit, call_list
+    * are possible: calls, calls_brief, transactions, audit, call_list,
+    * transactions_on_hold
     */
     public MultiArgument<String> getHistoryType() {
         return this.historyType;
@@ -56,7 +57,8 @@ public class GetHistoryReportsRequest implements Alignable {
     /**
     * The history report type list separated by semicolons (;). Use the
     * 'all' value to select all history report types. The following values
-    * are possible: calls, calls_brief, transactions, audit, call_list
+    * are possible: calls, calls_brief, transactions, audit, call_list,
+    * transactions_on_hold
     */
     public GetHistoryReportsRequest setHistoryType(MultiArgument<String> d) {
         this.historyType = d;
