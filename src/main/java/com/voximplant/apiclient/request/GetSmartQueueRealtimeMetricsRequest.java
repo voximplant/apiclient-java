@@ -125,48 +125,6 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
         return this;
     }
 
-    private MultiArgument<Long> sqQueueId;
-
-    @RequestField(name="sq_queue_id")
-    /**
-    * The SmartQueue ID list with a maximum of 5 values separated by
-    * semicolons (;). Can operate as filter for the
-    * **calls_blocked_percentage**, **count_blocked_calls**,
-    * **average_abandonment_rate**, **count_abandonment_calls**,
-    * **service_level**, **occupancy_rate**, **min_time_in_queue**,
-    * **max_time_in_queue**, **average_time_in_queue**,
-    * **min_answer_speed**, **max_answer_speed**, **average_answer_speed**,
-    * **min_handle_time**, **max_handle_time**, **average_handle_time**,
-    * **count_handled_calls**, **min_after_call_worktime**,
-    * **max_after_call_worktime**, **average_after_call_worktime** report
-    * types
-    */
-    public MultiArgument<Long> getSqQueueId() {
-        return this.sqQueueId;
-    }
-
-    public boolean hasSqQueueId() {
-        return this.sqQueueId != null;
-    }
-
-    /**
-    * The SmartQueue ID list with a maximum of 5 values separated by
-    * semicolons (;). Can operate as filter for the
-    * **calls_blocked_percentage**, **count_blocked_calls**,
-    * **average_abandonment_rate**, **count_abandonment_calls**,
-    * **service_level**, **occupancy_rate**, **min_time_in_queue**,
-    * **max_time_in_queue**, **average_time_in_queue**,
-    * **min_answer_speed**, **max_answer_speed**, **average_answer_speed**,
-    * **min_handle_time**, **max_handle_time**, **average_handle_time**,
-    * **count_handled_calls**, **min_after_call_worktime**,
-    * **max_after_call_worktime**, **average_after_call_worktime** report
-    * types
-    */
-    public GetSmartQueueRealtimeMetricsRequest setSqQueueId(MultiArgument<Long> d) {
-        this.sqQueueId = d;
-        return this;
-    }
-
     private MultiArgument<String> sqQueueName;
 
     @RequestField(name="sq_queue_name")
@@ -492,14 +450,6 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"userName\": \"")
                 .append(userName)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (sqQueueId != null) {
-            sb.append(aligned)
-                .append("\"sqQueueId\": \"")
-                .append(sqQueueId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

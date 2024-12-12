@@ -57,6 +57,32 @@ public class GetScenariosResponse implements Alignable {
         return this.count != null;
     }
 
+    private Long applicationId;
+
+    /**
+    * ID of the scenario's application
+    */
+    public Long getApplicationId() {
+        return this.applicationId;
+    }
+
+    public boolean hasApplicationId() {
+        return this.applicationId != null;
+    }
+
+    private String applicationName;
+
+    /**
+    * Name of the scenario's application
+    */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -84,6 +110,22 @@ public class GetScenariosResponse implements Alignable {
             sb.append(aligned)
                 .append("\"count\": \"")
                 .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

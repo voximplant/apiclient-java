@@ -131,6 +131,50 @@ public class AddScenarioRequest implements Alignable {
         return this;
     }
 
+    private Long applicationId;
+
+    @RequestField(name="application_id")
+    /**
+    * ID of the application to bind the scenario to
+    */
+    public Long getApplicationId() {
+        return this.applicationId;
+    }
+
+    public boolean hasApplicationId() {
+        return this.applicationId != null;
+    }
+
+    /**
+    * ID of the application to bind the scenario to
+    */
+    public AddScenarioRequest setApplicationId(long d) {
+        this.applicationId = Long.valueOf(d);
+        return this;
+    }
+
+    private String applicationName;
+
+    @RequestField(name="application_name")
+    /**
+    * Name of the application to bind the scenario to
+    */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
+    /**
+    * Name of the application to bind the scenario to
+    */
+    public AddScenarioRequest setApplicationName(String d) {
+        this.applicationName = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -176,6 +220,22 @@ public class AddScenarioRequest implements Alignable {
             sb.append(aligned)
                 .append("\"rewrite\": \"")
                 .append(rewrite)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -149,6 +149,30 @@ public class GetNewPhoneNumbersRequest implements Alignable {
         return this;
     }
 
+    private String phoneNumberMask;
+
+    @RequestField(name="phone_number_mask")
+    /**
+    * The phone number searching mask. Asterisk represents zero or more
+    * occurrences of any character
+    */
+    public String getPhoneNumberMask() {
+        return this.phoneNumberMask;
+    }
+
+    public boolean hasPhoneNumberMask() {
+        return this.phoneNumberMask != null;
+    }
+
+    /**
+    * The phone number searching mask. Asterisk represents zero or more
+    * occurrences of any character
+    */
+    public GetNewPhoneNumbersRequest setPhoneNumberMask(String d) {
+        this.phoneNumberMask = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -202,6 +226,14 @@ public class GetNewPhoneNumbersRequest implements Alignable {
             sb.append(aligned)
                 .append("\"offset\": \"")
                 .append(offset)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneNumberMask != null) {
+            sb.append(aligned)
+                .append("\"phoneNumberMask\": \"")
+                .append(phoneNumberMask)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
