@@ -223,50 +223,6 @@ public class AddPushCredentialRequest implements Alignable {
         return this;
     }
 
-    private String senderId;
-
-    @RequestField(name="sender_id")
-    /**
-    * The sender id, provided by Google. Credentials for GOOGLE push
-    */
-    public String getSenderId() {
-        return this.senderId;
-    }
-
-    public boolean hasSenderId() {
-        return this.senderId != null;
-    }
-
-    /**
-    * The sender id, provided by Google. Credentials for GOOGLE push
-    */
-    public AddPushCredentialRequest setSenderId(String d) {
-        this.senderId = d;
-        return this;
-    }
-
-    private String serverKey;
-
-    @RequestField(name="server_key")
-    /**
-    * The server key, provided by Google. Credentials for GOOGLE push
-    */
-    public String getServerKey() {
-        return this.serverKey;
-    }
-
-    public boolean hasServerKey() {
-        return this.serverKey != null;
-    }
-
-    /**
-    * The server key, provided by Google. Credentials for GOOGLE push
-    */
-    public AddPushCredentialRequest setServerKey(String d) {
-        this.serverKey = d;
-        return this;
-    }
-
     private String serviceAccountFile;
 
     @RequestField(name="service_account_file")
@@ -434,22 +390,6 @@ public class AddPushCredentialRequest implements Alignable {
             sb.append(aligned)
                 .append("\"isDevMode\": \"")
                 .append(isDevMode)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (senderId != null) {
-            sb.append(aligned)
-                .append("\"senderId\": \"")
-                .append(senderId)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (serverKey != null) {
-            sb.append(aligned)
-                .append("\"serverKey\": \"")
-                .append(serverKey)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

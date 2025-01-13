@@ -23,8 +23,6 @@ public class AddPushCredentialExample {
 
             AddPushCredentialResponse res = client.addPushCredential(new AddPushCredentialRequest()
                 .setPushProviderName("GOOGLE")
-                .setSenderId("704777431520")
-                .setServerKey("AAAAjM-LQsc:APA91bGyCb5WhcGtaM-RaOI1GqWps1Uh9K-YoY75HIBy-En-4piH4c6_50gIEbSaCfuDrsLNfyZCvteiu6EjxA_rEBOvlc4xZ30uiGgbuM_jdT6y6Ku55OwnCyIxRNznvmx1jkkLexSU")
             );
             System.out.println("OK");
         } catch (IOException | ClientException e) {

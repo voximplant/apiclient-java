@@ -187,6 +187,19 @@ public class CallInfoType implements Alignable {
         return this.customData != null;
     }
 
+    private Map<String, Object> endReason;
+
+    /**
+    * End reason code and description
+    */
+    public Map<String, Object> getEndReason() {
+        return this.endReason;
+    }
+
+    public boolean hasEndReason() {
+        return this.endReason != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -296,6 +309,14 @@ public class CallInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"customData\": \"")
                 .append(customData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (endReason != null) {
+            sb.append(aligned)
+                .append("\"endReason\": \"")
+                .append(endReason)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

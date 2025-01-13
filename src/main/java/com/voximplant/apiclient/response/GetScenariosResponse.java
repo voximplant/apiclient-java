@@ -83,6 +83,19 @@ public class GetScenariosResponse implements Alignable {
         return this.applicationName != null;
     }
 
+    private String extendedApplicationName;
+
+    /**
+    * Application name including the node name
+    */
+    public String getExtendedApplicationName() {
+        return this.extendedApplicationName;
+    }
+
+    public boolean hasExtendedApplicationName() {
+        return this.extendedApplicationName != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -126,6 +139,14 @@ public class GetScenariosResponse implements Alignable {
             sb.append(aligned)
                 .append("\"applicationName\": \"")
                 .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (extendedApplicationName != null) {
+            sb.append(aligned)
+                .append("\"extendedApplicationName\": \"")
+                .append(extendedApplicationName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
