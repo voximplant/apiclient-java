@@ -81,6 +81,19 @@ public class PhoneNumberCountryInfoType implements Alignable {
         return this.emergencyCallsToBeEnabled != null;
     }
 
+    private String localizedCountryName;
+
+    /**
+     * The localized country name
+     */
+    public String getLocalizedCountryName() {
+        return this.localizedCountryName;
+    }
+
+    public boolean hasLocalizedCountryName() {
+        return this.localizedCountryName != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -124,6 +137,14 @@ public class PhoneNumberCountryInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"emergencyCallsToBeEnabled\": \"")
                 .append(emergencyCallsToBeEnabled)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localizedCountryName != null) {
+            sb.append(aligned)
+                .append("\"localizedCountryName\": \"")
+                .append(localizedCountryName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
