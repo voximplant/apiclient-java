@@ -199,12 +199,12 @@ public class AttachedPhoneInfoType implements Alignable {
         return this.categoryName != null;
     }
 
-    private Boolean requiredVerification;
+    private String requiredVerification;
 
     /**
     * Whether the verification is required for the account
     */
-    public Boolean getRequiredVerification() {
+    public String getRequiredVerification() {
         return this.requiredVerification;
     }
 

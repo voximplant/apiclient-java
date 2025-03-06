@@ -28,6 +28,19 @@ public class PhoneNumberCountryInfoType implements Alignable {
         return this.countryCode != null;
     }
 
+    private String localizedCountryName;
+
+    /**
+    * The localized country name
+    */
+    public String getLocalizedCountryName() {
+        return this.localizedCountryName;
+    }
+
+    public boolean hasLocalizedCountryName() {
+        return this.localizedCountryName != null;
+    }
+
     private String phonePrefix;
 
     /**
@@ -94,6 +107,14 @@ public class PhoneNumberCountryInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"countryCode\": \"")
                 .append(countryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (localizedCountryName != null) {
+            sb.append(aligned)
+                .append("\"localizedCountryName\": \"")
+                .append(localizedCountryName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

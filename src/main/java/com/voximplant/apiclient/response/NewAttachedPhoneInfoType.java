@@ -41,12 +41,12 @@ public class NewAttachedPhoneInfoType implements Alignable {
         return this.phoneNumber != null;
     }
 
-    private Boolean requiredVerification;
+    private String requiredVerification;
 
     /**
     * Whether verification is required for the account
     */
-    public Boolean getRequiredVerification() {
+    public String getRequiredVerification() {
         return this.requiredVerification;
     }
 

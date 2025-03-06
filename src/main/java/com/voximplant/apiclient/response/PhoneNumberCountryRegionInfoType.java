@@ -81,12 +81,12 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
         return this.verificationStatus != null;
     }
 
-    private Boolean requiredVerification;
+    private String requiredVerification;
 
     /**
     * Whether verification is required for the account
     */
-    public Boolean getRequiredVerification() {
+    public String getRequiredVerification() {
         return this.requiredVerification;
     }
 

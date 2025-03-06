@@ -233,7 +233,8 @@ public class GetCallHistoryRequest implements Alignable {
     /**
     * To receive a call history for a specific remote numbers, pass the
     * number list separated by semicolons (;). A remote number is a number
-    * on the client side
+    * on the client side. Ignored if the `remote_number_list` parameter is
+    * not empty
     */
     public MultiArgument<String> getRemoteNumber() {
         return this.remoteNumber;
@@ -246,10 +247,37 @@ public class GetCallHistoryRequest implements Alignable {
     /**
     * To receive a call history for a specific remote numbers, pass the
     * number list separated by semicolons (;). A remote number is a number
-    * on the client side
+    * on the client side. Ignored if the `remote_number_list` parameter is
+    * not empty
     */
     public GetCallHistoryRequest setRemoteNumber(MultiArgument<String> d) {
         this.remoteNumber = d;
+        return this;
+    }
+
+    private Map<String, Object> remoteNumberList;
+
+    @RequestField(name="remote_number_list")
+    /**
+    * A JS array of strings of specific remote phone numbers to sort the
+    * call history. Has higher priority than the `remote_number` parameter.
+    * If the array is empty, the `remote_number` parameter is used instead
+    */
+    public Map<String, Object> getRemoteNumberList() {
+        return this.remoteNumberList;
+    }
+
+    public boolean hasRemoteNumberList() {
+        return this.remoteNumberList != null;
+    }
+
+    /**
+    * A JS array of strings of specific remote phone numbers to sort the
+    * call history. Has higher priority than the `remote_number` parameter.
+    * If the array is empty, the `remote_number` parameter is used instead
+    */
+    public GetCallHistoryRequest setRemoteNumberList(Map<String, Object> d) {
+        this.remoteNumberList = d;
         return this;
     }
 
@@ -656,6 +684,14 @@ public class GetCallHistoryRequest implements Alignable {
             sb.append(aligned)
                 .append("\"remoteNumber\": \"")
                 .append(remoteNumber)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (remoteNumberList != null) {
+            sb.append(aligned)
+                .append("\"remoteNumberList\": \"")
+                .append(remoteNumberList)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

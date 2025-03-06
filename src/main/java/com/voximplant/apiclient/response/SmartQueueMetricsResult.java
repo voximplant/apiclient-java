@@ -29,7 +29,8 @@ public class SmartQueueMetricsResult implements Alignable {
     * average_answer_speed, min_handle_time, max_handle_time,
     * average_handle_time, count_handled_calls, min_after_call_worktime,
     * max_after_call_worktime, average_after_call_worktime,
-    * sum_agents_custom_1_time ... sum_agents_custom_10_time
+    * sum_agents_custom_1_time ... sum_agents_custom_10_time,
+    * call_count_assigned_to_queue, im_count_assigned_to_queue
     */
     public String getReportType() {
         return this.reportType;

@@ -327,7 +327,8 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
     * im_count_agent_unanswered_chats, min_reaction_time,
     * max_reaction_time, average_reaction_time, im_min_reaction_time,
     * im_max_reaction_time, im_average_reaction_time,
-    * im_count_abandonment_chats, im_count_lost_chats, im_lost_chats_rate
+    * im_count_abandonment_chats, im_count_lost_chats, im_lost_chats_rate,
+    * call_count_assigned_to_queue, im_count_assigned_to_queue
     */
     public MultiArgument<String> getReportType() {
         return this.reportType;
@@ -374,7 +375,8 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
     * im_count_agent_unanswered_chats, min_reaction_time,
     * max_reaction_time, average_reaction_time, im_min_reaction_time,
     * im_max_reaction_time, im_average_reaction_time,
-    * im_count_abandonment_chats, im_count_lost_chats, im_lost_chats_rate
+    * im_count_abandonment_chats, im_count_lost_chats, im_lost_chats_rate,
+    * call_count_assigned_to_queue, im_count_assigned_to_queue
     */
     public RequestSmartQueueHistoryRequest setReportType(MultiArgument<String> d) {
         this.reportType = d;

@@ -1226,13 +1226,6 @@ public class VoximplantAPIClient {
         return mapper.readValue(impl.performRequest("StopCallListProcessing", RequestSerializer.serialize(req)), StopCallListProcessingResponse.class);
     }
 
-    public TransferMoneyToUserResponse transferMoneyToUser(TransferMoneyToUserRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue(impl.performRequest("TransferMoneyToUser", RequestSerializer.serialize(req)), TransferMoneyToUserResponse.class);
-    }
-
     public UpdateKeyResponse updateKey(UpdateKeyRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
