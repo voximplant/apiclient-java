@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
 * Generate a service_level report file in csv format for the period

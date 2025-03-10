@@ -3,6 +3,7 @@ package com.voximplant.apiclient.response;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
@@ -21,12 +22,12 @@ public class SQ_AddSkillResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long result;
+    private SQAddSkillResult result;
 
     /**
-    * 1
+    * Result with ID of the added skill
     */
-    public Long getResult() {
+    public SQAddSkillResult getResult() {
         return this.result;
     }
 

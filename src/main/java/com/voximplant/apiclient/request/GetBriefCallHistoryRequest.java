@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -277,28 +278,6 @@ public class GetBriefCallHistoryRequest implements Alignable {
         return this;
     }
 
-    private Boolean withHeader;
-
-    @RequestField(name="with_header")
-    /**
-    * Whether to get a CSV file with the column names if the output=csv
-    */
-    public Boolean getWithHeader() {
-        return this.withHeader;
-    }
-
-    public boolean hasWithHeader() {
-        return this.withHeader != null;
-    }
-
-    /**
-    * Whether to get a CSV file with the column names if the output=csv
-    */
-    public GetBriefCallHistoryRequest setWithHeader(boolean d) {
-        this.withHeader = Boolean.valueOf(d);
-        return this;
-    }
-
     private Boolean descOrder;
 
     @RequestField(name="desc_order")
@@ -321,11 +300,33 @@ public class GetBriefCallHistoryRequest implements Alignable {
         return this;
     }
 
+    private Boolean withHeader;
+
+    @RequestField(name="with_header")
+    /**
+    * Whether to get a CSV file with the column names if the output=csv
+    */
+    public Boolean getWithHeader() {
+        return this.withHeader;
+    }
+
+    public boolean hasWithHeader() {
+        return this.withHeader != null;
+    }
+
+    /**
+    * Whether to get a CSV file with the column names if the output=csv
+    */
+    public GetBriefCallHistoryRequest setWithHeader(boolean d) {
+        this.withHeader = Boolean.valueOf(d);
+        return this;
+    }
+
     private String output;
 
     @RequestField(name="output")
     /**
-    * The output format. The following values available: csv
+    * The output format. The following values available: **csv**.
     */
     public String getOutput() {
         return this.output;
@@ -336,36 +337,10 @@ public class GetBriefCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The output format. The following values available: csv
+    * The output format. The following values available: **csv**.
     */
     public GetBriefCallHistoryRequest setOutput(String d) {
         this.output = d;
-        return this;
-    }
-
-    private Boolean isAsync;
-
-    @RequestField(name="is_async")
-    /**
-    * Whether to get records in the asynchronous mode. <b>Use this mode to
-    * download large amounts of data</b>. See the [GetHistoryReports],
-    * [DownloadHistoryReport] functions for details
-    */
-    public Boolean getIsAsync() {
-        return this.isAsync;
-    }
-
-    public boolean hasIsAsync() {
-        return this.isAsync != null;
-    }
-
-    /**
-    * Whether to get records in the asynchronous mode. <b>Use this mode to
-    * download large amounts of data</b>. See the [GetHistoryReports],
-    * [DownloadHistoryReport] functions for details
-    */
-    public GetBriefCallHistoryRequest setIsAsync(boolean d) {
-        this.isAsync = Boolean.valueOf(d);
         return this;
     }
 
@@ -458,14 +433,6 @@ public class GetBriefCallHistoryRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (withHeader != null) {
-            sb.append(aligned)
-                .append("\"withHeader\": \"")
-                .append(withHeader)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
         if (descOrder != null) {
             sb.append(aligned)
                 .append("\"descOrder\": \"")
@@ -474,18 +441,18 @@ public class GetBriefCallHistoryRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (output != null) {
+        if (withHeader != null) {
             sb.append(aligned)
-                .append("\"output\": \"")
-                .append(output)
+                .append("\"withHeader\": \"")
+                .append(withHeader)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (isAsync != null) {
+        if (output != null) {
             sb.append(aligned)
-                .append("\"isAsync\": \"")
-                .append(isAsync)
+                .append("\"output\": \"")
+                .append(output)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

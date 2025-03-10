@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -197,28 +198,6 @@ public class GetAuditLogRequest implements Alignable {
         return this;
     }
 
-    private Boolean withHeader;
-
-    @RequestField(name="with_header")
-    /**
-    * Whether to get a CSV file with the column names if the output=csv
-    */
-    public Boolean getWithHeader() {
-        return this.withHeader;
-    }
-
-    public boolean hasWithHeader() {
-        return this.withHeader != null;
-    }
-
-    /**
-    * Whether to get a CSV file with the column names if the output=csv
-    */
-    public GetAuditLogRequest setWithHeader(boolean d) {
-        this.withHeader = Boolean.valueOf(d);
-        return this;
-    }
-
     private Boolean descOrder;
 
     @RequestField(name="desc_order")
@@ -307,54 +286,6 @@ public class GetAuditLogRequest implements Alignable {
         return this;
     }
 
-    private String output;
-
-    @RequestField(name="output")
-    /**
-    * The output format. The following values available: json, csv
-    */
-    public String getOutput() {
-        return this.output;
-    }
-
-    public boolean hasOutput() {
-        return this.output != null;
-    }
-
-    /**
-    * The output format. The following values available: json, csv
-    */
-    public GetAuditLogRequest setOutput(String d) {
-        this.output = d;
-        return this;
-    }
-
-    private Boolean isAsync;
-
-    @RequestField(name="is_async")
-    /**
-    * Whether to get records in the asynchronous mode (for csv output
-    * only). If it is true, the request is available via
-    * [GetHistoryReports] and [DownloadHistoryReport] methods
-    */
-    public Boolean getIsAsync() {
-        return this.isAsync;
-    }
-
-    public boolean hasIsAsync() {
-        return this.isAsync != null;
-    }
-
-    /**
-    * Whether to get records in the asynchronous mode (for csv output
-    * only). If it is true, the request is available via
-    * [GetHistoryReports] and [DownloadHistoryReport] methods
-    */
-    public GetAuditLogRequest setIsAsync(boolean d) {
-        this.isAsync = Boolean.valueOf(d);
-        return this;
-    }
-
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -428,14 +359,6 @@ public class GetAuditLogRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (withHeader != null) {
-            sb.append(aligned)
-                .append("\"withHeader\": \"")
-                .append(withHeader)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
         if (descOrder != null) {
             sb.append(aligned)
                 .append("\"descOrder\": \"")
@@ -464,22 +387,6 @@ public class GetAuditLogRequest implements Alignable {
             sb.append(aligned)
                 .append("\"offset\": \"")
                 .append(offset)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (output != null) {
-            sb.append(aligned)
-                .append("\"output\": \"")
-                .append(output)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (isAsync != null) {
-            sb.append(aligned)
-                .append("\"isAsync\": \"")
-                .append(isAsync)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

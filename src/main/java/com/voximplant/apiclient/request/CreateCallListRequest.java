@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -133,7 +134,7 @@ public class CreateCallListRequest implements Alignable {
         return this;
     }
 
-    private String fileContent;
+    private InputStream fileContent;
 
     @RequestField(name="file_content")
     /**
@@ -141,7 +142,7 @@ public class CreateCallListRequest implements Alignable {
     * "file_content" via URL is at its own risk because the network devices
     * tend to drop HTTP requests with large headers
     */
-    public String getFileContent() {
+    public InputStream getFileContent() {
         return this.fileContent;
     }
 
@@ -154,7 +155,7 @@ public class CreateCallListRequest implements Alignable {
     * "file_content" via URL is at its own risk because the network devices
     * tend to drop HTTP requests with large headers
     */
-    public CreateCallListRequest setFileContent(String d) {
+    public CreateCallListRequest setFileContent(InputStream d) {
         this.fileContent = d;
         return this;
     }
@@ -349,12 +350,6 @@ public class CreateCallListRequest implements Alignable {
                 .append(System.lineSeparator());
         }
         if (fileContent != null) {
-            sb.append(aligned)
-                .append("\"fileContent\": \"")
-                .append(fileContent)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
         }
         if (intervalSeconds != null) {
             sb.append(aligned)

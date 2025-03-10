@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -44,7 +45,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
     @RequestField(name="contains_ip")
     /**
     * Specify the parameter to remove the networks that contains the
-    * particular IP4. Can be used instead of <b>autharized_ip</b>
+    * particular IP4. Can be used instead of <b>authorized_ip</b>
     */
     public String getContainsIp() {
         return this.containsIp;
@@ -56,7 +57,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
 
     /**
     * Specify the parameter to remove the networks that contains the
-    * particular IP4. Can be used instead of <b>autharized_ip</b>
+    * particular IP4. Can be used instead of <b>authorized_ip</b>
     */
     public DelAuthorizedAccountIPRequest setContainsIp(String d) {
         this.containsIp = d;

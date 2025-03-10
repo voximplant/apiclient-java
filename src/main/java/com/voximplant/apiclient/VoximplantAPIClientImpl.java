@@ -1,6 +1,7 @@
 package com.voximplant.apiclient;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -20,6 +21,8 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Form;
 import org.apache.http.client.fluent.Request;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
 
 class VoximplantAPIClientImpl {
     private static final long latencyCompensationTime = 5000L;
@@ -87,18 +90,31 @@ class VoximplantAPIClientImpl {
         return authHeader;
     }
 
-    String performRequest(String name,Map<String, String> params) throws IOException {
+    Object performRequest(String name, Map<String, Object> params) throws IOException {
         Request request = Request.Post(apiUrl + name);
-        Form form = Form.form();
-        form.add("account_id", Long.toString(this.credentials.getAccountId()));
+        MultipartEntityBuilder form = MultipartEntityBuilder.create();
+        form.addTextBody("account_id", Long.toString(this.credentials.getAccountId()));
         if (params != null) {
-            for (Map.Entry<String, String> param:params.entrySet()) {
-                form.add(param.getKey(), param.getValue());
+            for (Map.Entry<String, Object> param:params.entrySet()) {
+                if (param.getValue() instanceof InputStream) {
+                    InputStream inputStream = (InputStream) param.getValue();
+                    form.addBinaryBody(
+                        param.getKey(),  
+                        inputStream          
+                    );
+                } 
+                else {
+                    form.addTextBody(param.getKey(), (String)param.getValue());
+                }
             }
         }
         request.addHeader("Authorization", this.getAuthHeader());
-        request.bodyForm(form.build(), StandardCharsets.UTF_8);
+        request.body(form.build());
         Content content = request.execute().returnContent();
-        return content.asString();
+        if ("application/octet-stream".equals(content.getType().toString())) {
+            return content.asStream();
+        } else {
+            return content.asString();
+        }
     }
 }

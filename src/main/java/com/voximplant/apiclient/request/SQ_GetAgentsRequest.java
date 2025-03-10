@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -257,7 +258,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     /**
     * Filter statuses in the json array format. The array should contain
     * objects with the <b>sq_status_type</b> and <b>sq_status_name</b>
-    * keys. Possible values for <b>sq_status_type</b> are 'CALL' and'IM'.
+    * keys. Possible values for <b>sq_status_type</b> are 'CALL' and 'IM'.
     * Possible values for <b>sq_status_name</b> are 'OFFLINE', 'ONLINE',
     * 'READY', 'IN_SERVICE', 'AFTER_SERVICE', 'DND'
     */
@@ -272,7 +273,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     /**
     * Filter statuses in the json array format. The array should contain
     * objects with the <b>sq_status_type</b> and <b>sq_status_name</b>
-    * keys. Possible values for <b>sq_status_type</b> are 'CALL' and'IM'.
+    * keys. Possible values for <b>sq_status_type</b> are 'CALL' and 'IM'.
     * Possible values for <b>sq_status_name</b> are 'OFFLINE', 'ONLINE',
     * 'READY', 'IN_SERVICE', 'AFTER_SERVICE', 'DND'
     */

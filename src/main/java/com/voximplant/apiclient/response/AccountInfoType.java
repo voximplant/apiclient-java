@@ -3,6 +3,7 @@ package com.voximplant.apiclient.response;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
@@ -270,7 +271,7 @@ public class AccountInfoType implements Alignable {
     private Boolean active;
 
     /**
-    * Whether the account is ctive
+    * Whether the account is active
     */
     public Boolean getActive() {
         return this.active;
@@ -459,7 +460,7 @@ public class AccountInfoType implements Alignable {
     private Boolean sendJsError;
 
     /**
-    * Whether to send an email when a JS error occures
+    * Whether to send an email when a JS error occurs
     */
     public Boolean getSendJsError() {
         return this.sendJsError;

@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -131,13 +132,13 @@ public class AddPushCredentialRequest implements Alignable {
         return this;
     }
 
-    private String certContent;
+    private InputStream certContent;
 
     @RequestField(name="cert_content")
     /**
     * Public and private keys in PKCS12 format. Credentials for APPLE push
     */
-    public String getCertContent() {
+    public InputStream getCertContent() {
         return this.certContent;
     }
 
@@ -148,7 +149,7 @@ public class AddPushCredentialRequest implements Alignable {
     /**
     * Public and private keys in PKCS12 format. Credentials for APPLE push
     */
-    public AddPushCredentialRequest setCertContent(String d) {
+    public AddPushCredentialRequest setCertContent(InputStream d) {
         this.certContent = d;
         return this;
     }
@@ -223,14 +224,58 @@ public class AddPushCredentialRequest implements Alignable {
         return this;
     }
 
-    private String serviceAccountFile;
+    private String senderId;
+
+    @RequestField(name="sender_id")
+    /**
+    * The sender id, provided by Google. Credentials for GOOGLE push
+    */
+    public String getSenderId() {
+        return this.senderId;
+    }
+
+    public boolean hasSenderId() {
+        return this.senderId != null;
+    }
+
+    /**
+    * The sender id, provided by Google. Credentials for GOOGLE push
+    */
+    public AddPushCredentialRequest setSenderId(String d) {
+        this.senderId = d;
+        return this;
+    }
+
+    private String serverKey;
+
+    @RequestField(name="server_key")
+    /**
+    * The server key, provided by Google. Credentials for GOOGLE push
+    */
+    public String getServerKey() {
+        return this.serverKey;
+    }
+
+    public boolean hasServerKey() {
+        return this.serverKey != null;
+    }
+
+    /**
+    * The server key, provided by Google. Credentials for GOOGLE push
+    */
+    public AddPushCredentialRequest setServerKey(String d) {
+        this.serverKey = d;
+        return this;
+    }
+
+    private InputStream serviceAccountFile;
 
     @RequestField(name="service_account_file")
     /**
     * The service account key file, provided by Google. Can be used instead
     * of <b>server_key</b>. Credentials for GOOGLE push
     */
-    public String getServiceAccountFile() {
+    public InputStream getServiceAccountFile() {
         return this.serviceAccountFile;
     }
 
@@ -242,7 +287,7 @@ public class AddPushCredentialRequest implements Alignable {
     * The service account key file, provided by Google. Can be used instead
     * of <b>server_key</b>. Credentials for GOOGLE push
     */
-    public AddPushCredentialRequest setServiceAccountFile(String d) {
+    public AddPushCredentialRequest setServiceAccountFile(InputStream d) {
         this.serviceAccountFile = d;
         return this;
     }
@@ -363,12 +408,6 @@ public class AddPushCredentialRequest implements Alignable {
                 .append(System.lineSeparator());
         }
         if (certContent != null) {
-            sb.append(aligned)
-                .append("\"certContent\": \"")
-                .append(certContent)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
         }
         if (certFileName != null) {
             sb.append(aligned)
@@ -394,13 +433,23 @@ public class AddPushCredentialRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (serviceAccountFile != null) {
+        if (senderId != null) {
             sb.append(aligned)
-                .append("\"serviceAccountFile\": \"")
-                .append(serviceAccountFile)
+                .append("\"senderId\": \"")
+                .append(senderId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
+        }
+        if (serverKey != null) {
+            sb.append(aligned)
+                .append("\"serverKey\": \"")
+                .append(serverKey)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (serviceAccountFile != null) {
         }
         if (huaweiClientId != null) {
             sb.append(aligned)

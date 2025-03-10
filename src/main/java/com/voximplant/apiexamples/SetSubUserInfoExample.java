@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
 * Edit the password and description for the subuser with id = 12 from

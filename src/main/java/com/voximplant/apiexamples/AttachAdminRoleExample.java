@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
 * Bind the all admin users with the admin roles 1, 2 and 3.

@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
 * Get messages that had been sent to number 12345678222 starting from

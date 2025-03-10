@@ -3,6 +3,7 @@ package com.voximplant.apiclient.response;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
@@ -24,7 +25,7 @@ public class GetBriefCallHistoryResponse implements Alignable {
     private Long result;
 
     /**
-    * In the async mode, the value is always 1
+    * 1
     */
     public Long getResult() {
         return this.result;

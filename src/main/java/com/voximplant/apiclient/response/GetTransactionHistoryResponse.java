@@ -3,6 +3,7 @@ package com.voximplant.apiclient.response;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
@@ -70,19 +71,6 @@ public class GetTransactionHistoryResponse implements Alignable {
         return this.count != null;
     }
 
-    private Long historyReportId;
-
-    /**
-    * The history report ID (async mode)
-    */
-    public Long getHistoryReportId() {
-        return this.historyReportId;
-    }
-
-    public boolean hasHistoryReportId() {
-        return this.historyReportId != null;
-    }
-
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -118,14 +106,6 @@ public class GetTransactionHistoryResponse implements Alignable {
             sb.append(aligned)
                 .append("\"count\": \"")
                 .append(count)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (historyReportId != null) {
-            sb.append(aligned)
-                .append("\"historyReportId\": \"")
-                .append(historyReportId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

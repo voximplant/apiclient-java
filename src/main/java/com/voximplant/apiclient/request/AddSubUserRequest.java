@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -19,7 +20,7 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="new_subuser_name")
     /**
-    * The new subuser login for managent api authentication, should be
+    * The new subuser login for management api authentication, should be
     * unique within the Voximplant account. The login specified is always
     * converted to lowercase
     */
@@ -32,7 +33,7 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * The new subuser login for managent api authentication, should be
+    * The new subuser login for management api authentication, should be
     * unique within the Voximplant account. The login specified is always
     * converted to lowercase
     */

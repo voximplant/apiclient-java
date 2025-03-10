@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -71,9 +72,9 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="child_account_email")
     /**
-    * The child ccount email to filter. You need to specify at least one of
-    * the following parameters: `child_account_id`, `child_account_name`,
-    * `child_account_email`
+    * The child account email to filter. You need to specify at least one
+    * of the following parameters: `child_account_id`,
+    * `child_account_name`, `child_account_email`
     */
     public String getChildAccountEmail() {
         return this.childAccountEmail;
@@ -84,9 +85,9 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The child ccount email to filter. You need to specify at least one of
-    * the following parameters: `child_account_id`, `child_account_name`,
-    * `child_account_email`
+    * The child account email to filter. You need to specify at least one
+    * of the following parameters: `child_account_id`,
+    * `child_account_name`, `child_account_email`
     */
     public GetChildrenAccountsRequest setChildAccountEmail(String d) {
         this.childAccountEmail = d;

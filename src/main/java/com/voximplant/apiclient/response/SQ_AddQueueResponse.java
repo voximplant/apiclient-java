@@ -3,6 +3,7 @@ package com.voximplant.apiclient.response;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
@@ -21,17 +22,17 @@ public class SQ_AddQueueResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long sqQueueId;
+    private SQAddQueueResult result;
 
     /**
-    * ID of the added queue
+    * Result with ID of the added queue
     */
-    public Long getSqQueueId() {
-        return this.sqQueueId;
+    public SQAddQueueResult getResult() {
+        return this.result;
     }
 
-    public boolean hasSqQueueId() {
-        return this.sqQueueId != null;
+    public boolean hasResult() {
+        return this.result != null;
     }
 
     public String toString(int alignment) {
@@ -43,10 +44,10 @@ public class SQ_AddQueueResponse implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (sqQueueId != null) {
+        if (result != null) {
             sb.append(aligned)
-                .append("\"sqQueueId\": \"")
-                .append(sqQueueId)
+                .append("\"result\": \"")
+                .append(result)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

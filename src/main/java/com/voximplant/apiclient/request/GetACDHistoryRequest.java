@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -355,7 +356,8 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="output")
     /**
-    * The output format. The following values available: json, csv
+    * The output format. The following values available: **json**, **csv**,
+    * **xls**. The default value is **json**
     */
     public String getOutput() {
         return this.output;
@@ -366,7 +368,8 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The output format. The following values available: json, csv
+    * The output format. The following values available: **json**, **csv**,
+    * **xls**. The default value is **json**
     */
     public GetACDHistoryRequest setOutput(String d) {
         this.output = d;

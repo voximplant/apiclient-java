@@ -3,6 +3,7 @@ package com.voximplant.apiclient.response;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.util.MultiArgument;
 import com.voximplant.apiclient.util.Error;
@@ -24,7 +25,7 @@ public class GetCallHistoryResponse implements Alignable {
     private CallSessionInfoType[] result;
 
     /**
-    * The CallSessionInfoType records in sync mode or 1 in async mode
+    * The CallSessionInfoType records
     */
     public CallSessionInfoType[] getResult() {
         return this.result;
@@ -37,7 +38,7 @@ public class GetCallHistoryResponse implements Alignable {
     private Long totalCount;
 
     /**
-    * The total found call session count (sync mode)
+    * The total found call session count
     */
     public Long getTotalCount() {
         return this.totalCount;
@@ -50,7 +51,7 @@ public class GetCallHistoryResponse implements Alignable {
     private Long count;
 
     /**
-    * The returned call session count (sync mode)
+    * The returned call session count
     */
     public Long getCount() {
         return this.count;
@@ -71,19 +72,6 @@ public class GetCallHistoryResponse implements Alignable {
 
     public boolean hasTimezone() {
         return this.timezone != null;
-    }
-
-    private Long historyReportId;
-
-    /**
-    * The history report ID (async mode)
-    */
-    public Long getHistoryReportId() {
-        return this.historyReportId;
-    }
-
-    public boolean hasHistoryReportId() {
-        return this.historyReportId != null;
     }
 
     public String toString(int alignment) {
@@ -121,14 +109,6 @@ public class GetCallHistoryResponse implements Alignable {
             sb.append(aligned)
                 .append("\"timezone\": \"")
                 .append(timezone)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (historyReportId != null) {
-            sb.append(aligned)
-                .append("\"historyReportId\": \"")
-                .append(historyReportId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -1,15 +1,17 @@
 package com.voximplant.apiclient.util;
 
 import com.voximplant.apiclient.ClientException;
+
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RequestSerializer {
-    public static Map<String, String> serialize(Object o) throws ClientException {
+    public static Map<String, Object> serialize(Object o) throws ClientException {
 
-        HashMap<String, String > res = new HashMap<>();
+        HashMap<String, Object > res = new HashMap<>();
 
         Method [] methods = o.getClass().getDeclaredMethods();
         for (Method method:methods) {
@@ -26,13 +28,18 @@ public class RequestSerializer {
                     }
                     Object value = method.invoke(o);
                     if (value != null) {
-                        SerializeUsing serializer = method.getAnnotation(SerializeUsing.class);
-                        if (serializer !=null) {
-                            ValueSerializer serializerInstance = (ValueSerializer) serializer.serializer().getConstructors()[0].newInstance();
-                            res.put(req.name(), serializerInstance.serialize(value));
+                        if (value instanceof InputStream){
+                            res.put(req.name(), value);
                         } else {
-                            res.put(req.name(), value.toString());
+                            SerializeUsing serializer = method.getAnnotation(SerializeUsing.class);
+                            if (serializer !=null) {
+                                ValueSerializer serializerInstance = (ValueSerializer) serializer.serializer().getConstructors()[0].newInstance();
+                                res.put(req.name(), serializerInstance.serialize(value));
+                            } else {
+                                res.put(req.name(), value.toString());
+                            }
                         }
+                        
                     }
                 }
                 catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {

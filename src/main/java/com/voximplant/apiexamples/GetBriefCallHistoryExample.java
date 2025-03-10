@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.TimeZone;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
 * Get the brief call session history from the 2020-02-25 00:00:00 UTC
@@ -30,7 +31,6 @@ public class GetBriefCallHistoryExample {
                 .setFromDate(fromDate.getTime())
                 .setToDate(toDate.getTime())
                 .setOutput("cvs")
-                .setIsAsync(true)
             );
             System.out.println("OK");
         } catch (IOException | ClientException e) {

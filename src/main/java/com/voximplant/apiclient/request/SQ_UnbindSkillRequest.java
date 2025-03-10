@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -113,7 +114,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="sq_skill_id")
     /**
-    * List of skill IDs separated by semicolons (;). Use 'all' to undbind
+    * List of skill IDs separated by semicolons (;). Use 'all' to unbind
     * all the skills
     */
     public MultiArgument<Long> getSqSkillId() {
@@ -125,7 +126,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * List of skill IDs separated by semicolons (;). Use 'all' to undbind
+    * List of skill IDs separated by semicolons (;). Use 'all' to unbind
     * all the skills
     */
     public SQ_UnbindSkillRequest setSqSkillId(MultiArgument<Long> d) {

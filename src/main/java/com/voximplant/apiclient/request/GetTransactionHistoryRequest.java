@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -299,12 +300,33 @@ public class GetTransactionHistoryRequest implements Alignable {
         return this;
     }
 
+    private Boolean withTotalCount;
+
+    @RequestField(name="with_total_count")
+    /**
+    * Whether to include the 'total_count' and increase performance
+    */
+    public Boolean getWithTotalCount() {
+        return this.withTotalCount;
+    }
+
+    public boolean hasWithTotalCount() {
+        return this.withTotalCount != null;
+    }
+
+    /**
+    * Whether to include the 'total_count' and increase performance
+    */
+    public GetTransactionHistoryRequest setWithTotalCount(boolean d) {
+        this.withTotalCount = Boolean.valueOf(d);
+        return this;
+    }
+
     private Long count;
 
     @RequestField(name="count")
     /**
-    * The number of returning records. In the synchronous mode, the maximum
-    * value is 1000
+    * The number of returning records. The maximum value is 1000
     */
     public Long getCount() {
         return this.count;
@@ -315,8 +337,7 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The number of returning records. In the synchronous mode, the maximum
-    * value is 1000
+    * The number of returning records. The maximum value is 1000
     */
     public GetTransactionHistoryRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -344,56 +365,6 @@ public class GetTransactionHistoryRequest implements Alignable {
     */
     public GetTransactionHistoryRequest setOffset(long d) {
         this.offset = Long.valueOf(d);
-        return this;
-    }
-
-    private String output;
-
-    @RequestField(name="output")
-    /**
-    * The output format. The following values available: json, csv
-    */
-    public String getOutput() {
-        return this.output;
-    }
-
-    public boolean hasOutput() {
-        return this.output != null;
-    }
-
-    /**
-    * The output format. The following values available: json, csv
-    */
-    public GetTransactionHistoryRequest setOutput(String d) {
-        this.output = d;
-        return this;
-    }
-
-    private Boolean isAsync;
-
-    @RequestField(name="is_async")
-    /**
-    * Whether to get records in the asynchronous mode (for csv output
-    * only). <b>Use this mode to download large amounts of data</b>. See
-    * the [GetHistoryReports], [DownloadHistoryReport] functions for
-    * details
-    */
-    public Boolean getIsAsync() {
-        return this.isAsync;
-    }
-
-    public boolean hasIsAsync() {
-        return this.isAsync != null;
-    }
-
-    /**
-    * Whether to get records in the asynchronous mode (for csv output
-    * only). <b>Use this mode to download large amounts of data</b>. See
-    * the [GetHistoryReports], [DownloadHistoryReport] functions for
-    * details
-    */
-    public GetTransactionHistoryRequest setIsAsync(boolean d) {
-        this.isAsync = Boolean.valueOf(d);
         return this;
     }
 
@@ -518,6 +489,14 @@ public class GetTransactionHistoryRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
+        if (withTotalCount != null) {
+            sb.append(aligned)
+                .append("\"withTotalCount\": \"")
+                .append(withTotalCount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (count != null) {
             sb.append(aligned)
                 .append("\"count\": \"")
@@ -530,22 +509,6 @@ public class GetTransactionHistoryRequest implements Alignable {
             sb.append(aligned)
                 .append("\"offset\": \"")
                 .append(offset)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (output != null) {
-            sb.append(aligned)
-                .append("\"output\": \"")
-                .append(output)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (isAsync != null) {
-            sb.append(aligned)
-                .append("\"isAsync\": \"")
-                .append(isAsync)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

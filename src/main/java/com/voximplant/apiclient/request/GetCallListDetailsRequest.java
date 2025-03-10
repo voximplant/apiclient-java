@@ -3,6 +3,7 @@ package com.voximplant.apiclient.request;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
@@ -85,7 +86,8 @@ public class GetCallListDetailsRequest implements Alignable {
 
     @RequestField(name="output")
     /**
-    * Output format (CSV/JSON/XLS). Default CSV
+    * The output format. The following values available: **json**, **csv**,
+    * **xls**. The default value is **csv**
     */
     public String getOutput() {
         return this.output;
@@ -96,7 +98,8 @@ public class GetCallListDetailsRequest implements Alignable {
     }
 
     /**
-    * Output format (CSV/JSON/XLS). Default CSV
+    * The output format. The following values available: **json**, **csv**,
+    * **xls**. The default value is **csv**
     */
     public GetCallListDetailsRequest setOutput(String d) {
         this.output = d;
