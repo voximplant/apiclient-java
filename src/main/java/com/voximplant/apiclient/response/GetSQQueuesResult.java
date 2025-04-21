@@ -126,7 +126,9 @@ public class GetSQQueuesResult implements Alignable {
 
     /**
     * Maximum time in minutes that a CALL-type request can remain in the
-    * queue without being assigned to an agent
+    * queue without being assigned to an agent in minutes. If the value has
+    * been passed in seconds, this field is also present in the answer,
+    * rounded to the bigger number
     */
     public Long getCallMaxWaitingTime() {
         return this.callMaxWaitingTime;
@@ -136,11 +138,28 @@ public class GetSQQueuesResult implements Alignable {
         return this.callMaxWaitingTime != null;
     }
 
+    private Long callMaxWaitingTimeInSeconds;
+
+    /**
+    * Maximum time in minutes that a CALL-type request can remain in the
+    * queue without being assigned to an agent in seconds. If the value has
+    * been passed in minutes, this field is also present in the answer
+    */
+    public Long getCallMaxWaitingTimeInSeconds() {
+        return this.callMaxWaitingTimeInSeconds;
+    }
+
+    public boolean hasCallMaxWaitingTimeInSeconds() {
+        return this.callMaxWaitingTimeInSeconds != null;
+    }
+
     private Long imMaxWaitingTime;
 
     /**
     * Maximum time in minutes that an IM-type request can remain in the
-    * queue without being assigned to an agent
+    * queue without being assigned to an agent in minutes. If the value has
+    * been passed in seconds, this field is also present in the answer,
+    * rounded to the bigger number
     */
     public Long getImMaxWaitingTime() {
         return this.imMaxWaitingTime;
@@ -148,6 +167,21 @@ public class GetSQQueuesResult implements Alignable {
 
     public boolean hasImMaxWaitingTime() {
         return this.imMaxWaitingTime != null;
+    }
+
+    private Long imMaxWaitingTimeInSeconds;
+
+    /**
+    * Maximum time in minutes that an IM-type request can remain in the
+    * queue without being assigned to an agent in seconds. If the value has
+    * been passed in minutes, this field is also present in the answer
+    */
+    public Long getImMaxWaitingTimeInSeconds() {
+        return this.imMaxWaitingTimeInSeconds;
+    }
+
+    public boolean hasImMaxWaitingTimeInSeconds() {
+        return this.imMaxWaitingTimeInSeconds != null;
     }
 
     private Long callMaxQueueSize;
@@ -270,10 +304,26 @@ public class GetSQQueuesResult implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
+        if (callMaxWaitingTimeInSeconds != null) {
+            sb.append(aligned)
+                .append("\"callMaxWaitingTimeInSeconds\": \"")
+                .append(callMaxWaitingTimeInSeconds)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (imMaxWaitingTime != null) {
             sb.append(aligned)
                 .append("\"imMaxWaitingTime\": \"")
                 .append(imMaxWaitingTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (imMaxWaitingTimeInSeconds != null) {
+            sb.append(aligned)
+                .append("\"imMaxWaitingTimeInSeconds\": \"")
+                .append(imMaxWaitingTimeInSeconds)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

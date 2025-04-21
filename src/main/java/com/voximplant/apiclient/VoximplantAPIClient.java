@@ -848,6 +848,12 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("GetZIPCodes", RequestSerializer.serialize(req)), GetZIPCodesResponse.class);
     }
+    public IsAccountPhoneNumberResponse isAccountPhoneNumber(IsAccountPhoneNumberRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("IsAccountPhoneNumber", RequestSerializer.serialize(req)), IsAccountPhoneNumberResponse.class);
+    }
     public LinkRegulationAddressResponse linkRegulationAddress(LinkRegulationAddressRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

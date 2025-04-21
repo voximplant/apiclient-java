@@ -235,7 +235,9 @@ public class SQ_AddQueueRequest implements Alignable {
     @RequestField(name="call_max_waiting_time")
     /**
     * Maximum time in minutes that a CALL-type request can remain in the
-    * queue without being assigned to an agent
+    * queue without being assigned to an agent. Specify either this
+    * parameter or `call_max_waiting_time_in_seconds`. Specifying both
+    * parameters simultaniously leads to an error
     */
     public Long getCallMaxWaitingTime() {
         return this.callMaxWaitingTime;
@@ -247,7 +249,9 @@ public class SQ_AddQueueRequest implements Alignable {
 
     /**
     * Maximum time in minutes that a CALL-type request can remain in the
-    * queue without being assigned to an agent
+    * queue without being assigned to an agent. Specify either this
+    * parameter or `call_max_waiting_time_in_seconds`. Specifying both
+    * parameters simultaniously leads to an error
     */
     public SQ_AddQueueRequest setCallMaxWaitingTime(long d) {
         this.callMaxWaitingTime = Long.valueOf(d);
@@ -259,7 +263,9 @@ public class SQ_AddQueueRequest implements Alignable {
     @RequestField(name="im_max_waiting_time")
     /**
     * Maximum time in minutes that an IM-type request can remain in the
-    * queue without being assigned to an agent
+    * queue without being assigned to an agent. Specify either this
+    * parameter or `im_max_waiting_time_in_seconds`. Specifying both
+    * parameters simultaniously leads to an error
     */
     public Long getImMaxWaitingTime() {
         return this.imMaxWaitingTime;
@@ -271,7 +277,9 @@ public class SQ_AddQueueRequest implements Alignable {
 
     /**
     * Maximum time in minutes that an IM-type request can remain in the
-    * queue without being assigned to an agent
+    * queue without being assigned to an agent. Specify either this
+    * parameter or `im_max_waiting_time_in_seconds`. Specifying both
+    * parameters simultaniously leads to an error
     */
     public SQ_AddQueueRequest setImMaxWaitingTime(long d) {
         this.imMaxWaitingTime = Long.valueOf(d);
@@ -341,6 +349,58 @@ public class SQ_AddQueueRequest implements Alignable {
     */
     public SQ_AddQueueRequest setPriority(long d) {
         this.priority = Long.valueOf(d);
+        return this;
+    }
+
+    private Long callMaxWaitingTimeInSeconds;
+
+    @RequestField(name="call_max_waiting_time_in_seconds")
+    /**
+    * Maximum call waiting time in seconds. Specify either this parameter
+    * or `call_max_waiting_time`. Specifying both parameters simultaniously
+    * leads to an error
+    */
+    public Long getCallMaxWaitingTimeInSeconds() {
+        return this.callMaxWaitingTimeInSeconds;
+    }
+
+    public boolean hasCallMaxWaitingTimeInSeconds() {
+        return this.callMaxWaitingTimeInSeconds != null;
+    }
+
+    /**
+    * Maximum call waiting time in seconds. Specify either this parameter
+    * or `call_max_waiting_time`. Specifying both parameters simultaniously
+    * leads to an error
+    */
+    public SQ_AddQueueRequest setCallMaxWaitingTimeInSeconds(long d) {
+        this.callMaxWaitingTimeInSeconds = Long.valueOf(d);
+        return this;
+    }
+
+    private Long imMaxWaitingTimeInSeconds;
+
+    @RequestField(name="im_max_waiting_time_in_seconds")
+    /**
+    * Maximum chat message waiting time in seconds. Specify either this
+    * parameter or `im_max_waiting_time`. Specifying both parameters
+    * simultaniously leads to an error
+    */
+    public Long getImMaxWaitingTimeInSeconds() {
+        return this.imMaxWaitingTimeInSeconds;
+    }
+
+    public boolean hasImMaxWaitingTimeInSeconds() {
+        return this.imMaxWaitingTimeInSeconds != null;
+    }
+
+    /**
+    * Maximum chat message waiting time in seconds. Specify either this
+    * parameter or `im_max_waiting_time`. Specifying both parameters
+    * simultaniously leads to an error
+    */
+    public SQ_AddQueueRequest setImMaxWaitingTimeInSeconds(long d) {
+        this.imMaxWaitingTimeInSeconds = Long.valueOf(d);
         return this;
     }
 
@@ -461,6 +521,22 @@ public class SQ_AddQueueRequest implements Alignable {
             sb.append(aligned)
                 .append("\"priority\": \"")
                 .append(priority)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callMaxWaitingTimeInSeconds != null) {
+            sb.append(aligned)
+                .append("\"callMaxWaitingTimeInSeconds\": \"")
+                .append(callMaxWaitingTimeInSeconds)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (imMaxWaitingTimeInSeconds != null) {
+            sb.append(aligned)
+                .append("\"imMaxWaitingTimeInSeconds\": \"")
+                .append(imMaxWaitingTimeInSeconds)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
