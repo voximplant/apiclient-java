@@ -45,7 +45,8 @@ public class NewAttachedPhoneInfoType implements Alignable {
     private String requiredVerification;
 
     /**
-    * Whether verification is required for the account
+    * Country code, where the verification is required for the account.
+    * Currently, the only possible value for this field is `RU` (Russia)
     */
     public String getRequiredVerification() {
         return this.requiredVerification;
@@ -58,8 +59,8 @@ public class NewAttachedPhoneInfoType implements Alignable {
     private String verificationStatus;
 
     /**
-    * The account verification status. The following values are possible:
-    * REQUIRED, IN_PROGRESS, VERIFIED
+    * The account verification status. Available only for RU accounts. The
+    * following values are possible: REQUIRED, IN_PROGRESS
     */
     public String getVerificationStatus() {
         return this.verificationStatus;

@@ -132,7 +132,7 @@ public class GetCallListDetailsRequest implements Alignable {
 
     @RequestField(name="delimiter")
     /**
-    * Separator values. The default is ';'
+    * Separator values. The default value is ';'
     */
     public String getDelimiter() {
         return this.delimiter;
@@ -143,7 +143,7 @@ public class GetCallListDetailsRequest implements Alignable {
     }
 
     /**
-    * Separator values. The default is ';'
+    * Separator values. The default value is ';'
     */
     public GetCallListDetailsRequest setDelimiter(String d) {
         this.delimiter = d;

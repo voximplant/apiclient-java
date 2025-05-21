@@ -205,7 +205,7 @@ public class SIPRegistrationType implements Alignable {
     private Long userId;
 
     /**
-    * The id of the bound user
+    * ID of the bound user
     */
     public Long getUserId() {
         return this.userId;
@@ -218,7 +218,7 @@ public class SIPRegistrationType implements Alignable {
     private String userName;
 
     /**
-    * The name of the bound user
+    * Name of the bound user
     */
     public String getUserName() {
         return this.userName;
@@ -231,7 +231,7 @@ public class SIPRegistrationType implements Alignable {
     private Long applicationId;
 
     /**
-    * The id of the bound application
+    * ID of the bound application
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -244,7 +244,7 @@ public class SIPRegistrationType implements Alignable {
     private String applicationName;
 
     /**
-    * The name of the bound application
+    * Name of the bound application
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -257,7 +257,7 @@ public class SIPRegistrationType implements Alignable {
     private Long ruleId;
 
     /**
-    * The id of the bound rule
+    * ID of the bound rule
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -270,7 +270,7 @@ public class SIPRegistrationType implements Alignable {
     private String ruleName;
 
     /**
-    * The name of the bound rule
+    * Name of the bound rule
     */
     public String getRuleName() {
         return this.ruleName;

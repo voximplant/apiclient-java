@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class AddCallerIDResponse implements Alignable {
+public class EditCallListResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -22,30 +22,17 @@ public class AddCallerIDResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long result;
+    private Boolean result;
 
     /**
-    * 1
+    * true
     */
-    public Long getResult() {
+    public Boolean getResult() {
         return this.result;
     }
 
     public boolean hasResult() {
         return this.result != null;
-    }
-
-    private Long calleridId;
-
-    /**
-    * ID of the callerID object
-    */
-    public Long getCalleridId() {
-        return this.calleridId;
-    }
-
-    public boolean hasCalleridId() {
-        return this.calleridId != null;
     }
 
     public String toString(int alignment) {
@@ -61,14 +48,6 @@ public class AddCallerIDResponse implements Alignable {
             sb.append(aligned)
                 .append("\"result\": \"")
                 .append(result)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (calleridId != null) {
-            sb.append(aligned)
-                .append("\"calleridId\": \"")
-                .append(calleridId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

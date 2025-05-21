@@ -20,7 +20,7 @@ public class SetScenarioInfoRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID
+    * Scenario ID
     */
     public Long getScenarioId() {
         return this.scenarioId;
@@ -31,7 +31,7 @@ public class SetScenarioInfoRequest implements Alignable {
     }
 
     /**
-    * The scenario ID
+    * Scenario ID
     */
     public SetScenarioInfoRequest setScenarioId(long d) {
         this.scenarioId = Long.valueOf(d);
@@ -42,7 +42,7 @@ public class SetScenarioInfoRequest implements Alignable {
 
     @RequestField(name="required_scenario_name")
     /**
-    * The name of the scenario to edit, can be used instead of
+    * Name of the scenario to edit, can be used instead of
     * <b>scenario_id</b>
     */
     public String getRequiredScenarioName() {
@@ -54,7 +54,7 @@ public class SetScenarioInfoRequest implements Alignable {
     }
 
     /**
-    * The name of the scenario to edit, can be used instead of
+    * Name of the scenario to edit, can be used instead of
     * <b>scenario_id</b>
     */
     public SetScenarioInfoRequest setRequiredScenarioName(String d) {
@@ -66,7 +66,7 @@ public class SetScenarioInfoRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The new scenario name. The length must be less than 30
+    * New scenario name. The length must be less than 30
     */
     public String getScenarioName() {
         return this.scenarioName;
@@ -77,7 +77,7 @@ public class SetScenarioInfoRequest implements Alignable {
     }
 
     /**
-    * The new scenario name. The length must be less than 30
+    * New scenario name. The length must be less than 30
     */
     public SetScenarioInfoRequest setScenarioName(String d) {
         this.scenarioName = d;
@@ -88,8 +88,8 @@ public class SetScenarioInfoRequest implements Alignable {
 
     @RequestField(name="scenario_script")
     /**
-    * The new scenario text. Use the application/x-www-form-urlencoded
-    * content type with UTF-8 encoding. The length must be less than 128 KB
+    * New scenario text. Use the application/x-www-form-urlencoded content
+    * type with UTF-8 encoding. The length must be less than 128 KB
     */
     public String getScenarioScript() {
         return this.scenarioScript;
@@ -100,8 +100,8 @@ public class SetScenarioInfoRequest implements Alignable {
     }
 
     /**
-    * The new scenario text. Use the application/x-www-form-urlencoded
-    * content type with UTF-8 encoding. The length must be less than 128 KB
+    * New scenario text. Use the application/x-www-form-urlencoded content
+    * type with UTF-8 encoding. The length must be less than 128 KB
     */
     public SetScenarioInfoRequest setScenarioScript(String d) {
         this.scenarioScript = d;

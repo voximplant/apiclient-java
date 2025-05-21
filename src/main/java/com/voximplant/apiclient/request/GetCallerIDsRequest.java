@@ -20,7 +20,7 @@ public class GetCallerIDsRequest implements Alignable {
 
     @RequestField(name="callerid_id")
     /**
-    * The id of the callerID object to filter
+    * ID of the callerID object to filter
     */
     public Long getCalleridId() {
         return this.calleridId;
@@ -31,7 +31,7 @@ public class GetCallerIDsRequest implements Alignable {
     }
 
     /**
-    * The id of the callerID object to filter
+    * ID of the callerID object to filter
     */
     public GetCallerIDsRequest setCalleridId(long d) {
         this.calleridId = Long.valueOf(d);

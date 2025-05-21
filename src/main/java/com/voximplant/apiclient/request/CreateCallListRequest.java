@@ -164,7 +164,7 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="interval_seconds")
     /**
-    * Interval between call attempts in seconds. The default is 0
+    * Interval between call attempts in seconds. The default value is 0
     */
     public Long getIntervalSeconds() {
         return this.intervalSeconds;
@@ -175,7 +175,7 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * Interval between call attempts in seconds. The default is 0
+    * Interval between call attempts in seconds. The default value is 0
     */
     public CreateCallListRequest setIntervalSeconds(long d) {
         this.intervalSeconds = Long.valueOf(d);
@@ -186,7 +186,7 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="encoding")
     /**
-    * Encoding file. The default is UTF-8
+    * Encoding file. The default value is UTF-8
     */
     public String getEncoding() {
         return this.encoding;
@@ -197,7 +197,7 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * Encoding file. The default is UTF-8
+    * Encoding file. The default value is UTF-8
     */
     public CreateCallListRequest setEncoding(String d) {
         this.encoding = d;
@@ -208,7 +208,7 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="delimiter")
     /**
-    * Separator values. The default is ';'
+    * Separator values. The default value is ';'
     */
     public String getDelimiter() {
         return this.delimiter;
@@ -219,7 +219,7 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * Separator values. The default is ';'
+    * Separator values. The default value is ';'
     */
     public CreateCallListRequest setDelimiter(String d) {
         this.delimiter = d;

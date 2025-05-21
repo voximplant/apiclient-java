@@ -88,7 +88,7 @@ public class AppendToCallListRequest implements Alignable {
 
     @RequestField(name="encoding")
     /**
-    * Encoding file. The default is UTF-8
+    * Encoding file. The default value is UTF-8
     */
     public String getEncoding() {
         return this.encoding;
@@ -99,7 +99,7 @@ public class AppendToCallListRequest implements Alignable {
     }
 
     /**
-    * Encoding file. The default is UTF-8
+    * Encoding file. The default value is UTF-8
     */
     public AppendToCallListRequest setEncoding(String d) {
         this.encoding = d;
@@ -132,7 +132,7 @@ public class AppendToCallListRequest implements Alignable {
 
     @RequestField(name="delimiter")
     /**
-    * Separator values. The default is ';'
+    * Separator values. The default value is ';'
     */
     public String getDelimiter() {
         return this.delimiter;
@@ -143,7 +143,7 @@ public class AppendToCallListRequest implements Alignable {
     }
 
     /**
-    * Separator values. The default is ';'
+    * Separator values. The default value is ';'
     */
     public AppendToCallListRequest setDelimiter(String d) {
         this.delimiter = d;

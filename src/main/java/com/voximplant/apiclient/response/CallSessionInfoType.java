@@ -16,10 +16,24 @@ import com.voximplant.apiclient.util.Alignable;
 */
 public class CallSessionInfoType implements Alignable {
 
+    private String audioQuality;
+
+    /**
+    * Call's audio quality. The possible values are: Standard | HD | Ultra
+    * HD.
+    */
+    public String getAudioQuality() {
+        return this.audioQuality;
+    }
+
+    public boolean hasAudioQuality() {
+        return this.audioQuality != null;
+    }
+
     private String ruleName;
 
     /**
-    * The routing rule name
+    * Routing rule name
     */
     public String getRuleName() {
         return this.ruleName;
@@ -32,7 +46,7 @@ public class CallSessionInfoType implements Alignable {
     private String applicationName;
 
     /**
-    * The application name
+    * Application name
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -45,7 +59,7 @@ public class CallSessionInfoType implements Alignable {
     private Long callSessionHistoryId;
 
     /**
-    * The unique JS session identifier
+    * Unique JS session identifier
     */
     public Long getCallSessionHistoryId() {
         return this.callSessionHistoryId;
@@ -58,7 +72,7 @@ public class CallSessionInfoType implements Alignable {
     private Long accountId;
 
     /**
-    * The account ID that initiates the JS session
+    * Account ID that initiates the JS session
     */
     public Long getAccountId() {
         return this.accountId;
@@ -71,7 +85,7 @@ public class CallSessionInfoType implements Alignable {
     private Long applicationId;
 
     /**
-    * The application ID that initiates the JS session
+    * Application ID that initiates the JS session
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -84,7 +98,7 @@ public class CallSessionInfoType implements Alignable {
     private Long userId;
 
     /**
-    * The user ID that initiates the JS session
+    * User ID that initiates the JS session
     */
     public Long getUserId() {
         return this.userId;
@@ -98,7 +112,7 @@ public class CallSessionInfoType implements Alignable {
     private Date startDate;
 
     /**
-    * The start date in the selected timezone in 24-h format: YYYY-MM-DD
+    * Start date in the selected timezone in 24-h format: YYYY-MM-DD
     * HH:mm:ss
     */
     public Date getStartDate() {
@@ -112,7 +126,7 @@ public class CallSessionInfoType implements Alignable {
     private Long duration;
 
     /**
-    * The entire JS session duration in seconds. The session can contain
+    * Entire JS session duration in seconds. The session can contain
     * multiple calls
     */
     public Long getDuration() {
@@ -126,7 +140,7 @@ public class CallSessionInfoType implements Alignable {
     private String initiatorAddress;
 
     /**
-    * The initiator IP address
+    * Initiator's IP address
     */
     public String getInitiatorAddress() {
         return this.initiatorAddress;
@@ -139,7 +153,7 @@ public class CallSessionInfoType implements Alignable {
     private String mediaServerAddress;
 
     /**
-    * The media server IP address
+    * Media server IP address
     */
     public String getMediaServerAddress() {
         return this.mediaServerAddress;
@@ -152,10 +166,10 @@ public class CallSessionInfoType implements Alignable {
     private String logFileUrl;
 
     /**
-    * The link to the session log. The log retention policy is 1 month,
-    * after that time this field clears. If you have issues accessing the
-    * log file, check if the application has "Secure storage of
-    * applications and logs" feature enabled. In this case, you need to <a
+    * Link to the session log. The log retention policy is 1 month, after
+    * that time this field clears. If you have issues accessing the log
+    * file, check if the application has "Secure storage of applications
+    * and logs" feature enabled. In this case, you need to <a
     * href='/docs/guides/managementapi/secureobjects'>authorize</a>.
     */
     public String getLogFileUrl() {
@@ -243,6 +257,14 @@ public class CallSessionInfoType implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
+        if (audioQuality != null) {
+            sb.append(aligned)
+                .append("\"audioQuality\": \"")
+                .append(audioQuality)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (ruleName != null) {
             sb.append(aligned)
                 .append("\"ruleName\": \"")

@@ -92,7 +92,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The name of the bound application
+    * Name of the bound application
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -103,7 +103,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The name of the bound application
+    * Name of the bound application
     */
     public GetPushCredentialRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -114,7 +114,7 @@ public class GetPushCredentialRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The id of the bound application
+    * ID of the bound application
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -125,7 +125,7 @@ public class GetPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The id of the bound application
+    * ID of the bound application
     */
     public GetPushCredentialRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);

@@ -422,6 +422,12 @@ public class VoximplantAPIClient {
             return responseObj;
         }
     }
+    public EditCallListResponse editCallList(EditCallListRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("EditCallList", RequestSerializer.serialize(req)), EditCallListResponse.class);
+    }
     public EditCallListTaskResponse editCallListTask(EditCallListTaskRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

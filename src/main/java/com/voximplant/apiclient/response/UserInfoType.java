@@ -100,7 +100,7 @@ public class UserInfoType implements Alignable {
 
     /**
     * The current user's money in the currency specified for the account.
-    * The value is the number rounded to 4 decimal places and it changes
+    * The value is the number rounded to 4 decimal places, and it changes
     * during the calls, transcribing, purchases etc
     */
     public BigDecimal getLiveBalance() {

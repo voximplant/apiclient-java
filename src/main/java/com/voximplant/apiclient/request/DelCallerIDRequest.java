@@ -20,7 +20,7 @@ public class DelCallerIDRequest implements Alignable {
 
     @RequestField(name="callerid_id")
     /**
-    * The id of the callerID object
+    * ID of the callerID object
     */
     public Long getCalleridId() {
         return this.calleridId;
@@ -31,7 +31,7 @@ public class DelCallerIDRequest implements Alignable {
     }
 
     /**
-    * The id of the callerID object
+    * ID of the callerID object
     */
     public DelCallerIDRequest setCalleridId(long d) {
         this.calleridId = Long.valueOf(d);

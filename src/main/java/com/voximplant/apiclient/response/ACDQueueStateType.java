@@ -61,7 +61,7 @@ public class ACDQueueStateType implements Alignable {
     /**
     * List of operators with the 'READY' state that cannot accept a call
     * from this queue. Operator cannot accept a call if they are
-    * temporarily banned or they are servicing a call right now
+    * temporarily banned, or they are servicing a call right now
     */
     public ACDLockedOperatorStateType[] getLockedOperators() {
         return this.lockedOperators;
