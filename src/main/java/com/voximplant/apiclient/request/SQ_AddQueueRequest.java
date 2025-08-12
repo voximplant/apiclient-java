@@ -184,6 +184,30 @@ public class SQ_AddQueueRequest implements Alignable {
         return this;
     }
 
+    private Boolean holdCallsIfInactiveAgents;
+
+    @RequestField(name="hold_calls_if_inactive_agents")
+    /**
+    * Whether to keep the call task in the queue if all agents are in the
+    * DND/BANNED/OFFLINE statuses.
+    */
+    public Boolean getHoldCallsIfInactiveAgents() {
+        return this.holdCallsIfInactiveAgents;
+    }
+
+    public boolean hasHoldCallsIfInactiveAgents() {
+        return this.holdCallsIfInactiveAgents != null;
+    }
+
+    /**
+    * Whether to keep the call task in the queue if all agents are in the
+    * DND/BANNED/OFFLINE statuses.
+    */
+    public SQ_AddQueueRequest setHoldCallsIfInactiveAgents(boolean d) {
+        this.holdCallsIfInactiveAgents = Boolean.valueOf(d);
+        return this;
+    }
+
     private String fallbackAgentSelection;
 
     @RequestField(name="fallback_agent_selection")
@@ -465,6 +489,14 @@ public class SQ_AddQueueRequest implements Alignable {
             sb.append(aligned)
                 .append("\"imTaskSelection\": \"")
                 .append(imTaskSelection)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (holdCallsIfInactiveAgents != null) {
+            sb.append(aligned)
+                .append("\"holdCallsIfInactiveAgents\": \"")
+                .append(holdCallsIfInactiveAgents)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

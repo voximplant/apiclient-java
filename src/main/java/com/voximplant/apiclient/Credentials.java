@@ -9,6 +9,10 @@ class Credentials {
         return accountId;
     }
 
+    public void setAccountId(long accountId) {
+        this.accountId = accountId;
+    }
+
     public String getKeyId() {
         return keyId;
     }

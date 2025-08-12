@@ -11,41 +11,35 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class ChargeAccountResponse implements Alignable {
-    private Error error;
+/**
+* The details of the [PhoneNumberActivationStatusChangedCallback].
+*/
+public class PhoneNumberActivationStatusChangedCallbackItem implements Alignable {
 
-    public Error getError() {
-        return error;
-    }
-
-    public boolean hasError() {
-        return this.error != null;
-    }
-
-    private ChargeAccountResult result;
+    private String phoneNumber;
 
     /**
-    * Result
+    * Phone number that changed the status
     */
-    public ChargeAccountResult getResult() {
-        return this.result;
+    public String getPhoneNumber() {
+        return this.phoneNumber;
     }
 
-    public boolean hasResult() {
-        return this.result != null;
+    public boolean hasPhoneNumber() {
+        return this.phoneNumber != null;
     }
 
-    private ShortAccountInfoType accountInfo;
+    private String activationStatus;
 
     /**
-    * The current account state
+    * New verification status
     */
-    public ShortAccountInfoType getAccountInfo() {
-        return this.accountInfo;
+    public String getActivationStatus() {
+        return this.activationStatus;
     }
 
-    public boolean hasAccountInfo() {
-        return this.accountInfo != null;
+    public boolean hasActivationStatus() {
+        return this.activationStatus != null;
     }
 
     public String toString(int alignment) {
@@ -57,18 +51,18 @@ public class ChargeAccountResponse implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (result != null) {
+        if (phoneNumber != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
+                .append("\"phoneNumber\": \"")
+                .append(phoneNumber)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (accountInfo != null) {
+        if (activationStatus != null) {
             sb.append(aligned)
-                .append("\"accountInfo\": \"")
-                .append(accountInfo)
+                .append("\"activationStatus\": \"")
+                .append(activationStatus)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

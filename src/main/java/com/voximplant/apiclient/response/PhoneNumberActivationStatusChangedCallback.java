@@ -11,28 +11,23 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class GetCurrencyRateResponse implements Alignable {
-    private Error error;
+/**
+* Rented phone number verification status change. Received as a part of
+* the [AccountCallback] structure.
+*/
+public class PhoneNumberActivationStatusChangedCallback implements Alignable {
 
-    public Error getError() {
-        return error;
-    }
-
-    public boolean hasError() {
-        return this.error != null;
-    }
-
-    private ExchangeRatesType result;
+    private PhoneNumberActivationStatusChangedCallbackItem phoneNumberActivationStatusChanged;
 
     /**
-    * The exchange rates
+    * Rented phone number verification status
     */
-    public ExchangeRatesType getResult() {
-        return this.result;
+    public PhoneNumberActivationStatusChangedCallbackItem getPhoneNumberActivationStatusChanged() {
+        return this.phoneNumberActivationStatusChanged;
     }
 
-    public boolean hasResult() {
-        return this.result != null;
+    public boolean hasPhoneNumberActivationStatusChanged() {
+        return this.phoneNumberActivationStatusChanged != null;
     }
 
     public String toString(int alignment) {
@@ -44,10 +39,10 @@ public class GetCurrencyRateResponse implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (result != null) {
+        if (phoneNumberActivationStatusChanged != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
+                .append("\"phoneNumberActivationStatusChanged\": \"")
+                .append(phoneNumberActivationStatusChanged)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

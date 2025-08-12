@@ -11,28 +11,35 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class GetCurrencyRateResponse implements Alignable {
-    private Error error;
+/**
+* Verification's default customer.
+*/
+public class AccountVerificationsTypeDefaultEndUser implements Alignable {
 
-    public Error getError() {
-        return error;
-    }
-
-    public boolean hasError() {
-        return this.error != null;
-    }
-
-    private ExchangeRatesType result;
+    private Long endUserUuid;
 
     /**
-    * The exchange rates
+    * Customer's UUID
     */
-    public ExchangeRatesType getResult() {
-        return this.result;
+    public Long getEndUserUuid() {
+        return this.endUserUuid;
     }
 
-    public boolean hasResult() {
-        return this.result != null;
+    public boolean hasEndUserUuid() {
+        return this.endUserUuid != null;
+    }
+
+    private Object credentials;
+
+    /**
+    * Customer's data
+    */
+    public Object getCredentials() {
+        return this.credentials;
+    }
+
+    public boolean hasCredentials() {
+        return this.credentials != null;
     }
 
     public String toString(int alignment) {
@@ -44,10 +51,18 @@ public class GetCurrencyRateResponse implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (result != null) {
+        if (endUserUuid != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
+                .append("\"endUserUuid\": \"")
+                .append(endUserUuid)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (credentials != null) {
+            sb.append(aligned)
+                .append("\"credentials\": \"")
+                .append(credentials)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

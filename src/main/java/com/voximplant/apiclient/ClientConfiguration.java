@@ -6,13 +6,15 @@ public class ClientConfiguration {
     private final String apiHost;
     private final String apiPrefix;
     private final long tokenLifespan;
+    private final long accountId;
 
-    private ClientConfiguration(String credentials, String protocol, String apiHost, String apiPrefix, long tokenLifespan) {
+    private ClientConfiguration(String credentials, String protocol, String apiHost, String apiPrefix, long tokenLifespan, long accountId) {
         this.credentials = credentials;
         this.protocol = protocol;
         this.apiHost = apiHost;
         this.apiPrefix = apiPrefix;
         this.tokenLifespan = tokenLifespan;
+        this.accountId = accountId;
     }
 
     public static ClientConfigurationBuilder builder() {
@@ -39,15 +41,21 @@ public class ClientConfiguration {
         return tokenLifespan;
     }
 
+    long getAccountId() {
+        return accountId;
+    }
+
     public static class ClientConfigurationBuilder {
         private String credentials;
         private String protocol = "https";
         private String apiHost = "api.voximplant.com";
         private String apiPrefix = "platform_api";
         private long tokenLifespan = 60000L;
+        private long accountId = 0;
 
         /**
          * Set a Voximplant HTTP API Service account credentials file path
+         *
          * @param credentialsPath Path to a JSON file with Voximplant HTTP API Service account credentials. You can get it by visiting
          *                        a <a href="https://manage.voximplant.com/settings/service_accounts">Service accounts</a> page.
          * @return {@link ClientConfigurationBuilder}
@@ -60,6 +68,7 @@ public class ClientConfiguration {
 
         /**
          * Set HTTPS as an api calls protocol
+         *
          * @return {@link ClientConfigurationBuilder}
          */
         public ClientConfigurationBuilder setHttps() {
@@ -69,6 +78,7 @@ public class ClientConfiguration {
 
         /**
          * Set HTTP as an api calls protocol
+         *
          * @return {@link ClientConfigurationBuilder}
          */
         public ClientConfigurationBuilder setHttp() {
@@ -78,6 +88,7 @@ public class ClientConfiguration {
 
         /**
          * Set the Voximplant HTTP API host
+         *
          * @param apiHost
          * @return {@link ClientConfigurationBuilder}
          */
@@ -88,6 +99,7 @@ public class ClientConfiguration {
 
         /**
          * Set the Voximplant HTTP API prefix
+         *
          * @param apiPrefix
          * @return {@link ClientConfigurationBuilder}
          */
@@ -95,9 +107,9 @@ public class ClientConfiguration {
             this.apiPrefix = apiPrefix;
             return this;
         }
-
         /**
          * Set a JWT token lifespan to reuse previously generated. Defaults to 60s
+         *
          * @param tokenLifespan JWT Token lifespan in milliseconds. Keep in mind we have some network latency compensation
          * @return {@link ClientConfigurationBuilder}
          */
@@ -106,8 +118,19 @@ public class ClientConfiguration {
             return this;
         }
 
+        /**
+         * Set Voximplant Account ID
+         *
+         * @param accountId Voximplant Account ID
+         * @return {@link ClientConfigurationBuilder}
+         */
+        public ClientConfigurationBuilder setAccountId(long accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+
         public ClientConfiguration build() {
-            return new ClientConfiguration(credentials, protocol, apiHost, apiPrefix, tokenLifespan);
+            return new ClientConfiguration(credentials, protocol, apiHost, apiPrefix, tokenLifespan, accountId);
         }
     }
 }

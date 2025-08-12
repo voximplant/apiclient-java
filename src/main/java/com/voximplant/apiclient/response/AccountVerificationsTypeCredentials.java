@@ -12,60 +12,61 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The [GetCurrencyRate] function result.
+* Person or company who takes the verification.
 */
-public class ExchangeRates implements Alignable {
+public class AccountVerificationsTypeCredentials implements Alignable {
 
-    private BigDecimal RUR;
-
-    /**
-    * The RUR exchange rate
-    */
-    public BigDecimal getRUR() {
-        return this.RUR;
-    }
-
-    public boolean hasRUR() {
-        return this.RUR != null;
-    }
-
-    private BigDecimal KZT;
+    private Object individual;
 
     /**
-    * The KZT exchange rate
+    * Details of a person who takes the verification
     */
-    public BigDecimal getKZT() {
-        return this.KZT;
+    public Object getIndividual() {
+        return this.individual;
     }
 
-    public boolean hasKZT() {
-        return this.KZT != null;
+    public boolean hasIndividual() {
+        return this.individual != null;
     }
 
-    private BigDecimal EUR;
+    private Object legalEntity;
 
     /**
-    * The EUR exchange rate
+    * Company details for a legal entity
     */
-    public BigDecimal getEUR() {
-        return this.EUR;
+    public Object getLegalEntity() {
+        return this.legalEntity;
     }
 
-    public boolean hasEUR() {
-        return this.EUR != null;
+    public boolean hasLegalEntity() {
+        return this.legalEntity != null;
     }
 
-    private BigDecimal USD;
+    private Object entrepreneur;
 
     /**
-    * The USD exchange rate. It is always equal to 1
+    * Company details for a individual entrepreneur
     */
-    public BigDecimal getUSD() {
-        return this.USD;
+    public Object getEntrepreneur() {
+        return this.entrepreneur;
     }
 
-    public boolean hasUSD() {
-        return this.USD != null;
+    public boolean hasEntrepreneur() {
+        return this.entrepreneur != null;
+    }
+
+    private String legalStatus;
+
+    /**
+    * Subscriber type. Possible values are: INDIVIDUAL, LEGAL_ENTITY,
+    * ENTREPRENEUR
+    */
+    public String getLegalStatus() {
+        return this.legalStatus;
+    }
+
+    public boolean hasLegalStatus() {
+        return this.legalStatus != null;
     }
 
     public String toString(int alignment) {
@@ -77,34 +78,34 @@ public class ExchangeRates implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (RUR != null) {
+        if (individual != null) {
             sb.append(aligned)
-                .append("\"RUR\": \"")
-                .append(RUR)
+                .append("\"individual\": \"")
+                .append(individual)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (KZT != null) {
+        if (legalEntity != null) {
             sb.append(aligned)
-                .append("\"KZT\": \"")
-                .append(KZT)
+                .append("\"legalEntity\": \"")
+                .append(legalEntity)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (EUR != null) {
+        if (entrepreneur != null) {
             sb.append(aligned)
-                .append("\"EUR\": \"")
-                .append(EUR)
+                .append("\"entrepreneur\": \"")
+                .append(entrepreneur)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (USD != null) {
+        if (legalStatus != null) {
             sb.append(aligned)
-                .append("\"USD\": \"")
-                .append(USD)
+                .append("\"legalStatus\": \"")
+                .append(legalStatus)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

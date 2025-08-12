@@ -36,24 +36,29 @@ class VoximplantAPIClientImpl {
     VoximplantAPIClientImpl(ClientConfiguration clientConfiguration) throws IOException, ClientException {
         this.tokenLifespan = clientConfiguration.getTokenLifespan();
         this.tokenRefreshTimestamp = System.currentTimeMillis() - tokenLifespan;
-        this.apiUrl = clientConfiguration.getProtocol() + "://" + clientConfiguration.getApiHost() +
-                "/" + clientConfiguration.getApiPrefix() + "/";
-        final String jwtKey = new String(Files.readAllBytes(Paths.get(clientConfiguration.getCredentials())), StandardCharsets.UTF_8);
+        this.apiUrl = clientConfiguration.getProtocol() + "://" + clientConfiguration.getApiHost() + "/" + clientConfiguration.getApiPrefix() + "/";
+        byte[] bytes = Files.readAllBytes(Paths.get(clientConfiguration.getCredentials()));
+        final String jwtKey = new String(bytes, StandardCharsets.UTF_8);
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         this.credentials = mapper.readValue(jwtKey, Credentials.class);
 
+        long accountId = clientConfiguration.getAccountId();
+        if (accountId != 0) {
+            this.credentials.setAccountId(accountId);
+        }
+
         // Remove the "BEGIN" and "END" lines, as well as any whitespace
         String pkcs8Pem = this.credentials.getPrivateKey().toString();
         pkcs8Pem = pkcs8Pem.replace("-----BEGIN PRIVATE KEY-----", "");
         pkcs8Pem = pkcs8Pem.replace("-----END PRIVATE KEY-----", "");
-        pkcs8Pem = pkcs8Pem.replaceAll("\\s+", "");        // Base64 decode the result
-        byte[] pkcs8EncodedBytes = Base64.getDecoder().decode(pkcs8Pem);        // extract the private key
+        pkcs8Pem = pkcs8Pem.replaceAll("\\s+", ""); // Base64 decode the result
+        byte[] pkcs8EncodedBytes = Base64.getDecoder().decode(pkcs8Pem); // extract the private key
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(pkcs8EncodedBytes);
         try {
             KeyFactory kf = KeyFactory.getInstance("RSA");
-            this.privateKey =  kf.generatePrivate(keySpec);
+            this.privateKey = kf.generatePrivate(keySpec);
         } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
             ex.printStackTrace(System.err);
             throw new ClientException("Error loading private key", ex);
@@ -62,7 +67,8 @@ class VoximplantAPIClientImpl {
 
     private String generateAuthHeader() {
         JwtBuilder builder = Jwts.builder();
-        builder.setIssuer(Long.toString(this.credentials.getAccountId()));
+        long issuer = this.credentials.getAccountId();
+        builder.setIssuer(Long.toString(issuer));
         long now = System.currentTimeMillis();
 
         builder.setIssuedAt(new Date(now - latencyCompensationTime));
@@ -74,7 +80,7 @@ class VoximplantAPIClientImpl {
         builder.setHeader(headers);
         builder.signWith(SignatureAlgorithm.RS256, this.privateKey);
         String ss = builder.compact();
-        return "Bearer "+ss;
+        return "Bearer " + ss;
     }
 
     private String getAuthHeader() {
@@ -93,18 +99,18 @@ class VoximplantAPIClientImpl {
     Object performRequest(String name, Map<String, Object> params) throws IOException {
         Request request = Request.Post(apiUrl + name);
         MultipartEntityBuilder form = MultipartEntityBuilder.create();
-        form.addTextBody("account_id", Long.toString(this.credentials.getAccountId()));
+        long accountId = this.credentials.getAccountId();
+        form.addTextBody("account_id", Long.toString(accountId));
         if (params != null) {
-            for (Map.Entry<String, Object> param:params.entrySet()) {
+            for (Map.Entry<String, Object> param : params.entrySet()) {
                 if (param.getValue() instanceof InputStream) {
                     InputStream inputStream = (InputStream) param.getValue();
                     form.addBinaryBody(
-                        param.getKey(),  
-                        inputStream          
+                            param.getKey(),
+                            inputStream
                     );
-                } 
-                else {
-                    form.addTextBody(param.getKey(), (String)param.getValue());
+                } else {
+                    form.addTextBody(param.getKey(), (String) param.getValue());
                 }
             }
         }

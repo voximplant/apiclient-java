@@ -26,7 +26,9 @@ public class SetKeyValueItemRequest implements Alignable {
     * [GetKeyValueItems](/docs/references/httpapi/keyvaluestorage#getkeyvalueitems)
     * and
     * [GetKeyValueKeys](/docs/references/httpapi/keyvaluestorage#getkeyvaluekeys)
-    * methods to find the keys with the same namespace
+    * methods to find the keys with the same namespace.<br><br>The key
+    * should match the following regular expression:
+    * `^[a-zA-Z0-9а-яА-ЯёЁ_\-:;.#+]*$`
     */
     public String getKey() {
         return this.key;
@@ -43,7 +45,9 @@ public class SetKeyValueItemRequest implements Alignable {
     * [GetKeyValueItems](/docs/references/httpapi/keyvaluestorage#getkeyvalueitems)
     * and
     * [GetKeyValueKeys](/docs/references/httpapi/keyvaluestorage#getkeyvaluekeys)
-    * methods to find the keys with the same namespace
+    * methods to find the keys with the same namespace.<br><br>The key
+    * should match the following regular expression:
+    * `^[a-zA-Z0-9а-яА-ЯёЁ_\-:;.#+]*$`
     */
     public SetKeyValueItemRequest setKey(String d) {
         this.key = d;
@@ -76,7 +80,7 @@ public class SetKeyValueItemRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID
+    * Application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -87,7 +91,7 @@ public class SetKeyValueItemRequest implements Alignable {
     }
 
     /**
-    * The application ID
+    * Application ID
     */
     public SetKeyValueItemRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -98,7 +102,7 @@ public class SetKeyValueItemRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name
+    * Application name
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -109,7 +113,7 @@ public class SetKeyValueItemRequest implements Alignable {
     }
 
     /**
-    * The application name
+    * Application name
     */
     public SetKeyValueItemRequest setApplicationName(String d) {
         this.applicationName = d;

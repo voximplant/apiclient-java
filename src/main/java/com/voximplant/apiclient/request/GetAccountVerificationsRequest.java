@@ -1,25 +1,26 @@
-package com.voximplant.apiclient.response;
+package com.voximplant.apiclient.request;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
-import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
+import com.voximplant.apiclient.util.DateSerializer;
+import com.voximplant.apiclient.util.RequestField;
+import com.voximplant.apiclient.util.SerializeUsing;
+import com.voximplant.apiclient.util.TimestampSerializer;
 
-/**
-* The account verifications.
-*/
-public class AccountVerifications implements Alignable {
-
+public class GetAccountVerificationsRequest implements Alignable {
     private Long accountId;
 
+    @RequestField(name="account_id")
     /**
-    * The account ID
+    * Account ID to check verifications for
     */
     public Long getAccountId() {
         return this.accountId;
@@ -29,17 +30,12 @@ public class AccountVerifications implements Alignable {
         return this.accountId != null;
     }
 
-    private AccountVerificationType[] verifications;
-
     /**
-    * The account verifications
+    * Account ID to check verifications for
     */
-    public AccountVerificationType[] getVerifications() {
-        return this.verifications;
-    }
-
-    public boolean hasVerifications() {
-        return this.verifications != null;
+    public GetAccountVerificationsRequest setAccountId(long d) {
+        this.accountId = Long.valueOf(d);
+        return this;
     }
 
     public String toString(int alignment) {
@@ -57,12 +53,6 @@ public class AccountVerifications implements Alignable {
                 .append(accountId)
                 .append('"')
                 .append(',')
-                .append(System.lineSeparator());
-        }
-        if (verifications != null) {
-            sb.append(aligned)
-                .append("\"AccountVerificationType\": ")
-                .append(StringHelper.arrayToString(verifications, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

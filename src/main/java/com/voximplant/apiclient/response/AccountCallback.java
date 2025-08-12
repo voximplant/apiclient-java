@@ -544,7 +544,7 @@ public class AccountCallback implements Alignable {
     private InboundSmsCallback smsInbound;
 
     /**
-    * Received when an incoming SMS is gotten
+    * Received when an incoming SMS is received
     */
     public InboundSmsCallback getSmsInbound() {
         return this.smsInbound;
@@ -552,6 +552,19 @@ public class AccountCallback implements Alignable {
 
     public boolean hasSmsInbound() {
         return this.smsInbound != null;
+    }
+
+    private PhoneNumberActivationStatusChangedCallback phoneNumberActivationStatusChanged;
+
+    /**
+    * Received when a rented phone number changed its activation status
+    */
+    public PhoneNumberActivationStatusChangedCallback getPhoneNumberActivationStatusChanged() {
+        return this.phoneNumberActivationStatusChanged;
+    }
+
+    public boolean hasPhoneNumberActivationStatusChanged() {
+        return this.phoneNumberActivationStatusChanged != null;
     }
 
     private NewInvoiceCallback newInvoice;
@@ -1062,6 +1075,14 @@ public class AccountCallback implements Alignable {
             sb.append(aligned)
                 .append("\"smsInbound\": \"")
                 .append(smsInbound)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (phoneNumberActivationStatusChanged != null) {
+            sb.append(aligned)
+                .append("\"phoneNumberActivationStatusChanged\": \"")
+                .append(phoneNumberActivationStatusChanged)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

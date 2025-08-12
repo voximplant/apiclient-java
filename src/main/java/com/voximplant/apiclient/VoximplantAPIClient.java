@@ -228,12 +228,6 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("ChangeAccountPlan", RequestSerializer.serialize(req)), ChangeAccountPlanResponse.class);
     }
-    public ChargeAccountResponse chargeAccount(ChargeAccountRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue((String) impl.performRequest("ChargeAccount", RequestSerializer.serialize(req)), ChargeAccountResponse.class);
-    }
     public CheckAuthorizedAccountIPResponse checkAuthorizedAccountIP(CheckAuthorizedAccountIPRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -493,6 +487,12 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("GetAccountPlans", RequestSerializer.serialize(req)), GetAccountPlansResponse.class);
+    }
+    public GetAccountVerificationsResponse getAccountVerifications(GetAccountVerificationsRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("GetAccountVerifications", RequestSerializer.serialize(req)), GetAccountVerificationsResponse.class);
     }
     public GetActualPhoneNumberRegionResponse getActualPhoneNumberRegion(GetActualPhoneNumberRegionRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();

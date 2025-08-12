@@ -1,6 +1,6 @@
 # Voximplant API client library
 
-#### Version 2.2.0
+#### Version 2.3.0
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Setup a `maven` dependency for your project:
 <dependency>
     <groupId>com.voximplant</groupId>
     <artifactId>apiclient</artifactId>
-    <version>2.2.0</version>
+    <version>2.3.0</version>
 </dependency>
 ```
 
@@ -42,17 +42,17 @@ VoximplantAPIClient api=new VoximplantAPIClient("/path/to/credentials.json");
 ```java
 VoximplantAPIClient api=new VoximplantAPIClient("/path/to/credentials.json");
 
-        SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");
+SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");
 
-        GetCallHistoryResponse callHistory=api.getCallHistory(new GetCallHistoryRequest()
-        .setFromDate(df.parse("2020-09-01"))
-        .setToDate(df.parse("2020-10-01"))
-        .setCount(1));
+GetCallHistoryResponse callHistory=api.getCallHistory(new GetCallHistoryRequest()
+    .setFromDate(df.parse("2020-09-01"))
+    .setToDate(df.parse("2020-10-01"))
+    .setCount(1));
 
-        CallSessionInfoType[]callSessions=callHistory.getResult();
-        if(callSessions.length==1){
-        CallSessionInfoType result=callSessions[0];
-        }
+CallSessionInfoType[]callSessions=callHistory.getResult();
+if (callSessions.length == 1) {
+    CallSessionInfoType result=callSessions[0];
+}
 ```
 
 ### Send an SMS
@@ -60,14 +60,14 @@ VoximplantAPIClient api=new VoximplantAPIClient("/path/to/credentials.json");
 ```java
 VoximplantAPIClient api=new VoximplantAPIClient("/path/to/credentials.json");
 
-        SendSmsMessageResponse sendSmsMessageResponse=api.sendSmsMessage(new SendSmsMessageRequest()
-        .setSource("447443332211")
-        .setDestination("447443332212")
-        .setSmsBody("Test message"));
+SendSmsMessageResponse sendSmsMessageResponse=api.sendSmsMessage(new SendSmsMessageRequest()
+    .setSource("447443332211")
+    .setDestination("447443332212")
+    .setSmsBody("Test message"));
 
-        if(sendSmsMessageResponse.hasResult()){
-        long result=sendSmsMessageResponse.getResult();
-        }else{
-        throw new IllegalArgumentException(sendSmsMessageResponse.getError().getMsg());
-        }
+if (sendSmsMessageResponse.hasResult()) {
+    long result=sendSmsMessageResponse.getResult();
+} else {
+    throw new IllegalArgumentException(sendSmsMessageResponse.getError().getMsg());
+}
 ```

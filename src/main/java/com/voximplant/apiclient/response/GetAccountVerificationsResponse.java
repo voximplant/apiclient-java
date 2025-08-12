@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class GetCurrencyRateResponse implements Alignable {
+public class GetAccountVerificationsResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -22,12 +22,12 @@ public class GetCurrencyRateResponse implements Alignable {
         return this.error != null;
     }
 
-    private ExchangeRatesType result;
+    private AccountVerificationsType[] result;
 
     /**
-    * The exchange rates
+    * Account verifications
     */
-    public ExchangeRatesType getResult() {
+    public AccountVerificationsType[] getResult() {
         return this.result;
     }
 
@@ -46,10 +46,8 @@ public class GetCurrencyRateResponse implements Alignable {
             .append(System.lineSeparator());
         if (result != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
-                .append('"')
-                .append(',')
+                .append("\"AccountVerificationsType\": ")
+                .append(StringHelper.arrayToString(result, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

@@ -12,7 +12,7 @@ import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
 /**
-* The account verification info. The [AccountVerifications] field.
+* The account verification info. The [AccountVerificationsType] field.
 */
 public class AccountVerificationType implements Alignable {
 

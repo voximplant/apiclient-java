@@ -11,28 +11,35 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class GetCurrencyRateResponse implements Alignable {
-    private Error error;
+/**
+* The account documents with verification states
+*/
+public class AccountDocumentsType implements Alignable {
 
-    public Error getError() {
-        return error;
-    }
-
-    public boolean hasError() {
-        return this.error != null;
-    }
-
-    private ExchangeRatesType result;
+    private Long accountId;
 
     /**
-    * The exchange rates
+    * The account ID
     */
-    public ExchangeRatesType getResult() {
-        return this.result;
+    public Long getAccountId() {
+        return this.accountId;
     }
 
-    public boolean hasResult() {
-        return this.result != null;
+    public boolean hasAccountId() {
+        return this.accountId != null;
+    }
+
+    private AccountVerificationType[] verifications;
+
+    /**
+    * The account verifications
+    */
+    public AccountVerificationType[] getVerifications() {
+        return this.verifications;
+    }
+
+    public boolean hasVerifications() {
+        return this.verifications != null;
     }
 
     public String toString(int alignment) {
@@ -44,12 +51,18 @@ public class GetCurrencyRateResponse implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (result != null) {
+        if (accountId != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
+                .append("\"accountId\": \"")
+                .append(accountId)
                 .append('"')
                 .append(',')
+                .append(System.lineSeparator());
+        }
+        if (verifications != null) {
+            sb.append(aligned)
+                .append("\"AccountVerificationType\": ")
+                .append(StringHelper.arrayToString(verifications, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

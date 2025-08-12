@@ -22,12 +22,12 @@ public class GetAccountDocumentsResponse implements Alignable {
         return this.error != null;
     }
 
-    private AccountVerifications[] result;
+    private AccountDocumentsType[] result;
 
     /**
-    * The account verifications
+    * The account documents with verification states
     */
-    public AccountVerifications[] getResult() {
+    public AccountDocumentsType[] getResult() {
         return this.result;
     }
 
@@ -46,7 +46,7 @@ public class GetAccountDocumentsResponse implements Alignable {
             .append(System.lineSeparator());
         if (result != null) {
             sb.append(aligned)
-                .append("\"AccountVerifications\": ")
+                .append("\"AccountDocumentsType\": ")
                 .append(StringHelper.arrayToString(result, alignment + 1))
                 .append(System.lineSeparator());
         }
