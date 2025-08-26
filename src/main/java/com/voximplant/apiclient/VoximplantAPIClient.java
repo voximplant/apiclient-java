@@ -156,6 +156,12 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("AddUser", RequestSerializer.serialize(req)), AddUserResponse.class);
     }
+    public AddWABPhoneNumberResponse addWABPhoneNumber(AddWABPhoneNumberRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("AddWABPhoneNumber", RequestSerializer.serialize(req)), AddWABPhoneNumberResponse.class);
+    }
     public AppendToCallListResponse appendToCallList(AppendToCallListRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -389,6 +395,12 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("DeleteSipRegistration", RequestSerializer.serialize(req)), DeleteSipRegistrationResponse.class);
+    }
+    public DeleteWABPhoneNumberResponse deleteWABPhoneNumber(DeleteWABPhoneNumberRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("DeleteWABPhoneNumber", RequestSerializer.serialize(req)), DeleteWABPhoneNumberResponse.class);
     }
     public DownloadHistoryReportResponse downloadHistoryReport(DownloadHistoryReportRequest req) throws java.io.IOException, ClientException {
         Object res = impl.performRequest("DownloadHistoryReport", RequestSerializer.serialize(req));
@@ -848,6 +860,12 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("GetUsers", RequestSerializer.serialize(req)), GetUsersResponse.class);
     }
+    public GetWABPhoneNumbersResponse getWABPhoneNumbers(GetWABPhoneNumbersRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("GetWABPhoneNumbers", RequestSerializer.serialize(req)), GetWABPhoneNumbersResponse.class);
+    }
     public GetZIPCodesResponse getZIPCodes(GetZIPCodesRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -1123,6 +1141,12 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("SetUserInfo", RequestSerializer.serialize(req)), SetUserInfoResponse.class);
+    }
+    public SetWABPhoneNumberInfoResponse setWABPhoneNumberInfo(SetWABPhoneNumberInfoRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("SetWABPhoneNumberInfo", RequestSerializer.serialize(req)), SetWABPhoneNumberInfoResponse.class);
     }
     public StartConferenceResponse startConference(StartConferenceRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();

@@ -85,12 +85,12 @@ public class AccountVerificationsType implements Alignable {
         return this.created != null;
     }
 
-    private Long comments;
+    private String comments;
 
     /**
     * Comments for the customer in case of verification rejection
     */
-    public Long getComments() {
+    public String getComments() {
         return this.comments;
     }
 

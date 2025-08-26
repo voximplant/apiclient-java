@@ -33,7 +33,7 @@ public class CommonReportType implements Alignable {
 
     /**
     * The report type. The following values are possible: phone_numbers,
-    * none
+    * phone_numbers_awaiting_configuration, none
     */
     public String getType() {
         return this.type;
