@@ -19,7 +19,7 @@ public class CallInfoType implements Alignable {
     private Long callId;
 
     /**
-    * The call history ID
+    * Call's history ID
     */
     public Long getCallId() {
         return this.callId;
@@ -33,7 +33,7 @@ public class CallInfoType implements Alignable {
     private Date startTime;
 
     /**
-    * The start time in the selected timezone in 24-h format: YYYY-MM-DD
+    * Call start time in the selected timezone in 24-h format: YYYY-MM-DD
     * HH:mm:ss
     */
     public Date getStartTime() {
@@ -44,10 +44,23 @@ public class CallInfoType implements Alignable {
         return this.startTime != null;
     }
 
+    private String diversionNumber;
+
+    /**
+    * Call forwarding number
+    */
+    public String getDiversionNumber() {
+        return this.diversionNumber;
+    }
+
+    public boolean hasDiversionNumber() {
+        return this.diversionNumber != null;
+    }
+
     private Long duration;
 
     /**
-    * The call duration in seconds
+    * Call duration in seconds
     */
     public Long getDuration() {
         return this.duration;
@@ -60,7 +73,7 @@ public class CallInfoType implements Alignable {
     private String localNumber;
 
     /**
-    * The local number on the platform side
+    * Local number on the platform side
     */
     public String getLocalNumber() {
         return this.localNumber;
@@ -73,7 +86,7 @@ public class CallInfoType implements Alignable {
     private String remoteNumber;
 
     /**
-    * The remote number on the client side
+    * Remote number on the client side
     */
     public String getRemoteNumber() {
         return this.remoteNumber;
@@ -86,8 +99,7 @@ public class CallInfoType implements Alignable {
     private String remoteNumberType;
 
     /**
-    * The type of the remote number, such as PSTN, mobile, user or sip
-    * address
+    * Type of the remote number, e.g., a PSTN, mobile, user or sip address
     */
     public String getRemoteNumberType() {
         return this.remoteNumberType;
@@ -126,7 +138,7 @@ public class CallInfoType implements Alignable {
     private Long transactionId;
 
     /**
-    * The transaction ID
+    * Transaction ID
     */
     public Long getTransactionId() {
         return this.transactionId;
@@ -139,7 +151,7 @@ public class CallInfoType implements Alignable {
     private String recordUrl;
 
     /**
-    * The record URL
+    * Record URL
     */
     public String getRecordUrl() {
         return this.recordUrl;
@@ -152,7 +164,7 @@ public class CallInfoType implements Alignable {
     private String mediaServerAddress;
 
     /**
-    * The media server IP address
+    * Media server's IP address
     */
     public String getMediaServerAddress() {
         return this.mediaServerAddress;
@@ -165,7 +177,7 @@ public class CallInfoType implements Alignable {
     private BigDecimal cost;
 
     /**
-    * The call cost
+    * Call's cost
     */
     public BigDecimal getCost() {
         return this.cost;
@@ -178,7 +190,7 @@ public class CallInfoType implements Alignable {
     private String customData;
 
     /**
-    * The custom data passed to the JS session
+    * Custom data passed to the JS session
     */
     public String getCustomData() {
         return this.customData;
@@ -222,6 +234,14 @@ public class CallInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"startTime\": \"")
                 .append(startTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (diversionNumber != null) {
+            sb.append(aligned)
+                .append("\"diversionNumber\": \"")
+                .append(diversionNumber)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

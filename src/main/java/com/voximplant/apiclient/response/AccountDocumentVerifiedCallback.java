@@ -34,7 +34,9 @@ public class AccountDocumentVerifiedCallback implements Alignable {
 
     /**
     * The document verification status. The following values are possible:
-    * WAITING_CONFIRMATION_DOCS, VERIFIED, REJECTED
+    * AWAITING_AGREEMENT_UPLOADING, AWAITING_VERIFICATION,
+    * WAITING_FOR_CONFIRMATION_DOCUMENTS, VERIFIED, REJECTED,
+    * WAITING_PERIOD_EXPIRED, AWAITING_DOCUMENTS_UPLOADING
     */
     public String getAccountDocumentStatus() {
         return this.accountDocumentStatus;

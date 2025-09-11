@@ -34,7 +34,9 @@ public class AccountDocumentStatusUpdatedCallback implements Alignable {
 
     /**
     * Previous document verification status. The following values are
-    * possible: WAITING_CONFIRMATION_DOCS, VERIFIED, REJECTED
+    * possible: AWAITING_AGREEMENT_UPLOADING, AWAITING_VERIFICATION,
+    * WAITING_FOR_CONFIRMATION_DOCUMENTS, VERIFIED, REJECTED,
+    * WAITING_PERIOD_EXPIRED, AWAITING_DOCUMENTS_UPLOADING
     */
     public String getPreviousAccountDocumentStatus() {
         return this.previousAccountDocumentStatus;
@@ -89,7 +91,7 @@ public class AccountDocumentStatusUpdatedCallback implements Alignable {
 
     /**
     * Status of the user in the context of entrepreneurial activity.
-    * Possible values are 'individual', 'entrepreneur', 'legal entity'
+    * Possible values are: 'INDIVIDUAL', 'ENTREPRENEUR', 'LEGAL_ENTITY'
     */
     public String getLegalStatus() {
         return this.legalStatus;

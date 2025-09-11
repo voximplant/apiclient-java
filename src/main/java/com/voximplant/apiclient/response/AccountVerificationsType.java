@@ -98,12 +98,12 @@ public class AccountVerificationsType implements Alignable {
         return this.comments != null;
     }
 
-    private AccountVerificationsTypeCredentials[] credentials;
+    private AccountVerificationsTypeCredentials credentials;
 
     /**
     * Person or company who takes the verification
     */
-    public AccountVerificationsTypeCredentials[] getCredentials() {
+    public AccountVerificationsTypeCredentials getCredentials() {
         return this.credentials;
     }
 
@@ -196,8 +196,10 @@ public class AccountVerificationsType implements Alignable {
         }
         if (credentials != null) {
             sb.append(aligned)
-                .append("\"AccountVerificationsTypeCredentials\": ")
-                .append(StringHelper.arrayToString(credentials, alignment + 1))
+                .append("\"credentials\": \"")
+                .append(credentials)
+                .append('"')
+                .append(',')
                 .append(System.lineSeparator());
         }
         if (defaultEndUser != null) {
