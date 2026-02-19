@@ -85,8 +85,8 @@ public class CallerIDInfoType implements Alignable {
     private Date verifiedUntil;
 
     /**
-    * The verification ending date in format: YYYY-MM-DD (for the verified
-    * callerID)
+    * The verification ending date in the following format: YYYY-MM-DD (for
+    * the verified callerID)
     */
     public Date getVerifiedUntil() {
         return this.verifiedUntil;

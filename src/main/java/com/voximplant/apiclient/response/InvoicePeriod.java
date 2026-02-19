@@ -20,7 +20,7 @@ public class InvoicePeriod implements Alignable {
     private Date from;
 
     /**
-    * From date in format: YYYY-MM-DD
+    * From date in the following format: YYYY-MM-DD
     */
     public Date getFrom() {
         return this.from;
@@ -34,7 +34,7 @@ public class InvoicePeriod implements Alignable {
     private Date to;
 
     /**
-    * To date in format: YYYY-MM-DD
+    * To date in the following format: YYYY-MM-DD
     */
     public Date getTo() {
         return this.to;

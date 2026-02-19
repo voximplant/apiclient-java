@@ -33,7 +33,7 @@ public class ContractInfoType implements Alignable {
     private Date agreementDate;
 
     /**
-    * The agreement date in format: YYYY-MM-DD
+    * The agreement date in the following format: YYYY-MM-DD
     */
     public Date getAgreementDate() {
         return this.agreementDate;

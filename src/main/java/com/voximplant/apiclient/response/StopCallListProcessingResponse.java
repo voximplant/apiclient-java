@@ -25,7 +25,7 @@ public class StopCallListProcessingResponse implements Alignable {
     private Boolean result;
 
     /**
-    * true
+    * Whether the request completed successfully
     */
     public Boolean getResult() {
         return this.result;

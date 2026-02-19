@@ -222,6 +222,12 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("BindUserToQueue", RequestSerializer.serialize(req)), BindUserToQueueResponse.class);
     }
+    public CancelCallListBatchResponse cancelCallListBatch(CancelCallListBatchRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("CancelCallListBatch", RequestSerializer.serialize(req)), CancelCallListBatchResponse.class);
+    }
     public CancelCallListTaskResponse cancelCallListTask(CancelCallListTaskRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -439,6 +445,12 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("EditCallListTask", RequestSerializer.serialize(req)), EditCallListTaskResponse.class);
+    }
+    public EditCallListTasksPriorityResponse editCallListTasksPriority(EditCallListTasksPriorityRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("EditCallListTasksPriority", RequestSerializer.serialize(req)), EditCallListTasksPriorityResponse.class);
     }
     public GetACDHistoryResponse getACDHistory(GetACDHistoryRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();

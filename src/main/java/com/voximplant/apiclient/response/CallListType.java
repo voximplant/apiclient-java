@@ -149,6 +149,19 @@ public class CallListType implements Alignable {
         return this.status != null;
     }
 
+    private String taskPriorityStrategy;
+
+    /**
+    * Whether the first or repeated calls have priority.
+    */
+    public String getTaskPriorityStrategy() {
+        return this.taskPriorityStrategy;
+    }
+
+    public boolean hasTaskPriorityStrategy() {
+        return this.taskPriorityStrategy != null;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -234,6 +247,14 @@ public class CallListType implements Alignable {
             sb.append(aligned)
                 .append("\"status\": \"")
                 .append(status)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (taskPriorityStrategy != null) {
+            sb.append(aligned)
+                .append("\"taskPriorityStrategy\": \"")
+                .append(taskPriorityStrategy)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

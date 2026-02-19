@@ -150,6 +150,28 @@ public class GetCallListDetailsRequest implements Alignable {
         return this;
     }
 
+    private String batchId;
+
+    @RequestField(name="batch_id")
+    /**
+    * Batch UUID to filter the tasks
+    */
+    public String getBatchId() {
+        return this.batchId;
+    }
+
+    public boolean hasBatchId() {
+        return this.batchId != null;
+    }
+
+    /**
+    * Batch UUID to filter the tasks
+    */
+    public GetCallListDetailsRequest setBatchId(String d) {
+        this.batchId = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -203,6 +225,14 @@ public class GetCallListDetailsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"delimiter\": \"")
                 .append(delimiter)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (batchId != null) {
+            sb.append(aligned)
+                .append("\"batchId\": \"")
+                .append(batchId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

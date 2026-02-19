@@ -20,7 +20,7 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID. It is specified in the <a
+    * Rule ID. It is specified in the <a
     * href='//manage.voximplant.com/applications'>Applications</a> section
     * of the Control Panel
     */
@@ -33,7 +33,7 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * The rule ID. It is specified in the <a
+    * Rule ID. It is specified in the <a
     * href='//manage.voximplant.com/applications'>Applications</a> section
     * of the Control Panel
     */
@@ -138,9 +138,9 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="file_content")
     /**
-    * Send as "body" part of the HTTP request or as multiform. The sending
-    * "file_content" via URL is at its own risk because the network devices
-    * tend to drop HTTP requests with large headers
+    * Send as the "body" part of the HTTP request or as multiform. The
+    * sending "file_content" via URL is at its own risk because the network
+    * devices tend to drop HTTP requests with large headers
     */
     public InputStream getFileContent() {
         return this.fileContent;
@@ -151,9 +151,9 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * Send as "body" part of the HTTP request or as multiform. The sending
-    * "file_content" via URL is at its own risk because the network devices
-    * tend to drop HTTP requests with large headers
+    * Send as the "body" part of the HTTP request or as multiform. The
+    * sending "file_content" via URL is at its own risk because the network
+    * devices tend to drop HTTP requests with large headers
     */
     public CreateCallListRequest setFileContent(InputStream d) {
         this.fileContent = d;
@@ -252,8 +252,8 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="reference_ip")
     /**
-    * Specifies the IP from the geolocation of the call list subscribers.
-    * It allows selecting the nearest server for serving subscribers
+    * IP from the geolocation of the call list subscribers. It allows
+    * selecting the nearest server for serving subscribers
     */
     public String getReferenceIp() {
         return this.referenceIp;
@@ -264,8 +264,8 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * Specifies the IP from the geolocation of the call list subscribers.
-    * It allows selecting the nearest server for serving subscribers
+    * IP from the geolocation of the call list subscribers. It allows
+    * selecting the nearest server for serving subscribers
     */
     public CreateCallListRequest setReferenceIp(String d) {
         this.referenceIp = d;
@@ -276,8 +276,8 @@ public class CreateCallListRequest implements Alignable {
 
     @RequestField(name="server_location")
     /**
-    * Specifies the location of the server where the scenario needs to be
-    * executed. Has higher priority than `reference_ip`. Request
+    * Location of the server where the scenario needs to be executed. Has
+    * higher priority than `reference_ip`. Request
     * [getServerLocations](https://api.voximplant.com/getServerLocations)
     * for possible values
     */
@@ -290,13 +290,39 @@ public class CreateCallListRequest implements Alignable {
     }
 
     /**
-    * Specifies the location of the server where the scenario needs to be
-    * executed. Has higher priority than `reference_ip`. Request
+    * Location of the server where the scenario needs to be executed. Has
+    * higher priority than `reference_ip`. Request
     * [getServerLocations](https://api.voximplant.com/getServerLocations)
     * for possible values
     */
     public CreateCallListRequest setServerLocation(String d) {
         this.serverLocation = d;
+        return this;
+    }
+
+    private String taskPriorityStrategy;
+
+    @RequestField(name="task_priority_strategy")
+    /**
+    * Optional. Whether to prioritize first calling attempts or repeated
+    * ones. The possible values are: first_attempts, repeated_attempts. The
+    * default values is first_attempts.
+    */
+    public String getTaskPriorityStrategy() {
+        return this.taskPriorityStrategy;
+    }
+
+    public boolean hasTaskPriorityStrategy() {
+        return this.taskPriorityStrategy != null;
+    }
+
+    /**
+    * Optional. Whether to prioritize first calling attempts or repeated
+    * ones. The possible values are: first_attempts, repeated_attempts. The
+    * default values is first_attempts.
+    */
+    public CreateCallListRequest setTaskPriorityStrategy(String d) {
+        this.taskPriorityStrategy = d;
         return this;
     }
 
@@ -395,6 +421,14 @@ public class CreateCallListRequest implements Alignable {
             sb.append(aligned)
                 .append("\"serverLocation\": \"")
                 .append(serverLocation)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (taskPriorityStrategy != null) {
+            sb.append(aligned)
+                .append("\"taskPriorityStrategy\": \"")
+                .append(taskPriorityStrategy)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

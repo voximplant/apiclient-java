@@ -85,7 +85,7 @@ public class AccountInvoice implements Alignable {
     private Date invoiceDate;
 
     /**
-    * Date when the invoice is created in format: YYYY-MM-DD
+    * Date when the invoice is created in the following format: YYYY-MM-DD
     */
     public Date getInvoiceDate() {
         return this.invoiceDate;

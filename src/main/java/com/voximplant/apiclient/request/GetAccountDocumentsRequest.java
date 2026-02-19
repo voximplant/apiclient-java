@@ -92,8 +92,8 @@ public class GetAccountDocumentsRequest implements Alignable {
     @RequestField(name="from_unverified_hold_until")
     @SerializeUsing(serializer = DateSerializer.class)
     /**
-    * Unverified subscriptions hold until the date (from ...) in format:
-    * YYYY-MM-DD
+    * Unverified subscriptions hold until the date (from ...) in the
+    * following format: YYYY-MM-DD
     */
     public Date getFromUnverifiedHoldUntil() {
         return this.fromUnverifiedHoldUntil;
@@ -104,8 +104,8 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * Unverified subscriptions hold until the date (from ...) in format:
-    * YYYY-MM-DD
+    * Unverified subscriptions hold until the date (from ...) in the
+    * following format: YYYY-MM-DD
     */
     public GetAccountDocumentsRequest setFromUnverifiedHoldUntil(Date d) {
         this.fromUnverifiedHoldUntil = d;
@@ -118,8 +118,8 @@ public class GetAccountDocumentsRequest implements Alignable {
     @RequestField(name="to_unverified_hold_until")
     @SerializeUsing(serializer = DateSerializer.class)
     /**
-    * Unverified subscriptions hold until the date (... to) in format:
-    * YYYY-MM-DD
+    * Unverified subscriptions hold until the date (... to) in the
+    * following format: YYYY-MM-DD
     */
     public Date getToUnverifiedHoldUntil() {
         return this.toUnverifiedHoldUntil;
@@ -130,8 +130,8 @@ public class GetAccountDocumentsRequest implements Alignable {
     }
 
     /**
-    * Unverified subscriptions hold until the date (... to) in format:
-    * YYYY-MM-DD
+    * Unverified subscriptions hold until the date (... to) in the
+    * following format: YYYY-MM-DD
     */
     public GetAccountDocumentsRequest setToUnverifiedHoldUntil(Date d) {
         this.toUnverifiedHoldUntil = d;

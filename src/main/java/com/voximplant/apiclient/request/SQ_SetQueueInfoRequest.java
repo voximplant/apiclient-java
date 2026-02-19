@@ -62,6 +62,28 @@ public class SQ_SetQueueInfoRequest implements Alignable {
         return this;
     }
 
+    private Boolean holdImIfInactiveAgents;
+
+    @RequestField(name="hold_im_if_inactive_agents")
+    /**
+    * Whether to add the task to the queue if there are no available agents
+    */
+    public Boolean getHoldImIfInactiveAgents() {
+        return this.holdImIfInactiveAgents;
+    }
+
+    public boolean hasHoldImIfInactiveAgents() {
+        return this.holdImIfInactiveAgents != null;
+    }
+
+    /**
+    * Whether to add the task to the queue if there are no available agents
+    */
+    public SQ_SetQueueInfoRequest setHoldImIfInactiveAgents(boolean d) {
+        this.holdImIfInactiveAgents = Boolean.valueOf(d);
+        return this;
+    }
+
     private Long sqQueueId;
 
     @RequestField(name="sq_queue_id")
@@ -495,6 +517,14 @@ public class SQ_SetQueueInfoRequest implements Alignable {
             sb.append(aligned)
                 .append("\"applicationName\": \"")
                 .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (holdImIfInactiveAgents != null) {
+            sb.append(aligned)
+                .append("\"holdImIfInactiveAgents\": \"")
+                .append(holdImIfInactiveAgents)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

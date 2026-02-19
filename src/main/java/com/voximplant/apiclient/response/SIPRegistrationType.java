@@ -151,7 +151,7 @@ public class SIPRegistrationType implements Alignable {
     private Date nextSubscriptionRenewal;
 
     /**
-    * The next subscription renewal date in format: YYYY-MM-DD
+    * The next subscription renewal date in the following format: YYYY-MM-DD
     */
     public Date getNextSubscriptionRenewal() {
         return this.nextSubscriptionRenewal;

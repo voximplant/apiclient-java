@@ -25,7 +25,7 @@ public class CreateCallListResponse implements Alignable {
     private Boolean result;
 
     /**
-    * true
+    * Whether the request completed successfully
     */
     public Boolean getResult() {
         return this.result;
@@ -38,7 +38,7 @@ public class CreateCallListResponse implements Alignable {
     private Long count;
 
     /**
-    * The number of stored records
+    * Number of stored records
     */
     public Long getCount() {
         return this.count;
@@ -51,7 +51,7 @@ public class CreateCallListResponse implements Alignable {
     private Long listId;
 
     /**
-    * The list ID
+    * List ID
     */
     public Long getListId() {
         return this.listId;
@@ -59,6 +59,19 @@ public class CreateCallListResponse implements Alignable {
 
     public boolean hasListId() {
         return this.listId != null;
+    }
+
+    private String batchId;
+
+    /**
+    * Batch UUID
+    */
+    public String getBatchId() {
+        return this.batchId;
+    }
+
+    public boolean hasBatchId() {
+        return this.batchId != null;
     }
 
     public String toString(int alignment) {
@@ -90,6 +103,14 @@ public class CreateCallListResponse implements Alignable {
             sb.append(aligned)
                 .append("\"listId\": \"")
                 .append(listId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (batchId != null) {
+            sb.append(aligned)
+                .append("\"batchId\": \"")
+                .append(batchId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

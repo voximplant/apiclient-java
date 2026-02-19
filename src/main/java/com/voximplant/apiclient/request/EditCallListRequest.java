@@ -200,6 +200,32 @@ public class EditCallListRequest implements Alignable {
         return this;
     }
 
+    private String taskPriorityStrategy;
+
+    @RequestField(name="task_priority_strategy")
+    /**
+    * Optional. Whether to prioritize first calling attempts or repeated
+    * ones. The possible values are: first_attempts, repeated_attempts. The
+    * default values is first_attempts
+    */
+    public String getTaskPriorityStrategy() {
+        return this.taskPriorityStrategy;
+    }
+
+    public boolean hasTaskPriorityStrategy() {
+        return this.taskPriorityStrategy != null;
+    }
+
+    /**
+    * Optional. Whether to prioritize first calling attempts or repeated
+    * ones. The possible values are: first_attempts, repeated_attempts. The
+    * default values is first_attempts
+    */
+    public EditCallListRequest setTaskPriorityStrategy(String d) {
+        this.taskPriorityStrategy = d;
+        return this;
+    }
+
     private String serverLocation;
 
     @RequestField(name="server_location")
@@ -295,6 +321,14 @@ public class EditCallListRequest implements Alignable {
             sb.append(aligned)
                 .append("\"startAt\": \"")
                 .append(startAt)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (taskPriorityStrategy != null) {
+            sb.append(aligned)
+                .append("\"taskPriorityStrategy\": \"")
+                .append(taskPriorityStrategy)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

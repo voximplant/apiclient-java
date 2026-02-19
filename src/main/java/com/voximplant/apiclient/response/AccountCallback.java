@@ -174,6 +174,19 @@ public class AccountCallback implements Alignable {
         return this.accountDocumentUploaded != null;
     }
 
+    private BatchTaskCancellingCallback batchTaskCancellingCompleted;
+
+    /**
+    * Received when batch task cancelling has been completed
+    */
+    public BatchTaskCancellingCallback getBatchTaskCancellingCompleted() {
+        return this.batchTaskCancellingCompleted;
+    }
+
+    public boolean hasBatchTaskCancellingCompleted() {
+        return this.batchTaskCancellingCompleted != null;
+    }
+
     private RegulationAddressUploadedCallback regulationAddressUploaded;
 
     /**
@@ -843,6 +856,14 @@ public class AccountCallback implements Alignable {
             sb.append(aligned)
                 .append("\"accountDocumentUploaded\": \"")
                 .append(accountDocumentUploaded)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (batchTaskCancellingCompleted != null) {
+            sb.append(aligned)
+                .append("\"batchTaskCancellingCompleted\": \"")
+                .append(batchTaskCancellingCompleted)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

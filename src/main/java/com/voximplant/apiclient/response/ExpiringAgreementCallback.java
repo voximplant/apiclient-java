@@ -22,7 +22,7 @@ public class ExpiringAgreementCallback implements Alignable {
     private Date expirationDate;
 
     /**
-    * The date of agreement expiration in format: YYYY-MM-DD
+    * The date of agreement expiration in the following format: YYYY-MM-DD
     */
     public Date getExpirationDate() {
         return this.expirationDate;

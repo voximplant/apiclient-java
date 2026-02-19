@@ -48,7 +48,8 @@ public class RegulationAddressVerifiedCallback implements Alignable {
     private Date uploaded;
 
     /**
-    * The UTC date of the document upload in format: YYYY-MM-DD HH::mm:ss
+    * The UTC date of the document upload in the following format:
+    * YYYY-MM-DD HH::mm:ss
     */
     public Date getUploaded() {
         return this.uploaded;

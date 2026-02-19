@@ -33,7 +33,7 @@ public class ContractorInvoiceType implements Alignable {
     private Date invoiceDate;
 
     /**
-    * The invoice date in format: YYYY-MM-DD
+    * The invoice date in the following format: YYYY-MM-DD
     */
     public Date getInvoiceDate() {
         return this.invoiceDate;
@@ -60,7 +60,7 @@ public class ContractorInvoiceType implements Alignable {
     private Date fromDate;
 
     /**
-    * The from date in format: YYYY-MM-DD
+    * The from date in the following format: YYYY-MM-DD
     */
     public Date getFromDate() {
         return this.fromDate;
@@ -74,7 +74,7 @@ public class ContractorInvoiceType implements Alignable {
     private Date toDate;
 
     /**
-    * The to date in format: YYYY-MM-DD
+    * The to date in the following format: YYYY-MM-DD
     */
     public Date getToDate() {
         return this.toDate;

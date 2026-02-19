@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class SetAccountInfoResponse implements Alignable {
+public class CancelCallListBatchResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -22,12 +22,12 @@ public class SetAccountInfoResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long result;
+    private Boolean result;
 
     /**
-    * Returns 1 if the request has been completed successfully
+    * Whether the request completed successfully
     */
-    public Long getResult() {
+    public Boolean getResult() {
         return this.result;
     }
 

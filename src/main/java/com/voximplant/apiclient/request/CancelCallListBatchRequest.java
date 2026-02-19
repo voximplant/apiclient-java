@@ -15,7 +15,7 @@ import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class AppendToCallListRequest implements Alignable {
+public class CancelCallListBatchRequest implements Alignable {
     private Long listId;
 
     @RequestField(name="list_id")
@@ -33,7 +33,7 @@ public class AppendToCallListRequest implements Alignable {
     /**
     * Call list ID
     */
-    public AppendToCallListRequest setListId(long d) {
+    public CancelCallListBatchRequest setListId(long d) {
         this.listId = Long.valueOf(d);
         return this;
     }
@@ -57,96 +57,30 @@ public class AppendToCallListRequest implements Alignable {
     * The unique name of the call list. Can be used instead of
     * <b>list_id</b>
     */
-    public AppendToCallListRequest setListName(String d) {
+    public CancelCallListBatchRequest setListName(String d) {
         this.listName = d;
         return this;
     }
 
-    private InputStream fileContent;
+    private String batchIds;
 
-    @RequestField(name="file_content")
+    @RequestField(name="batch_ids")
     /**
-    * Send as the request body or multiform
+    * Batch UUIDs of the tasks to cancel, separated by semicolon (;)
     */
-    public InputStream getFileContent() {
-        return this.fileContent;
+    public String getBatchIds() {
+        return this.batchIds;
     }
 
-    public boolean hasFileContent() {
-        return this.fileContent != null;
-    }
-
-    /**
-    * Send as the request body or multiform
-    */
-    public AppendToCallListRequest setFileContent(InputStream d) {
-        this.fileContent = d;
-        return this;
-    }
-
-    private String encoding;
-
-    @RequestField(name="encoding")
-    /**
-    * Encoding file. The default value is UTF-8
-    */
-    public String getEncoding() {
-        return this.encoding;
-    }
-
-    public boolean hasEncoding() {
-        return this.encoding != null;
+    public boolean hasBatchIds() {
+        return this.batchIds != null;
     }
 
     /**
-    * Encoding file. The default value is UTF-8
+    * Batch UUIDs of the tasks to cancel, separated by semicolon (;)
     */
-    public AppendToCallListRequest setEncoding(String d) {
-        this.encoding = d;
-        return this;
-    }
-
-    private String escape;
-
-    @RequestField(name="escape")
-    /**
-    * Escape character for parsing csv
-    */
-    public String getEscape() {
-        return this.escape;
-    }
-
-    public boolean hasEscape() {
-        return this.escape != null;
-    }
-
-    /**
-    * Escape character for parsing csv
-    */
-    public AppendToCallListRequest setEscape(String d) {
-        this.escape = d;
-        return this;
-    }
-
-    private String delimiter;
-
-    @RequestField(name="delimiter")
-    /**
-    * Separator values. The default value is ';'
-    */
-    public String getDelimiter() {
-        return this.delimiter;
-    }
-
-    public boolean hasDelimiter() {
-        return this.delimiter != null;
-    }
-
-    /**
-    * Separator values. The default value is ';'
-    */
-    public AppendToCallListRequest setDelimiter(String d) {
-        this.delimiter = d;
+    public CancelCallListBatchRequest setBatchIds(String d) {
+        this.batchIds = d;
         return this;
     }
 
@@ -175,28 +109,10 @@ public class AppendToCallListRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (fileContent != null) {
-        }
-        if (encoding != null) {
+        if (batchIds != null) {
             sb.append(aligned)
-                .append("\"encoding\": \"")
-                .append(encoding)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (escape != null) {
-            sb.append(aligned)
-                .append("\"escape\": \"")
-                .append(escape)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (delimiter != null) {
-            sb.append(aligned)
-                .append("\"delimiter\": \"")
-                .append(delimiter)
+                .append("\"batchIds\": \"")
+                .append(batchIds)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

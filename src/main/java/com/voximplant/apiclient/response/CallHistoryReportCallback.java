@@ -47,7 +47,7 @@ public class CallHistoryReportCallback implements Alignable {
     private Date orderDate;
 
     /**
-    * The UTC order date in format: YYYY-MM-DD HH::mm:ss
+    * The UTC order date in the following format: YYYY-MM-DD HH::mm:ss
     */
     public Date getOrderDate() {
         return this.orderDate;

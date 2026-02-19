@@ -97,7 +97,8 @@ public class SmsHistoryType implements Alignable {
     private String statusId;
 
     /**
-    * Status of the message. 1 - Success, 2 - Error
+    * Status of the message. The possible values are: 1 — Success, 2 —
+    * Error, 3 — Waiting
     */
     public String getStatusId() {
         return this.statusId;

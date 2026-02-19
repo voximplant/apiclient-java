@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class SetAccountInfoResponse implements Alignable {
+public class EditCallListTasksPriorityResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -22,17 +22,17 @@ public class SetAccountInfoResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long result;
+    private String results;
 
     /**
-    * Returns 1 if the request has been completed successfully
+    * JSON-encoded array of each task update.
     */
-    public Long getResult() {
-        return this.result;
+    public String getResults() {
+        return this.results;
     }
 
-    public boolean hasResult() {
-        return this.result != null;
+    public boolean hasResults() {
+        return this.results != null;
     }
 
     public String toString(int alignment) {
@@ -44,10 +44,10 @@ public class SetAccountInfoResponse implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (result != null) {
+        if (results != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
+                .append("\"results\": \"")
+                .append(results)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

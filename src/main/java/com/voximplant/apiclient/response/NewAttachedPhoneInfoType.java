@@ -74,9 +74,9 @@ public class NewAttachedPhoneInfoType implements Alignable {
     private Date unverifiedHoldUntil;
 
     /**
-    * Unverified phone hold until the date in format: YYYY-MM-DD (if the
-    * account verification is required). The number is detached on that day
-    * automatically!
+    * Unverified phone hold until the date in the following format:
+    * YYYY-MM-DD (if the account verification is required). The number is
+    * detached on that day automatically!
     */
     public Date getUnverifiedHoldUntil() {
         return this.unverifiedHoldUntil;

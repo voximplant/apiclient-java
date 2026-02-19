@@ -84,6 +84,28 @@ public class GetSmsHistoryRequest implements Alignable {
         return this;
     }
 
+    private String timezone;
+
+    @RequestField(name="timezone")
+    /**
+    * The selected timezone or the 'auto' value (the account location)
+    */
+    public String getTimezone() {
+        return this.timezone;
+    }
+
+    public boolean hasTimezone() {
+        return this.timezone != null;
+    }
+
+    /**
+    * The selected timezone or the 'auto' value (the account location)
+    */
+    public GetSmsHistoryRequest setTimezone(String d) {
+        this.timezone = d;
+        return this;
+    }
+
     private Long count;
 
     @RequestField(name="count")
@@ -235,6 +257,14 @@ public class GetSmsHistoryRequest implements Alignable {
             sb.append(aligned)
                 .append("\"direction\": \"")
                 .append(direction)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (timezone != null) {
+            sb.append(aligned)
+                .append("\"timezone\": \"")
+                .append(timezone)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

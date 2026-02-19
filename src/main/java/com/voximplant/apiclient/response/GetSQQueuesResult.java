@@ -42,6 +42,19 @@ public class GetSQQueuesResult implements Alignable {
         return this.sqQueueName != null;
     }
 
+    private Boolean holdImIfInactiveAgents;
+
+    /**
+    * Whether the tasks are queued when there are no active agents
+    */
+    public Boolean getHoldImIfInactiveAgents() {
+        return this.holdImIfInactiveAgents;
+    }
+
+    public boolean hasHoldImIfInactiveAgents() {
+        return this.holdImIfInactiveAgents != null;
+    }
+
     private String agentSelection;
 
     /**
@@ -258,6 +271,14 @@ public class GetSQQueuesResult implements Alignable {
             sb.append(aligned)
                 .append("\"sqQueueName\": \"")
                 .append(sqQueueName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (holdImIfInactiveAgents != null) {
+            sb.append(aligned)
+                .append("\"holdImIfInactiveAgents\": \"")
+                .append(holdImIfInactiveAgents)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

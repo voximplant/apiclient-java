@@ -42,10 +42,9 @@ public class GetPhoneNumberReportsRequest implements Alignable {
 
     @RequestField(name="report_type")
     /**
-    * The phone number report type list separated by semicolons (;). Use
-    * the 'all' value to select all history report types. The following
-    * values are possible: calls, calls_brief, transactions, audit,
-    * call_list, transactions_on_hold
+    * The phone number report type list separated by semicolons (;). The
+    * possible values are: phone_numbers,
+    * phone_numbers_awaiting_configuration
     */
     public MultiArgument<String> getReportType() {
         return this.reportType;
@@ -56,10 +55,9 @@ public class GetPhoneNumberReportsRequest implements Alignable {
     }
 
     /**
-    * The phone number report type list separated by semicolons (;). Use
-    * the 'all' value to select all history report types. The following
-    * values are possible: calls, calls_brief, transactions, audit,
-    * call_list, transactions_on_hold
+    * The phone number report type list separated by semicolons (;). The
+    * possible values are: phone_numbers,
+    * phone_numbers_awaiting_configuration
     */
     public GetPhoneNumberReportsRequest setReportType(MultiArgument<String> d) {
         this.reportType = d;

@@ -45,7 +45,8 @@ public class NewPhoneInfoType implements Alignable {
     private BigDecimal phonePrice;
 
     /**
-    * The phone monthly charge
+    * The phone monthly fee. It consists of `phone_price` and
+    * `phone_tax_reserve`
     */
     public BigDecimal getPhonePrice() {
         return this.phonePrice;
@@ -58,7 +59,9 @@ public class NewPhoneInfoType implements Alignable {
     private BigDecimal phoneInstallationPrice;
 
     /**
-    * The phone installation price (without the first monthly fee)
+    * The phone installation price (without the first monthly fee). It
+    * consists of `phone_installation_price` and
+    * `phone_installation_tax_reserve`
     */
     public BigDecimal getPhoneInstallationPrice() {
         return this.phoneInstallationPrice;
@@ -124,7 +127,9 @@ public class NewPhoneInfoType implements Alignable {
     private Long phoneInstallationTaxReserve;
 
     /**
-    * The phone number installation tax reserve
+    * The phone number installation tax reserve. The phone installation
+    * price consists of `phone_installation_price` and
+    * `phone_installation_tax_reserve`
     */
     public Long getPhoneInstallationTaxReserve() {
         return this.phoneInstallationTaxReserve;
@@ -137,7 +142,8 @@ public class NewPhoneInfoType implements Alignable {
     private Long phoneTaxReserve;
 
     /**
-    * The phone number tax reserve
+    * The phone number tax reserve. The phone monthly fee consists of
+    * `phone_price` and `phone_tax_reserve`
     */
     public Long getPhoneTaxReserve() {
         return this.phoneTaxReserve;

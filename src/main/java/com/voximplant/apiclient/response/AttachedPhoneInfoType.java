@@ -68,11 +68,24 @@ public class AttachedPhoneInfoType implements Alignable {
         return this.phoneCountryCode != null;
     }
 
+    private MultiArgument<String> activationStatus;
+
+    /**
+    * Phone number activation status
+    */
+    public MultiArgument<String> getActivationStatus() {
+        return this.activationStatus;
+    }
+
+    public boolean hasActivationStatus() {
+        return this.activationStatus != null;
+    }
+
     @JsonDeserialize(using=com.voximplant.apiclient.util.DateDeserializer.class)
     private Date phoneNextRenewal;
 
     /**
-    * The next renewal date in format: YYYY-MM-DD
+    * The next renewal date in the following format: YYYY-MM-DD
     */
     public Date getPhoneNextRenewal() {
         return this.phoneNextRenewal;
@@ -231,9 +244,9 @@ public class AttachedPhoneInfoType implements Alignable {
     private Date unverifiedHoldUntil;
 
     /**
-    * Unverified phone hold until the date in format: YYYY-MM-DD (if the
-    * account verification is required). The number is detached on that day
-    * automatically!
+    * Unverified phone hold until the date in the following format:
+    * YYYY-MM-DD (if the account verification is required). The number is
+    * detached on that day automatically!
     */
     public Date getUnverifiedHoldUntil() {
         return this.unverifiedHoldUntil;
@@ -421,6 +434,14 @@ public class AttachedPhoneInfoType implements Alignable {
             sb.append(aligned)
                 .append("\"phoneCountryCode\": \"")
                 .append(phoneCountryCode)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (activationStatus != null) {
+            sb.append(aligned)
+                .append("\"activationStatus\": \"")
+                .append(activationStatus)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -95,8 +95,8 @@ public class GetCallHistoryRequest implements Alignable {
     @RequestField(name="call_session_history_id")
     /**
     * To get the call history for the specific sessions, pass the session
-    * IDs to this parameter separated by a semicolon (;). You can find the
-    * session ID in the <a
+    * IDs to this parameter separated by a semicolon (;). The maximum
+    * number of records is 1000. You can find the session ID in the <a
     * href='/docs/references/voxengine/appevents#started'>AppEvents.Started</a>
     * event's <b>sessionID</b> property in a scenario, or retrieve it from
     * the <b>call_session_history_id</b> value returned from the <a
@@ -115,8 +115,8 @@ public class GetCallHistoryRequest implements Alignable {
 
     /**
     * To get the call history for the specific sessions, pass the session
-    * IDs to this parameter separated by a semicolon (;). You can find the
-    * session ID in the <a
+    * IDs to this parameter separated by a semicolon (;). The maximum
+    * number of records is 1000. You can find the session ID in the <a
     * href='/docs/references/voxengine/appevents#started'>AppEvents.Started</a>
     * event's <b>sessionID</b> property in a scenario, or retrieve it from
     * the <b>call_session_history_id</b> value returned from the <a

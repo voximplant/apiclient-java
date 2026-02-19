@@ -157,8 +157,8 @@ public class CommonReportType implements Alignable {
     private Date storeUntil;
 
     /**
-    * Store the report until the date in format: YYYY-MM-DD. The report is
-    * completed if the field exists
+    * Store the report until the date in the following format: YYYY-MM-DD.
+    * The report is completed if the field exists
     */
     public Date getStoreUntil() {
         return this.storeUntil;

@@ -84,7 +84,8 @@ public class A2PSmsHistoryType implements Alignable {
     private String statusId;
 
     /**
-    * The message status. 1 - Success, 2 - Error
+    * The message status. The possible values are: 1 — Success, 2 — Error,
+    * 3 — Waiting
     */
     public String getStatusId() {
         return this.statusId;

@@ -20,7 +20,7 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_count")
     /**
-    * The phone count to attach
+    * Quantity of phone numbers you want to attach
     */
     public Long getPhoneCount() {
         return this.phoneCount;
@@ -31,7 +31,7 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone count to attach
+    * Quantity of phone numbers you want to attach
     */
     public AttachPhoneNumberRequest setPhoneCount(long d) {
         this.phoneCount = Long.valueOf(d);

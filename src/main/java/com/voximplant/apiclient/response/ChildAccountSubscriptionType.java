@@ -73,7 +73,7 @@ public class ChildAccountSubscriptionType implements Alignable {
     private Date nextRenewal;
 
     /**
-    * The next charge UTC date in format: YYYY-MM-DD
+    * The next charge UTC date in the following format: YYYY-MM-DD
     */
     public Date getNextRenewal() {
         return this.nextRenewal;

@@ -29,17 +29,17 @@ public class SubscriptionTemplateType implements Alignable {
         return this.subscriptionTemplateId != null;
     }
 
-    private Long currencyId;
+    private Long currency;
 
     /**
     * ID of the original currency
     */
-    public Long getCurrencyId() {
-        return this.currencyId;
+    public Long getCurrency() {
+        return this.currency;
     }
 
-    public boolean hasCurrencyId() {
-        return this.currencyId != null;
+    public boolean hasCurrency() {
+        return this.currency != null;
     }
 
     private BigDecimal installationPrice;
@@ -206,10 +206,10 @@ public class SubscriptionTemplateType implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (currencyId != null) {
+        if (currency != null) {
             sb.append(aligned)
-                .append("\"currencyId\": \"")
-                .append(currencyId)
+                .append("\"currency\": \"")
+                .append(currency)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

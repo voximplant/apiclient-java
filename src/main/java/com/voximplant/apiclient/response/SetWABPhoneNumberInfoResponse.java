@@ -25,7 +25,7 @@ public class SetWABPhoneNumberInfoResponse implements Alignable {
     private Long result;
 
     /**
-    * 1
+    * Returns 1 if the request has been completed successfully
     */
     public Long getResult() {
         return this.result;

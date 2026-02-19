@@ -11,28 +11,35 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class SetAccountInfoResponse implements Alignable {
-    private Error error;
+/**
+* Received when batch task cancelling has been completed
+*/
+public class BatchTaskCancellingCallback implements Alignable {
 
-    public Error getError() {
-        return error;
-    }
-
-    public boolean hasError() {
-        return this.error != null;
-    }
-
-    private Long result;
+    private Long batchId;
 
     /**
-    * Returns 1 if the request has been completed successfully
+    * Batch UUID of the cancelled tasks
     */
-    public Long getResult() {
-        return this.result;
+    public Long getBatchId() {
+        return this.batchId;
     }
 
-    public boolean hasResult() {
-        return this.result != null;
+    public boolean hasBatchId() {
+        return this.batchId != null;
+    }
+
+    private Long cancelledTasksNumber;
+
+    /**
+    * Number of cancelled tasks
+    */
+    public Long getCancelledTasksNumber() {
+        return this.cancelledTasksNumber;
+    }
+
+    public boolean hasCancelledTasksNumber() {
+        return this.cancelledTasksNumber != null;
     }
 
     public String toString(int alignment) {
@@ -44,10 +51,18 @@ public class SetAccountInfoResponse implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (result != null) {
+        if (batchId != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
+                .append("\"batchId\": \"")
+                .append(batchId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (cancelledTasksNumber != null) {
+            sb.append(aligned)
+                .append("\"cancelledTasksNumber\": \"")
+                .append(cancelledTasksNumber)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
