@@ -15,12 +15,12 @@ import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SQ_SetSkillInfoRequest implements Alignable {
+public class AddSecretRequest implements Alignable {
     private Long applicationId;
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to add the secret to
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,9 +31,9 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to add the secret to
     */
-    public SQ_SetSkillInfoRequest setApplicationId(long d) {
+    public AddSecretRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
         return this;
     }
@@ -42,8 +42,7 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name. Can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,77 +53,56 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name. Can be used instead of <b>application_id</b>
     */
-    public SQ_SetSkillInfoRequest setApplicationName(String d) {
+    public AddSecretRequest setApplicationName(String d) {
         this.applicationName = d;
         return this;
     }
 
-    private Long sqSkillId;
+    private String secretName;
 
-    @RequestField(name="sq_skill_id")
+    @RequestField(name="secret_name")
     /**
-    * ID of the skill
+    * Secret name. The name must start with a Latin letter and can contain
+    * up to 64 characters, including Latin letters, digits and underscores
     */
-    public Long getSqSkillId() {
-        return this.sqSkillId;
+    public String getSecretName() {
+        return this.secretName;
     }
 
-    public boolean hasSqSkillId() {
-        return this.sqSkillId != null;
+    public boolean hasSecretName() {
+        return this.secretName != null;
     }
 
     /**
-    * ID of the skill
+    * Secret name. The name must start with a Latin letter and can contain
+    * up to 64 characters, including Latin letters, digits and underscores
     */
-    public SQ_SetSkillInfoRequest setSqSkillId(long d) {
-        this.sqSkillId = Long.valueOf(d);
+    public AddSecretRequest setSecretName(String d) {
+        this.secretName = d;
         return this;
     }
 
-    private String sqSkillName;
+    private String secretValue;
 
-    @RequestField(name="sq_skill_name")
+    @RequestField(name="secret_value")
     /**
-    * Name of the skill. Can be used instead of <b>sq_skill_id</b>
+    * Secret value. Maximum length is 8192 characters
     */
-    public String getSqSkillName() {
-        return this.sqSkillName;
+    public String getSecretValue() {
+        return this.secretValue;
     }
 
-    public boolean hasSqSkillName() {
-        return this.sqSkillName != null;
-    }
-
-    /**
-    * Name of the skill. Can be used instead of <b>sq_skill_id</b>
-    */
-    public SQ_SetSkillInfoRequest setSqSkillName(String d) {
-        this.sqSkillName = d;
-        return this;
-    }
-
-    private String newSqSkillName;
-
-    @RequestField(name="new_sq_skill_name")
-    /**
-    * New unique skill name within the application
-    */
-    public String getNewSqSkillName() {
-        return this.newSqSkillName;
-    }
-
-    public boolean hasNewSqSkillName() {
-        return this.newSqSkillName != null;
+    public boolean hasSecretValue() {
+        return this.secretValue != null;
     }
 
     /**
-    * New unique skill name within the application
+    * Secret value. Maximum length is 8192 characters
     */
-    public SQ_SetSkillInfoRequest setNewSqSkillName(String d) {
-        this.newSqSkillName = d;
+    public AddSecretRequest setSecretValue(String d) {
+        this.secretValue = d;
         return this;
     }
 
@@ -132,7 +110,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="description")
     /**
-    * Comment, up to 200 characters
+    * Optional. Secret description. When processing, the length is
+    * truncated to the first 200 characters
     */
     public String getDescription() {
         return this.description;
@@ -143,9 +122,10 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Comment, up to 200 characters
+    * Optional. Secret description. When processing, the length is
+    * truncated to the first 200 characters
     */
-    public SQ_SetSkillInfoRequest setDescription(String d) {
+    public AddSecretRequest setDescription(String d) {
         this.description = d;
         return this;
     }
@@ -175,26 +155,18 @@ public class SQ_SetSkillInfoRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (sqSkillId != null) {
+        if (secretName != null) {
             sb.append(aligned)
-                .append("\"sqSkillId\": \"")
-                .append(sqSkillId)
+                .append("\"secretName\": \"")
+                .append(secretName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (sqSkillName != null) {
+        if (secretValue != null) {
             sb.append(aligned)
-                .append("\"sqSkillName\": \"")
-                .append(sqSkillName)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (newSqSkillName != null) {
-            sb.append(aligned)
-                .append("\"newSqSkillName\": \"")
-                .append(newSqSkillName)
+                .append("\"secretValue\": \"")
+                .append(secretValue)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

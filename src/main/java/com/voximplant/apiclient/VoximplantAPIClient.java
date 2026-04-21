@@ -48,12 +48,6 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("A2PSendSms", RequestSerializer.serialize(req)), A2PSendSmsResponse.class);
     }
-    public ActivateCallerIDResponse activateCallerID(ActivateCallerIDRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue((String) impl.performRequest("ActivateCallerID", RequestSerializer.serialize(req)), ActivateCallerIDResponse.class);
-    }
     public ActivateOutboundTestPhoneNumberResponse activateOutboundTestPhoneNumber(ActivateOutboundTestPhoneNumberRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -83,12 +77,6 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("AddAuthorizedAccountIP", RequestSerializer.serialize(req)), AddAuthorizedAccountIPResponse.class);
-    }
-    public AddCallerIDResponse addCallerID(AddCallerIDRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue((String) impl.performRequest("AddCallerID", RequestSerializer.serialize(req)), AddCallerIDResponse.class);
     }
     public AddDialogflowKeyResponse addDialogflowKey(AddDialogflowKeyRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
@@ -131,6 +119,12 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("AddScenario", RequestSerializer.serialize(req)), AddScenarioResponse.class);
+    }
+    public AddSecretResponse addSecret(AddSecretRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("AddSecret", RequestSerializer.serialize(req)), AddSecretResponse.class);
     }
     public AddSipWhiteListItemResponse addSipWhiteListItem(AddSipWhiteListItemRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
@@ -353,6 +347,12 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("DelScenario", RequestSerializer.serialize(req)), DelScenarioResponse.class);
+    }
+    public DelSecretResponse delSecret(DelSecretRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("DelSecret", RequestSerializer.serialize(req)), DelSecretResponse.class);
     }
     public DelSipWhiteListItemResponse delSipWhiteListItem(DelSipWhiteListItemRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
@@ -800,6 +800,18 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("GetScenarios", RequestSerializer.serialize(req)), GetScenariosResponse.class);
     }
+    public GetSecretValueResponse getSecretValue(GetSecretValueRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("GetSecretValue", RequestSerializer.serialize(req)), GetSecretValueResponse.class);
+    }
+    public GetSecretsResponse getSecrets(GetSecretsRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("GetSecrets", RequestSerializer.serialize(req)), GetSecretsResponse.class);
+    }
     public GetSipRegistrationsResponse getSipRegistrations(GetSipRegistrationsRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -1124,6 +1136,12 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("SetScenarioInfo", RequestSerializer.serialize(req)), SetScenarioInfoResponse.class);
     }
+    public SetSecretInfoResponse setSecretInfo(SetSecretInfoRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("SetSecretInfo", RequestSerializer.serialize(req)), SetSecretInfoResponse.class);
+    }
     public SetSipWhiteListItemResponse setSipWhiteListItem(SetSipWhiteListItemRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -1189,12 +1207,6 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("UpdateSipRegistration", RequestSerializer.serialize(req)), UpdateSipRegistrationResponse.class);
-    }
-    public VerifyCallerIDResponse verifyCallerID(VerifyCallerIDRequest req) throws java.io.IOException, ClientException {
-        ObjectMapper mapper  = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        return mapper.readValue((String) impl.performRequest("VerifyCallerID", RequestSerializer.serialize(req)), VerifyCallerIDResponse.class);
     }
     public VerifyOutboundTestPhoneNumberResponse verifyOutboundTestPhoneNumber(VerifyOutboundTestPhoneNumberRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();

@@ -15,12 +15,12 @@ import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SQ_DelSkillRequest implements Alignable {
+public class GetSecretValueRequest implements Alignable {
     private Long applicationId;
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,9 +31,9 @@ public class SQ_DelSkillRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID
     */
-    public SQ_DelSkillRequest setApplicationId(long d) {
+    public GetSecretValueRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
         return this;
     }
@@ -42,8 +42,7 @@ public class SQ_DelSkillRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name. Can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,59 +53,54 @@ public class SQ_DelSkillRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name. Can be used instead of <b>application_id</b>
     */
-    public SQ_DelSkillRequest setApplicationName(String d) {
+    public GetSecretValueRequest setApplicationName(String d) {
         this.applicationName = d;
         return this;
     }
 
-    private MultiArgument<Long> sqSkillId;
+    private Long secretId;
 
-    @RequestField(name="sq_skill_id")
+    @RequestField(name="secret_id")
     /**
-    * List of skill IDs separated by semicolons (;). Use 'all' to delete
-    * all the skills
+    * Secret ID
     */
-    public MultiArgument<Long> getSqSkillId() {
-        return this.sqSkillId;
+    public Long getSecretId() {
+        return this.secretId;
     }
 
-    public boolean hasSqSkillId() {
-        return this.sqSkillId != null;
+    public boolean hasSecretId() {
+        return this.secretId != null;
     }
 
     /**
-    * List of skill IDs separated by semicolons (;). Use 'all' to delete
-    * all the skills
+    * Secret ID
     */
-    public SQ_DelSkillRequest setSqSkillId(MultiArgument<Long> d) {
-        this.sqSkillId = d;
+    public GetSecretValueRequest setSecretId(long d) {
+        this.secretId = Long.valueOf(d);
         return this;
     }
 
-    private MultiArgument<String> sqSkillName;
+    private String secretName;
 
-    @RequestField(name="sq_skill_name")
+    @RequestField(name="secret_name")
     /**
-    * List of skill names separated by semicolons (;). Can be used instead
-    * of <b>sq_skill_id</b>
+    * Secret name. Can be used instead of <b>secret_id</b>
     */
-    public MultiArgument<String> getSqSkillName() {
-        return this.sqSkillName;
+    public String getSecretName() {
+        return this.secretName;
     }
 
-    public boolean hasSqSkillName() {
-        return this.sqSkillName != null;
+    public boolean hasSecretName() {
+        return this.secretName != null;
     }
 
     /**
-    * List of skill names separated by semicolons (;). Can be used instead
-    * of <b>sq_skill_id</b>
+    * Secret name. Can be used instead of <b>secret_id</b>
     */
-    public SQ_DelSkillRequest setSqSkillName(MultiArgument<String> d) {
-        this.sqSkillName = d;
+    public GetSecretValueRequest setSecretName(String d) {
+        this.secretName = d;
         return this;
     }
 
@@ -135,18 +129,18 @@ public class SQ_DelSkillRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (sqSkillId != null) {
+        if (secretId != null) {
             sb.append(aligned)
-                .append("\"sqSkillId\": \"")
-                .append(sqSkillId)
+                .append("\"secretId\": \"")
+                .append(secretId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (sqSkillName != null) {
+        if (secretName != null) {
             sb.append(aligned)
-                .append("\"sqSkillName\": \"")
-                .append(sqSkillName)
+                .append("\"secretName\": \"")
+                .append(secretName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

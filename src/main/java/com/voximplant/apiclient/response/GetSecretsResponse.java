@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class ActivateCallerIDResponse implements Alignable {
+public class GetSecretsResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -22,17 +22,43 @@ public class ActivateCallerIDResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long result;
+    private SecretListItem[] result;
 
     /**
-    * Returns 1 if the request has been completed successfully
+    * Secrets list
     */
-    public Long getResult() {
+    public SecretListItem[] getResult() {
         return this.result;
     }
 
     public boolean hasResult() {
         return this.result != null;
+    }
+
+    private Long count;
+
+    /**
+    * Returned secrets number
+    */
+    public Long getCount() {
+        return this.count;
+    }
+
+    public boolean hasCount() {
+        return this.count != null;
+    }
+
+    private Long totalCount;
+
+    /**
+    * Total found secrets number
+    */
+    public Long getTotalCount() {
+        return this.totalCount;
+    }
+
+    public boolean hasTotalCount() {
+        return this.totalCount != null;
     }
 
     public String toString(int alignment) {
@@ -46,8 +72,22 @@ public class ActivateCallerIDResponse implements Alignable {
             .append(System.lineSeparator());
         if (result != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
+                .append("\"SecretListItem\": ")
+                .append(StringHelper.arrayToString(result, alignment + 1))
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (totalCount != null) {
+            sb.append(aligned)
+                .append("\"totalCount\": \"")
+                .append(totalCount)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

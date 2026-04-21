@@ -1,8 +1,8 @@
 package com.voximplant.apiexamples;
 
 import com.voximplant.apiclient.ClientException;
-import com.voximplant.apiclient.request.VerifyCallerIDRequest;
-import com.voximplant.apiclient.response.VerifyCallerIDResponse;
+import com.voximplant.apiclient.request.GetSecretValueRequest;
+import com.voximplant.apiclient.response.GetSecretValueResponse;
 import com.voximplant.apiclient.VoximplantAPIClient;
 import com.voximplant.apiclient.util.MultiArgument;
 import java.util.Date;
@@ -14,16 +14,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
-* Verify the callerID 1.
+* Get the value of secret 10.
 */
-public class VerifyCallerIDExample {
+public class GetSecretValueExample {
     public static void main(String [] args) {
         try {
             VoximplantAPIClient client = new VoximplantAPIClient("/path/to/credentials.json");
 
 
-            VerifyCallerIDResponse res = client.verifyCallerID(new VerifyCallerIDRequest()
-                .setCalleridId(1)
+            GetSecretValueResponse res = client.getSecretValue(new GetSecretValueRequest()
+                .setApplicationId(1)
+                .setSecretId(10)
             );
             System.out.println("OK");
         } catch (IOException | ClientException e) {

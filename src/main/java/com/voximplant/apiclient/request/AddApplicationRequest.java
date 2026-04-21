@@ -20,7 +20,7 @@ public class AddApplicationRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The short application name in format \[a-z\]\[a-z0-9-\]{1,64}
+    * Short application name in the \[a-z\]\[a-z0-9-\]{1,64} format
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -31,7 +31,7 @@ public class AddApplicationRequest implements Alignable {
     }
 
     /**
-    * The short application name in format \[a-z\]\[a-z0-9-\]{1,64}
+    * Short application name in the \[a-z\]\[a-z0-9-\]{1,64} format
     */
     public AddApplicationRequest setApplicationName(String d) {
         this.applicationName = d;

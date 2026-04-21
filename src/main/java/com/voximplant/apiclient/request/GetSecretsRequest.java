@@ -15,12 +15,12 @@ import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SQ_SetSkillInfoRequest implements Alignable {
+public class GetSecretsRequest implements Alignable {
     private Long applicationId;
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,9 +31,9 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID
     */
-    public SQ_SetSkillInfoRequest setApplicationId(long d) {
+    public GetSecretsRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
         return this;
     }
@@ -42,8 +42,7 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name. Can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,99 +53,76 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name. Can be used instead of <b>application_id</b>
     */
-    public SQ_SetSkillInfoRequest setApplicationName(String d) {
+    public GetSecretsRequest setApplicationName(String d) {
         this.applicationName = d;
         return this;
     }
 
-    private Long sqSkillId;
+    private String secretNamePart;
 
-    @RequestField(name="sq_skill_id")
+    @RequestField(name="secret_name_part")
     /**
-    * ID of the skill
+    * Filter by the secret name part
     */
-    public Long getSqSkillId() {
-        return this.sqSkillId;
+    public String getSecretNamePart() {
+        return this.secretNamePart;
     }
 
-    public boolean hasSqSkillId() {
-        return this.sqSkillId != null;
+    public boolean hasSecretNamePart() {
+        return this.secretNamePart != null;
     }
 
     /**
-    * ID of the skill
+    * Filter by the secret name part
     */
-    public SQ_SetSkillInfoRequest setSqSkillId(long d) {
-        this.sqSkillId = Long.valueOf(d);
+    public GetSecretsRequest setSecretNamePart(String d) {
+        this.secretNamePart = d;
         return this;
     }
 
-    private String sqSkillName;
+    private Long count;
 
-    @RequestField(name="sq_skill_name")
+    @RequestField(name="count")
     /**
-    * Name of the skill. Can be used instead of <b>sq_skill_id</b>
+    * Maximum returning record number
     */
-    public String getSqSkillName() {
-        return this.sqSkillName;
+    public Long getCount() {
+        return this.count;
     }
 
-    public boolean hasSqSkillName() {
-        return this.sqSkillName != null;
+    public boolean hasCount() {
+        return this.count != null;
     }
 
     /**
-    * Name of the skill. Can be used instead of <b>sq_skill_id</b>
+    * Maximum returning record number
     */
-    public SQ_SetSkillInfoRequest setSqSkillName(String d) {
-        this.sqSkillName = d;
+    public GetSecretsRequest setCount(long d) {
+        this.count = Long.valueOf(d);
         return this;
     }
 
-    private String newSqSkillName;
+    private Long offset;
 
-    @RequestField(name="new_sq_skill_name")
+    @RequestField(name="offset")
     /**
-    * New unique skill name within the application
+    * First <b>N</b> records to be skipped in the output
     */
-    public String getNewSqSkillName() {
-        return this.newSqSkillName;
+    public Long getOffset() {
+        return this.offset;
     }
 
-    public boolean hasNewSqSkillName() {
-        return this.newSqSkillName != null;
-    }
-
-    /**
-    * New unique skill name within the application
-    */
-    public SQ_SetSkillInfoRequest setNewSqSkillName(String d) {
-        this.newSqSkillName = d;
-        return this;
-    }
-
-    private String description;
-
-    @RequestField(name="description")
-    /**
-    * Comment, up to 200 characters
-    */
-    public String getDescription() {
-        return this.description;
-    }
-
-    public boolean hasDescription() {
-        return this.description != null;
+    public boolean hasOffset() {
+        return this.offset != null;
     }
 
     /**
-    * Comment, up to 200 characters
+    * First <b>N</b> records to be skipped in the output
     */
-    public SQ_SetSkillInfoRequest setDescription(String d) {
-        this.description = d;
+    public GetSecretsRequest setOffset(long d) {
+        this.offset = Long.valueOf(d);
         return this;
     }
 
@@ -175,34 +151,26 @@ public class SQ_SetSkillInfoRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (sqSkillId != null) {
+        if (secretNamePart != null) {
             sb.append(aligned)
-                .append("\"sqSkillId\": \"")
-                .append(sqSkillId)
+                .append("\"secretNamePart\": \"")
+                .append(secretNamePart)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (sqSkillName != null) {
+        if (count != null) {
             sb.append(aligned)
-                .append("\"sqSkillName\": \"")
-                .append(sqSkillName)
+                .append("\"count\": \"")
+                .append(count)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (newSqSkillName != null) {
+        if (offset != null) {
             sb.append(aligned)
-                .append("\"newSqSkillName\": \"")
-                .append(newSqSkillName)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (description != null) {
-            sb.append(aligned)
-                .append("\"description\": \"")
-                .append(description)
+                .append("\"offset\": \"")
+                .append(offset)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

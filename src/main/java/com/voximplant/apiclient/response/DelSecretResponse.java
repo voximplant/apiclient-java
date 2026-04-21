@@ -1,41 +1,38 @@
-package com.voximplant.apiclient.request;
+package com.voximplant.apiclient.response;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.io.InputStream;
 import java.math.BigDecimal;
-import com.voximplant.apiclient.response.*;
 import com.voximplant.apiclient.util.MultiArgument;
+import com.voximplant.apiclient.util.Error;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
-import com.voximplant.apiclient.util.DateSerializer;
-import com.voximplant.apiclient.util.RequestField;
-import com.voximplant.apiclient.util.SerializeUsing;
-import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class AddCallerIDRequest implements Alignable {
-    private String calleridNumber;
+public class DelSecretResponse implements Alignable {
+    private Error error;
 
-    @RequestField(name="callerid_number")
-    /**
-    * The callerID number in E.164 format
-    */
-    public String getCalleridNumber() {
-        return this.calleridNumber;
+    public Error getError() {
+        return error;
     }
 
-    public boolean hasCalleridNumber() {
-        return this.calleridNumber != null;
+    public boolean hasError() {
+        return this.error != null;
     }
 
+    private Long result;
+
     /**
-    * The callerID number in E.164 format
+    * Returns 1 if the secret has been deleted successfully
     */
-    public AddCallerIDRequest setCalleridNumber(String d) {
-        this.calleridNumber = d;
-        return this;
+    public Long getResult() {
+        return this.result;
+    }
+
+    public boolean hasResult() {
+        return this.result != null;
     }
 
     public String toString(int alignment) {
@@ -47,10 +44,10 @@ public class AddCallerIDRequest implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
-        if (calleridNumber != null) {
+        if (result != null) {
             sb.append(aligned)
-                .append("\"calleridNumber\": \"")
-                .append(calleridNumber)
+                .append("\"result\": \"")
+                .append(result)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

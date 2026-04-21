@@ -20,7 +20,7 @@ public class SQ_GetQueuesRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * ID of the application to search by
+    * Application ID to search by
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +31,7 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * ID of the application to search by
+    * Application ID to search by
     */
     public SQ_GetQueuesRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,7 +42,7 @@ public class SQ_GetQueuesRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Name of the application to search by. Can be used instead of
+    * Application name to search by. Can be used instead of
     * <b>application_id</b>
     */
     public String getApplicationName() {
@@ -54,7 +54,7 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Name of the application to search by. Can be used instead of
+    * Application name to search by. Can be used instead of
     * <b>application_id</b>
     */
     public SQ_GetQueuesRequest setApplicationName(String d) {

@@ -1,8 +1,8 @@
 package com.voximplant.apiexamples;
 
 import com.voximplant.apiclient.ClientException;
-import com.voximplant.apiclient.request.ActivateCallerIDRequest;
-import com.voximplant.apiclient.response.ActivateCallerIDResponse;
+import com.voximplant.apiclient.request.GetSecretsRequest;
+import com.voximplant.apiclient.response.GetSecretsResponse;
 import com.voximplant.apiclient.VoximplantAPIClient;
 import com.voximplant.apiclient.util.MultiArgument;
 import java.util.Date;
@@ -14,17 +14,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
-* Activate the callerID by the verification code.
+* Get secrets of application 1.
 */
-public class ActivateCallerIDExample {
+public class GetSecretsExample {
     public static void main(String [] args) {
         try {
             VoximplantAPIClient client = new VoximplantAPIClient("/path/to/credentials.json");
 
 
-            ActivateCallerIDResponse res = client.activateCallerID(new ActivateCallerIDRequest()
-                .setCalleridId(1)
-                .setVerificationCode("12345")
+            GetSecretsResponse res = client.getSecrets(new GetSecretsRequest()
+                .setApplicationId(1)
+                .setCount(2)
             );
             System.out.println("OK");
         } catch (IOException | ClientException e) {

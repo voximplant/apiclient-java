@@ -20,7 +20,7 @@ public class SQ_AddQueueRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * ID of the application to bind to
+    * Application ID to bind to
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +31,7 @@ public class SQ_AddQueueRequest implements Alignable {
     }
 
     /**
-    * ID of the application to bind to
+    * Application ID to bind to
     */
     public SQ_AddQueueRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,7 +42,7 @@ public class SQ_AddQueueRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Name of the application to bind to. Can be used instead of
+    * Application name to bind to. Can be used instead of
     * <b>application_id</b>
     */
     public String getApplicationName() {
@@ -54,7 +54,7 @@ public class SQ_AddQueueRequest implements Alignable {
     }
 
     /**
-    * Name of the application to bind to. Can be used instead of
+    * Application name to bind to. Can be used instead of
     * <b>application_id</b>
     */
     public SQ_AddQueueRequest setApplicationName(String d) {

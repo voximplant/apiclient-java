@@ -15,12 +15,12 @@ import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class SQ_SetSkillInfoRequest implements Alignable {
+public class SetSecretInfoRequest implements Alignable {
     private Long applicationId;
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,9 +31,9 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID
     */
-    public SQ_SetSkillInfoRequest setApplicationId(long d) {
+    public SetSecretInfoRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
         return this;
     }
@@ -42,8 +42,7 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name. Can be used instead of <b>application_id</b>
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,77 +53,102 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name. Can be used instead of <b>application_id</b>
     */
-    public SQ_SetSkillInfoRequest setApplicationName(String d) {
+    public SetSecretInfoRequest setApplicationName(String d) {
         this.applicationName = d;
         return this;
     }
 
-    private Long sqSkillId;
+    private Long secretId;
 
-    @RequestField(name="sq_skill_id")
+    @RequestField(name="secret_id")
     /**
-    * ID of the skill
+    * Secret ID to edit
     */
-    public Long getSqSkillId() {
-        return this.sqSkillId;
+    public Long getSecretId() {
+        return this.secretId;
     }
 
-    public boolean hasSqSkillId() {
-        return this.sqSkillId != null;
+    public boolean hasSecretId() {
+        return this.secretId != null;
     }
 
     /**
-    * ID of the skill
+    * Secret ID to edit
     */
-    public SQ_SetSkillInfoRequest setSqSkillId(long d) {
-        this.sqSkillId = Long.valueOf(d);
+    public SetSecretInfoRequest setSecretId(long d) {
+        this.secretId = Long.valueOf(d);
         return this;
     }
 
-    private String sqSkillName;
+    private String secretName;
 
-    @RequestField(name="sq_skill_name")
+    @RequestField(name="secret_name")
     /**
-    * Name of the skill. Can be used instead of <b>sq_skill_id</b>
+    * Secret name. Can be used instead of <b>secret_id</b>
     */
-    public String getSqSkillName() {
-        return this.sqSkillName;
+    public String getSecretName() {
+        return this.secretName;
     }
 
-    public boolean hasSqSkillName() {
-        return this.sqSkillName != null;
+    public boolean hasSecretName() {
+        return this.secretName != null;
     }
 
     /**
-    * Name of the skill. Can be used instead of <b>sq_skill_id</b>
+    * Secret name. Can be used instead of <b>secret_id</b>
     */
-    public SQ_SetSkillInfoRequest setSqSkillName(String d) {
-        this.sqSkillName = d;
+    public SetSecretInfoRequest setSecretName(String d) {
+        this.secretName = d;
         return this;
     }
 
-    private String newSqSkillName;
+    private String newSecretName;
 
-    @RequestField(name="new_sq_skill_name")
+    @RequestField(name="new_secret_name")
     /**
-    * New unique skill name within the application
+    * New secret name. The name must start with a Latin letter and can
+    * contain up to 64 characters, including Latin letters, digits and
+    * underscores
     */
-    public String getNewSqSkillName() {
-        return this.newSqSkillName;
+    public String getNewSecretName() {
+        return this.newSecretName;
     }
 
-    public boolean hasNewSqSkillName() {
-        return this.newSqSkillName != null;
+    public boolean hasNewSecretName() {
+        return this.newSecretName != null;
     }
 
     /**
-    * New unique skill name within the application
+    * New secret name. The name must start with a Latin letter and can
+    * contain up to 64 characters, including Latin letters, digits and
+    * underscores
     */
-    public SQ_SetSkillInfoRequest setNewSqSkillName(String d) {
-        this.newSqSkillName = d;
+    public SetSecretInfoRequest setNewSecretName(String d) {
+        this.newSecretName = d;
+        return this;
+    }
+
+    private String secretValue;
+
+    @RequestField(name="secret_value")
+    /**
+    * Secret value. Maximum length is 8192 characters
+    */
+    public String getSecretValue() {
+        return this.secretValue;
+    }
+
+    public boolean hasSecretValue() {
+        return this.secretValue != null;
+    }
+
+    /**
+    * Secret value. Maximum length is 8192 characters
+    */
+    public SetSecretInfoRequest setSecretValue(String d) {
+        this.secretValue = d;
         return this;
     }
 
@@ -132,7 +156,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="description")
     /**
-    * Comment, up to 200 characters
+    * Secret description. When processing, the length is truncated to the
+    * first 200 characters
     */
     public String getDescription() {
         return this.description;
@@ -143,9 +168,10 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Comment, up to 200 characters
+    * Secret description. When processing, the length is truncated to the
+    * first 200 characters
     */
-    public SQ_SetSkillInfoRequest setDescription(String d) {
+    public SetSecretInfoRequest setDescription(String d) {
         this.description = d;
         return this;
     }
@@ -175,26 +201,34 @@ public class SQ_SetSkillInfoRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (sqSkillId != null) {
+        if (secretId != null) {
             sb.append(aligned)
-                .append("\"sqSkillId\": \"")
-                .append(sqSkillId)
+                .append("\"secretId\": \"")
+                .append(secretId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (sqSkillName != null) {
+        if (secretName != null) {
             sb.append(aligned)
-                .append("\"sqSkillName\": \"")
-                .append(sqSkillName)
+                .append("\"secretName\": \"")
+                .append(secretName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (newSqSkillName != null) {
+        if (newSecretName != null) {
             sb.append(aligned)
-                .append("\"newSqSkillName\": \"")
-                .append(newSqSkillName)
+                .append("\"newSecretName\": \"")
+                .append(newSecretName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (secretValue != null) {
+            sb.append(aligned)
+                .append("\"secretValue\": \"")
+                .append(secretValue)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -136,7 +136,7 @@ public class AddScenarioRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * ID of the application to bind the scenario to
+    * Application ID to bind the scenario to
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -147,7 +147,7 @@ public class AddScenarioRequest implements Alignable {
     }
 
     /**
-    * ID of the application to bind the scenario to
+    * Application ID to bind the scenario to
     */
     public AddScenarioRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -158,7 +158,7 @@ public class AddScenarioRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Name of the application to bind the scenario to
+    * Application name to bind the scenario to
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -169,7 +169,7 @@ public class AddScenarioRequest implements Alignable {
     }
 
     /**
-    * Name of the application to bind the scenario to
+    * Application name to bind the scenario to
     */
     public AddScenarioRequest setApplicationName(String d) {
         this.applicationName = d;

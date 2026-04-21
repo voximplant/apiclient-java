@@ -67,7 +67,7 @@ public class EditCallListTaskRequest implements Alignable {
     @RequestField(name="task_uuid")
     /**
     * Call list's task ID. Please specify either the task's ID or the
-    * task's UUID to edit the task
+    * task's UUID to edit the task. The UUID is unique within the call list
     */
     public String getTaskUuid() {
         return this.taskUuid;
@@ -79,7 +79,7 @@ public class EditCallListTaskRequest implements Alignable {
 
     /**
     * Call list's task ID. Please specify either the task's ID or the
-    * task's UUID to edit the task
+    * task's UUID to edit the task. The UUID is unique within the call list
     */
     public EditCallListTaskRequest setTaskUuid(String d) {
         this.taskUuid = d;
@@ -160,8 +160,9 @@ public class EditCallListTaskRequest implements Alignable {
     @RequestField(name="min_execution_time")
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
-    * Start time for the daily calling attempts in the UTC+0 24-h format:
-    * HH:mm:ss format
+    * Optional. Start time for the daily calling attempts in the UTC+0 24-h
+    * format: HH:mm:ss format. If spefied, please specify
+    * `max_execution_time` as well
     */
     public Date getMinExecutionTime() {
         return this.minExecutionTime;
@@ -172,11 +173,40 @@ public class EditCallListTaskRequest implements Alignable {
     }
 
     /**
-    * Start time for the daily calling attempts in the UTC+0 24-h format:
-    * HH:mm:ss format
+    * Optional. Start time for the daily calling attempts in the UTC+0 24-h
+    * format: HH:mm:ss format. If spefied, please specify
+    * `max_execution_time` as well
     */
     public EditCallListTaskRequest setMinExecutionTime(Date d) {
         this.minExecutionTime = d;
+        return this;
+    }
+
+    @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
+    private Date maxExecutionTime;
+
+    @RequestField(name="max_execution_time")
+    @SerializeUsing(serializer = TimestampSerializer.class)
+    /**
+    * Optional. End time for the daily calling attempts in the UTC+0 24-h
+    * format: HH:mm:ss format. If spefied, please specify
+    * `min_execution_time` as well
+    */
+    public Date getMaxExecutionTime() {
+        return this.maxExecutionTime;
+    }
+
+    public boolean hasMaxExecutionTime() {
+        return this.maxExecutionTime != null;
+    }
+
+    /**
+    * Optional. End time for the daily calling attempts in the UTC+0 24-h
+    * format: HH:mm:ss format. If spefied, please specify
+    * `min_execution_time` as well
+    */
+    public EditCallListTaskRequest setMaxExecutionTime(Date d) {
+        this.maxExecutionTime = d;
         return this;
     }
 
@@ -241,6 +271,14 @@ public class EditCallListTaskRequest implements Alignable {
             sb.append(aligned)
                 .append("\"minExecutionTime\": \"")
                 .append(minExecutionTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (maxExecutionTime != null) {
+            sb.append(aligned)
+                .append("\"maxExecutionTime\": \"")
+                .append(maxExecutionTime)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

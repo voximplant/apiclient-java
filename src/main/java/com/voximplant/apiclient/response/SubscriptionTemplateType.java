@@ -19,7 +19,7 @@ public class SubscriptionTemplateType implements Alignable {
     private Long subscriptionTemplateId;
 
     /**
-    * The subscription template ID
+    * Subscription's template ID
     */
     public Long getSubscriptionTemplateId() {
         return this.subscriptionTemplateId;
@@ -29,12 +29,12 @@ public class SubscriptionTemplateType implements Alignable {
         return this.subscriptionTemplateId != null;
     }
 
-    private Long currency;
+    private String currency;
 
     /**
-    * ID of the original currency
+    * Subscription's currency
     */
-    public Long getCurrency() {
+    public String getCurrency() {
         return this.currency;
     }
 
@@ -45,7 +45,7 @@ public class SubscriptionTemplateType implements Alignable {
     private BigDecimal installationPrice;
 
     /**
-    * The subscription installation price (without the first monthly fee)
+    * Subscription's installation price (without the first monthly fee)
     */
     public BigDecimal getInstallationPrice() {
         return this.installationPrice;
@@ -58,7 +58,7 @@ public class SubscriptionTemplateType implements Alignable {
     private Long installationPriceInCurrency;
 
     /**
-    * The subscription installation price in the original currency
+    * Subscription's installation price in the original currency
     */
     public Long getInstallationPriceInCurrency() {
         return this.installationPriceInCurrency;
@@ -71,7 +71,7 @@ public class SubscriptionTemplateType implements Alignable {
     private Long price;
 
     /**
-    * The subscription monthly fee, including taxes and discounts
+    * Subscription's monthly fee, including taxes and discounts
     */
     public Long getPrice() {
         return this.price;
@@ -84,7 +84,7 @@ public class SubscriptionTemplateType implements Alignable {
     private Long priceInCurrency;
 
     /**
-    * The subscription monthly fee in the original currency
+    * Subscription's monthly fee in the original currency
     */
     public Long getPriceInCurrency() {
         return this.priceInCurrency;
@@ -97,8 +97,8 @@ public class SubscriptionTemplateType implements Alignable {
     private String period;
 
     /**
-    * The charge period in 24-h format: Y-M-D H:m:s. Example: 0-1-0 0:0:0
-    * is 1 month
+    * Charge period in 24-h format: Y-M-D H:m:s. Example: 0-1-0 0:0:0 is 1
+    * month
     */
     public String getPeriod() {
         return this.period;
@@ -111,7 +111,7 @@ public class SubscriptionTemplateType implements Alignable {
     private String subscriptionTemplateType;
 
     /**
-    * The subscription template type. The following values are possible:
+    * Subscription template type. The following values are possible:
     * PHONE_NUM, SIP_REGISTRATION
     */
     public String getSubscriptionTemplateType() {
@@ -125,7 +125,7 @@ public class SubscriptionTemplateType implements Alignable {
     private String subscriptionTemplateName;
 
     /**
-    * The subscription template name (example: SIP registration, Phone GB,
+    * Subscription template name (example: SIP registration, Phone GB,
     * Phone RU 495, ...)
     */
     public String getSubscriptionTemplateName() {
@@ -152,7 +152,7 @@ public class SubscriptionTemplateType implements Alignable {
     private String verificationStatus;
 
     /**
-    * The verification status. Possible values are REQUIRED, IN_PROGRESS,
+    * Verification status. Possible values are REQUIRED, IN_PROGRESS,
     * VERIFIED, NOT_REQUIRED
     */
     public String getVerificationStatus() {
@@ -166,7 +166,7 @@ public class SubscriptionTemplateType implements Alignable {
     private Long installationTaxReserve;
 
     /**
-    * The phone number installation tax reserve
+    * Phone number's installation tax reserve
     */
     public Long getInstallationTaxReserve() {
         return this.installationTaxReserve;
@@ -179,7 +179,7 @@ public class SubscriptionTemplateType implements Alignable {
     private Long taxReserve;
 
     /**
-    * The phone number tax reserve
+    * Phone number's tax reserve
     */
     public Long getTaxReserve() {
         return this.taxReserve;

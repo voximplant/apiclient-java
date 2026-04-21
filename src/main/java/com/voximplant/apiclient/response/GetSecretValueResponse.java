@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class AddCallerIDResponse implements Alignable {
+public class GetSecretValueResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -22,30 +22,17 @@ public class AddCallerIDResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long result;
+    private GetSecretValueResult[] result;
 
     /**
-    * Returns 1 if the request has been completed successfully
+    * The full secret info (with value)
     */
-    public Long getResult() {
+    public GetSecretValueResult[] getResult() {
         return this.result;
     }
 
     public boolean hasResult() {
         return this.result != null;
-    }
-
-    private Long calleridId;
-
-    /**
-    * ID of the callerID object
-    */
-    public Long getCalleridId() {
-        return this.calleridId;
-    }
-
-    public boolean hasCalleridId() {
-        return this.calleridId != null;
     }
 
     public String toString(int alignment) {
@@ -59,18 +46,8 @@ public class AddCallerIDResponse implements Alignable {
             .append(System.lineSeparator());
         if (result != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (calleridId != null) {
-            sb.append(aligned)
-                .append("\"calleridId\": \"")
-                .append(calleridId)
-                .append('"')
-                .append(',')
+                .append("\"GetSecretValueResult\": ")
+                .append(StringHelper.arrayToString(result, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

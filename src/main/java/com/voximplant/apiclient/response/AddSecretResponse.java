@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class VerifyCallerIDResponse implements Alignable {
+public class AddSecretResponse implements Alignable {
     private Error error;
 
     public Error getError() {
@@ -22,12 +22,12 @@ public class VerifyCallerIDResponse implements Alignable {
         return this.error != null;
     }
 
-    private Long result;
+    private AddSecretResult[] result;
 
     /**
-    * Returns 1 if the request has been completed successfully
+    * Result with the added secret ID
     */
-    public Long getResult() {
+    public AddSecretResult[] getResult() {
         return this.result;
     }
 
@@ -46,10 +46,8 @@ public class VerifyCallerIDResponse implements Alignable {
             .append(System.lineSeparator());
         if (result != null) {
             sb.append(aligned)
-                .append("\"result\": \"")
-                .append(result)
-                .append('"')
-                .append(',')
+                .append("\"AddSecretResult\": ")
+                .append(StringHelper.arrayToString(result, alignment + 1))
                 .append(System.lineSeparator());
         }
         return sb.append(preAligned).append('}').append(',').toString();

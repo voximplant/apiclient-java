@@ -45,7 +45,7 @@ public class AttachedPhoneInfoType implements Alignable {
     private BigDecimal phonePrice;
 
     /**
-    * The phone monthly charge
+    * The phone monthly charge in the account's currency
     */
     public BigDecimal getPhonePrice() {
         return this.phonePrice;
@@ -68,12 +68,12 @@ public class AttachedPhoneInfoType implements Alignable {
         return this.phoneCountryCode != null;
     }
 
-    private MultiArgument<String> activationStatus;
+    private String activationStatus;
 
     /**
     * Phone number activation status
     */
-    public MultiArgument<String> getActivationStatus() {
+    public String getActivationStatus() {
         return this.activationStatus;
     }
 
