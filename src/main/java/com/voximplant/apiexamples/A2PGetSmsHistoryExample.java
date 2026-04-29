@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
-* Get messages that had been sent to number 12345678222 starting from
-* March 1, 2019. Number of resulting rows is limited to 2.
+* Get messages with 1234, 1235, 1236 IDs, sent starting from March 1,
+* 2019.
 */
 public class A2PGetSmsHistoryExample {
     public static void main(String [] args) {
@@ -26,7 +26,7 @@ public class A2PGetSmsHistoryExample {
             fromDate.set(2019, 3, 1, 0, 0, 0);
 
             A2PGetSmsHistoryResponse res = client.a2PGetSmsHistory(new A2PGetSmsHistoryRequest()
-                .setDestinationNumber("12345678222")
+                .setMessageId(MultiArgument.forSingleValue(1234L))
                 .setFromDate(fromDate.getTime())
             );
             System.out.println("OK");

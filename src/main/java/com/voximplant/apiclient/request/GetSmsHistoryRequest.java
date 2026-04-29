@@ -16,6 +16,28 @@ import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
 public class GetSmsHistoryRequest implements Alignable {
+    private MultiArgument<Long> messageId;
+
+    @RequestField(name="message_id")
+    /**
+    * Message id list separated by semicolons (;)
+    */
+    public MultiArgument<Long> getMessageId() {
+        return this.messageId;
+    }
+
+    public boolean hasMessageId() {
+        return this.messageId != null;
+    }
+
+    /**
+    * Message id list separated by semicolons (;)
+    */
+    public GetSmsHistoryRequest setMessageId(MultiArgument<Long> d) {
+        this.messageId = d;
+        return this;
+    }
+
     private String sourceNumber;
 
     @RequestField(name="source_number")
@@ -237,6 +259,14 @@ public class GetSmsHistoryRequest implements Alignable {
             .append(preAligned)
             .append('{')
             .append(System.lineSeparator());
+        if (messageId != null) {
+            sb.append(aligned)
+                .append("\"messageId\": \"")
+                .append(messageId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (sourceNumber != null) {
             sb.append(aligned)
                 .append("\"sourceNumber\": \"")
