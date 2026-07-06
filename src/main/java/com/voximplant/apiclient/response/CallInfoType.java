@@ -200,12 +200,12 @@ public class CallInfoType implements Alignable {
         return this.customData != null;
     }
 
-    private Map<String, Object> endReason;
+    private String endReason;
 
     /**
     * End reason code and description
     */
-    public Map<String, Object> getEndReason() {
+    public String getEndReason() {
         return this.endReason;
     }
 

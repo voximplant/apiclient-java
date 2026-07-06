@@ -20,7 +20,7 @@ public class AppendToCallListRequest implements Alignable {
 
     @RequestField(name="list_id")
     /**
-    * Call list ID
+    * Call list ID. <b>Required</b> unless <b>list_name</b> is provided.
     */
     public Long getListId() {
         return this.listId;
@@ -31,7 +31,7 @@ public class AppendToCallListRequest implements Alignable {
     }
 
     /**
-    * Call list ID
+    * Call list ID. <b>Required</b> unless <b>list_name</b> is provided.
     */
     public AppendToCallListRequest setListId(long d) {
         this.listId = Long.valueOf(d);
@@ -42,8 +42,8 @@ public class AppendToCallListRequest implements Alignable {
 
     @RequestField(name="list_name")
     /**
-    * The unique name of the call list. Can be used instead of
-    * <b>list_id</b>
+    * The unique name of the call list. <b>Required</b> unless
+    * <b>list_id</b> is provided.
     */
     public String getListName() {
         return this.listName;
@@ -54,8 +54,8 @@ public class AppendToCallListRequest implements Alignable {
     }
 
     /**
-    * The unique name of the call list. Can be used instead of
-    * <b>list_id</b>
+    * The unique name of the call list. <b>Required</b> unless
+    * <b>list_id</b> is provided.
     */
     public AppendToCallListRequest setListName(String d) {
         this.listName = d;
@@ -66,7 +66,9 @@ public class AppendToCallListRequest implements Alignable {
 
     @RequestField(name="file_content")
     /**
-    * Send as the request body or multiform
+    * Send as the request body or multiform. Refer to the <a
+    * href="https://voximplant.com/docs/guides/solutions/call-lists#csv-table-setup">Call
+    * lists guide</a> to learn about file syntax
     */
     public InputStream getFileContent() {
         return this.fileContent;
@@ -77,7 +79,9 @@ public class AppendToCallListRequest implements Alignable {
     }
 
     /**
-    * Send as the request body or multiform
+    * Send as the request body or multiform. Refer to the <a
+    * href="https://voximplant.com/docs/guides/solutions/call-lists#csv-table-setup">Call
+    * lists guide</a> to learn about file syntax
     */
     public AppendToCallListRequest setFileContent(InputStream d) {
         this.fileContent = d;

@@ -20,7 +20,8 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_count")
     /**
-    * Quantity of phone numbers you want to attach
+    * Quantity of phone numbers you want to attach. <b>Required</b> unless
+    * <b>phone_number</b> is provided.
     */
     public Long getPhoneCount() {
         return this.phoneCount;
@@ -31,7 +32,8 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * Quantity of phone numbers you want to attach
+    * Quantity of phone numbers you want to attach. <b>Required</b> unless
+    * <b>phone_number</b> is provided.
     */
     public AttachPhoneNumberRequest setPhoneCount(long d) {
         this.phoneCount = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number that can be used instead of <b>phone_count</b>. See
-    * the [GetNewPhoneNumbers] method
+    * The phone number. See the [GetNewPhoneNumbers] method.
+    * <b>Required</b> unless <b>phone_count</b> is provided.
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -54,8 +56,8 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone number that can be used instead of <b>phone_count</b>. See
-    * the [GetNewPhoneNumbers] method
+    * The phone number. See the [GetNewPhoneNumbers] method.
+    * <b>Required</b> unless <b>phone_count</b> is provided.
     */
     public AttachPhoneNumberRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;

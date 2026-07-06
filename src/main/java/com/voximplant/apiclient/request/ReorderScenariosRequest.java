@@ -20,7 +20,7 @@ public class ReorderScenariosRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID
+    * The rule ID. <b>Required</b> unless <b>rule_name</b> is provided.
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -31,7 +31,7 @@ public class ReorderScenariosRequest implements Alignable {
     }
 
     /**
-    * The rule ID
+    * The rule ID. <b>Required</b> unless <b>rule_name</b> is provided.
     */
     public ReorderScenariosRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -42,7 +42,7 @@ public class ReorderScenariosRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name that can be used instead of <b>rule_id</b>
+    * The rule name. <b>Required</b> unless <b>rule_id</b> is provided.
     */
     public String getRuleName() {
         return this.ruleName;
@@ -53,7 +53,7 @@ public class ReorderScenariosRequest implements Alignable {
     }
 
     /**
-    * The rule name that can be used instead of <b>rule_id</b>
+    * The rule name. <b>Required</b> unless <b>rule_id</b> is provided.
     */
     public ReorderScenariosRequest setRuleName(String d) {
         this.ruleName = d;

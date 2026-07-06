@@ -21,7 +21,8 @@ public class BindSkillRequest implements Alignable {
     @RequestField(name="skill_id")
     /**
     * The skill ID list separated by semicolons (;). Use the 'all' value to
-    * select all skills
+    * select all skills. <b>Required</b> unless <b>skill_name</b> is
+    * provided.
     */
     public MultiArgument<Long> getSkillId() {
         return this.skillId;
@@ -33,7 +34,8 @@ public class BindSkillRequest implements Alignable {
 
     /**
     * The skill ID list separated by semicolons (;). Use the 'all' value to
-    * select all skills
+    * select all skills. <b>Required</b> unless <b>skill_name</b> is
+    * provided.
     */
     public BindSkillRequest setSkillId(MultiArgument<Long> d) {
         this.skillId = d;
@@ -44,8 +46,8 @@ public class BindSkillRequest implements Alignable {
 
     @RequestField(name="skill_name")
     /**
-    * The skill name list separated by semicolons (;). Can be used instead
-    * of <b>skill_id</b>
+    * The skill name list separated by semicolons (;). <b>Required</b>
+    * unless <b>skill_id</b> is provided.
     */
     public MultiArgument<String> getSkillName() {
         return this.skillName;
@@ -56,8 +58,8 @@ public class BindSkillRequest implements Alignable {
     }
 
     /**
-    * The skill name list separated by semicolons (;). Can be used instead
-    * of <b>skill_id</b>
+    * The skill name list separated by semicolons (;). <b>Required</b>
+    * unless <b>skill_id</b> is provided.
     */
     public BindSkillRequest setSkillName(MultiArgument<String> d) {
         this.skillName = d;
@@ -69,7 +71,8 @@ public class BindSkillRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * The user ID list separated by semicolons (;). Use the 'all' value to
-    * select all users
+    * select all users. <b>Required</b> unless <b>user_name</b> is
+    * provided.
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -81,7 +84,8 @@ public class BindSkillRequest implements Alignable {
 
     /**
     * The user ID list separated by semicolons (;). Use the 'all' value to
-    * select all users
+    * select all users. <b>Required</b> unless <b>user_name</b> is
+    * provided.
     */
     public BindSkillRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -92,8 +96,8 @@ public class BindSkillRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by semicolons (;). <b>user_name</b> can
-    * be used instead of <b>user_id</b>
+    * The user name list separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -104,8 +108,8 @@ public class BindSkillRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by semicolons (;). <b>user_name</b> can
-    * be used instead of <b>user_id</b>
+    * The user name list separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public BindSkillRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -117,7 +121,8 @@ public class BindSkillRequest implements Alignable {
     @RequestField(name="acd_queue_id")
     /**
     * The ACD queue ID list separated by semicolons (;). Use the 'all'
-    * value to select all ACD queues
+    * value to select all ACD queues. <b>Required</b> unless
+    * <b>acd_queue_name</b> is provided.
     */
     public MultiArgument<Long> getAcdQueueId() {
         return this.acdQueueId;
@@ -129,7 +134,8 @@ public class BindSkillRequest implements Alignable {
 
     /**
     * The ACD queue ID list separated by semicolons (;). Use the 'all'
-    * value to select all ACD queues
+    * value to select all ACD queues. <b>Required</b> unless
+    * <b>acd_queue_name</b> is provided.
     */
     public BindSkillRequest setAcdQueueId(MultiArgument<Long> d) {
         this.acdQueueId = d;
@@ -140,8 +146,8 @@ public class BindSkillRequest implements Alignable {
 
     @RequestField(name="acd_queue_name")
     /**
-    * The ACD queue name that can be used instead of <b>acd_queue_id</b>.
-    * The ACD queue name list separated by semicolons (;)
+    * The ACD queue name. The ACD queue name list separated by semicolons
+    * (;). <b>Required</b> unless <b>acd_queue_id</b> is provided.
     */
     public MultiArgument<String> getAcdQueueName() {
         return this.acdQueueName;
@@ -152,8 +158,8 @@ public class BindSkillRequest implements Alignable {
     }
 
     /**
-    * The ACD queue name that can be used instead of <b>acd_queue_id</b>.
-    * The ACD queue name list separated by semicolons (;)
+    * The ACD queue name. The ACD queue name list separated by semicolons
+    * (;). <b>Required</b> unless <b>acd_queue_id</b> is provided.
     */
     public BindSkillRequest setAcdQueueName(MultiArgument<String> d) {
         this.acdQueueName = d;

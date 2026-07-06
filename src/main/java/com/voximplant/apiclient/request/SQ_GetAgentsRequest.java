@@ -156,16 +156,16 @@ public class SQ_GetAgentsRequest implements Alignable {
         return this;
     }
 
-    private Object sqSkills;
+    private String sqSkills;
 
     @RequestField(name="sq_skills")
     /**
-    * Skills to filter in the json array format. The array should contain
+    * Skills to filter in the JSON array format. The array should contain
     * objects with the <b>sq_skill_id</b>/<b>sq_skill_name</b>,
     * <b>min_sq_skill_level</b>, and <b>max_sq_skill_level</b> keys where
     * skill levels range from 1 to 5
     */
-    public Object getSqSkills() {
+    public String getSqSkills() {
         return this.sqSkills;
     }
 
@@ -174,12 +174,12 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Skills to filter in the json array format. The array should contain
+    * Skills to filter in the JSON array format. The array should contain
     * objects with the <b>sq_skill_id</b>/<b>sq_skill_name</b>,
     * <b>min_sq_skill_level</b>, and <b>max_sq_skill_level</b> keys where
     * skill levels range from 1 to 5
     */
-    public SQ_GetAgentsRequest setSqSkills(Object d) {
+    public SQ_GetAgentsRequest setSqSkills(String d) {
         this.sqSkills = d;
         return this;
     }
@@ -252,17 +252,17 @@ public class SQ_GetAgentsRequest implements Alignable {
         return this;
     }
 
-    private Object sqStatuses;
+    private String sqStatuses;
 
     @RequestField(name="sq_statuses")
     /**
-    * Filter statuses in the json array format. The array should contain
+    * Filter statuses in the JSON array format. The array should contain
     * objects with the <b>sq_status_type</b> and <b>sq_status_name</b>
     * keys. Possible values for <b>sq_status_type</b> are 'CALL' and 'IM'.
     * Possible values for <b>sq_status_name</b> are 'OFFLINE', 'ONLINE',
     * 'READY', 'IN_SERVICE', 'AFTER_SERVICE', 'DND'
     */
-    public Object getSqStatuses() {
+    public String getSqStatuses() {
         return this.sqStatuses;
     }
 
@@ -271,13 +271,13 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Filter statuses in the json array format. The array should contain
+    * Filter statuses in the JSON array format. The array should contain
     * objects with the <b>sq_status_type</b> and <b>sq_status_name</b>
     * keys. Possible values for <b>sq_status_type</b> are 'CALL' and 'IM'.
     * Possible values for <b>sq_status_name</b> are 'OFFLINE', 'ONLINE',
     * 'READY', 'IN_SERVICE', 'AFTER_SERVICE', 'DND'
     */
-    public SQ_GetAgentsRequest setSqStatuses(Object d) {
+    public SQ_GetAgentsRequest setSqStatuses(String d) {
         this.sqStatuses = d;
         return this;
     }

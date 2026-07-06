@@ -21,7 +21,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
     @RequestField(name="authorized_ip")
     /**
     * The authorized IP4 or network to remove. Set to 'all' to remove all
-    * items
+    * items. <b>Required</b> unless <b>contains_ip</b> is provided.
     */
     public String getAuthorizedIp() {
         return this.authorizedIp;
@@ -33,7 +33,7 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
 
     /**
     * The authorized IP4 or network to remove. Set to 'all' to remove all
-    * items
+    * items. <b>Required</b> unless <b>contains_ip</b> is provided.
     */
     public DelAuthorizedAccountIPRequest setAuthorizedIp(String d) {
         this.authorizedIp = d;
@@ -45,7 +45,8 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
     @RequestField(name="contains_ip")
     /**
     * Specify the parameter to remove the networks that contains the
-    * particular IP4. Can be used instead of <b>authorized_ip</b>
+    * particular IP4. <b>Required</b> unless <b>authorized_ip</b> is
+    * provided.
     */
     public String getContainsIp() {
         return this.containsIp;
@@ -57,7 +58,8 @@ public class DelAuthorizedAccountIPRequest implements Alignable {
 
     /**
     * Specify the parameter to remove the networks that contains the
-    * particular IP4. Can be used instead of <b>authorized_ip</b>
+    * particular IP4. <b>Required</b> unless <b>authorized_ip</b> is
+    * provided.
     */
     public DelAuthorizedAccountIPRequest setContainsIp(String d) {
         this.containsIp = d;

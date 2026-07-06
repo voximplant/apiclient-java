@@ -20,7 +20,8 @@ public class GetSecretValueRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID
+    * Application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class GetSecretValueRequest implements Alignable {
     }
 
     /**
-    * Application ID
+    * Application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public GetSecretValueRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,7 +44,8 @@ public class GetSecretValueRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name. Can be used instead of <b>application_id</b>
+    * Application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -53,7 +56,8 @@ public class GetSecretValueRequest implements Alignable {
     }
 
     /**
-    * Application name. Can be used instead of <b>application_id</b>
+    * Application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public GetSecretValueRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -64,7 +68,7 @@ public class GetSecretValueRequest implements Alignable {
 
     @RequestField(name="secret_id")
     /**
-    * Secret ID
+    * Secret ID. <b>Required</b> unless <b>secret_name</b> is provided.
     */
     public Long getSecretId() {
         return this.secretId;
@@ -75,7 +79,7 @@ public class GetSecretValueRequest implements Alignable {
     }
 
     /**
-    * Secret ID
+    * Secret ID. <b>Required</b> unless <b>secret_name</b> is provided.
     */
     public GetSecretValueRequest setSecretId(long d) {
         this.secretId = Long.valueOf(d);
@@ -86,7 +90,7 @@ public class GetSecretValueRequest implements Alignable {
 
     @RequestField(name="secret_name")
     /**
-    * Secret name. Can be used instead of <b>secret_id</b>
+    * Secret name. <b>Required</b> unless <b>secret_id</b> is provided.
     */
     public String getSecretName() {
         return this.secretName;
@@ -97,7 +101,7 @@ public class GetSecretValueRequest implements Alignable {
     }
 
     /**
-    * Secret name. Can be used instead of <b>secret_id</b>
+    * Secret name. <b>Required</b> unless <b>secret_id</b> is provided.
     */
     public GetSecretValueRequest setSecretName(String d) {
         this.secretName = d;

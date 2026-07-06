@@ -29,12 +29,12 @@ public class AccountVerificationsTypeDefaultEndUser implements Alignable {
         return this.endUserUuid != null;
     }
 
-    private Object credentials;
+    private String credentials;
 
     /**
     * Customer's data
     */
-    public Object getCredentials() {
+    public String getCredentials() {
         return this.credentials;
     }
 

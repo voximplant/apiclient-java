@@ -90,8 +90,8 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID which a new user is to be bound to. Can be used
-    * instead of the <b>application_name</b> parameter
+    * The application ID which a new user is to be bound to.
+    * <b>Required</b> unless <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -102,8 +102,8 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The application ID which a new user is to be bound to. Can be used
-    * instead of the <b>application_name</b> parameter
+    * The application ID which a new user is to be bound to.
+    * <b>Required</b> unless <b>application_name</b> is provided.
     */
     public AddUserRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -114,8 +114,8 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name which a new user is to be bound to. Can be used
-    * instead of the <b>application_id</b> parameter
+    * The application name which a new user is to be bound to.
+    * <b>Required</b> unless <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -126,8 +126,8 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The application name which a new user is to be bound to. Can be used
-    * instead of the <b>application_id</b> parameter
+    * The application name which a new user is to be bound to.
+    * <b>Required</b> unless <b>application_id</b> is provided.
     */
     public AddUserRequest setApplicationName(String d) {
         this.applicationName = d;

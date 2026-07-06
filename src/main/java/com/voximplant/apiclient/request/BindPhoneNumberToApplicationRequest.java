@@ -21,7 +21,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     @RequestField(name="phone_id")
     /**
     * The phone ID list separated by semicolons (;). Use the 'all' value to
-    * select all phone ids
+    * select all phone ids. <b>Required</b> unless <b>phone_number</b> is
+    * provided.
     */
     public MultiArgument<Long> getPhoneId() {
         return this.phoneId;
@@ -33,7 +34,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     /**
     * The phone ID list separated by semicolons (;). Use the 'all' value to
-    * select all phone ids
+    * select all phone ids. <b>Required</b> unless <b>phone_number</b> is
+    * provided.
     */
     public BindPhoneNumberToApplicationRequest setPhoneId(MultiArgument<Long> d) {
         this.phoneId = d;
@@ -44,8 +46,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number list separated by semicolons (;) that can be used
-    * instead of <b>phone_id</b>
+    * The phone number list separated by semicolons (;). <b>Required</b>
+    * unless <b>phone_id</b> is provided.
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -56,8 +58,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The phone number list separated by semicolons (;) that can be used
-    * instead of <b>phone_id</b>
+    * The phone number list separated by semicolons (;). <b>Required</b>
+    * unless <b>phone_id</b> is provided.
     */
     public BindPhoneNumberToApplicationRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;
@@ -68,7 +70,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID
+    * The application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -79,7 +82,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The application ID
+    * The application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public BindPhoneNumberToApplicationRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -90,7 +94,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of <b>application_id</b>
+    * The application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -101,7 +106,8 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of <b>application_id</b>
+    * The application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public BindPhoneNumberToApplicationRequest setApplicationName(String d) {
         this.applicationName = d;

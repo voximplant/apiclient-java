@@ -20,7 +20,8 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="acd_queue_id")
     /**
-    * The ACD queue ID
+    * The ACD queue ID. <b>Required</b> unless <b>acd_queue_name</b> is
+    * provided.
     */
     public Long getAcdQueueId() {
         return this.acdQueueId;
@@ -31,7 +32,8 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The ACD queue ID
+    * The ACD queue ID. <b>Required</b> unless <b>acd_queue_name</b> is
+    * provided.
     */
     public SetQueueInfoRequest setAcdQueueId(long d) {
         this.acdQueueId = Long.valueOf(d);
@@ -42,7 +44,8 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="acd_queue_name")
     /**
-    * The ACD queue name that can be used instead of <b>acd_queue_id</b>
+    * The ACD queue name. <b>Required</b> unless <b>acd_queue_id</b> is
+    * provided.
     */
     public String getAcdQueueName() {
         return this.acdQueueName;
@@ -53,7 +56,8 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The ACD queue name that can be used instead of <b>acd_queue_id</b>
+    * The ACD queue name. <b>Required</b> unless <b>acd_queue_id</b> is
+    * provided.
     */
     public SetQueueInfoRequest setAcdQueueName(String d) {
         this.acdQueueName = d;

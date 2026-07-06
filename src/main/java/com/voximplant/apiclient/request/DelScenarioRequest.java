@@ -21,7 +21,8 @@ public class DelScenarioRequest implements Alignable {
     @RequestField(name="scenario_id")
     /**
     * The scenario ID list separated by semicolons (;). Use the 'all' value
-    * to delete all scenarios in all applications
+    * to delete all scenarios in all applications. <b>Required</b> unless
+    * <b>scenario_name</b> is provided.
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -33,7 +34,8 @@ public class DelScenarioRequest implements Alignable {
 
     /**
     * The scenario ID list separated by semicolons (;). Use the 'all' value
-    * to delete all scenarios in all applications
+    * to delete all scenarios in all applications. <b>Required</b> unless
+    * <b>scenario_name</b> is provided.
     */
     public DelScenarioRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;
@@ -44,8 +46,8 @@ public class DelScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The scenario name list separated by semicolons (;). Can be used
-    * instead of <b>scenario_id</b>
+    * The scenario name list separated by semicolons (;). <b>Required</b>
+    * unless <b>scenario_id</b> is provided.
     */
     public MultiArgument<String> getScenarioName() {
         return this.scenarioName;
@@ -56,8 +58,8 @@ public class DelScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario name list separated by semicolons (;). Can be used
-    * instead of <b>scenario_id</b>
+    * The scenario name list separated by semicolons (;). <b>Required</b>
+    * unless <b>scenario_id</b> is provided.
     */
     public DelScenarioRequest setScenarioName(MultiArgument<String> d) {
         this.scenarioName = d;

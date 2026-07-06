@@ -81,12 +81,12 @@ public class GetSQAgentsResult implements Alignable {
         return this.sqStatuses != null;
     }
 
-    private Object sqQueues;
+    private String sqQueues;
 
     /**
     * JSON array of the agent's queues
     */
-    public Object getSqQueues() {
+    public String getSqQueues() {
         return this.sqQueues;
     }
 
@@ -94,12 +94,12 @@ public class GetSQAgentsResult implements Alignable {
         return this.sqQueues != null;
     }
 
-    private Object sqSkills;
+    private String sqSkills;
 
     /**
     * JSON array of the agent's skills
     */
-    public Object getSqSkills() {
+    public String getSqSkills() {
         return this.sqSkills;
     }
 

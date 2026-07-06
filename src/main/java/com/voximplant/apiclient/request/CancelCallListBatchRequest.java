@@ -20,7 +20,7 @@ public class CancelCallListBatchRequest implements Alignable {
 
     @RequestField(name="list_id")
     /**
-    * Call list ID
+    * Call list ID. <b>Required</b> unless <b>list_name</b> is provided.
     */
     public Long getListId() {
         return this.listId;
@@ -31,7 +31,7 @@ public class CancelCallListBatchRequest implements Alignable {
     }
 
     /**
-    * Call list ID
+    * Call list ID. <b>Required</b> unless <b>list_name</b> is provided.
     */
     public CancelCallListBatchRequest setListId(long d) {
         this.listId = Long.valueOf(d);
@@ -42,8 +42,8 @@ public class CancelCallListBatchRequest implements Alignable {
 
     @RequestField(name="list_name")
     /**
-    * The unique name of the call list. Can be used instead of
-    * <b>list_id</b>
+    * The unique name of the call list. <b>Required</b> unless
+    * <b>list_id</b> is provided.
     */
     public String getListName() {
         return this.listName;
@@ -54,8 +54,8 @@ public class CancelCallListBatchRequest implements Alignable {
     }
 
     /**
-    * The unique name of the call list. Can be used instead of
-    * <b>list_id</b>
+    * The unique name of the call list. <b>Required</b> unless
+    * <b>list_id</b> is provided.
     */
     public CancelCallListBatchRequest setListName(String d) {
         this.listName = d;

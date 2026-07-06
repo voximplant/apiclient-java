@@ -109,12 +109,12 @@ public class AuditLogInfoType implements Alignable {
         return this.cmdName != null;
     }
 
-    private Map<String, Object> cmdArgs;
+    private String cmdArgs;
 
     /**
     * The arguments of the called function (they may be masked or resolved)
     */
-    public Map<String, Object> getCmdArgs() {
+    public String getCmdArgs() {
         return this.cmdArgs;
     }
 
@@ -122,12 +122,12 @@ public class AuditLogInfoType implements Alignable {
         return this.cmdArgs != null;
     }
 
-    private Map<String, Object> cmdResult;
+    private String cmdResult;
 
     /**
     * The modified values
     */
-    public Map<String, Object> getCmdResult() {
+    public String getCmdResult() {
         return this.cmdResult;
     }
 

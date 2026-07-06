@@ -38,6 +38,28 @@ public class EditCallListRequest implements Alignable {
         return this;
     }
 
+    private String listCustomData;
+
+    @RequestField(name="list_custom_data")
+    /**
+    * Custom data string for the call list
+    */
+    public String getListCustomData() {
+        return this.listCustomData;
+    }
+
+    public boolean hasListCustomData() {
+        return this.listCustomData != null;
+    }
+
+    /**
+    * Custom data string for the call list
+    */
+    public EditCallListRequest setListCustomData(String d) {
+        this.listCustomData = d;
+        return this;
+    }
+
     private Long intervalSeconds;
 
     @RequestField(name="interval_seconds")
@@ -265,6 +287,14 @@ public class EditCallListRequest implements Alignable {
             sb.append(aligned)
                 .append("\"listId\": \"")
                 .append(listId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (listCustomData != null) {
+            sb.append(aligned)
+                .append("\"listCustomData\": \"")
+                .append(listCustomData)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

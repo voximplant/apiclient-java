@@ -42,6 +42,28 @@ public class CreateCallListRequest implements Alignable {
         return this;
     }
 
+    private String listCustomData;
+
+    @RequestField(name="list_custom_data")
+    /**
+    * Custom data string for the call list
+    */
+    public String getListCustomData() {
+        return this.listCustomData;
+    }
+
+    public boolean hasListCustomData() {
+        return this.listCustomData != null;
+    }
+
+    /**
+    * Custom data string for the call list
+    */
+    public CreateCallListRequest setListCustomData(String d) {
+        this.listCustomData = d;
+        return this;
+    }
+
     private Long priority;
 
     @RequestField(name="priority")
@@ -140,7 +162,10 @@ public class CreateCallListRequest implements Alignable {
     /**
     * Send as the "body" part of the HTTP request or as multiform. The
     * sending "file_content" via URL is at its own risk because the network
-    * devices tend to drop HTTP requests with large headers
+    * devices tend to drop HTTP requests with large headers. Refer to the
+    * <a
+    * href="https://voximplant.com/docs/guides/solutions/call-lists#csv-table-setup">Call
+    * lists guide</a> to learn about file syntax
     */
     public InputStream getFileContent() {
         return this.fileContent;
@@ -153,7 +178,10 @@ public class CreateCallListRequest implements Alignable {
     /**
     * Send as the "body" part of the HTTP request or as multiform. The
     * sending "file_content" via URL is at its own risk because the network
-    * devices tend to drop HTTP requests with large headers
+    * devices tend to drop HTTP requests with large headers. Refer to the
+    * <a
+    * href="https://voximplant.com/docs/guides/solutions/call-lists#csv-table-setup">Call
+    * lists guide</a> to learn about file syntax
     */
     public CreateCallListRequest setFileContent(InputStream d) {
         this.fileContent = d;
@@ -339,6 +367,14 @@ public class CreateCallListRequest implements Alignable {
             sb.append(aligned)
                 .append("\"ruleId\": \"")
                 .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (listCustomData != null) {
+            sb.append(aligned)
+                .append("\"listCustomData\": \"")
+                .append(listCustomData)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

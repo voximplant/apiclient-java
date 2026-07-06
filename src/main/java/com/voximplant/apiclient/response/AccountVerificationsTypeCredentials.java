@@ -16,12 +16,12 @@ import com.voximplant.apiclient.util.Alignable;
 */
 public class AccountVerificationsTypeCredentials implements Alignable {
 
-    private Object individual;
+    private String individual;
 
     /**
     * Details of a person who takes the verification
     */
-    public Object getIndividual() {
+    public String getIndividual() {
         return this.individual;
     }
 
@@ -29,12 +29,12 @@ public class AccountVerificationsTypeCredentials implements Alignable {
         return this.individual != null;
     }
 
-    private Object legalEntity;
+    private String legalEntity;
 
     /**
     * Company details for a legal entity
     */
-    public Object getLegalEntity() {
+    public String getLegalEntity() {
         return this.legalEntity;
     }
 
@@ -42,12 +42,12 @@ public class AccountVerificationsTypeCredentials implements Alignable {
         return this.legalEntity != null;
     }
 
-    private Object entrepreneur;
+    private String entrepreneur;
 
     /**
     * Company details for a individual entrepreneur
     */
-    public Object getEntrepreneur() {
+    public String getEntrepreneur() {
         return this.entrepreneur;
     }
 

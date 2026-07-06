@@ -20,7 +20,7 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user to edit
+    * The user to edit. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public Long getUserId() {
         return this.userId;
@@ -31,7 +31,7 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The user to edit
+    * The user to edit. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public SetUserInfoRequest setUserId(long d) {
         this.userId = Long.valueOf(d);
@@ -42,7 +42,7 @@ public class SetUserInfoRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name that can be used instead of <b>user_id</b>
+    * The user name. <b>Required</b> unless <b>user_id</b> is provided.
     */
     public String getUserName() {
         return this.userName;
@@ -53,7 +53,7 @@ public class SetUserInfoRequest implements Alignable {
     }
 
     /**
-    * The user name that can be used instead of <b>user_id</b>
+    * The user name. <b>Required</b> unless <b>user_id</b> is provided.
     */
     public SetUserInfoRequest setUserName(String d) {
         this.userName = d;

@@ -21,7 +21,8 @@ public class DeactivatePhoneNumberRequest implements Alignable {
     @RequestField(name="phone_id")
     /**
     * The phone ID list separated by semicolons (;). Use the 'all' value to
-    * select all phone ids
+    * select all phone ids. <b>Required</b> unless <b>phone_number</b> is
+    * provided.
     */
     public MultiArgument<Long> getPhoneId() {
         return this.phoneId;
@@ -33,7 +34,8 @@ public class DeactivatePhoneNumberRequest implements Alignable {
 
     /**
     * The phone ID list separated by semicolons (;). Use the 'all' value to
-    * select all phone ids
+    * select all phone ids. <b>Required</b> unless <b>phone_number</b> is
+    * provided.
     */
     public DeactivatePhoneNumberRequest setPhoneId(MultiArgument<Long> d) {
         this.phoneId = d;
@@ -44,8 +46,8 @@ public class DeactivatePhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number list separated by semicolons (;) that can be used
-    * instead of <b>phone_id</b>
+    * The phone number list separated by semicolons (;). <b>Required</b>
+    * unless <b>phone_id</b> is provided.
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -56,8 +58,8 @@ public class DeactivatePhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone number list separated by semicolons (;) that can be used
-    * instead of <b>phone_id</b>
+    * The phone number list separated by semicolons (;). <b>Required</b>
+    * unless <b>phone_id</b> is provided.
     */
     public DeactivatePhoneNumberRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;

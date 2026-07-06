@@ -256,15 +256,15 @@ public class GetCallHistoryRequest implements Alignable {
         return this;
     }
 
-    private Map<String, Object> remoteNumberList;
+    private String remoteNumberList;
 
     @RequestField(name="remote_number_list")
     /**
-    * A JS array of strings of specific remote phone numbers to sort the
+    * A JSON array of strings of specific remote phone numbers to sort the
     * call history. Has higher priority than the `remote_number` parameter.
     * If the array is empty, the `remote_number` parameter is used instead
     */
-    public Map<String, Object> getRemoteNumberList() {
+    public String getRemoteNumberList() {
         return this.remoteNumberList;
     }
 
@@ -273,11 +273,11 @@ public class GetCallHistoryRequest implements Alignable {
     }
 
     /**
-    * A JS array of strings of specific remote phone numbers to sort the
+    * A JSON array of strings of specific remote phone numbers to sort the
     * call history. Has higher priority than the `remote_number` parameter.
     * If the array is empty, the `remote_number` parameter is used instead
     */
-    public GetCallHistoryRequest setRemoteNumberList(Map<String, Object> d) {
+    public GetCallHistoryRequest setRemoteNumberList(String d) {
         this.remoteNumberList = d;
         return this;
     }

@@ -21,7 +21,8 @@ public class SetChildAccountInfoRequest implements Alignable {
     @RequestField(name="child_account_id")
     /**
     * The child account ID list separated by semicolons (;). Use the 'all'
-    * value to select all child accounts
+    * value to select all child accounts. <b>Required</b> unless
+    * <b>child_account_name</b> or <b>child_account_email</b> is provided.
     */
     public MultiArgument<Long> getChildAccountId() {
         return this.childAccountId;
@@ -33,7 +34,8 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     /**
     * The child account ID list separated by semicolons (;). Use the 'all'
-    * value to select all child accounts
+    * value to select all child accounts. <b>Required</b> unless
+    * <b>child_account_name</b> or <b>child_account_email</b> is provided.
     */
     public SetChildAccountInfoRequest setChildAccountId(MultiArgument<Long> d) {
         this.childAccountId = d;
@@ -44,8 +46,9 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="child_account_name")
     /**
-    * The child account name list separated by semicolons (;). Can be used
-    * instead of <b>child_account_id</b>
+    * The child account name list separated by semicolons (;).
+    * <b>Required</b> unless <b>child_account_id</b> or
+    * <b>child_account_email</b> is provided.
     */
     public MultiArgument<String> getChildAccountName() {
         return this.childAccountName;
@@ -56,8 +59,9 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The child account name list separated by semicolons (;). Can be used
-    * instead of <b>child_account_id</b>
+    * The child account name list separated by semicolons (;).
+    * <b>Required</b> unless <b>child_account_id</b> or
+    * <b>child_account_email</b> is provided.
     */
     public SetChildAccountInfoRequest setChildAccountName(MultiArgument<String> d) {
         this.childAccountName = d;
@@ -68,8 +72,9 @@ public class SetChildAccountInfoRequest implements Alignable {
 
     @RequestField(name="child_account_email")
     /**
-    * The child account email list separated by semicolons (;). Can be used
-    * instead of <b>child_account_id</b>
+    * The child account email list separated by semicolons (;).
+    * <b>Required</b> unless <b>child_account_id</b> or
+    * <b>child_account_name</b> is provided.
     */
     public MultiArgument<String> getChildAccountEmail() {
         return this.childAccountEmail;
@@ -80,8 +85,9 @@ public class SetChildAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The child account email list separated by semicolons (;). Can be used
-    * instead of <b>child_account_id</b>
+    * The child account email list separated by semicolons (;).
+    * <b>Required</b> unless <b>child_account_id</b> or
+    * <b>child_account_name</b> is provided.
     */
     public SetChildAccountInfoRequest setChildAccountEmail(MultiArgument<String> d) {
         this.childAccountEmail = d;

@@ -21,7 +21,8 @@ public class DelUserRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * The user ID list separated by semicolons (;). Use the 'all' value to
-    * select all users
+    * select all users. <b>Required</b> unless <b>user_name</b> is
+    * provided.
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -33,7 +34,8 @@ public class DelUserRequest implements Alignable {
 
     /**
     * The user ID list separated by semicolons (;). Use the 'all' value to
-    * select all users
+    * select all users. <b>Required</b> unless <b>user_name</b> is
+    * provided.
     */
     public DelUserRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -44,8 +46,8 @@ public class DelUserRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by semicolons (;) that can be used
-    * instead of <b>user_id</b>
+    * The user name list separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -56,8 +58,8 @@ public class DelUserRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by semicolons (;) that can be used
-    * instead of <b>user_id</b>
+    * The user name list separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public DelUserRequest setUserName(MultiArgument<String> d) {
         this.userName = d;

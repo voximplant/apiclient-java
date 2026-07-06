@@ -20,7 +20,8 @@ public class AddSecretRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to add the secret to
+    * Application ID to add the secret to. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class AddSecretRequest implements Alignable {
     }
 
     /**
-    * Application ID to add the secret to
+    * Application ID to add the secret to. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public AddSecretRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,7 +44,8 @@ public class AddSecretRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name. Can be used instead of <b>application_id</b>
+    * Application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -53,7 +56,8 @@ public class AddSecretRequest implements Alignable {
     }
 
     /**
-    * Application name. Can be used instead of <b>application_id</b>
+    * Application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public AddSecretRequest setApplicationName(String d) {
         this.applicationName = d;

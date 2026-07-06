@@ -20,7 +20,8 @@ public class AddQueueRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID
+    * The application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class AddQueueRequest implements Alignable {
     }
 
     /**
-    * The application ID
+    * The application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public AddQueueRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,7 +44,8 @@ public class AddQueueRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of <b>application_id</b>
+    * The application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -53,7 +56,8 @@ public class AddQueueRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of <b>application_id</b>
+    * The application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public AddQueueRequest setApplicationName(String d) {
         this.applicationName = d;

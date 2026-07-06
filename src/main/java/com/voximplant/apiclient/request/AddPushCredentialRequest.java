@@ -21,7 +21,8 @@ public class AddPushCredentialRequest implements Alignable {
     @RequestField(name="push_provider_name")
     /**
     * The push provider name. The possible values are APPLE, APPLE_VOIP,
-    * GOOGLE, HUAWEI
+    * GOOGLE, HUAWEI. <b>Required</b> unless <b>push_provider_id</b> is
+    * provided.
     */
     public String getPushProviderName() {
         return this.pushProviderName;
@@ -33,7 +34,8 @@ public class AddPushCredentialRequest implements Alignable {
 
     /**
     * The push provider name. The possible values are APPLE, APPLE_VOIP,
-    * GOOGLE, HUAWEI
+    * GOOGLE, HUAWEI. <b>Required</b> unless <b>push_provider_id</b> is
+    * provided.
     */
     public AddPushCredentialRequest setPushProviderName(String d) {
         this.pushProviderName = d;
@@ -44,9 +46,9 @@ public class AddPushCredentialRequest implements Alignable {
 
     @RequestField(name="push_provider_id")
     /**
-    * The push provider id. Can be used instead of
-    * <b>push_provider_name</b>. The possible values are: 1 — APPLE, 2 —
-    * GOOGLE, 3 — APPLE_VOIP, 5 — HUAWEI.
+    * The push provider id. The possible values are: 1 — APPLE, 2 — GOOGLE,
+    * 3 — APPLE_VOIP, 5 — HUAWEI. <b>Required</b> unless
+    * <b>push_provider_name</b> is provided.
     */
     public Long getPushProviderId() {
         return this.pushProviderId;
@@ -57,9 +59,9 @@ public class AddPushCredentialRequest implements Alignable {
     }
 
     /**
-    * The push provider id. Can be used instead of
-    * <b>push_provider_name</b>. The possible values are: 1 — APPLE, 2 —
-    * GOOGLE, 3 — APPLE_VOIP, 5 — HUAWEI.
+    * The push provider id. The possible values are: 1 — APPLE, 2 — GOOGLE,
+    * 3 — APPLE_VOIP, 5 — HUAWEI. <b>Required</b> unless
+    * <b>push_provider_name</b> is provided.
     */
     public AddPushCredentialRequest setPushProviderId(long d) {
         this.pushProviderId = Long.valueOf(d);

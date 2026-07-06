@@ -20,7 +20,8 @@ public class SetScenarioInfoRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * Scenario ID
+    * Scenario ID. <b>Required</b> unless <b>required_scenario_name</b> is
+    * provided.
     */
     public Long getScenarioId() {
         return this.scenarioId;
@@ -31,7 +32,8 @@ public class SetScenarioInfoRequest implements Alignable {
     }
 
     /**
-    * Scenario ID
+    * Scenario ID. <b>Required</b> unless <b>required_scenario_name</b> is
+    * provided.
     */
     public SetScenarioInfoRequest setScenarioId(long d) {
         this.scenarioId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SetScenarioInfoRequest implements Alignable {
 
     @RequestField(name="required_scenario_name")
     /**
-    * Name of the scenario to edit, can be used instead of
-    * <b>scenario_id</b>
+    * Name of the scenario to edit. <b>Required</b> unless
+    * <b>scenario_id</b> is provided.
     */
     public String getRequiredScenarioName() {
         return this.requiredScenarioName;
@@ -54,8 +56,8 @@ public class SetScenarioInfoRequest implements Alignable {
     }
 
     /**
-    * Name of the scenario to edit, can be used instead of
-    * <b>scenario_id</b>
+    * Name of the scenario to edit. <b>Required</b> unless
+    * <b>scenario_id</b> is provided.
     */
     public SetScenarioInfoRequest setRequiredScenarioName(String d) {
         this.requiredScenarioName = d;

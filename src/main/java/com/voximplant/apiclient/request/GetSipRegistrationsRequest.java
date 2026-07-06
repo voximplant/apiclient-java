@@ -200,8 +200,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID list separated by semicolons (;) to filter. Can be used
-    * instead of <b>rule_name</b>
+    * The rule ID list separated by semicolons (;) to filter.
+    * <b>Required</b> unless <b>rule_name</b> is provided.
     */
     public MultiArgument<Long> getRuleId() {
         return this.ruleId;
@@ -212,8 +212,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The rule ID list separated by semicolons (;) to filter. Can be used
-    * instead of <b>rule_name</b>
+    * The rule ID list separated by semicolons (;) to filter.
+    * <b>Required</b> unless <b>rule_name</b> is provided.
     */
     public GetSipRegistrationsRequest setRuleId(MultiArgument<Long> d) {
         this.ruleId = d;
@@ -224,8 +224,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name list separated by semicolons (;) to filter. Can be used
-    * instead of <b>rule_id</b>
+    * The rule name list separated by semicolons (;) to filter.
+    * <b>Required</b> unless <b>rule_id</b> is provided.
     */
     public MultiArgument<String> getRuleName() {
         return this.ruleName;
@@ -236,8 +236,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The rule name list separated by semicolons (;) to filter. Can be used
-    * instead of <b>rule_id</b>
+    * The rule name list separated by semicolons (;) to filter.
+    * <b>Required</b> unless <b>rule_id</b> is provided.
     */
     public GetSipRegistrationsRequest setRuleName(MultiArgument<String> d) {
         this.ruleName = d;
@@ -248,8 +248,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID list separated by semicolons (;) to filter. Can be used
-    * instead of <b>user_name</b>
+    * The user ID list separated by semicolons (;) to filter.
+    * <b>Required</b> unless <b>user_name</b> is provided.
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -260,8 +260,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The user ID list separated by semicolons (;) to filter. Can be used
-    * instead of <b>user_name</b>
+    * The user ID list separated by semicolons (;) to filter.
+    * <b>Required</b> unless <b>user_name</b> is provided.
     */
     public GetSipRegistrationsRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -272,8 +272,8 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by semicolons (;) to filter. Can be used
-    * instead of <b>user_id</b>
+    * The user name list separated by semicolons (;) to filter.
+    * <b>Required</b> unless <b>user_id</b> is provided.
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -284,8 +284,8 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by semicolons (;) to filter. Can be used
-    * instead of <b>user_id</b>
+    * The user name list separated by semicolons (;) to filter.
+    * <b>Required</b> unless <b>user_id</b> is provided.
     */
     public GetSipRegistrationsRequest setUserName(MultiArgument<String> d) {
         this.userName = d;

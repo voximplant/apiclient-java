@@ -135,7 +135,7 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     @RequestField(name="hold_calls_if_inactive_agents")
     /**
     * Whether to keep the call task in the queue if all agents are in the
-    * DND/BANNED/OFFLINE statuses.
+    * DND/BANNED statuses.
     */
     public Boolean getHoldCallsIfInactiveAgents() {
         return this.holdCallsIfInactiveAgents;
@@ -147,7 +147,7 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     /**
     * Whether to keep the call task in the queue if all agents are in the
-    * DND/BANNED/OFFLINE statuses.
+    * DND/BANNED statuses.
     */
     public SQ_SetQueueInfoRequest setHoldCallsIfInactiveAgents(boolean d) {
         this.holdCallsIfInactiveAgents = Boolean.valueOf(d);

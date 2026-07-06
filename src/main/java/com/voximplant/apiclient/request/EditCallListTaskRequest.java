@@ -62,6 +62,32 @@ public class EditCallListTaskRequest implements Alignable {
         return this;
     }
 
+    private String callSchedule;
+
+    @RequestField(name="call_schedule")
+    /**
+    * Call list schedule in the JSON format. Refer to the <a
+    * href="/docs/guides/solutions/call-lists">Call lists guide</a> for
+    * more information.
+    */
+    public String getCallSchedule() {
+        return this.callSchedule;
+    }
+
+    public boolean hasCallSchedule() {
+        return this.callSchedule != null;
+    }
+
+    /**
+    * Call list schedule in the JSON format. Refer to the <a
+    * href="/docs/guides/solutions/call-lists">Call lists guide</a> for
+    * more information.
+    */
+    public EditCallListTaskRequest setCallSchedule(String d) {
+        this.callSchedule = d;
+        return this;
+    }
+
     private String taskUuid;
 
     @RequestField(name="task_uuid")
@@ -231,6 +257,14 @@ public class EditCallListTaskRequest implements Alignable {
             sb.append(aligned)
                 .append("\"taskId\": \"")
                 .append(taskId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callSchedule != null) {
+            sb.append(aligned)
+                .append("\"callSchedule\": \"")
+                .append(callSchedule)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

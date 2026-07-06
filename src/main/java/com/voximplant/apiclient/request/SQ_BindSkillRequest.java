@@ -110,16 +110,16 @@ public class SQ_BindSkillRequest implements Alignable {
         return this;
     }
 
-    private Object sqSkills;
+    private String sqSkills;
 
     @RequestField(name="sq_skills")
     /**
-    * Skills to be bound to agents in the json array format. The array
+    * Skills to be bound to agents in the JSON array format. The array
     * should contain objects with the
     * <b>sq_skill_id</b>/<b>sq_skill_name</b> and <b>sq_skill_level</b>
     * keys where skill levels range from 1 to 5
     */
-    public Object getSqSkills() {
+    public String getSqSkills() {
         return this.sqSkills;
     }
 
@@ -128,12 +128,12 @@ public class SQ_BindSkillRequest implements Alignable {
     }
 
     /**
-    * Skills to be bound to agents in the json array format. The array
+    * Skills to be bound to agents in the JSON array format. The array
     * should contain objects with the
     * <b>sq_skill_id</b>/<b>sq_skill_name</b> and <b>sq_skill_level</b>
     * keys where skill levels range from 1 to 5
     */
-    public SQ_BindSkillRequest setSqSkills(Object d) {
+    public SQ_BindSkillRequest setSqSkills(String d) {
         this.sqSkills = d;
         return this;
     }

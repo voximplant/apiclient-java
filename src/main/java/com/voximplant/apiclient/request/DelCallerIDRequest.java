@@ -20,7 +20,8 @@ public class DelCallerIDRequest implements Alignable {
 
     @RequestField(name="callerid_id")
     /**
-    * ID of the callerID object
+    * ID of the callerID object. <b>Required</b> unless
+    * <b>callerid_number</b> is provided.
     */
     public Long getCalleridId() {
         return this.calleridId;
@@ -31,7 +32,8 @@ public class DelCallerIDRequest implements Alignable {
     }
 
     /**
-    * ID of the callerID object
+    * ID of the callerID object. <b>Required</b> unless
+    * <b>callerid_number</b> is provided.
     */
     public DelCallerIDRequest setCalleridId(long d) {
         this.calleridId = Long.valueOf(d);
@@ -42,7 +44,8 @@ public class DelCallerIDRequest implements Alignable {
 
     @RequestField(name="callerid_number")
     /**
-    * The callerID number that can be used instead of <b>callerid_id</b>
+    * The callerID number. <b>Required</b> unless <b>callerid_id</b> is
+    * provided.
     */
     public String getCalleridNumber() {
         return this.calleridNumber;
@@ -53,7 +56,8 @@ public class DelCallerIDRequest implements Alignable {
     }
 
     /**
-    * The callerID number that can be used instead of <b>callerid_id</b>
+    * The callerID number. <b>Required</b> unless <b>callerid_id</b> is
+    * provided.
     */
     public DelCallerIDRequest setCalleridNumber(String d) {
         this.calleridNumber = d;

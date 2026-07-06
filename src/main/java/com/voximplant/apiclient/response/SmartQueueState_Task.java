@@ -95,7 +95,7 @@ public class SmartQueueState_Task implements Alignable {
         return this.processingTime != null;
     }
 
-    private Object customData;
+    private String customData;
 
     /**
     * Custom data text string for the current task. You can set the custom
@@ -103,7 +103,7 @@ public class SmartQueueState_Task implements Alignable {
     * [enqueueTask](/docs/references/voxengine/voxengine/enqueuetask#enqueuetask)
     * method
     */
-    public Object getCustomData() {
+    public String getCustomData() {
         return this.customData;
     }
 

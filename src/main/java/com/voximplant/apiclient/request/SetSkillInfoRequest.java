@@ -20,7 +20,7 @@ public class SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="skill_id")
     /**
-    * The skill ID
+    * The skill ID. <b>Required</b> unless <b>skill_name</b> is provided.
     */
     public Long getSkillId() {
         return this.skillId;
@@ -31,7 +31,7 @@ public class SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * The skill ID
+    * The skill ID. <b>Required</b> unless <b>skill_name</b> is provided.
     */
     public SetSkillInfoRequest setSkillId(long d) {
         this.skillId = Long.valueOf(d);
@@ -42,7 +42,7 @@ public class SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="skill_name")
     /**
-    * The skill name that can be used instead of <b>skill_id</b>
+    * The skill name. <b>Required</b> unless <b>skill_id</b> is provided.
     */
     public String getSkillName() {
         return this.skillName;
@@ -53,7 +53,7 @@ public class SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * The skill name that can be used instead of <b>skill_id</b>
+    * The skill name. <b>Required</b> unless <b>skill_id</b> is provided.
     */
     public SetSkillInfoRequest setSkillName(String d) {
         this.skillName = d;

@@ -20,7 +20,8 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_id")
     /**
-    * The scenario ID list separated by semicolons (;)
+    * The scenario ID list separated by semicolons (;). <b>Required</b>
+    * unless <b>scenario_name</b> is provided.
     */
     public MultiArgument<Long> getScenarioId() {
         return this.scenarioId;
@@ -31,7 +32,8 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario ID list separated by semicolons (;)
+    * The scenario ID list separated by semicolons (;). <b>Required</b>
+    * unless <b>scenario_name</b> is provided.
     */
     public BindScenarioRequest setScenarioId(MultiArgument<Long> d) {
         this.scenarioId = d;
@@ -42,8 +44,8 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The scenario name list separated by semicolons (;). Can be used
-    * instead of <b>scenario_id</b>
+    * The scenario name list separated by semicolons (;). <b>Required</b>
+    * unless <b>scenario_id</b> is provided.
     */
     public MultiArgument<String> getScenarioName() {
         return this.scenarioName;
@@ -54,8 +56,8 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The scenario name list separated by semicolons (;). Can be used
-    * instead of <b>scenario_id</b>
+    * The scenario name list separated by semicolons (;). <b>Required</b>
+    * unless <b>scenario_id</b> is provided.
     */
     public BindScenarioRequest setScenarioName(MultiArgument<String> d) {
         this.scenarioName = d;
@@ -67,7 +69,8 @@ public class BindScenarioRequest implements Alignable {
     @RequestField(name="rule_id")
     /**
     * The rule ID to bind the scenario. The rule and the scenario need to
-    * be in the same application
+    * be in the same application. <b>Required</b> unless <b>rule_name</b>
+    * is provided.
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -79,7 +82,8 @@ public class BindScenarioRequest implements Alignable {
 
     /**
     * The rule ID to bind the scenario. The rule and the scenario need to
-    * be in the same application
+    * be in the same application. <b>Required</b> unless <b>rule_name</b>
+    * is provided.
     */
     public BindScenarioRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -90,7 +94,7 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name that can be used instead of <b>rule_id</b>
+    * The rule name. <b>Required</b> unless <b>rule_id</b> is provided.
     */
     public String getRuleName() {
         return this.ruleName;
@@ -101,7 +105,7 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The rule name that can be used instead of <b>rule_id</b>
+    * The rule name. <b>Required</b> unless <b>rule_id</b> is provided.
     */
     public BindScenarioRequest setRuleName(String d) {
         this.ruleName = d;
@@ -112,7 +116,8 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID
+    * The application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -123,7 +128,8 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The application ID
+    * The application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public BindScenarioRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -134,7 +140,8 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of <b>application_id</b>
+    * The application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -145,7 +152,8 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of <b>application_id</b>
+    * The application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
     */
     public BindScenarioRequest setApplicationName(String d) {
         this.applicationName = d;

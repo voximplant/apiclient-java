@@ -20,7 +20,8 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to search by
+    * The application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
     }
 
     /**
-    * The application ID to search by
+    * The application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public RequestSmartQueueHistoryRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name to search by. Can be used instead of the
-    * <b>application_id</b> parameter
+    * The application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class RequestSmartQueueHistoryRequest implements Alignable {
     }
 
     /**
-    * The application name to search by. Can be used instead of the
-    * <b>application_id</b> parameter
+    * The application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public RequestSmartQueueHistoryRequest setApplicationName(String d) {
         this.applicationName = d;

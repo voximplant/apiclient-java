@@ -56,6 +56,21 @@ public class CallListDetailType implements Alignable {
         return this.startExecutionTime != null;
     }
 
+    private String callSchedule;
+
+    /**
+    * Call list schedule in the JSON format. Refer to the <a
+    * href="/docs/guides/solutions/call-lists">Call lists guide</a> for
+    * more information.
+    */
+    public String getCallSchedule() {
+        return this.callSchedule;
+    }
+
+    public boolean hasCallSchedule() {
+        return this.callSchedule != null;
+    }
+
     @JsonDeserialize(using=com.voximplant.apiclient.util.TimestampDeserializer.class)
     private Date finishExecutionTime;
 
@@ -195,6 +210,14 @@ public class CallListDetailType implements Alignable {
             sb.append(aligned)
                 .append("\"startExecutionTime\": \"")
                 .append(startExecutionTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callSchedule != null) {
+            sb.append(aligned)
+                .append("\"callSchedule\": \"")
+                .append(callSchedule)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
