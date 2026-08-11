@@ -11,7 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.voximplant.apiclient.util.StringHelper;
 import com.voximplant.apiclient.util.Alignable;
 
-public class LinkRegulationAddressResponse implements Alignable {
+public class LinkregulationAddressResponse implements Alignable {
     private Error error;
 
     public Error getError() {

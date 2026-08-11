@@ -108,13 +108,13 @@ public class GetAuditLogRequest implements Alignable {
         return this;
     }
 
-    private String filteredAdminUserId;
+    private MultiArgument<Long> filteredAdminUserId;
 
     @RequestField(name="filtered_admin_user_id")
     /**
-    * The admin user ID to filter
+    * The admin user ID list separated by semicolons (;) to filter
     */
-    public String getFilteredAdminUserId() {
+    public MultiArgument<Long> getFilteredAdminUserId() {
         return this.filteredAdminUserId;
     }
 
@@ -123,10 +123,82 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The admin user ID to filter
+    * The admin user ID list separated by semicolons (;) to filter
     */
-    public GetAuditLogRequest setFilteredAdminUserId(String d) {
+    public GetAuditLogRequest setFilteredAdminUserId(MultiArgument<Long> d) {
         this.filteredAdminUserId = d;
+        return this;
+    }
+
+    private Boolean isAsync;
+
+    @RequestField(name="is_async")
+    /**
+    * Whether to create an asynchronous history report instead of returning
+    * the data immediately. Has the same effect as calling GetAuditLogAsync
+    * and requires the output=csv
+    */
+    public Boolean getIsAsync() {
+        return this.isAsync;
+    }
+
+    public boolean hasIsAsync() {
+        return this.isAsync != null;
+    }
+
+    /**
+    * Whether to create an asynchronous history report instead of returning
+    * the data immediately. Has the same effect as calling GetAuditLogAsync
+    * and requires the output=csv
+    */
+    public GetAuditLogRequest setIsAsync(boolean d) {
+        this.isAsync = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Boolean withHeader;
+
+    @RequestField(name="with_header")
+    /**
+    * Whether to get a CSV file with the column names if the output=csv
+    */
+    public Boolean getWithHeader() {
+        return this.withHeader;
+    }
+
+    public boolean hasWithHeader() {
+        return this.withHeader != null;
+    }
+
+    /**
+    * Whether to get a CSV file with the column names if the output=csv
+    */
+    public GetAuditLogRequest setWithHeader(boolean d) {
+        this.withHeader = Boolean.valueOf(d);
+        return this;
+    }
+
+    private String decimalSeparator;
+
+    @RequestField(name="decimal_separator")
+    /**
+    * The decimal mark for the CSV numbers if the output=csv. If omitted,
+    * the account locale setting is used
+    */
+    public String getDecimalSeparator() {
+        return this.decimalSeparator;
+    }
+
+    public boolean hasDecimalSeparator() {
+        return this.decimalSeparator != null;
+    }
+
+    /**
+    * The decimal mark for the CSV numbers if the output=csv. If omitted,
+    * the account locale setting is used
+    */
+    public GetAuditLogRequest setDecimalSeparator(String d) {
+        this.decimalSeparator = d;
         return this;
     }
 
@@ -246,7 +318,8 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record number. If omitted, the report service
+    * applies its own limit
     */
     public Long getCount() {
         return this.count;
@@ -257,7 +330,8 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record number. If omitted, the report service
+    * applies its own limit
     */
     public GetAuditLogRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -331,6 +405,30 @@ public class GetAuditLogRequest implements Alignable {
             sb.append(aligned)
                 .append("\"filteredAdminUserId\": \"")
                 .append(filteredAdminUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isAsync != null) {
+            sb.append(aligned)
+                .append("\"isAsync\": \"")
+                .append(isAsync)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withHeader != null) {
+            sb.append(aligned)
+                .append("\"withHeader\": \"")
+                .append(withHeader)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (decimalSeparator != null) {
+            sb.append(aligned)
+                .append("\"decimalSeparator\": \"")
+                .append(decimalSeparator)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

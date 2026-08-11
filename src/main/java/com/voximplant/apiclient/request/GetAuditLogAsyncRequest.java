@@ -108,13 +108,13 @@ public class GetAuditLogAsyncRequest implements Alignable {
         return this;
     }
 
-    private String filteredAdminUserId;
+    private MultiArgument<Long> filteredAdminUserId;
 
     @RequestField(name="filtered_admin_user_id")
     /**
-    * The admin user ID to filter
+    * The admin user ID list separated by semicolons (;) to filter
     */
-    public String getFilteredAdminUserId() {
+    public MultiArgument<Long> getFilteredAdminUserId() {
         return this.filteredAdminUserId;
     }
 
@@ -123,10 +123,56 @@ public class GetAuditLogAsyncRequest implements Alignable {
     }
 
     /**
-    * The admin user ID to filter
+    * The admin user ID list separated by semicolons (;) to filter
     */
-    public GetAuditLogAsyncRequest setFilteredAdminUserId(String d) {
+    public GetAuditLogAsyncRequest setFilteredAdminUserId(MultiArgument<Long> d) {
         this.filteredAdminUserId = d;
+        return this;
+    }
+
+    private Long count;
+
+    @RequestField(name="count")
+    /**
+    * The maximum record number to include in the report. If omitted, the
+    * report service applies its own limit
+    */
+    public Long getCount() {
+        return this.count;
+    }
+
+    public boolean hasCount() {
+        return this.count != null;
+    }
+
+    /**
+    * The maximum record number to include in the report. If omitted, the
+    * report service applies its own limit
+    */
+    public GetAuditLogAsyncRequest setCount(long d) {
+        this.count = Long.valueOf(d);
+        return this;
+    }
+
+    private Long offset;
+
+    @RequestField(name="offset")
+    /**
+    * The first <b>N</b> records are skipped in the output
+    */
+    public Long getOffset() {
+        return this.offset;
+    }
+
+    public boolean hasOffset() {
+        return this.offset != null;
+    }
+
+    /**
+    * The first <b>N</b> records are skipped in the output
+    */
+    public GetAuditLogAsyncRequest setOffset(long d) {
+        this.offset = Long.valueOf(d);
         return this;
     }
 
@@ -311,6 +357,22 @@ public class GetAuditLogAsyncRequest implements Alignable {
             sb.append(aligned)
                 .append("\"filteredAdminUserId\": \"")
                 .append(filteredAdminUserId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

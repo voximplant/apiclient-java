@@ -42,7 +42,9 @@ public class GetCallListDetailsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * Maximum number of entries in the result
+    * Maximum number of entries in the result. If <b>output</b> is json,
+    * the default and maximum value is 1000; for csv and xls no limit is
+    * applied unless the parameter is specified
     */
     public Long getCount() {
         return this.count;
@@ -53,7 +55,9 @@ public class GetCallListDetailsRequest implements Alignable {
     }
 
     /**
-    * Maximum number of entries in the result
+    * Maximum number of entries in the result. If <b>output</b> is json,
+    * the default and maximum value is 1000; for csv and xls no limit is
+    * applied unless the parameter is specified
     */
     public GetCallListDetailsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -172,6 +176,54 @@ public class GetCallListDetailsRequest implements Alignable {
         return this;
     }
 
+    private Boolean isAsync;
+
+    @RequestField(name="is_async")
+    /**
+    * Whether to create an asynchronous report instead of returning the
+    * data immediately. Requires <b>output</b> to be csv or xls
+    */
+    public Boolean getIsAsync() {
+        return this.isAsync;
+    }
+
+    public boolean hasIsAsync() {
+        return this.isAsync != null;
+    }
+
+    /**
+    * Whether to create an asynchronous report instead of returning the
+    * data immediately. Requires <b>output</b> to be csv or xls
+    */
+    public GetCallListDetailsRequest setIsAsync(boolean d) {
+        this.isAsync = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Boolean newCsvStyle;
+
+    @RequestField(name="new_csv_style")
+    /**
+    * Whether to use the new csv layout. Applies to asynchronous reports;
+    * for xls the value is always true
+    */
+    public Boolean getNewCsvStyle() {
+        return this.newCsvStyle;
+    }
+
+    public boolean hasNewCsvStyle() {
+        return this.newCsvStyle != null;
+    }
+
+    /**
+    * Whether to use the new csv layout. Applies to asynchronous reports;
+    * for xls the value is always true
+    */
+    public GetCallListDetailsRequest setNewCsvStyle(boolean d) {
+        this.newCsvStyle = Boolean.valueOf(d);
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -233,6 +285,22 @@ public class GetCallListDetailsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"batchId\": \"")
                 .append(batchId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isAsync != null) {
+            sb.append(aligned)
+                .append("\"isAsync\": \"")
+                .append(isAsync)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (newCsvStyle != null) {
+            sb.append(aligned)
+                .append("\"newCsvStyle\": \"")
+                .append(newCsvStyle)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -20,7 +20,7 @@ public class AddSkillRequest implements Alignable {
 
     @RequestField(name="skill_name")
     /**
-    * The ACD operator skill name. The length must be less than 512
+    * The ACD operator skill name. The length should be less than 512
     */
     public String getSkillName() {
         return this.skillName;
@@ -31,7 +31,7 @@ public class AddSkillRequest implements Alignable {
     }
 
     /**
-    * The ACD operator skill name. The length must be less than 512
+    * The ACD operator skill name. The length should be less than 512
     */
     public AddSkillRequest setSkillName(String d) {
         this.skillName = d;

@@ -114,7 +114,7 @@ public class SetSecretInfoRequest implements Alignable {
 
     @RequestField(name="new_secret_name")
     /**
-    * New secret name. The name must start with a Latin letter and can
+    * New secret name. The name should start with a Latin letter and can
     * contain up to 64 characters, including Latin letters, digits and
     * underscores
     */
@@ -127,7 +127,7 @@ public class SetSecretInfoRequest implements Alignable {
     }
 
     /**
-    * New secret name. The name must start with a Latin letter and can
+    * New secret name. The name should start with a Latin letter and can
     * contain up to 64 characters, including Latin letters, digits and
     * underscores
     */

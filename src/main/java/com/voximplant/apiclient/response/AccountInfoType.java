@@ -139,7 +139,7 @@ public class AccountInfoType implements Alignable {
     private BigDecimal minBalanceToNotify;
 
     /**
-    * The min balance value to notify by email or SMS
+    * The minimum balance value to notify by email or SMS
     */
     public BigDecimal getMinBalanceToNotify() {
         return this.minBalanceToNotify;

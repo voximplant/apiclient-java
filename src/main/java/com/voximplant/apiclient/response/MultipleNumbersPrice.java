@@ -19,8 +19,8 @@ public class MultipleNumbersPrice implements Alignable {
     private Long count;
 
     /**
-    * The number of subscriptions which must be purchased simultaneously to
-    * enable a multiple numbers subscription
+    * The number of subscriptions which should be purchased simultaneously
+    * to enable a multiple numbers subscription
     */
     public Long getCount() {
         return this.count;

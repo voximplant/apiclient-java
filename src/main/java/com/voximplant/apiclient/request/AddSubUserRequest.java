@@ -46,7 +46,7 @@ public class AddSubUserRequest implements Alignable {
 
     @RequestField(name="new_subuser_password")
     /**
-    * The new subuser password. Must be at least 8 characters long and
+    * The new subuser password. Should be at least 8 characters long and
     * contain at least one uppercase and lowercase letter, one number, and
     * one special character
     */
@@ -59,7 +59,7 @@ public class AddSubUserRequest implements Alignable {
     }
 
     /**
-    * The new subuser password. Must be at least 8 characters long and
+    * The new subuser password. Should be at least 8 characters long and
     * contain at least one uppercase and lowercase letter, one number, and
     * one special character
     */

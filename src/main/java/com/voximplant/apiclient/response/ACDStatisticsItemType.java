@@ -60,7 +60,7 @@ public class ACDStatisticsItemType implements Alignable {
     private Long count;
 
     /**
-    * Samples count over the aggregated interval
+    * Samples number over the aggregated interval
     */
     public Long getCount() {
         return this.count;

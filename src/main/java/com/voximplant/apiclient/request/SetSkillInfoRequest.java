@@ -64,7 +64,7 @@ public class SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="new_skill_name")
     /**
-    * The new skill name. The length must be less than 512
+    * The new skill name. The length should be less than 512
     */
     public String getNewSkillName() {
         return this.newSkillName;
@@ -75,7 +75,7 @@ public class SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * The new skill name. The length must be less than 512
+    * The new skill name. The length should be less than 512
     */
     public SetSkillInfoRequest setNewSkillName(String d) {
         this.newSkillName = d;

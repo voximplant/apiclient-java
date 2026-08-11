@@ -68,7 +68,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="new_acd_queue_name")
     /**
-    * The new queue name. The length must be less than 100
+    * The new queue name. The length should be less than 100
     */
     public String getNewAcdQueueName() {
         return this.newAcdQueueName;
@@ -79,7 +79,7 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The new queue name. The length must be less than 100
+    * The new queue name. The length should be less than 100
     */
     public SetQueueInfoRequest setNewAcdQueueName(String d) {
         this.newAcdQueueName = d;
@@ -160,7 +160,7 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="max_queue_size")
     /**
-    * The max queue size
+    * The maximum queue size
     */
     public Long getMaxQueueSize() {
         return this.maxQueueSize;
@@ -171,7 +171,7 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The max queue size
+    * The maximum queue size
     */
     public SetQueueInfoRequest setMaxQueueSize(long d) {
         this.maxQueueSize = Long.valueOf(d);
@@ -182,9 +182,9 @@ public class SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="max_waiting_time")
     /**
-    * The max predicted waiting time in minutes. The client is rejected if
-    * the predicted waiting time is greater than the max predicted waiting
-    * time
+    * The maximum predicted waiting time in minutes. The client is rejected
+    * if the predicted waiting time is greater than the maximum predicted
+    * waiting time
     */
     public Long getMaxWaitingTime() {
         return this.maxWaitingTime;
@@ -195,9 +195,9 @@ public class SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * The max predicted waiting time in minutes. The client is rejected if
-    * the predicted waiting time is greater than the max predicted waiting
-    * time
+    * The maximum predicted waiting time in minutes. The client is rejected
+    * if the predicted waiting time is greater than the maximum predicted
+    * waiting time
     */
     public SetQueueInfoRequest setMaxWaitingTime(long d) {
         this.maxWaitingTime = Long.valueOf(d);

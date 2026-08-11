@@ -160,7 +160,7 @@ public class GetCallListsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count. The maximum value is 1000
     */
     public Long getCount() {
         return this.count;
@@ -171,7 +171,7 @@ public class GetCallListsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count. The maximum value is 1000
     */
     public GetCallListsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -221,6 +221,102 @@ public class GetCallListsRequest implements Alignable {
     */
     public GetCallListsRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;
+        return this;
+    }
+
+    private MultiArgument<String> applicationName;
+
+    @RequestField(name="application_name")
+    /**
+    * The application name list separated by semicolons (;). Can be used
+    * instead of <b>application_id</b>
+    */
+    public MultiArgument<String> getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
+    /**
+    * The application name list separated by semicolons (;). Can be used
+    * instead of <b>application_id</b>
+    */
+    public GetCallListsRequest setApplicationName(MultiArgument<String> d) {
+        this.applicationName = d;
+        return this;
+    }
+
+    private MultiArgument<Long> ruleId;
+
+    @RequestField(name="rule_id")
+    /**
+    * The rule ID to filter. Can be a list separated by semicolons (;). Use
+    * the 'all' value to select all rules
+    */
+    public MultiArgument<Long> getRuleId() {
+        return this.ruleId;
+    }
+
+    public boolean hasRuleId() {
+        return this.ruleId != null;
+    }
+
+    /**
+    * The rule ID to filter. Can be a list separated by semicolons (;). Use
+    * the 'all' value to select all rules
+    */
+    public GetCallListsRequest setRuleId(MultiArgument<Long> d) {
+        this.ruleId = d;
+        return this;
+    }
+
+    private MultiArgument<String> ruleName;
+
+    @RequestField(name="rule_name")
+    /**
+    * The rule name list separated by semicolons (;). Can be used instead
+    * of <b>rule_id</b>
+    */
+    public MultiArgument<String> getRuleName() {
+        return this.ruleName;
+    }
+
+    public boolean hasRuleName() {
+        return this.ruleName != null;
+    }
+
+    /**
+    * The rule name list separated by semicolons (;). Can be used instead
+    * of <b>rule_id</b>
+    */
+    public GetCallListsRequest setRuleName(MultiArgument<String> d) {
+        this.ruleName = d;
+        return this;
+    }
+
+    private String status;
+
+    @RequestField(name="status")
+    /**
+    * The call list status to filter. The possible values are: In progress,
+    * Canceled, Completed, Suspended
+    */
+    public String getStatus() {
+        return this.status;
+    }
+
+    public boolean hasStatus() {
+        return this.status != null;
+    }
+
+    /**
+    * The call list status to filter. The possible values are: In progress,
+    * Canceled, Completed, Suspended
+    */
+    public GetCallListsRequest setStatus(String d) {
+        this.status = d;
         return this;
     }
 
@@ -301,6 +397,38 @@ public class GetCallListsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"applicationId\": \"")
                 .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleId != null) {
+            sb.append(aligned)
+                .append("\"ruleId\": \"")
+                .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (status != null) {
+            sb.append(aligned)
+                .append("\"status\": \"")
+                .append(status)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

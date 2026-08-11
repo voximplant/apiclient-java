@@ -45,7 +45,7 @@ public class BankCardType implements Alignable {
     private BigDecimal minBalance ;
 
     /**
-    * The min account balance to trigger the auto charging
+    * The minimum account balance to trigger the auto charging
     */
     public BigDecimal getMinBalance () {
         return this.minBalance ;

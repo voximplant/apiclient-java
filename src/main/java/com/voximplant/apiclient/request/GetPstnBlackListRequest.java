@@ -64,7 +64,7 @@ public class GetPstnBlackListRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -75,7 +75,7 @@ public class GetPstnBlackListRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetPstnBlackListRequest setCount(long d) {
         this.count = Long.valueOf(d);

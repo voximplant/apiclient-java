@@ -42,7 +42,7 @@ public class GetSipWhiteListRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -53,7 +53,7 @@ public class GetSipWhiteListRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetSipWhiteListRequest setCount(long d) {
         this.count = Long.valueOf(d);

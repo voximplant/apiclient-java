@@ -208,7 +208,7 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -219,7 +219,7 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetChildrenAccountsRequest setCount(long d) {
         this.count = Long.valueOf(d);

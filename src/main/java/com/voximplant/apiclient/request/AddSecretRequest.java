@@ -68,8 +68,9 @@ public class AddSecretRequest implements Alignable {
 
     @RequestField(name="secret_name")
     /**
-    * Secret name. The name must start with a Latin letter and can contain
-    * up to 64 characters, including Latin letters, digits and underscores
+    * Secret name. The name should start with a Latin letter and can
+    * contain up to 64 characters, including Latin letters, digits and
+    * underscores
     */
     public String getSecretName() {
         return this.secretName;
@@ -80,8 +81,9 @@ public class AddSecretRequest implements Alignable {
     }
 
     /**
-    * Secret name. The name must start with a Latin letter and can contain
-    * up to 64 characters, including Latin letters, digits and underscores
+    * Secret name. The name should start with a Latin letter and can
+    * contain up to 64 characters, including Latin letters, digits and
+    * underscores
     */
     public AddSecretRequest setSecretName(String d) {
         this.secretName = d;

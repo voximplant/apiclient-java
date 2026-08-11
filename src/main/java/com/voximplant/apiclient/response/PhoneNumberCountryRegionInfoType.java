@@ -58,7 +58,7 @@ public class PhoneNumberCountryRegionInfoType implements Alignable {
     private Long phoneCount;
 
     /**
-    * The phone number count in stock for the region
+    * The phone number number in stock for the region
     */
     public Long getPhoneCount() {
         return this.phoneCount;

@@ -23,7 +23,8 @@ public class GetCallHistoryAsyncRequest implements Alignable {
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
     * The from date in the selected timezone in 24-h format: YYYY-MM-DD
-    * HH:mm:ss
+    * HH:mm:ss. If both dates are omitted, a server-configured default
+    * interval is used (default is one month)
     */
     public Date getFromDate() {
         return this.fromDate;
@@ -35,7 +36,8 @@ public class GetCallHistoryAsyncRequest implements Alignable {
 
     /**
     * The from date in the selected timezone in 24-h format: YYYY-MM-DD
-    * HH:mm:ss
+    * HH:mm:ss. If both dates are omitted, a server-configured default
+    * interval is used (default is one month)
     */
     public GetCallHistoryAsyncRequest setFromDate(Date d) {
         this.fromDate = d;
@@ -49,7 +51,8 @@ public class GetCallHistoryAsyncRequest implements Alignable {
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
     * The to date in the selected timezone in 24-h format: YYYY-MM-DD
-    * HH:mm:ss
+    * HH:mm:ss. If both dates are omitted, a server-configured default
+    * interval is used (default is one month)
     */
     public Date getToDate() {
         return this.toDate;
@@ -61,10 +64,135 @@ public class GetCallHistoryAsyncRequest implements Alignable {
 
     /**
     * The to date in the selected timezone in 24-h format: YYYY-MM-DD
-    * HH:mm:ss
+    * HH:mm:ss. If both dates are omitted, a server-configured default
+    * interval is used (default is one month)
     */
     public GetCallHistoryAsyncRequest setToDate(Date d) {
         this.toDate = d;
+        return this;
+    }
+
+    private Long minDuration;
+
+    @RequestField(name="min_duration")
+    /**
+    * The minimum call duration in seconds to filter. You can restrict the
+    * allowed date range via duration filters
+    */
+    public Long getMinDuration() {
+        return this.minDuration;
+    }
+
+    public boolean hasMinDuration() {
+        return this.minDuration != null;
+    }
+
+    /**
+    * The minimum call duration in seconds to filter. You can restrict the
+    * allowed date range via duration filters
+    */
+    public GetCallHistoryAsyncRequest setMinDuration(long d) {
+        this.minDuration = Long.valueOf(d);
+        return this;
+    }
+
+    private Long maxDuration;
+
+    @RequestField(name="max_duration")
+    /**
+    * The maximum call duration in seconds to filter. You can restrict the
+    * allowed date range via duration filters
+    */
+    public Long getMaxDuration() {
+        return this.maxDuration;
+    }
+
+    public boolean hasMaxDuration() {
+        return this.maxDuration != null;
+    }
+
+    /**
+    * The maximum call duration in seconds to filter. You can restrict the
+    * allowed date range via duration filters
+    */
+    public GetCallHistoryAsyncRequest setMaxDuration(long d) {
+        this.maxDuration = Long.valueOf(d);
+        return this;
+    }
+
+    private String remoteNumberList;
+
+    @RequestField(name="remote_number_list")
+    /**
+    * A JSON-formatted list of strings containing phone numbers for history
+    * filtering. Has a higher priority than the <b>remote_number</b>
+    * parameter. If the array is empty, the <b>remote_number</b> parameter
+    * is used instead
+    */
+    public String getRemoteNumberList() {
+        return this.remoteNumberList;
+    }
+
+    public boolean hasRemoteNumberList() {
+        return this.remoteNumberList != null;
+    }
+
+    /**
+    * A JSON-formatted list of strings containing phone numbers for history
+    * filtering. Has a higher priority than the <b>remote_number</b>
+    * parameter. If the array is empty, the <b>remote_number</b> parameter
+    * is used instead
+    */
+    public GetCallHistoryAsyncRequest setRemoteNumberList(String d) {
+        this.remoteNumberList = d;
+        return this;
+    }
+
+    private Long count;
+
+    @RequestField(name="count")
+    /**
+    * The maximum record number to include in the report. If omitted, the
+    * report service applies its own limit. Unlike GetCallHistory, there is
+    * no default of 20 and no cap of 1000 on the Management API side
+    */
+    public Long getCount() {
+        return this.count;
+    }
+
+    public boolean hasCount() {
+        return this.count != null;
+    }
+
+    /**
+    * The maximum record number to include in the report. If omitted, the
+    * report service applies its own limit. Unlike GetCallHistory, there is
+    * no default of 20 and no cap of 1000 on the Management API side
+    */
+    public GetCallHistoryAsyncRequest setCount(long d) {
+        this.count = Long.valueOf(d);
+        return this;
+    }
+
+    private Long offset;
+
+    @RequestField(name="offset")
+    /**
+    * The number of records to skip in the output
+    */
+    public Long getOffset() {
+        return this.offset;
+    }
+
+    public boolean hasOffset() {
+        return this.offset != null;
+    }
+
+    /**
+    * The number of records to skip in the output
+    */
+    public GetCallHistoryAsyncRequest setOffset(long d) {
+        this.offset = Long.valueOf(d);
         return this;
     }
 
@@ -505,6 +633,46 @@ public class GetCallHistoryAsyncRequest implements Alignable {
             sb.append(aligned)
                 .append("\"toDate\": \"")
                 .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (minDuration != null) {
+            sb.append(aligned)
+                .append("\"minDuration\": \"")
+                .append(minDuration)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (maxDuration != null) {
+            sb.append(aligned)
+                .append("\"maxDuration\": \"")
+                .append(maxDuration)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (remoteNumberList != null) {
+            sb.append(aligned)
+                .append("\"remoteNumberList\": \"")
+                .append(remoteNumberList)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (count != null) {
+            sb.append(aligned)
+                .append("\"count\": \"")
+                .append(count)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (offset != null) {
+            sb.append(aligned)
+                .append("\"offset\": \"")
+                .append(offset)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

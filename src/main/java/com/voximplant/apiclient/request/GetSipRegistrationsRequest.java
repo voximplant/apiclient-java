@@ -368,7 +368,7 @@ public class GetSipRegistrationsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -379,7 +379,7 @@ public class GetSipRegistrationsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetSipRegistrationsRequest setCount(long d) {
         this.count = Long.valueOf(d);

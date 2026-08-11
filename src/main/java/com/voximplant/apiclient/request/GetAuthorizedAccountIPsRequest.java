@@ -88,7 +88,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -99,7 +99,7 @@ public class GetAuthorizedAccountIPsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetAuthorizedAccountIPsRequest setCount(long d) {
         this.count = Long.valueOf(d);

@@ -68,7 +68,7 @@ public class AddQueueRequest implements Alignable {
 
     @RequestField(name="acd_queue_name")
     /**
-    * The queue name. The length must be less than 100
+    * The queue name. The length should be less than 100
     */
     public String getAcdQueueName() {
         return this.acdQueueName;
@@ -79,7 +79,7 @@ public class AddQueueRequest implements Alignable {
     }
 
     /**
-    * The queue name. The length must be less than 100
+    * The queue name. The length should be less than 100
     */
     public AddQueueRequest setAcdQueueName(String d) {
         this.acdQueueName = d;
@@ -160,7 +160,7 @@ public class AddQueueRequest implements Alignable {
 
     @RequestField(name="max_queue_size")
     /**
-    * The max queue size
+    * The maximum queue size
     */
     public Long getMaxQueueSize() {
         return this.maxQueueSize;
@@ -171,7 +171,7 @@ public class AddQueueRequest implements Alignable {
     }
 
     /**
-    * The max queue size
+    * The maximum queue size
     */
     public AddQueueRequest setMaxQueueSize(long d) {
         this.maxQueueSize = Long.valueOf(d);
@@ -182,9 +182,9 @@ public class AddQueueRequest implements Alignable {
 
     @RequestField(name="max_waiting_time")
     /**
-    * The max predicted waiting time in minutes. The client is rejected if
-    * the predicted waiting time is greater than the max predicted waiting
-    * time
+    * The maximum predicted waiting time in minutes. The client is rejected
+    * if the predicted waiting time is greater than the maximum predicted
+    * waiting time
     */
     public Long getMaxWaitingTime() {
         return this.maxWaitingTime;
@@ -195,9 +195,9 @@ public class AddQueueRequest implements Alignable {
     }
 
     /**
-    * The max predicted waiting time in minutes. The client is rejected if
-    * the predicted waiting time is greater than the max predicted waiting
-    * time
+    * The maximum predicted waiting time in minutes. The client is rejected
+    * if the predicted waiting time is greater than the maximum predicted
+    * waiting time
     */
     public AddQueueRequest setMaxWaitingTime(long d) {
         this.maxWaitingTime = Long.valueOf(d);

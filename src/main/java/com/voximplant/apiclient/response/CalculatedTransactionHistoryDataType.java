@@ -20,7 +20,7 @@ public class CalculatedTransactionHistoryDataType implements Alignable {
     private Long transactionCount;
 
     /**
-    * The transaction count in the report
+    * The transaction number in the report
     */
     public Long getTransactionCount() {
         return this.transactionCount;

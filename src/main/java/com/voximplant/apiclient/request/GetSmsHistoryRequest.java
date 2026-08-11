@@ -132,7 +132,7 @@ public class GetSmsHistoryRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * Maximum number of resulting rows fetched. Must be not bigger than
+    * Maximum number of resulting rows fetched. Should be not bigger than
     * 1000. If left blank, then the default value of 1000 is used
     */
     public Long getCount() {
@@ -144,7 +144,7 @@ public class GetSmsHistoryRequest implements Alignable {
     }
 
     /**
-    * Maximum number of resulting rows fetched. Must be not bigger than
+    * Maximum number of resulting rows fetched. Should be not bigger than
     * 1000. If left blank, then the default value of 1000 is used
     */
     public GetSmsHistoryRequest setCount(long d) {

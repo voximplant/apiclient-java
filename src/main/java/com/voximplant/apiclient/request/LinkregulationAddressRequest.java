@@ -15,7 +15,7 @@ import com.voximplant.apiclient.util.RequestField;
 import com.voximplant.apiclient.util.SerializeUsing;
 import com.voximplant.apiclient.util.TimestampSerializer;
 
-public class LinkRegulationAddressRequest implements Alignable {
+public class LinkregulationAddressRequest implements Alignable {
     private Long regulationAddressId;
 
     @RequestField(name="regulation_address_id")
@@ -33,7 +33,7 @@ public class LinkRegulationAddressRequest implements Alignable {
     /**
     * The regulation address ID
     */
-    public LinkRegulationAddressRequest setRegulationAddressId(long d) {
+    public LinkregulationAddressRequest setRegulationAddressId(long d) {
         this.regulationAddressId = Long.valueOf(d);
         return this;
     }
@@ -55,7 +55,7 @@ public class LinkRegulationAddressRequest implements Alignable {
     /**
     * The phone ID for link
     */
-    public LinkRegulationAddressRequest setPhoneId(long d) {
+    public LinkregulationAddressRequest setPhoneId(long d) {
         this.phoneId = Long.valueOf(d);
         return this;
     }
@@ -77,7 +77,7 @@ public class LinkRegulationAddressRequest implements Alignable {
     /**
     * The phone number for link
     */
-    public LinkRegulationAddressRequest setPhoneNumber(String d) {
+    public LinkregulationAddressRequest setPhoneNumber(String d) {
         this.phoneNumber = d;
         return this;
     }

@@ -68,8 +68,8 @@ public class GetScenariosRequest implements Alignable {
 
     @RequestField(name="with_script")
     /**
-    * Whether to get the scenario text. You must specify the 'scenario_id'
-    * too!
+    * Whether to get the scenario text. You should specify the
+    * 'scenario_id' too!
     */
     public Boolean getWithScript() {
         return this.withScript;
@@ -80,8 +80,8 @@ public class GetScenariosRequest implements Alignable {
     }
 
     /**
-    * Whether to get the scenario text. You must specify the 'scenario_id'
-    * too!
+    * Whether to get the scenario text. You should specify the
+    * 'scenario_id' too!
     */
     public GetScenariosRequest setWithScript(boolean d) {
         this.withScript = Boolean.valueOf(d);
@@ -92,7 +92,7 @@ public class GetScenariosRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -103,7 +103,7 @@ public class GetScenariosRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetScenariosRequest setCount(long d) {
         this.count = Long.valueOf(d);

@@ -128,7 +128,7 @@ public class SetKeyValueItemRequest implements Alignable {
     * days), the default value is 30 days (2,592,000 seconds). The TTL is
     * converted to an **expires_at** Unix timestamp field as part of the
     * storage object. Note that one of the two parameters (ttl or
-    * expires_at) must be set
+    * expires_at) should be set
     */
     public Long getTtl() {
         return this.ttl;
@@ -143,7 +143,7 @@ public class SetKeyValueItemRequest implements Alignable {
     * days), the default value is 30 days (2,592,000 seconds). The TTL is
     * converted to an **expires_at** Unix timestamp field as part of the
     * storage object. Note that one of the two parameters (ttl or
-    * expires_at) must be set
+    * expires_at) should be set
     */
     public SetKeyValueItemRequest setTtl(long d) {
         this.ttl = Long.valueOf(d);
@@ -155,7 +155,7 @@ public class SetKeyValueItemRequest implements Alignable {
     @RequestField(name="expires_at")
     /**
     * Expiration date based on **ttl** (timestamp without milliseconds).
-    * Note that one of the two parameters (ttl or expires_at) must be set
+    * Note that one of the two parameters (ttl or expires_at) should be set
     */
     public Long getExpiresAt() {
         return this.expiresAt;
@@ -167,7 +167,7 @@ public class SetKeyValueItemRequest implements Alignable {
 
     /**
     * Expiration date based on **ttl** (timestamp without milliseconds).
-    * Note that one of the two parameters (ttl or expires_at) must be set
+    * Note that one of the two parameters (ttl or expires_at) should be set
     */
     public SetKeyValueItemRequest setExpiresAt(long d) {
         this.expiresAt = Long.valueOf(d);

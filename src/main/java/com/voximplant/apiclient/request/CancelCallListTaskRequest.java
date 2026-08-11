@@ -38,13 +38,13 @@ public class CancelCallListTaskRequest implements Alignable {
         return this;
     }
 
-    private String listId;
+    private Long listId;
 
     @RequestField(name="list_id")
     /**
     * Call list's ID
     */
-    public String getListId() {
+    public Long getListId() {
         return this.listId;
     }
 
@@ -55,12 +55,12 @@ public class CancelCallListTaskRequest implements Alignable {
     /**
     * Call list's ID
     */
-    public CancelCallListTaskRequest setListId(String d) {
-        this.listId = d;
+    public CancelCallListTaskRequest setListId(long d) {
+        this.listId = Long.valueOf(d);
         return this;
     }
 
-    private String tasksIds;
+    private MultiArgument<Long> tasksIds;
 
     @RequestField(name="tasks_ids")
     /**
@@ -68,7 +68,7 @@ public class CancelCallListTaskRequest implements Alignable {
     * `tasks_uuids`. The method returns an error if none of the parameters
     * is specified
     */
-    public String getTasksIds() {
+    public MultiArgument<Long> getTasksIds() {
         return this.tasksIds;
     }
 
@@ -81,12 +81,12 @@ public class CancelCallListTaskRequest implements Alignable {
     * `tasks_uuids`. The method returns an error if none of the parameters
     * is specified
     */
-    public CancelCallListTaskRequest setTasksIds(String d) {
+    public CancelCallListTaskRequest setTasksIds(MultiArgument<Long> d) {
         this.tasksIds = d;
         return this;
     }
 
-    private String tasksUuids;
+    private MultiArgument<String> tasksUuids;
 
     @RequestField(name="tasks_uuids")
     /**
@@ -94,7 +94,7 @@ public class CancelCallListTaskRequest implements Alignable {
     * `tasks_uuids`. The method returns an error if none of the parameters
     * is specified
     */
-    public String getTasksUuids() {
+    public MultiArgument<String> getTasksUuids() {
         return this.tasksUuids;
     }
 
@@ -107,7 +107,7 @@ public class CancelCallListTaskRequest implements Alignable {
     * `tasks_uuids`. The method returns an error if none of the parameters
     * is specified
     */
-    public CancelCallListTaskRequest setTasksUuids(String d) {
+    public CancelCallListTaskRequest setTasksUuids(MultiArgument<String> d) {
         this.tasksUuids = d;
         return this;
     }

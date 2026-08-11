@@ -20,7 +20,7 @@ public class CalculatedCallHistoryDataType implements Alignable {
     private Long sessionCount;
 
     /**
-    * The session count in the report
+    * The session number in the report
     */
     public Long getSessionCount() {
         return this.sessionCount;

@@ -86,7 +86,7 @@ public class GetSubUsersRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -97,7 +97,7 @@ public class GetSubUsersRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetSubUsersRequest setCount(long d) {
         this.count = Long.valueOf(d);

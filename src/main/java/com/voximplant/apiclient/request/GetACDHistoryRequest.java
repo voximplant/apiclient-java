@@ -64,6 +64,74 @@ public class GetACDHistoryRequest implements Alignable {
         return this;
     }
 
+    private String callerid;
+
+    @RequestField(name="callerid")
+    /**
+    * The caller phone number to filter
+    */
+    public String getCallerid() {
+        return this.callerid;
+    }
+
+    public boolean hasCallerid() {
+        return this.callerid != null;
+    }
+
+    /**
+    * The caller phone number to filter
+    */
+    public GetACDHistoryRequest setCallerid(String d) {
+        this.callerid = d;
+        return this;
+    }
+
+    private String customData;
+
+    @RequestField(name="custom_data")
+    /**
+    * The ACD session custom data to filter. The match is exact
+    */
+    public String getCustomData() {
+        return this.customData;
+    }
+
+    public boolean hasCustomData() {
+        return this.customData != null;
+    }
+
+    /**
+    * The ACD session custom data to filter. The match is exact
+    */
+    public GetACDHistoryRequest setCustomData(String d) {
+        this.customData = d;
+        return this;
+    }
+
+    private String decimalSeparator;
+
+    @RequestField(name="decimal_separator")
+    /**
+    * The decimal mark for the CSV numbers if the output=csv. If omitted,
+    * the account locale setting is used
+    */
+    public String getDecimalSeparator() {
+        return this.decimalSeparator;
+    }
+
+    public boolean hasDecimalSeparator() {
+        return this.decimalSeparator != null;
+    }
+
+    /**
+    * The decimal mark for the CSV numbers if the output=csv. If omitted,
+    * the account locale setting is used
+    */
+    public GetACDHistoryRequest setDecimalSeparator(String d) {
+        this.decimalSeparator = d;
+        return this;
+    }
+
     private MultiArgument<Long> acdSessionHistoryId;
 
     @RequestField(name="acd_session_history_id")
@@ -200,7 +268,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="min_waiting_time")
     /**
-    * The min waiting time filter
+    * The minimum waiting time filter
     */
     public Long getMinWaitingTime() {
         return this.minWaitingTime;
@@ -211,7 +279,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The min waiting time filter
+    * The minimum waiting time filter
     */
     public GetACDHistoryRequest setMinWaitingTime(long d) {
         this.minWaitingTime = Long.valueOf(d);
@@ -312,7 +380,7 @@ public class GetACDHistoryRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -323,7 +391,7 @@ public class GetACDHistoryRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetACDHistoryRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -397,6 +465,30 @@ public class GetACDHistoryRequest implements Alignable {
             sb.append(aligned)
                 .append("\"toDate\": \"")
                 .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callerid != null) {
+            sb.append(aligned)
+                .append("\"callerid\": \"")
+                .append(callerid)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (customData != null) {
+            sb.append(aligned)
+                .append("\"customData\": \"")
+                .append(customData)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (decimalSeparator != null) {
+            sb.append(aligned)
+                .append("\"decimalSeparator\": \"")
+                .append(decimalSeparator)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

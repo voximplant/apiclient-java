@@ -23,7 +23,8 @@ public class GetTransactionHistoryRequest implements Alignable {
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
     * The from date in the selected timezone in 24-h format: YYYY-MM-DD
-    * HH:mm:ss
+    * HH:mm:ss. If both dates are omitted and is_uncommitted is false, a
+    * server-configured default interval is used (default is one month)
     */
     public Date getFromDate() {
         return this.fromDate;
@@ -35,7 +36,8 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     /**
     * The from date in the selected timezone in 24-h format: YYYY-MM-DD
-    * HH:mm:ss
+    * HH:mm:ss. If both dates are omitted and is_uncommitted is false, a
+    * server-configured default interval is used (default is one month)
     */
     public GetTransactionHistoryRequest setFromDate(Date d) {
         this.fromDate = d;
@@ -49,7 +51,8 @@ public class GetTransactionHistoryRequest implements Alignable {
     @SerializeUsing(serializer = TimestampSerializer.class)
     /**
     * The to date in the selected timezone in 24-h format: YYYY-MM-DD
-    * HH:mm:ss
+    * HH:mm:ss. If both dates are omitted and is_uncommitted is false, a
+    * server-configured default interval is used (default is one month)
     */
     public Date getToDate() {
         return this.toDate;
@@ -61,10 +64,269 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     /**
     * The to date in the selected timezone in 24-h format: YYYY-MM-DD
-    * HH:mm:ss
+    * HH:mm:ss. If both dates are omitted and is_uncommitted is false, a
+    * server-configured default interval is used (default is one month)
     */
     public GetTransactionHistoryRequest setToDate(Date d) {
         this.toDate = d;
+        return this;
+    }
+
+    private Long applicationId;
+
+    @RequestField(name="application_id")
+    /**
+    * The application ID to filter. Can be used together with or instead of
+    * the <b>application_name</b> parameter
+    */
+    public Long getApplicationId() {
+        return this.applicationId;
+    }
+
+    public boolean hasApplicationId() {
+        return this.applicationId != null;
+    }
+
+    /**
+    * The application ID to filter. Can be used together with or instead of
+    * the <b>application_name</b> parameter
+    */
+    public GetTransactionHistoryRequest setApplicationId(long d) {
+        this.applicationId = Long.valueOf(d);
+        return this;
+    }
+
+    private String applicationName;
+
+    @RequestField(name="application_name")
+    /**
+    * The application name to filter. Can be used instead of the
+    * <b>application_id</b> parameter
+    */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
+    /**
+    * The application name to filter. Can be used instead of the
+    * <b>application_id</b> parameter
+    */
+    public GetTransactionHistoryRequest setApplicationName(String d) {
+        this.applicationName = d;
+        return this;
+    }
+
+    private MultiArgument<Long> subscriptionId;
+
+    @RequestField(name="subscription_id")
+    /**
+    * The subscription ID list separated by semicolons (;) to filter
+    */
+    public MultiArgument<Long> getSubscriptionId() {
+        return this.subscriptionId;
+    }
+
+    public boolean hasSubscriptionId() {
+        return this.subscriptionId != null;
+    }
+
+    /**
+    * The subscription ID list separated by semicolons (;) to filter
+    */
+    public GetTransactionHistoryRequest setSubscriptionId(MultiArgument<Long> d) {
+        this.subscriptionId = d;
+        return this;
+    }
+
+    private MultiArgument<String> subscriptionName;
+
+    @RequestField(name="subscription_name")
+    /**
+    * The subscription name list separated by semicolons (;) to filter
+    */
+    public MultiArgument<String> getSubscriptionName() {
+        return this.subscriptionName;
+    }
+
+    public boolean hasSubscriptionName() {
+        return this.subscriptionName != null;
+    }
+
+    /**
+    * The subscription name list separated by semicolons (;) to filter
+    */
+    public GetTransactionHistoryRequest setSubscriptionName(MultiArgument<String> d) {
+        this.subscriptionName = d;
+        return this;
+    }
+
+    private MultiArgument<String> resourceType;
+
+    @RequestField(name="resource_type")
+    /**
+    * The resource type list separated by semicolons (;) to filter
+    */
+    public MultiArgument<String> getResourceType() {
+        return this.resourceType;
+    }
+
+    public boolean hasResourceType() {
+        return this.resourceType != null;
+    }
+
+    /**
+    * The resource type list separated by semicolons (;) to filter
+    */
+    public GetTransactionHistoryRequest setResourceType(MultiArgument<String> d) {
+        this.resourceType = d;
+        return this;
+    }
+
+    private MultiArgument<String> priceGroupName;
+
+    @RequestField(name="price_group_name")
+    /**
+    * The price group name list separated by semicolons (;) to filter
+    */
+    public MultiArgument<String> getPriceGroupName() {
+        return this.priceGroupName;
+    }
+
+    public boolean hasPriceGroupName() {
+        return this.priceGroupName != null;
+    }
+
+    /**
+    * The price group name list separated by semicolons (;) to filter
+    */
+    public GetTransactionHistoryRequest setPriceGroupName(MultiArgument<String> d) {
+        this.priceGroupName = d;
+        return this;
+    }
+
+    private Boolean useAccountingDates;
+
+    @RequestField(name="use_accounting_dates")
+    /**
+    * Whether to filter by the accounting dates instead of the
+    * transaction's `performed_at` timestamps
+    */
+    public Boolean getUseAccountingDates() {
+        return this.useAccountingDates;
+    }
+
+    public boolean hasUseAccountingDates() {
+        return this.useAccountingDates != null;
+    }
+
+    /**
+    * Whether to filter by the accounting dates instead of the
+    * transaction's `performed_at` timestamps
+    */
+    public GetTransactionHistoryRequest setUseAccountingDates(boolean d) {
+        this.useAccountingDates = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Boolean withExtendedInfo;
+
+    @RequestField(name="with_extended_info")
+    /**
+    * Whether to include the extended transaction fields, such as the
+    * application, subscription, resource type and price group, in the
+    * response
+    */
+    public Boolean getWithExtendedInfo() {
+        return this.withExtendedInfo;
+    }
+
+    public boolean hasWithExtendedInfo() {
+        return this.withExtendedInfo != null;
+    }
+
+    /**
+    * Whether to include the extended transaction fields, such as the
+    * application, subscription, resource type and price group, in the
+    * response
+    */
+    public GetTransactionHistoryRequest setWithExtendedInfo(boolean d) {
+        this.withExtendedInfo = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Boolean isAsync;
+
+    @RequestField(name="is_async")
+    /**
+    * Whether to create an asynchronous history report instead of returning
+    * the data immediately. Has the same effect as calling
+    * `GetTransactionHistoryAsync` and requires the output=csv
+    */
+    public Boolean getIsAsync() {
+        return this.isAsync;
+    }
+
+    public boolean hasIsAsync() {
+        return this.isAsync != null;
+    }
+
+    /**
+    * Whether to create an asynchronous history report instead of returning
+    * the data immediately. Has the same effect as calling
+    * `GetTransactionHistoryAsync` and requires the output=csv
+    */
+    public GetTransactionHistoryRequest setIsAsync(boolean d) {
+        this.isAsync = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Boolean withHeader;
+
+    @RequestField(name="with_header")
+    /**
+    * Whether to get a CSV file with the column names if the output=csv
+    */
+    public Boolean getWithHeader() {
+        return this.withHeader;
+    }
+
+    public boolean hasWithHeader() {
+        return this.withHeader != null;
+    }
+
+    /**
+    * Whether to get a CSV file with the column names if the output=csv
+    */
+    public GetTransactionHistoryRequest setWithHeader(boolean d) {
+        this.withHeader = Boolean.valueOf(d);
+        return this;
+    }
+
+    private String decimalSeparator;
+
+    @RequestField(name="decimal_separator")
+    /**
+    * The decimal mark for the CSV numbers if the output=csv. If omitted,
+    * the account locale setting is used
+    */
+    public String getDecimalSeparator() {
+        return this.decimalSeparator;
+    }
+
+    public boolean hasDecimalSeparator() {
+        return this.decimalSeparator != null;
+    }
+
+    /**
+    * The decimal mark for the CSV numbers if the output=csv. If omitted,
+    * the account locale setting is used
+    */
+    public GetTransactionHistoryRequest setDecimalSeparator(String d) {
+        this.decimalSeparator = d;
         return this;
     }
 
@@ -413,6 +675,94 @@ public class GetTransactionHistoryRequest implements Alignable {
             sb.append(aligned)
                 .append("\"toDate\": \"")
                 .append(toDate)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationId != null) {
+            sb.append(aligned)
+                .append("\"applicationId\": \"")
+                .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionId != null) {
+            sb.append(aligned)
+                .append("\"subscriptionId\": \"")
+                .append(subscriptionId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (subscriptionName != null) {
+            sb.append(aligned)
+                .append("\"subscriptionName\": \"")
+                .append(subscriptionName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (resourceType != null) {
+            sb.append(aligned)
+                .append("\"resourceType\": \"")
+                .append(resourceType)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (priceGroupName != null) {
+            sb.append(aligned)
+                .append("\"priceGroupName\": \"")
+                .append(priceGroupName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (useAccountingDates != null) {
+            sb.append(aligned)
+                .append("\"useAccountingDates\": \"")
+                .append(useAccountingDates)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withExtendedInfo != null) {
+            sb.append(aligned)
+                .append("\"withExtendedInfo\": \"")
+                .append(withExtendedInfo)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (isAsync != null) {
+            sb.append(aligned)
+                .append("\"isAsync\": \"")
+                .append(isAsync)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withHeader != null) {
+            sb.append(aligned)
+                .append("\"withHeader\": \"")
+                .append(withHeader)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (decimalSeparator != null) {
+            sb.append(aligned)
+                .append("\"decimalSeparator\": \"")
+                .append(decimalSeparator)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

@@ -58,7 +58,7 @@ public class PriceGroup implements Alignable {
     private Long numResourcesPerPrice;
 
     /**
-    * The resource count per price
+    * The resource number per price
     */
     public Long getNumResourcesPerPrice() {
         return this.numResourcesPerPrice;

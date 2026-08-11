@@ -53,7 +53,7 @@ public class GetAvailableRegulationsResponse implements Alignable {
     private Long countInProgress;
 
     /**
-    * The count of RegulationAddress in progress status
+    * The number of RegulationAddress in progress status
     */
     public Long getCountInProgress() {
         return this.countInProgress;

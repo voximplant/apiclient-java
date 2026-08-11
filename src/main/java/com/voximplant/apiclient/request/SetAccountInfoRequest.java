@@ -42,7 +42,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="new_account_password")
     /**
-    * The new account password. Must be at least 8 characters long and
+    * The new account password. Should be at least 8 characters long and
     * contain at least one uppercase and lowercase letter, one number, and
     * one special character
     */
@@ -55,7 +55,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The new account password. Must be at least 8 characters long and
+    * The new account password. Should be at least 8 characters long and
     * contain at least one uppercase and lowercase letter, one number, and
     * one special character
     */
@@ -242,7 +242,7 @@ public class SetAccountInfoRequest implements Alignable {
 
     @RequestField(name="min_balance_to_notify")
     /**
-    * The min balance value to notify by email or SMS
+    * The minimum balance value to notify by email or SMS
     */
     public BigDecimal getMinBalanceToNotify() {
         return this.minBalanceToNotify;
@@ -253,7 +253,7 @@ public class SetAccountInfoRequest implements Alignable {
     }
 
     /**
-    * The min balance value to notify by email or SMS
+    * The minimum balance value to notify by email or SMS
     */
     public SetAccountInfoRequest setMinBalanceToNotify(BigDecimal d) {
         this.minBalanceToNotify = d;

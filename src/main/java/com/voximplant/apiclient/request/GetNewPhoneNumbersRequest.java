@@ -110,7 +110,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -121,7 +121,7 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetNewPhoneNumbersRequest setCount(long d) {
         this.count = Long.valueOf(d);

@@ -42,7 +42,7 @@ public class SetRuleInfoRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The new rule name. The length must be less than 100
+    * The new rule name. The length should be less than 100
     */
     public String getRuleName() {
         return this.ruleName;
@@ -53,7 +53,7 @@ public class SetRuleInfoRequest implements Alignable {
     }
 
     /**
-    * The new rule name. The length must be less than 100
+    * The new rule name. The length should be less than 100
     */
     public SetRuleInfoRequest setRuleName(String d) {
         this.ruleName = d;
@@ -64,7 +64,7 @@ public class SetRuleInfoRequest implements Alignable {
 
     @RequestField(name="rule_pattern")
     /**
-    * The new rule pattern regex. The length must be less than 64 KB
+    * The new rule pattern regex. The length should be less than 64 KB
     */
     public String getRulePattern() {
         return this.rulePattern;
@@ -75,7 +75,7 @@ public class SetRuleInfoRequest implements Alignable {
     }
 
     /**
-    * The new rule pattern regex. The length must be less than 64 KB
+    * The new rule pattern regex. The length should be less than 64 KB
     */
     public SetRuleInfoRequest setRulePattern(String d) {
         this.rulePattern = d;
@@ -86,7 +86,7 @@ public class SetRuleInfoRequest implements Alignable {
 
     @RequestField(name="rule_pattern_exclude")
     /**
-    * The new exclude pattern regex. The length must be less than 64 KB
+    * The new exclude pattern regex. The length should be less than 64 KB
     */
     public String getRulePatternExclude() {
         return this.rulePatternExclude;
@@ -97,7 +97,7 @@ public class SetRuleInfoRequest implements Alignable {
     }
 
     /**
-    * The new exclude pattern regex. The length must be less than 64 KB
+    * The new exclude pattern regex. The length should be less than 64 KB
     */
     public SetRuleInfoRequest setRulePatternExclude(String d) {
         this.rulePatternExclude = d;

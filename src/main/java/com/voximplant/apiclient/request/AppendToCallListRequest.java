@@ -154,6 +154,28 @@ public class AppendToCallListRequest implements Alignable {
         return this;
     }
 
+    private String quote;
+
+    @RequestField(name="quote")
+    /**
+    * Quote character for parsing csv
+    */
+    public String getQuote() {
+        return this.quote;
+    }
+
+    public boolean hasQuote() {
+        return this.quote != null;
+    }
+
+    /**
+    * Quote character for parsing csv
+    */
+    public AppendToCallListRequest setQuote(String d) {
+        this.quote = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -201,6 +223,14 @@ public class AppendToCallListRequest implements Alignable {
             sb.append(aligned)
                 .append("\"delimiter\": \"")
                 .append(delimiter)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (quote != null) {
+            sb.append(aligned)
+                .append("\"quote\": \"")
+                .append(quote)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

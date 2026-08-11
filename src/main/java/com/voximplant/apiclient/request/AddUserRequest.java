@@ -42,7 +42,7 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="user_display_name")
     /**
-    * The user display name. The length must be less than 256
+    * The user display name. The length should be less than 256
     */
     public String getUserDisplayName() {
         return this.userDisplayName;
@@ -53,7 +53,7 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The user display name. The length must be less than 256
+    * The user display name. The length should be less than 256
     */
     public AddUserRequest setUserDisplayName(String d) {
         this.userDisplayName = d;
@@ -64,9 +64,9 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="user_password")
     /**
-    * The user password. Must be at least 8 characters long and contain at
-    * least one uppercase and lowercase letter, one number, and one special
-    * character
+    * The user password. Should be at least 8 characters long and contain
+    * at least one uppercase and lowercase letter, one number, and one
+    * special character
     */
     public String getUserPassword() {
         return this.userPassword;
@@ -77,9 +77,9 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The user password. Must be at least 8 characters long and contain at
-    * least one uppercase and lowercase letter, one number, and one special
-    * character
+    * The user password. Should be at least 8 characters long and contain
+    * at least one uppercase and lowercase letter, one number, and one
+    * special character
     */
     public AddUserRequest setUserPassword(String d) {
         this.userPassword = d;
@@ -162,7 +162,7 @@ public class AddUserRequest implements Alignable {
 
     @RequestField(name="mobile_phone")
     /**
-    * The user mobile phone. The length must be less than 50
+    * The user mobile phone. The length should be less than 50
     */
     public String getMobilePhone() {
         return this.mobilePhone;
@@ -173,7 +173,7 @@ public class AddUserRequest implements Alignable {
     }
 
     /**
-    * The user mobile phone. The length must be less than 50
+    * The user mobile phone. The length should be less than 50
     */
     public AddUserRequest setMobilePhone(String d) {
         this.mobilePhone = d;

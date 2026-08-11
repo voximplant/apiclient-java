@@ -1,8 +1,8 @@
 package com.voximplant.apiexamples;
 
 import com.voximplant.apiclient.ClientException;
-import com.voximplant.apiclient.request.LinkRegulationAddressRequest;
-import com.voximplant.apiclient.response.LinkRegulationAddressResponse;
+import com.voximplant.apiclient.request.LinkregulationAddressRequest;
+import com.voximplant.apiclient.response.LinkregulationAddressResponse;
 import com.voximplant.apiclient.VoximplantAPIClient;
 import com.voximplant.apiclient.util.MultiArgument;
 import java.util.Date;
@@ -16,13 +16,13 @@ import java.io.InputStream;
 /**
 * Link the regulation address to a phone number.
 */
-public class LinkRegulationAddressExample {
+public class LinkregulationAddressExample {
     public static void main(String [] args) {
         try {
             VoximplantAPIClient client = new VoximplantAPIClient("/path/to/credentials.json");
 
 
-            LinkRegulationAddressResponse res = client.linkRegulationAddress(new LinkRegulationAddressRequest()
+            LinkregulationAddressResponse res = client.linkregulationAddress(new LinkregulationAddressRequest()
                 .setRegulationAddressId(1)
                 .setPhoneId(1)
             );

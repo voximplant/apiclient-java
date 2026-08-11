@@ -202,7 +202,7 @@ public class GetRulesRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -213,7 +213,7 @@ public class GetRulesRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetRulesRequest setCount(long d) {
         this.count = Long.valueOf(d);

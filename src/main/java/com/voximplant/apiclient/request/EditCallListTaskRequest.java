@@ -236,6 +236,78 @@ public class EditCallListTaskRequest implements Alignable {
         return this;
     }
 
+    private String nextAttemptTime;
+
+    @RequestField(name="next_attempt_time")
+    /**
+    * Time of the next calling attempt. One of the editable fields: at
+    * least one of them should be specified
+    */
+    public String getNextAttemptTime() {
+        return this.nextAttemptTime;
+    }
+
+    public boolean hasNextAttemptTime() {
+        return this.nextAttemptTime != null;
+    }
+
+    /**
+    * Time of the next calling attempt. One of the editable fields: at
+    * least one of them should be specified
+    */
+    public EditCallListTaskRequest setNextAttemptTime(String d) {
+        this.nextAttemptTime = d;
+        return this;
+    }
+
+    private Long userId;
+
+    @RequestField(name="user_id")
+    /**
+    * The user ID to bind to the task. One of the editable fields: at least
+    * one of them should be specified
+    */
+    public Long getUserId() {
+        return this.userId;
+    }
+
+    public boolean hasUserId() {
+        return this.userId != null;
+    }
+
+    /**
+    * The user ID to bind to the task. One of the editable fields: at least
+    * one of them should be specified
+    */
+    public EditCallListTaskRequest setUserId(long d) {
+        this.userId = Long.valueOf(d);
+        return this;
+    }
+
+    private MultiArgument<Long> skillId;
+
+    @RequestField(name="skill_id")
+    /**
+    * The skill ID list separated by semicolons (;). Up to 5 IDs. One of
+    * the editable fields: at least one of them should be specified
+    */
+    public MultiArgument<Long> getSkillId() {
+        return this.skillId;
+    }
+
+    public boolean hasSkillId() {
+        return this.skillId != null;
+    }
+
+    /**
+    * The skill ID list separated by semicolons (;). Up to 5 IDs. One of
+    * the editable fields: at least one of them should be specified
+    */
+    public EditCallListTaskRequest setSkillId(MultiArgument<Long> d) {
+        this.skillId = d;
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -313,6 +385,30 @@ public class EditCallListTaskRequest implements Alignable {
             sb.append(aligned)
                 .append("\"maxExecutionTime\": \"")
                 .append(maxExecutionTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (nextAttemptTime != null) {
+            sb.append(aligned)
+                .append("\"nextAttemptTime\": \"")
+                .append(nextAttemptTime)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (userId != null) {
+            sb.append(aligned)
+                .append("\"userId\": \"")
+                .append(userId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (skillId != null) {
+            sb.append(aligned)
+                .append("\"skillId\": \"")
+                .append(skillId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

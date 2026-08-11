@@ -66,9 +66,9 @@ public class SetSubUserInfoRequest implements Alignable {
 
     @RequestField(name="new_subuser_password")
     /**
-    * The new user password. Must be at least 8 characters long and contain
-    * at least one uppercase and lowercase letter, one number, and one
-    * special character
+    * The new user password. Should be at least 8 characters long and
+    * contain at least one uppercase and lowercase letter, one number, and
+    * one special character
     */
     public String getNewSubuserPassword() {
         return this.newSubuserPassword;
@@ -79,9 +79,9 @@ public class SetSubUserInfoRequest implements Alignable {
     }
 
     /**
-    * The new user password. Must be at least 8 characters long and contain
-    * at least one uppercase and lowercase letter, one number, and one
-    * special character
+    * The new user password. Should be at least 8 characters long and
+    * contain at least one uppercase and lowercase letter, one number, and
+    * one special character
     */
     public SetSubUserInfoRequest setNewSubuserPassword(String d) {
         this.newSubuserPassword = d;

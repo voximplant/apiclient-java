@@ -20,7 +20,7 @@ public class CancelCallListBatchRequest implements Alignable {
 
     @RequestField(name="list_id")
     /**
-    * Call list ID. <b>Required</b> unless <b>list_name</b> is provided.
+    * Call list ID
     */
     public Long getListId() {
         return this.listId;
@@ -31,34 +31,10 @@ public class CancelCallListBatchRequest implements Alignable {
     }
 
     /**
-    * Call list ID. <b>Required</b> unless <b>list_name</b> is provided.
+    * Call list ID
     */
     public CancelCallListBatchRequest setListId(long d) {
         this.listId = Long.valueOf(d);
-        return this;
-    }
-
-    private String listName;
-
-    @RequestField(name="list_name")
-    /**
-    * The unique name of the call list. <b>Required</b> unless
-    * <b>list_id</b> is provided.
-    */
-    public String getListName() {
-        return this.listName;
-    }
-
-    public boolean hasListName() {
-        return this.listName != null;
-    }
-
-    /**
-    * The unique name of the call list. <b>Required</b> unless
-    * <b>list_id</b> is provided.
-    */
-    public CancelCallListBatchRequest setListName(String d) {
-        this.listName = d;
         return this;
     }
 
@@ -97,14 +73,6 @@ public class CancelCallListBatchRequest implements Alignable {
             sb.append(aligned)
                 .append("\"listId\": \"")
                 .append(listId)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (listName != null) {
-            sb.append(aligned)
-                .append("\"listName\": \"")
-                .append(listName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

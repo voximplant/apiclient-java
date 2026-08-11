@@ -20,7 +20,7 @@ public class StartConferenceRequest implements Alignable {
 
     @RequestField(name="conference_name")
     /**
-    * The conference name. The name length must be less than 50 symbols
+    * The conference name. The name length should be less than 50 symbols
     */
     public String getConferenceName() {
         return this.conferenceName;
@@ -31,7 +31,7 @@ public class StartConferenceRequest implements Alignable {
     }
 
     /**
-    * The conference name. The name length must be less than 50 symbols
+    * The conference name. The name length should be less than 50 symbols
     */
     public StartConferenceRequest setConferenceName(String d) {
         this.conferenceName = d;

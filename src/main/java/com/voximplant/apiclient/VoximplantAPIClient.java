@@ -854,11 +854,11 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("IsAccountPhoneNumber", RequestSerializer.serialize(req)), IsAccountPhoneNumberResponse.class);
     }
-    public LinkRegulationAddressResponse linkRegulationAddress(LinkRegulationAddressRequest req) throws java.io.IOException, ClientException {
+    public LinkregulationAddressResponse linkregulationAddress(LinkregulationAddressRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
-        return mapper.readValue((String) impl.performRequest("LinkRegulationAddress", RequestSerializer.serialize(req)), LinkRegulationAddressResponse.class);
+        return mapper.readValue((String) impl.performRequest("LinkregulationAddress", RequestSerializer.serialize(req)), LinkregulationAddressResponse.class);
     }
     public RecoverCallListResponse recoverCallList(RecoverCallListRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();

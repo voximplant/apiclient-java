@@ -162,7 +162,7 @@ public class GetHistoryReportsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public Long getCount() {
         return this.count;
@@ -173,7 +173,7 @@ public class GetHistoryReportsRequest implements Alignable {
     }
 
     /**
-    * The max returning record count
+    * The maximum returning record count
     */
     public GetHistoryReportsRequest setCount(long d) {
         this.count = Long.valueOf(d);
@@ -223,6 +223,30 @@ public class GetHistoryReportsRequest implements Alignable {
     */
     public GetHistoryReportsRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;
+        return this;
+    }
+
+    private MultiArgument<String> applicationName;
+
+    @RequestField(name="application_name")
+    /**
+    * The application name list separated by semicolons (;). Can be used
+    * instead of the <b>application_id</b> parameter
+    */
+    public MultiArgument<String> getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
+    /**
+    * The application name list separated by semicolons (;). Can be used
+    * instead of the <b>application_id</b> parameter
+    */
+    public GetHistoryReportsRequest setApplicationName(MultiArgument<String> d) {
+        this.applicationName = d;
         return this;
     }
 
@@ -303,6 +327,14 @@ public class GetHistoryReportsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"applicationId\": \"")
                 .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
