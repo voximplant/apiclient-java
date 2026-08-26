@@ -236,10 +236,10 @@ public class GetTransactionHistoryAsyncRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The maximum record number to include in the report. If omitted, the
-    * report service applies its own limit. Unlike GetTransactionHistory,
-    * there is no default of 20 and no cap of 1000 on the Management API
-    * side
+    * The maximum number of records to include in the report. If omitted,
+    * the report service applies its own limit. Unlike
+    * GetTransactionHistory, there is no default of 20 and no cap of 1000
+    * on the Management API side
     */
     public Long getCount() {
         return this.count;
@@ -250,10 +250,10 @@ public class GetTransactionHistoryAsyncRequest implements Alignable {
     }
 
     /**
-    * The maximum record number to include in the report. If omitted, the
-    * report service applies its own limit. Unlike GetTransactionHistory,
-    * there is no default of 20 and no cap of 1000 on the Management API
-    * side
+    * The maximum number of records to include in the report. If omitted,
+    * the report service applies its own limit. Unlike
+    * GetTransactionHistory, there is no default of 20 and no cap of 1000
+    * on the Management API side
     */
     public GetTransactionHistoryAsyncRequest setCount(long d) {
         this.count = Long.valueOf(d);

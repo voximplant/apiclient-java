@@ -74,7 +74,8 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     /**
     * The ACD status list separated by semicolons (;). The following values
     * are possible: OFFLINE, ONLINE, READY, BANNED, IN_SERVICE,
-    * AFTER_SERVICE, TIMEOUT, DND
+    * AFTER_SERVICE, TIMEOUT, DND. If omitted, the statistics include all
+    * the statuses
     */
     public MultiArgument<String> getAcdStatus() {
         return this.acdStatus;
@@ -87,7 +88,8 @@ public class GetACDOperatorStatusStatisticsRequest implements Alignable {
     /**
     * The ACD status list separated by semicolons (;). The following values
     * are possible: OFFLINE, ONLINE, READY, BANNED, IN_SERVICE,
-    * AFTER_SERVICE, TIMEOUT, DND
+    * AFTER_SERVICE, TIMEOUT, DND. If omitted, the statistics include all
+    * the statuses
     */
     public GetACDOperatorStatusStatisticsRequest setAcdStatus(MultiArgument<String> d) {
         this.acdStatus = d;

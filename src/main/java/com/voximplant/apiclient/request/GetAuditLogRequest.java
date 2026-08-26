@@ -318,8 +318,8 @@ public class GetAuditLogRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The maximum returning record number. If omitted, the report service
-    * applies its own limit
+    * The maximum returning number of records. If omitted, the report
+    * service applies its own limit
     */
     public Long getCount() {
         return this.count;
@@ -330,8 +330,8 @@ public class GetAuditLogRequest implements Alignable {
     }
 
     /**
-    * The maximum returning record number. If omitted, the report service
-    * applies its own limit
+    * The maximum returning number of records. If omitted, the report
+    * service applies its own limit
     */
     public GetAuditLogRequest setCount(long d) {
         this.count = Long.valueOf(d);

@@ -19,7 +19,7 @@ public class ContractorInvoiceType implements Alignable {
     private String invoiceNumber;
 
     /**
-    * The invoice number
+    * The number of invoices
     */
     public String getInvoiceNumber() {
         return this.invoiceNumber;

@@ -64,7 +64,8 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to filter
+    * The application ID to filter. Can be used instead of the
+    * <b>application_name</b> parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -75,10 +76,35 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The application ID to filter
+    * The application ID to filter. Can be used instead of the
+    * <b>application_name</b> parameter
     */
     public GetQueuesRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
+        return this;
+    }
+
+    private String applicationName;
+
+    @RequestField(name="application_name")
+    /**
+    * The application name. Can be used instead of the
+    * <b>application_id</b> parameter
+    */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
+    /**
+    * The application name. Can be used instead of the
+    * <b>application_id</b> parameter
+    */
+    public GetQueuesRequest setApplicationName(String d) {
+        this.applicationName = d;
         return this;
     }
 
@@ -86,7 +112,8 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="skill_id")
     /**
-    * The skill ID to filter
+    * The skill ID to filter. Can be used instead of the <b>skill_name</b>
+    * parameter
     */
     public Long getSkillId() {
         return this.skillId;
@@ -97,10 +124,33 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The skill ID to filter
+    * The skill ID to filter. Can be used instead of the <b>skill_name</b>
+    * parameter
     */
     public GetQueuesRequest setSkillId(long d) {
         this.skillId = Long.valueOf(d);
+        return this;
+    }
+
+    private String skillName;
+
+    @RequestField(name="skill_name")
+    /**
+    * The skill name. Can be used instead of the <b>skill_id</b> parameter
+    */
+    public String getSkillName() {
+        return this.skillName;
+    }
+
+    public boolean hasSkillName() {
+        return this.skillName != null;
+    }
+
+    /**
+    * The skill name. Can be used instead of the <b>skill_id</b> parameter
+    */
+    public GetQueuesRequest setSkillName(String d) {
+        this.skillName = d;
         return this;
     }
 
@@ -108,7 +158,8 @@ public class GetQueuesRequest implements Alignable {
 
     @RequestField(name="excluded_skill_id")
     /**
-    * The excluded skill ID to filter
+    * The excluded skill ID to filter. Can be used instead of the
+    * <b>excluded_skill_name</b> parameter
     */
     public Long getExcludedSkillId() {
         return this.excludedSkillId;
@@ -119,10 +170,35 @@ public class GetQueuesRequest implements Alignable {
     }
 
     /**
-    * The excluded skill ID to filter
+    * The excluded skill ID to filter. Can be used instead of the
+    * <b>excluded_skill_name</b> parameter
     */
     public GetQueuesRequest setExcludedSkillId(long d) {
         this.excludedSkillId = Long.valueOf(d);
+        return this;
+    }
+
+    private String excludedSkillName;
+
+    @RequestField(name="excluded_skill_name")
+    /**
+    * The excluded skill name. Can be used instead of the
+    * <b>excluded_skill_id</b> parameter
+    */
+    public String getExcludedSkillName() {
+        return this.excludedSkillName;
+    }
+
+    public boolean hasExcludedSkillName() {
+        return this.excludedSkillName != null;
+    }
+
+    /**
+    * The excluded skill name. Can be used instead of the
+    * <b>excluded_skill_id</b> parameter
+    */
+    public GetQueuesRequest setExcludedSkillName(String d) {
+        this.excludedSkillName = d;
         return this;
     }
 
@@ -236,6 +312,28 @@ public class GetQueuesRequest implements Alignable {
         return this;
     }
 
+    private Boolean showDeleted;
+
+    @RequestField(name="show_deleted")
+    /**
+    * Whether to include the deleted queues
+    */
+    public Boolean getShowDeleted() {
+        return this.showDeleted;
+    }
+
+    public boolean hasShowDeleted() {
+        return this.showDeleted != null;
+    }
+
+    /**
+    * Whether to include the deleted queues
+    */
+    public GetQueuesRequest setShowDeleted(boolean d) {
+        this.showDeleted = Boolean.valueOf(d);
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -269,6 +367,14 @@ public class GetQueuesRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (skillId != null) {
             sb.append(aligned)
                 .append("\"skillId\": \"")
@@ -277,10 +383,26 @@ public class GetQueuesRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
+        if (skillName != null) {
+            sb.append(aligned)
+                .append("\"skillName\": \"")
+                .append(skillName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
         if (excludedSkillId != null) {
             sb.append(aligned)
                 .append("\"excludedSkillId\": \"")
                 .append(excludedSkillId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (excludedSkillName != null) {
+            sb.append(aligned)
+                .append("\"excludedSkillName\": \"")
+                .append(excludedSkillName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
@@ -321,6 +443,14 @@ public class GetQueuesRequest implements Alignable {
             sb.append(aligned)
                 .append("\"withOperatorcount\": \"")
                 .append(withOperatorcount)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (showDeleted != null) {
+            sb.append(aligned)
+                .append("\"showDeleted\": \"")
+                .append(showDeleted)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

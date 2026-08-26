@@ -90,7 +90,7 @@ public class GetSecretsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * Maximum returning record number
+    * Maximum returning number of records
     */
     public Long getCount() {
         return this.count;
@@ -101,7 +101,7 @@ public class GetSecretsRequest implements Alignable {
     }
 
     /**
-    * Maximum returning record number
+    * Maximum returning number of records
     */
     public GetSecretsRequest setCount(long d) {
         this.count = Long.valueOf(d);
