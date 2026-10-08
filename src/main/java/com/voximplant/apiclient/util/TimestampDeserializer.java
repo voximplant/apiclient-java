@@ -13,7 +13,7 @@ public class TimestampDeserializer
         extends StdDeserializer<Date> {
 
     private static final SimpleDateFormat formatter
-            = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public TimestampDeserializer() {
         this(null);
