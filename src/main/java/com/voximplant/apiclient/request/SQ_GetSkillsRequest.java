@@ -20,7 +20,8 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_GetSkillsRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_GetSkillsRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -66,7 +68,8 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * List of user IDs separated by semicolons (;)
+    * List of user IDs separated by semicolons (;). Can be used instead of
+    * the <b>user_name</b> parameter
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -77,7 +80,8 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * List of user IDs separated by semicolons (;)
+    * List of user IDs separated by semicolons (;). Can be used instead of
+    * the <b>user_name</b> parameter
     */
     public SQ_GetSkillsRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -89,7 +93,7 @@ public class SQ_GetSkillsRequest implements Alignable {
     @RequestField(name="user_name")
     /**
     * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * of the <b>user_id</b> parameter
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -101,7 +105,7 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     /**
     * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * of the <b>user_id</b> parameter
     */
     public SQ_GetSkillsRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -112,7 +116,8 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     @RequestField(name="sq_skill_id")
     /**
-    * List of skill IDs separated by semicolons (;)
+    * List of skill IDs separated by semicolons (;). Can be used instead of
+    * the <b>sq_skill_name</b> parameter
     */
     public MultiArgument<Long> getSqSkillId() {
         return this.sqSkillId;
@@ -123,7 +128,8 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * List of skill IDs separated by semicolons (;)
+    * List of skill IDs separated by semicolons (;). Can be used instead of
+    * the <b>sq_skill_name</b> parameter
     */
     public SQ_GetSkillsRequest setSqSkillId(MultiArgument<Long> d) {
         this.sqSkillId = d;
@@ -135,7 +141,7 @@ public class SQ_GetSkillsRequest implements Alignable {
     @RequestField(name="sq_skill_name")
     /**
     * List of skill names separated by semicolons (;). Can be used instead
-    * of <b>sq_skill_id</b>
+    * of the <b>sq_skill_id</b> parameter
     */
     public MultiArgument<String> getSqSkillName() {
         return this.sqSkillName;
@@ -147,7 +153,7 @@ public class SQ_GetSkillsRequest implements Alignable {
 
     /**
     * List of skill names separated by semicolons (;). Can be used instead
-    * of <b>sq_skill_id</b>
+    * of the <b>sq_skill_id</b> parameter
     */
     public SQ_GetSkillsRequest setSqSkillName(MultiArgument<String> d) {
         this.sqSkillName = d;
@@ -176,13 +182,15 @@ public class SQ_GetSkillsRequest implements Alignable {
         return this;
     }
 
-    private Long excludedUserId;
+    private MultiArgument<Long> excludedUserId;
 
     @RequestField(name="excluded_user_id")
     /**
-    * ID of the user that is not bound to the skill
+    * List of user IDs separated by semicolons (;). Skills bound to these
+    * users are excluded. Can be used instead of the
+    * <b>excluded_user_name</b> parameter
     */
-    public Long getExcludedUserId() {
+    public MultiArgument<Long> getExcludedUserId() {
         return this.excludedUserId;
     }
 
@@ -191,21 +199,23 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * ID of the user that is not bound to the skill
+    * List of user IDs separated by semicolons (;). Skills bound to these
+    * users are excluded. Can be used instead of the
+    * <b>excluded_user_name</b> parameter
     */
-    public SQ_GetSkillsRequest setExcludedUserId(long d) {
-        this.excludedUserId = Long.valueOf(d);
+    public SQ_GetSkillsRequest setExcludedUserId(MultiArgument<Long> d) {
+        this.excludedUserId = d;
         return this;
     }
 
-    private String excludedUserName;
+    private MultiArgument<String> excludedUserName;
 
     @RequestField(name="excluded_user_name")
     /**
-    * Name of the user that is not bound to the skill. Can be used instead
-    * of <b>excluded_user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of the <b>excluded_user_id</b> parameter
     */
-    public String getExcludedUserName() {
+    public MultiArgument<String> getExcludedUserName() {
         return this.excludedUserName;
     }
 
@@ -214,10 +224,10 @@ public class SQ_GetSkillsRequest implements Alignable {
     }
 
     /**
-    * Name of the user that is not bound to the skill. Can be used instead
-    * of <b>excluded_user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of the <b>excluded_user_id</b> parameter
     */
-    public SQ_GetSkillsRequest setExcludedUserName(String d) {
+    public SQ_GetSkillsRequest setExcludedUserName(MultiArgument<String> d) {
         this.excludedUserName = d;
         return this;
     }

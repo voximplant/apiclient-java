@@ -42,9 +42,10 @@ public class GetScenariosRequest implements Alignable {
 
     @RequestField(name="scenario_name")
     /**
-    * The scenario name to filter. Can be used instead of
-    * <b>scenario_id</b>. All scenarios containing this param in their
-    * names are returned. The parameter is case insensitive
+    * The scenario name to filter. Exact match. Combines with
+    * <b>scenario_id</b> when both are passed. Use with
+    * <b>application_id</b> or <b>application_name</b> to limit the result
+    * to one application
     */
     public String getScenarioName() {
         return this.scenarioName;
@@ -55,9 +56,10 @@ public class GetScenariosRequest implements Alignable {
     }
 
     /**
-    * The scenario name to filter. Can be used instead of
-    * <b>scenario_id</b>. All scenarios containing this param in their
-    * names are returned. The parameter is case insensitive
+    * The scenario name to filter. Exact match. Combines with
+    * <b>scenario_id</b> when both are passed. Use with
+    * <b>application_id</b> or <b>application_name</b> to limit the result
+    * to one application
     */
     public GetScenariosRequest setScenarioName(String d) {
         this.scenarioName = d;

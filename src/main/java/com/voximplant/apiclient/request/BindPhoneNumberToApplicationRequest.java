@@ -118,7 +118,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="rule_id")
     /**
-    * The rule ID
+    * The rule ID. Can be used instead of the <b>rule_name</b> parameter
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -129,7 +129,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The rule ID
+    * The rule ID. Can be used instead of the <b>rule_name</b> parameter
     */
     public BindPhoneNumberToApplicationRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -140,7 +140,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name that can be used instead of <b>rule_id</b>
+    * The rule name. Can be used instead of the <b>rule_id</b> parameter
     */
     public String getRuleName() {
         return this.ruleName;
@@ -151,7 +151,7 @@ public class BindPhoneNumberToApplicationRequest implements Alignable {
     }
 
     /**
-    * The rule name that can be used instead of <b>rule_id</b>
+    * The rule name. Can be used instead of the <b>rule_id</b> parameter
     */
     public BindPhoneNumberToApplicationRequest setRuleName(String d) {
         this.ruleName = d;

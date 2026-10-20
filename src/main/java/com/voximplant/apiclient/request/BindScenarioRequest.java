@@ -116,8 +116,8 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID. <b>Required</b> unless <b>application_name</b> is
-    * provided.
+    * The application ID. Can be used instead of the
+    * <b>application_name</b> parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -128,8 +128,8 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The application ID. <b>Required</b> unless <b>application_name</b> is
-    * provided.
+    * The application ID. Can be used instead of the
+    * <b>application_name</b> parameter
     */
     public BindScenarioRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -140,8 +140,8 @@ public class BindScenarioRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name. <b>Required</b> unless <b>application_id</b> is
-    * provided.
+    * The application name. Can be used instead of the
+    * <b>application_id</b> parameter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -152,8 +152,8 @@ public class BindScenarioRequest implements Alignable {
     }
 
     /**
-    * The application name. <b>Required</b> unless <b>application_id</b> is
-    * provided.
+    * The application name. Can be used instead of the
+    * <b>application_id</b> parameter
     */
     public BindScenarioRequest setApplicationName(String d) {
         this.applicationName = d;

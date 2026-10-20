@@ -20,7 +20,8 @@ public class GetSQStateRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID to search by
+    * The application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class GetSQStateRequest implements Alignable {
     }
 
     /**
-    * The application ID to search by
+    * The application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public GetSQStateRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class GetSQStateRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name to search by. Can be used instead of the
-    * <b>application_id</b> parameter
+    * The application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class GetSQStateRequest implements Alignable {
     }
 
     /**
-    * The application name to search by. Can be used instead of the
-    * <b>application_id</b> parameter
+    * The application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public GetSQStateRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -67,7 +69,8 @@ public class GetSQStateRequest implements Alignable {
     @RequestField(name="sq_queue_id")
     /**
     * The SmartQueue ID list separated by semicolons (;). Use the 'all'
-    * value to select all SmartQueues
+    * value to select all SmartQueues. <b>Required</b> unless
+    * <b>sq_queue_name</b> is provided.
     */
     public MultiArgument<Long> getSqQueueId() {
         return this.sqQueueId;
@@ -79,7 +82,8 @@ public class GetSQStateRequest implements Alignable {
 
     /**
     * The SmartQueue ID list separated by semicolons (;). Use the 'all'
-    * value to select all SmartQueues
+    * value to select all SmartQueues. <b>Required</b> unless
+    * <b>sq_queue_name</b> is provided.
     */
     public GetSQStateRequest setSqQueueId(MultiArgument<Long> d) {
         this.sqQueueId = d;
@@ -90,8 +94,8 @@ public class GetSQStateRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * The SmartQueue name list separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * The SmartQueue name list separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided.
     */
     public MultiArgument<String> getSqQueueName() {
         return this.sqQueueName;
@@ -102,8 +106,8 @@ public class GetSQStateRequest implements Alignable {
     }
 
     /**
-    * The SmartQueue name list separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * The SmartQueue name list separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided.
     */
     public GetSQStateRequest setSqQueueName(MultiArgument<String> d) {
         this.sqQueueName = d;

@@ -207,7 +207,8 @@ public class GetHistoryReportsRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * The application ID to filter. Can be a list separated by semicolons
-    * (;). Use the 'all' value to select all applications
+    * (;). Use the 'all' value to select all applications. Can be used
+    * instead of the <b>application_name</b> parameter
     */
     public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
@@ -219,7 +220,8 @@ public class GetHistoryReportsRequest implements Alignable {
 
     /**
     * The application ID to filter. Can be a list separated by semicolons
-    * (;). Use the 'all' value to select all applications
+    * (;). Use the 'all' value to select all applications. Can be used
+    * instead of the <b>application_name</b> parameter
     */
     public GetHistoryReportsRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;

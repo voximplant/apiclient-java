@@ -20,7 +20,8 @@ public class SQ_BindAgentRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_BindAgentRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_BindAgentRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,22 +56,23 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_BindAgentRequest setApplicationName(String d) {
         this.applicationName = d;
         return this;
     }
 
-    private String sqQueueId;
+    private MultiArgument<Long> sqQueueId;
 
     @RequestField(name="sq_queue_id")
     /**
-    * ID of the SmartQueue. Pass a list of values divided by ; or the "all"
-    * keyword
+    * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
+    * select all the queues. <b>Required</b> unless <b>sq_queue_name</b> is
+    * provided.
     */
-    public String getSqQueueId() {
+    public MultiArgument<Long> getSqQueueId() {
         return this.sqQueueId;
     }
 
@@ -78,22 +81,23 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * ID of the SmartQueue. Pass a list of values divided by ; or the "all"
-    * keyword
+    * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
+    * select all the queues. <b>Required</b> unless <b>sq_queue_name</b> is
+    * provided.
     */
-    public SQ_BindAgentRequest setSqQueueId(String d) {
+    public SQ_BindAgentRequest setSqQueueId(MultiArgument<Long> d) {
         this.sqQueueId = d;
         return this;
     }
 
-    private String sqQueueName;
+    private MultiArgument<String> sqQueueName;
 
     @RequestField(name="sq_queue_name")
     /**
-    * Name of the SmartQueue. Pass a list of names divided by ; or the
-    * "all" keyword
+    * List of SmartQueue names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided.
     */
-    public String getSqQueueName() {
+    public MultiArgument<String> getSqQueueName() {
         return this.sqQueueName;
     }
 
@@ -102,10 +106,10 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * Name of the SmartQueue. Pass a list of names divided by ; or the
-    * "all" keyword
+    * List of SmartQueue names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided.
     */
-    public SQ_BindAgentRequest setSqQueueName(String d) {
+    public SQ_BindAgentRequest setSqQueueName(MultiArgument<String> d) {
         this.sqQueueName = d;
         return this;
     }
@@ -115,7 +119,7 @@ public class SQ_BindAgentRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * List of user IDs separated by semicolons (;). Use 'all' to select all
-    * the users
+    * the users. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -127,7 +131,7 @@ public class SQ_BindAgentRequest implements Alignable {
 
     /**
     * List of user IDs separated by semicolons (;). Use 'all' to select all
-    * the users
+    * the users. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public SQ_BindAgentRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -138,8 +142,8 @@ public class SQ_BindAgentRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * List of user names separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -150,8 +154,8 @@ public class SQ_BindAgentRequest implements Alignable {
     }
 
     /**
-    * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * List of user names separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public SQ_BindAgentRequest setUserName(MultiArgument<String> d) {
         this.userName = d;

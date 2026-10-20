@@ -38,6 +38,28 @@ public class GetAccountVerificationsRequest implements Alignable {
         return this;
     }
 
+    private Boolean activeVerificationOnly;
+
+    @RequestField(name="active_verification_only")
+    /**
+    * Whether to return the active verification only
+    */
+    public Boolean getActiveVerificationOnly() {
+        return this.activeVerificationOnly;
+    }
+
+    public boolean hasActiveVerificationOnly() {
+        return this.activeVerificationOnly != null;
+    }
+
+    /**
+    * Whether to return the active verification only
+    */
+    public GetAccountVerificationsRequest setActiveVerificationOnly(boolean d) {
+        this.activeVerificationOnly = Boolean.valueOf(d);
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -51,6 +73,14 @@ public class GetAccountVerificationsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"accountId\": \"")
                 .append(accountId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (activeVerificationOnly != null) {
+            sb.append(aligned)
+                .append("\"activeVerificationOnly\": \"")
+                .append(activeVerificationOnly)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

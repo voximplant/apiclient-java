@@ -20,7 +20,9 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code
+    * The country code. <b>Required</b> together with
+    * <b>phone_category_name</b> and <b>phone_region_id</b> to search the
+    * catalog; omit all three to get the phone numbers available locally
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -31,7 +33,9 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The country code
+    * The country code. <b>Required</b> together with
+    * <b>phone_category_name</b> and <b>phone_region_id</b> to search the
+    * catalog; omit all three to get the phone numbers available locally
     */
     public GetNewPhoneNumbersRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -42,7 +46,10 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] function
+    * The phone category name. See the [GetPhoneNumberCategories] function.
+    * <b>Required</b> together with <b>country_code</b> and
+    * <b>phone_region_id</b> to search the catalog; omit all three to get
+    * the phone numbers available locally
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -53,7 +60,10 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] function
+    * The phone category name. See the [GetPhoneNumberCategories] function.
+    * <b>Required</b> together with <b>country_code</b> and
+    * <b>phone_region_id</b> to search the catalog; omit all three to get
+    * the phone numbers available locally
     */
     public GetNewPhoneNumbersRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
@@ -88,7 +98,10 @@ public class GetNewPhoneNumbersRequest implements Alignable {
 
     @RequestField(name="phone_region_id")
     /**
-    * The phone region ID. See the [GetPhoneNumberRegions] method
+    * The phone region ID. See the [GetPhoneNumberRegions] method.
+    * <b>Required</b> together with <b>country_code</b> and
+    * <b>phone_category_name</b> to search the catalog; omit all three to
+    * get the phone numbers available locally
     */
     public Long getPhoneRegionId() {
         return this.phoneRegionId;
@@ -99,7 +112,10 @@ public class GetNewPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * The phone region ID. See the [GetPhoneNumberRegions] method
+    * The phone region ID. See the [GetPhoneNumberRegions] method.
+    * <b>Required</b> together with <b>country_code</b> and
+    * <b>phone_category_name</b> to search the catalog; omit all three to
+    * get the phone numbers available locally
     */
     public GetNewPhoneNumbersRequest setPhoneRegionId(long d) {
         this.phoneRegionId = Long.valueOf(d);

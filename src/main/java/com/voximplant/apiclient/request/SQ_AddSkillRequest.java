@@ -20,7 +20,8 @@ public class SQ_AddSkillRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to bind to
+    * Application ID to bind to. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_AddSkillRequest implements Alignable {
     }
 
     /**
-    * Application ID to bind to
+    * Application ID to bind to. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_AddSkillRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_AddSkillRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to bind to. Can be used instead of
-    * <b>application_id</b>
+    * Application name to bind to. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_AddSkillRequest implements Alignable {
     }
 
     /**
-    * Application name to bind to. Can be used instead of
-    * <b>application_id</b>
+    * Application name to bind to. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_AddSkillRequest setApplicationName(String d) {
         this.applicationName = d;

@@ -100,8 +100,8 @@ public class GetTransactionHistoryRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name to filter. Can be used instead of the
-    * <b>application_id</b> parameter
+    * The application name to filter. Can be used together with or instead
+    * of the <b>application_id</b> parameter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -112,8 +112,8 @@ public class GetTransactionHistoryRequest implements Alignable {
     }
 
     /**
-    * The application name to filter. Can be used instead of the
-    * <b>application_id</b> parameter
+    * The application name to filter. Can be used together with or instead
+    * of the <b>application_id</b> parameter
     */
     public GetTransactionHistoryRequest setApplicationName(String d) {
         this.applicationName = d;

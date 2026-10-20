@@ -20,7 +20,8 @@ public class SQ_DelSkillRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_DelSkillRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_DelSkillRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_DelSkillRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_DelSkillRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_DelSkillRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -67,7 +69,8 @@ public class SQ_DelSkillRequest implements Alignable {
     @RequestField(name="sq_skill_id")
     /**
     * List of skill IDs separated by semicolons (;). Use 'all' to delete
-    * all the skills
+    * all the skills. <b>Required</b> unless <b>sq_skill_name</b> is
+    * provided.
     */
     public MultiArgument<Long> getSqSkillId() {
         return this.sqSkillId;
@@ -79,7 +82,8 @@ public class SQ_DelSkillRequest implements Alignable {
 
     /**
     * List of skill IDs separated by semicolons (;). Use 'all' to delete
-    * all the skills
+    * all the skills. <b>Required</b> unless <b>sq_skill_name</b> is
+    * provided.
     */
     public SQ_DelSkillRequest setSqSkillId(MultiArgument<Long> d) {
         this.sqSkillId = d;
@@ -90,8 +94,8 @@ public class SQ_DelSkillRequest implements Alignable {
 
     @RequestField(name="sq_skill_name")
     /**
-    * List of skill names separated by semicolons (;). Can be used instead
-    * of <b>sq_skill_id</b>
+    * List of skill names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_skill_id</b> is provided.
     */
     public MultiArgument<String> getSqSkillName() {
         return this.sqSkillName;
@@ -102,8 +106,8 @@ public class SQ_DelSkillRequest implements Alignable {
     }
 
     /**
-    * List of skill names separated by semicolons (;). Can be used instead
-    * of <b>sq_skill_id</b>
+    * List of skill names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_skill_id</b> is provided.
     */
     public SQ_DelSkillRequest setSqSkillName(MultiArgument<String> d) {
         this.sqSkillName = d;

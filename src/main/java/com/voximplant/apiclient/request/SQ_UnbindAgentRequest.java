@@ -20,7 +20,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_UnbindAgentRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_UnbindAgentRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -67,7 +69,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
     @RequestField(name="sq_queue_id")
     /**
     * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
-    * select all the queues
+    * select all the queues. <b>Required</b> unless <b>sq_queue_name</b> is
+    * provided.
     */
     public MultiArgument<Long> getSqQueueId() {
         return this.sqQueueId;
@@ -79,7 +82,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
 
     /**
     * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
-    * select all the queues
+    * select all the queues. <b>Required</b> unless <b>sq_queue_name</b> is
+    * provided.
     */
     public SQ_UnbindAgentRequest setSqQueueId(MultiArgument<Long> d) {
         this.sqQueueId = d;
@@ -90,8 +94,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * List of SmartQueue names separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * List of SmartQueue names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided.
     */
     public MultiArgument<String> getSqQueueName() {
         return this.sqQueueName;
@@ -102,8 +106,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
     }
 
     /**
-    * List of SmartQueue names separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * List of SmartQueue names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided.
     */
     public SQ_UnbindAgentRequest setSqQueueName(MultiArgument<String> d) {
         this.sqQueueName = d;
@@ -115,7 +119,7 @@ public class SQ_UnbindAgentRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * List of user IDs separated by semicolons (;). Use 'all' to select all
-    * the users
+    * the users. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -127,7 +131,7 @@ public class SQ_UnbindAgentRequest implements Alignable {
 
     /**
     * List of user IDs separated by semicolons (;). Use 'all' to select all
-    * the users
+    * the users. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public SQ_UnbindAgentRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -138,8 +142,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * List of user names separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -150,8 +154,8 @@ public class SQ_UnbindAgentRequest implements Alignable {
     }
 
     /**
-    * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * List of user names separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public SQ_UnbindAgentRequest setUserName(MultiArgument<String> d) {
         this.userName = d;

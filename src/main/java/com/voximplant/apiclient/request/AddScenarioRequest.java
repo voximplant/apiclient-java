@@ -68,7 +68,7 @@ public class AddScenarioRequest implements Alignable {
     /**
     * The rule ID. The new scenario binds to the specified rule. Please
     * note, if you do not bind the scenario to any rule, you cannot execute
-    * the scenario
+    * the scenario. Can be used instead of the <b>rule_name</b> parameter
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -81,7 +81,7 @@ public class AddScenarioRequest implements Alignable {
     /**
     * The rule ID. The new scenario binds to the specified rule. Please
     * note, if you do not bind the scenario to any rule, you cannot execute
-    * the scenario
+    * the scenario. Can be used instead of the <b>rule_name</b> parameter
     */
     public AddScenarioRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
@@ -92,7 +92,7 @@ public class AddScenarioRequest implements Alignable {
 
     @RequestField(name="rule_name")
     /**
-    * The rule name that can be used instead of <b>rule_id</b>
+    * The rule name. Can be used instead of the <b>rule_id</b> parameter
     */
     public String getRuleName() {
         return this.ruleName;
@@ -103,7 +103,7 @@ public class AddScenarioRequest implements Alignable {
     }
 
     /**
-    * The rule name that can be used instead of <b>rule_id</b>
+    * The rule name. Can be used instead of the <b>rule_id</b> parameter
     */
     public AddScenarioRequest setRuleName(String d) {
         this.ruleName = d;

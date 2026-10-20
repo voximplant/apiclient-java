@@ -25,7 +25,6 @@ public class SQ_GetAgentsExample {
             SQ_GetAgentsResponse res = client.sQ_GetAgents(new SQ_GetAgentsRequest()
                 .setApplicationId(1)
                 .setWithSqStatuses(true)
-                .setHandleCalls(false)
             );
             System.out.println("OK");
         } catch (IOException | ClientException e) {

@@ -77,7 +77,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
     * **min_handle_time**, **max_handle_time**, **average_handle_time**,
     * **count_handled_calls**, **min_after_call_worktime**,
     * **max_after_call_worktime**, **average_after_call_worktime** report
-    * types
+    * types. Can be used instead of the <b>user_name</b> parameter
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -97,7 +97,7 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
     * **min_handle_time**, **max_handle_time**, **average_handle_time**,
     * **count_handled_calls**, **min_after_call_worktime**,
     * **max_after_call_worktime**, **average_after_call_worktime** report
-    * types
+    * types. Can be used instead of the <b>user_name</b> parameter
     */
     public GetSmartQueueRealtimeMetricsRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -108,8 +108,8 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name list separated by semicolons (;). <b>user_name</b> can
-    * be used instead of <b>user_id</b>
+    * The user name list separated by semicolons (;). Can be used instead
+    * of the <b>user_id</b> parameter
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -120,11 +120,55 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
     }
 
     /**
-    * The user name list separated by semicolons (;). <b>user_name</b> can
-    * be used instead of <b>user_id</b>
+    * The user name list separated by semicolons (;). Can be used instead
+    * of the <b>user_id</b> parameter
     */
     public GetSmartQueueRealtimeMetricsRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
+        return this;
+    }
+
+    private MultiArgument<Long> sqQueueId;
+
+    @RequestField(name="sq_queue_id")
+    /**
+    * The SmartQueue ID list with a maximum of 5 values separated by
+    * semicolons (;). Can operate as filter for the
+    * **calls_blocked_percentage**, **count_blocked_calls**,
+    * **average_abandonment_rate**, **count_abandonment_calls**,
+    * **service_level**, **occupancy_rate**, **min_time_in_queue**,
+    * **max_time_in_queue**, **average_time_in_queue**,
+    * **min_answer_speed**, **max_answer_speed**, **average_answer_speed**,
+    * **min_handle_time**, **max_handle_time**, **average_handle_time**,
+    * **count_handled_calls**, **min_after_call_worktime**,
+    * **max_after_call_worktime**, **average_after_call_worktime** report
+    * types. <b>Required</b> unless <b>sq_queue_name</b> is provided or all
+    * the requested report types are agent reports.
+    */
+    public MultiArgument<Long> getSqQueueId() {
+        return this.sqQueueId;
+    }
+
+    public boolean hasSqQueueId() {
+        return this.sqQueueId != null;
+    }
+
+    /**
+    * The SmartQueue ID list with a maximum of 5 values separated by
+    * semicolons (;). Can operate as filter for the
+    * **calls_blocked_percentage**, **count_blocked_calls**,
+    * **average_abandonment_rate**, **count_abandonment_calls**,
+    * **service_level**, **occupancy_rate**, **min_time_in_queue**,
+    * **max_time_in_queue**, **average_time_in_queue**,
+    * **min_answer_speed**, **max_answer_speed**, **average_answer_speed**,
+    * **min_handle_time**, **max_handle_time**, **average_handle_time**,
+    * **count_handled_calls**, **min_after_call_worktime**,
+    * **max_after_call_worktime**, **average_after_call_worktime** report
+    * types. <b>Required</b> unless <b>sq_queue_name</b> is provided or all
+    * the requested report types are agent reports.
+    */
+    public GetSmartQueueRealtimeMetricsRequest setSqQueueId(MultiArgument<Long> d) {
+        this.sqQueueId = d;
         return this;
     }
 
@@ -132,8 +176,9 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * The SmartQueue name list separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * The SmartQueue name list separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided or all the requested report
+    * types are agent reports.
     */
     public MultiArgument<String> getSqQueueName() {
         return this.sqQueueName;
@@ -144,8 +189,9 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
     }
 
     /**
-    * The SmartQueue name list separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * The SmartQueue name list separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided or all the requested report
+    * types are agent reports.
     */
     public GetSmartQueueRealtimeMetricsRequest setSqQueueName(MultiArgument<String> d) {
         this.sqQueueName = d;
@@ -418,6 +464,96 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
         return this;
     }
 
+    private Boolean descOrder;
+
+    @RequestField(name="desc_order")
+    /**
+    * Whether to get records in the descent order
+    */
+    public Boolean getDescOrder() {
+        return this.descOrder;
+    }
+
+    public boolean hasDescOrder() {
+        return this.descOrder != null;
+    }
+
+    /**
+    * Whether to get records in the descent order
+    */
+    public GetSmartQueueRealtimeMetricsRequest setDescOrder(boolean d) {
+        this.descOrder = Boolean.valueOf(d);
+        return this;
+    }
+
+    private Boolean withHeader;
+
+    @RequestField(name="with_header")
+    /**
+    * Whether to get a CSV file with the column names if the output=csv
+    */
+    public Boolean getWithHeader() {
+        return this.withHeader;
+    }
+
+    public boolean hasWithHeader() {
+        return this.withHeader != null;
+    }
+
+    /**
+    * Whether to get a CSV file with the column names if the output=csv
+    */
+    public GetSmartQueueRealtimeMetricsRequest setWithHeader(boolean d) {
+        this.withHeader = Boolean.valueOf(d);
+        return this;
+    }
+
+    private String decimalSeparator;
+
+    @RequestField(name="decimal_separator")
+    /**
+    * The decimal mark for CSV numbers: a dot or a comma. If omitted, the
+    * account setting is used
+    */
+    public String getDecimalSeparator() {
+        return this.decimalSeparator;
+    }
+
+    public boolean hasDecimalSeparator() {
+        return this.decimalSeparator != null;
+    }
+
+    /**
+    * The decimal mark for CSV numbers: a dot or a comma. If omitted, the
+    * account setting is used
+    */
+    public GetSmartQueueRealtimeMetricsRequest setDecimalSeparator(String d) {
+        this.decimalSeparator = d;
+        return this;
+    }
+
+    private Boolean omitEmpty;
+
+    @RequestField(name="omit_empty")
+    /**
+    * Whether to omit the empty metric values from the result
+    */
+    public Boolean getOmitEmpty() {
+        return this.omitEmpty;
+    }
+
+    public boolean hasOmitEmpty() {
+        return this.omitEmpty != null;
+    }
+
+    /**
+    * Whether to omit the empty metric values from the result
+    */
+    public GetSmartQueueRealtimeMetricsRequest setOmitEmpty(boolean d) {
+        this.omitEmpty = Boolean.valueOf(d);
+        return this;
+    }
+
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -455,6 +591,14 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"userName\": \"")
                 .append(userName)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (sqQueueId != null) {
+            sb.append(aligned)
+                .append("\"sqQueueId\": \"")
+                .append(sqQueueId)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
@@ -519,6 +663,38 @@ public class GetSmartQueueRealtimeMetricsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"maxWaitingSec\": \"")
                 .append(maxWaitingSec)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (descOrder != null) {
+            sb.append(aligned)
+                .append("\"descOrder\": \"")
+                .append(descOrder)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (withHeader != null) {
+            sb.append(aligned)
+                .append("\"withHeader\": \"")
+                .append(withHeader)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (decimalSeparator != null) {
+            sb.append(aligned)
+                .append("\"decimalSeparator\": \"")
+                .append(decimalSeparator)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (omitEmpty != null) {
+            sb.append(aligned)
+                .append("\"omitEmpty\": \"")
+                .append(omitEmpty)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

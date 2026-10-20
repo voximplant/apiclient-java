@@ -20,7 +20,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_SetSkillInfoRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_SetSkillInfoRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -66,7 +68,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="sq_skill_id")
     /**
-    * ID of the skill
+    * ID of the skill. <b>Required</b> unless <b>sq_skill_name</b> is
+    * provided.
     */
     public Long getSqSkillId() {
         return this.sqSkillId;
@@ -77,7 +80,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * ID of the skill
+    * ID of the skill. <b>Required</b> unless <b>sq_skill_name</b> is
+    * provided.
     */
     public SQ_SetSkillInfoRequest setSqSkillId(long d) {
         this.sqSkillId = Long.valueOf(d);
@@ -88,7 +92,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
 
     @RequestField(name="sq_skill_name")
     /**
-    * Name of the skill. Can be used instead of <b>sq_skill_id</b>
+    * Name of the skill. <b>Required</b> unless <b>sq_skill_id</b> is
+    * provided.
     */
     public String getSqSkillName() {
         return this.sqSkillName;
@@ -99,7 +104,8 @@ public class SQ_SetSkillInfoRequest implements Alignable {
     }
 
     /**
-    * Name of the skill. Can be used instead of <b>sq_skill_id</b>
+    * Name of the skill. <b>Required</b> unless <b>sq_skill_id</b> is
+    * provided.
     */
     public SQ_SetSkillInfoRequest setSqSkillName(String d) {
         this.sqSkillName = d;

@@ -5,15 +5,17 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 
 public class TimestampDeserializer
         extends StdDeserializer<Date> {
 
-    private static final SimpleDateFormat formatter
-            = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+    private static final DateTimeFormatter FORMATTER =
+            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public TimestampDeserializer() {
         this(null);
@@ -30,8 +32,8 @@ public class TimestampDeserializer
 
         String date = jsonparser.getText();
         try {
-            return formatter.parse(date);
-        } catch (ParseException e) {
+            return Date.from(LocalDateTime.parse(date, FORMATTER).toInstant(ZoneOffset.UTC));
+        } catch (DateTimeParseException e) {
             throw new RuntimeException(e);
         }
     }

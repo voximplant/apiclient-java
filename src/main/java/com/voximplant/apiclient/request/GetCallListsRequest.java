@@ -205,7 +205,8 @@ public class GetCallListsRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * The application ID to filter. Can be a list separated by semicolons
-    * (;). Use the 'all' value to select all applications
+    * (;). Use the 'all' value to select all applications. Can be used
+    * instead of the <b>application_name</b> parameter
     */
     public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
@@ -217,7 +218,8 @@ public class GetCallListsRequest implements Alignable {
 
     /**
     * The application ID to filter. Can be a list separated by semicolons
-    * (;). Use the 'all' value to select all applications
+    * (;). Use the 'all' value to select all applications. Can be used
+    * instead of the <b>application_name</b> parameter
     */
     public GetCallListsRequest setApplicationId(MultiArgument<Long> d) {
         this.applicationId = d;
@@ -229,7 +231,7 @@ public class GetCallListsRequest implements Alignable {
     @RequestField(name="application_name")
     /**
     * The application name list separated by semicolons (;). Can be used
-    * instead of <b>application_id</b>
+    * instead of the <b>application_id</b> parameter
     */
     public MultiArgument<String> getApplicationName() {
         return this.applicationName;
@@ -241,7 +243,7 @@ public class GetCallListsRequest implements Alignable {
 
     /**
     * The application name list separated by semicolons (;). Can be used
-    * instead of <b>application_id</b>
+    * instead of the <b>application_id</b> parameter
     */
     public GetCallListsRequest setApplicationName(MultiArgument<String> d) {
         this.applicationName = d;
@@ -253,7 +255,8 @@ public class GetCallListsRequest implements Alignable {
     @RequestField(name="rule_id")
     /**
     * The rule ID to filter. Can be a list separated by semicolons (;). Use
-    * the 'all' value to select all rules
+    * the 'all' value to select all rules. Can be used instead of the
+    * <b>rule_name</b> parameter
     */
     public MultiArgument<Long> getRuleId() {
         return this.ruleId;
@@ -265,7 +268,8 @@ public class GetCallListsRequest implements Alignable {
 
     /**
     * The rule ID to filter. Can be a list separated by semicolons (;). Use
-    * the 'all' value to select all rules
+    * the 'all' value to select all rules. Can be used instead of the
+    * <b>rule_name</b> parameter
     */
     public GetCallListsRequest setRuleId(MultiArgument<Long> d) {
         this.ruleId = d;
@@ -277,7 +281,7 @@ public class GetCallListsRequest implements Alignable {
     @RequestField(name="rule_name")
     /**
     * The rule name list separated by semicolons (;). Can be used instead
-    * of <b>rule_id</b>
+    * of the <b>rule_id</b> parameter
     */
     public MultiArgument<String> getRuleName() {
         return this.ruleName;
@@ -289,7 +293,7 @@ public class GetCallListsRequest implements Alignable {
 
     /**
     * The rule name list separated by semicolons (;). Can be used instead
-    * of <b>rule_id</b>
+    * of the <b>rule_id</b> parameter
     */
     public GetCallListsRequest setRuleName(MultiArgument<String> d) {
         this.ruleName = d;

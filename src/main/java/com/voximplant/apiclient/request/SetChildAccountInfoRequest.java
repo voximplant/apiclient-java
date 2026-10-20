@@ -116,6 +116,56 @@ public class SetChildAccountInfoRequest implements Alignable {
         return this;
     }
 
+    private String callbackUrl;
+
+    @RequestField(name="callback_url")
+    /**
+    * Custom URL to send callbacks from this child account
+    */
+    public String getCallbackUrl() {
+        return this.callbackUrl;
+    }
+
+    public boolean hasCallbackUrl() {
+        return this.callbackUrl != null;
+    }
+
+    /**
+    * Custom URL to send callbacks from this child account
+    */
+    public SetChildAccountInfoRequest setCallbackUrl(String d) {
+        this.callbackUrl = d;
+        return this;
+    }
+
+    private String callbackSalt;
+
+    @RequestField(name="callback_salt")
+    /**
+    * If salt string is specified, each HTTP request made by the Voximplant
+    * cloud toward the <b>callback_url</b> has a <b>salt</b> field set to
+    * MD5 hash of account information and salt. That hash can be used be a
+    * developer to ensure that HTTP request is made by the Voximplant cloud
+    */
+    public String getCallbackSalt() {
+        return this.callbackSalt;
+    }
+
+    public boolean hasCallbackSalt() {
+        return this.callbackSalt != null;
+    }
+
+    /**
+    * If salt string is specified, each HTTP request made by the Voximplant
+    * cloud toward the <b>callback_url</b> has a <b>salt</b> field set to
+    * MD5 hash of account information and salt. That hash can be used be a
+    * developer to ensure that HTTP request is made by the Voximplant cloud
+    */
+    public SetChildAccountInfoRequest setCallbackSalt(String d) {
+        this.callbackSalt = d;
+        return this;
+    }
+
     private String newChildAccountPassword;
 
     @RequestField(name="new_child_account_password")
@@ -485,6 +535,22 @@ public class SetChildAccountInfoRequest implements Alignable {
             sb.append(aligned)
                 .append("\"newChildAccountEmail\": \"")
                 .append(newChildAccountEmail)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callbackUrl != null) {
+            sb.append(aligned)
+                .append("\"callbackUrl\": \"")
+                .append(callbackUrl)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (callbackSalt != null) {
+            sb.append(aligned)
+                .append("\"callbackSalt\": \"")
+                .append(callbackSalt)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

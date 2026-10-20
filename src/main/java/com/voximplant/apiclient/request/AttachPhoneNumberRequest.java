@@ -20,8 +20,9 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_count")
     /**
-    * Quantity of phone numbers you want to attach. <b>Required</b> unless
-    * <b>phone_number</b> is provided.
+    * Quantity of phone numbers you want to attach. If neither this
+    * parameter nor <b>phone_number</b> is specified, one phone number is
+    * attached from the catalog
     */
     public Long getPhoneCount() {
         return this.phoneCount;
@@ -32,8 +33,9 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * Quantity of phone numbers you want to attach. <b>Required</b> unless
-    * <b>phone_number</b> is provided.
+    * Quantity of phone numbers you want to attach. If neither this
+    * parameter nor <b>phone_number</b> is specified, one phone number is
+    * attached from the catalog
     */
     public AttachPhoneNumberRequest setPhoneCount(long d) {
         this.phoneCount = Long.valueOf(d);
@@ -44,8 +46,10 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_number")
     /**
-    * The phone number. See the [GetNewPhoneNumbers] method.
-    * <b>Required</b> unless <b>phone_count</b> is provided.
+    * The phone numbers to attach, separated by semicolons (;). See the
+    * [GetNewPhoneNumbers] method. If neither this parameter nor
+    * <b>phone_count</b> is specified, one phone number is attached from
+    * the catalog
     */
     public MultiArgument<String> getPhoneNumber() {
         return this.phoneNumber;
@@ -56,8 +60,10 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone number. See the [GetNewPhoneNumbers] method.
-    * <b>Required</b> unless <b>phone_count</b> is provided.
+    * The phone numbers to attach, separated by semicolons (;). See the
+    * [GetNewPhoneNumbers] method. If neither this parameter nor
+    * <b>phone_count</b> is specified, one phone number is attached from
+    * the catalog
     */
     public AttachPhoneNumberRequest setPhoneNumber(MultiArgument<String> d) {
         this.phoneNumber = d;
@@ -68,7 +74,10 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="country_code")
     /**
-    * The country code
+    * The country code. <b>Required</b> together with
+    * <b>phone_category_name</b> and <b>phone_region_id</b> to purchase
+    * from the catalog; not needed when attaching a specific phone number
+    * via <b>phone_number</b>
     */
     public String getCountryCode() {
         return this.countryCode;
@@ -79,7 +88,10 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The country code
+    * The country code. <b>Required</b> together with
+    * <b>phone_category_name</b> and <b>phone_region_id</b> to purchase
+    * from the catalog; not needed when attaching a specific phone number
+    * via <b>phone_number</b>
     */
     public AttachPhoneNumberRequest setCountryCode(String d) {
         this.countryCode = d;
@@ -90,7 +102,10 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_category_name")
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method
+    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * <b>Required</b> together with <b>country_code</b> and
+    * <b>phone_region_id</b> to purchase from the catalog; not needed when
+    * attaching a specific phone number via <b>phone_number</b>
     */
     public String getPhoneCategoryName() {
         return this.phoneCategoryName;
@@ -101,7 +116,10 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone category name. See the [GetPhoneNumberCategories] method
+    * The phone category name. See the [GetPhoneNumberCategories] method.
+    * <b>Required</b> together with <b>country_code</b> and
+    * <b>phone_region_id</b> to purchase from the catalog; not needed when
+    * attaching a specific phone number via <b>phone_number</b>
     */
     public AttachPhoneNumberRequest setPhoneCategoryName(String d) {
         this.phoneCategoryName = d;
@@ -136,7 +154,10 @@ public class AttachPhoneNumberRequest implements Alignable {
 
     @RequestField(name="phone_region_id")
     /**
-    * The phone region ID. See the [GetPhoneNumberRegions] method
+    * The phone region ID. See the [GetPhoneNumberRegions] method.
+    * <b>Required</b> together with <b>country_code</b> and
+    * <b>phone_category_name</b> to purchase from the catalog; not needed
+    * when attaching a specific phone number via <b>phone_number</b>
     */
     public Long getPhoneRegionId() {
         return this.phoneRegionId;
@@ -147,7 +168,10 @@ public class AttachPhoneNumberRequest implements Alignable {
     }
 
     /**
-    * The phone region ID. See the [GetPhoneNumberRegions] method
+    * The phone region ID. See the [GetPhoneNumberRegions] method.
+    * <b>Required</b> together with <b>country_code</b> and
+    * <b>phone_category_name</b> to purchase from the catalog; not needed
+    * when attaching a specific phone number via <b>phone_number</b>
     */
     public AttachPhoneNumberRequest setPhoneRegionId(long d) {
         this.phoneRegionId = Long.valueOf(d);
@@ -173,28 +197,6 @@ public class AttachPhoneNumberRequest implements Alignable {
     */
     public AttachPhoneNumberRequest setRegulationAddressId(long d) {
         this.regulationAddressId = Long.valueOf(d);
-        return this;
-    }
-
-    private Boolean forceVerification;
-
-    @RequestField(name="force_verification")
-    /**
-    * Whether the force verification is enabled
-    */
-    public Boolean getForceVerification() {
-        return this.forceVerification;
-    }
-
-    public boolean hasForceVerification() {
-        return this.forceVerification != null;
-    }
-
-    /**
-    * Whether the force verification is enabled
-    */
-    public AttachPhoneNumberRequest setForceVerification(boolean d) {
-        this.forceVerification = Boolean.valueOf(d);
         return this;
     }
 
@@ -259,14 +261,6 @@ public class AttachPhoneNumberRequest implements Alignable {
             sb.append(aligned)
                 .append("\"regulationAddressId\": \"")
                 .append(regulationAddressId)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (forceVerification != null) {
-            sb.append(aligned)
-                .append("\"forceVerification\": \"")
-                .append(forceVerification)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

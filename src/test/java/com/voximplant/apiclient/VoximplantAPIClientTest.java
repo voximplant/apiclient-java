@@ -257,7 +257,7 @@ public class VoximplantAPIClientTest {
             // SmartQueue bind agent
             SQ_BindAgentResponse sqBindAgentResponse = client.sQ_BindAgent(new SQ_BindAgentRequest()
                     .setApplicationId(applicationId)
-                    .setSqQueueId(String.valueOf(sqQueueId))
+                    .setSqQueueId(MultiArgument.forSingleValue(sqQueueId))
                     .setUserId(MultiArgument.forSingleValue(firstUserId))
             );
             assertEquals(1, sqBindAgentResponse.getResult(),

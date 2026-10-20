@@ -135,7 +135,8 @@ public class GetBriefCallHistoryRequest implements Alignable {
     @RequestField(name="application_id")
     /**
     * To receive the call history for a specific application, pass the
-    * application ID to this parameter
+    * application ID to this parameter. Can be used instead of the
+    * <b>application_name</b> parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -147,7 +148,8 @@ public class GetBriefCallHistoryRequest implements Alignable {
 
     /**
     * To receive the call history for a specific application, pass the
-    * application ID to this parameter
+    * application ID to this parameter. Can be used instead of the
+    * <b>application_name</b> parameter
     */
     public GetBriefCallHistoryRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -158,7 +160,8 @@ public class GetBriefCallHistoryRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name, can be used instead of <b>application_id</b>
+    * The application name. Can be used instead of the
+    * <b>application_id</b> parameter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -169,7 +172,8 @@ public class GetBriefCallHistoryRequest implements Alignable {
     }
 
     /**
-    * The application name, can be used instead of <b>application_id</b>
+    * The application name. Can be used instead of the
+    * <b>application_id</b> parameter
     */
     public GetBriefCallHistoryRequest setApplicationName(String d) {
         this.applicationName = d;

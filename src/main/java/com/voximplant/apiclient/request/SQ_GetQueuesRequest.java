@@ -20,7 +20,8 @@ public class SQ_GetQueuesRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_GetQueuesRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_GetQueuesRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_GetQueuesRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -66,7 +68,8 @@ public class SQ_GetQueuesRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * List of SmartQueue IDs separated by semicolons (;)
+    * List of SmartQueue IDs separated by semicolons (;). Can be used
+    * instead of the <b>sq_queue_name</b> parameter
     */
     public MultiArgument<Long> getSqQueueId() {
         return this.sqQueueId;
@@ -77,7 +80,8 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * List of SmartQueue IDs separated by semicolons (;)
+    * List of SmartQueue IDs separated by semicolons (;). Can be used
+    * instead of the <b>sq_queue_name</b> parameter
     */
     public SQ_GetQueuesRequest setSqQueueId(MultiArgument<Long> d) {
         this.sqQueueId = d;
@@ -89,7 +93,7 @@ public class SQ_GetQueuesRequest implements Alignable {
     @RequestField(name="sq_queue_name")
     /**
     * List of SmartQueue names separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * instead of the <b>sq_queue_id</b> parameter
     */
     public MultiArgument<String> getSqQueueName() {
         return this.sqQueueName;
@@ -101,7 +105,7 @@ public class SQ_GetQueuesRequest implements Alignable {
 
     /**
     * List of SmartQueue names separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * instead of the <b>sq_queue_id</b> parameter
     */
     public SQ_GetQueuesRequest setSqQueueName(MultiArgument<String> d) {
         this.sqQueueName = d;
@@ -130,13 +134,15 @@ public class SQ_GetQueuesRequest implements Alignable {
         return this;
     }
 
-    private Long userId;
+    private MultiArgument<Long> userId;
 
     @RequestField(name="user_id")
     /**
-    * ID of the user that is bound to the queue
+    * List of user IDs separated by semicolons (;). Queues bound to these
+    * users are returned. Can be used instead of the <b>user_name</b>
+    * parameter
     */
-    public Long getUserId() {
+    public MultiArgument<Long> getUserId() {
         return this.userId;
     }
 
@@ -145,21 +151,23 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * ID of the user that is bound to the queue
+    * List of user IDs separated by semicolons (;). Queues bound to these
+    * users are returned. Can be used instead of the <b>user_name</b>
+    * parameter
     */
-    public SQ_GetQueuesRequest setUserId(long d) {
-        this.userId = Long.valueOf(d);
+    public SQ_GetQueuesRequest setUserId(MultiArgument<Long> d) {
+        this.userId = d;
         return this;
     }
 
-    private String userName;
+    private MultiArgument<String> userName;
 
     @RequestField(name="user_name")
     /**
-    * Name of the user that is bound to the queue. Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of the <b>user_id</b> parameter
     */
-    public String getUserName() {
+    public MultiArgument<String> getUserName() {
         return this.userName;
     }
 
@@ -168,21 +176,23 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Name of the user that is bound to the queue. Can be used instead of
-    * <b>user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of the <b>user_id</b> parameter
     */
-    public SQ_GetQueuesRequest setUserName(String d) {
+    public SQ_GetQueuesRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
         return this;
     }
 
-    private Long excludedUserId;
+    private MultiArgument<Long> excludedUserId;
 
     @RequestField(name="excluded_user_id")
     /**
-    * ID of the user that is not bound to the queue
+    * List of user IDs separated by semicolons (;). Queues bound to these
+    * users are excluded. Can be used instead of the
+    * <b>excluded_user_name</b> parameter
     */
-    public Long getExcludedUserId() {
+    public MultiArgument<Long> getExcludedUserId() {
         return this.excludedUserId;
     }
 
@@ -191,21 +201,23 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * ID of the user that is not bound to the queue
+    * List of user IDs separated by semicolons (;). Queues bound to these
+    * users are excluded. Can be used instead of the
+    * <b>excluded_user_name</b> parameter
     */
-    public SQ_GetQueuesRequest setExcludedUserId(long d) {
-        this.excludedUserId = Long.valueOf(d);
+    public SQ_GetQueuesRequest setExcludedUserId(MultiArgument<Long> d) {
+        this.excludedUserId = d;
         return this;
     }
 
-    private String excludedUserName;
+    private MultiArgument<String> excludedUserName;
 
     @RequestField(name="excluded_user_name")
     /**
-    * Name of the user that is not bound to the queue. Can be used instead
-    * of <b>excluded_user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of the <b>excluded_user_id</b> parameter
     */
-    public String getExcludedUserName() {
+    public MultiArgument<String> getExcludedUserName() {
         return this.excludedUserName;
     }
 
@@ -214,10 +226,10 @@ public class SQ_GetQueuesRequest implements Alignable {
     }
 
     /**
-    * Name of the user that is not bound to the queue. Can be used instead
-    * of <b>excluded_user_id</b>
+    * List of user names separated by semicolons (;). Can be used instead
+    * of the <b>excluded_user_id</b> parameter
     */
-    public SQ_GetQueuesRequest setExcludedUserName(String d) {
+    public SQ_GetQueuesRequest setExcludedUserName(MultiArgument<String> d) {
         this.excludedUserName = d;
         return this;
     }

@@ -20,7 +20,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_SetAgentInfoRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_SetAgentInfoRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -67,7 +69,7 @@ public class SQ_SetAgentInfoRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * List of user IDs separated by semicolons (;). Use 'all' to select all
-    * the users
+    * the users. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -79,7 +81,7 @@ public class SQ_SetAgentInfoRequest implements Alignable {
 
     /**
     * List of user IDs separated by semicolons (;). Use 'all' to select all
-    * the users
+    * the users. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public SQ_SetAgentInfoRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -90,8 +92,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * List of user names separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -102,8 +104,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
     }
 
     /**
-    * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * List of user names separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public SQ_SetAgentInfoRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -114,7 +116,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
 
     @RequestField(name="max_simultaneous_conversations")
     /**
-    * Maximum number of chats that the user processes simultaneously
+    * Maximum number of chats that the user processes simultaneously.
+    * <b>Required</b> unless <b>handle_calls</b> is provided.
     */
     public Long getMaxSimultaneousConversations() {
         return this.maxSimultaneousConversations;
@@ -125,7 +128,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
     }
 
     /**
-    * Maximum number of chats that the user processes simultaneously
+    * Maximum number of chats that the user processes simultaneously.
+    * <b>Required</b> unless <b>handle_calls</b> is provided.
     */
     public SQ_SetAgentInfoRequest setMaxSimultaneousConversations(long d) {
         this.maxSimultaneousConversations = Long.valueOf(d);
@@ -137,7 +141,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
     @RequestField(name="handle_calls")
     /**
     * Whether the agent can handle calls. When set to false, the agent is
-    * excluded from the CALL-request distribution
+    * excluded from the CALL-request distribution. <b>Required</b> unless
+    * <b>max_simultaneous_conversations</b> is provided.
     */
     public Boolean getHandleCalls() {
         return this.handleCalls;
@@ -149,7 +154,8 @@ public class SQ_SetAgentInfoRequest implements Alignable {
 
     /**
     * Whether the agent can handle calls. When set to false, the agent is
-    * excluded from the CALL-request distribution
+    * excluded from the CALL-request distribution. <b>Required</b> unless
+    * <b>max_simultaneous_conversations</b> is provided.
     */
     public SQ_SetAgentInfoRequest setHandleCalls(boolean d) {
         this.handleCalls = Boolean.valueOf(d);

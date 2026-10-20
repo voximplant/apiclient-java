@@ -20,7 +20,8 @@ public class SQ_AddQueueRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to bind to
+    * Application ID to bind to. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_AddQueueRequest implements Alignable {
     }
 
     /**
-    * Application ID to bind to
+    * Application ID to bind to. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_AddQueueRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_AddQueueRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to bind to. Can be used instead of
-    * <b>application_id</b>
+    * Application name to bind to. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_AddQueueRequest implements Alignable {
     }
 
     /**
-    * Application name to bind to. Can be used instead of
-    * <b>application_id</b>
+    * Application name to bind to. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_AddQueueRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -227,30 +229,6 @@ public class SQ_AddQueueRequest implements Alignable {
     */
     public SQ_AddQueueRequest setHoldCallsIfInactiveAgents(boolean d) {
         this.holdCallsIfInactiveAgents = Boolean.valueOf(d);
-        return this;
-    }
-
-    private String fallbackAgentSelection;
-
-    @RequestField(name="fallback_agent_selection")
-    /**
-    * Agent selection strategy, applied when it is not possible to wait for
-    * a suitable free agent. Currently not used
-    */
-    public String getFallbackAgentSelection() {
-        return this.fallbackAgentSelection;
-    }
-
-    public boolean hasFallbackAgentSelection() {
-        return this.fallbackAgentSelection != null;
-    }
-
-    /**
-    * Agent selection strategy, applied when it is not possible to wait for
-    * a suitable free agent. Currently not used
-    */
-    public SQ_AddQueueRequest setFallbackAgentSelection(String d) {
-        this.fallbackAgentSelection = d;
         return this;
     }
 
@@ -527,14 +505,6 @@ public class SQ_AddQueueRequest implements Alignable {
             sb.append(aligned)
                 .append("\"holdCallsIfInactiveAgents\": \"")
                 .append(holdCallsIfInactiveAgents)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (fallbackAgentSelection != null) {
-            sb.append(aligned)
-                .append("\"fallbackAgentSelection\": \"")
-                .append(fallbackAgentSelection)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

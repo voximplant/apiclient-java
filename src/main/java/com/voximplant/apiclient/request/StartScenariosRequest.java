@@ -20,7 +20,8 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * The user ID. Run the scripts from the user if set
+    * The user ID. Run the scripts from the user if set. Can be used
+    * instead of the <b>user_name</b> parameter
     */
     public Long getUserId() {
         return this.userId;
@@ -31,7 +32,8 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The user ID. Run the scripts from the user if set
+    * The user ID. Run the scripts from the user if set. Can be used
+    * instead of the <b>user_name</b> parameter
     */
     public StartScenariosRequest setUserId(long d) {
         this.userId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * The user name that can be used instead of <b>user_id</b>. Run the
-    * scripts from the user if set
+    * The user name. Run the scripts from the user if set. Can be used
+    * instead of the <b>user_id</b> parameter
     */
     public String getUserName() {
         return this.userName;
@@ -54,8 +56,8 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The user name that can be used instead of <b>user_id</b>. Run the
-    * scripts from the user if set
+    * The user name. Run the scripts from the user if set. Can be used
+    * instead of the <b>user_id</b> parameter
     */
     public StartScenariosRequest setUserName(String d) {
         this.userName = d;
@@ -66,7 +68,8 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * The application ID
+    * The application ID. Can be used instead of the
+    * <b>application_name</b> parameter
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -77,7 +80,8 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The application ID
+    * The application ID. Can be used instead of the
+    * <b>application_name</b> parameter
     */
     public StartScenariosRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -88,7 +92,8 @@ public class StartScenariosRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * The application name that can be used instead of <b>application_id</b>
+    * The application name. Can be used instead of the
+    * <b>application_id</b> parameter
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -99,7 +104,8 @@ public class StartScenariosRequest implements Alignable {
     }
 
     /**
-    * The application name that can be used instead of <b>application_id</b>
+    * The application name. Can be used instead of the
+    * <b>application_id</b> parameter
     */
     public StartScenariosRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -111,7 +117,8 @@ public class StartScenariosRequest implements Alignable {
     @RequestField(name="rule_id")
     /**
     * The rule ID that needs to be launched. Please note, the necessary
-    * scenario needs to be attached to the rule
+    * scenario needs to be attached to the rule. <b>Required</b> unless
+    * <b>rule_name</b> is provided.
     */
     public Long getRuleId() {
         return this.ruleId;
@@ -123,10 +130,33 @@ public class StartScenariosRequest implements Alignable {
 
     /**
     * The rule ID that needs to be launched. Please note, the necessary
-    * scenario needs to be attached to the rule
+    * scenario needs to be attached to the rule. <b>Required</b> unless
+    * <b>rule_name</b> is provided.
     */
     public StartScenariosRequest setRuleId(long d) {
         this.ruleId = Long.valueOf(d);
+        return this;
+    }
+
+    private String ruleName;
+
+    @RequestField(name="rule_name")
+    /**
+    * The rule name. <b>Required</b> unless <b>rule_id</b> is provided.
+    */
+    public String getRuleName() {
+        return this.ruleName;
+    }
+
+    public boolean hasRuleName() {
+        return this.ruleName != null;
+    }
+
+    /**
+    * The rule name. <b>Required</b> unless <b>rule_id</b> is provided.
+    */
+    public StartScenariosRequest setRuleName(String d) {
+        this.ruleName = d;
         return this;
     }
 
@@ -165,7 +195,8 @@ public class StartScenariosRequest implements Alignable {
     @RequestField(name="reference_ip")
     /**
     * Specifies the IP from the geolocation of predicted subscribers. It
-    * allows selecting the nearest server for serving subscribers
+    * allows selecting the nearest server for serving subscribers. If not
+    * specified, the IP address of the HTTP request is used
     */
     public String getReferenceIp() {
         return this.referenceIp;
@@ -177,7 +208,8 @@ public class StartScenariosRequest implements Alignable {
 
     /**
     * Specifies the IP from the geolocation of predicted subscribers. It
-    * allows selecting the nearest server for serving subscribers
+    * allows selecting the nearest server for serving subscribers. If not
+    * specified, the IP address of the HTTP request is used
     */
     public StartScenariosRequest setReferenceIp(String d) {
         this.referenceIp = d;
@@ -279,6 +311,14 @@ public class StartScenariosRequest implements Alignable {
             sb.append(aligned)
                 .append("\"ruleId\": \"")
                 .append(ruleId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (ruleName != null) {
+            sb.append(aligned)
+                .append("\"ruleName\": \"")
+                .append(ruleName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

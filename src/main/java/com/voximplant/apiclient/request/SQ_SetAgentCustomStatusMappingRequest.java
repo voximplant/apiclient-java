@@ -64,7 +64,8 @@ public class SQ_SetAgentCustomStatusMappingRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID
+    * Application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -75,10 +76,35 @@ public class SQ_SetAgentCustomStatusMappingRequest implements Alignable {
     }
 
     /**
-    * Application ID
+    * Application ID. <b>Required</b> unless <b>application_name</b> is
+    * provided.
     */
     public SQ_SetAgentCustomStatusMappingRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
+        return this;
+    }
+
+    private String applicationName;
+
+    @RequestField(name="application_name")
+    /**
+    * Application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
+    */
+    public String getApplicationName() {
+        return this.applicationName;
+    }
+
+    public boolean hasApplicationName() {
+        return this.applicationName != null;
+    }
+
+    /**
+    * Application name. <b>Required</b> unless <b>application_id</b> is
+    * provided.
+    */
+    public SQ_SetAgentCustomStatusMappingRequest setApplicationName(String d) {
+        this.applicationName = d;
         return this;
     }
 
@@ -111,6 +137,14 @@ public class SQ_SetAgentCustomStatusMappingRequest implements Alignable {
             sb.append(aligned)
                 .append("\"applicationId\": \"")
                 .append(applicationId)
+                .append('"')
+                .append(',')
+                .append(System.lineSeparator());
+        }
+        if (applicationName != null) {
+            sb.append(aligned)
+                .append("\"applicationName\": \"")
+                .append(applicationName)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

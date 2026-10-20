@@ -1,6 +1,6 @@
 # Voximplant API client library
 
-#### Version 2.11.0
+#### Version 2.12.0
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Setup a `maven` dependency for your project:
 <dependency>
     <groupId>com.voximplant</groupId>
     <artifactId>apiclient</artifactId>
-    <version>2.11.0</version>
+    <version>2.12.0</version>
 </dependency>
 ```
 

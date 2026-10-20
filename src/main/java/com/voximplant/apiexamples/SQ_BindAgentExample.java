@@ -24,7 +24,7 @@ public class SQ_BindAgentExample {
 
             SQ_BindAgentResponse res = client.sQ_BindAgent(new SQ_BindAgentRequest()
                 .setApplicationId(1)
-                .setSqQueueId("1")
+                .setSqQueueId(MultiArgument.forSingleValue(1L))
                 .setUserId(MultiArgument.forSingleValue(1L))
             );
             System.out.println("OK");

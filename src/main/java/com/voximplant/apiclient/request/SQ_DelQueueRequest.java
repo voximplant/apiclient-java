@@ -20,7 +20,8 @@ public class SQ_DelQueueRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_DelQueueRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_DelQueueRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_DelQueueRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_DelQueueRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_DelQueueRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -67,7 +69,8 @@ public class SQ_DelQueueRequest implements Alignable {
     @RequestField(name="sq_queue_id")
     /**
     * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
-    * delete all the queues
+    * delete all the queues. <b>Required</b> unless <b>sq_queue_name</b> is
+    * provided.
     */
     public MultiArgument<Long> getSqQueueId() {
         return this.sqQueueId;
@@ -79,7 +82,8 @@ public class SQ_DelQueueRequest implements Alignable {
 
     /**
     * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
-    * delete all the queues
+    * delete all the queues. <b>Required</b> unless <b>sq_queue_name</b> is
+    * provided.
     */
     public SQ_DelQueueRequest setSqQueueId(MultiArgument<Long> d) {
         this.sqQueueId = d;
@@ -90,8 +94,8 @@ public class SQ_DelQueueRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * List of SmartQueue names separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * List of SmartQueue names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided.
     */
     public MultiArgument<String> getSqQueueName() {
         return this.sqQueueName;
@@ -102,8 +106,8 @@ public class SQ_DelQueueRequest implements Alignable {
     }
 
     /**
-    * List of SmartQueue names separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * List of SmartQueue names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_queue_id</b> is provided.
     */
     public SQ_DelQueueRequest setSqQueueName(MultiArgument<String> d) {
         this.sqQueueName = d;

@@ -20,7 +20,8 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_GetAgentsRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_GetAgentsRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -67,7 +69,8 @@ public class SQ_GetAgentsRequest implements Alignable {
     @RequestField(name="sq_queue_id")
     /**
     * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
-    * select all the queues
+    * select all the queues. Can be used instead of the
+    * <b>sq_queue_name</b> parameter
     */
     public MultiArgument<Long> getSqQueueId() {
         return this.sqQueueId;
@@ -79,7 +82,8 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     /**
     * List of SmartQueue IDs separated by semicolons (;). Use 'all' to
-    * select all the queues
+    * select all the queues. Can be used instead of the
+    * <b>sq_queue_name</b> parameter
     */
     public SQ_GetAgentsRequest setSqQueueId(MultiArgument<Long> d) {
         this.sqQueueId = d;
@@ -91,7 +95,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     @RequestField(name="sq_queue_name")
     /**
     * List of SmartQueue names separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * instead of the <b>sq_queue_id</b> parameter
     */
     public MultiArgument<String> getSqQueueName() {
         return this.sqQueueName;
@@ -103,20 +107,22 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     /**
     * List of SmartQueue names separated by semicolons (;). Can be used
-    * instead of <b>sq_queue_id</b>
+    * instead of the <b>sq_queue_id</b> parameter
     */
     public SQ_GetAgentsRequest setSqQueueName(MultiArgument<String> d) {
         this.sqQueueName = d;
         return this;
     }
 
-    private Long excludedSqQueueId;
+    private MultiArgument<Long> excludedSqQueueId;
 
     @RequestField(name="excluded_sq_queue_id")
     /**
-    * ID of the SmartQueue to exclude
+    * List of SmartQueue IDs separated by semicolons (;). Agents bound to
+    * these queues are excluded. Use 'all' to select all the queues. Can be
+    * used instead of the <b>excluded_sq_queue_name</b> parameter
     */
-    public Long getExcludedSqQueueId() {
+    public MultiArgument<Long> getExcludedSqQueueId() {
         return this.excludedSqQueueId;
     }
 
@@ -125,21 +131,23 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * ID of the SmartQueue to exclude
+    * List of SmartQueue IDs separated by semicolons (;). Agents bound to
+    * these queues are excluded. Use 'all' to select all the queues. Can be
+    * used instead of the <b>excluded_sq_queue_name</b> parameter
     */
-    public SQ_GetAgentsRequest setExcludedSqQueueId(long d) {
-        this.excludedSqQueueId = Long.valueOf(d);
+    public SQ_GetAgentsRequest setExcludedSqQueueId(MultiArgument<Long> d) {
+        this.excludedSqQueueId = d;
         return this;
     }
 
-    private String excludedSqQueueName;
+    private MultiArgument<String> excludedSqQueueName;
 
     @RequestField(name="excluded_sq_queue_name")
     /**
-    * Name of the SmartQueue to exclude. Can be used instead of
-    * <b>excluded_sq_queue_id</b>
+    * List of SmartQueue names separated by semicolons (;). Can be used
+    * instead of the <b>excluded_sq_queue_id</b> parameter
     */
-    public String getExcludedSqQueueName() {
+    public MultiArgument<String> getExcludedSqQueueName() {
         return this.excludedSqQueueName;
     }
 
@@ -148,10 +156,10 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * Name of the SmartQueue to exclude. Can be used instead of
-    * <b>excluded_sq_queue_id</b>
+    * List of SmartQueue names separated by semicolons (;). Can be used
+    * instead of the <b>excluded_sq_queue_id</b> parameter
     */
-    public SQ_GetAgentsRequest setExcludedSqQueueName(String d) {
+    public SQ_GetAgentsRequest setExcludedSqQueueName(MultiArgument<String> d) {
         this.excludedSqQueueName = d;
         return this;
     }
@@ -188,7 +196,8 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     @RequestField(name="user_id")
     /**
-    * List of user IDs separated by semicolons (;)
+    * List of user IDs separated by semicolons (;). Can be used instead of
+    * the <b>user_name</b> parameter
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -199,7 +208,8 @@ public class SQ_GetAgentsRequest implements Alignable {
     }
 
     /**
-    * List of user IDs separated by semicolons (;)
+    * List of user IDs separated by semicolons (;). Can be used instead of
+    * the <b>user_name</b> parameter
     */
     public SQ_GetAgentsRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -211,7 +221,7 @@ public class SQ_GetAgentsRequest implements Alignable {
     @RequestField(name="user_name")
     /**
     * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * of the <b>user_id</b> parameter
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -223,7 +233,7 @@ public class SQ_GetAgentsRequest implements Alignable {
 
     /**
     * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * of the <b>user_id</b> parameter
     */
     public SQ_GetAgentsRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -392,30 +402,6 @@ public class SQ_GetAgentsRequest implements Alignable {
         return this;
     }
 
-    private Boolean handleCalls;
-
-    @RequestField(name="handle_calls")
-    /**
-    * Whether the agent can handle calls. When set to false, the agent is
-    * excluded from the CALL-request distribution
-    */
-    public Boolean getHandleCalls() {
-        return this.handleCalls;
-    }
-
-    public boolean hasHandleCalls() {
-        return this.handleCalls != null;
-    }
-
-    /**
-    * Whether the agent can handle calls. When set to false, the agent is
-    * excluded from the CALL-request distribution
-    */
-    public SQ_GetAgentsRequest setHandleCalls(boolean d) {
-        this.handleCalls = Boolean.valueOf(d);
-        return this;
-    }
-
     public String toString(int alignment) {
         char[] preAligned = new char[alignment - 1];
         char[] aligned = new char[alignment];
@@ -549,14 +535,6 @@ public class SQ_GetAgentsRequest implements Alignable {
             sb.append(aligned)
                 .append("\"offset\": \"")
                 .append(offset)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (handleCalls != null) {
-            sb.append(aligned)
-                .append("\"handleCalls\": \"")
-                .append(handleCalls)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

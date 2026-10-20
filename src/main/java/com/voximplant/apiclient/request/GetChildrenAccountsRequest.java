@@ -208,7 +208,10 @@ public class GetChildrenAccountsRequest implements Alignable {
 
     @RequestField(name="count")
     /**
-    * The maximum returning record count
+    * The maximum returning record count. The default value applies to the
+    * full output only and is capped at 1000; with <b>brief_output</b> or
+    * <b>medium_output</b> all the records are returned unless this
+    * parameter is set
     */
     public Long getCount() {
         return this.count;
@@ -219,7 +222,10 @@ public class GetChildrenAccountsRequest implements Alignable {
     }
 
     /**
-    * The maximum returning record count
+    * The maximum returning record count. The default value applies to the
+    * full output only and is capped at 1000; with <b>brief_output</b> or
+    * <b>medium_output</b> all the records are returned unless this
+    * parameter is set
     */
     public GetChildrenAccountsRequest setCount(long d) {
         this.count = Long.valueOf(d);

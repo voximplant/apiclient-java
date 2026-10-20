@@ -20,7 +20,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_UnbindSkillRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_UnbindSkillRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -67,7 +69,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
     @RequestField(name="user_id")
     /**
     * List of user IDs separated by semicolons (;). Use 'all' to select all
-    * the users
+    * the users. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public MultiArgument<Long> getUserId() {
         return this.userId;
@@ -79,7 +81,7 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     /**
     * List of user IDs separated by semicolons (;). Use 'all' to select all
-    * the users
+    * the users. <b>Required</b> unless <b>user_name</b> is provided.
     */
     public SQ_UnbindSkillRequest setUserId(MultiArgument<Long> d) {
         this.userId = d;
@@ -90,8 +92,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="user_name")
     /**
-    * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * List of user names separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public MultiArgument<String> getUserName() {
         return this.userName;
@@ -102,8 +104,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * List of user names separated by semicolons (;). Can be used instead
-    * of <b>user_id</b>
+    * List of user names separated by semicolons (;). <b>Required</b>
+    * unless <b>user_id</b> is provided.
     */
     public SQ_UnbindSkillRequest setUserName(MultiArgument<String> d) {
         this.userName = d;
@@ -115,7 +117,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
     @RequestField(name="sq_skill_id")
     /**
     * List of skill IDs separated by semicolons (;). Use 'all' to unbind
-    * all the skills
+    * all the skills. <b>Required</b> unless <b>sq_skill_name</b> is
+    * provided.
     */
     public MultiArgument<Long> getSqSkillId() {
         return this.sqSkillId;
@@ -127,7 +130,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     /**
     * List of skill IDs separated by semicolons (;). Use 'all' to unbind
-    * all the skills
+    * all the skills. <b>Required</b> unless <b>sq_skill_name</b> is
+    * provided.
     */
     public SQ_UnbindSkillRequest setSqSkillId(MultiArgument<Long> d) {
         this.sqSkillId = d;
@@ -138,8 +142,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
 
     @RequestField(name="sq_skill_name")
     /**
-    * List of skill names separated by semicolons (;). Can be used instead
-    * of <b>sq_skill_id</b>
+    * List of skill names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_skill_id</b> is provided.
     */
     public MultiArgument<String> getSqSkillName() {
         return this.sqSkillName;
@@ -150,8 +154,8 @@ public class SQ_UnbindSkillRequest implements Alignable {
     }
 
     /**
-    * List of skill names separated by semicolons (;). Can be used instead
-    * of <b>sq_skill_id</b>
+    * List of skill names separated by semicolons (;). <b>Required</b>
+    * unless <b>sq_skill_id</b> is provided.
     */
     public SQ_UnbindSkillRequest setSqSkillName(MultiArgument<String> d) {
         this.sqSkillName = d;

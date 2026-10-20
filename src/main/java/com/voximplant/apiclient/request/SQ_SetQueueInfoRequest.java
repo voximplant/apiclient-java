@@ -20,7 +20,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="application_id")
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public Long getApplicationId() {
         return this.applicationId;
@@ -31,7 +32,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * Application ID to search by
+    * Application ID to search by. <b>Required</b> unless
+    * <b>application_name</b> is provided.
     */
     public SQ_SetQueueInfoRequest setApplicationId(long d) {
         this.applicationId = Long.valueOf(d);
@@ -42,8 +44,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="application_name")
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public String getApplicationName() {
         return this.applicationName;
@@ -54,8 +56,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * Application name to search by. Can be used instead of
-    * <b>application_id</b>
+    * Application name to search by. <b>Required</b> unless
+    * <b>application_id</b> is provided.
     */
     public SQ_SetQueueInfoRequest setApplicationName(String d) {
         this.applicationName = d;
@@ -88,7 +90,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="sq_queue_id")
     /**
-    * ID of the SmartQueue to search for
+    * ID of the SmartQueue to search for. <b>Required</b> unless
+    * <b>sq_queue_name</b> is provided.
     */
     public Long getSqQueueId() {
         return this.sqQueueId;
@@ -99,7 +102,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * ID of the SmartQueue to search for
+    * ID of the SmartQueue to search for. <b>Required</b> unless
+    * <b>sq_queue_name</b> is provided.
     */
     public SQ_SetQueueInfoRequest setSqQueueId(long d) {
         this.sqQueueId = Long.valueOf(d);
@@ -110,8 +114,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
 
     @RequestField(name="sq_queue_name")
     /**
-    * Name of the SmartQueue to search for. Can be used instead of
-    * <b>sq_queue_id</b>
+    * Name of the SmartQueue to search for. <b>Required</b> unless
+    * <b>sq_queue_id</b> is provided.
     */
     public String getSqQueueName() {
         return this.sqQueueName;
@@ -122,8 +126,8 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     }
 
     /**
-    * Name of the SmartQueue to search for. Can be used instead of
-    * <b>sq_queue_id</b>
+    * Name of the SmartQueue to search for. <b>Required</b> unless
+    * <b>sq_queue_id</b> is provided.
     */
     public SQ_SetQueueInfoRequest setSqQueueName(String d) {
         this.sqQueueName = d;
@@ -273,30 +277,6 @@ public class SQ_SetQueueInfoRequest implements Alignable {
     */
     public SQ_SetQueueInfoRequest setImTaskSelection(String d) {
         this.imTaskSelection = d;
-        return this;
-    }
-
-    private String fallbackAgentSelection;
-
-    @RequestField(name="fallback_agent_selection")
-    /**
-    * Agent selection strategy, applied when it is not possible to wait for
-    * a suitable free agent. Currently not used
-    */
-    public String getFallbackAgentSelection() {
-        return this.fallbackAgentSelection;
-    }
-
-    public boolean hasFallbackAgentSelection() {
-        return this.fallbackAgentSelection != null;
-    }
-
-    /**
-    * Agent selection strategy, applied when it is not possible to wait for
-    * a suitable free agent. Currently not used
-    */
-    public SQ_SetQueueInfoRequest setFallbackAgentSelection(String d) {
-        this.fallbackAgentSelection = d;
         return this;
     }
 
@@ -589,14 +569,6 @@ public class SQ_SetQueueInfoRequest implements Alignable {
             sb.append(aligned)
                 .append("\"imTaskSelection\": \"")
                 .append(imTaskSelection)
-                .append('"')
-                .append(',')
-                .append(System.lineSeparator());
-        }
-        if (fallbackAgentSelection != null) {
-            sb.append(aligned)
-                .append("\"fallbackAgentSelection\": \"")
-                .append(fallbackAgentSelection)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());

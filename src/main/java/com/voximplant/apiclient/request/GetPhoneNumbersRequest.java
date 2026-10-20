@@ -90,13 +90,14 @@ public class GetPhoneNumbersRequest implements Alignable {
         return this;
     }
 
-    private Long applicationId;
+    private MultiArgument<Long> applicationId;
 
     @RequestField(name="application_id")
     /**
-    * Application ID
+    * Application ID. Can be used instead of the <b>application_name</b>
+    * parameter
     */
-    public Long getApplicationId() {
+    public MultiArgument<Long> getApplicationId() {
         return this.applicationId;
     }
 
@@ -105,20 +106,22 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Application ID
+    * Application ID. Can be used instead of the <b>application_name</b>
+    * parameter
     */
-    public GetPhoneNumbersRequest setApplicationId(long d) {
-        this.applicationId = Long.valueOf(d);
+    public GetPhoneNumbersRequest setApplicationId(MultiArgument<Long> d) {
+        this.applicationId = d;
         return this;
     }
 
-    private String applicationName;
+    private MultiArgument<String> applicationName;
 
     @RequestField(name="application_name")
     /**
-    * Application name that can be used instead of <b>application_id</b>
+    * Application name. Can be used instead of the <b>application_id</b>
+    * parameter
     */
-    public String getApplicationName() {
+    public MultiArgument<String> getApplicationName() {
         return this.applicationName;
     }
 
@@ -127,9 +130,10 @@ public class GetPhoneNumbersRequest implements Alignable {
     }
 
     /**
-    * Application name that can be used instead of <b>application_id</b>
+    * Application name. Can be used instead of the <b>application_id</b>
+    * parameter
     */
-    public GetPhoneNumbersRequest setApplicationName(String d) {
+    public GetPhoneNumbersRequest setApplicationName(MultiArgument<String> d) {
         this.applicationName = d;
         return this;
     }
@@ -200,13 +204,13 @@ public class GetPhoneNumbersRequest implements Alignable {
         return this;
     }
 
-    private String phoneCategoryName;
+    private MultiArgument<String> phoneCategoryName;
 
     @RequestField(name="phone_category_name")
     /**
     * Phone category name. See the [GetPhoneNumberCategories] method
     */
-    public String getPhoneCategoryName() {
+    public MultiArgument<String> getPhoneCategoryName() {
         return this.phoneCategoryName;
     }
 
@@ -217,7 +221,7 @@ public class GetPhoneNumbersRequest implements Alignable {
     /**
     * Phone category name. See the [GetPhoneNumberCategories] method
     */
-    public GetPhoneNumbersRequest setPhoneCategoryName(String d) {
+    public GetPhoneNumbersRequest setPhoneCategoryName(MultiArgument<String> d) {
         this.phoneCategoryName = d;
         return this;
     }
@@ -652,25 +656,25 @@ public class GetPhoneNumbersRequest implements Alignable {
         return this;
     }
 
-    private Boolean smsSupported;
+    private Boolean isSmsSupported;
 
-    @RequestField(name="sms_supported")
+    @RequestField(name="is_sms_supported")
     /**
     * Whether the SMS support is enabled
     */
-    public Boolean getSmsSupported() {
-        return this.smsSupported;
+    public Boolean getIsSmsSupported() {
+        return this.isSmsSupported;
     }
 
-    public boolean hasSmsSupported() {
-        return this.smsSupported != null;
+    public boolean hasIsSmsSupported() {
+        return this.isSmsSupported != null;
     }
 
     /**
     * Whether the SMS support is enabled
     */
-    public GetPhoneNumbersRequest setSmsSupported(boolean d) {
-        this.smsSupported = Boolean.valueOf(d);
+    public GetPhoneNumbersRequest setIsSmsSupported(boolean d) {
+        this.isSmsSupported = Boolean.valueOf(d);
         return this;
     }
 
@@ -989,10 +993,10 @@ public class GetPhoneNumbersRequest implements Alignable {
                 .append(',')
                 .append(System.lineSeparator());
         }
-        if (smsSupported != null) {
+        if (isSmsSupported != null) {
             sb.append(aligned)
-                .append("\"smsSupported\": \"")
-                .append(smsSupported)
+                .append("\"isSmsSupported\": \"")
+                .append(isSmsSupported)
                 .append('"')
                 .append(',')
                 .append(System.lineSeparator());
