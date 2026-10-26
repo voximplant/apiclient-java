@@ -168,13 +168,13 @@ public class CommonReportType implements Alignable {
         return this.storeUntil != null;
     }
 
-    private String filters;
+    private Map<String, Object> filters;
 
     /**
     * The report order filters (the saved [GetCallHistory],
     * [GetTransactionHistory] parameters)
     */
-    public String getFilters() {
+    public Map<String, Object> getFilters() {
         return this.filters;
     }
 
@@ -182,14 +182,14 @@ public class CommonReportType implements Alignable {
         return this.filters != null;
     }
 
-    private String calculatedData;
+    private Map<String, Object> calculatedData;
 
     /**
     * The calculated report data (the specific report data, see
     * [CalculatedCallHistoryDataType],
     * [CalculatedTransactionHistoryDataType])
     */
-    public String getCalculatedData() {
+    public Map<String, Object> getCalculatedData() {
         return this.calculatedData;
     }
 
