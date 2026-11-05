@@ -66,6 +66,12 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("AddAuthorizedAccountIP", RequestSerializer.serialize(req)), AddAuthorizedAccountIPResponse.class);
     }
+    public AddCustomRecordStorageResponse addCustomRecordStorage(AddCustomRecordStorageRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("AddCustomRecordStorage", RequestSerializer.serialize(req)), AddCustomRecordStorageResponse.class);
+    }
     public AddDialogflowKeyResponse addDialogflowKey(AddDialogflowKeyRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -584,6 +590,12 @@ public class VoximplantAPIClient {
         mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("GetCurrencyRate", RequestSerializer.serialize(req)), GetCurrencyRateResponse.class);
     }
+    public GetCustomRecordStoragesResponse getCustomRecordStorages(GetCustomRecordStoragesRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("GetCustomRecordStorages", RequestSerializer.serialize(req)), GetCustomRecordStoragesResponse.class);
+    }
     public GetDialogflowKeysResponse getDialogflowKeys(GetDialogflowKeysRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -1021,6 +1033,12 @@ public class VoximplantAPIClient {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
         return mapper.readValue((String) impl.performRequest("SetChildAccountInfo", RequestSerializer.serialize(req)), SetChildAccountInfoResponse.class);
+    }
+    public SetCustomRecordStorageInfoResponse setCustomRecordStorageInfo(SetCustomRecordStorageInfoRequest req) throws java.io.IOException, ClientException {
+        ObjectMapper mapper  = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
+        return mapper.readValue((String) impl.performRequest("SetCustomRecordStorageInfo", RequestSerializer.serialize(req)), SetCustomRecordStorageInfoResponse.class);
     }
     public SetDialogflowKeyResponse setDialogflowKey(SetDialogflowKeyRequest req) throws java.io.IOException, ClientException {
         ObjectMapper mapper  = new ObjectMapper();
